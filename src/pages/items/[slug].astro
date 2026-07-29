@@ -250,7 +250,7 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
 
   <Header slot="header" />
 
-  <div class="max-w-[800px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+  <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 py-12 flex-1">
     <!-- Breadcrumbs complying with Web Interface Guidelines -->
     <Breadcrumbs items={breadcrumbItems} />
 
@@ -345,36 +345,42 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
     <!-- Side-by-Side Status Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
       <!-- Carry-On Card -->
-      <div class="bg-canvas border border-hairline rounded-md p-6 shadow-level-2">
+      <div class="bg-canvas border border-hairline rounded-lg p-6 shadow-md relative overflow-hidden">
         <div class="flex items-center justify-between mb-4">
-          <span class="text-sm font-medium text-body">Carry-on Baggage</span>
-          <div class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-mono font-medium ${carryOnStatus.class}`}>
+          <span class="text-xs font-mono font-semibold uppercase tracking-wider text-mute">CABIN BAGGAGE (CARRY-ON)</span>
+          <div class={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md border text-xs font-mono font-bold tracking-wide uppercase ${carryOnStatus.class}`}>
             <CarryOnIcon class="w-3.5 h-3.5" aria-hidden="true" />
             {carryOnStatus.label}
           </div>
         </div>
-        <p class="text-2xl font-semibold tracking-[-0.6px] text-ink capitalize">
-          {item.carryOn.status === "ALLOWED" && "Allowed in cabin"}
-          {item.carryOn.status === "NOT_ALLOWED" && "Strictly prohibited"}
-          {item.carryOn.status === "RESTRICTED" && "Restricted status"}
-          {item.carryOn.status === "UNKNOWN" && "Status unknown"}
+        <p class="text-2xl font-bold tracking-tight text-ink capitalize mb-2">
+          {item.carryOn.status === "ALLOWED" && "Allowed in Cabin"}
+          {item.carryOn.status === "NOT_ALLOWED" && "Strictly Prohibited"}
+          {item.carryOn.status === "RESTRICTED" && "Restricted in Cabin"}
+          {item.carryOn.status === "UNKNOWN" && "Status Unknown"}
+        </p>
+        <p class="text-xs text-body leading-relaxed">
+          {item.carryOn.reason}
         </p>
       </div>
 
       <!-- Checked Card -->
-      <div class="bg-canvas border border-hairline rounded-md p-6 shadow-level-2">
+      <div class="bg-canvas border border-hairline rounded-lg p-6 shadow-md relative overflow-hidden">
         <div class="flex items-center justify-between mb-4">
-          <span class="text-sm font-medium text-body">Checked Baggage</span>
-          <div class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-mono font-medium ${checkedStatus.class}`}>
+          <span class="text-xs font-mono font-semibold uppercase tracking-wider text-mute">HOLD BAGGAGE (CHECKED)</span>
+          <div class={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md border text-xs font-mono font-bold tracking-wide uppercase ${checkedStatus.class}`}>
             <CheckedIcon class="w-3.5 h-3.5" aria-hidden="true" />
             {checkedStatus.label}
           </div>
         </div>
-        <p class="text-2xl font-semibold tracking-[-0.6px] text-ink capitalize">
-          {item.checkedBag.status === "ALLOWED" && "Allowed in hold"}
-          {item.checkedBag.status === "NOT_ALLOWED" && "Strictly prohibited"}
-          {item.checkedBag.status === "RESTRICTED" && "Restricted status"}
-          {item.checkedBag.status === "UNKNOWN" && "Status unknown"}
+        <p class="text-2xl font-bold tracking-tight text-ink capitalize mb-2">
+          {item.checkedBag.status === "ALLOWED" && "Allowed in Hold"}
+          {item.checkedBag.status === "NOT_ALLOWED" && "Strictly Prohibited"}
+          {item.checkedBag.status === "RESTRICTED" && "Restricted in Hold"}
+          {item.checkedBag.status === "UNKNOWN" && "Status Unknown"}
+        </p>
+        <p class="text-xs text-body leading-relaxed">
+          {item.checkedBag.reason}
         </p>
       </div>
     </div>
