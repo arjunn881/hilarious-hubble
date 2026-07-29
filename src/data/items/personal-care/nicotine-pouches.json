@@ -1,0 +1,78 @@
+{
+  "id": "nicotine-pouches",
+  "slug": "nicotine-pouches",
+  "name": "Nicotine Pouches",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "zyn",
+    "snus",
+    "nicotine pouches"
+  ],
+  "keywords": [
+    "zyn",
+    "pouches",
+    "nicotine",
+    "tobacco"
+  ],
+  "description": "Guidelines for traveling with nicotine pouches in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Nicotine pouches (like ZYN) are dry tobacco-free products and are fully allowed in carry-on and checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Nicotine pouches are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/nicotine-pouches",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring nicotine pouches on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/nicotine-pouches",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Nicotine pouches (like ZYN) are dry tobacco-free products and are fully allowed in carry-on and checked baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is nicotine pouches allowed in carry-on bags?",
+      "answer": "Nicotine Pouches is allowed in carry-on luggage. Nicotine pouches (like ZYN) are dry tobacco-free products and are fully allowed in carry-on and checked baggage."
+    },
+    {
+      "question": "Can you pack nicotine pouches in checked baggage?",
+      "answer": "Yes, Nicotine Pouches is allowed in checked bags. Nicotine pouches are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/nicotine-pouches"
+    }
+  ]
+}

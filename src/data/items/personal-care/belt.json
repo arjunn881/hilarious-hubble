@@ -1,0 +1,77 @@
+{
+  "id": "belt",
+  "slug": "belt",
+  "name": "Belt",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "leather belt",
+    "waist belt"
+  ],
+  "keywords": [
+    "belt",
+    "clothing",
+    "buckle",
+    "metal"
+  ],
+  "description": "Guidelines for traveling with belt in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Belts are allowed in carry-on. Remember to remove belts with metal buckles at security screening to avoid setting off metal detectors.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Belts are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/belt",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring belt on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/belt",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Belts are allowed in carry-on. Remember to remove belts with metal buckles at security screening to avoid setting off metal detectors."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is belt allowed in carry-on bags?",
+      "answer": "Belt is allowed in carry-on luggage. Belts are allowed in carry-on. Remember to remove belts with metal buckles at security screening to avoid setting off metal detectors."
+    },
+    {
+      "question": "Can you pack belt in checked baggage?",
+      "answer": "Yes, Belt is allowed in checked bags. Belts are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/belt"
+    }
+  ]
+}

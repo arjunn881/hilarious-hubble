@@ -1,0 +1,78 @@
+{
+  "id": "soda",
+  "slug": "soda",
+  "name": "Soda",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "pop",
+    "carbonated drink",
+    "coca cola"
+  ],
+  "keywords": [
+    "soda",
+    "pop",
+    "liquid",
+    "drink"
+  ],
+  "description": "Guidelines for traveling with soda in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Soda is subject to the 3-1-1 liquids rule. Individual cans or bottles over 3.4 oz must be checked.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Soda is allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/soda",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring soda on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/soda",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Soda is subject to the 3-1-1 liquids rule. Individual cans or bottles over 3.4 oz must be checked."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is soda allowed in carry-on bags?",
+      "answer": "Soda is restricted in carry-on luggage. Soda is subject to the 3-1-1 liquids rule. Individual cans or bottles over 3.4 oz must be checked."
+    },
+    {
+      "question": "Can you pack soda in checked baggage?",
+      "answer": "Yes, Soda is allowed in checked bags. Soda is allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/soda"
+    }
+  ]
+}

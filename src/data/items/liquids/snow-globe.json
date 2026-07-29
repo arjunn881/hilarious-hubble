@@ -1,0 +1,77 @@
+{
+  "id": "snow-globe",
+  "slug": "snow-globe",
+  "name": "Snow Globe",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "water globe"
+  ],
+  "keywords": [
+    "globe",
+    "snow",
+    "liquid",
+    "glass",
+    "gift"
+  ],
+  "description": "Guidelines for traveling with snow globe in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Snow globes containing liquid are subject to 3-1-1 rules. Globes under tennis-ball size (≤3.4 oz) are allowed in carry-on. Larger globes must be checked.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Snow globes are allowed in checked baggage. Pack carefully to prevent glass breakage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/snow-globe",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring snow globe on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/snow-globe",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Snow globes containing liquid are subject to 3-1-1 rules. Globes under tennis-ball size (≤3.4 oz) are allowed in carry-on. Larger globes must be checked."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is snow globe allowed in carry-on bags?",
+      "answer": "Snow Globe is restricted in carry-on luggage. Snow globes containing liquid are subject to 3-1-1 rules. Globes under tennis-ball size (≤3.4 oz) are allowed in carry-on. Larger globes must be checked."
+    },
+    {
+      "question": "Can you pack snow globe in checked baggage?",
+      "answer": "Yes, Snow Globe is allowed in checked bags. Snow globes are allowed in checked baggage. Pack carefully to prevent glass breakage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/snow-globe"
+    }
+  ]
+}

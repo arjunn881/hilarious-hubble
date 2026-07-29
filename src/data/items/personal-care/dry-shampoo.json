@@ -1,0 +1,77 @@
+{
+  "id": "dry-shampoo",
+  "slug": "dry-shampoo",
+  "name": "Dry Shampoo",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "aerosol dry shampoo",
+    "powder shampoo"
+  ],
+  "keywords": [
+    "shampoo",
+    "dry",
+    "aerosol",
+    "spray"
+  ],
+  "description": "Guidelines for traveling with dry shampoo in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Aerosol dry shampoo is subject to the 3-1-1 liquids rule. Cans in carry-on must be 3.4 oz (100 ml) or less. Solid/powder dry shampoo has no size limits.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Dry shampoo is allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/dry-shampoo",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring dry shampoo on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/dry-shampoo",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Aerosol dry shampoo is subject to the 3-1-1 liquids rule. Cans in carry-on must be 3.4 oz (100 ml) or less. Solid/powder dry shampoo has no size limits."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is dry shampoo allowed in carry-on bags?",
+      "answer": "Dry Shampoo is restricted in carry-on luggage. Aerosol dry shampoo is subject to the 3-1-1 liquids rule. Cans in carry-on must be 3.4 oz (100 ml) or less. Solid/powder dry shampoo has no size limits."
+    },
+    {
+      "question": "Can you pack dry shampoo in checked baggage?",
+      "answer": "Yes, Dry Shampoo is allowed in checked bags. Dry shampoo is allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/dry-shampoo"
+    }
+  ]
+}

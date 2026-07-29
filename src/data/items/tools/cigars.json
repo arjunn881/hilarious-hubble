@@ -1,0 +1,76 @@
+{
+  "id": "cigars",
+  "slug": "cigars",
+  "name": "Cigars",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "cigarillos",
+    "cuban cigars"
+  ],
+  "keywords": [
+    "cigars",
+    "tobacco",
+    "smoke"
+  ],
+  "description": "Guidelines for traveling with cigars in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Cigars are tobacco products and are fully allowed in carry-on baggage. Smoking on commercial flights is prohibited.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Cigars are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cigars",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring cigars on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cigars",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Cigars are tobacco products and are fully allowed in carry-on baggage. Smoking on commercial flights is prohibited."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is cigars allowed in carry-on bags?",
+      "answer": "Cigars is allowed in carry-on luggage. Cigars are tobacco products and are fully allowed in carry-on baggage. Smoking on commercial flights is prohibited."
+    },
+    {
+      "question": "Can you pack cigars in checked baggage?",
+      "answer": "Yes, Cigars is allowed in checked bags. Cigars are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cigars"
+    }
+  ]
+}

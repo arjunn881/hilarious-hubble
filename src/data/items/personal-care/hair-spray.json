@@ -1,0 +1,77 @@
+{
+  "id": "hair-spray",
+  "slug": "hair-spray",
+  "name": "Hair Spray",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "hairspray",
+    "aerosol hairspray"
+  ],
+  "keywords": [
+    "spray",
+    "hair",
+    "aerosol",
+    "styling"
+  ],
+  "description": "Guidelines for traveling with hair spray in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Hairspray (aerosol or pump) is subject to the 3-1-1 liquids rule. Cans in carry-on must be 3.4 oz (100 ml) or less.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Hairspray is allowed in checked baggage up to capacity limits for personal aerosols (max 18 oz per container, 70 oz total per passenger).",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hair-spray",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring hair spray on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hair-spray",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Hairspray (aerosol or pump) is subject to the 3-1-1 liquids rule. Cans in carry-on must be 3.4 oz (100 ml) or less."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is hair spray allowed in carry-on bags?",
+      "answer": "Hair Spray is restricted in carry-on luggage. Hairspray (aerosol or pump) is subject to the 3-1-1 liquids rule. Cans in carry-on must be 3.4 oz (100 ml) or less."
+    },
+    {
+      "question": "Can you pack hair spray in checked baggage?",
+      "answer": "Yes, Hair Spray is allowed in checked bags. Hairspray is allowed in checked baggage up to capacity limits for personal aerosols (max 18 oz per container, 70 oz total per passenger)."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hair-spray"
+    }
+  ]
+}

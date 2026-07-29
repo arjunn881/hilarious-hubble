@@ -1,0 +1,92 @@
+{
+  "id": "boarding-pass",
+  "slug": "boarding-pass",
+  "name": "Boarding Pass",
+  "category": "Documents",
+  "subcategory": "General",
+  "aliases": [
+    "ticket",
+    "flight ticket",
+    "boarding ticket"
+  ],
+  "keywords": [
+    "ticket",
+    "flight",
+    "boarding",
+    "pass"
+  ],
+  "description": "Guidelines for traveling with boarding pass in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Boarding passes must be carried in hand luggage or on your phone. Do not check your boarding pass since you must present it to TSA officers and gate agents.",
+    "conditions": [
+      "Can be digital on your mobile device or printed."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Boarding passes must be carried in hand luggage or on your phone. Do not check your boarding pass since you must present it to TSA officers and gate agents.",
+    "conditions": [
+      "Can be digital on your mobile device or printed."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring boarding pass on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Can be digital on your mobile device or printed."
+  ],
+  "relatedItems": [
+    "cash",
+    "drivers-license",
+    "passport",
+    "travel-insurance"
+  ],
+  "faq": [
+    {
+      "question": "Is boarding pass allowed in carry-on bags?",
+      "answer": "Boarding Pass is allowed in carry-on luggage. Boarding passes must be carried in hand luggage or on your phone. Do not check your boarding pass since you must present it to TSA officers and gate agents."
+    },
+    {
+      "question": "Can you pack boarding pass in checked baggage?",
+      "answer": "Yes, Boarding Pass is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

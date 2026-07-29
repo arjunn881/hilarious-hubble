@@ -1,0 +1,94 @@
+{
+  "id": "baby-formula",
+  "slug": "baby-formula",
+  "name": "Baby Formula",
+  "category": "Baby",
+  "subcategory": "General",
+  "aliases": [
+    "infant formula",
+    "formula powder",
+    "liquid formula"
+  ],
+  "keywords": [
+    "formula",
+    "infant",
+    "feed",
+    "milk"
+  ],
+  "description": "Guidelines for traveling with baby formula in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Formula is exempt from the 3.4 oz limit. You can bring reasonable quantities in carry-on bags, but they are subject to separate screening.",
+    "conditions": [
+      "Tell the officer you have formula before screening begins.",
+      "Formula may be subjected to bottle testing or vapor analysis."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Formula is exempt from the 3.4 oz limit. You can bring reasonable quantities in carry-on bags, but they are subject to separate screening.",
+    "conditions": [
+      "Tell the officer you have formula before screening begins.",
+      "Formula may be subjected to bottle testing or vapor analysis."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-formula",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring baby formula on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-formula",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Tell the officer you have formula before screening begins."
+  ],
+  "relatedItems": [
+    "breast-milk",
+    "collapsible-stroller",
+    "baby-toy",
+    "baby-wipes"
+  ],
+  "faq": [
+    {
+      "question": "Is baby formula allowed in carry-on bags?",
+      "answer": "Baby Formula is restricted in carry-on luggage. Formula is exempt from the 3.4 oz limit. You can bring reasonable quantities in carry-on bags, but they are subject to separate screening."
+    },
+    {
+      "question": "Can you pack baby formula in checked baggage?",
+      "answer": "Yes, Baby Formula is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-formula"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

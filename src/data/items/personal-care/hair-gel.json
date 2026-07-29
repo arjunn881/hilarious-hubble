@@ -1,0 +1,78 @@
+{
+  "id": "hair-gel",
+  "slug": "hair-gel",
+  "name": "Hair Gel",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "styling gel",
+    "pomade",
+    "hair wax"
+  ],
+  "keywords": [
+    "gel",
+    "hair",
+    "styling",
+    "paste"
+  ],
+  "description": "Guidelines for traveling with hair gel in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Hair gel, styling wax, and pomades are subject to the 3-1-1 liquids rule. Carry-on containers must be 3.4 oz (100 ml) or less.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Hair gel is allowed in checked baggage in any size.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hair-gel",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring hair gel on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hair-gel",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Hair gel, styling wax, and pomades are subject to the 3-1-1 liquids rule. Carry-on containers must be 3.4 oz (100 ml) or less."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is hair gel allowed in carry-on bags?",
+      "answer": "Hair Gel is restricted in carry-on luggage. Hair gel, styling wax, and pomades are subject to the 3-1-1 liquids rule. Carry-on containers must be 3.4 oz (100 ml) or less."
+    },
+    {
+      "question": "Can you pack hair gel in checked baggage?",
+      "answer": "Yes, Hair Gel is allowed in checked bags. Hair gel is allowed in checked baggage in any size."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hair-gel"
+    }
+  ]
+}

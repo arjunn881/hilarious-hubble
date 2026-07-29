@@ -1,0 +1,77 @@
+{
+  "id": "fish",
+  "slug": "fish",
+  "name": "Fish",
+  "category": "Baby",
+  "subcategory": "General",
+  "aliases": [
+    "live fish",
+    "goldfish"
+  ],
+  "keywords": [
+    "fish",
+    "live",
+    "pet",
+    "water"
+  ],
+  "description": "Guidelines for traveling with fish in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Live fish in water in a clear, spill-proof container are allowed in carry-on. Declare them at security for visual inspection.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Live fish in water cannot go in checked baggage due to lack of pressure/temperature safety.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/fish",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring fish on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/fish",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Live fish in water in a clear, spill-proof container are allowed in carry-on. Declare them at security for visual inspection."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is fish allowed in carry-on bags?",
+      "answer": "Fish is allowed in carry-on luggage. Live fish in water in a clear, spill-proof container are allowed in carry-on. Declare them at security for visual inspection."
+    },
+    {
+      "question": "Can you pack fish in checked baggage?",
+      "answer": "No, Fish is not allowed in checked bags. Live fish in water cannot go in checked baggage due to lack of pressure/temperature safety."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/fish"
+    }
+  ]
+}

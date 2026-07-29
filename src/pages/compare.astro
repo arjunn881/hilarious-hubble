@@ -1,0 +1,342 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getAllItems } from "../lib/items";
+import { ArrowLeft, CheckCircle2, XCircle, AlertCircle, Copy, Check } from "@lucide/astro";
+
+const items = getAllItems();
+
+// Alphabetically sorted items for dropdown
+const sortedItems = [...items].sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Layout 
+  title="Compare TSA Travel Rules | Carry-on vs Checked Baggage allowance"
+  description="Compare TSA rules and baggage allowance guidelines for two travel items side-by-side. Check carry-on vs checked rules instantly."
+>
+  <Header slot="header" />
+
+  <div class="max-w-[1000px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+    
+    <!-- Top breadcrumb / navigation link -->
+    <div class="mb-8 select-none">
+      <a href="/" class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        Back to Home
+      </a>
+    </div>
+
+    <!-- Header Block -->
+    <header class="mb-10 text-center sm:text-left">
+      <h1 class="text-3xl font-semibold tracking-[-1.2px] text-ink mb-2">
+        Compare Travel Items
+      </h1>
+      <p class="text-sm text-body">
+        Select two travel items to compare their carry-on and checked baggage rules side-by-side.
+      </p>
+    </header>
+
+    <!-- Dropdown Selector Controls -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 select-none">
+      <!-- Select Item A -->
+      <div class="flex flex-col gap-2">
+        <label for="select-item-a" class="text-xs font-mono font-semibold uppercase tracking-wider text-mute">Item A</label>
+        <select 
+          id="select-item-a" 
+          class="w-full h-11 px-3 bg-canvas border border-hairline rounded-sm text-sm text-ink outline-none focus:border-link transition-colors cursor-pointer"
+        >
+          <option value="">-- Choose Item A --</option>
+          {sortedItems.map(item => (
+            <option value={item.slug}>{item.name} ({item.category})</option>
+          ))}
+        </select>
+      </div>
+
+      <!-- Select Item B -->
+      <div class="flex flex-col gap-2">
+        <label for="select-item-b" class="text-xs font-mono font-semibold uppercase tracking-wider text-mute">Item B</label>
+        <select 
+          id="select-item-b" 
+          class="w-full h-11 px-3 bg-canvas border border-hairline rounded-sm text-sm text-ink outline-none focus:border-link transition-colors cursor-pointer"
+        >
+          <option value="">-- Choose Item B --</option>
+          {sortedItems.map(item => (
+            <option value={item.slug}>{item.name} ({item.category})</option>
+          ))}
+        </select>
+      </div>
+    </div>
+
+    <!-- Comparison Cards Viewport -->
+    <div id="comparison-viewport" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Contents populated dynamically by client-side JS -->
+      <div class="col-span-1 md:col-span-2 bg-canvas border border-hairline rounded-md p-12 text-center text-mute text-sm">
+        Select both items above to compare rules side-by-side.
+      </div>
+    </div>
+
+    <!-- Copy Share URL CTA -->
+    <div id="compare-share-row" class="hidden justify-center mt-12 select-none">
+      <button 
+        type="button" 
+        id="btn-copy-compare-link" 
+        class="inline-flex items-center gap-2 px-4 h-9 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link relative"
+      >
+        <span id="share-compare-icon-box">
+          <Copy class="w-3.5 h-3.5" />
+        </span>
+        <span id="share-compare-label">Copy Comparison Link</span>
+        <!-- Clipboard toast notification tooltip -->
+        <span id="compare-toast" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-[10px] font-mono font-medium text-on-primary bg-ink rounded shadow-level-3 opacity-0 transition-opacity pointer-events-none whitespace-nowrap">
+          Copied!
+        </span>
+      </button>
+    </div>
+
+  </div>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script define:vars={{ items }}>
+  const selectA = document.getElementById("select-item-a");
+  const selectB = document.getElementById("select-item-b");
+  const viewport = document.getElementById("comparison-viewport");
+  const shareRow = document.getElementById("compare-share-row");
+  const copyBtn = document.getElementById("btn-copy-compare-link");
+  const copyToast = document.getElementById("compare-toast");
+  const iconBox = document.getElementById("share-compare-icon-box");
+  const shareLabel = document.getElementById("share-compare-label");
+
+  // Synchronize view based on selectors
+  async function updateComparison() {
+    const slugA = selectA.value;
+    const slugB = selectB.value;
+
+    // Update URL parameters
+    const url = new URL(window.location.href);
+    if (slugA) url.searchParams.set("a", slugA);
+    else url.searchParams.delete("a");
+    if (slugB) url.searchParams.set("b", slugB);
+    else url.searchParams.delete("b");
+    window.history.replaceState(null, "", url.toString());
+
+    if (!slugA || !slugB) {
+      viewport.innerHTML = `
+        <div class="col-span-1 md:col-span-2 bg-canvas border border-hairline rounded-md p-12 text-center text-mute text-sm">
+          Select both items above to compare rules side-by-side.
+        </div>
+      `;
+      shareRow.classList.add("hidden");
+      shareRow.classList.remove("flex");
+      return;
+    }
+
+    viewport.innerHTML = `
+      <div class="col-span-1 md:col-span-2 text-center py-12">
+        <span class="text-sm font-mono text-mute animate-pulse">Loading comparison data...</span>
+      </div>
+    `;
+
+    try {
+      const [resA, resB] = await Promise.all([
+        fetch(`/api/items/${slugA}.json`),
+        fetch(`/api/items/${slugB}.json`)
+      ]);
+
+      if (!resA.ok || !resB.ok) throw new Error("Failed to load item regulations.");
+
+      const itemA = await resA.json();
+      const itemB = await resB.json();
+
+      // Resolve status config mapping (matching our new enum uppercase strings!)
+      const statusConfig = {
+        ALLOWED: {
+          label: "Allowed",
+          badgeClass: "bg-link-bg-soft text-link-deep border-link/25",
+          iconSvg: `<svg class="w-4 h-4 text-link-deep" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>`
+        },
+        NOT_ALLOWED: {
+          label: "Prohibited",
+          badgeClass: "bg-error-soft text-error-deep border-error/25",
+          iconSvg: `<svg class="w-4 h-4 text-error-deep" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>`
+        },
+        RESTRICTED: {
+          label: "Restricted",
+          badgeClass: "bg-warning-soft text-warning-deep border-warning/25",
+          iconSvg: `<svg class="w-4 h-4 text-warning-deep" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>`
+        },
+        UNKNOWN: {
+          label: "Unknown",
+          badgeClass: "bg-canvas-soft-2 text-mute border-hairline",
+          iconSvg: `<svg class="w-4 h-4 text-mute" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>`
+        }
+      };
+
+      const carryA = statusConfig[itemA.carryOn.status] || statusConfig.UNKNOWN;
+      const checkA = statusConfig[itemA.checkedBag.status] || statusConfig.UNKNOWN;
+      const carryB = statusConfig[itemB.carryOn.status] || statusConfig.UNKNOWN;
+      const checkB = statusConfig[itemB.checkedBag.status] || statusConfig.UNKNOWN;
+
+      viewport.innerHTML = `
+        <!-- Item A Card -->
+        <div class="bg-canvas border border-hairline rounded-md p-6 shadow-level-3">
+          <header class="mb-6 border-b border-hairline pb-4">
+            <span class="font-mono text-[9px] font-semibold text-mute uppercase tracking-wider block mb-1">
+              ${itemA.category}
+            </span>
+            <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink">
+              <a href="/items/${itemA.slug}" class="hover:text-link transition-colors focus-visible:underline">${itemA.name}</a>
+            </h2>
+          </header>
+
+          <!-- Baggage compare grids -->
+          <div class="space-y-4 mb-6">
+            <div class="flex items-center justify-between border-b border-hairline pb-3">
+              <span class="text-xs text-body font-medium">Carry-on allowance</span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11px] font-mono font-medium ${carryA.badgeClass}">
+                ${carryA.iconSvg} ${carryA.label}
+              </span>
+            </div>
+            <div class="flex items-center justify-between pb-3">
+              <span class="text-xs text-body font-medium">Checked allowance</span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11px] font-mono font-medium ${checkA.badgeClass}">
+                ${checkA.iconSvg} ${checkA.label}
+              </span>
+            </div>
+          </div>
+
+          <!-- Rules content -->
+          <div class="mb-6">
+            <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-mute mb-2">TSA Official rules</h3>
+            <p class="text-xs text-body leading-[1.6]">${itemA.carryOn.reason}</p>
+          </div>
+
+          <!-- Packing checklist -->
+          ${itemA.carryOn.conditions && itemA.carryOn.conditions.length > 0 ? `
+            <div>
+              <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-mute mb-2">Packing guidelines</h3>
+              <ul class="space-y-2">
+                ${itemA.carryOn.conditions.map(note => `
+                  <li class="flex items-start gap-2 text-xs text-body">
+                    <span class="text-mute font-bold flex-shrink-0">•</span>
+                    <span>${note}</span>
+                  </li>
+                `).join("")}
+              </ul>
+            </div>
+          ` : ""}
+        </div>
+
+        <!-- Item B Card -->
+        <div class="bg-canvas border border-hairline rounded-md p-6 shadow-level-3">
+          <header class="mb-6 border-b border-hairline pb-4">
+            <span class="font-mono text-[9px] font-semibold text-mute uppercase tracking-wider block mb-1">
+              ${itemB.category}
+            </span>
+            <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink">
+              <a href="/items/${itemB.slug}" class="hover:text-link transition-colors focus-visible:underline">${itemB.name}</a>
+            </h2>
+          </header>
+
+          <!-- Baggage compare grids -->
+          <div class="space-y-4 mb-6">
+            <div class="flex items-center justify-between border-b border-hairline pb-3">
+              <span class="text-xs text-body font-medium">Carry-on allowance</span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11px] font-mono font-medium ${carryB.badgeClass}">
+                ${carryB.iconSvg} ${carryB.label}
+              </span>
+            </div>
+            <div class="flex items-center justify-between pb-3">
+              <span class="text-xs text-body font-medium">Checked allowance</span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11px] font-mono font-medium ${checkB.badgeClass}">
+                ${checkB.iconSvg} ${checkB.label}
+              </span>
+            </div>
+          </div>
+
+          <!-- Rules content -->
+          <div class="mb-6">
+            <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-mute mb-2">TSA Official rules</h3>
+            <p class="text-xs text-body leading-[1.6]">${itemB.carryOn.reason}</p>
+          </div>
+
+          <!-- Packing checklist -->
+          ${itemB.carryOn.conditions && itemB.carryOn.conditions.length > 0 ? `
+            <div>
+              <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-mute mb-2">Packing guidelines</h3>
+              <ul class="space-y-2">
+                ${itemB.carryOn.conditions.map(note => `
+                  <li class="flex items-start gap-2 text-xs text-body">
+                    <span class="text-mute font-bold flex-shrink-0">•</span>
+                    <span>${note}</span>
+                  </li>
+                `).join("")}
+              </ul>
+            </div>
+          ` : ""}
+        </div>
+      `;
+
+      shareRow.classList.remove("hidden");
+      shareRow.classList.add("flex");
+    } catch (err) {
+      console.error(err);
+      viewport.innerHTML = `
+        <div class="col-span-1 md:col-span-2 bg-error-soft border border-error/25 rounded-md p-6 text-center text-error-deep text-sm">
+          Failed to load item guidelines. Please check your network connection.
+        </div>
+      `;
+    }
+  }
+
+  // Bind selector events
+  selectA.addEventListener("change", updateComparison);
+  selectB.addEventListener("change", updateComparison);
+
+  // Load selection from URL query parameters on load
+  function loadFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const valA = params.get("a");
+    const valB = params.get("b");
+
+    if (valA) selectA.value = valA;
+    if (valB) selectB.value = valB;
+
+    updateComparison();
+  }
+
+  loadFromUrl();
+
+  // Share comparison logic
+  copyBtn.addEventListener("click", () => {
+    const shareUrl = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(shareUrl).then(showToast).catch(err => {
+        console.error("Failed to copy comparison URL", err);
+      });
+    } else {
+      const el = document.createElement("textarea");
+      el.value = shareUrl;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+      showToast();
+    }
+  });
+
+  function showToast() {
+    copyToast.classList.remove("opacity-0");
+    copyToast.classList.add("opacity-100");
+    iconBox.innerHTML = `<svg class="w-3.5 h-3.5 text-success" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m20 6-11 11-5-5"/></svg>`;
+    shareLabel.textContent = "Copied link!";
+    setTimeout(() => {
+      copyToast.classList.remove("opacity-100");
+      copyToast.classList.add("opacity-0");
+      iconBox.innerHTML = `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
+      shareLabel.textContent = "Copy Comparison Link";
+    }, 2000);
+  }
+</script>

@@ -1,0 +1,94 @@
+{
+  "id": "shampoo",
+  "slug": "shampoo",
+  "name": "Shampoo and Conditioner",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "hair wash",
+    "body wash",
+    "conditioner"
+  ],
+  "keywords": [
+    "shower",
+    "soap",
+    "liquids",
+    "hair"
+  ],
+  "description": "Guidelines for traveling with shampoo and conditioner in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Subject to the standard TSA 3-1-1 liquids limit in carry-on bags. Larger bottles are allowed in checked baggage without restrictions.",
+    "conditions": [
+      "Containers must be 3.4 oz / 100 ml or less in carry-on.",
+      "Secure checked bottle caps to prevent pressure leaks during flight."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Subject to the standard TSA 3-1-1 liquids limit in carry-on bags. Larger bottles are allowed in checked baggage without restrictions.",
+    "conditions": [
+      "Containers must be 3.4 oz / 100 ml or less in carry-on.",
+      "Secure checked bottle caps to prevent pressure leaks during flight."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shampoo",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring shampoo and conditioner on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shampoo",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Containers must be 3.4 oz / 100 ml or less in carry-on."
+  ],
+  "relatedItems": [
+    "aerosol-insect-repellent",
+    "hand-sanitizer",
+    "sunscreen",
+    "water-bottle"
+  ],
+  "faq": [
+    {
+      "question": "Is shampoo and conditioner allowed in carry-on bags?",
+      "answer": "Shampoo and Conditioner is restricted in carry-on luggage. Subject to the standard TSA 3-1-1 liquids limit in carry-on bags. Larger bottles are allowed in checked baggage without restrictions."
+    },
+    {
+      "question": "Can you pack shampoo and conditioner in checked baggage?",
+      "answer": "Yes, Shampoo and Conditioner is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shampoo"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

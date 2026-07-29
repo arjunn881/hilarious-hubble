@@ -1,0 +1,78 @@
+{
+  "id": "spices",
+  "slug": "spices",
+  "name": "Spices",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "seasoning",
+    "salt",
+    "pepper"
+  ],
+  "keywords": [
+    "spices",
+    "powder",
+    "food",
+    "seasoning"
+  ],
+  "description": "Guidelines for traveling with spices in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Dry spices and seasonings are allowed in carry-on. If spices are in powder form and over 12 oz, place them in a bin for separate screening.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Spices and seasonings are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/spices",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring spices on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/spices",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Dry spices and seasonings are allowed in carry-on. If spices are in powder form and over 12 oz, place them in a bin for separate screening."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is spices allowed in carry-on bags?",
+      "answer": "Spices is allowed in carry-on luggage. Dry spices and seasonings are allowed in carry-on. If spices are in powder form and over 12 oz, place them in a bin for separate screening."
+    },
+    {
+      "question": "Can you pack spices in checked baggage?",
+      "answer": "Yes, Spices is allowed in checked bags. Spices and seasonings are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/spices"
+    }
+  ]
+}

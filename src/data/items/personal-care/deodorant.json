@@ -1,0 +1,78 @@
+{
+  "id": "deodorant",
+  "slug": "deodorant",
+  "name": "Deodorant",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "antiperspirant",
+    "stick deodorant",
+    "spray deodorant"
+  ],
+  "keywords": [
+    "deodorant",
+    "hygiene",
+    "solid",
+    "spray"
+  ],
+  "description": "Guidelines for traveling with deodorant in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Solid stick deodorant is fully allowed in carry-on with no size limit. Liquid, gel, or aerosol deodorants must be 3.4 oz or less.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "All types of deodorant are allowed in checked baggage in any quantity.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/deodorant",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring deodorant on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/deodorant",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Solid stick deodorant is fully allowed in carry-on with no size limit. Liquid, gel, or aerosol deodorants must be 3.4 oz or less."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is deodorant allowed in carry-on bags?",
+      "answer": "Deodorant is restricted in carry-on luggage. Solid stick deodorant is fully allowed in carry-on with no size limit. Liquid, gel, or aerosol deodorants must be 3.4 oz or less."
+    },
+    {
+      "question": "Can you pack deodorant in checked baggage?",
+      "answer": "Yes, Deodorant is allowed in checked bags. All types of deodorant are allowed in checked baggage in any quantity."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/deodorant"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "whiskey",
+  "slug": "whiskey",
+  "name": "Whiskey",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "bourbon",
+    "scotch",
+    "spirits"
+  ],
+  "keywords": [
+    "whiskey",
+    "alcohol",
+    "liquor",
+    "bourbon"
+  ],
+  "description": "Guidelines for traveling with whiskey in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Whiskey is a liquid and is subject to the 3-1-1 liquids rule. Standard bottles must go in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Whiskey under 70% ABV (140 proof) is allowed in checked baggage. Limit of 5 liters per passenger for alcohol between 24% and 70% ABV.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/whiskey",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring whiskey on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/whiskey",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Whiskey is a liquid and is subject to the 3-1-1 liquids rule. Standard bottles must go in checked baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is whiskey allowed in carry-on bags?",
+      "answer": "Whiskey is restricted in carry-on luggage. Whiskey is a liquid and is subject to the 3-1-1 liquids rule. Standard bottles must go in checked baggage."
+    },
+    {
+      "question": "Can you pack whiskey in checked baggage?",
+      "answer": "Yes, Whiskey is allowed in checked bags. Whiskey under 70% ABV (140 proof) is allowed in checked baggage. Limit of 5 liters per passenger for alcohol between 24% and 70% ABV."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/whiskey"
+    }
+  ]
+}

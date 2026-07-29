@@ -1,0 +1,92 @@
+{
+  "id": "passport",
+  "slug": "passport",
+  "name": "Passport",
+  "category": "Documents",
+  "subcategory": "General",
+  "aliases": [
+    "visa book",
+    "id book",
+    "passport booklet"
+  ],
+  "keywords": [
+    "passport",
+    "travel",
+    "identity",
+    "id"
+  ],
+  "description": "Guidelines for traveling with passport in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Passports are allowed in checked baggage, but you should NEVER check your passport as you will need it for boarding, customs, and identification.",
+    "conditions": [
+      "Keep your passport easily accessible in your hand luggage or on your person."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Passports are allowed in checked baggage, but you should NEVER check your passport as you will need it for boarding, customs, and identification.",
+    "conditions": [
+      "Keep your passport easily accessible in your hand luggage or on your person."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring passport on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Keep your passport easily accessible in your hand luggage or on your person."
+  ],
+  "relatedItems": [
+    "drivers-license",
+    "boarding-pass",
+    "cash",
+    "travel-insurance"
+  ],
+  "faq": [
+    {
+      "question": "Is passport allowed in carry-on bags?",
+      "answer": "Passport is allowed in carry-on luggage. Passports are allowed in checked baggage, but you should NEVER check your passport as you will need it for boarding, customs, and identification."
+    },
+    {
+      "question": "Can you pack passport in checked baggage?",
+      "answer": "Yes, Passport is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "fresh-fruits",
+  "slug": "fresh-fruits",
+  "name": "Fresh Fruits",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "apple",
+    "banana",
+    "orange",
+    "berries"
+  ],
+  "keywords": [
+    "apples",
+    "bananas",
+    "agriculture",
+    "snack"
+  ],
+  "description": "Guidelines for traveling with fresh fruits in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Fresh fruits are allowed in both carry-on and checked bags for domestic flights. International flights have strict agricultural restrictions.",
+    "conditions": [
+      "Must be consumed or discarded before customs if traveling internationally.",
+      "Liquid-like fruit purees or smoothies are restricted under liquids rules."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Fresh fruits are allowed in both carry-on and checked bags for domestic flights. International flights have strict agricultural restrictions.",
+    "conditions": [
+      "Must be consumed or discarded before customs if traveling internationally.",
+      "Liquid-like fruit purees or smoothies are restricted under liquids rules."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/fruit",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring fresh fruits on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/fruit",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Must be consumed or discarded before customs if traveling internationally."
+  ],
+  "relatedItems": [
+    "chocolate-bar",
+    "coffee-beans",
+    "baby-food",
+    "canned-food"
+  ],
+  "faq": [
+    {
+      "question": "Is fresh fruits allowed in carry-on bags?",
+      "answer": "Fresh Fruits is allowed in carry-on luggage. Fresh fruits are allowed in both carry-on and checked bags for domestic flights. International flights have strict agricultural restrictions."
+    },
+    {
+      "question": "Can you pack fresh fruits in checked baggage?",
+      "answer": "Yes, Fresh Fruits is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/fruit"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

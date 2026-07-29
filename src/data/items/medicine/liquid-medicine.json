@@ -1,0 +1,94 @@
+{
+  "id": "liquid-medicine",
+  "slug": "liquid-medicine",
+  "name": "Liquid Prescription Medicine",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "cough syrup prescription",
+    "liquid rx",
+    "medical liquids"
+  ],
+  "keywords": [
+    "rx",
+    "liquid",
+    "pharmacy",
+    "exemption"
+  ],
+  "description": "Guidelines for traveling with liquid prescription medicine in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Prescription liquid medications are allowed in carry-on bags in quantities larger than 3.4 oz, but they must be declared to TSA officers at the checkpoint for separate screening.",
+    "conditions": [
+      "Do not mix liquid medicines in your standard toiletries bag.",
+      "The officer may inspect the medicine manually or test the liquid."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Prescription liquid medications are allowed in carry-on bags in quantities larger than 3.4 oz, but they must be declared to TSA officers at the checkpoint for separate screening.",
+    "conditions": [
+      "Do not mix liquid medicines in your standard toiletries bag.",
+      "The officer may inspect the medicine manually or test the liquid."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/liquid-medications",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring liquid prescription medicine on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/liquid-medications",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Do not mix liquid medicines in your standard toiletries bag."
+  ],
+  "relatedItems": [
+    "cough-syrup",
+    "prescription-pills",
+    "epipen",
+    "insulin-syringes"
+  ],
+  "faq": [
+    {
+      "question": "Is liquid prescription medicine allowed in carry-on bags?",
+      "answer": "Liquid Prescription Medicine is restricted in carry-on luggage. Prescription liquid medications are allowed in carry-on bags in quantities larger than 3.4 oz, but they must be declared to TSA officers at the checkpoint for separate screening."
+    },
+    {
+      "question": "Can you pack liquid prescription medicine in checked baggage?",
+      "answer": "Yes, Liquid Prescription Medicine is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/liquid-medications"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

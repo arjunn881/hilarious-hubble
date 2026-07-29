@@ -1,0 +1,77 @@
+{
+  "id": "beard-trimmer",
+  "slug": "beard-trimmer",
+  "name": "Beard Trimmer",
+  "category": "Beauty",
+  "subcategory": "General",
+  "aliases": [
+    "clippers",
+    "hair trimmer"
+  ],
+  "keywords": [
+    "trimmer",
+    "beard",
+    "shave",
+    "electric"
+  ],
+  "description": "Guidelines for traveling with beard trimmer in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Electric beard trimmers, clippers, and shavers are fully allowed in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Beard trimmers are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/beard-trimmer",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring beard trimmer on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/beard-trimmer",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Electric beard trimmers, clippers, and shavers are fully allowed in carry-on baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is beard trimmer allowed in carry-on bags?",
+      "answer": "Beard Trimmer is allowed in carry-on luggage. Electric beard trimmers, clippers, and shavers are fully allowed in carry-on baggage."
+    },
+    {
+      "question": "Can you pack beard trimmer in checked baggage?",
+      "answer": "Yes, Beard Trimmer is allowed in checked bags. Beard trimmers are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/beard-trimmer"
+    }
+  ]
+}

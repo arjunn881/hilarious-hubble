@@ -1,0 +1,78 @@
+{
+  "id": "cologne",
+  "slug": "cologne",
+  "name": "Cologne",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "perfume",
+    "aftershave",
+    "fragrance"
+  ],
+  "keywords": [
+    "cologne",
+    "scent",
+    "spray",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with cologne in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Cologne is subject to the 3-1-1 liquids rule. Bottles in carry-on must be 3.4 oz (100 ml) or less.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Cologne is allowed in checked baggage in any size. Wrap glass bottles carefully.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cologne",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring cologne on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cologne",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Cologne is subject to the 3-1-1 liquids rule. Bottles in carry-on must be 3.4 oz (100 ml) or less."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is cologne allowed in carry-on bags?",
+      "answer": "Cologne is restricted in carry-on luggage. Cologne is subject to the 3-1-1 liquids rule. Bottles in carry-on must be 3.4 oz (100 ml) or less."
+    },
+    {
+      "question": "Can you pack cologne in checked baggage?",
+      "answer": "Yes, Cologne is allowed in checked bags. Cologne is allowed in checked baggage in any size. Wrap glass bottles carefully."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cologne"
+    }
+  ]
+}

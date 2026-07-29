@@ -1,0 +1,76 @@
+{
+  "id": "makeup-brushes",
+  "slug": "makeup-brushes",
+  "name": "Makeup Brushes",
+  "category": "Beauty",
+  "subcategory": "General",
+  "aliases": [
+    "cosmetic brushes"
+  ],
+  "keywords": [
+    "brushes",
+    "makeup",
+    "beauty",
+    "cosmetics"
+  ],
+  "description": "Guidelines for traveling with makeup brushes in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Cosmetic and makeup brushes are allowed in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Makeup brushes are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/makeup-brushes",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring makeup brushes on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/makeup-brushes",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Cosmetic and makeup brushes are allowed in carry-on baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is makeup brushes allowed in carry-on bags?",
+      "answer": "Makeup Brushes is allowed in carry-on luggage. Cosmetic and makeup brushes are allowed in carry-on baggage."
+    },
+    {
+      "question": "Can you pack makeup brushes in checked baggage?",
+      "answer": "Yes, Makeup Brushes is allowed in checked bags. Makeup brushes are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/makeup-brushes"
+    }
+  ]
+}

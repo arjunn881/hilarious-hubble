@@ -1,0 +1,78 @@
+{
+  "id": "high-heels",
+  "slug": "high-heels",
+  "name": "High Heels",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "pumps",
+    "stilettos",
+    "heels"
+  ],
+  "keywords": [
+    "heels",
+    "shoes",
+    "high",
+    "footwear"
+  ],
+  "description": "Guidelines for traveling with high heels in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "High heels, pumps, and stiletto shoes are allowed in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "High heels are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/high-heels",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring high heels on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/high-heels",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "High heels, pumps, and stiletto shoes are allowed in carry-on baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is high heels allowed in carry-on bags?",
+      "answer": "High Heels is allowed in carry-on luggage. High heels, pumps, and stiletto shoes are allowed in carry-on baggage."
+    },
+    {
+      "question": "Can you pack high heels in checked baggage?",
+      "answer": "Yes, High Heels is allowed in checked bags. High heels are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/high-heels"
+    }
+  ]
+}

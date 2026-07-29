@@ -1,0 +1,77 @@
+{
+  "id": "cat-food",
+  "slug": "cat-food",
+  "name": "Cat Food",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "cat kibble",
+    "canned cat food"
+  ],
+  "keywords": [
+    "cat",
+    "food",
+    "pet",
+    "canned"
+  ],
+  "description": "Guidelines for traveling with cat food in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Dry cat food is allowed in carry-on. Wet canned cat food over 3.4 oz must go in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Cat food is allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cat-food",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring cat food on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cat-food",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Dry cat food is allowed in carry-on. Wet canned cat food over 3.4 oz must go in checked baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is cat food allowed in carry-on bags?",
+      "answer": "Cat Food is allowed in carry-on luggage. Dry cat food is allowed in carry-on. Wet canned cat food over 3.4 oz must go in checked baggage."
+    },
+    {
+      "question": "Can you pack cat food in checked baggage?",
+      "answer": "Yes, Cat Food is allowed in checked bags. Cat food is allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cat-food"
+    }
+  ]
+}

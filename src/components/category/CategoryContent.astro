@@ -1,0 +1,149 @@
+---
+import { 
+  getCategoryIntroduction,
+  getCategoryOverview,
+  getCategoryTSARules,
+  getCategoryExceptions,
+  getCategoryInternational,
+  getCategoryCommonMistakes,
+  getCategoryPackingRecommendations,
+  getCategoryFAQs 
+} from "../../lib/contentGenerator";
+import { AlertTriangle, Globe, Info, PackageCheck, ShieldAlert } from "@lucide/astro";
+
+interface Props {
+  categoryName: string;
+  itemsCount: number;
+}
+
+const { categoryName, itemsCount } = Astro.props;
+
+const introduction = getCategoryIntroduction(categoryName, itemsCount);
+const overview = getCategoryOverview(categoryName);
+const tsaRules = getCategoryTSARules(categoryName);
+const exceptions = getCategoryExceptions(categoryName);
+const international = getCategoryInternational(categoryName);
+const commonMistakes = getCategoryCommonMistakes(categoryName);
+const recommendations = getCategoryPackingRecommendations(categoryName);
+const faqs = getCategoryFAQs(categoryName);
+---
+
+<div class="category-content-container space-y-10">
+  
+  <!-- Introduction & Overview -->
+  <section>
+    <div class="prose prose-sm max-w-none text-body leading-[1.75] text-pretty">
+      {introduction.split('\n\n').map(p => <p class="mb-4">{p}</p>)}
+    </div>
+  </section>
+
+  <section class="bg-canvas-soft border border-hairline rounded-md p-6">
+    <h2 class="text-lg font-semibold tracking-[-0.6px] text-ink mb-3 flex items-center gap-2">
+      <Info class="w-5 h-5 text-link" />
+      {categoryName} Overview
+    </h2>
+    <p class="text-sm text-body leading-[1.7]">
+      {overview}
+    </p>
+  </section>
+
+  <!-- Rules & Exceptions -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <section class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
+      <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3 flex items-center gap-2">
+        <ShieldAlert class="w-4 h-4 text-mute" />
+        Important TSA Rules
+      </h3>
+      <p class="text-sm text-body leading-[1.7]">
+        {tsaRules}
+      </p>
+    </section>
+
+    <section class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
+      <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3 flex items-center gap-2">
+        <AlertTriangle class="w-4 h-4 text-mute" />
+        Exceptions & Medical
+      </h3>
+      <p class="text-sm text-body leading-[1.7]">
+        {exceptions}
+      </p>
+    </section>
+  </div>
+
+  <!-- International & Mistakes -->
+  <section>
+    <h2 class="text-lg font-semibold tracking-[-0.6px] text-ink mb-4 border-b border-hairline pb-2">
+      International Travel & Common Mistakes
+    </h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-2 flex items-center gap-2">
+          <Globe class="w-4 h-4 text-mute" />
+          International Considerations
+        </h3>
+        <p class="text-sm text-body leading-[1.7]">
+          {international}
+        </p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-2">
+          Common Mistakes Passengers Make
+        </h3>
+        <p class="text-sm text-body leading-[1.7]">
+          {commonMistakes}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packing Recommendations -->
+  <section class="bg-canvas border border-link/15 rounded-md p-6 shadow-level-2 select-none no-print">
+    <div class="flex items-start gap-4">
+      <div class="w-8 h-8 rounded-sm bg-link-bg-soft text-link-deep border border-link/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+        <PackageCheck class="w-4 h-4" />
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-2">
+          Expert Packing Recommendations
+        </h3>
+        <p class="text-sm text-body leading-[1.6]">
+          {recommendations}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section>
+    <h2 class="text-lg font-semibold tracking-[-0.6px] text-ink mb-6">
+      Frequently Asked Questions
+    </h2>
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group bg-canvas border border-hairline rounded-md p-4 transition-all" open={index === 0}>
+          <summary class="flex justify-between items-center font-medium text-sm text-ink cursor-pointer list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1 rounded-sm">
+            <span>{faq.question}</span>
+            <span class="transition-transform group-open:rotate-180 text-mute text-xs">▼</span>
+          </summary>
+          <p class="text-sm text-body mt-3 leading-[1.6]">
+            {faq.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+  </section>
+</div>
+
+<!-- Inject JSON-LD FAQ schema for Category Page -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer
+    }
+  }))
+})} />

@@ -1,0 +1,77 @@
+{
+  "id": "trekking-poles",
+  "slug": "trekking-poles",
+  "name": "Trekking Poles",
+  "category": "Sports",
+  "subcategory": "General",
+  "aliases": [
+    "hiking poles",
+    "hiking sticks"
+  ],
+  "keywords": [
+    "poles",
+    "trekking",
+    "hiking",
+    "outdoor"
+  ],
+  "description": "Guidelines for traveling with trekking poles in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Hiking poles and trekking poles are prohibited in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Trekking poles and hiking sticks are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/trekking-poles",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring trekking poles on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/trekking-poles",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Hiking poles and trekking poles are prohibited in carry-on baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is trekking poles allowed in carry-on bags?",
+      "answer": "Trekking Poles is not_allowed in carry-on luggage. Hiking poles and trekking poles are prohibited in carry-on baggage."
+    },
+    {
+      "question": "Can you pack trekking poles in checked baggage?",
+      "answer": "Yes, Trekking Poles is allowed in checked bags. Trekking poles and hiking sticks are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/trekking-poles"
+    }
+  ]
+}

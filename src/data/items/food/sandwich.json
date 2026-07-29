@@ -1,0 +1,78 @@
+{
+  "id": "sandwich",
+  "slug": "sandwich",
+  "name": "Sandwich",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "wrap",
+    "sub",
+    "burger"
+  ],
+  "keywords": [
+    "sandwich",
+    "bread",
+    "food",
+    "snack"
+  ],
+  "description": "Guidelines for traveling with sandwich in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Solid food items like sandwiches and wraps are fully allowed through security checkpoints. (Note: Condiments like mustard, mayo, or jelly must comply with the 3-1-1 rule).",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Sandwiches are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/sandwich",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring sandwich on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/sandwich",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Solid food items like sandwiches and wraps are fully allowed through security checkpoints. (Note: Condiments like mustard, mayo, or jelly must comply with the 3-1-1 rule)."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is sandwich allowed in carry-on bags?",
+      "answer": "Sandwich is allowed in carry-on luggage. Solid food items like sandwiches and wraps are fully allowed through security checkpoints. (Note: Condiments like mustard, mayo, or jelly must comply with the 3-1-1 rule)."
+    },
+    {
+      "question": "Can you pack sandwich in checked baggage?",
+      "answer": "Yes, Sandwich is allowed in checked bags. Sandwiches are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/sandwich"
+    }
+  ]
+}

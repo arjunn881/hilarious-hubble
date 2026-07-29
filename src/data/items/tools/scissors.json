@@ -1,0 +1,93 @@
+{
+  "id": "scissors",
+  "slug": "scissors",
+  "name": "Scissors (blades under 4 inches)",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "shears",
+    "safety scissors"
+  ],
+  "keywords": [
+    "cut",
+    "blades",
+    "shears",
+    "scissors"
+  ],
+  "description": "Guidelines for traveling with scissors (blades under 4 inches) in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Scissors are allowed in carry-on bags only if the blade length is less than 4 inches from the pivot point. Longer scissors are banned in the cabin.",
+    "conditions": [
+      "Any scissors with blades 4 inches or longer must be packed in checked bags.",
+      "Blunt safety scissors are generally preferred by screening staff."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Scissors are allowed in carry-on bags only if the blade length is less than 4 inches from the pivot point. Longer scissors are banned in the cabin.",
+    "conditions": [
+      "Any scissors with blades 4 inches or longer must be packed in checked bags.",
+      "Blunt safety scissors are generally preferred by screening staff."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/scissors",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring scissors (blades under 4 inches) on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/scissors",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Any scissors with blades 4 inches or longer must be packed in checked bags."
+  ],
+  "relatedItems": [
+    "screwdriver",
+    "hammer",
+    "multi-tool",
+    "utility-knife"
+  ],
+  "faq": [
+    {
+      "question": "Is scissors (blades under 4 inches) allowed in carry-on bags?",
+      "answer": "Scissors (blades under 4 inches) is restricted in carry-on luggage. Scissors are allowed in carry-on bags only if the blade length is less than 4 inches from the pivot point. Longer scissors are banned in the cabin."
+    },
+    {
+      "question": "Can you pack scissors (blades under 4 inches) in checked baggage?",
+      "answer": "Yes, Scissors (blades under 4 inches) is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/scissors"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

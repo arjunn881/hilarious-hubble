@@ -1,0 +1,78 @@
+{
+  "id": "tablet",
+  "slug": "tablet",
+  "name": "Tablet",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "ipad",
+    "kindle",
+    "ereader"
+  ],
+  "keywords": [
+    "tablet",
+    "screen",
+    "android",
+    "device"
+  ],
+  "description": "Guidelines for traveling with tablet in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Tablets are allowed in carry-on bags. You must remove them from your luggage and place them in a bin for separate screening.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Tablets are allowed in checked baggage, but carry-on is strongly recommended to prevent damage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tablet",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring tablet on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tablet",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Tablets are allowed in carry-on bags. You must remove them from your luggage and place them in a bin for separate screening."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is tablet allowed in carry-on bags?",
+      "answer": "Tablet is allowed in carry-on luggage. Tablets are allowed in carry-on bags. You must remove them from your luggage and place them in a bin for separate screening."
+    },
+    {
+      "question": "Can you pack tablet in checked baggage?",
+      "answer": "Yes, Tablet is allowed in checked bags. Tablets are allowed in checked baggage, but carry-on is strongly recommended to prevent damage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tablet"
+    }
+  ]
+}

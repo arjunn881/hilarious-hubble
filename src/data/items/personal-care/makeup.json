@@ -1,0 +1,79 @@
+{
+  "id": "makeup",
+  "slug": "makeup",
+  "name": "Makeup",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "cosmetics",
+    "mascara",
+    "foundation",
+    "lipstick"
+  ],
+  "keywords": [
+    "makeup",
+    "cosmetics",
+    "powder",
+    "beauty"
+  ],
+  "description": "Guidelines for traveling with makeup in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Liquid, gel, or cream makeup (mascara, liquid foundation, concealer) must be 3.4 oz or less. Solid, powder, or pressed makeup has no restrictions.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "All makeup and cosmetics are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/makeup",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring makeup on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/makeup",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Liquid, gel, or cream makeup (mascara, liquid foundation, concealer) must be 3.4 oz or less. Solid, powder, or pressed makeup has no restrictions."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is makeup allowed in carry-on bags?",
+      "answer": "Makeup is restricted in carry-on luggage. Liquid, gel, or cream makeup (mascara, liquid foundation, concealer) must be 3.4 oz or less. Solid, powder, or pressed makeup has no restrictions."
+    },
+    {
+      "question": "Can you pack makeup in checked baggage?",
+      "answer": "Yes, Makeup is allowed in checked bags. All makeup and cosmetics are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/makeup"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "hand-sanitizer",
+  "slug": "hand-sanitizer",
+  "name": "Hand Sanitizer",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "purell",
+    "sanitizer gel",
+    "disinfectant"
+  ],
+  "keywords": [
+    "liquid",
+    "health",
+    "clean",
+    "hygiene"
+  ],
+  "description": "Guidelines for traveling with hand sanitizer in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Standard 3-1-1 liquids rules apply for hand sanitizer in carry-on bags (must be 3.4 ounces or less). Temporary pandemic-related exemptions for larger containers have expired.",
+    "conditions": [
+      "Pack hand sanitizer in your quart-sized liquids bag."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Standard 3-1-1 liquids rules apply for hand sanitizer in carry-on bags (must be 3.4 ounces or less). Temporary pandemic-related exemptions for larger containers have expired.",
+    "conditions": [
+      "Pack hand sanitizer in your quart-sized liquids bag."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hand-sanitizers",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring hand sanitizer on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hand-sanitizers",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Pack hand sanitizer in your quart-sized liquids bag."
+  ],
+  "relatedItems": [
+    "sunscreen",
+    "aerosol-insect-repellent",
+    "shampoo",
+    "water-bottle"
+  ],
+  "faq": [
+    {
+      "question": "Is hand sanitizer allowed in carry-on bags?",
+      "answer": "Hand Sanitizer is restricted in carry-on luggage. Standard 3-1-1 liquids rules apply for hand sanitizer in carry-on bags (must be 3.4 ounces or less). Temporary pandemic-related exemptions for larger containers have expired."
+    },
+    {
+      "question": "Can you pack hand sanitizer in checked baggage?",
+      "answer": "Yes, Hand Sanitizer is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hand-sanitizers"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

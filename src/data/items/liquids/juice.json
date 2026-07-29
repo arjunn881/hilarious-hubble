@@ -1,0 +1,77 @@
+{
+  "id": "juice",
+  "slug": "juice",
+  "name": "Juice",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "fruit juice",
+    "orange juice"
+  ],
+  "keywords": [
+    "juice",
+    "liquid",
+    "drink",
+    "beverage"
+  ],
+  "description": "Guidelines for traveling with juice in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Juice is subject to the 3-1-1 liquids rule. Carry-on containers must be 3.4 oz (100 ml) or less.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Juice is allowed in checked baggage in any size.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/juice",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring juice on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/juice",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Juice is subject to the 3-1-1 liquids rule. Carry-on containers must be 3.4 oz (100 ml) or less."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is juice allowed in carry-on bags?",
+      "answer": "Juice is restricted in carry-on luggage. Juice is subject to the 3-1-1 liquids rule. Carry-on containers must be 3.4 oz (100 ml) or less."
+    },
+    {
+      "question": "Can you pack juice in checked baggage?",
+      "answer": "Yes, Juice is allowed in checked bags. Juice is allowed in checked baggage in any size."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/juice"
+    }
+  ]
+}

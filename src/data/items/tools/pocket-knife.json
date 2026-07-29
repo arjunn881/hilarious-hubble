@@ -1,0 +1,77 @@
+{
+  "id": "pocket-knife",
+  "slug": "pocket-knife",
+  "name": "Pocket Knife",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "folding knife",
+    "penknife"
+  ],
+  "keywords": [
+    "knife",
+    "pocket",
+    "blade",
+    "sharp"
+  ],
+  "description": "Guidelines for traveling with pocket knife in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Pocket knives, multi-tools with blades, and folding knives are prohibited in carry-on bags.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Pocket knives are allowed in checked baggage. Wrap blades securely for safety.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pocket-knife",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring pocket knife on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pocket-knife",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Pocket knives, multi-tools with blades, and folding knives are prohibited in carry-on bags."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is pocket knife allowed in carry-on bags?",
+      "answer": "Pocket Knife is not_allowed in carry-on luggage. Pocket knives, multi-tools with blades, and folding knives are prohibited in carry-on bags."
+    },
+    {
+      "question": "Can you pack pocket knife in checked baggage?",
+      "answer": "Yes, Pocket Knife is allowed in checked bags. Pocket knives are allowed in checked baggage. Wrap blades securely for safety."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pocket-knife"
+    }
+  ]
+}

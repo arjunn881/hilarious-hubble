@@ -1,0 +1,78 @@
+{
+  "id": "portable-charger",
+  "slug": "portable-charger",
+  "name": "Portable Charger",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "power bank",
+    "external battery",
+    "battery pack"
+  ],
+  "keywords": [
+    "charger",
+    "battery",
+    "lithium",
+    "power"
+  ],
+  "description": "Guidelines for traveling with portable charger in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Lithium-ion power banks / portable chargers are strictly prohibited in checked baggage because of the risk of thermal runaway and fire. They must be carried in the cabin.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Portable chargers contain lithium-ion batteries and are prohibited in checked baggage because they present a fire hazard in the cargo hold.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/portable-charger",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring portable charger on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/portable-charger",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Lithium-ion power banks / portable chargers are strictly prohibited in checked baggage because of the risk of thermal runaway and fire. They must be carried in the cabin."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is portable charger allowed in carry-on bags?",
+      "answer": "Portable Charger is allowed in carry-on luggage. Lithium-ion power banks / portable chargers are strictly prohibited in checked baggage because of the risk of thermal runaway and fire. They must be carried in the cabin."
+    },
+    {
+      "question": "Can you pack portable charger in checked baggage?",
+      "answer": "No, Portable Charger is not allowed in checked bags. Portable chargers contain lithium-ion batteries and are prohibited in checked baggage because they present a fire hazard in the cargo hold."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/portable-charger"
+    }
+  ]
+}

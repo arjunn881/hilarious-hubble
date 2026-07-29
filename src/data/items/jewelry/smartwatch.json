@@ -1,0 +1,92 @@
+{
+  "id": "smartwatch",
+  "slug": "smartwatch",
+  "name": "Smartwatch",
+  "category": "Jewelry",
+  "subcategory": "General",
+  "aliases": [
+    "apple watch",
+    "fitbit",
+    "garmin"
+  ],
+  "keywords": [
+    "smart",
+    "watch",
+    "wearables",
+    "fitness"
+  ],
+  "description": "Guidelines for traveling with smartwatch in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Smartwatches containing small lithium batteries are allowed in carry-on and checked luggage. Cabin carry-on is recommended.",
+    "conditions": [
+      "Can generally be worn through the walk-through metal detector, but may trigger newer body scanners."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Smartwatches containing small lithium batteries are allowed in carry-on and checked luggage. Cabin carry-on is recommended.",
+    "conditions": [
+      "Can generally be worn through the walk-through metal detector, but may trigger newer body scanners."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring smartwatch on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Can generally be worn through the walk-through metal detector, but may trigger newer body scanners."
+  ],
+  "relatedItems": [
+    "metal-watch",
+    "costume-jewelry",
+    "diamond-necklace",
+    "gold-ring"
+  ],
+  "faq": [
+    {
+      "question": "Is smartwatch allowed in carry-on bags?",
+      "answer": "Smartwatch is allowed in carry-on luggage. Smartwatches containing small lithium batteries are allowed in carry-on and checked luggage. Cabin carry-on is recommended."
+    },
+    {
+      "question": "Can you pack smartwatch in checked baggage?",
+      "answer": "Yes, Smartwatch is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

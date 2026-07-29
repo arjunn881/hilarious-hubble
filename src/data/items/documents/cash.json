@@ -1,0 +1,93 @@
+{
+  "id": "cash",
+  "slug": "cash",
+  "name": "Cash / Currency",
+  "category": "Documents",
+  "subcategory": "General",
+  "aliases": [
+    "money",
+    "bills",
+    "coins",
+    "travelers checks"
+  ],
+  "keywords": [
+    "money",
+    "currency",
+    "cash",
+    "dollars"
+  ],
+  "description": "Guidelines for traveling with cash / currency in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Cash is allowed in both bag types. However, putting cash in checked baggage is strongly discouraged due to security risks. Carry-on is recommended.",
+    "conditions": [
+      "There is no limit on the amount of cash you can carry domestically, but amounts of $10,000 USD or more must be declared when exiting or entering the US internationally."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Cash is allowed in both bag types. However, putting cash in checked baggage is strongly discouraged due to security risks. Carry-on is recommended.",
+    "conditions": [
+      "There is no limit on the amount of cash you can carry domestically, but amounts of $10,000 USD or more must be declared when exiting or entering the US internationally."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring cash / currency on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "There is no limit on the amount of cash you can carry domestically, but amounts of $10,000 USD or more must be declared when exiting or entering the US internationally."
+  ],
+  "relatedItems": [
+    "boarding-pass",
+    "drivers-license",
+    "passport",
+    "travel-insurance"
+  ],
+  "faq": [
+    {
+      "question": "Is cash / currency allowed in carry-on bags?",
+      "answer": "Cash / Currency is allowed in carry-on luggage. Cash is allowed in both bag types. However, putting cash in checked baggage is strongly discouraged due to security risks. Carry-on is recommended."
+    },
+    {
+      "question": "Can you pack cash / currency in checked baggage?",
+      "answer": "Yes, Cash / Currency is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "thermometer",
+  "slug": "thermometer",
+  "name": "Thermometer",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "digital thermometer",
+    "mercury thermometer"
+  ],
+  "keywords": [
+    "thermometer",
+    "medical",
+    "temperature",
+    "mercury"
+  ],
+  "description": "Guidelines for traveling with thermometer in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Digital and medical thermometers are allowed in carry-on. Mercury thermometers are restricted to carry-on (maximum one per person, in a protective case).",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Mercury thermometers are prohibited in checked baggage holds. Digital thermometers are allowed.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/thermometer",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring thermometer on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/thermometer",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Digital and medical thermometers are allowed in carry-on. Mercury thermometers are restricted to carry-on (maximum one per person, in a protective case)."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is thermometer allowed in carry-on bags?",
+      "answer": "Thermometer is allowed in carry-on luggage. Digital and medical thermometers are allowed in carry-on. Mercury thermometers are restricted to carry-on (maximum one per person, in a protective case)."
+    },
+    {
+      "question": "Can you pack thermometer in checked baggage?",
+      "answer": "No, Thermometer is not allowed in checked bags. Mercury thermometers are prohibited in checked baggage holds. Digital thermometers are allowed."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/thermometer"
+    }
+  ]
+}

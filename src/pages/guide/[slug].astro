@@ -1,0 +1,175 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { ArrowLeft, Calendar } from "@lucide/astro";
+import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
+import RelatedLinksWidget from "../../components/seo/RelatedLinksWidget.astro";
+import EEATBanner from "../../components/seo/EEATBanner.astro";
+import { getRelatedCategories, POPULAR_AIRLINES } from "../../lib/relatedEngine";
+
+export async function getStaticPaths() {
+  const posts = import.meta.glob("../../data/articles/*.md", { eager: true });
+  return Object.entries(posts).map(([filePath, module]: [string, any]) => {
+    const parts = filePath.split(/[/\\]/);
+    const filename = parts[parts.length - 1];
+    const slug = filename.replace(".md", "");
+    
+    return {
+      params: { slug },
+      props: { post: module },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const Content = post.default;
+const { title, description, category, lastUpdated, isMedical = false, isLegal = false } = post.frontmatter;
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides" },
+  { label: title }
+];
+
+const relatedWidgetGroups = [
+  { title: "Relevant Categories", links: getRelatedCategories(category.toLowerCase().trim().replace(/\\s+/g, "-"), 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) },
+  { title: "Relevant Airlines", links: POPULAR_AIRLINES.slice(0, 4).map(a => ({ title: `${a.name} Rules`, url: `/airlines` })) },
+  { title: "Tools", links: [{ title: "Packing Assistant", url: "/checklist" }, { title: "TSA Item Search", url: "/items" }] }
+];
+---
+
+<Layout 
+  title={`${title} | Bring On Plane`}
+  description={description}
+  type="article"
+>
+  <!-- Inject JSON-LD structured data for Article EEAT -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": lastUpdated,
+    "dateModified": lastUpdated,
+    "author": {
+      "@type": "Organization",
+      "name": "BringOnPlane Editorial Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BringOnPlane",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bringonplane.com/logo.png"
+      }
+    }
+  })} />
+
+  <Header slot="header" />
+
+  <div class="max-w-[720px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+    
+    <!-- Breadcrumbs complying with Web Interface Guidelines -->
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <!-- Article Header -->
+    <header class="mb-10 pb-8 border-b border-hairline">
+      <div class="flex items-center gap-3 mb-4 select-none">
+        <span class="font-mono text-[10px] font-semibold text-mute uppercase tracking-wider bg-canvas-soft-2 border border-hairline px-2 py-0.5 rounded-xs">
+          {category}
+        </span>
+        <span class="flex items-center gap-1.5 text-xs text-mute font-mono">
+          <Calendar class="w-3.5 h-3.5" aria-hidden="true" />
+          Updated {lastUpdated}
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.28px] text-ink leading-tight mb-4">
+        {title}
+      </h1>
+      <p class="text-base text-body leading-relaxed text-pretty">
+        {description}
+      </p>
+    </header>
+
+    <div class="mb-10">
+      <EEATBanner lastUpdated={lastUpdated} isMedical={isMedical} isLegal={isLegal} />
+    </div>
+
+    <!-- Compiled HTML content from Markdown -->
+    <article class="article-content">
+      <Content />
+    </article>
+
+    <!-- Advanced SEO Interlinking Clusters -->
+    <RelatedLinksWidget groups={relatedWidgetGroups} />
+  </div>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style is:global>
+  /* Premium Editorial CSS Styles for Raw Compiled Markdown */
+  .article-content {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-body);
+  }
+  .article-content h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+    color: var(--color-ink);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-hairline);
+    padding-bottom: 0.5rem;
+  }
+  .article-content h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: var(--color-ink);
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .article-content p {
+    margin-bottom: 1.25rem;
+    text-align: justify;
+  }
+  .article-content ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .article-content ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .article-content li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+  }
+  .article-content blockquote {
+    border-left: 3px solid var(--color-primary);
+    background-color: var(--color-canvas-soft-2);
+    padding: 1.25rem;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    color: var(--color-ink);
+  }
+  .article-content blockquote p {
+    margin-bottom: 0 !important;
+  }
+  .article-content strong {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+  .article-content hr {
+    border: none;
+    border-top: 1px solid var(--color-hairline);
+    margin: 2.5rem 0;
+  }
+</style>

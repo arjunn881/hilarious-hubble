@@ -1,0 +1,76 @@
+{
+  "id": "wine-bottle",
+  "slug": "wine-bottle",
+  "name": "Wine Bottle",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "bottle of wine"
+  ],
+  "keywords": [
+    "wine",
+    "bottle",
+    "glass",
+    "alcohol"
+  ],
+  "description": "Guidelines for traveling with wine bottle in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Standard wine bottles (750 ml) exceed the 3-1-1 limit and are prohibited in carry-on baggage (except duty-free purchases in sealed secure bags).",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Wine bottles are allowed in checked baggage. ABV must be under 70%.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/wine-bottle",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring wine bottle on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/wine-bottle",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Standard wine bottles (750 ml) exceed the 3-1-1 limit and are prohibited in carry-on baggage (except duty-free purchases in sealed secure bags)."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is wine bottle allowed in carry-on bags?",
+      "answer": "Wine Bottle is restricted in carry-on luggage. Standard wine bottles (750 ml) exceed the 3-1-1 limit and are prohibited in carry-on baggage (except duty-free purchases in sealed secure bags)."
+    },
+    {
+      "question": "Can you pack wine bottle in checked baggage?",
+      "answer": "Yes, Wine Bottle is allowed in checked bags. Wine bottles are allowed in checked baggage. ABV must be under 70%."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/wine-bottle"
+    }
+  ]
+}

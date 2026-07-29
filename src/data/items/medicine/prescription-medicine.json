@@ -1,0 +1,78 @@
+{
+  "id": "prescription-medicine",
+  "slug": "prescription-medicine",
+  "name": "Prescription Medicine",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "pills",
+    "rx",
+    "prescription medication"
+  ],
+  "keywords": [
+    "medicine",
+    "prescription",
+    "pills",
+    "health"
+  ],
+  "description": "Guidelines for traveling with prescription medicine in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Prescription pills and capsules are allowed in carry-on. Medical liquids, gels, and aerosols are exempt from the 3-1-1 rule in reasonable quantities but must be declared for inspection.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Prescription medicines are allowed in checked baggage, though carrying critical medication in the cabin is strongly recommended.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/prescription-medicine",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring prescription medicine on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/prescription-medicine",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Prescription pills and capsules are allowed in carry-on. Medical liquids, gels, and aerosols are exempt from the 3-1-1 rule in reasonable quantities but must be declared for inspection."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is prescription medicine allowed in carry-on bags?",
+      "answer": "Prescription Medicine is allowed in carry-on luggage. Prescription pills and capsules are allowed in carry-on. Medical liquids, gels, and aerosols are exempt from the 3-1-1 rule in reasonable quantities but must be declared for inspection."
+    },
+    {
+      "question": "Can you pack prescription medicine in checked baggage?",
+      "answer": "Yes, Prescription Medicine is allowed in checked bags. Prescription medicines are allowed in checked baggage, though carrying critical medication in the cabin is strongly recommended."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/prescription-medicine"
+    }
+  ]
+}

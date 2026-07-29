@@ -1,0 +1,92 @@
+{
+  "id": "canned-food",
+  "slug": "canned-food",
+  "name": "Canned Food",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "soup cans",
+    "canned tuna",
+    "spam"
+  ],
+  "keywords": [
+    "tuna",
+    "soup",
+    "cans",
+    "preserves"
+  ],
+  "description": "Guidelines for traveling with canned food in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Canned food containing liquids or gels is subject to carry-on liquids rules (must be 3.4 oz or less). Because most cans exceed this, packing them in checked bags is highly recommended.",
+    "conditions": [
+      "Cans may trigger additional screening or manual bag inspection because of their density."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Canned food containing liquids or gels is subject to carry-on liquids rules (must be 3.4 oz or less). Because most cans exceed this, packing them in checked bags is highly recommended.",
+    "conditions": [
+      "Cans may trigger additional screening or manual bag inspection because of their density."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/canned-foods",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring canned food on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/canned-foods",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Cans may trigger additional screening or manual bag inspection because of their density."
+  ],
+  "relatedItems": [
+    "baby-food",
+    "chocolate-bar",
+    "coffee-beans",
+    "fresh-fruits"
+  ],
+  "faq": [
+    {
+      "question": "Is canned food allowed in carry-on bags?",
+      "answer": "Canned Food is restricted in carry-on luggage. Canned food containing liquids or gels is subject to carry-on liquids rules (must be 3.4 oz or less). Because most cans exceed this, packing them in checked bags is highly recommended."
+    },
+    {
+      "question": "Can you pack canned food in checked baggage?",
+      "answer": "Yes, Canned Food is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/canned-foods"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

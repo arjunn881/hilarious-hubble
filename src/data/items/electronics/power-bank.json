@@ -1,0 +1,94 @@
+{
+  "id": "power-bank",
+  "slug": "power-bank",
+  "name": "Power Bank (Lithium Battery)",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "portable charger",
+    "external battery",
+    "battery pack"
+  ],
+  "keywords": [
+    "battery",
+    "lithium",
+    "charger",
+    "portable"
+  ],
+  "description": "Guidelines for traveling with power bank (lithium battery) in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Lithium-ion power banks are strictly prohibited in checked baggage because of the risk of thermal runaway and fire in the cargo hold. They must be carried in the cabin.",
+    "conditions": [
+      "Limited to a capacity of 100 watt-hours (Wh) per battery without airline approval.",
+      "Terminal connections must be protected from short circuits (e.g. by keeping in retail packaging or tape over terminals)."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Lithium-ion power banks are strictly prohibited in checked baggage because of the risk of thermal runaway and fire in the cargo hold. They must be carried in the cabin.",
+    "conditions": [
+      "Limited to a capacity of 100 watt-hours (Wh) per battery without airline approval.",
+      "Terminal connections must be protected from short circuits (e.g. by keeping in retail packaging or tape over terminals)."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/power-banks",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring power bank (lithium battery) on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/power-banks",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Limited to a capacity of 100 watt-hours (Wh) per battery without airline approval."
+  ],
+  "relatedItems": [
+    "electric-toothbrush",
+    "drone",
+    "laptop",
+    "smartphone"
+  ],
+  "faq": [
+    {
+      "question": "Is power bank (lithium battery) allowed in carry-on bags?",
+      "answer": "Power Bank (Lithium Battery) is allowed in carry-on luggage. Lithium-ion power banks are strictly prohibited in checked baggage because of the risk of thermal runaway and fire in the cargo hold. They must be carried in the cabin."
+    },
+    {
+      "question": "Can you pack power bank (lithium battery) in checked baggage?",
+      "answer": "Yes, Power Bank (Lithium Battery) is not allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/power-banks"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

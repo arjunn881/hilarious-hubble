@@ -1,0 +1,77 @@
+{
+  "id": "rechargeable-batteries",
+  "slug": "rechargeable-batteries",
+  "name": "Rechargeable Batteries",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "nimh batteries",
+    "rechargeable cells"
+  ],
+  "keywords": [
+    "rechargeable",
+    "batteries",
+    "nimh",
+    "lithium"
+  ],
+  "description": "Guidelines for traveling with rechargeable batteries in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Rechargeable batteries are allowed. Spare lithium-ion rechargeable batteries must go in carry-on. NiMH/NiCad rechargeable batteries can be checked.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Lithium rechargeable spare batteries are prohibited in checked bags. NiMH rechargeable batteries are allowed.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/rechargeable-batteries",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring rechargeable batteries on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/rechargeable-batteries",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Rechargeable batteries are allowed. Spare lithium-ion rechargeable batteries must go in carry-on. NiMH/NiCad rechargeable batteries can be checked."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is rechargeable batteries allowed in carry-on bags?",
+      "answer": "Rechargeable Batteries is allowed in carry-on luggage. Rechargeable batteries are allowed. Spare lithium-ion rechargeable batteries must go in carry-on. NiMH/NiCad rechargeable batteries can be checked."
+    },
+    {
+      "question": "Can you pack rechargeable batteries in checked baggage?",
+      "answer": "No, Rechargeable Batteries is not allowed in checked bags. Lithium rechargeable spare batteries are prohibited in checked bags. NiMH rechargeable batteries are allowed."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/rechargeable-batteries"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "camping-stove",
+  "slug": "camping-stove",
+  "name": "Camping Stove",
+  "category": "Camping",
+  "subcategory": "General",
+  "aliases": [
+    "camp stove",
+    "backpacking stove"
+  ],
+  "keywords": [
+    "stove",
+    "camping",
+    "burner",
+    "cook"
+  ],
+  "description": "Guidelines for traveling with camping stove in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Camping stoves are allowed in carry-on only if they are completely empty and clean of all fuel residue or odors.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Camping stoves are allowed in checked bags only if completely clean of all fuel residue and odors. Even slight fumes will cause confiscation.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camping-stove",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring camping stove on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camping-stove",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Camping stoves are allowed in carry-on only if they are completely empty and clean of all fuel residue or odors."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is camping stove allowed in carry-on bags?",
+      "answer": "Camping Stove is allowed in carry-on luggage. Camping stoves are allowed in carry-on only if they are completely empty and clean of all fuel residue or odors."
+    },
+    {
+      "question": "Can you pack camping stove in checked baggage?",
+      "answer": "Yes, Camping Stove is allowed in checked bags. Camping stoves are allowed in checked bags only if completely clean of all fuel residue and odors. Even slight fumes will cause confiscation."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camping-stove"
+    }
+  ]
+}

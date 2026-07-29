@@ -1,0 +1,92 @@
+{
+  "id": "water-bottle",
+  "slug": "water-bottle",
+  "name": "Empty Water Bottle",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "hydroflask",
+    "yeti",
+    "thermos"
+  ],
+  "keywords": [
+    "drink",
+    "bottle",
+    "flask",
+    "empty"
+  ],
+  "description": "Guidelines for traveling with empty water bottle in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Empty water bottles are fully allowed in carry-ons. You can fill them up at water stations once you pass through the security checkpoint. Liquid-filled bottles are prohibited in carry-on.",
+    "conditions": [
+      "Ensure the bottle is completely empty before entering the TSA line."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Empty water bottles are fully allowed in carry-ons. You can fill them up at water stations once you pass through the security checkpoint. Liquid-filled bottles are prohibited in carry-on.",
+    "conditions": [
+      "Ensure the bottle is completely empty before entering the TSA line."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring empty water bottle on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Ensure the bottle is completely empty before entering the TSA line."
+  ],
+  "relatedItems": [
+    "aerosol-insect-repellent",
+    "hand-sanitizer",
+    "shampoo",
+    "sunscreen"
+  ],
+  "faq": [
+    {
+      "question": "Is empty water bottle allowed in carry-on bags?",
+      "answer": "Empty Water Bottle is allowed in carry-on luggage. Empty water bottles are fully allowed in carry-ons. You can fill them up at water stations once you pass through the security checkpoint. Liquid-filled bottles are prohibited in carry-on."
+    },
+    {
+      "question": "Can you pack empty water bottle in checked baggage?",
+      "answer": "Yes, Empty Water Bottle is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

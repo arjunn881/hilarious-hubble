@@ -1,0 +1,94 @@
+{
+  "id": "insulin-syringes",
+  "slug": "insulin-syringes",
+  "name": "Insulin and Syringes",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "needles",
+    "insulin pump",
+    "diabetic supplies"
+  ],
+  "keywords": [
+    "diabetes",
+    "needles",
+    "syringes",
+    "injectable"
+  ],
+  "description": "Guidelines for traveling with insulin and syringes in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Insulin (liquid) and syringes are permitted. Syringes are allowed in carry-on bags when accompanied by insulin or other injectable medications.",
+    "conditions": [
+      "Declare your syringes and insulin to the TSA officer before screening.",
+      "Keep used needles in an approved disposal container if checked."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Insulin (liquid) and syringes are permitted. Syringes are allowed in carry-on bags when accompanied by insulin or other injectable medications.",
+    "conditions": [
+      "Declare your syringes and insulin to the TSA officer before screening.",
+      "Keep used needles in an approved disposal container if checked."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/insulin",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring insulin and syringes on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/insulin",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Declare your syringes and insulin to the TSA officer before screening."
+  ],
+  "relatedItems": [
+    "epipen",
+    "prescription-pills",
+    "cough-syrup",
+    "liquid-medicine"
+  ],
+  "faq": [
+    {
+      "question": "Is insulin and syringes allowed in carry-on bags?",
+      "answer": "Insulin and Syringes is allowed in carry-on luggage. Insulin (liquid) and syringes are permitted. Syringes are allowed in carry-on bags when accompanied by insulin or other injectable medications."
+    },
+    {
+      "question": "Can you pack insulin and syringes in checked baggage?",
+      "answer": "Yes, Insulin and Syringes is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/insulin"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

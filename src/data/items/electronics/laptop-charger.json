@@ -1,0 +1,78 @@
+{
+  "id": "laptop-charger",
+  "slug": "laptop-charger",
+  "name": "Laptop Charger",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "power adapter",
+    "macbook charger",
+    "power brick"
+  ],
+  "keywords": [
+    "charger",
+    "laptop",
+    "cable",
+    "adapter"
+  ],
+  "description": "Guidelines for traveling with laptop charger in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Laptop chargers, power bricks, and charging cables are allowed in carry-on bags. They do not contain battery storage cells.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Laptop chargers are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/laptop-charger",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring laptop charger on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/laptop-charger",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Laptop chargers, power bricks, and charging cables are allowed in carry-on bags. They do not contain battery storage cells."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is laptop charger allowed in carry-on bags?",
+      "answer": "Laptop Charger is allowed in carry-on luggage. Laptop chargers, power bricks, and charging cables are allowed in carry-on bags. They do not contain battery storage cells."
+    },
+    {
+      "question": "Can you pack laptop charger in checked baggage?",
+      "answer": "Yes, Laptop Charger is allowed in checked bags. Laptop chargers are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/laptop-charger"
+    }
+  ]
+}

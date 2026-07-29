@@ -1,0 +1,77 @@
+{
+  "id": "hot-sauce",
+  "slug": "hot-sauce",
+  "name": "Hot Sauce",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "chili sauce",
+    "sriracha"
+  ],
+  "keywords": [
+    "sauce",
+    "liquid",
+    "spicy",
+    "condiment"
+  ],
+  "description": "Guidelines for traveling with hot sauce in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Hot sauce is a liquid and is subject to the 3-1-1 liquids rule. Carry-on bottles must be 3.4 oz (100 ml) or less.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Hot sauce is allowed in checked baggage in any size.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hot-sauce",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring hot sauce on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hot-sauce",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Hot sauce is a liquid and is subject to the 3-1-1 liquids rule. Carry-on bottles must be 3.4 oz (100 ml) or less."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is hot sauce allowed in carry-on bags?",
+      "answer": "Hot Sauce is restricted in carry-on luggage. Hot sauce is a liquid and is subject to the 3-1-1 liquids rule. Carry-on bottles must be 3.4 oz (100 ml) or less."
+    },
+    {
+      "question": "Can you pack hot sauce in checked baggage?",
+      "answer": "Yes, Hot Sauce is allowed in checked bags. Hot sauce is allowed in checked baggage in any size."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hot-sauce"
+    }
+  ]
+}

@@ -1,0 +1,498 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ArrowLeft, HelpCircle, ChevronDown, Package } from "@lucide/astro";
+
+// ─── FAQ DATA ─── Grouped into keyword-cluster categories ─────────────────────
+const categories = [
+  {
+    id: "food",
+    label: "Food & Drinks",
+    faqs: [
+      {
+        q: "Can I bring food through TSA security and on a plane?",
+        a: "Yes — you can bring solid food and snacks through TSA security and on the plane in both carry-on and checked bags. Items like sandwiches, uncrustables, granola bars, chips, takis, candy, bread, beef jerky, homemade cookies, eggs, fresh fruit (bananas, oranges, grapes), dried fruits, rice, quinoa, tea bags, instant coffee, and ground coffee are all allowed. Liquid or gel-textured foods (honey, peanut butter, jam, jelly, queso, jello) must be 3.4 oz (100ml) or less in carry-on luggage to comply with the TSA 3-1-1 liquids rule. Larger portions can go in checked bags."
+      },
+      {
+        q: "Can I bring drinks, juice, water bottles, and beverages through TSA?",
+        a: "Drinks and beverages purchased before the security checkpoint must be consumed or discarded — TSA does not allow outside liquid drinks over 3.4 oz through the checkpoint. You can bring an empty refillable water bottle (like a Yeti or Owala) and fill it after security. Unopened, sealed drinks (canned soda, juice boxes, bottled water) are considered liquids and cannot exceed 3.4 oz containers unless in checked baggage. You may bring as much liquid as you want in checked bags."
+      },
+      {
+        q: "Can I bring baby food, baby formula, and breast milk on a plane?",
+        a: "Yes. Baby food, baby formula, breast milk, and toddler drinks are medically exempt from the 3-1-1 liquids rule. You can bring these in carry-on bags in quantities larger than 3.4 oz without restrictions. You must declare them at the security checkpoint for manual inspection. Yogurt pouches for toddlers are also exempt. Baby wipes can be brought freely in carry-on or checked bags."
+      },
+      {
+        q: "Can I bring fruit through TSA — bananas, grapes, oranges?",
+        a: "Yes, fresh fruits are allowed through TSA security in carry-on and checked bags for domestic US flights. On international routes, customs agencies may restrict bringing fruits across borders — for example, oranges and fresh fruits into Canada or Australia may be confiscated at customs. Always check destination country rules before packing fruit in your checked bag for an international trip."
+      },
+      {
+        q: "Can I bring yogurt, peanut butter, honey, jam, and jelly through TSA?",
+        a: "Yogurt, peanut butter, honey, jam, and jelly are classified as gel or paste-consistency foods, meaning they fall under the TSA liquids rule. In carry-on bags, each container must be 3.4 oz (100ml) or less and fit inside a single quart-sized clear bag. Quantities exceeding 3.4 oz per container must go in your checked baggage, where there is no volume limit."
+      },
+      {
+        q: "Can I bring oatmeal, overnight oats, creatine powder, and protein powder on a plane?",
+        a: "Solid, dry powders like oatmeal, instant oats, creatine powder, protein powder, and instant coffee are allowed in carry-on and checked bags. TSA may ask you to remove powder containers over 12 oz from your bag at the checkpoint for additional screening. Placing powders in checked baggage avoids delays. Pre-mixed liquid oatmeal or overnight oats in liquid form must comply with the 3-1-1 rule in carry-on bags."
+      },
+      {
+        q: "Can I bring gum, candy, and gummies through TSA?",
+        a: "Yes. Solid gum, candy, hard candy, jolly ranchers, gummy candies, and gummy vitamins are all allowed through TSA in carry-on bags with no restrictions. Gummy edibles containing THC may be flagged — TSA's primary focus is security, but they will refer illegal narcotics to law enforcement."
+      }
+    ]
+  },
+  {
+    id: "liquids-toiletries",
+    label: "Liquids & Toiletries",
+    faqs: [
+      {
+        q: "What is the TSA 3-1-1 liquids rule? What counts as a liquid?",
+        a: "The TSA 3-1-1 rule requires all liquids, gels, creams, pastes, and aerosols in carry-on bags to be in containers of 3.4 oz (100ml) or less, all packed inside a single quart-sized clear zip-lock plastic bag, with one bag per passenger. Liquids include: shampoo, conditioner, lotion, liquid soap, liquid foundation, liquid eyeliner, toothpaste, hair gel, deodorant gel, cologne, perfume, sunscreen, hairspray, dry shampoo spray, shaving cream, and any pourable substance."
+      },
+      {
+        q: "Can I bring toothpaste, shampoo, and lotion in my carry-on?",
+        a: "Yes — travel-sized toothpaste (3.4 oz / 100ml or smaller), travel-sized shampoo, and travel-sized lotion bottles are all allowed in carry-on bags under the 3-1-1 rule. Full-size shampoo and lotion must be packed in checked bags. Solid bar soap is NOT considered a liquid and can be packed freely in any size."
+      },
+      {
+        q: "Can I bring deodorant on a plane — gel, spray, or stick?",
+        a: "Yes. Solid stick deodorant has no size restrictions in carry-on or checked bags. Gel or liquid deodorant must be 3.4 oz (100ml) or less in your carry-on. Aerosol or spray deodorant follows the 3-1-1 rule in carry-on and can be in larger sizes in checked bags (though aerosol cans over 18 oz are prohibited in checked bags total). Regular-sized or full-sized solid deodorant is always fine."
+      },
+      {
+        q: "Can I bring cologne, perfume, and hair products in my carry-on?",
+        a: "Yes. Cologne, perfume, and hairspray can go in carry-on bags if each bottle is 3.4 oz (100ml) or less. Full-size bottles, large cologne sprays, and full-size hairspray can travel in your checked baggage. Hair gel, hair clay, and hair cream follow the same 3-1-1 liquids rule in carry-on bags. Dry shampoo in spray form is an aerosol and must follow 3-1-1 for carry-on."
+      },
+      {
+        q: "Can I bring sunscreen, bug spray, and aerosol products on a plane?",
+        a: "Yes. Aerosol sunscreen, liquid sunscreen, bug spray, and insect repellent can be packed in carry-on bags if the container is 3.4 oz (100ml) or less. Larger aerosol cans must go in checked baggage. The total aerosol capacity in checked bags must be 70 oz or less per passenger. Spray sunscreen is an aerosol and must comply with the 3-1-1 rule in carry-on luggage."
+      },
+      {
+        q: "Can I bring hairspray in my checked bag?",
+        a: "Yes. Hairspray can go in your checked bag without size restrictions beyond the FAA's aerosol cap: the total net weight of aerosols may not exceed 70 oz per passenger in checked bags. Individual aerosol containers are limited to 18 oz or less. Hairspray in carry-on bags must be 3.4 oz (100ml) or less per container."
+      },
+      {
+        q: "Can I bring dry shampoo, hair dryers, and hair straighteners on a plane?",
+        a: "Dry shampoo in spray-aerosol form must be 3.4 oz or less in carry-on bags. Dry shampoo powder has no restriction. Hair dryers (including Dyson hair dryers) and hair straighteners are allowed in both carry-on and checked bags — they are electrical appliances, not liquids. Remove them from your bag for screening if asked. Dyson Airwrap is also allowed in carry-on or checked luggage."
+      }
+    ]
+  },
+  {
+    id: "electronics-batteries",
+    label: "Electronics & Batteries",
+    faqs: [
+      {
+        q: "Can I bring a portable charger or power bank on a plane?",
+        a: "Yes, but only in carry-on baggage. Power banks and portable chargers with lithium-ion batteries are strictly prohibited in checked bags due to fire safety regulations. They must travel in your carry-on or personal item. Power banks up to 100Wh are unrestricted in carry-on; banks between 100–160Wh require airline approval; over 160Wh are prohibited on passenger aircraft entirely."
+      },
+      {
+        q: "Can I bring AA, AAA batteries and rechargeable batteries on a plane?",
+        a: "Yes. Dry-cell batteries (AA, AAA, C, D, 9V) are allowed in carry-on and checked bags with no quantity restrictions, but must be protected from short-circuit. Rechargeable lithium batteries must be in carry-on bags only. Lithium-ion battery packs must remain in carry-on. Install batteries in devices or protect terminals with tape or a case."
+      },
+      {
+        q: "Can I bring a laptop, iPad, and digital camera on a plane?",
+        a: "Yes. Laptops, tablets, iPads, digital cameras, Kindles, e-readers, and similar electronics are allowed in both carry-on and checked baggage. At TSA security checkpoints, you may be required to remove laptops from your bag and place them in a separate screening bin. Two laptops can be brought on a single flight. Kindles and e-readers can be kept in your bag at most checkpoints."
+      },
+      {
+        q: "Can I bring an Xbox, game console, or video game controller on a plane?",
+        a: "Yes. Xbox, PlayStation, Nintendo Switch, Xbox Series X, and other game consoles are allowed in both carry-on and checked bags. Game controllers can also travel in carry-on or checked bags. If packing in checked baggage, pad the devices well to prevent damage. Larger consoles in carry-on bags may need to be removed for separate X-ray screening."
+      },
+      {
+        q: "Can I bring an electric razor, electric toothbrush, or hair clippers on a plane?",
+        a: "Yes. Electric shavers, electric razors, electric toothbrushes, and hair clippers are all allowed in both carry-on and checked bags. There are no specific restrictions on these items. For carry-on bags, they may need to be removed for inspection at security. They do not contain lithium batteries that pose a safety risk, so they can go in checked bags."
+      },
+      {
+        q: "Can I bring a drone on a plane?",
+        a: "Yes, drones are allowed in carry-on and checked bags, but their lithium batteries must follow carry-on-only lithium battery rules. Drone batteries over 100Wh need airline approval, and batteries over 160Wh are prohibited. DJI drones brought to the USA may be subject to customs duty regulations. Always declare electronics on customs forms for international travel."
+      }
+    ]
+  },
+  {
+    id: "razors-sharp-objects",
+    label: "Razors, Scissors & Sharp Objects",
+    faqs: [
+      {
+        q: "Can I bring razors in my carry-on bag?",
+        a: "Yes. Disposable razors (cartridge razors like Gillette or Schick) and electric razors are 100% allowed in carry-on bags. Safety razors are allowed in carry-ons only if the razor blade is removed — the handle goes in carry-on; loose blades must be in checked baggage. Straight razors are not allowed in carry-on bags at all. For checked baggage, all types of razors and blades are permitted."
+      },
+      {
+        q: "Can I bring scissors on a plane in my carry-on?",
+        a: "Yes — scissors with blades shorter than 4 inches from the pivot point are allowed in carry-on bags. This includes nail scissors, eyebrow scissors, embroidery scissors, kids scissors, and most small sewing scissors. Scissors with blades 4 inches or longer (kitchen shears, large craft scissors) must go in checked bags. Crochet hooks and knitting needles are also permitted in carry-on bags."
+      },
+      {
+        q: "Can I bring knives, pocket knives, or kitchen knives on a plane?",
+        a: "Pocket knives, Swiss army knives, multi-tools with blades, box cutters, and utility knives are NOT allowed in carry-on bags. All knives (except round-bladed butter knives) must be placed in checked baggage. Kitchen knives and checked luggage knife sets must be sheathed or wrapped to protect baggage handlers. Pliers and multi-tools without blades longer than 7 inches may go in carry-on bags."
+      },
+      {
+        q: "Can I bring tweezers, nail clippers, and nail files on a plane?",
+        a: "Yes. Tweezers, nail clippers, nail files, nail polish, nail glue, and eyebrow tools are all allowed in both carry-on and checked bags. Nail polish remover (liquid) must be 3.4 oz or less in carry-on bags. These small grooming tools do not require any special declaration."
+      },
+      {
+        q: "Can I bring hiking poles and sports equipment on a plane?",
+        a: "Hiking poles and trekking poles are NOT allowed in carry-on bags because their sharp tips could be used as weapons. They must be checked in your checked baggage. Golf clubs must also be in checked bags. Baseball bats, hockey sticks, and other sporting equipment must be checked. Tennis rackets and fishing rods can go in carry-on bags depending on their length."
+      }
+    ]
+  },
+  {
+    id: "vapes-smoking",
+    label: "Vapes, Lighters & Smoking",
+    faqs: [
+      {
+        q: "Can I bring a vape, e-cigarette, or vape pen on a plane?",
+        a: "Yes, but only in your carry-on bag or on your person. Vapes, e-cigarettes, vape pens, disposable vapes, and weed vapes are strictly prohibited in checked baggage due to their lithium batteries creating a fire risk in cargo holds. You may bring your vape device in your carry-on. Vape juice (e-liquid) must comply with the TSA 3-1-1 liquids rule (3.4 oz / 100ml or less per container) in carry-on bags."
+      },
+      {
+        q: "Can I bring a vape to international destinations — Japan, Thailand, Singapore, Indonesia, Australia, Mexico?",
+        a: "Each country has its own vape rules and local laws: Vaping is illegal in Thailand, Singapore, and India — bringing a vape there can result in fines or arrest. Australia: vapes without a doctor's prescription are illegal for personal import. Mexico and most of Europe allow vapes but regulate public use. Always research the destination country's laws before traveling internationally with a vape device."
+      },
+      {
+        q: "Can I bring a lighter on a plane?",
+        a: "Yes — one common lighter (disposable Bic, Zippo, or regular butane lighter) is allowed per person in carry-on bags or in your pocket. You may NOT pack lighters in checked bags (torch/jet lighters and gun lighters are prohibited entirely). One book of safety matches is also allowed in carry-on. Strike-anywhere matches are banned on all flights."
+      },
+      {
+        q: "Can I bring cigarettes, cigars, Zyns, and nicotine pouches on a plane?",
+        a: "Yes. Cigarettes, cigars, tobacco, nicotine pouches (Zyns), and nicotine gum are allowed in both carry-on and checked baggage. Note that you cannot smoke on any commercial flight. Internationally, customs limits may apply — for example, import limits for cigarettes in Japan (200 cigarettes / 2 cartons). Zyns and nicotine pouches to Canada, Mexico, Italy, Thailand, and Japan may face local customs restrictions."
+      },
+      {
+        q: "Can I bring edibles and THC gummies through TSA?",
+        a: "TSA officers focus on security threats and are not required to search for marijuana. However, if TSA agents discover marijuana or THC products, they are required by federal law to refer the matter to local law enforcement. Marijuana remains federally illegal in the USA even where state laws permit it. On interstate flights, federal law governs — bringing edibles through TSA is high risk and not recommended."
+      }
+    ]
+  },
+  {
+    id: "medications",
+    label: "Medications & Medical Items",
+    faqs: [
+      {
+        q: "Can I bring prescription medications and pills on a plane?",
+        a: "Yes. Prescription medications, over-the-counter pills, vitamins, supplements, and medical supplies are allowed in carry-on and checked bags. The TSA recommends carrying medications in their original labeled containers. Liquid medications (including cough syrup, liquid Tylenol, and liquid ibuprofen) are allowed in carry-on in reasonable quantities, exempted from the 3-1-1 rule but must be declared. Insulin syringes and needles are permitted with a professional letter or prescription."
+      },
+      {
+        q: "Can I bring ibuprofen, Tylenol, Benadryl, NyQuil, and Dramamine on a plane?",
+        a: "Yes. All common OTC medications — ibuprofen, Tylenol (acetaminophen), Benadryl, NyQuil, Dramamine, Pepto-Bismol, Excedrin, Claritin, and Zyrtec — are permitted in carry-on and checked bags. Liquid versions must comply with the 3-1-1 rule in carry-on unless you declare them as medically necessary."
+      },
+      {
+        q: "Can I bring medications to Japan — Benadryl, Excedrin, Vyvanse, Xanax, Zoloft, Lexapro?",
+        a: "Japan has very strict pharmaceutical import regulations. Some common Western medications are restricted or illegal in Japan: Stimulant-based drugs (including some decongestants in Benadryl, Vyvanse, Adderall, and Ritalin) require a 'Yakkan Shoumei' import certificate. Codeine-containing drugs are banned. Xanax (benzodiazepines) require prior approval. Melatonin is available OTC in Japan. Zoloft, Lexapro, and Tylenol are generally permitted with a prescription. Always contact the Japanese Embassy and prepare documentation."
+      },
+      {
+        q: "Can I bring an EpiPen, inhaler, and CPAP machine on a plane?",
+        a: "Yes. EpiPens, inhalers, nebulizers, and CPAP machines are medically necessary items allowed in carry-on and checked bags. CPAP distilled water (for water chambers) is permitted in carry-on in quantities larger than 3.4 oz when a doctor's prescription is available and declared at the checkpoint. CPAP machines should be removed from bags at security for separate X-ray screening."
+      },
+      {
+        q: "Can I bring Ozempic, Mounjaro, Zepbound, and other injectable medications on a plane?",
+        a: "Yes. Injectable prescription medications including Ozempic, Mounjaro, Wegovy, Zepbound, and insulin pens are allowed in carry-on baggage. They are medically necessary items and exempt from strict 3-1-1 liquid limits. Travel with the original pharmacy label and, when possible, a doctor's letter. These medications can also go in checked bags if temperature conditions are appropriate."
+      }
+    ]
+  },
+  {
+    id: "hair-beauty",
+    label: "Hair & Beauty Products",
+    faqs: [
+      {
+        q: "Can I bring hair gel, hair clay, and hair products in my carry-on?",
+        a: "Yes, but they must comply with the TSA 3-1-1 rule. Liquid hair gel, hair clay, hair cream, and hair mousse containers must be 3.4 oz (100ml) or less in carry-on bags and packed inside a quart-sized zip bag. Full-size hair products can go in your checked bag with no volume restrictions. Dry styling products like powders and solid wax sticks are not restricted."
+      },
+      {
+        q: "Can I bring a Dyson hair dryer, Dyson Airwrap, or curling iron on a plane?",
+        a: "Yes. Hair dryers (including Dyson Supersonic), Dyson Airwrap, curling irons, flat irons, and hair straighteners are allowed in carry-on and checked bags. These are electrical appliances without lithium batteries requiring special handling. Be aware of international voltage differences — hair dryers may require a travel voltage converter. Always pack heated styling tools in a heat-resistant case."
+      },
+      {
+        q: "Can I bring makeup and cosmetics in my carry-on?",
+        a: "Yes. Solid cosmetics (pressed powder, eyeshadow palettes, lipstick, blush, solid foundation) can be packed freely. Liquid or gel makeup (liquid foundation, mascara, BB cream, liquid lipstick, liquid eyeliner, concealer) must comply with the 3-1-1 rule in carry-on bags — containers must be 3.4 oz or smaller and fit inside one quart-sized bag. Makeup brushes and beauty tools are allowed with no restrictions."
+      }
+    ]
+  },
+  {
+    id: "carry-on-rules",
+    label: "Carry-On Rules & Size Limits",
+    faqs: [
+      {
+        q: "What can I bring on a plane in my carry-on bag?",
+        a: "In a carry-on bag you can bring: clothing, electronics (laptops, phones, tablets), books and documents, solid food and snacks, medications, toiletries (3.4 oz or less containers in a quart-sized bag), jewelry, cameras, headphones, portable chargers (carry-on only), and most personal care items. Items prohibited in carry-on include: sharp weapons, firearms, flammable liquids, lithium battery power banks over 160Wh, and checked-bag-only items like hiking poles and full-size sporting equipment."
+      },
+      {
+        q: "What is the standard carry-on bag size? How many oz can I bring?",
+        a: "Most US airlines accept carry-on bags up to approximately 22 x 14 x 9 inches (56 x 36 x 23 cm). Personal item dimensions vary by airline but are usually 18 x 14 x 8 inches or smaller. For liquids, each container must be 3.4 oz (100ml) or less, all fitting in one quart-sized (approximately 1 liter) clear zip bag — one bag per person."
+      },
+      {
+        q: "Can I bring food in my carry-on bag?",
+        a: "Yes. Solid foods — sandwiches, snacks, fruit, chips, candy, beef jerky, granola bars, and homemade meals — are fully allowed in carry-on bags. Liquid or gel-textured foods (soups, sauces, honey, yogurt, peanut butter) must each be 3.4 oz or less in carry-on. Larger portions of wet or liquid foods must be in checked baggage."
+      },
+      {
+        q: "Can I bring pepper spray, bear spray, or self-defense items on a plane?",
+        a: "Pepper spray is strictly prohibited in carry-on bags and has very limited exceptions even for checked bags: one small container (4 oz or less with 2% or less CS or CN) is allowed in checked baggage only if properly sealed with a safety mechanism. Bear spray is prohibited entirely on commercial passenger flights. Tasers and stun guns cannot be carried on either."
+      },
+      {
+        q: "Can I bring an umbrella in my carry-on?",
+        a: "Yes. Compact folding umbrellas and collapsible travel umbrellas are allowed in carry-on bags. Full-size or golf umbrellas may be subject to size restrictions and might need to be gate-checked. TSA does not specifically prohibit umbrellas but agents may inspect unusual or oversized items at security."
+      },
+      {
+        q: "Can I bring alcohol, wine, and liquor on a plane?",
+        a: "Yes. Miniature alcohol bottles (under 3.4 oz) can travel in your carry-on inside the quart-sized liquids bag. Opened or full-size alcohol bottles must go in checked luggage. Checked bags can contain alcohol between 24%–70% ABV in sealed containers up to 5 liters per passenger. Alcohol above 70% ABV is prohibited on all aircraft."
+      }
+    ]
+  },
+  {
+    id: "international-customs",
+    label: "International Travel & Customs",
+    faqs: [
+      {
+        q: "Can I bring food and fruits into Canada, Australia, Japan, the USA?",
+        a: "Customs rules vary by country: USA — fresh fruits, meats, dairy from most countries require declaration and may be confiscated. Canada — many fresh fruits and vegetables from the USA are allowed but must be declared. Australia — has strict biosecurity; most fresh fruits, meats, and plant materials are prohibited without inspection. Japan — most commercially sealed packaged foods are allowed; fresh meats and produce may be restricted."
+      },
+      {
+        q: "What food and items can I bring to Japan from the USA?",
+        a: "You can bring commercially packaged and sealed food items to Japan in small personal quantities. Restricted or prohibited items include: fresh meats, certain produce, unprocessed dairy, and some agriculture products without phytosanitary certificates. Medications with stimulants or narcotics require a Yakkan Shoumei import certificate. Vapes and e-cigarettes are legal to bring but note that certain e-cigarette liquids may be regulated."
+      },
+      {
+        q: "Can I bring my own food and snacks on a plane?",
+        a: "Yes — absolutely. Bringing your own food on a plane is encouraged and very common. You can pack sandwiches, wraps, salads (dry), fruit, snacks, protein bars, chips, candy, beef jerky, and almost any solid food item for your flight. Airport-purchased food can also be brought through security after purchase. TSA only restricts liquid or gel-consistency foods over 3.4 oz in carry-on bags."
+      }
+    ]
+  },
+  {
+    id: "packing-checklist",
+    label: "Packing Lists & Checklists",
+    faqs: [
+      {
+        q: "What should I pack for airplane travel? What are the essentials?",
+        a: "A comprehensive airplane travel packing list should include: valid ID or passport, boarding pass, phone charger, travel pillow, noise-canceling headphones, face mask, travel-sized toiletry bag (3-1-1 compliant), medications, snacks, an empty water bottle, a light sweater or jacket, entertainment (book, tablet, laptop), and any airline-specific items needed. For international trips, add: travel adapter, local currency, and travel insurance documents."
+      },
+      {
+        q: "What is a carry-on packing list? What are carry-on essentials?",
+        a: "Your carry-on packing list should include: travel documents (passport, visa, boarding pass), wallet and cash, medications, a quart-sized bag of TSA-compliant toiletries (each 3.4 oz or less), laptop or tablet, phone and charger, portable battery pack, headphones, a change of clothes, snacks, and a reusable water bottle. Pack valuables and essentials in carry-on since checked bags can be lost or delayed."
+      },
+      {
+        q: "What should I pack for a long flight — international packing list?",
+        a: "For long-haul or international flights, pack: neck pillow and eye mask for sleeping, compression socks for blood circulation, an outfit change, full toiletry bag (in checked bag), entertainment media downloaded offline, portable charger, travel blanket or light sweater, melatonin or sleep aid, healthy snacks (nuts, protein bars, dried fruit), a reusable water bottle, and any required travel documents, visas, and insurance papers."
+      },
+      {
+        q: "What should I pack for a family vacation, baby, or toddler flight?",
+        a: "For flying with a baby or toddler, pack: baby formula or breast milk (exempt from 3-1-1 rule), baby food and purees, baby wipes, diapers, changing pad, pacifiers and toys, a change of clothes for baby and yourself, a baby carrier or travel stroller, any medications, and familiar comfort items. Collapsible strollers can be gate-checked for free on most airlines. Board early to get settled before other passengers."
+      },
+      {
+        q: "Is there a free packing list generator for travel?",
+        a: "Yes! BringOnPlane offers a free smart packing list generator and packing assistant that automatically categorizes items into carry-on or checked baggage based on TSA rules. You can create a custom trip packing list based on your destination, airline, and trip type. The packing assistant generates a downloadable, printable packing checklist tailored to your specific travel needs — no sign-up or account required."
+      }
+    ]
+  },
+  {
+    id: "tsa-rules",
+    label: "TSA Rules & Security",
+    faqs: [
+      {
+        q: "What is TSA? What does TSA check at airport security?",
+        a: "TSA (Transportation Security Administration) is the US government agency responsible for airport security screening. TSA officers screen passengers and baggage at checkpoints for prohibited items. At checkpoints, you must remove shoes, laptops, liquids bag, and large electronics from your bag. TSA uses X-ray machines, body scanners, and manual bag inspection to detect threats. TSA PreCheck members can use expedited lanes without removing shoes or laptops."
+      },
+      {
+        q: "What items are prohibited by TSA in carry-on bags?",
+        a: "TSA prohibited items in carry-on bags include: firearms and ammunition, explosives, flammable gases, pepper spray (larger than 4 oz), self-defense sprays, sharp weapons (knives over 4 inches, swords, box cutters, utility knives), tools longer than 7 inches, hockey sticks, baseball bats, martial arts weapons, and lithium batteries over 160Wh. Full TSA prohibited item lists are at TSA.gov."
+      },
+      {
+        q: "Can I bring liquids in a checked bag? Are there checked bag liquid rules?",
+        a: "Yes — checked bags have no 3-1-1 liquids restriction. You can pack any quantity of liquids, gels, and pastes in checked bags. Exceptions: aerosol containers are limited to 18 oz each and 70 oz total per passenger in checked bags. Flammable liquids (paint, lighter fluid), bleach, and corrosive substances are banned from all luggage. Alcohol above 70% ABV is banned. Alcohol between 24%–70% ABV limited to 5 liters per passenger."
+      },
+      {
+        q: "What are carry-on versus checked bag rules — what must go where?",
+        a: "Carry-on only items: lithium battery power banks and portable chargers, vapes and e-cigarettes, spare lithium batteries, medications. Checked bag only items: firearms, ammunition, baseball bats, hiking poles, hockey sticks, large knives, safety razor blades, full-size tools over 7 inches. Either bag: most clothing, electronics (devices without spare batteries), solid food, books, documents, jewelry, toiletries (larger sizes in checked, 3.4 oz in carry-on)."
+      }
+    ]
+  },
+  {
+    id: "special-items",
+    label: "Special & Miscellaneous Items",
+    faqs: [
+      {
+        q: "Can I bring jewelry through TSA? Will jewelry set off metal detectors?",
+        a: "Yes, jewelry is allowed in carry-on and checked bags. Fine jewelry, gold rings, necklaces, and watches can go in your carry-on or be worn through security. Small jewelry typically does not trigger metal detectors. Large metal belts, heavy metal jewelry, or multiple metal pieces together may require secondary screening. For valuable jewelry, carry it in your personal item or wear it through security rather than checking it."
+      },
+      {
+        q: "Can I bring candles, flowers, and plants on a plane?",
+        a: "Solid wax candles are allowed in carry-on and checked bags. Gel candles (liquid gel) must comply with the 3-1-1 rule in carry-on. Fresh flowers are allowed on domestic US flights but may be confiscated at international customs borders. Potted plants with soil may be restricted at agriculture customs. Dried flowers and artificial flowers have no restrictions."
+      },
+      {
+        q: "Can I bring yarn, knitting needles, and embroidery on a plane?",
+        a: "Yes. Yarn, knitting needles, crochet hooks, embroidery needles, and sewing supplies are allowed in carry-on bags. TSA allows these craft supplies on planes. Small sewing scissors with blades under 4 inches are allowed in carry-on. Blunt-tipped or circular needles are safest for carry-on travel. Thread, fabric, and embroidery hoops can also fly in carry-on bags."
+      },
+      {
+        q: "Can I bring human ashes (cremated remains) on a plane?",
+        a: "Yes. TSA allows cremated human remains in both carry-on and checked bags. Carry-on is strongly recommended since checked bags can be lost. The container must be able to pass through X-ray screening — wood, plastic, and cardboard urns are fine; leaded glass or metal urns that block X-ray may need to be opened. TSA will not open a cremation container. Bring a death certificate and cremation certificate to show airline staff."
+      },
+      {
+        q: "Can I bring ice packs, hand warmers, and distilled water on a plane?",
+        a: "Gel ice packs must be completely frozen solid when presented at the security checkpoint to be allowed in carry-on bags — if they are partially melted or liquid, they are subject to the 3-1-1 rule. Hard-sided ice packs and plastic-wrapped dry ice (under 5.5 lbs) are permitted in checked bags. Hand warmers are allowed in carry-on and checked bags. Distilled water for CPAP machines is allowed in carry-on over 3.4 oz when declared as medically necessary."
+      }
+    ]
+  }
+];
+
+// Build the flat FAQ list for JSON-LD (all questions across all categories)
+const allFaqs = categories.flatMap(cat => cat.faqs);
+
+const currentUrl = "https://bringonplane.com/faq";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bringonplane.com/" },
+    { "@type": "ListItem", "position": 2, "name": "FAQ", "item": currentUrl }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": allFaqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+---
+
+<Layout
+  title="TSA FAQ: What Can I Bring on a Plane? Full Baggage Rules Guide (2026)"
+  description="Complete FAQ guide answering: can I bring food, vape, razors, power banks, scissors, deodorant, toothpaste, wine, medications, and more through TSA security. Updated 2026 TSA rules."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+  <link rel="canonical" href={currentUrl} slot="head" />
+
+  <Header slot="header" />
+
+  <main class="flex-1">
+
+    <!-- Hero -->
+    <div class="border-b border-hairline bg-canvas-soft">
+      <div class="max-w-[860px] mx-auto px-4 md:px-6 py-12">
+        <div class="mb-6">
+          <a href="/" class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors">
+            <ArrowLeft class="w-3.5 h-3.5" />
+            Back to Home
+          </a>
+        </div>
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-10 h-10 rounded-md bg-link-bg-soft text-link border border-link/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <HelpCircle class="w-5 h-5" />
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.5px] text-ink leading-tight">
+              What Can I Bring on a Plane?
+            </h1>
+            <p class="text-sm text-body leading-[1.7] mt-2 max-w-[600px]">
+              Official TSA rules for food, liquids, electronics, medications, vapes, razors, toiletries, and more. Updated for 2026 travel season.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick stat strip -->
+        <div class="flex flex-wrap gap-3 mt-6">
+          {categories.map(cat => (
+            <a
+              href={`#cat-${cat.id}`}
+              class="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider px-3 py-1.5 rounded-full border border-hairline hover:border-hairline-strong bg-canvas hover:bg-canvas-soft text-mute hover:text-ink transition-all"
+            >
+              {cat.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="max-w-[860px] mx-auto px-4 md:px-6 py-14 space-y-16">
+
+      {categories.map((cat, catIdx) => (
+        <section id={`cat-${cat.id}`} class="scroll-mt-20">
+          <!-- Category header -->
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-sm bg-canvas-soft border border-hairline flex items-center justify-center flex-shrink-0">
+              <Package class="w-4 h-4 text-mute" />
+            </div>
+            <h2 class="text-xl font-semibold tracking-[-0.5px] text-ink">{cat.label}</h2>
+            <span class="text-[10px] font-mono text-mute border border-hairline px-1.5 py-0.5 rounded ml-auto flex-shrink-0">
+              {cat.faqs.length} questions
+            </span>
+          </div>
+
+          <!-- Accordion items -->
+          <div class="space-y-3">
+            {cat.faqs.map((faq, idx) => {
+              const faqId = `faq-${cat.id}-${idx}`;
+              return (
+                <div class="border border-hairline rounded-md bg-canvas shadow-sm overflow-hidden">
+                  <button
+                    type="button"
+                    class="faq-toggle-btn w-full text-left px-5 py-4 flex items-start justify-between gap-4 text-sm font-medium text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+                    data-faq-target={faqId}
+                    aria-expanded="false"
+                    aria-controls={faqId}
+                  >
+                    <span class="leading-snug pt-0.5">{faq.q}</span>
+                    <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200 flex-shrink-0 mt-0.5" />
+                  </button>
+                  <div
+                    id={faqId}
+                    class="faq-body hidden border-t border-hairline/50 px-5 py-4 text-xs text-body leading-[1.8] bg-canvas-soft/40"
+                    role="region"
+                  >
+                    {faq.a}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+
+      <!-- Bottom CTA -->
+      <div class="border border-hairline rounded-md p-8 text-center bg-canvas-soft">
+        <h3 class="text-lg font-semibold tracking-[-0.5px] text-ink mb-2">Check Any Item Instantly</h3>
+        <p class="text-xs text-body mb-5 max-w-[400px] mx-auto leading-[1.6]">
+          Search our full database of 100+ items to get TSA carry-on and checked bag verdicts instantly.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/" class="inline-flex items-center gap-1.5 text-xs font-medium text-link hover:text-link-deep transition-colors border border-link/30 hover:border-link px-4 py-2.5 rounded-md bg-link-bg-soft">
+            Search Items →
+          </a>
+          <a href="/packing-assistant" class="inline-flex items-center gap-1.5 text-xs font-medium text-ink hover:text-link transition-colors border border-hairline hover:border-hairline-strong px-4 py-2.5 rounded-md">
+            Use Packing Assistant →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script>
+  function setupFaqToggles() {
+    document.querySelectorAll<HTMLButtonElement>(".faq-toggle-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-faq-target") ?? "";
+        const body = document.getElementById(targetId);
+        const icon = btn.querySelector("svg");
+        const isExpanded = btn.getAttribute("aria-expanded") === "true";
+
+        if (body) {
+          if (isExpanded) {
+            body.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+            icon?.classList.remove("rotate-180");
+          } else {
+            body.classList.remove("hidden");
+            btn.setAttribute("aria-expanded", "true");
+            icon?.classList.add("rotate-180");
+          }
+        }
+      });
+    });
+  }
+
+  setupFaqToggles();
+  document.addEventListener("astro:after-swap", setupFaqToggles);
+</script>

@@ -1,0 +1,92 @@
+{
+  "id": "multi-tool",
+  "slug": "multi-tool",
+  "name": "Multi-tool (with knife)",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "leatherman",
+    "swiss army knife",
+    "pocket tool"
+  ],
+  "keywords": [
+    "blade",
+    "knife",
+    "pliers",
+    "swiss"
+  ],
+  "description": "Guidelines for traveling with multi-tool (with knife) in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Multi-tools that contain knives, saws, or scissors with blades longer than 4 inches are strictly prohibited in carry-on bags. They must be packed in checked bags.",
+    "conditions": [
+      "Knife-less multi-tools (pliers only) may be allowed, but officers have final discretion."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Multi-tools that contain knives, saws, or scissors with blades longer than 4 inches are strictly prohibited in carry-on bags. They must be packed in checked bags.",
+    "conditions": [
+      "Knife-less multi-tools (pliers only) may be allowed, but officers have final discretion."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/multi-tools",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring multi-tool (with knife) on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/multi-tools",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Knife-less multi-tools (pliers only) may be allowed, but officers have final discretion."
+  ],
+  "relatedItems": [
+    "utility-knife",
+    "hammer",
+    "scissors",
+    "screwdriver"
+  ],
+  "faq": [
+    {
+      "question": "Is multi-tool (with knife) allowed in carry-on bags?",
+      "answer": "Multi-tool (with knife) is not allowed in carry-on luggage. Multi-tools that contain knives, saws, or scissors with blades longer than 4 inches are strictly prohibited in carry-on bags. They must be packed in checked bags."
+    },
+    {
+      "question": "Can you pack multi-tool (with knife) in checked baggage?",
+      "answer": "Yes, Multi-tool (with knife) is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/multi-tools"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

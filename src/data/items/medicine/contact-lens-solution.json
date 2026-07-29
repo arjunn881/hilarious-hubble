@@ -1,0 +1,77 @@
+{
+  "id": "contact-lens-solution",
+  "slug": "contact-lens-solution",
+  "name": "Contact Lens Solution",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "saline solution",
+    "contact solution"
+  ],
+  "keywords": [
+    "solution",
+    "contact",
+    "lens",
+    "saline"
+  ],
+  "description": "Guidelines for traveling with contact lens solution in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Contact lens solution is classified as a medically necessary liquid and is exempt from the 3-1-1 liquids rule. Declare it to officers for manual screening.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Contact lens solution is allowed in checked baggage in any size.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/contact-lens-solution",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring contact lens solution on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/contact-lens-solution",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Contact lens solution is classified as a medically necessary liquid and is exempt from the 3-1-1 liquids rule. Declare it to officers for manual screening."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is contact lens solution allowed in carry-on bags?",
+      "answer": "Contact Lens Solution is allowed in carry-on luggage. Contact lens solution is classified as a medically necessary liquid and is exempt from the 3-1-1 liquids rule. Declare it to officers for manual screening."
+    },
+    {
+      "question": "Can you pack contact lens solution in checked baggage?",
+      "answer": "Yes, Contact Lens Solution is allowed in checked bags. Contact lens solution is allowed in checked baggage in any size."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/contact-lens-solution"
+    }
+  ]
+}

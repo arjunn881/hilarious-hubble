@@ -1,0 +1,77 @@
+{
+  "id": "swiss-army-knife",
+  "slug": "swiss-army-knife",
+  "name": "Swiss Army Knife",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "multi tool knife",
+    "victorinox"
+  ],
+  "keywords": [
+    "knife",
+    "swiss",
+    "blade",
+    "multi-tool"
+  ],
+  "description": "Guidelines for traveling with swiss army knife in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Swiss Army knives contain sharp blades and are prohibited in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Swiss Army knives are allowed in checked baggage. Wrap securely.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/swiss-army-knife",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring swiss army knife on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/swiss-army-knife",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Swiss Army knives contain sharp blades and are prohibited in carry-on baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is swiss army knife allowed in carry-on bags?",
+      "answer": "Swiss Army Knife is not_allowed in carry-on luggage. Swiss Army knives contain sharp blades and are prohibited in carry-on baggage."
+    },
+    {
+      "question": "Can you pack swiss army knife in checked baggage?",
+      "answer": "Yes, Swiss Army Knife is allowed in checked bags. Swiss Army knives are allowed in checked baggage. Wrap securely."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/swiss-army-knife"
+    }
+  ]
+}

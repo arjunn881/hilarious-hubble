@@ -1,0 +1,92 @@
+{
+  "id": "perfume",
+  "slug": "perfume",
+  "name": "Perfume / Cologne",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "cologne",
+    "fragrance spray",
+    "scent"
+  ],
+  "keywords": [
+    "scent",
+    "spray",
+    "glass",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with perfume / cologne in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Fragrances in liquid sprays are subject to the 3-1-1 liquids rule. Bottles in carry-on must be 3.4 oz or less. Larger bottles must be checked.",
+    "conditions": [
+      "Fragrance bottles are typically made of glass, so wrap checked bottles carefully to avoid breakage."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Fragrances in liquid sprays are subject to the 3-1-1 liquids rule. Bottles in carry-on must be 3.4 oz or less. Larger bottles must be checked.",
+    "conditions": [
+      "Fragrance bottles are typically made of glass, so wrap checked bottles carefully to avoid breakage."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/perfume",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring perfume / cologne on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/perfume",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Fragrance bottles are typically made of glass, so wrap checked bottles carefully to avoid breakage."
+  ],
+  "relatedItems": [
+    "safety-razor",
+    "toothpaste",
+    "disposable-razor",
+    "hair-dryer"
+  ],
+  "faq": [
+    {
+      "question": "Is perfume / cologne allowed in carry-on bags?",
+      "answer": "Perfume / Cologne is restricted in carry-on luggage. Fragrances in liquid sprays are subject to the 3-1-1 liquids rule. Bottles in carry-on must be 3.4 oz or less. Larger bottles must be checked."
+    },
+    {
+      "question": "Can you pack perfume / cologne in checked baggage?",
+      "answer": "Yes, Perfume / Cologne is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/perfume"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

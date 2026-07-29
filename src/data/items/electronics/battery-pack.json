@@ -1,0 +1,78 @@
+{
+  "id": "battery-pack",
+  "slug": "battery-pack",
+  "name": "Battery Pack",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "power bank",
+    "portable charger",
+    "external battery"
+  ],
+  "keywords": [
+    "battery",
+    "pack",
+    "power",
+    "charger"
+  ],
+  "description": "Guidelines for traveling with battery pack in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Battery packs and external power banks containing lithium-ion cells must be carried in carry-on baggage only.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Battery packs are prohibited in checked baggage due to risk of fire in the cargo hold.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/battery-pack",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring battery pack on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/battery-pack",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Battery packs and external power banks containing lithium-ion cells must be carried in carry-on baggage only."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is battery pack allowed in carry-on bags?",
+      "answer": "Battery Pack is allowed in carry-on luggage. Battery packs and external power banks containing lithium-ion cells must be carried in carry-on baggage only."
+    },
+    {
+      "question": "Can you pack battery pack in checked baggage?",
+      "answer": "No, Battery Pack is not allowed in checked bags. Battery packs are prohibited in checked baggage due to risk of fire in the cargo hold."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/battery-pack"
+    }
+  ]
+}

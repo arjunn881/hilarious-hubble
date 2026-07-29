@@ -1,0 +1,77 @@
+{
+  "id": "shoes",
+  "slug": "shoes",
+  "name": "Shoes",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "sneakers",
+    "sandals"
+  ],
+  "keywords": [
+    "shoes",
+    "footwear",
+    "sneakers",
+    "sandals"
+  ],
+  "description": "Guidelines for traveling with shoes in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Shoes, sneakers, and sandals are fully allowed in carry-on and checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Shoes are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shoes",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring shoes on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shoes",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Shoes, sneakers, and sandals are fully allowed in carry-on and checked baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is shoes allowed in carry-on bags?",
+      "answer": "Shoes is allowed in carry-on luggage. Shoes, sneakers, and sandals are fully allowed in carry-on and checked baggage."
+    },
+    {
+      "question": "Can you pack shoes in checked baggage?",
+      "answer": "Yes, Shoes is allowed in checked bags. Shoes are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shoes"
+    }
+  ]
+}

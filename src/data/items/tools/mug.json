@@ -1,0 +1,77 @@
+{
+  "id": "mug",
+  "slug": "mug",
+  "name": "Mug",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "coffee mug",
+    "ceramic cup"
+  ],
+  "keywords": [
+    "mug",
+    "cup",
+    "ceramic",
+    "coffee"
+  ],
+  "description": "Guidelines for traveling with mug in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Ceramic mugs, travel cups, and coffee mugs are allowed in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Mugs are allowed in checked baggage. Wrap securely.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mug",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring mug on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mug",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Ceramic mugs, travel cups, and coffee mugs are allowed in carry-on baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is mug allowed in carry-on bags?",
+      "answer": "Mug is allowed in carry-on luggage. Ceramic mugs, travel cups, and coffee mugs are allowed in carry-on baggage."
+    },
+    {
+      "question": "Can you pack mug in checked baggage?",
+      "answer": "Yes, Mug is allowed in checked bags. Mugs are allowed in checked baggage. Wrap securely."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mug"
+    }
+  ]
+}

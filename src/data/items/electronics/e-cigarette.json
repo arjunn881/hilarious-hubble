@@ -1,0 +1,77 @@
+{
+  "id": "e-cigarette",
+  "slug": "e-cigarette",
+  "name": "E-Cigarette",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "ecigarette",
+    "vape pen"
+  ],
+  "keywords": [
+    "ecig",
+    "vape",
+    "nicotine",
+    "cigarette"
+  ],
+  "description": "Guidelines for traveling with e-cigarette in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "E-cigarettes and vape devices must travel in carry-on baggage or on your person. Do not charge or use them on board.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "E-cigarettes are prohibited in checked baggage holds due to FAA fire hazard regulations.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/e-cigarette",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring e-cigarette on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/e-cigarette",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "E-cigarettes and vape devices must travel in carry-on baggage or on your person. Do not charge or use them on board."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is e-cigarette allowed in carry-on bags?",
+      "answer": "E-Cigarette is allowed in carry-on luggage. E-cigarettes and vape devices must travel in carry-on baggage or on your person. Do not charge or use them on board."
+    },
+    {
+      "question": "Can you pack e-cigarette in checked baggage?",
+      "answer": "No, E-Cigarette is not allowed in checked bags. E-cigarettes are prohibited in checked baggage holds due to FAA fire hazard regulations."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/e-cigarette"
+    }
+  ]
+}

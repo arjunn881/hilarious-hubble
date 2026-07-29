@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ArrowLeft, Compass } from "@lucide/astro";
+
+const countries = [
+  { slug: "canada", name: "Canada" },
+  { slug: "japan", name: "Japan" },
+  { slug: "united-kingdom", name: "United Kingdom" },
+  { slug: "germany", name: "Germany" },
+  { slug: "france", name: "France" },
+  { slug: "usa", name: "United States" },
+  { slug: "australia", name: "Australia" },
+  { slug: "singapore", name: "Singapore" }
+];
+
+const popularItems = [
+  { slug: "prescription-pills", name: "Prescription Pills" },
+  { slug: "baby-food", name: "Baby Food" },
+  { slug: "sunscreen", name: "Sunscreen Lotion" },
+  { slug: "power-bank", name: "Power Bank" },
+  { slug: "utility-knife", name: "Utility Knife" }
+];
+---
+
+<Layout 
+  title="International Customs & Aviation Security Rules | Bring On Plane"
+  description="Verify customs declaration rules, biosecurity limits, and security screening protocols across destination countries."
+>
+  <Header slot="header" />
+
+  <div class="max-w-[800px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+    
+    <div class="mb-8 select-none">
+      <a href="/" class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        Back to Home
+      </a>
+    </div>
+
+    <header class="mb-10">
+      <div class="flex items-center gap-2.5 mb-2">
+        <Compass class="w-5 h-5 text-mute" />
+        <h1 class="text-3xl font-semibold tracking-[-1px] text-ink">Countries Customs Index</h1>
+      </div>
+      <p class="text-sm text-body leading-[1.6]">
+        Select a country to review official customs limits, declarations requirements, and border control regulations for travel items.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {countries.map(country => (
+        <div class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
+          <h2 class="text-base font-semibold text-ink mb-3">{country.name}</h2>
+          <ul class="space-y-1.5 text-xs font-mono">
+            {popularItems.map(item => (
+              <li>
+                <a 
+                  href={`/items/${item.slug}/country/${country.slug}`} 
+                  class="text-link hover:text-link-deep hover:underline block"
+                >
+                  Can I bring {item.name.toLowerCase()} to {country.name}?
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+  </div>
+
+  <Footer slot="footer" />
+</Layout>

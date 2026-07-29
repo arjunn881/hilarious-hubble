@@ -1,0 +1,78 @@
+{
+  "id": "kindle",
+  "slug": "kindle",
+  "name": "Kindle",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "ereader",
+    "kobo",
+    "nook"
+  ],
+  "keywords": [
+    "kindle",
+    "reader",
+    "book",
+    "screen"
+  ],
+  "description": "Guidelines for traveling with kindle in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Kindles and e-readers are allowed in carry-on bags. They must be removed for X-ray screening at security.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Kindles are allowed in checked baggage, though carry-on is recommended.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/kindle",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring kindle on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/kindle",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Kindles and e-readers are allowed in carry-on bags. They must be removed for X-ray screening at security."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is kindle allowed in carry-on bags?",
+      "answer": "Kindle is allowed in carry-on luggage. Kindles and e-readers are allowed in carry-on bags. They must be removed for X-ray screening at security."
+    },
+    {
+      "question": "Can you pack kindle in checked baggage?",
+      "answer": "Yes, Kindle is allowed in checked bags. Kindles are allowed in checked baggage, though carry-on is recommended."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/kindle"
+    }
+  ]
+}

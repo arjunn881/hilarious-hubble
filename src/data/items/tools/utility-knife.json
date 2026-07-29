@@ -1,0 +1,92 @@
+{
+  "id": "utility-knife",
+  "slug": "utility-knife",
+  "name": "Utility Knife / Box Cutter",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "box cutter",
+    "razor blade tool",
+    "stanley knife"
+  ],
+  "keywords": [
+    "razor",
+    "blade",
+    "cutter",
+    "box"
+  ],
+  "description": "Guidelines for traveling with utility knife / box cutter in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Box cutters and utility knives with retractable blades are strictly banned from carry-on bags due to safety concerns. They must go in checked luggage.",
+    "conditions": [
+      "Blades must be retracted or safely wrapped if packed in checked baggage."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Box cutters and utility knives with retractable blades are strictly banned from carry-on bags due to safety concerns. They must go in checked luggage.",
+    "conditions": [
+      "Blades must be retracted or safely wrapped if packed in checked baggage."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/box-cutters",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring utility knife / box cutter on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/box-cutters",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Blades must be retracted or safely wrapped if packed in checked baggage."
+  ],
+  "relatedItems": [
+    "multi-tool",
+    "hammer",
+    "scissors",
+    "screwdriver"
+  ],
+  "faq": [
+    {
+      "question": "Is utility knife / box cutter allowed in carry-on bags?",
+      "answer": "Utility Knife / Box Cutter is not allowed in carry-on luggage. Box cutters and utility knives with retractable blades are strictly banned from carry-on bags due to safety concerns. They must go in checked luggage."
+    },
+    {
+      "question": "Can you pack utility knife / box cutter in checked baggage?",
+      "answer": "Yes, Utility Knife / Box Cutter is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/box-cutters"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

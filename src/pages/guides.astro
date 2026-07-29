@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ArrowLeft, BookOpen, Calendar } from "@lucide/astro";
+
+// Load all markdown travel guide articles using Vite import.meta.glob
+const posts = import.meta.glob("../data/articles/*.md", { eager: true });
+const sortedPosts = Object.entries(posts)
+  .map(([filePath, module]: [string, any]) => {
+    const parts = filePath.split(/[/\\]/);
+    const filename = parts[parts.length - 1];
+    const slug = filename.replace(".md", "");
+    return {
+      slug,
+      frontmatter: module.frontmatter,
+    };
+  })
+  .sort((a, b) => b.frontmatter.lastUpdated.localeCompare(a.frontmatter.lastUpdated));
+---
+
+<Layout 
+  title="TSA Travel Packing Guides & Regulations | Bring On Plane"
+  description="Read comprehensive guides on TSA baggage rules: the 3-1-1 liquids rule, traveling with lithium battery cells, packing medication, and more."
+>
+  <Header slot="header" />
+
+  <div class="max-w-[800px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+    
+    <!-- Top breadcrumb / navigation link -->
+    <div class="mb-8 select-none">
+      <a href="/" class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        Back to Home
+      </a>
+    </div>
+
+    <!-- Header Block -->
+    <header class="mb-10 flex items-center gap-3">
+      <div class="w-8 h-8 rounded-sm bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+        <BookOpen class="w-4 h-4" />
+      </div>
+      <div>
+        <h1 class="text-3xl font-semibold tracking-[-1.2px] text-ink">
+          Travel Packing Guides
+        </h1>
+        <p class="text-sm text-body mt-1">
+          Detailed explanations of security rules, hazard policies, and packing instructions.
+        </p>
+      </div>
+    </header>
+
+    <!-- Articles Grid -->
+    <div class="space-y-6">
+      {sortedPosts.map((post) => {
+        const slug = post.slug;
+        return (
+          <a
+            href={`/guide/${slug}`}
+            class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-6 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+          >
+            <div class="flex items-center gap-3 mb-2 flex-wrap">
+              <span class="font-mono text-[9px] font-semibold text-mute uppercase tracking-wider bg-canvas-soft-2 border border-hairline px-2 py-0.5 rounded-xs select-none">
+                {post.frontmatter.category}
+              </span>
+              <span class="flex items-center gap-1 text-[10px] text-mute font-mono">
+                <Calendar class="w-3 h-3" />
+                Updated {post.frontmatter.lastUpdated}
+              </span>
+            </div>
+            <h2 class="text-lg font-semibold tracking-[-0.4px] text-ink mb-2">
+              {post.frontmatter.title}
+            </h2>
+            <p class="text-xs text-body leading-[1.6]">
+              {post.frontmatter.description}
+            </p>
+            <div class="mt-4 flex justify-end">
+              <span class="text-[10px] font-mono text-link hover:underline flex items-center gap-1">
+                Read Guide &rarr;
+              </span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+  </div>
+
+  <Footer slot="footer" />
+</Layout>

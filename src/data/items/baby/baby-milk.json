@@ -1,0 +1,78 @@
+{
+  "id": "baby-milk",
+  "slug": "baby-milk",
+  "name": "Baby Milk",
+  "category": "Baby",
+  "subcategory": "General",
+  "aliases": [
+    "breast milk",
+    "baby formula liquid"
+  ],
+  "keywords": [
+    "milk",
+    "baby",
+    "breast",
+    "formula",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with baby milk in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Breast milk, baby formula, and baby milk are exempt from the 3-1-1 liquids rule. You can bring reasonable quantities in carry-on. Declare them for manual inspection.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Baby milk is allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-milk",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring baby milk on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-milk",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Breast milk, baby formula, and baby milk are exempt from the 3-1-1 liquids rule. You can bring reasonable quantities in carry-on. Declare them for manual inspection."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is baby milk allowed in carry-on bags?",
+      "answer": "Baby Milk is allowed in carry-on luggage. Breast milk, baby formula, and baby milk are exempt from the 3-1-1 liquids rule. You can bring reasonable quantities in carry-on. Declare them for manual inspection."
+    },
+    {
+      "question": "Can you pack baby milk in checked baggage?",
+      "answer": "Yes, Baby Milk is allowed in checked bags. Baby milk is allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-milk"
+    }
+  ]
+}

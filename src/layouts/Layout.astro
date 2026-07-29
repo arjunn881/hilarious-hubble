@@ -1,23 +1,153 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "../styles/global.css";
+import SearchModal from "../components/SearchModal.astro";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  canonicalURL?: string;
+  prevURL?: string;
+  nextURL?: string;
+  type?: "website" | "article";
+  keywords?: string;
+  noIndex?: boolean | "noindex, follow" | "noindex, nofollow";
+}
+
+const {
+  title = "Bring On Plane — Can I Bring It? TSA Baggage Rules & Packing Assistant",
+  description = "Instantly check what you can bring on a plane. Search TSA carry-on & checked bag rules for food, vapes, lighters, razors, power banks, toiletries & more. Free packing list generator.",
+  image = "/og-image.png",
+  imageAlt = "BringOnPlane — TSA Baggage Rules & Smart Packing Assistant",
+  canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://bringonplane.com").href,
+  prevURL,
+  nextURL,
+  type = "website",
+  keywords = "can i bring food through tsa, can i bring food on a plane, can i bring a vape on a plane, what can i bring on a plane, tsa carry on rules, tsa baggage rules, airport security, what can i bring in carry on, packing list generator, travel checklist, can i bring snacks on a plane, can i bring a portable charger on a plane, can i bring toothpaste on a plane, can i bring scissors on a plane, can i bring a razor on a plane",
+  noIndex = false,
+} = Astro.props;
+
+const resolvedImage = new URL(image, Astro.site || "https://bringonplane.com").href;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422" crossorigin="anonymous"></script>
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    {prevURL && <link rel="prev" href={prevURL} />}
+    {nextURL && <link rel="next" href={nextURL} />}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="BringOnPlane" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Sitemaps — auto-discovered by Googlebot, Bingbot, and other crawlers -->
+    <link rel="sitemap" type="application/xml" title="Sitemap Index" href="/sitemap-index.xml" />
+    
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- ═══════════════════════════════════════════════════════
+         PRIMARY META TAGS
+    ═══════════════════════════════════════════════════════ -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content={typeof noIndex === 'string' ? noIndex : (noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1")} />
+    <meta name="author" content="BringOnPlane" />
+    <meta name="copyright" content="BringOnPlane" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    {keywords && <meta name="keywords" content={keywords} />}
+
+    <!-- ═══════════════════════════════════════════════════════
+         OPEN GRAPH (Facebook, LinkedIn, Slack, Discord)
+    ═══════════════════════════════════════════════════════ -->
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="BringOnPlane" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={resolvedImage} />
+    <meta property="og:image:secure_url" content={resolvedImage} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+
+    <!-- ═══════════════════════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bringonplane" />
+    <meta name="twitter:creator" content="@bringonplane" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+
+    <!-- ═══════════════════════════════════════════════════════
+         ADDITIONAL SOCIAL / AI SEARCH SIGNALS
+    ═══════════════════════════════════════════════════════ -->
+    <!-- WhatsApp / iMessage link preview -->
+    <meta property="og:rich_attachment" content="true" />
+    <!-- Pinterest -->
+    <meta name="pinterest-rich-pin" content="true" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <!-- Google Search Console verification placeholder -->
+    <meta name="google-site-verification" content="GSC_VERIFICATION_PLACEHOLDER" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYTY68WGKQ"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PYTY68WGKQ');
+    </script>
+
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen flex flex-col bg-canvas-soft text-ink font-sans selection:bg-primary selection:text-on-primary">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-on-primary focus:rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-link">
+      Skip to content
+    </a>
+    
+    <slot name="header" />
+    
+    <main id="main-content" class="flex-1 flex flex-col">
+      <slot />
+    </main>
+    
+    <slot name="footer" />
+    <SearchModal />
+  </body>
+</html>

@@ -1,0 +1,92 @@
+{
+  "id": "diamond-necklace",
+  "slug": "diamond-necklace",
+  "name": "Diamond Necklace",
+  "category": "Jewelry",
+  "subcategory": "General",
+  "aliases": [
+    "pendant",
+    "necklace",
+    "gemstones"
+  ],
+  "keywords": [
+    "diamond",
+    "necklace",
+    "luxury",
+    "valuables"
+  ],
+  "description": "Guidelines for traveling with diamond necklace in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Necklaces and diamonds are allowed in checked luggage, but carry-on is highly recommended to prevent theft.",
+    "conditions": [
+      "Worn necklaces might set off the metal detector; you may be asked to remove them if they trigger an alert."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Necklaces and diamonds are allowed in checked luggage, but carry-on is highly recommended to prevent theft.",
+    "conditions": [
+      "Worn necklaces might set off the metal detector; you may be asked to remove them if they trigger an alert."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring diamond necklace on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Worn necklaces might set off the metal detector; you may be asked to remove them if they trigger an alert."
+  ],
+  "relatedItems": [
+    "gold-ring",
+    "metal-watch",
+    "costume-jewelry",
+    "smartwatch"
+  ],
+  "faq": [
+    {
+      "question": "Is diamond necklace allowed in carry-on bags?",
+      "answer": "Diamond Necklace is allowed in carry-on luggage. Necklaces and diamonds are allowed in checked luggage, but carry-on is highly recommended to prevent theft."
+    },
+    {
+      "question": "Can you pack diamond necklace in checked baggage?",
+      "answer": "Yes, Diamond Necklace is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "toothpaste",
+  "slug": "toothpaste",
+  "name": "Toothpaste",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "colgate",
+    "crest",
+    "tooth gel"
+  ],
+  "keywords": [
+    "teeth",
+    "colgate",
+    "paste",
+    "hygiene"
+  ],
+  "description": "Guidelines for traveling with toothpaste in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Toothpaste is classified as a paste/gel and is restricted under liquids rules. Tubes in carry-on must be 3.4 oz (100 ml) or less. Larger tubes must be checked.",
+    "conditions": [
+      "Must fit inside your clear, quart-sized toiletries bag."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Toothpaste is classified as a paste/gel and is restricted under liquids rules. Tubes in carry-on must be 3.4 oz (100 ml) or less. Larger tubes must be checked.",
+    "conditions": [
+      "Must fit inside your clear, quart-sized toiletries bag."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/toothpaste",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring toothpaste on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/toothpaste",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Must fit inside your clear, quart-sized toiletries bag."
+  ],
+  "relatedItems": [
+    "disposable-razor",
+    "perfume",
+    "safety-razor",
+    "hair-dryer"
+  ],
+  "faq": [
+    {
+      "question": "Is toothpaste allowed in carry-on bags?",
+      "answer": "Toothpaste is restricted in carry-on luggage. Toothpaste is classified as a paste/gel and is restricted under liquids rules. Tubes in carry-on must be 3.4 oz (100 ml) or less. Larger tubes must be checked."
+    },
+    {
+      "question": "Can you pack toothpaste in checked baggage?",
+      "answer": "Yes, Toothpaste is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/toothpaste"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

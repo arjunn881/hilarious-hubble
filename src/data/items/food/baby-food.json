@@ -1,0 +1,94 @@
+{
+  "id": "baby-food",
+  "slug": "baby-food",
+  "name": "Baby Food (Puree)",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "pouches",
+    "baby puree",
+    "gerber"
+  ],
+  "keywords": [
+    "baby",
+    "puree",
+    "infant",
+    "toddler"
+  ],
+  "description": "Guidelines for traveling with baby food (puree) in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Baby food in liquid, gel, or puree form is exempt from the 3-1-1 liquids rule. You are allowed to bring reasonable quantities in carry-on bags, but they must be declared for inspection.",
+    "conditions": [
+      "Separate these items from other baggage for X-ray screening.",
+      "TSA officers may ask to open the container for testing."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Baby food in liquid, gel, or puree form is exempt from the 3-1-1 liquids rule. You are allowed to bring reasonable quantities in carry-on bags, but they must be declared for inspection.",
+    "conditions": [
+      "Separate these items from other baggage for X-ray screening.",
+      "TSA officers may ask to open the container for testing."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-food",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring baby food (puree) on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-food",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Separate these items from other baggage for X-ray screening."
+  ],
+  "relatedItems": [
+    "canned-food",
+    "chocolate-bar",
+    "coffee-beans",
+    "fresh-fruits"
+  ],
+  "faq": [
+    {
+      "question": "Is baby food (puree) allowed in carry-on bags?",
+      "answer": "Baby Food (Puree) is restricted in carry-on luggage. Baby food in liquid, gel, or puree form is exempt from the 3-1-1 liquids rule. You are allowed to bring reasonable quantities in carry-on bags, but they must be declared for inspection."
+    },
+    {
+      "question": "Can you pack baby food (puree) in checked baggage?",
+      "answer": "Yes, Baby Food (Puree) is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-food"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

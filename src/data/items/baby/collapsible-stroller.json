@@ -1,0 +1,94 @@
+{
+  "id": "collapsible-stroller",
+  "slug": "collapsible-stroller",
+  "name": "Collapsible Baby Stroller",
+  "category": "Baby",
+  "subcategory": "General",
+  "aliases": [
+    "stroller",
+    "pram",
+    "buggy"
+  ],
+  "keywords": [
+    "travel",
+    "stroller",
+    "carriage",
+    "infant"
+  ],
+  "description": "Guidelines for traveling with collapsible baby stroller in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Strollers are allowed through security but must be screened. Many airlines require gate-checking or cabin overhead stowage depending on dimensions.",
+    "conditions": [
+      "Must be collapsed and placed on the X-ray belt for screening if it fits.",
+      "Large strollers that cannot fit will undergo manual inspection by TSA officers."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Strollers are allowed through security but must be screened. Many airlines require gate-checking or cabin overhead stowage depending on dimensions.",
+    "conditions": [
+      "Must be collapsed and placed on the X-ray belt for screening if it fits.",
+      "Large strollers that cannot fit will undergo manual inspection by TSA officers."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring collapsible baby stroller on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Must be collapsed and placed on the X-ray belt for screening if it fits."
+  ],
+  "relatedItems": [
+    "baby-formula",
+    "breast-milk",
+    "baby-toy",
+    "baby-wipes"
+  ],
+  "faq": [
+    {
+      "question": "Is collapsible baby stroller allowed in carry-on bags?",
+      "answer": "Collapsible Baby Stroller is restricted in carry-on luggage. Strollers are allowed through security but must be screened. Many airlines require gate-checking or cabin overhead stowage depending on dimensions."
+    },
+    {
+      "question": "Can you pack collapsible baby stroller in checked baggage?",
+      "answer": "Yes, Collapsible Baby Stroller is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "gaming-console",
+  "slug": "gaming-console",
+  "name": "Gaming Console",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "nintendo switch",
+    "steam deck",
+    "ps5",
+    "xbox"
+  ],
+  "keywords": [
+    "gaming",
+    "console",
+    "nintendo",
+    "playstation"
+  ],
+  "description": "Guidelines for traveling with gaming console in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Gaming consoles (Nintendo Switch, Steam Deck, PlayStation, Xbox) are allowed in carry-on bags. Handhelds with built-in lithium batteries must travel in the cabin.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Consoles are allowed in checked baggage, but handheld systems with lithium batteries should travel in the cabin.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/gaming-console",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring gaming console on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/gaming-console",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Gaming consoles (Nintendo Switch, Steam Deck, PlayStation, Xbox) are allowed in carry-on bags. Handhelds with built-in lithium batteries must travel in the cabin."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is gaming console allowed in carry-on bags?",
+      "answer": "Gaming Console is allowed in carry-on luggage. Gaming consoles (Nintendo Switch, Steam Deck, PlayStation, Xbox) are allowed in carry-on bags. Handhelds with built-in lithium batteries must travel in the cabin."
+    },
+    {
+      "question": "Can you pack gaming console in checked baggage?",
+      "answer": "Yes, Gaming Console is allowed in checked bags. Consoles are allowed in checked baggage, but handheld systems with lithium batteries should travel in the cabin."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/gaming-console"
+    }
+  ]
+}

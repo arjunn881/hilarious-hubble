@@ -1,0 +1,77 @@
+{
+  "id": "lighter",
+  "slug": "lighter",
+  "name": "Lighter",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "bic lighter",
+    "zippo lighter"
+  ],
+  "keywords": [
+    "lighter",
+    "fire",
+    "smoke",
+    "flame"
+  ],
+  "description": "Guidelines for traveling with lighter in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "You can bring one common lighter (Bic or Zippo style) on your person or in carry-on baggage. Torch lighters are prohibited.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Lighters are prohibited in checked baggage unless empty of fuel or stored in a DOT-approved case.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lighter",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring lighter on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lighter",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "You can bring one common lighter (Bic or Zippo style) on your person or in carry-on baggage. Torch lighters are prohibited."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is lighter allowed in carry-on bags?",
+      "answer": "Lighter is allowed in carry-on luggage. You can bring one common lighter (Bic or Zippo style) on your person or in carry-on baggage. Torch lighters are prohibited."
+    },
+    {
+      "question": "Can you pack lighter in checked baggage?",
+      "answer": "No, Lighter is not allowed in checked bags. Lighters are prohibited in checked baggage unless empty of fuel or stored in a DOT-approved case."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lighter"
+    }
+  ]
+}

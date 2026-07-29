@@ -1,0 +1,76 @@
+{
+  "id": "bowling-ball",
+  "slug": "bowling-ball",
+  "name": "Bowling Ball",
+  "category": "Sports",
+  "subcategory": "General",
+  "aliases": [
+    "bowling gear"
+  ],
+  "keywords": [
+    "bowling",
+    "ball",
+    "sport",
+    "heavy"
+  ],
+  "description": "Guidelines for traveling with bowling ball in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Bowling balls are allowed in carry-on baggage, subject to airline size and weight limits.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Bowling balls are allowed in checked baggage. Watch out for overweight baggage fees.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bowling-ball",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring bowling ball on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bowling-ball",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Bowling balls are allowed in carry-on baggage, subject to airline size and weight limits."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is bowling ball allowed in carry-on bags?",
+      "answer": "Bowling Ball is allowed in carry-on luggage. Bowling balls are allowed in carry-on baggage, subject to airline size and weight limits."
+    },
+    {
+      "question": "Can you pack bowling ball in checked baggage?",
+      "answer": "Yes, Bowling Ball is allowed in checked bags. Bowling balls are allowed in checked baggage. Watch out for overweight baggage fees."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bowling-ball"
+    }
+  ]
+}

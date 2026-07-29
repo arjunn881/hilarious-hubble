@@ -1,0 +1,77 @@
+{
+  "id": "dumbbells",
+  "slug": "dumbbells",
+  "name": "Dumbbells",
+  "category": "Sports",
+  "subcategory": "General",
+  "aliases": [
+    "hand weights",
+    "kettlebells"
+  ],
+  "keywords": [
+    "weights",
+    "dumbbells",
+    "heavy",
+    "fitness"
+  ],
+  "description": "Guidelines for traveling with dumbbells in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Heavy hand weights and dumbbells are not allowed in carry-on baggage (they can be used as bludgeons).",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Dumbbells and weights are allowed in checked baggage. Heavy bag charges may apply.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/dumbbells",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring dumbbells on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/dumbbells",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Heavy hand weights and dumbbells are not allowed in carry-on baggage (they can be used as bludgeons)."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is dumbbells allowed in carry-on bags?",
+      "answer": "Dumbbells is not_allowed in carry-on luggage. Heavy hand weights and dumbbells are not allowed in carry-on baggage (they can be used as bludgeons)."
+    },
+    {
+      "question": "Can you pack dumbbells in checked baggage?",
+      "answer": "Yes, Dumbbells is allowed in checked bags. Dumbbells and weights are allowed in checked baggage. Heavy bag charges may apply."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/dumbbells"
+    }
+  ]
+}

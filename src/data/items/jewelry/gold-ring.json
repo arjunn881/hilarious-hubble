@@ -1,0 +1,92 @@
+{
+  "id": "gold-ring",
+  "slug": "gold-ring",
+  "name": "Gold Ring",
+  "category": "Jewelry",
+  "subcategory": "General",
+  "aliases": [
+    "wedding ring",
+    "gold jewelry",
+    "band"
+  ],
+  "keywords": [
+    "gold",
+    "ring",
+    "valuables",
+    "accessories"
+  ],
+  "description": "Guidelines for traveling with gold ring in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Valuable jewelry like gold rings should be kept in carry-on bags or worn during travel. Checked bags run a high risk of theft or loss.",
+    "conditions": [
+      "You do not need to remove fine jewelry (rings, earrings) during screening unless they are exceptionally large metal pieces."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Valuable jewelry like gold rings should be kept in carry-on bags or worn during travel. Checked bags run a high risk of theft or loss.",
+    "conditions": [
+      "You do not need to remove fine jewelry (rings, earrings) during screening unless they are exceptionally large metal pieces."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring gold ring on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "You do not need to remove fine jewelry (rings, earrings) during screening unless they are exceptionally large metal pieces."
+  ],
+  "relatedItems": [
+    "diamond-necklace",
+    "costume-jewelry",
+    "metal-watch",
+    "smartwatch"
+  ],
+  "faq": [
+    {
+      "question": "Is gold ring allowed in carry-on bags?",
+      "answer": "Gold Ring is allowed in carry-on luggage. Valuable jewelry like gold rings should be kept in carry-on bags or worn during travel. Checked bags run a high risk of theft or loss."
+    },
+    {
+      "question": "Can you pack gold ring in checked baggage?",
+      "answer": "Yes, Gold Ring is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

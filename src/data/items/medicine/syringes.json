@@ -1,0 +1,77 @@
+{
+  "id": "syringes",
+  "slug": "syringes",
+  "name": "Syringes",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "needles",
+    "injectors"
+  ],
+  "keywords": [
+    "syringes",
+    "needles",
+    "diabetic",
+    "injection"
+  ],
+  "description": "Guidelines for traveling with syringes in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Syringes (used or unused) are allowed in carry-on baggage when accompanied by injectable medication (like insulin). Declare them at the checkpoint.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Syringes are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/syringes",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring syringes on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/syringes",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Syringes (used or unused) are allowed in carry-on baggage when accompanied by injectable medication (like insulin). Declare them at the checkpoint."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is syringes allowed in carry-on bags?",
+      "answer": "Syringes is allowed in carry-on luggage. Syringes (used or unused) are allowed in carry-on baggage when accompanied by injectable medication (like insulin). Declare them at the checkpoint."
+    },
+    {
+      "question": "Can you pack syringes in checked baggage?",
+      "answer": "Yes, Syringes is allowed in checked bags. Syringes are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/syringes"
+    }
+  ]
+}

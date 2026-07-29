@@ -1,0 +1,2 @@
+# Redirect /items to the first paginated catalog page (301 Permanent Redirect)
+/items /items/page/1 301

@@ -1,0 +1,92 @@
+{
+  "id": "chocolate-bar",
+  "slug": "chocolate-bar",
+  "name": "Chocolate Bar",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "candy bar",
+    "sweets",
+    "chocolate"
+  ],
+  "keywords": [
+    "candy",
+    "sweets",
+    "chocolate",
+    "solid"
+  ],
+  "description": "Guidelines for traveling with chocolate bar in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Solid foods like chocolate bars are permitted in both carry-on and checked bags. Liquid chocolate fillings are subject to the liquids rule.",
+    "conditions": [
+      "Ensure chocolate is solid and not melted at checkpoint temperatures."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Solid foods like chocolate bars are permitted in both carry-on and checked bags. Liquid chocolate fillings are subject to the liquids rule.",
+    "conditions": [
+      "Ensure chocolate is solid and not melted at checkpoint temperatures."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/chocolate",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring chocolate bar on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/chocolate",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Ensure chocolate is solid and not melted at checkpoint temperatures."
+  ],
+  "relatedItems": [
+    "coffee-beans",
+    "fresh-fruits",
+    "baby-food",
+    "canned-food"
+  ],
+  "faq": [
+    {
+      "question": "Is chocolate bar allowed in carry-on bags?",
+      "answer": "Chocolate Bar is allowed in carry-on luggage. Solid foods like chocolate bars are permitted in both carry-on and checked bags. Liquid chocolate fillings are subject to the liquids rule."
+    },
+    {
+      "question": "Can you pack chocolate bar in checked baggage?",
+      "answer": "Yes, Chocolate Bar is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/chocolate"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

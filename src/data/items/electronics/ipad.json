@@ -1,0 +1,78 @@
+{
+  "id": "ipad",
+  "slug": "ipad",
+  "name": "iPad",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "apple ipad",
+    "tablet",
+    "screen"
+  ],
+  "keywords": [
+    "ipad",
+    "apple",
+    "screen",
+    "device"
+  ],
+  "description": "Guidelines for traveling with ipad in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "iPads and other tablets are allowed in carry-on bags. You will be asked to remove them from your carrying case and place them in a bin for separate X-ray screening at security.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "iPads are allowed in checked baggage, though carrying them in the cabin is highly recommended to protect against theft or damage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/ipad",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring ipad on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/ipad",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "iPads and other tablets are allowed in carry-on bags. You will be asked to remove them from your carrying case and place them in a bin for separate X-ray screening at security."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is ipad allowed in carry-on bags?",
+      "answer": "iPad is allowed in carry-on luggage. iPads and other tablets are allowed in carry-on bags. You will be asked to remove them from your carrying case and place them in a bin for separate X-ray screening at security."
+    },
+    {
+      "question": "Can you pack ipad in checked baggage?",
+      "answer": "Yes, iPad is allowed in checked bags. iPads are allowed in checked baggage, though carrying them in the cabin is highly recommended to protect against theft or damage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/ipad"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "golf-clubs",
+  "slug": "golf-clubs",
+  "name": "Golf Clubs",
+  "category": "Sports",
+  "subcategory": "General",
+  "aliases": [
+    "golf bag",
+    "putter",
+    "irons"
+  ],
+  "keywords": [
+    "golf",
+    "clubs",
+    "putter",
+    "sports"
+  ],
+  "description": "Guidelines for traveling with golf clubs in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Golf clubs are prohibited in carry-on bags as they could be used as weapons. They must be packed in checked bags.",
+    "conditions": [
+      "Most airlines charge standard checked bag fees or specific sporting equipment fees for golf bags."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Golf clubs are prohibited in carry-on bags as they could be used as weapons. They must be packed in checked bags.",
+    "conditions": [
+      "Most airlines charge standard checked bag fees or specific sporting equipment fees for golf bags."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/golf-clubs",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring golf clubs on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/golf-clubs",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Most airlines charge standard checked bag fees or specific sporting equipment fees for golf bags."
+  ],
+  "relatedItems": [
+    "baseball-bat",
+    "skateboard",
+    "bicycle",
+    "hiking-poles"
+  ],
+  "faq": [
+    {
+      "question": "Is golf clubs allowed in carry-on bags?",
+      "answer": "Golf Clubs is not allowed in carry-on luggage. Golf clubs are prohibited in carry-on bags as they could be used as weapons. They must be packed in checked bags."
+    },
+    {
+      "question": "Can you pack golf clubs in checked baggage?",
+      "answer": "Yes, Golf Clubs is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/golf-clubs"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

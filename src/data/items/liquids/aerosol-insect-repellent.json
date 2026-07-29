@@ -1,0 +1,92 @@
+{
+  "id": "aerosol-insect-repellent",
+  "slug": "aerosol-insect-repellent",
+  "name": "Aerosol Insect Repellent",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "bug spray",
+    "off spray",
+    "mosquito repellent"
+  ],
+  "keywords": [
+    "spray",
+    "bug",
+    "mosquito",
+    "aerosols"
+  ],
+  "description": "Guidelines for traveling with aerosol insect repellent in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Insect repellent aerosols must be 3.4 oz or less in carry-ons. In checked bags, aerosols are allowed but must have cap locks to prevent accidental release.",
+    "conditions": [
+      "Checked aerosols are limited to 70 oz total per passenger, and no single container can exceed 18 oz."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Insect repellent aerosols must be 3.4 oz or less in carry-ons. In checked bags, aerosols are allowed but must have cap locks to prevent accidental release.",
+    "conditions": [
+      "Checked aerosols are limited to 70 oz total per passenger, and no single container can exceed 18 oz."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bug-spray",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring aerosol insect repellent on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bug-spray",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Checked aerosols are limited to 70 oz total per passenger, and no single container can exceed 18 oz."
+  ],
+  "relatedItems": [
+    "hand-sanitizer",
+    "shampoo",
+    "sunscreen",
+    "water-bottle"
+  ],
+  "faq": [
+    {
+      "question": "Is aerosol insect repellent allowed in carry-on bags?",
+      "answer": "Aerosol Insect Repellent is restricted in carry-on luggage. Insect repellent aerosols must be 3.4 oz or less in carry-ons. In checked bags, aerosols are allowed but must have cap locks to prevent accidental release."
+    },
+    {
+      "question": "Can you pack aerosol insect repellent in checked baggage?",
+      "answer": "Yes, Aerosol Insect Repellent is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bug-spray"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+---
+import { ChevronRight, Home } from "@lucide/astro";
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+// Generate JSON-LD schema
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    ...(item.href ? { "item": `https://bringonplane.com${item.href}` } : {})
+  }))
+};
+---
+
+<nav aria-label="Breadcrumb" class="flex items-center gap-1.5 text-[11px] sm:text-xs font-mono text-mute mb-8 select-none overflow-x-auto whitespace-nowrap pb-2 scrollbar-none">
+  <ol class="flex items-center gap-1.5 m-0 p-0 list-none" itemscope itemtype="https://schema.org/BreadcrumbList">
+    {items.map((item, index) => {
+      const isLast = index === items.length - 1;
+      
+      return (
+        <li 
+          itemprop="itemListElement" 
+          itemscope 
+          itemtype="https://schema.org/ListItem"
+          class="flex items-center gap-1.5"
+        >
+          {item.href ? (
+            <a 
+              href={item.href} 
+              class="hover:text-ink transition-colors focus-visible:underline flex items-center gap-1"
+              itemprop="item"
+            >
+              {index === 0 && <Home class="w-3.5 h-3.5" />}
+              <span itemprop="name">{item.label}</span>
+            </a>
+          ) : (
+            <span class="text-ink font-medium capitalize flex items-center gap-1" aria-current={isLast ? "page" : undefined}>
+              {index === 0 && <Home class="w-3.5 h-3.5" />}
+              <span itemprop="name">{item.label}</span>
+            </span>
+          )}
+          
+          <meta itemprop="position" content={(index + 1).toString()} />
+          
+          {!isLast && (
+            <ChevronRight class="w-3 h-3 text-hairline-strong flex-shrink-0" aria-hidden="true" />
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

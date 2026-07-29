@@ -1,0 +1,91 @@
+{
+  "id": "baseball-bat",
+  "slug": "baseball-bat",
+  "name": "Baseball Bat",
+  "category": "Sports",
+  "subcategory": "General",
+  "aliases": [
+    "t-ball bat",
+    "softball bat"
+  ],
+  "keywords": [
+    "baseball",
+    "bat",
+    "sports",
+    "club"
+  ],
+  "description": "Guidelines for traveling with baseball bat in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Baseball bats are prohibited in carry-on baggage. They are classified as potential clubs/weapons.",
+    "conditions": [
+      "Toy plastic bats are sometimes allowed, but full-size wood or aluminum bats must be checked."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Baseball bats are prohibited in carry-on baggage. They are classified as potential clubs/weapons.",
+    "conditions": [
+      "Toy plastic bats are sometimes allowed, but full-size wood or aluminum bats must be checked."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baseball-bats",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring baseball bat on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baseball-bats",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Toy plastic bats are sometimes allowed, but full-size wood or aluminum bats must be checked."
+  ],
+  "relatedItems": [
+    "golf-clubs",
+    "skateboard",
+    "bicycle",
+    "hiking-poles"
+  ],
+  "faq": [
+    {
+      "question": "Is baseball bat allowed in carry-on bags?",
+      "answer": "Baseball Bat is not allowed in carry-on luggage. Baseball bats are prohibited in carry-on baggage. They are classified as potential clubs/weapons."
+    },
+    {
+      "question": "Can you pack baseball bat in checked baggage?",
+      "answer": "Yes, Baseball Bat is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baseball-bats"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

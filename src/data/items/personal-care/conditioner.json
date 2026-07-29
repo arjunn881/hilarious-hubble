@@ -1,0 +1,77 @@
+{
+  "id": "conditioner",
+  "slug": "conditioner",
+  "name": "Conditioner",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "hair conditioner",
+    "hair cream"
+  ],
+  "keywords": [
+    "conditioner",
+    "hair",
+    "liquid",
+    "shower"
+  ],
+  "description": "Guidelines for traveling with conditioner in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Hair conditioner is subject to the 3-1-1 liquids rule. Cans or bottles in carry-on must be 3.4 oz (100 ml) or less and fit in your quart-sized bag.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Conditioner is allowed in checked baggage in any size.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/conditioner",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring conditioner on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/conditioner",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Hair conditioner is subject to the 3-1-1 liquids rule. Cans or bottles in carry-on must be 3.4 oz (100 ml) or less and fit in your quart-sized bag."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is conditioner allowed in carry-on bags?",
+      "answer": "Conditioner is restricted in carry-on luggage. Hair conditioner is subject to the 3-1-1 liquids rule. Cans or bottles in carry-on must be 3.4 oz (100 ml) or less and fit in your quart-sized bag."
+    },
+    {
+      "question": "Can you pack conditioner in checked baggage?",
+      "answer": "Yes, Conditioner is allowed in checked bags. Conditioner is allowed in checked baggage in any size."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/conditioner"
+    }
+  ]
+}

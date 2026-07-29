@@ -1,0 +1,77 @@
+{
+  "id": "fishing-rod",
+  "slug": "fishing-rod",
+  "name": "Fishing Rod",
+  "category": "Sports",
+  "subcategory": "General",
+  "aliases": [
+    "fishing pole",
+    "fishing gear"
+  ],
+  "keywords": [
+    "fishing",
+    "rod",
+    "pole",
+    "hook"
+  ],
+  "description": "Guidelines for traveling with fishing rod in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Fishing rods are allowed in carry-on if they fit within airline overhead dimension limits. Sharp hooks and lures must be checked.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Fishing rods and reels are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/fishing-rod",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring fishing rod on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/fishing-rod",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Fishing rods are allowed in carry-on if they fit within airline overhead dimension limits. Sharp hooks and lures must be checked."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is fishing rod allowed in carry-on bags?",
+      "answer": "Fishing Rod is allowed in carry-on luggage. Fishing rods are allowed in carry-on if they fit within airline overhead dimension limits. Sharp hooks and lures must be checked."
+    },
+    {
+      "question": "Can you pack fishing rod in checked baggage?",
+      "answer": "Yes, Fishing Rod is allowed in checked bags. Fishing rods and reels are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/fishing-rod"
+    }
+  ]
+}

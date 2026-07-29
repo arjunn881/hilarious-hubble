@@ -1,0 +1,78 @@
+{
+  "id": "wine",
+  "slug": "wine",
+  "name": "Wine",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "red wine",
+    "white wine",
+    "bottle of wine"
+  ],
+  "keywords": [
+    "wine",
+    "alcohol",
+    "bottle",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with wine in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Wine is a liquid and is subject to the 3-1-1 liquids rule (which means standard 750ml bottles must be checked). Duty-free wine is allowed in carry-on if sealed in a tamper-evident bag.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Wine is allowed in checked baggage. Alcohol content must be under 70% ABV (all wine qualifies).",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/wine",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring wine on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/wine",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Wine is a liquid and is subject to the 3-1-1 liquids rule (which means standard 750ml bottles must be checked). Duty-free wine is allowed in carry-on if sealed in a tamper-evident bag."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is wine allowed in carry-on bags?",
+      "answer": "Wine is restricted in carry-on luggage. Wine is a liquid and is subject to the 3-1-1 liquids rule (which means standard 750ml bottles must be checked). Duty-free wine is allowed in carry-on if sealed in a tamper-evident bag."
+    },
+    {
+      "question": "Can you pack wine in checked baggage?",
+      "answer": "Yes, Wine is allowed in checked bags. Wine is allowed in checked baggage. Alcohol content must be under 70% ABV (all wine qualifies)."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/wine"
+    }
+  ]
+}

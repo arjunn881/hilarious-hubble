@@ -1,0 +1,79 @@
+{
+  "id": "pet-carrier",
+  "slug": "pet-carrier",
+  "name": "Pet Carrier",
+  "category": "Baby",
+  "subcategory": "General",
+  "aliases": [
+    "dog carrier",
+    "cat carrier",
+    "pet kennel"
+  ],
+  "keywords": [
+    "carrier",
+    "pet",
+    "dog",
+    "cat",
+    "crate"
+  ],
+  "description": "Guidelines for traveling with pet carrier in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Soft-sided pet carriers are allowed in the cabin if they meet airline size limits to fit under the seat ahead. Pets require fees/booking.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Hard-sided pet crates are allowed in checked baggage/cargo holds under strict airline regulations.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pet-carrier",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring pet carrier on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pet-carrier",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Soft-sided pet carriers are allowed in the cabin if they meet airline size limits to fit under the seat ahead. Pets require fees/booking."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is pet carrier allowed in carry-on bags?",
+      "answer": "Pet Carrier is allowed in carry-on luggage. Soft-sided pet carriers are allowed in the cabin if they meet airline size limits to fit under the seat ahead. Pets require fees/booking."
+    },
+    {
+      "question": "Can you pack pet carrier in checked baggage?",
+      "answer": "Yes, Pet Carrier is allowed in checked bags. Hard-sided pet crates are allowed in checked baggage/cargo holds under strict airline regulations."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pet-carrier"
+    }
+  ]
+}

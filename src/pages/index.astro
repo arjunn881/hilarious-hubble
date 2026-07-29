@@ -1,11 +1,1457 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getAllItems, getItemBySlug } from "../lib/items";
+import { 
+  Search, 
+  Laptop, 
+  Droplet, 
+  Apple, 
+  Activity, 
+  Baby, 
+  Wrench, 
+  Trophy, 
+  Sparkles, 
+  Gem, 
+  FileText,
+  ArrowRight,
+  ShieldCheck,
+  PlaneTakeoff,
+  Luggage,
+  ChevronDown,
+  HelpCircle,
+  CheckCircle2,
+  XCircle,
+  AlertCircle,
+  ExternalLink,
+  X
+} from "@lucide/astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const items = getAllItems();
+
+// 10 categories requested by the user
+const categoriesList = [
+  { name: "Electronics", icon: Laptop },
+  { name: "Liquids", icon: Droplet },
+  { name: "Food", icon: Apple },
+  { name: "Medicine", icon: Activity },
+  { name: "Baby", icon: Baby },
+  { name: "Tools", icon: Wrench },
+  { name: "Sports", icon: Trophy },
+  { name: "Personal Care", icon: Sparkles },
+  { name: "Jewelry", icon: Gem },
+  { name: "Documents", icon: FileText },
+];
+
+// Dynamically count items in each category
+const categories = categoriesList.map(cat => {
+  const count = items.filter(item => item.category === cat.name).length;
+  return { ...cat, count };
+});
+
+// ── Popular Searches (10 chips shown in hero) ────────────────────────────────
+// Maps label → slug.
+const popularSearchChips = [
+  { label: "Power Bank",     slug: "power-bank" },
+  { label: "Perfume",        slug: "perfume" },
+  { label: "Toothpaste",     slug: "toothpaste" },
+  { label: "Scissors",       slug: "scissors" },
+  { label: "Laptop",         slug: "laptop" },
+  { label: "Drone",          slug: "drone" },
+  { label: "Protein Powder", slug: "protein-powder" },
+  { label: "Vape",           slug: "vape" },
+  { label: "Razor",          slug: "razor" },
+  { label: "Camera",         slug: "camera" },
+];
+
+// Pre-load full item data for each popular chip (build-time)
+const popularItems = popularSearchChips.map(chip => ({
+  ...chip,
+  item: getItemBySlug(chip.slug),
+}));
+
+// Most searched queries (TSA heavy queries — used in the section below the hero)
+const mostSearchedSlugs = ["power-bank", "sunscreen", "laptop", "aerosol-insect-repellent"];
+const mostSearched = mostSearchedSlugs.map(slug => items.find(i => i.slug === slug)).filter((x): x is NonNullable<typeof x> => !!x);
+
+// Latest reviewed items (sorted by lastReviewed date descending)
+const latestReviewed = [...items]
+  .sort((a, b) => b.lastReviewed.localeCompare(a.lastReviewed))
+  .slice(0, 4);
+
+// Fetch latest travel guides for the freshness system
+const posts = import.meta.glob("../data/articles/*.md", { eager: true });
+const latestGuides = Object.entries(posts)
+  .map(([filePath, module]: [string, any]) => {
+    const parts = filePath.split(/[/\\]/);
+    return {
+      slug: parts[parts.length - 1].replace(".md", ""),
+      title: module.frontmatter.title,
+      category: module.frontmatter.category,
+      lastUpdated: module.frontmatter.lastUpdated
+    };
+  })
+  .sort((a, b) => b.lastUpdated.localeCompare(a.lastUpdated))
+  .slice(0, 2);
+
+function getStatusClass(status: 'allowed' | 'prohibited' | 'restricted') {
+  if (status === 'allowed') return "bg-link-bg-soft border-link/25 text-link-deep";
+  if (status === 'prohibited') return "bg-error-soft border-error/25 text-error-deep";
+  return "bg-warning-soft border-warning/25 text-warning-deep";
+}
+
+function getCarryOnLabel(status: string) {
+  const s = status?.toUpperCase();
+  if (s === 'ALLOWED') return '✅ Allowed';
+  if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') return '❌ Not Allowed';
+  return '⚠️ Restricted';
+}
+
+function getCheckedLabel(status: string) {
+  const s = status?.toUpperCase();
+  if (s === 'ALLOWED') return '✅ Allowed';
+  if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') return '❌ Not Allowed';
+  return '⚠️ Restricted';
+}
+
+function getStatusBadgeClass(status: string) {
+  const s = status?.toUpperCase();
+  if (s === 'ALLOWED') return 'text-emerald-700 bg-emerald-50 border border-emerald-200';
+  if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') return 'text-error-deep bg-error-soft border border-error/25';
+  return 'text-warning-deep bg-warning-soft border border-warning/30';
+}
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title="Can I Bring It on a Plane? TSA Rules for Food, Vapes, Razors & More (2026)"
+  description="Search TSA carry-on & checked bag rules instantly. Can I bring food through TSA? Vape on a plane? Razor, scissors, portable charger, toothpaste, deodorant? Get official answers + free packing list."
+  image="/og-image.png"
+  imageAlt="BringOnPlane — Search TSA Rules for Any Item You Want to Pack"
+  canonicalURL="https://bringonplane.com/"
+  keywords="can i bring food through tsa, can i bring food on a plane, can i bring a vape on a plane, what can i bring on a plane, can i bring snacks on a plane, can i bring a portable charger on a plane, can i bring toothpaste on a plane, can i bring scissors on a plane, can i bring a razor on a plane, can i bring deodorant on a plane, can i bring a lighter on a plane, can i bring batteries on a plane, can i bring cologne on a plane, can i bring hairspray on a plane, can i bring a power bank on a plane, tsa liquid rules, tsa 3-1-1 rule, carry on packing list, packing list generator"
+>
+  <!-- WebSite + SearchAction JSON-LD -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Bring On Plane",
+    "alternateName": "BringOnPlane",
+    "url": "https://bringonplane.com",
+    "description": "Search TSA carry-on and checked bag rules for any item you want to bring on a plane.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://bringonplane.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  })} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I bring food or snacks through TSA security?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can bring solid food and snacks (like sandwiches, fresh fruits, bananas, beef jerky, bread, chips, candy, and granola bars) through TSA checkpoints and on the plane in carry-on and checked bags. However, liquid or spreadable foods (such as peanut butter, honey, jam, jelly, yogurt, and baby food puree) are subject to the 3-1-1 liquids rule (under 3.4 oz / 100ml) in carry-on luggage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I bring a vape, e-cigarette, or electronic cigarette on a plane?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can bring a vape, e-cigarette, and disposable vapes on a plane, but they are strictly restricted to carry-on baggage only. FAA safety regulations prohibit carrying lithium battery-powered vapes, vape pens, and spare vape juice in checked hold luggage due to fire hazards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I pack portable chargers, power banks, and batteries in my luggage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Portable chargers, lithium-ion power banks, and spare battery packs must be packed in carry-on baggage only. They are prohibited in checked baggage holds. Standard dry cell batteries (AA, AAA, double a batteries) can travel in either carry-on or checked luggage, but must be protected from short circuits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are lighters, matches, and scissors allowed on a plane?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can bring one common lighter (like a Bic or Zippo lighter) or one book of safety matches in your pocket or carry-on. Scissors with blades under 4 inches from the pivot point (like kids scissors or eyebrow scissors) are permitted in carry-on bags. Larger tools, utility knives, and box cutters must go in checked baggage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I bring razors (disposable, electric, or safety razors) in my carry-on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Disposable razors (cartridge razors) and electric razors/shavers are 100% allowed in carry-on bags. However, safety razors and straight razors are only allowed in carry-ons if the blades are removed. Spare safety razor blades must be packed in checked bags."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do toiletries, deodorant, cologne, and toothpaste fit TSA rules?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Toiletries in carry-on bags must comply with the 3-1-1 liquids limit. Liquid, gel, or aerosol deodorants, cologne, perfume, and toothpaste must be in containers of 3.4 oz (100ml) or less and fit inside a single quart-sized clear plastic bag. Solid stick deodorants, bar soaps, and dry powders are exempt from this limit."
+        }
+      }
+    ]
+  })} />
+
+  <!-- Header Slot -->
+  <Header slot="header" />
+
+  <!-- ════════════════════════════════════════════════════════════════
+       HERO — redesigned per mockup: focused search + popular chips
+       + inline search result preview card
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="relative overflow-hidden bg-canvas border-b border-hairline" id="hero">
+    <!-- Mesh Gradient Decorator -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.10]" aria-hidden="true" style="background: radial-gradient(80% 60% at 50% -5%, #007cf0 0%, #7928ca 40%, #ff0080 70%, #ff4d4d 100%); filter: blur(72px);"></div>
+
+    <div class="relative z-10">
+      <!-- Top hero: headline + search bar -->
+      <div class="max-w-[720px] mx-auto px-4 pt-28 pb-10 text-center flex flex-col items-center">
+
+        <!-- Eyebrow Badge -->
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-medium rounded-full bg-canvas-soft border border-hairline text-body mb-6 hover:border-hairline-strong transition-all select-none">
+          <span class="w-1.5 h-1.5 rounded-full bg-link animate-pulse"></span>
+          TSA · FAA · IATA Database
+        </div>
+
+        <!-- Brand mark -->
+        <div class="flex items-center gap-2 mb-5">
+          <span class="text-3xl" aria-hidden="true">✈️</span>
+          <span class="font-semibold text-lg tracking-[-0.4px] text-ink font-mono">BringOnPlane</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl md:text-[52px] font-semibold tracking-[-2px] leading-[1.08] text-ink mb-4 text-balance">
+          Can I bring this on a plane?
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-base md:text-lg text-body font-normal leading-[1.65] max-w-[560px] mb-8 text-pretty">
+          Instantly check TSA carry-on &amp; checked bag rules for any item. Simple, fast, always up-to-date.
+        </p>
+
+        <!-- Large Search Bar -->
+        <div class="w-full max-w-[580px] relative mb-6 group focus-within:ring-2 focus-within:ring-link/10 rounded-xl transition-all" id="homepage-search-container">
+          <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-mute group-focus-within:text-link transition-colors z-10">
+            <Search class="w-5 h-5" aria-hidden="true" />
+          </div>
+          <input 
+            type="text" 
+            id="homepage-search-input"
+            placeholder="Search an item..." 
+            autocomplete="off" 
+            spellcheck="false"
+            class="w-full h-14 pl-12 pr-24 bg-canvas border border-hairline hover:border-hairline-strong focus:border-link rounded-xl text-sm text-ink placeholder:text-mute shadow-level-3 focus:shadow-level-4 outline-none transition-all"
+          />
+          
+          <!-- Clear Button (hidden by default) -->
+          <button 
+            type="button" 
+            id="homepage-search-clear" 
+            class="absolute inset-y-0 right-14 flex items-center text-mute hover:text-ink hidden cursor-pointer px-2.5 transition-colors z-10" 
+            aria-label="Clear search"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <line x1="18" x2="6" y1="6" y2="18"></line>
+              <line x1="6" x2="18" y1="6" y2="18"></line>
+            </svg>
+          </button>
+
+          <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none gap-1 z-10">
+            <kbd class="hidden sm:inline-flex items-center justify-center h-6 px-1.5 text-[10px] font-mono font-medium border border-hairline bg-canvas-soft text-mute rounded-xs shadow-sm">⌘</kbd>
+            <kbd class="hidden sm:inline-flex items-center justify-center h-6 px-1.5 text-[10px] font-mono font-medium border border-hairline bg-canvas-soft text-mute rounded-xs shadow-sm">K</kbd>
+          </div>
+          
+          <!-- Suggestions Dropdown (floating below the input) -->
+          <div 
+            id="homepage-suggestions" 
+            class="absolute top-[calc(100%+8px)] left-0 right-0 z-30 hidden bg-canvas/95 backdrop-blur-md border border-hairline rounded-xl shadow-level-5 overflow-hidden max-h-[300px] overflow-y-auto text-left transition-all"
+          >
+            <!-- Suggestions populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Popular Searches chips (10 items) -->
+        <div class="w-full">
+          <p class="text-xs text-mute font-mono mb-3 text-left">Popular Searches</p>
+          <div class="flex flex-wrap gap-2" id="popular-chips" role="list">
+            {popularItems.map((chip, i) => (
+              <button
+                type="button"
+                role="listitem"
+                data-chip-index={i}
+                data-chip-slug={chip.slug}
+                class="popular-chip px-3.5 py-1.5 rounded-full border border-hairline bg-canvas text-xs font-medium text-body hover:border-ink hover:text-ink hover:bg-canvas-soft-2 cursor-pointer transition-all select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1"
+                aria-pressed="false"
+              >
+                {chip.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Inline Search Result Panel (hidden until a chip is clicked) ── -->
+      <div
+        id="hero-result-panel"
+        class="hidden"
+        aria-live="polite"
+        aria-label="Search result"
+      >
+        <div class="max-w-[720px] mx-auto px-4 pb-14 animate-fade-in">
+          <!-- Result Card -->
+          <div class="bg-canvas border border-hairline rounded-xl shadow-level-4 overflow-hidden">
+            <!-- Card Header -->
+            <div class="px-6 pt-5 pb-4 border-b border-hairline flex items-start justify-between gap-4">
+              <div>
+                <p class="text-xs font-mono text-mute uppercase tracking-wider mb-1.5" id="result-category">Category</p>
+                <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink flex items-center gap-2.5" id="result-name">
+                  <span id="result-title-icon-container" class="text-mute flex-shrink-0"></span>
+                  <span id="result-title-text">Item Name</span>
+                </h2>
+              </div>
+              <button
+                type="button"
+                id="result-close-btn"
+                aria-label="Close result"
+                class="p-1.5 rounded-md hover:bg-canvas-soft text-mute hover:text-ink transition-colors flex-shrink-0 mt-0.5"
+              >
+                <X class="w-4 h-4" aria-hidden="true" />
+              </button>
+            </div>
+
+            <!-- Carry-on / Checked rows -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-hairline">
+              <!-- Carry-on -->
+              <div class="px-6 py-5">
+                <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">Carry-on</p>
+                <div id="result-carryon-badge-container"></div>
+              </div>
+              <!-- Checked Bag -->
+              <div class="px-6 py-5">
+                <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">Checked baggage</p>
+                <div id="result-checked-badge-container"></div>
+              </div>
+            </div>
+
+            <!-- Status / Reason Row -->
+            <div class="px-6 py-5 bg-canvas-soft border-t border-hairline">
+              <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">Status</p>
+              <div class="flex items-start gap-2.5">
+                <span id="result-status-icon-container" class="flex-shrink-0 mt-0.5"></span>
+                <p class="text-sm text-body leading-[1.65]" id="result-reason">Status details…</p>
+              </div>
+            </div>
+
+            <!-- Separator line per user mockup -->
+            <div class="px-6 py-2 flex justify-center text-hairline-strong/30 select-none">
+              <span>──────────────────────────</span>
+            </div>
+
+            <!-- Quick Summary + CTA -->
+            <div class="px-6 py-5">
+              <p class="text-xs font-mono text-mute uppercase tracking-wider mb-4">Quick Summary</p>
+              
+              <div class="space-y-3 mb-6 text-sm text-body">
+                <div class="flex items-center gap-2.5">
+                  <span id="result-summary-carryon-icon-container"></span>
+                  <span>Carry-on:</span>
+                  <span class="font-medium text-ink" id="result-summary-carryon-text">Yes</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span id="result-summary-checked-icon-container"></span>
+                  <span>Checked baggage:</span>
+                  <span class="font-medium text-ink" id="result-summary-checked-text">No</span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <span id="result-summary-personal-icon-container"></span>
+                  <span>Personal Item:</span>
+                  <span class="font-medium text-ink" id="result-summary-personal-text">Yes</span>
+                </div>
+              </div>
+
+              <div class="border-t border-hairline pt-4 flex justify-start">
+                <a
+                  id="result-full-link"
+                  href="#"
+                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-link hover:text-link-deep transition-colors"
+                >
+                  Read Full Rules ↓
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden JSON data island for popular item previews -->
+      <script type="application/json" id="popular-items-data" is:inline set:html={JSON.stringify(
+        popularItems.map(chip => ({
+          slug: chip.slug,
+          label: chip.label,
+          name: chip.item?.name ?? chip.label,
+          category: chip.item?.category ?? '',
+          carryOn: chip.item?.carryOn?.status ?? '',
+          carryOnReason: chip.item?.carryOn?.reason ?? '',
+          checked: chip.item?.checkedBag?.status ?? '',
+          checkedReason: chip.item?.checkedBag?.reason ?? '',
+        }))
+      )} />
+    </div>
+  </section>
+
+  <!-- ═══ FIRST-SIGHT TRUST & NAVIGATION STRIP ════════════════════════════ -->
+  <!-- This strip is visible immediately below the hero — no scrolling needed -->
+  <div class="w-full bg-canvas border-b border-hairline">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6">
+      <!-- Top row: page quick-links -->
+      <div class="flex flex-wrap items-center justify-between gap-y-3 py-4 border-b border-hairline/40">
+        <div class="flex flex-wrap items-center gap-1">
+          {[
+            { label: "About Us", href: "/about" },
+            { label: "FAQ Guide", href: "/faq" },
+            { label: "Contact", href: "/contact" },
+            { label: "Travel Guides", href: "/guides" },
+            { label: "Airline Rules", href: "/airlines" },
+            { label: "Country Customs", href: "/countries" },
+            { label: "All Items A–Z", href: "/items" },
+          ].map(l => (
+            <a
+              href={l.href}
+              class="px-3 py-1 text-[11px] font-medium text-body hover:text-ink hover:bg-canvas-soft rounded-md border border-transparent hover:border-hairline transition-all whitespace-nowrap"
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+        <div class="flex items-center gap-3 text-[11px] text-mute font-mono flex-shrink-0">
+          <a href="/privacy-policy" class="hover:text-ink transition-colors">Privacy</a>
+          <span aria-hidden="true">&bull;</span>
+          <a href="/terms" class="hover:text-ink transition-colors">Terms</a>
+          <span aria-hidden="true">&bull;</span>
+          <div class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-success" aria-hidden="true"></span>
+            <span>TSA Live</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Traveler Dashboard Section (Dashboard for Checklist, Compare, Starred & Recents) -->
+  <section id="traveler-dashboard" class="py-16 bg-canvas border-b border-hairline select-none">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6">
+      <div class="flex items-baseline justify-between mb-8">
+        <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink">
+          Traveler Dashboard
+        </h2>
+        <span class="font-mono text-xs text-mute">Offline Tools</span>
+      </div>
+
+      <!-- Quick Tool Links Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <!-- Compare Tool Card -->
+        <a href="/compare" class="group block bg-canvas border border-hairline hover:border-link hover:shadow-level-3 rounded-md p-6 transition-all hover:-translate-y-0.5">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-sm bg-canvas-soft border border-hairline flex items-center justify-center text-ink group-hover:bg-primary group-hover:text-on-primary transition-all">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 3h5v5M8 21H3v-5M12 12l9-9M12 12l-9 9"/></svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium tracking-[-0.4px] text-ink mb-1 group-hover:text-link transition-colors">
+                Side-by-Side Comparison
+              </h3>
+              <p class="text-xs text-body leading-relaxed">
+                Compare carry-on and checked baggage rules for any two travel items side-by-side.
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Checklist Tool Card -->
+        <a href="/checklist" class="group block bg-canvas border border-hairline hover:border-link hover:shadow-level-3 rounded-md p-6 transition-all hover:-translate-y-0.5">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-sm bg-canvas-soft border border-hairline flex items-center justify-center text-ink group-hover:bg-primary group-hover:text-on-primary transition-all">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium tracking-[-0.4px] text-ink mb-1 group-hover:text-link transition-colors">
+                Packing Checklist Builder
+              </h3>
+              <p class="text-xs text-body leading-relaxed">
+                Build your baggage checklist, track security regulations, write travel notes, and export PDF.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Favorites and Recents dynamic list split -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-hairline">
+        <!-- Starred items box -->
+        <div>
+          <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-mute mb-4">
+            Starred Items
+          </h3>
+          <div id="favorites-dashboard-list" class="space-y-3">
+            <p class="text-xs text-mute font-mono">Loading starred items…</p>
+          </div>
+        </div>
+
+        <!-- Recently viewed items box -->
+        <div>
+          <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-mute mb-4">
+            Recently Viewed
+          </h3>
+          <div id="recents-dashboard-list" class="space-y-3">
+            <p class="text-xs text-mute font-mono">Loading recently viewed items…</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Cards Section -->
+  <section id="categories" class="py-20 bg-canvas-soft border-b border-hairline">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6">
+      <div class="flex items-baseline justify-between mb-10">
+        <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.6px] text-ink">
+          Browse by Category
+        </h2>
+        <span class="font-mono text-xs text-mute">
+          13 major categories
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {categories.map((category) => {
+          const Icon = category.icon;
+          const slug = category.name.toLowerCase().trim().replace(/\s+/g, "-");
+          return (
+            <a 
+              href={`/category/${slug}`}
+              class="group text-left bg-canvas border border-hairline hover:border-hairline-strong hover:shadow-level-3 rounded-md p-6 transition-all hover:-translate-y-0.5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+            >
+              <div class="w-10 h-10 rounded-sm bg-canvas-soft border border-hairline flex items-center justify-center text-ink group-hover:bg-primary group-hover:text-on-primary transition-all mb-4">
+                <Icon class="w-5 h-5" aria-hidden="true" />
+              </div>
+              <h3 class="text-sm font-medium tracking-[-0.4px] text-ink mb-1 group-hover:text-link transition-colors">
+                {category.name}
+              </h3>
+              <p class="text-[11px] text-mute font-mono">
+                {category.count} items cataloged
+              </p>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Split Section: Most Searched vs. Latest Reviewed -->
+  <section class="py-20 bg-canvas border-b border-hairline">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+      
+      <!-- Most Searched Items -->
+      <div>
+        <div class="flex items-baseline justify-between mb-8">
+          <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink">
+            Most Searched Items
+          </h2>
+          <span class="font-mono text-xs text-mute">Top queries</span>
+        </div>
+
+        <div class="space-y-4">
+          {mostSearched.map((item) => (
+            <a
+              href={`/items/${item.slug}`}
+              class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="font-mono text-[9px] font-semibold text-mute uppercase tracking-wider block mb-0.5">
+                    {item.category}
+                  </span>
+                  <h3 class="text-base font-medium tracking-[-0.2px] text-ink">
+                    {item.name}
+                  </h3>
+                </div>
+                <div class="flex gap-2 flex-shrink-0">
+                  <span class:list={["text-[9px] font-mono px-2 py-0.5 rounded-full border uppercase tracking-wider", getStatusClass(item.carryOn)]}>
+                    H: {item.carryOn}
+                  </span>
+                  <span class:list={["text-[9px] font-mono px-2 py-0.5 rounded-full border uppercase tracking-wider", getStatusClass(item.checked)]}>
+                    C: {item.checked}
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Latest Reviewed Items -->
+      <div>
+        <div class="flex items-baseline justify-between mb-8">
+          <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-success animate-pulse inline-block" aria-hidden="true"></span>
+            TSA Regulation Updates
+          </h2>
+          <span class="font-mono text-xs text-mute">Latest freshness</span>
+        </div>
+
+        <div class="space-y-4">
+          {latestGuides.map((guide) => (
+            <a
+              href={`/guide/${guide.slug}`}
+              class="block bg-link-bg-soft border border-link/25 hover:border-link hover:shadow-level-2 rounded-md p-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="font-mono text-[9px] font-semibold text-link uppercase tracking-wider block mb-0.5 flex items-center gap-1.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    GUIDE UPDATE • {guide.category}
+                  </span>
+                  <h3 class="text-base font-medium tracking-[-0.2px] text-ink">
+                    {guide.title}
+                  </h3>
+                </div>
+                <div class="flex items-center flex-shrink-0">
+                  <span class="font-mono text-[10px] text-link font-semibold bg-canvas px-2 py-0.5 rounded-full border border-link/25">
+                    {guide.lastUpdated}
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+
+          {latestReviewed.slice(0, 2).map((item) => (
+            <a
+              href={`/items/${item.slug}`}
+              class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="font-mono text-[9px] font-semibold text-mute uppercase tracking-wider block mb-0.5">
+                    ITEM REVIEW • {item.category}
+                  </span>
+                  <h3 class="text-base font-medium tracking-[-0.2px] text-ink">
+                    {item.name}
+                  </h3>
+                </div>
+                <div class="flex items-center gap-3 flex-shrink-0">
+                  <span class="font-mono text-[10px] text-mute hidden sm:inline">
+                    {item.lastReviewed}
+                  </span>
+                  <span class:list={["text-[9px] font-mono px-1.5 py-0.5 rounded-full border uppercase tracking-wider", getStatusClass(item.carryOn)]}>
+                    {item.carryOn}
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How It Works Section (Minimal, SaaS-style) -->
+  <section class="py-20 bg-canvas-soft border-b border-hairline">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6">
+      <div class="max-w-[600px] mb-12">
+        <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.8px] text-ink mb-3">
+          How security routing works
+        </h2>
+        <p class="text-sm text-body leading-[1.6]">
+          TSA checks categorize items into three security tiers. Follow this three-step workflow before you arrive at the airport check-in.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="bg-canvas border border-hairline p-8 rounded-md shadow-sm">
+          <span class="font-mono text-xs font-semibold text-mute block mb-4">01 / QUERY DETAILS</span>
+          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">Search items</h3>
+          <p class="text-xs text-body leading-[1.6]">
+            Query any travel item using our typo-tolerant Search bar to check official TSA baggage classifications.
+          </p>
+        </div>
+        <!-- Step 2 -->
+        <div class="bg-canvas border border-hairline p-8 rounded-md shadow-sm">
+          <span class="font-mono text-xs font-semibold text-mute block mb-4">02 / COMPARE BAGS</span>
+          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">Check status</h3>
+          <p class="text-xs text-body leading-[1.6]">
+            Compare Carry-On (Cabin) vs. Checked (Cargo Hold) status rules. Identify if items are allowed, prohibited, or restricted.
+          </p>
+        </div>
+        <!-- Step 3 -->
+        <div class="bg-canvas border border-hairline p-8 rounded-md shadow-sm">
+          <span class="font-mono text-xs font-semibold text-mute block mb-4">03 / BOARD PLANE</span>
+          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">Pack accordingly</h3>
+          <p class="text-xs text-body leading-[1.6]">
+            Read warnings and packing tips (e.g. tape battery terminals, secure aerosol cap locks) to breeze through security.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Tips Section (Clean visual cards) -->
+  <section class="py-20 bg-canvas">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6">
+      <div class="flex items-baseline justify-between mb-10">
+        <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.6px] text-ink">
+          Essential Travel Rules
+        </h2>
+        <span class="font-mono text-xs text-mute">Packing guidelines</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Tip 1 -->
+        <div class="border border-hairline hover:border-hairline-strong rounded-md p-6 transition-all">
+          <div class="w-8 h-8 rounded-sm bg-link-bg-soft text-link-deep border border-link/15 flex items-center justify-center mb-4">
+            <Luggage class="w-4 h-4" aria-hidden="true" />
+          </div>
+          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">The 3-1-1 liquids rule</h3>
+          <p class="text-xs text-body leading-[1.6]">
+            Liquids, gels, and aerosols in carry-on baggage must be in containers of <strong>3.4 oz (100ml)</strong> or less, packed inside a single clear, quart-sized plastic bag.
+          </p>
+        </div>
+        <!-- Tip 2 -->
+        <div class="border border-hairline hover:border-hairline-strong rounded-md p-6 transition-all">
+          <div class="w-8 h-8 rounded-sm bg-error-soft text-error-deep border border-error/15 flex items-center justify-center mb-4">
+            <ShieldCheck class="w-4 h-4" aria-hidden="true" />
+          </div>
+          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">Lithium battery safety</h3>
+          <p class="text-xs text-body leading-[1.6]">
+            All spare lithium batteries and portable power banks are strictly <strong>prohibited in checked baggage</strong>. They must be carried in cabin baggage to prevent cargo fires.
+          </p>
+        </div>
+        <!-- Tip 3 -->
+        <div class="border border-hairline hover:border-hairline-strong rounded-md p-6 transition-all">
+          <div class="w-8 h-8 rounded-sm bg-warning-soft text-warning-deep border border-warning/15 flex items-center justify-center mb-4">
+            <PlaneTakeoff class="w-4 h-4" aria-hidden="true" />
+          </div>
+          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">Infant & medical exceptions</h3>
+          <p class="text-xs text-body leading-[1.6]">
+            Breast milk, baby formula, baby food, and prescription liquid medicines are <strong>exempt from volume limits</strong> in carry-ons, but you must declare them for manual security screening.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SEO CONTENT BODY — 600 words targeting all keyword clusters
+  ═══════════════════════════════════════════════════════ -->
+  <section class="py-20 bg-canvas-soft border-b border-hairline" id="about-tsa-rules" aria-label="TSA Baggage Rules Guide">
+    <div class="max-w-[800px] mx-auto px-4 md:px-6">
+      <div class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-[-1px] text-ink mb-3">
+          What Can You Bring on a Plane? The Complete TSA Guide for 2026
+        </h2>
+        <p class="text-sm text-body leading-[1.8]">
+          One of the most common questions travelers type before every flight is <strong>"can I bring this on a plane?"</strong> — and the answer depends on whether the item is going in your carry-on bag or your checked bag, and whether it falls under TSA liquid rules, FAA safety regulations, or international customs rules. BringOnPlane answers every one of these questions instantly.
+        </p>
+      </div>
+
+      <div class="space-y-8 text-sm text-body leading-[1.9]">
+
+        <div>
+          <h3 class="text-base font-semibold text-ink mb-2">Can I Bring Food Through TSA and on a Plane?</h3>
+          <p>
+            Yes — you can bring food on a plane and through TSA security. Solid foods travel freely in both carry-on and checked bags. This includes sandwiches, beef jerky, bananas, granola bars, chips, candy, bread, homemade cookies, fresh fruit, eggs, and even Uncrustables. The golden rule: <strong>if you can spread it or pour it, it follows the liquids rule.</strong> Peanut butter, honey, jam, jelly, yogurt, and queso must each be in containers of 3.4 oz (100ml) or less if you are packing them in your carry-on bag. Full-size jars belong in your checked baggage.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-base font-semibold text-ink mb-2">Can I Bring a Vape, E-Cigarette, or Weed Vape on a Plane?</h3>
+          <p>
+            Vapes, electronic cigarettes, disposable vapes, and vape pens are allowed on planes — but only in your carry-on bag or on your person. The FAA strictly prohibits lithium battery-powered devices in checked cargo holds due to fire risks. Vape juice and e-liquid must follow the TSA 3-1-1 liquids rule in carry-on bags. Traveling internationally with a vape? Note that countries like Thailand, Singapore, and Australia either ban or heavily restrict vapes, so research local laws before you pack.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-base font-semibold text-ink mb-2">Can I Bring Razors, Scissors, and Sharp Items in My Carry-On?</h3>
+          <p>
+            Disposable razors, shaving razors, and electric razors are all fully permitted in carry-on bags. Safety razors are allowed carry-on only if the blades are removed — loose blades must go in checked luggage. Scissors with blades shorter than 4 inches from the pivot point (including eyebrow scissors, embroidery scissors, and kids scissors) are permitted in carry-on. Larger scissors, pocket knives, box cutters, and utility knives must be checked. Tweezers, nail clippers, and nail glue are unrestricted.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-base font-semibold text-ink mb-2">Can I Bring a Portable Charger, Power Bank, or Lithium Batteries on a Plane?</h3>
+          <p>
+            Portable chargers and power banks must travel in carry-on bags only — they are prohibited in checked baggage due to lithium fire risk. Power banks up to 100Wh are unrestricted in carry-on; banks between 100–160Wh require airline approval. Standard AA and AAA batteries can go in carry-on or checked bags when terminals are protected. Rechargeable lithium-ion batteries (laptop batteries, camera batteries, spare vape batteries) must be in carry-on bags only.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-base font-semibold text-ink mb-2">What Are the TSA Liquid Rules? What Toiletries Can I Bring?</h3>
+          <p>
+            The TSA 3-1-1 rule applies to all liquids, gels, creams, and aerosols in carry-on bags: each container must be <strong>3.4 oz (100ml) or less</strong>, all fitting inside a <strong>single quart-sized clear zip bag</strong>, with one bag allowed per passenger. This covers toothpaste, shampoo, conditioner, liquid deodorant, gel deodorant, cologne, perfume, hairspray, dry shampoo spray, hair gel, lotion, sunscreen, bug spray, and shaving cream. Solid stick deodorant, bar soap, and powder products are exempt from this rule. You may bring any quantity of toiletries in your checked baggage.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-base font-semibold text-ink mb-2">Free Packing List Generator & TSA Item Checker</h3>
+          <p>
+            Planning a trip? BringOnPlane is a free <strong>packing list generator</strong> and <strong>travel checklist tool</strong> that automatically categorizes your items into carry-on vs. checked baggage based on the latest TSA rules. Whether you need a carry-on essentials checklist, a family vacation packing list, an international travel checklist, or a quick TSA item lookup, our packing assistant handles it all — no account required, works offline, and instantly saves your packing list to your browser.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Internal link cluster for topical depth -->
+      <div class="mt-10 pt-8 border-t border-hairline">
+        <p class="text-xs font-mono text-mute uppercase tracking-wider mb-4">Explore More Rules</p>
+        <div class="flex flex-wrap gap-2">
+          {[
+            { label: "Food & Snacks Rules", href: "/items/beef-jerky" },
+            { label: "Vape TSA Rules", href: "/items/power-bank" },
+            { label: "Liquids & Toiletries", href: "/items/shampoo" },
+            { label: "Scissors Rules", href: "/items/scissors" },
+            { label: "Portable Charger Rules", href: "/items/power-bank" },
+            { label: "All Items A–Z", href: "/items" },
+            { label: "Full FAQ Guide", href: "/faq" },
+            { label: "Packing Assistant", href: "/packing-assistant" },
+          ].map(link => (
+            <a
+              href={link.href}
+              class="text-[11px] font-medium text-link hover:text-link-deep border border-link/25 hover:border-link bg-link-bg-soft hover:bg-link-bg rounded-md px-3 py-1.5 transition-all"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions Section (TSA & On-Page SEO optimization) -->
+  <section class="py-20 bg-canvas border-b border-hairline" id="faq">
+    <div class="max-w-[800px] mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-[-1px] text-ink mb-3 flex items-center justify-center gap-2">
+          <HelpCircle class="w-6 h-6 text-mute" />
+          Frequently Asked Questions
+        </h2>
+        <p class="text-sm text-body leading-[1.6] max-w-[540px] mx-auto">
+          Quick answers to the most common airport security, baggage rules, and travel packing queries.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Question 1 -->
+        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+          <button 
+            type="button" 
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            data-target="home-faq-1"
+          >
+            <span>Can I bring food or snacks through TSA security?</span>
+            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+          </button>
+          <div id="home-faq-1" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+            Yes, you can bring solid food and snacks (like sandwiches, fresh fruits, bananas, beef jerky, bread, chips, candy, and granola bars) through TSA checkpoints and on the plane in carry-on and checked bags. However, liquid or spreadable foods (such as peanut butter, honey, jam, jelly, yogurt, and baby food puree) are subject to the 3-1-1 liquids rule (under 3.4 oz / 100ml) in carry-on luggage.
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+          <button 
+            type="button" 
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            data-target="home-faq-2"
+          >
+            <span>Can I bring a vape, e-cigarette, or electronic cigarette on a plane?</span>
+            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+          </button>
+          <div id="home-faq-2" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+            Yes, you can bring a vape, e-cigarette, and disposable vapes on a plane, but they are strictly restricted to <strong>carry-on baggage only</strong>. FAA safety regulations prohibit carrying lithium battery-powered vapes, vape pens, and spare vape juice in checked hold luggage due to fire hazards.
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+          <button 
+            type="button" 
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            data-target="home-faq-3"
+          >
+            <span>Can I pack portable chargers, power banks, and batteries in my luggage?</span>
+            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+          </button>
+          <div id="home-faq-3" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+            Portable chargers, lithium-ion power banks, and spare battery packs must be packed in <strong>carry-on baggage only</strong>. They are prohibited in checked baggage holds. Standard dry cell batteries (AA, AAA, double a batteries) can travel in either carry-on or checked luggage, but must be protected from short circuits.
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+          <button 
+            type="button" 
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            data-target="home-faq-4"
+          >
+            <span>Are lighters, matches, and scissors allowed on a plane?</span>
+            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+          </button>
+          <div id="home-faq-4" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+            You can bring one common lighter (like a Bic or Zippo lighter) or one book of safety matches in your pocket or carry-on. Scissors with blades under 4 inches from the pivot point (like kids scissors or eyebrow scissors) are permitted in carry-on bags. Larger tools, utility knives, and box cutters must go in checked baggage.
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+          <button 
+            type="button" 
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            data-target="home-faq-5"
+          >
+            <span>Can I bring razors (disposable, electric, or safety razors) in my carry-on?</span>
+            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+          </button>
+          <div id="home-faq-5" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+            Disposable razors (cartridge razors) and electric razors/shavers are 100% allowed in carry-on bags. However, safety razors and straight razors are only allowed in carry-ons if the blades are removed. Spare safety razor blades must be packed in checked bags.
+          </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+          <button 
+            type="button" 
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            data-target="home-faq-6"
+          >
+            <span>How do toiletries, deodorant, cologne, and toothpaste fit TSA rules?</span>
+            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+          </button>
+          <div id="home-faq-6" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+            Toiletries in carry-on bags must comply with the 3-1-1 liquids limit. Liquid, gel, or aerosol deodorants, cologne, perfume, and toothpaste must be in containers of 3.4 oz (100ml) or less and fit inside a single quart-sized clear plastic bag. Solid stick deodorants, bar soaps, and dry powders are exempt from this limit.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Slot -->
+  <Footer slot="footer" />
 </Layout>
+
+<script>
+  const statusColors = {
+    allowed: "bg-link-bg-soft text-link-deep border-link/25",
+    prohibited: "bg-error-soft text-error-deep border-error/25",
+    restricted: "bg-warning-soft border-warning/25 text-warning-deep"
+  };
+
+  function renderFavorites() {
+    const listContainer = document.getElementById("favorites-dashboard-list");
+    if (!listContainer) return;
+
+    try {
+      const favorites = JSON.parse(localStorage.getItem("favorite_items") || "[]");
+      if (favorites.length === 0) {
+        listContainer.innerHTML = `
+          <p class="text-xs text-body italic bg-canvas-soft border border-hairline rounded-md p-4">
+            No starred items. Click the "Favorite" star button on any item rules page to see it here.
+          </p>
+        `;
+        return;
+      }
+
+      listContainer.innerHTML = favorites.map(item => `
+        <a href="/items/${item.slug}" class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-3.5 transition-all">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <span class="text-sm font-medium text-ink">${item.name}</span>
+              <span class="text-[10px] text-mute uppercase font-mono tracking-wider ml-2">${item.category}</span>
+            </div>
+            <div class="flex gap-1.5 flex-shrink-0">
+              <span class="text-[9px] font-mono px-1.5 py-0.2 rounded-full border uppercase tracking-wider ${statusColors[item.carryOn]}">
+                H: ${item.carryOn}
+              </span>
+              <span class="text-[9px] font-mono px-1.5 py-0.2 rounded-full border uppercase tracking-wider ${statusColors[item.checked]}">
+                C: ${item.checked}
+              </span>
+            </div>
+          </div>
+        </a>
+      `).join("");
+    } catch {
+      listContainer.innerHTML = `<p class="text-xs text-error font-mono">Failed to load favorites.</p>`;
+    }
+  }
+
+  function renderRecents() {
+    const listContainer = document.getElementById("recents-dashboard-list");
+    if (!listContainer) return;
+
+    try {
+      const recents = JSON.parse(localStorage.getItem("recently_viewed") || "[]");
+      if (recents.length === 0) {
+        listContainer.innerHTML = `
+          <p class="text-xs text-body italic bg-canvas-soft border border-hairline rounded-md p-4">
+            No recently viewed items. Search for items or click links to populate this list.
+          </p>
+        `;
+        return;
+      }
+
+      listContainer.innerHTML = recents.map(item => `
+        <a href="/items/${item.slug}" class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-3.5 transition-all">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <span class="text-sm font-medium text-ink">${item.name}</span>
+              <span class="text-[10px] text-mute uppercase font-mono tracking-wider ml-2">${item.category}</span>
+            </div>
+            <span class="text-[10px] text-mute font-mono">Reviewed ${item.lastReviewed}</span>
+          </div>
+        </a>
+      `).join("");
+    } catch {
+      listContainer.innerHTML = `<p class="text-xs text-error font-mono">Failed to load recents.</p>`;
+    }
+  }
+
+  function setupFaq() {
+    document.querySelectorAll(".home-faq-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const targetId = (e.currentTarget as HTMLElement).getAttribute("data-target") || "";
+        const body = document.getElementById(targetId);
+        const icon = (e.currentTarget as HTMLElement).querySelector("svg");
+        
+        if (body) {
+          const isHidden = body.classList.contains("hidden");
+          if (isHidden) {
+            body.classList.remove("hidden");
+            if (icon) icon.classList.add("rotate-180");
+          } else {
+            body.classList.add("hidden");
+            if (icon) icon.classList.remove("rotate-180");
+          }
+        }
+      });
+    });
+  }
+
+  // Load dashboards and FAQs on window load
+  renderFavorites();
+  renderRecents();
+  setupFaq();
+
+  // Support View Transitions swapping
+  document.addEventListener("astro:after-swap", () => {
+    renderFavorites();
+    renderRecents();
+    setupFaq();
+    setupPopularChips();
+  });
+</script>
+
+<script>
+  // ── Client-side Interactive Search & Popular Chips Redesign ─────────────────
+  interface SearchItem {
+    slug: string;
+    name: string;
+    category: string;
+    aliases: string[];
+    keywords: string[];
+    carryOn: string;
+    checked: string;
+  }
+
+  interface FullItem {
+    slug: string;
+    name: string;
+    category: string;
+    carryOn: { status: string; reason: string; };
+    checkedBag: { status: string; reason: string; };
+  }
+
+  // Premium SVG Icons for Categories (replacing raw emojis)
+  const categoryIcons: Record<string, string> = {
+    'Electronics': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>`,
+    'Toiletries': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>`,
+    'Personal Care': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>`,
+    'Food': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    'Medicine': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m2 22 20-20"/><path d="M8.3 8.3c-2.3 2.3-2.3 6 0 8.3s6 2.3 8.3 0"/><path d="M12.5 12.5a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"/></svg>`,
+    'Sharp Objects': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="9.8" x2="20" y1="8.2" y2="18.4"/><line x1="9.8" x2="20" y1="15.8" y2="5.6"/></svg>`,
+    'Tools': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="9.8" x2="20" y1="8.2" y2="18.4"/><line x1="9.8" x2="20" y1="15.8" y2="5.6"/></svg>`,
+    'Restricted Items': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>`,
+    'Restricted': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>`,
+    'Liquids': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>`,
+    'Outdoor': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>`,
+    'Camping': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>`,
+    'Sports': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M6 12A6 6 0 0 1 18 12"/><path d="M12 6A6 6 0 0 0 12 18"/></svg>`,
+    'Gifts & Shopping': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="18" height="14" x="3" y="8" rx="2"/><path d="M12 5V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2"/><path d="M12 5v3"/><path d="M12 8H3M21 8h-9"/></svg>`,
+    'Baby': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>`,
+    'Pets': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5a5.5 5.5 0 0 0-9.8-3.32 5.5 5.5 0 0 0-9.8 3.32C2.4 10.79 3.9 12.54 5.4 14l6.6 6Z"/></svg>`,
+    'Beauty': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 3-1.912 5.886H3.886L8.7 12.518 6.788 18.4 12 14.782 17.212 18.4l-1.912-5.882 4.814-3.632h-6.202L12 3z"/></svg>`,
+    'Clothing': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.38 3.46 16 7.83V17c0 1.1-.9 2-2 2H10c-1.1 0-2-.9-2-2V7.83L3.62 3.46c-.6-.6-.18-1.46.68-1.46h15.4c.86 0 1.28.86.68 1.46z"/></svg>`,
+    'Documents': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>`,
+    'Jewelry': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9z"/></svg>`,
+    'Batteries': `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/><line x1="6" x2="6" y1="11" y2="13"/><line x1="10" x2="10" y1="10" y2="14"/><line x1="14" x2="14" y1="11" y2="13"/></svg>`
+  };
+
+  const defaultIcon = `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/></svg>`;
+
+  function getCategoryIconSvg(category: string): string {
+    return categoryIcons[category] || defaultIcon;
+  }
+
+  // Premium Status Badges utilizing SVG icons instead of emojis
+  function getStatusBadgeHtml(status: string): string {
+    const s = (status || '').toUpperCase();
+    if (s === 'ALLOWED') {
+      return `
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/20 dark:text-emerald-400 dark:border-emerald-900/30">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Allowed
+        </span>
+      `;
+    }
+    if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') {
+      return `
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-700 border border-red-200 dark:bg-red-950/20 dark:text-red-400 dark:border-red-900/30">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+          Not Allowed
+        </span>
+      `;
+    }
+    return `
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 dark:bg-amber-950/20 dark:text-amber-400 dark:border-amber-900/30">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg>
+        Restricted
+      </span>
+    `;
+  }
+
+  // Quick Summary indicators
+  function getSummaryIndicatorSvg(status: string): string {
+    const s = (status || '').toUpperCase();
+    if (s === 'ALLOWED') {
+      return `<svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
+    }
+    if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') {
+      return `<svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>`;
+    }
+    return `<svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>`;
+  }
+
+  function getSummaryLabel(status: string): string {
+    const s = (status || '').toUpperCase();
+    if (s === 'ALLOWED') return 'Yes';
+    if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') return 'No';
+    return 'Conditional';
+  }
+
+  let searchIndex: SearchItem[] = [];
+  let isIndexLoaded = false;
+  let highlightedIndex = -1;
+  let matchingSuggestions: SearchItem[] = [];
+
+  async function loadSearchIndex() {
+    if (isIndexLoaded) return;
+    try {
+      const res = await fetch('/search-index.json');
+      if (!res.ok) throw new Error();
+      searchIndex = await res.json();
+      isIndexLoaded = true;
+    } catch (e) {
+      console.error('Failed to load search index for suggestions', e);
+    }
+  }
+
+  // Fetch full item details and render
+  async function handleItemSelected(slug: string, sourceChip: HTMLButtonElement | null = null) {
+    const panel = document.getElementById('hero-result-panel');
+    if (!panel) return;
+
+    try {
+      const res = await fetch(`/api/items/${slug}.json`);
+      if (!res.ok) throw new Error();
+      const item: FullItem = await res.json();
+
+      // Highlight active chip if it was selected from a chip
+      const chips = document.querySelectorAll<HTMLButtonElement>('.popular-chip');
+      chips.forEach(c => {
+        c.classList.remove('border-ink', 'text-ink', 'bg-canvas-soft-2', 'font-semibold');
+        c.setAttribute('aria-pressed', 'false');
+      });
+      if (sourceChip) {
+        sourceChip.classList.add('border-ink', 'text-ink', 'bg-canvas-soft-2', 'font-semibold');
+        sourceChip.setAttribute('aria-pressed', 'true');
+      }
+
+      // Populate elements
+      const nameText = document.getElementById('result-title-text');
+      const iconContainer = document.getElementById('result-title-icon-container');
+      const catEl = document.getElementById('result-category');
+      
+      const carryonBadgeContainer = document.getElementById('result-carryon-badge-container');
+      const checkedBadgeContainer = document.getElementById('result-checked-badge-container');
+      
+      const reasonEl = document.getElementById('result-reason');
+      const statusIconEl = document.getElementById('result-status-icon-container');
+      
+      const summaryCoIcon = document.getElementById('result-summary-carryon-icon-container');
+      const summaryCoText = document.getElementById('result-summary-carryon-text');
+      const summaryCkIcon = document.getElementById('result-summary-checked-icon-container');
+      const summaryCkText = document.getElementById('result-summary-checked-text');
+      const summaryPiIcon = document.getElementById('result-summary-personal-icon-container');
+      const summaryPiText = document.getElementById('result-summary-personal-text');
+      
+      const fullLink = document.getElementById('result-full-link') as HTMLAnchorElement | null;
+
+      if (nameText) nameText.textContent = item.name;
+      if (iconContainer) iconContainer.innerHTML = getCategoryIconSvg(item.category);
+      if (catEl) catEl.textContent = item.category;
+      
+      if (carryonBadgeContainer) carryonBadgeContainer.innerHTML = getStatusBadgeHtml(item.carryOn.status);
+      if (checkedBadgeContainer) checkedBadgeContainer.innerHTML = getStatusBadgeHtml(item.checkedBag.status);
+
+      // Status/Reason message
+      const reason = item.carryOn.reason || item.checkedBag.reason || 'Must comply with standard airline limits.';
+      if (reasonEl) reasonEl.textContent = reason;
+      
+      // Status icon based on restriction
+      if (statusIconEl) {
+        const carriesRestricted = item.carryOn.status.toUpperCase() === 'RESTRICTED' || item.carryOn.status.toUpperCase() === 'NOT_ALLOWED';
+        statusIconEl.innerHTML = carriesRestricted 
+          ? `<svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg>`
+          : `<svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></svg>`;
+      }
+
+      // Quick Summary
+      if (summaryCoIcon && summaryCoText) {
+        summaryCoIcon.innerHTML = getSummaryIndicatorSvg(item.carryOn.status);
+        summaryCoText.textContent = getSummaryLabel(item.carryOn.status);
+      }
+      if (summaryCkIcon && summaryCkText) {
+        summaryCkIcon.innerHTML = getSummaryIndicatorSvg(item.checkedBag.status);
+        summaryCkText.textContent = getSummaryLabel(item.checkedBag.status);
+      }
+      if (summaryPiIcon && summaryPiText) {
+        // Personal Item is typically same status as Carry-on
+        summaryPiIcon.innerHTML = getSummaryIndicatorSvg(item.carryOn.status);
+        summaryPiText.textContent = getSummaryLabel(item.carryOn.status);
+      }
+
+      if (fullLink) {
+        fullLink.href = `/items/${item.slug}`;
+        fullLink.innerHTML = `Read Full Rules ↓`;
+      }
+
+      // Smooth reveal
+      panel.classList.remove('hidden');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    } catch (e) {
+      console.error('Error fetching details for selected item', e);
+    }
+  }
+
+  function setupInteractiveSearch() {
+    const input = document.getElementById('homepage-search-input') as HTMLInputElement | null;
+    const suggestions = document.getElementById('homepage-suggestions');
+    const clearBtn = document.getElementById('homepage-search-clear');
+    const chips = document.querySelectorAll<HTMLButtonElement>('.popular-chip');
+    const closeBtn = document.getElementById('result-close-btn');
+    const panel = document.getElementById('hero-result-panel');
+
+    if (!input || !suggestions) return;
+
+    // Load search index on focus
+    input.addEventListener('focus', () => {
+      loadSearchIndex();
+    });
+
+    function updateClearButtonVisibility() {
+      if (clearBtn) {
+        if (input.value) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+      }
+    }
+
+    function renderSuggestions() {
+      const q = input.value.toLowerCase().trim();
+      if (!q) {
+        suggestions.classList.add('hidden');
+        suggestions.innerHTML = '';
+        matchingSuggestions = [];
+        highlightedIndex = -1;
+        return;
+      }
+
+      matchingSuggestions = searchIndex.filter(item => {
+        return item.name.toLowerCase().includes(q) ||
+               item.category.toLowerCase().includes(q) ||
+               item.aliases.some(alias => alias.toLowerCase().includes(q)) ||
+               item.keywords.some(keyword => keyword.toLowerCase().includes(q));
+      }).slice(0, 6);
+
+      highlightedIndex = -1;
+
+      if (matchingSuggestions.length === 0) {
+        suggestions.innerHTML = `
+          <div class="p-4 text-sm text-mute">
+            No matches found. Try searching for <button type="button" class="text-link font-medium hover:underline cursor-pointer" id="suggest-powerbank">Power Bank</button> or <a href="/items" class="text-link font-medium hover:underline">All Items</a>.
+          </div>
+        `;
+        suggestions.classList.remove('hidden');
+        
+        const fallbackBtn = document.getElementById('suggest-powerbank');
+        if (fallbackBtn) {
+          fallbackBtn.addEventListener('click', () => {
+            input.value = 'Power Bank';
+            input.focus();
+            renderSuggestions();
+            updateClearButtonVisibility();
+          });
+        }
+        return;
+      }
+
+      suggestions.innerHTML = matchingSuggestions.map((item, idx) => {
+        const iconSvg = getCategoryIconSvg(item.category);
+        return `
+          <button 
+            type="button" 
+            class="suggestion-item w-full flex items-center justify-between px-4 py-3 hover:bg-canvas-soft-2 text-sm text-ink transition-colors cursor-pointer text-left border-l-2 border-transparent transition-all"
+            data-slug="${item.slug}"
+            data-index="${idx}"
+          >
+            <div class="flex items-center gap-3">
+              <span class="text-mute flex-shrink-0">${iconSvg}</span>
+              <span class="font-medium">${item.name}</span>
+            </div>
+            <span class="text-[10px] font-mono text-mute uppercase">${item.category}</span>
+          </button>
+        `;
+      }).join('');
+
+      suggestions.classList.remove('hidden');
+
+      // Bind mouseenter & click handlers to suggestion items
+      const items = suggestions.querySelectorAll('.suggestion-item');
+      items.forEach(el => {
+        el.addEventListener('click', (e) => {
+          const slug = (e.currentTarget as HTMLElement).dataset.slug || '';
+          const name = (e.currentTarget as HTMLElement).querySelector('.font-medium')?.textContent || '';
+          input.value = name;
+          suggestions.classList.add('hidden');
+          updateClearButtonVisibility();
+          handleItemSelected(slug);
+        });
+
+        el.addEventListener('mouseenter', (e) => {
+          const idx = parseInt((e.currentTarget as HTMLElement).dataset.index || '-1', 10);
+          highlightedIndex = idx;
+          updateHighlight();
+        });
+      });
+    }
+
+    function updateHighlight() {
+      const items = suggestions.querySelectorAll('.suggestion-item');
+      items.forEach((item, idx) => {
+        if (idx === highlightedIndex) {
+          item.classList.add('bg-canvas-soft-2', 'border-link');
+          item.scrollIntoView({ block: 'nearest' });
+        } else {
+          item.classList.remove('bg-canvas-soft-2', 'border-link');
+        }
+      });
+    }
+
+    // Handle typing / matching suggestions
+    input.addEventListener('input', () => {
+      renderSuggestions();
+      updateClearButtonVisibility();
+    });
+
+    // Clear Search Input Action
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        updateClearButtonVisibility();
+        suggestions.classList.add('hidden');
+        suggestions.innerHTML = '';
+        matchingSuggestions = [];
+        highlightedIndex = -1;
+        input.focus();
+      });
+    }
+
+    // Keyboard navigation (ArrowDown, ArrowUp, Enter, Escape)
+    input.addEventListener('keydown', (e) => {
+      if (suggestions.classList.contains('hidden') || matchingSuggestions.length === 0) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        highlightedIndex = (highlightedIndex + 1) % matchingSuggestions.length;
+        updateHighlight();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        highlightedIndex = (highlightedIndex - 1 + matchingSuggestions.length) % matchingSuggestions.length;
+        updateHighlight();
+      } else if (e.key === 'Enter') {
+        if (highlightedIndex >= 0 && highlightedIndex < matchingSuggestions.length) {
+          e.preventDefault();
+          const selected = matchingSuggestions[highlightedIndex];
+          input.value = selected.name;
+          suggestions.classList.add('hidden');
+          updateClearButtonVisibility();
+          handleItemSelected(selected.slug);
+        }
+      } else if (e.key === 'Escape') {
+        suggestions.classList.add('hidden');
+      }
+    });
+
+    // Close suggestions on click outside
+    document.addEventListener('click', (e) => {
+      if (!input.contains(e.target as Node) && !suggestions.contains(e.target as Node) && !clearBtn?.contains(e.target as Node)) {
+        suggestions.classList.add('hidden');
+      }
+    });
+
+    // Chips clicks
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const slug = chip.dataset.chipSlug || '';
+        handleItemSelected(slug, chip);
+      });
+    });
+
+    // Close result panel
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        if (panel) panel.classList.add('hidden');
+        chips.forEach(c => {
+          c.classList.remove('border-ink', 'text-ink', 'bg-canvas-soft-2', 'font-semibold');
+          c.setAttribute('aria-pressed', 'false');
+        });
+      });
+    }
+  }
+
+  // Run on page load
+  setupInteractiveSearch();
+
+  // Support View Transitions
+  document.addEventListener('astro:after-swap', () => {
+    setupInteractiveSearch();
+  });
+</script>

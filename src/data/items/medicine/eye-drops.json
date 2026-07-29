@@ -1,0 +1,77 @@
+{
+  "id": "eye-drops",
+  "slug": "eye-drops",
+  "name": "Eye Drops",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "eye solution",
+    "artificial tears"
+  ],
+  "keywords": [
+    "drops",
+    "eye",
+    "liquid",
+    "saline"
+  ],
+  "description": "Guidelines for traveling with eye drops in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Over-the-counter eye drops in containers ≤3.4 oz follow the 3-1-1 rule. Prescribed or medically necessary eye drops can exceed this limit if declared.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Eye drops are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/eye-drops",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring eye drops on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/eye-drops",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Over-the-counter eye drops in containers ≤3.4 oz follow the 3-1-1 rule. Prescribed or medically necessary eye drops can exceed this limit if declared."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is eye drops allowed in carry-on bags?",
+      "answer": "Eye Drops is allowed in carry-on luggage. Over-the-counter eye drops in containers ≤3.4 oz follow the 3-1-1 rule. Prescribed or medically necessary eye drops can exceed this limit if declared."
+    },
+    {
+      "question": "Can you pack eye drops in checked baggage?",
+      "answer": "Yes, Eye Drops is allowed in checked bags. Eye drops are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/eye-drops"
+    }
+  ]
+}

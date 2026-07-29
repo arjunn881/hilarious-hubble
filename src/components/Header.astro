@@ -1,0 +1,158 @@
+---
+import { Plane, Sun, Moon, Menu, X } from "@lucide/astro";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Search Items", href: "/items", isSearch: false },
+  { label: "Packing Assistant", href: "/checklist" },
+  { label: "Categories", href: "/#categories" },
+  { label: "Travel Guides", href: "/guides" },
+  { label: "FAQ", href: "/faq" },
+  { label: "About", href: "/about" },
+];
+---
+
+<header class="sticky top-0 z-40 w-full h-16 bg-canvas/95 border-b border-hairline backdrop-blur-md">
+  <div class="max-w-[1200px] h-full mx-auto px-4 md:px-6 flex items-center justify-between gap-4">
+
+    <!-- Brand Logo -->
+    <a
+      href="/"
+      class="flex items-center gap-2 text-ink hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2 rounded-sm flex-shrink-0"
+      aria-label="Bring On Plane Home"
+    >
+      <div class="flex items-center justify-center w-8 h-8 rounded-sm bg-primary text-on-primary">
+        <Plane class="w-4 h-4 rotate-45" aria-hidden="true" />
+      </div>
+      <span class="font-sans font-semibold tracking-[-0.6px] text-lg select-none">
+        BringOnPlane
+      </span>
+    </a>
+
+    <!-- Nav Links (desktop only) -->
+    <nav class="hidden lg:flex items-center gap-0.5 flex-1 justify-center" aria-label="Main Navigation">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="px-3 py-1.5 text-sm font-normal text-body hover:text-ink hover:bg-canvas-soft rounded-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link whitespace-nowrap"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Right side actions -->
+    <div class="flex items-center gap-2 flex-shrink-0">
+      <!-- Search CTA -->
+      <button
+        type="button"
+        data-open-search
+        class="hidden sm:inline-flex items-center justify-center px-3 h-7 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link cursor-pointer"
+        aria-label="Search TSA items"
+      >
+        Ask AI
+      </button>
+
+      <!-- Dark mode toggle -->
+      <button
+        type="button"
+        id="theme-toggle-btn"
+        class="inline-flex items-center justify-center w-8 h-8 rounded-sm text-ink hover:bg-canvas-soft transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-link select-none"
+        aria-label="Toggle dark mode"
+      >
+        <Sun class="w-4 h-4 hidden dark:block" />
+        <Moon class="w-4 h-4 block dark:hidden" />
+      </button>
+
+      <!-- Mobile hamburger -->
+      <button
+        type="button"
+        id="mobile-menu-btn"
+        class="lg:hidden inline-flex items-center justify-center w-8 h-8 rounded-sm text-ink hover:bg-canvas-soft transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-link"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <Menu class="w-4 h-4 block" id="hamburger-icon" />
+        <X class="w-4 h-4 hidden" id="close-icon" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden absolute top-16 left-0 right-0 bg-canvas border-b border-hairline shadow-lg z-50"
+    role="dialog"
+    aria-label="Mobile navigation"
+  >
+    <nav class="max-w-[1200px] mx-auto px-4 py-4 flex flex-col gap-1">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="mobile-nav-link flex items-center px-3 py-2.5 text-sm font-medium text-body hover:text-ink hover:bg-canvas-soft rounded-md transition-all"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="border-t border-hairline my-2 pt-2 flex flex-col gap-1">
+        <a href="/contact" class="flex items-center px-3 py-2.5 text-sm font-medium text-body hover:text-ink hover:bg-canvas-soft rounded-md transition-all">Contact</a>
+        <a href="/about" class="flex items-center px-3 py-2.5 text-sm font-medium text-body hover:text-ink hover:bg-canvas-soft rounded-md transition-all">About Us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function setupHeader() {
+    // ── Dark mode toggle ──────────────────────────────────────
+    const themeBtn = document.getElementById("theme-toggle-btn");
+    if (themeBtn) {
+      themeBtn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        document.documentElement.classList.toggle("dark", !isDark);
+        localStorage.setItem("theme", isDark ? "light" : "dark");
+      });
+    }
+
+    // ── Mobile menu toggle ────────────────────────────────────
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const hamburgerIcon = document.getElementById("hamburger-icon");
+    const closeIcon = document.getElementById("close-icon");
+
+    function toggleMenu(open: boolean) {
+      mobileMenu?.classList.toggle("hidden", !open);
+      menuBtn?.setAttribute("aria-expanded", String(open));
+      hamburgerIcon?.classList.toggle("hidden", open);
+      hamburgerIcon?.classList.toggle("block", !open);
+      closeIcon?.classList.toggle("hidden", !open);
+      closeIcon?.classList.toggle("block", open);
+    }
+
+    menuBtn?.addEventListener("click", () => {
+      const isOpen = menuBtn.getAttribute("aria-expanded") === "true";
+      toggleMenu(!isOpen);
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll(".mobile-nav-link").forEach(link => {
+      link.addEventListener("click", () => toggleMenu(false));
+    });
+
+    // Close on click outside
+    document.addEventListener("click", (e) => {
+      if (
+        mobileMenu &&
+        !mobileMenu.contains(e.target as Node) &&
+        !menuBtn?.contains(e.target as Node) &&
+        !mobileMenu.classList.contains("hidden")
+      ) {
+        toggleMenu(false);
+      }
+    });
+  }
+
+  setupHeader();
+  document.addEventListener("astro:after-swap", setupHeader);
+</script>

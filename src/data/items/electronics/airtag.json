@@ -1,0 +1,78 @@
+{
+  "id": "airtag",
+  "slug": "airtag",
+  "name": "AirTag",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "smart tracker",
+    "tile tracker",
+    "gps tracker"
+  ],
+  "keywords": [
+    "airtag",
+    "tracker",
+    "apple",
+    "gps"
+  ],
+  "description": "Guidelines for traveling with airtag in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Smart luggage trackers like AirTags are fully allowed in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "AirTags are allowed in checked baggage. They are commonly placed inside luggage to track bags during travel.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/airtag",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring airtag on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/airtag",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Smart luggage trackers like AirTags are fully allowed in carry-on baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is airtag allowed in carry-on bags?",
+      "answer": "AirTag is allowed in carry-on luggage. Smart luggage trackers like AirTags are fully allowed in carry-on baggage."
+    },
+    {
+      "question": "Can you pack airtag in checked baggage?",
+      "answer": "Yes, AirTag is allowed in checked bags. AirTags are allowed in checked baggage. They are commonly placed inside luggage to track bags during travel."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/airtag"
+    }
+  ]
+}

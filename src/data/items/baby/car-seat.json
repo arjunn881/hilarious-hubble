@@ -1,0 +1,77 @@
+{
+  "id": "car-seat",
+  "slug": "car-seat",
+  "name": "Car Seat",
+  "category": "Baby",
+  "subcategory": "General",
+  "aliases": [
+    "child car seat",
+    "booster seat"
+  ],
+  "keywords": [
+    "seat",
+    "car",
+    "baby",
+    "safety"
+  ],
+  "description": "Guidelines for traveling with car seat in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "FAA-approved infant car seats are allowed in the cabin if you purchased a seat for the child. Can also be checked at the gate.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Car seats are checked for free by almost all airlines.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/car-seat",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring car seat on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/car-seat",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "FAA-approved infant car seats are allowed in the cabin if you purchased a seat for the child. Can also be checked at the gate."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is car seat allowed in carry-on bags?",
+      "answer": "Car Seat is allowed in carry-on luggage. FAA-approved infant car seats are allowed in the cabin if you purchased a seat for the child. Can also be checked at the gate."
+    },
+    {
+      "question": "Can you pack car seat in checked baggage?",
+      "answer": "Yes, Car Seat is allowed in checked bags. Car seats are checked for free by almost all airlines."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/car-seat"
+    }
+  ]
+}

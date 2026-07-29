@@ -1,0 +1,78 @@
+{
+  "id": "ice",
+  "slug": "ice",
+  "name": "Ice",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "ice cubes",
+    "frozen water",
+    "ice pack"
+  ],
+  "keywords": [
+    "ice",
+    "frozen",
+    "water",
+    "cold"
+  ],
+  "description": "Guidelines for traveling with ice in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Ice and frozen gel packs must be frozen completely solid when passing security. If they are partially melted or slushy, 3-1-1 liquid limits apply.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Ice and gel packs are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/ice",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring ice on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/ice",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Ice and frozen gel packs must be frozen completely solid when passing security. If they are partially melted or slushy, 3-1-1 liquid limits apply."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is ice allowed in carry-on bags?",
+      "answer": "Ice is restricted in carry-on luggage. Ice and frozen gel packs must be frozen completely solid when passing security. If they are partially melted or slushy, 3-1-1 liquid limits apply."
+    },
+    {
+      "question": "Can you pack ice in checked baggage?",
+      "answer": "Yes, Ice is allowed in checked bags. Ice and gel packs are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/ice"
+    }
+  ]
+}

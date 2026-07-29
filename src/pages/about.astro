@@ -1,0 +1,129 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Plane, Users, ShieldCheck, Zap, Globe, Star, ArrowRight, Mail, HelpCircle } from "@lucide/astro";
+---
+
+<Layout
+  title="About BringOnPlane — Our Mission to Make Flying Stress-Free"
+  description="Learn about BringOnPlane, the free TSA baggage rules checker and smart packing list generator trusted by travelers worldwide. No ads, no login, no hassle."
+  canonicalURL="https://bringonplane.com/about"
+  keywords="about bringonplane, tsa rules checker, free packing list generator, travel tool, airport baggage rules"
+>
+  <Header slot="header" />
+
+  <main class="flex-1">
+
+    <!-- Hero -->
+    <section class="py-20 md:py-28 border-b border-hairline bg-canvas-soft">
+      <div class="max-w-[760px] mx-auto px-4 md:px-6 text-center">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary text-on-primary mb-6 mx-auto">
+          <Plane class="w-7 h-7 rotate-45" />
+        </div>
+        <h1 class="text-4xl md:text-5xl font-semibold tracking-[-2px] text-ink mb-5 leading-tight">
+          We Make Packing for Flights<br class="hidden md:block" /> Simple and Stress-Free
+        </h1>
+        <p class="text-base text-body leading-[1.8] max-w-[560px] mx-auto">
+          BringOnPlane is a free TSA baggage rules engine and smart packing assistant built for the 900 million travelers who face baggage checkpoint confusion every year.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="py-20 border-b border-hairline bg-canvas">
+      <div class="max-w-[760px] mx-auto px-4 md:px-6">
+        <h2 class="text-2xl font-semibold tracking-[-0.8px] text-ink mb-6">Our Mission</h2>
+        <div class="space-y-5 text-sm text-body leading-[1.9]">
+          <p>
+            Airport security is stressful. Every year, millions of travelers reach the TSA checkpoint only to discover that their hand cream, peanut butter, or lithium power bank violates a rule they didn't know about. Items get confiscated. Flights get missed. Trips start badly.
+          </p>
+          <p>
+            <strong class="text-ink">BringOnPlane exists to eliminate that moment.</strong> We've catalogued every TSA, FAA, and CBP regulation into a searchable, always-updated database. Whether you're asking <em>"can I bring food through TSA?"</em>, <em>"can I bring a vape on a plane?"</em>, or <em>"what can I bring in my carry-on bag?"</em> — you get an instant, accurate, plain-English answer.
+          </p>
+          <p>
+            We believe the best packing assistant is one that works before you even leave home. That's why we built the packing list generator: it checks every item against TSA rules automatically and tells you exactly where each one belongs — carry-on, checked bag, or leave it at home.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values / Features Grid -->
+    <section class="py-20 border-b border-hairline bg-canvas-soft">
+      <div class="max-w-[900px] mx-auto px-4 md:px-6">
+        <h2 class="text-2xl font-semibold tracking-[-0.8px] text-ink mb-10 text-center">Why Travelers Choose BringOnPlane</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            { icon: Zap, title: "Instant Results", desc: "Search any item and get a carry-on vs. checked bag ruling in under a second — no sign-up, no loading screens." },
+            { icon: ShieldCheck, title: "TSA Verified Rules", desc: "Our database is built directly from TSA.gov, FAA safety guidelines, and CBP customs regulations — always current." },
+            { icon: Globe, title: "International Coverage", desc: "We cover airline-specific rules (Delta, United, Emirates, Ryanair) and country customs rules for 10+ destinations." },
+            { icon: Users, title: "100% Free", desc: "No login, no subscription, no paywall. BringOnPlane is completely free because safe travel should be accessible to everyone." },
+            { icon: Star, title: "Offline Capable", desc: "Your packing list is saved to your browser's local storage — no internet required after the first page load." },
+            { icon: HelpCircle, title: "In-Depth Explanations", desc: "Every item page explains not just whether it's allowed, but why — so you understand the rule and can explain it at the checkpoint." },
+          ].map(f => (
+            <div class="border border-hairline rounded-md bg-canvas p-6">
+              <div class="w-9 h-9 rounded-md bg-link-bg-soft text-link border border-link/20 flex items-center justify-center mb-4">
+                <f.icon class="w-4.5 h-4.5" />
+              </div>
+              <h3 class="text-sm font-semibold text-ink mb-2">{f.title}</h3>
+              <p class="text-xs text-body leading-[1.7]">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Data sourcing -->
+    <section class="py-20 border-b border-hairline bg-canvas">
+      <div class="max-w-[760px] mx-auto px-4 md:px-6">
+        <h2 class="text-2xl font-semibold tracking-[-0.8px] text-ink mb-6">How We Source Our Data</h2>
+        <div class="space-y-4 text-sm text-body leading-[1.9]">
+          <p>All baggage rules on BringOnPlane are sourced from official government and airline publications:</p>
+          <ul class="list-none space-y-2 ml-0">
+            {[
+              "TSA (Transportation Security Administration) — tsa.gov",
+              "FAA (Federal Aviation Administration) — faa.gov",
+              "CBP (U.S. Customs and Border Protection) — cbp.gov",
+              "IATA Dangerous Goods Regulations",
+              "Airline-specific carry-on and checked baggage policies",
+              "Country customs authority official publications",
+            ].map(s => (
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-link mt-2 flex-shrink-0"></span>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4">
+            Our content team reviews published regulations and updates item rules whenever official policies change. We always link to primary source materials so you can verify any ruling yourself.
+          </p>
+          <p class="text-xs text-mute border border-hairline rounded-md p-4 bg-canvas-soft mt-4">
+            <strong>Disclaimer:</strong> While we make every effort to maintain accuracy, BringOnPlane is an informational tool and not a substitute for official TSA guidance. Always verify with your airline and the TSA website before travel.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-canvas-soft">
+      <div class="max-w-[560px] mx-auto px-4 md:px-6 text-center">
+        <h2 class="text-2xl font-semibold tracking-[-0.8px] text-ink mb-3">Ready to Pack Smarter?</h2>
+        <p class="text-sm text-body mb-8">Search 100+ items or generate a custom packing list for your trip in seconds.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/" class="inline-flex items-center gap-2 px-5 h-10 text-sm font-medium text-on-primary bg-primary hover:bg-ink rounded-sm shadow-sm transition-all">
+            <Plane class="w-4 h-4 rotate-45" /> Search TSA Items
+          </a>
+          <a href="/checklist" class="inline-flex items-center gap-2 px-5 h-10 text-sm font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm transition-all">
+            Create Packing List <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
+        <p class="text-xs text-mute mt-6">
+          Questions? Reach us at <a href="mailto:hello@bringonplane.com" class="text-link hover:underline">hello@bringonplane.com</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer slot="footer" />
+</Layout>

@@ -1,0 +1,77 @@
+{
+  "id": "insulin",
+  "slug": "insulin",
+  "name": "Insulin",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "diabetic supplies",
+    "humalog"
+  ],
+  "keywords": [
+    "insulin",
+    "diabetes",
+    "medicine",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with insulin in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Insulin is allowed in carry-on and is exempt from the 3-1-1 liquids rule as a medical necessity. Declare it to officers at security checkpoints.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Insulin is allowed in checked baggage, but it should travel in the cabin because extreme cold in the cargo hold can freeze and ruin it.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/insulin",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring insulin on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/insulin",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Insulin is allowed in carry-on and is exempt from the 3-1-1 liquids rule as a medical necessity. Declare it to officers at security checkpoints."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is insulin allowed in carry-on bags?",
+      "answer": "Insulin is allowed in carry-on luggage. Insulin is allowed in carry-on and is exempt from the 3-1-1 liquids rule as a medical necessity. Declare it to officers at security checkpoints."
+    },
+    {
+      "question": "Can you pack insulin in checked baggage?",
+      "answer": "Yes, Insulin is allowed in checked bags. Insulin is allowed in checked baggage, but it should travel in the cabin because extreme cold in the cargo hold can freeze and ruin it."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/insulin"
+    }
+  ]
+}

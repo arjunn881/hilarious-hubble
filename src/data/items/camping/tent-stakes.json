@@ -1,0 +1,77 @@
+{
+  "id": "tent-stakes",
+  "slug": "tent-stakes",
+  "name": "Tent Stakes",
+  "category": "Camping",
+  "subcategory": "General",
+  "aliases": [
+    "tent pegs",
+    "camping stakes"
+  ],
+  "keywords": [
+    "stakes",
+    "pegs",
+    "tent",
+    "camping"
+  ],
+  "description": "Guidelines for traveling with tent stakes in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Tent stakes or pegs are sharp objects and must be packed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Tent stakes are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tent-stakes",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring tent stakes on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tent-stakes",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Tent stakes or pegs are sharp objects and must be packed in checked baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is tent stakes allowed in carry-on bags?",
+      "answer": "Tent Stakes is not_allowed in carry-on luggage. Tent stakes or pegs are sharp objects and must be packed in checked baggage."
+    },
+    {
+      "question": "Can you pack tent stakes in checked baggage?",
+      "answer": "Yes, Tent Stakes is allowed in checked bags. Tent stakes are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tent-stakes"
+    }
+  ]
+}

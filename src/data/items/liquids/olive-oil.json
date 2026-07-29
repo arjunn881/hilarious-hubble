@@ -1,0 +1,77 @@
+{
+  "id": "olive-oil",
+  "slug": "olive-oil",
+  "name": "Olive Oil",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "cooking oil",
+    "vegetable oil"
+  ],
+  "keywords": [
+    "oil",
+    "olive",
+    "cooking",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with olive oil in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Olive oil is subject to the 3-1-1 liquids rule. Containers in carry-on must be 3.4 oz (100 ml) or less.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Olive oil is allowed in checked baggage in any size. Pack carefully to avoid leaks.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/olive-oil",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring olive oil on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/olive-oil",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Olive oil is subject to the 3-1-1 liquids rule. Containers in carry-on must be 3.4 oz (100 ml) or less."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is olive oil allowed in carry-on bags?",
+      "answer": "Olive Oil is restricted in carry-on luggage. Olive oil is subject to the 3-1-1 liquids rule. Containers in carry-on must be 3.4 oz (100 ml) or less."
+    },
+    {
+      "question": "Can you pack olive oil in checked baggage?",
+      "answer": "Yes, Olive Oil is allowed in checked bags. Olive oil is allowed in checked baggage in any size. Pack carefully to avoid leaks."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/olive-oil"
+    }
+  ]
+}

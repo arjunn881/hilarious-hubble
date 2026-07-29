@@ -1,0 +1,77 @@
+{
+  "id": "glass-bottle",
+  "slug": "glass-bottle",
+  "name": "Glass Bottle",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "glass jar",
+    "empty bottle"
+  ],
+  "keywords": [
+    "glass",
+    "bottle",
+    "jar",
+    "fragile"
+  ],
+  "description": "Guidelines for traveling with glass bottle in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Empty glass bottles are allowed in carry-on. Glass bottles containing liquids must be 3.4 oz (100 ml) or less.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Glass bottles are allowed in checked baggage. Wrap securely to prevent breaking.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/glass-bottle",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring glass bottle on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/glass-bottle",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Empty glass bottles are allowed in carry-on. Glass bottles containing liquids must be 3.4 oz (100 ml) or less."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is glass bottle allowed in carry-on bags?",
+      "answer": "Glass Bottle is restricted in carry-on luggage. Empty glass bottles are allowed in carry-on. Glass bottles containing liquids must be 3.4 oz (100 ml) or less."
+    },
+    {
+      "question": "Can you pack glass bottle in checked baggage?",
+      "answer": "Yes, Glass Bottle is allowed in checked bags. Glass bottles are allowed in checked baggage. Wrap securely to prevent breaking."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/glass-bottle"
+    }
+  ]
+}

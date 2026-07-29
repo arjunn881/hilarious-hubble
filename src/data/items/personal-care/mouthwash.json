@@ -1,0 +1,77 @@
+{
+  "id": "mouthwash",
+  "slug": "mouthwash",
+  "name": "Mouthwash",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "oral rinse",
+    "listerine"
+  ],
+  "keywords": [
+    "mouthwash",
+    "rinse",
+    "teeth",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with mouthwash in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Mouthwash is a liquid and is subject to the 3-1-1 liquids rule. Carry-on bottles must be 3.4 oz (100 ml) or less.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Mouthwash is allowed in checked baggage in any size.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mouthwash",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring mouthwash on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mouthwash",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Mouthwash is a liquid and is subject to the 3-1-1 liquids rule. Carry-on bottles must be 3.4 oz (100 ml) or less."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is mouthwash allowed in carry-on bags?",
+      "answer": "Mouthwash is restricted in carry-on luggage. Mouthwash is a liquid and is subject to the 3-1-1 liquids rule. Carry-on bottles must be 3.4 oz (100 ml) or less."
+    },
+    {
+      "question": "Can you pack mouthwash in checked baggage?",
+      "answer": "Yes, Mouthwash is allowed in checked bags. Mouthwash is allowed in checked baggage in any size."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mouthwash"
+    }
+  ]
+}

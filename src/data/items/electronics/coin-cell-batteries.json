@@ -1,0 +1,77 @@
+{
+  "id": "coin-cell-batteries",
+  "slug": "coin-cell-batteries",
+  "name": "Coin Cell Batteries",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "button cell batteries",
+    "cr2032"
+  ],
+  "keywords": [
+    "coin",
+    "button",
+    "batteries",
+    "watch"
+  ],
+  "description": "Guidelines for traveling with coin cell batteries in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Coin cell / button cell batteries (like watch batteries or CR2032) are allowed in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Coin cell / button cell batteries are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/coin-cell-batteries",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring coin cell batteries on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/coin-cell-batteries",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Coin cell / button cell batteries (like watch batteries or CR2032) are allowed in carry-on baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is coin cell batteries allowed in carry-on bags?",
+      "answer": "Coin Cell Batteries is allowed in carry-on luggage. Coin cell / button cell batteries (like watch batteries or CR2032) are allowed in carry-on baggage."
+    },
+    {
+      "question": "Can you pack coin cell batteries in checked baggage?",
+      "answer": "Yes, Coin Cell Batteries is allowed in checked bags. Coin cell / button cell batteries are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/coin-cell-batteries"
+    }
+  ]
+}

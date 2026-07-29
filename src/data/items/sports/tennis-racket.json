@@ -1,0 +1,77 @@
+{
+  "id": "tennis-racket",
+  "slug": "tennis-racket",
+  "name": "Tennis Racket",
+  "category": "Sports",
+  "subcategory": "General",
+  "aliases": [
+    "tennis racquet",
+    "badminton racket"
+  ],
+  "keywords": [
+    "racket",
+    "tennis",
+    "racquet",
+    "sport"
+  ],
+  "description": "Guidelines for traveling with tennis racket in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Tennis rackets and badminton racquets are allowed in carry-on baggage. Check with your airline if it fits in overhead compartments.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Tennis rackets are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tennis-racket",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring tennis racket on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tennis-racket",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Tennis rackets and badminton racquets are allowed in carry-on baggage. Check with your airline if it fits in overhead compartments."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is tennis racket allowed in carry-on bags?",
+      "answer": "Tennis Racket is allowed in carry-on luggage. Tennis rackets and badminton racquets are allowed in carry-on baggage. Check with your airline if it fits in overhead compartments."
+    },
+    {
+      "question": "Can you pack tennis racket in checked baggage?",
+      "answer": "Yes, Tennis Racket is allowed in checked bags. Tennis rackets are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tennis-racket"
+    }
+  ]
+}

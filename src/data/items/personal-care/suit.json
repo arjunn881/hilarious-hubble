@@ -1,0 +1,78 @@
+{
+  "id": "suit",
+  "slug": "suit",
+  "name": "Suit",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "business suit",
+    "tuxedo",
+    "blazer"
+  ],
+  "keywords": [
+    "suit",
+    "clothing",
+    "blazer",
+    "formal"
+  ],
+  "description": "Guidelines for traveling with suit in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Business suits and formal suits are allowed in carry-on. Carrying them in a garment bag is recommended.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Suits are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/suit",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring suit on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/suit",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Business suits and formal suits are allowed in carry-on. Carrying them in a garment bag is recommended."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is suit allowed in carry-on bags?",
+      "answer": "Suit is allowed in carry-on luggage. Business suits and formal suits are allowed in carry-on. Carrying them in a garment bag is recommended."
+    },
+    {
+      "question": "Can you pack suit in checked baggage?",
+      "answer": "Yes, Suit is allowed in checked bags. Suits are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/suit"
+    }
+  ]
+}

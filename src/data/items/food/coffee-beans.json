@@ -1,0 +1,92 @@
+{
+  "id": "coffee-beans",
+  "slug": "coffee-beans",
+  "name": "Coffee Beans / Ground Coffee",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "ground coffee",
+    "starbucks coffee",
+    "espresso beans"
+  ],
+  "keywords": [
+    "caffeine",
+    "powder",
+    "espresso",
+    "beans"
+  ],
+  "description": "Guidelines for traveling with coffee beans / ground coffee in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Both whole coffee beans and ground coffee are allowed in carry-on and checked bags.",
+    "conditions": [
+      "Powder-like substances (including finely ground coffee) exceeding 12 oz / 350 ml must be screened separately and may be checked if they cannot be verified."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Both whole coffee beans and ground coffee are allowed in carry-on and checked bags.",
+    "conditions": [
+      "Powder-like substances (including finely ground coffee) exceeding 12 oz / 350 ml must be screened separately and may be checked if they cannot be verified."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/coffee",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring coffee beans / ground coffee on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/coffee",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Powder-like substances (including finely ground coffee) exceeding 12 oz / 350 ml must be screened separately and may be checked if they cannot be verified."
+  ],
+  "relatedItems": [
+    "chocolate-bar",
+    "fresh-fruits",
+    "baby-food",
+    "canned-food"
+  ],
+  "faq": [
+    {
+      "question": "Is coffee beans / ground coffee allowed in carry-on bags?",
+      "answer": "Coffee Beans / Ground Coffee is allowed in carry-on luggage. Both whole coffee beans and ground coffee are allowed in carry-on and checked bags."
+    },
+    {
+      "question": "Can you pack coffee beans / ground coffee in checked baggage?",
+      "answer": "Yes, Coffee Beans / Ground Coffee is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/coffee"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

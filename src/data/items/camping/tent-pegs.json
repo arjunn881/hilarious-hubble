@@ -1,0 +1,95 @@
+{
+  "id": "tent-pegs",
+  "slug": "tent-pegs",
+  "name": "Tent Pegs / Stakes",
+  "category": "Camping",
+  "subcategory": "General",
+  "aliases": [
+    "tent stakes",
+    "camping pegs",
+    "metal pegs"
+  ],
+  "keywords": [
+    "tent",
+    "pegs",
+    "stakes",
+    "camping",
+    "outdoors"
+  ],
+  "description": "Guidelines for traveling with tent pegs / stakes in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Tent pegs and stakes are generally prohibited in carry-on baggage because they can be used as weapons, but they are fully allowed in checked luggage.",
+    "conditions": [
+      "Tent poles must also be packed in checked baggage.",
+      "Ensure stakes are packed securely so they do not puncture checked bag walls."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Tent pegs and stakes are generally prohibited in carry-on baggage because they can be used as weapons, but they are fully allowed in checked luggage.",
+    "conditions": [
+      "Tent poles must also be packed in checked baggage.",
+      "Ensure stakes are packed securely so they do not puncture checked bag walls."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tent-pegs",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring tent pegs / stakes on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tent-pegs",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Tent poles must also be packed in checked baggage."
+  ],
+  "relatedItems": [
+    "baseball-bat",
+    "bicycle",
+    "golf-clubs",
+    "hammer"
+  ],
+  "faq": [
+    {
+      "question": "Is tent pegs / stakes allowed in carry-on bags?",
+      "answer": "Tent Pegs / Stakes is not allowed in carry-on luggage. Tent pegs and stakes are generally prohibited in carry-on baggage because they can be used as weapons, but they are fully allowed in checked luggage."
+    },
+    {
+      "question": "Can you pack tent pegs / stakes in checked baggage?",
+      "answer": "Yes, Tent Pegs / Stakes is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tent-pegs"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

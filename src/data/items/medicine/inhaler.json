@@ -1,0 +1,77 @@
+{
+  "id": "inhaler",
+  "slug": "inhaler",
+  "name": "Inhaler",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "asthma inhaler",
+    "puffer"
+  ],
+  "keywords": [
+    "inhaler",
+    "asthma",
+    "medicine",
+    "lungs"
+  ],
+  "description": "Guidelines for traveling with inhaler in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Asthma inhalers and puffers are allowed in carry-on and checked baggage. Keeping them in the cabin for immediate access is recommended.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Inhalers are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/inhaler",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring inhaler on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/inhaler",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Asthma inhalers and puffers are allowed in carry-on and checked baggage. Keeping them in the cabin for immediate access is recommended."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is inhaler allowed in carry-on bags?",
+      "answer": "Inhaler is allowed in carry-on luggage. Asthma inhalers and puffers are allowed in carry-on and checked baggage. Keeping them in the cabin for immediate access is recommended."
+    },
+    {
+      "question": "Can you pack inhaler in checked baggage?",
+      "answer": "Yes, Inhaler is allowed in checked bags. Inhalers are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/inhaler"
+    }
+  ]
+}

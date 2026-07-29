@@ -1,0 +1,94 @@
+{
+  "id": "drone",
+  "slug": "drone",
+  "name": "Drone (Quadcopter)",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "quadcopter",
+    "uav",
+    "dji"
+  ],
+  "keywords": [
+    "fly",
+    "camera",
+    "copter",
+    "uav"
+  ],
+  "description": "Guidelines for traveling with drone (quadcopter) in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Drones themselves are allowed in carry-on and checked luggage. However, their lithium-ion batteries are strictly restricted to carry-on baggage only.",
+    "conditions": [
+      "Remove drone batteries and pack them in your carry-on bag.",
+      "Check with your airline regarding sizing for drone cases in overhead bins."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "RESTRICTED",
+    "reason": "Drones themselves are allowed in carry-on and checked luggage. However, their lithium-ion batteries are strictly restricted to carry-on baggage only.",
+    "conditions": [
+      "Remove drone batteries and pack them in your carry-on bag.",
+      "Check with your airline regarding sizing for drone cases in overhead bins."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring drone (quadcopter) on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Remove drone batteries and pack them in your carry-on bag."
+  ],
+  "relatedItems": [
+    "electric-toothbrush",
+    "laptop",
+    "power-bank",
+    "smartphone"
+  ],
+  "faq": [
+    {
+      "question": "Is drone (quadcopter) allowed in carry-on bags?",
+      "answer": "Drone (Quadcopter) is allowed in carry-on luggage. Drones themselves are allowed in carry-on and checked luggage. However, their lithium-ion batteries are strictly restricted to carry-on baggage only."
+    },
+    {
+      "question": "Can you pack drone (quadcopter) in checked baggage?",
+      "answer": "Yes, Drone (Quadcopter) is restricted in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

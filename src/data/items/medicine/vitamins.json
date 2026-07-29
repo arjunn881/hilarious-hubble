@@ -1,0 +1,77 @@
+{
+  "id": "vitamins",
+  "slug": "vitamins",
+  "name": "Vitamins",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "supplements",
+    "gummy vitamins"
+  ],
+  "keywords": [
+    "vitamins",
+    "pills",
+    "health",
+    "supplements"
+  ],
+  "description": "Guidelines for traveling with vitamins in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Solid vitamins, capsules, and gummies are fully allowed in carry-on luggage. Liquid vitamins follow the 3-1-1 rule.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Vitamins are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/vitamins",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring vitamins on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/vitamins",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Solid vitamins, capsules, and gummies are fully allowed in carry-on luggage. Liquid vitamins follow the 3-1-1 rule."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is vitamins allowed in carry-on bags?",
+      "answer": "Vitamins is allowed in carry-on luggage. Solid vitamins, capsules, and gummies are fully allowed in carry-on luggage. Liquid vitamins follow the 3-1-1 rule."
+    },
+    {
+      "question": "Can you pack vitamins in checked baggage?",
+      "answer": "Yes, Vitamins is allowed in checked bags. Vitamins are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/vitamins"
+    }
+  ]
+}

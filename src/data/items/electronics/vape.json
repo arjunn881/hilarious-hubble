@@ -1,0 +1,79 @@
+{
+  "id": "vape",
+  "slug": "vape",
+  "name": "Vape",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "vape pen",
+    "e-cigarette",
+    "disposable vape",
+    "vaporizer"
+  ],
+  "keywords": [
+    "vape",
+    "vaporizer",
+    "ecig",
+    "nicotine"
+  ],
+  "description": "Guidelines for traveling with vape in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Vapes, e-cigarettes, and disposable vapes are allowed in carry-on baggage only. The lithium batteries pose a cargo fire risk. Juice follows 3-1-1 rules.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Vapes are strictly prohibited in checked baggage due to safety/fire rules.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/vape",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring vape on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/vape",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Vapes, e-cigarettes, and disposable vapes are allowed in carry-on baggage only. The lithium batteries pose a cargo fire risk. Juice follows 3-1-1 rules."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is vape allowed in carry-on bags?",
+      "answer": "Vape is allowed in carry-on luggage. Vapes, e-cigarettes, and disposable vapes are allowed in carry-on baggage only. The lithium batteries pose a cargo fire risk. Juice follows 3-1-1 rules."
+    },
+    {
+      "question": "Can you pack vape in checked baggage?",
+      "answer": "No, Vape is not allowed in checked bags. Vapes are strictly prohibited in checked baggage due to safety/fire rules."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/vape"
+    }
+  ]
+}

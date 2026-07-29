@@ -1,0 +1,78 @@
+{
+  "id": "jewelry",
+  "slug": "jewelry",
+  "name": "Jewelry",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "gold ring",
+    "necklace",
+    "costume jewelry"
+  ],
+  "keywords": [
+    "jewelry",
+    "gold",
+    "ring",
+    "precious"
+  ],
+  "description": "Guidelines for traveling with jewelry in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Jewelry (rings, necklaces, watches) is allowed in carry-on. Wearing or carrying valuable jewelry in the cabin is highly recommended to prevent loss or theft.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Jewelry is allowed in checked baggage, though checked bags are not recommended for high-value items.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/jewelry",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring jewelry on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/jewelry",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Jewelry (rings, necklaces, watches) is allowed in carry-on. Wearing or carrying valuable jewelry in the cabin is highly recommended to prevent loss or theft."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is jewelry allowed in carry-on bags?",
+      "answer": "Jewelry is allowed in carry-on luggage. Jewelry (rings, necklaces, watches) is allowed in carry-on. Wearing or carrying valuable jewelry in the cabin is highly recommended to prevent loss or theft."
+    },
+    {
+      "question": "Can you pack jewelry in checked baggage?",
+      "answer": "Yes, Jewelry is allowed in checked bags. Jewelry is allowed in checked baggage, though checked bags are not recommended for high-value items."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/jewelry"
+    }
+  ]
+}

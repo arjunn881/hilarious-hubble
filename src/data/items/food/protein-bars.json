@@ -1,0 +1,77 @@
+{
+  "id": "protein-bars",
+  "slug": "protein-bars",
+  "name": "Protein Bars",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "energy bars",
+    "granola bars"
+  ],
+  "keywords": [
+    "bars",
+    "protein",
+    "snack",
+    "food"
+  ],
+  "description": "Guidelines for traveling with protein bars in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Protein bars and energy bars are solid food items and are fully allowed in carry-on luggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Protein bars are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/protein-bars",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring protein bars on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/protein-bars",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Protein bars and energy bars are solid food items and are fully allowed in carry-on luggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is protein bars allowed in carry-on bags?",
+      "answer": "Protein Bars is allowed in carry-on luggage. Protein bars and energy bars are solid food items and are fully allowed in carry-on luggage."
+    },
+    {
+      "question": "Can you pack protein bars in checked baggage?",
+      "answer": "Yes, Protein Bars is allowed in checked bags. Protein bars are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/protein-bars"
+    }
+  ]
+}

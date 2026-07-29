@@ -1,0 +1,79 @@
+{
+  "id": "lipstick",
+  "slug": "lipstick",
+  "name": "Lipstick",
+  "category": "Beauty",
+  "subcategory": "General",
+  "aliases": [
+    "chapstick",
+    "lip gloss",
+    "lip balm"
+  ],
+  "keywords": [
+    "lipstick",
+    "makeup",
+    "lip",
+    "solid",
+    "gloss"
+  ],
+  "description": "Guidelines for traveling with lipstick in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Solid lipsticks, lip balms, and chapsticks are fully allowed in carry-on without size limits. Liquid lip gloss must comply with the 3-1-1 rule.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Lipstick and lip gloss are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lipstick",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring lipstick on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lipstick",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Solid lipsticks, lip balms, and chapsticks are fully allowed in carry-on without size limits. Liquid lip gloss must comply with the 3-1-1 rule."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is lipstick allowed in carry-on bags?",
+      "answer": "Lipstick is allowed in carry-on luggage. Solid lipsticks, lip balms, and chapsticks are fully allowed in carry-on without size limits. Liquid lip gloss must comply with the 3-1-1 rule."
+    },
+    {
+      "question": "Can you pack lipstick in checked baggage?",
+      "answer": "Yes, Lipstick is allowed in checked bags. Lipstick and lip gloss are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lipstick"
+    }
+  ]
+}

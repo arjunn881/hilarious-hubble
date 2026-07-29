@@ -1,0 +1,166 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Shield, ArrowLeft, ChevronDown } from "@lucide/astro";
+
+const lastUpdated = "June 30, 2026";
+const sections = [
+  {
+    id: "info-collection",
+    title: "1. Information We Collect",
+    content: `BringOnPlane is a privacy-first application. We do not require account registration, email sign-up, or any personal information to use the service. The following minimal data may be collected:
+    
+    <strong>Automatically Collected:</strong> Standard server logs (IP address, browser type, operating system, pages visited, referring URL, and timestamp) collected by our CDN and hosting provider for security and uptime monitoring. These logs are retained for 30 days and are never sold.
+    
+    <strong>Local Storage:</strong> Your packing lists, saved trips, and preferences are stored exclusively in your browser's localStorage. This data never leaves your device and is not transmitted to our servers.
+    
+    <strong>Analytics:</strong> We use privacy-respecting, cookieless analytics to understand aggregate traffic patterns (e.g., most searched items, most visited pages). No personal identifiers are included in analytics events.
+    
+    <strong>Contact Forms:</strong> If you submit a message through our contact page, we collect your name, email address, and message content solely for the purpose of responding to your inquiry.`
+  },
+  {
+    id: "cookies",
+    title: "2. Cookies & Tracking Technologies",
+    content: `BringOnPlane uses minimal, strictly necessary cookies only:
+    
+    <strong>theme:</strong> A localStorage key (not a cookie) that stores your light/dark mode preference. No expiry, stored on-device only.
+    
+    <strong>Third-Party Cookies:</strong> Google Analytics may set anonymous, aggregate-level cookies if analytics is enabled. These do not identify you personally. You may opt out via your browser settings or a tool like uBlock Origin.
+    
+    We do not use tracking pixels, behavioral advertising cookies, fingerprinting technologies, or cross-site tracking of any kind. We do not sell, rent, or share your data with third-party advertisers.`
+  },
+  {
+    id: "data-use",
+    title: "3. How We Use Your Information",
+    content: `Any information we collect is used exclusively to:
+    
+    • Operate and improve the BringOnPlane service
+    • Respond to contact form inquiries and bug reports
+    • Monitor site security and prevent abuse
+    • Understand aggregate usage patterns to prioritize features
+    • Comply with legal obligations
+    
+    We do not use your information to build advertising profiles, sell it to data brokers, or share it with third parties except as required by law or with service providers under strict data processing agreements (e.g., our CDN provider for DDoS protection).`
+  },
+  {
+    id: "data-retention",
+    title: "4. Data Retention",
+    content: `Server log data is retained for a maximum of 30 days and then automatically purged. Contact form submissions are retained only as long as necessary to resolve your inquiry, typically 90 days. Local packing list data exists only on your device and can be deleted at any time by clearing your browser's localStorage. We do not maintain long-term personal data profiles.`
+  },
+  {
+    id: "third-parties",
+    title: "5. Third-Party Services",
+    content: `BringOnPlane may use the following third-party services, each with its own privacy policy:
+    
+    <strong>Google Analytics:</strong> Anonymous aggregate analytics. See Google's privacy policy at policies.google.com/privacy.
+    
+    <strong>Google Fonts:</strong> Typography assets served from Google's CDN. Google may log font requests. Consider using a browser extension to self-host fonts if this concerns you.
+    
+    <strong>Cloudflare (CDN):</strong> We use Cloudflare for content delivery and DDoS protection. Cloudflare may process request metadata per their privacy policy at cloudflare.com/privacypolicy.
+    
+    BringOnPlane does not embed Facebook Pixel, TikTok Pixel, advertising SDKs, or any behavioral profiling code.`
+  },
+  {
+    id: "your-rights",
+    title: "6. Your Rights (GDPR & CCPA)",
+    content: `If you are a resident of the European Economic Area (EEA) or California, you have the following rights:
+    
+    <strong>Right to Access:</strong> You may request a copy of any personal data we hold about you.
+    
+    <strong>Right to Erasure:</strong> You may request deletion of any personal data we hold. Because most data exists only on your device, you can delete packing list data yourself by clearing localStorage.
+    
+    <strong>Right to Portability:</strong> You may request your contact inquiry data in a portable format.
+    
+    <strong>Right to Object:</strong> You may object to our processing of your data at any time.
+    
+    To exercise any of these rights, email us at privacy@bringonplane.com. We will respond within 30 days.`
+  },
+  {
+    id: "children",
+    title: "7. Children's Privacy",
+    content: `BringOnPlane is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has submitted information through our site, please contact us at privacy@bringonplane.com and we will promptly delete such information.`
+  },
+  {
+    id: "changes",
+    title: "8. Changes to This Privacy Policy",
+    content: `We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. The "Last Updated" date at the top of this page will reflect the most recent revision. Continued use of BringOnPlane after changes constitutes acceptance of the revised policy. We encourage you to review this policy periodically.`
+  },
+  {
+    id: "contact-us",
+    title: "9. Contact & Data Controller",
+    content: `For privacy-related inquiries, data subject requests, or concerns about this policy, contact us at:
+    
+    <strong>Email:</strong> privacy@bringonplane.com
+    <strong>General Contact:</strong> <a href="/contact" class="text-link hover:underline">bringonplane.com/contact</a>
+    
+    We take privacy seriously and will respond to all inquiries within 30 days.`
+  }
+];
+---
+
+<Layout
+  title="Privacy Policy — BringOnPlane"
+  description="BringOnPlane privacy policy: how we handle your data, cookies, analytics, your GDPR/CCPA rights, and our no-data-selling commitment."
+  canonicalURL="https://bringonplane.com/privacy-policy"
+  keywords="bringonplane privacy policy, data privacy, GDPR, CCPA, cookies policy, tsa website privacy"
+>
+  <Header slot="header" />
+
+  <main class="flex-1">
+
+    <!-- Hero -->
+    <div class="border-b border-hairline bg-canvas-soft">
+      <div class="max-w-[760px] mx-auto px-4 md:px-6 py-12">
+        <a href="/" class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors mb-6">
+          <ArrowLeft class="w-3.5 h-3.5" /> Back to Home
+        </a>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-md bg-link-bg-soft text-link border border-link/20 flex items-center justify-center flex-shrink-0 mt-1">
+            <Shield class="w-5 h-5" />
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.5px] text-ink leading-tight mb-2">Privacy Policy</h1>
+            <p class="text-xs text-mute font-mono">Last updated: {lastUpdated}</p>
+            <p class="text-sm text-body leading-[1.7] mt-3 max-w-[540px]">
+              BringOnPlane is built on a simple principle: <strong class="text-ink">your data is yours.</strong> We don't sell it, profile you, or require personal information to use the service. Here's exactly what we collect, why, and how.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="border-b border-hairline bg-canvas">
+      <div class="max-w-[760px] mx-auto px-4 md:px-6 py-6">
+        <p class="text-xs font-mono text-mute uppercase tracking-wider mb-3">Quick Navigation</p>
+        <div class="flex flex-wrap gap-2">
+          {sections.map(s => (
+            <a href={`#${s.id}`} class="text-[11px] text-link hover:text-link-deep border border-link/20 hover:border-link bg-link-bg-soft rounded-md px-2.5 py-1 transition-all font-medium">
+              {s.title.split(". ")[1]}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-[760px] mx-auto px-4 md:px-6 py-14 space-y-10">
+      {sections.map(s => (
+        <section id={s.id} class="scroll-mt-24 border-b border-hairline pb-10 last:border-0">
+          <h2 class="text-base font-semibold text-ink mb-4">{s.title}</h2>
+          <div class="text-sm text-body leading-[1.9] space-y-3" set:html={s.content.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('')} />
+        </section>
+      ))}
+
+      <div class="border border-hairline rounded-md bg-canvas-soft p-6 text-center">
+        <p class="text-sm text-body mb-4">Have a privacy concern or data request?</p>
+        <a href="/contact" class="inline-flex items-center gap-2 px-4 h-9 text-sm font-medium text-link border border-link/25 hover:border-link bg-link-bg-soft rounded-md transition-all">
+          Contact Us About Privacy
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer slot="footer" />
+</Layout>

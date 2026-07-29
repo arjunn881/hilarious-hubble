@@ -1,0 +1,77 @@
+{
+  "id": "lithium-batteries",
+  "slug": "lithium-batteries",
+  "name": "Lithium Batteries",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "lithium ion batteries",
+    "rechargeable lithium"
+  ],
+  "keywords": [
+    "lithium",
+    "batteries",
+    "spare",
+    "cell"
+  ],
+  "description": "Guidelines for traveling with lithium batteries in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Spare lithium-ion or lithium-metal batteries must be carried in carry-on baggage only. Protecting the terminals is required.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Spare lithium batteries are prohibited in checked baggage holds due to cargo fire hazards.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lithium-batteries",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring lithium batteries on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lithium-batteries",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Spare lithium-ion or lithium-metal batteries must be carried in carry-on baggage only. Protecting the terminals is required."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is lithium batteries allowed in carry-on bags?",
+      "answer": "Lithium Batteries is allowed in carry-on luggage. Spare lithium-ion or lithium-metal batteries must be carried in carry-on baggage only. Protecting the terminals is required."
+    },
+    {
+      "question": "Can you pack lithium batteries in checked baggage?",
+      "answer": "No, Lithium Batteries is not allowed in checked bags. Spare lithium batteries are prohibited in checked baggage holds due to cargo fire hazards."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lithium-batteries"
+    }
+  ]
+}

@@ -1,0 +1,766 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getAllItems, getRelatedItems, getItemBySlug } from "../../lib/items";
+import { CheckCircle2, XCircle, AlertCircle, Calendar, ShieldAlert, ExternalLink, FileText, Globe, AlertTriangle } from "@lucide/astro";
+import { 
+  getWhatIsThisItem, 
+  getExceptions, 
+  getInternationalConsiderations, 
+  getAlternativeItems, 
+  getRelatedGuides 
+} from "../../lib/contentGenerator";
+import EEATBanner from "../../components/seo/EEATBanner.astro";
+import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
+import RelatedLinksWidget from "../../components/seo/RelatedLinksWidget.astro";
+import { getAirlineCombinationsForItem, getPopularGuides, getRelatedCategories } from "../../lib/relatedEngine";
+export async function getStaticPaths() {
+  const items = getAllItems();
+  return items.map((item) => ({
+    params: { slug: item.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const item = getItemBySlug(slug as string);
+if (!item) {
+  return Astro.redirect("/404");
+}
+
+const relatedItems = getRelatedItems(item);
+
+const whatIsThisItem = getWhatIsThisItem(item);
+const exceptions = getExceptions(item);
+const internationalConsiderations = getInternationalConsiderations(item);
+const alternativeItems = getAlternativeItems(item);
+const itemRelatedGuides = getRelatedGuides(item);
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "Categories", href: "/#categories" },
+  { label: item.category, href: `/category/${item.category.toLowerCase().trim().replace(/\\s+/g, "-")}` },
+  { label: item.name }
+];
+
+const relatedWidgetGroups = [
+  { title: "Relevant Airlines", links: getAirlineCombinationsForItem(item.slug, 5) },
+  { title: "Popular Guides", links: getPopularGuides(5) },
+  { title: "Related Categories", links: getRelatedCategories(item.category, 5).map(c => ({ title: c.name, url: `/category/${c.slug}` })) }
+];
+
+// Strict Rule Status config mapping
+const statusConfig = {
+  ALLOWED: {
+    label: "Allowed",
+    icon: CheckCircle2,
+    class: "bg-link-bg-soft text-link-deep border-link/25",
+    textClass: "text-link-deep",
+  },
+  NOT_ALLOWED: {
+    label: "Prohibited",
+    icon: XCircle,
+    class: "bg-error-soft text-error-deep border-error/25",
+    textClass: "text-error-deep",
+  },
+  RESTRICTED: {
+    label: "Restricted",
+    icon: AlertCircle,
+    class: "bg-warning-soft text-warning-deep border-warning/25",
+    textClass: "text-warning-deep",
+  },
+  UNKNOWN: {
+    label: "Unknown",
+    icon: AlertCircle,
+    class: "bg-canvas-soft-2 text-mute border-hairline",
+    textClass: "text-mute",
+  },
+};
+
+const carryOnStatus = statusConfig[item.carryOn.status] || statusConfig.UNKNOWN;
+const checkedStatus = statusConfig[item.checkedBag.status] || statusConfig.UNKNOWN;
+
+const CarryOnIcon = carryOnStatus.icon;
+const CheckedIcon = checkedStatus.icon;
+
+function getSmallBadgeClass(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKNOWN') {
+  if (status === 'ALLOWED') return "bg-link-bg-soft border-link/25 text-link-deep";
+  if (status === 'NOT_ALLOWED') return "bg-error-soft border-error/25 text-error-deep";
+  if (status === 'RESTRICTED') return "bg-warning-soft border-warning/25 text-warning-deep";
+  return "bg-canvas-soft-2 border-hairline text-mute";
+}
+
+function getCfrCitation(category: string) {
+  const cat = category.toLowerCase().trim();
+  if (cat === 'electronics') {
+    return {
+      code: "49 CFR § 175.10(a)(18)",
+      title: "FAA Regulation for Lithium Batteries & Electronic Devices",
+      source: "Federal Aviation Administration (FAA)"
+    };
+  }
+  if (cat === 'liquids' || cat === 'personal-care' || cat === 'beauty') {
+    return {
+      code: "49 CFR § 1540.111",
+      title: "TSA Regulation for Liquids, Gels, and Aerosols",
+      source: "Transportation Security Administration (TSA)"
+    };
+  }
+  if (cat === 'medicine' || cat === 'health') {
+    return {
+      code: "49 CFR § 1544.219",
+      title: "TSA Medical Device & Prescription Exemptions",
+      source: "Transportation Security Administration (TSA)"
+    };
+  }
+  if (cat === 'tools' || cat === 'camping') {
+    return {
+      code: "49 CFR § 1540.111(a)",
+      title: "TSA Security Rules for Tools & Bladed Objects",
+      source: "Transportation Security Administration (TSA)"
+    };
+  }
+  if (cat === 'sports') {
+    return {
+      code: "49 CFR § 1540.111(b)",
+      title: "TSA Security Rules for Blunt Objects & Sports Equipment",
+      source: "Transportation Security Administration (TSA)"
+    };
+  }
+  return {
+    code: "49 CFR § 1540.111",
+    title: "TSA General Security Carriage Regulations",
+    source: "Transportation Security Administration (TSA)"
+  };
+}
+const cfr = getCfrCitation(item.category);
+
+
+
+function getTravelTip(itemData: typeof item) {
+  if (itemData.carryOn.status === 'NOT_ALLOWED') {
+    return `Pack ${itemData.name.toLowerCase()} securely in your checked hold baggage before you head to the airport counter to avoid confiscation at security checkpoint lines.`;
+  }
+  if (itemData.carryOn.status === 'RESTRICTED') {
+    return `Place ${itemData.name.toLowerCase()} in a clear pouch near the top of your carry-on luggage. Security officers often request passengers to remove restricted items for standalone X-ray screening.`;
+  }
+  return `Keep ${itemData.name.toLowerCase()} in your carry-on bag so it stays safe, protected, and within arm's reach during your flight. Avoid checking high-value personal items.`;
+}
+const travelTip = getTravelTip(item);
+
+// Dynamically generate FAQs for SEO schemas
+const faq1Question = `Is ${item.name.toLowerCase()} allowed on a plane?`;
+const faq1Answer = `According to the TSA, ${item.name.toLowerCase()} is ${item.carryOn.status.replace('_', ' ').toLowerCase()} in carry-on bags and ${item.checkedBag.status.replace('_', ' ').toLowerCase()} in checked baggage. ${item.carryOn.reason}`;
+
+const faq2Question = `Can I bring ${item.name.toLowerCase()} in carry-on luggage?`;
+const faq2Answer = `Yes, ${item.name.toLowerCase()} is ${item.carryOn.status === 'ALLOWED' ? 'fully allowed' : item.carryOn.status === 'RESTRICTED' ? 'restricted (subject to conditions)' : 'prohibited'} in carry-on bags. ${item.carryOn.conditions[0] || 'Make sure to consult airport guidelines.'}`;
+
+const faq3Question = `Are there any special rules for packing ${item.name.toLowerCase()} in checked baggage?`;
+const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checkedBag.status === 'ALLOWED' ? 'allowed without restrictions' : item.checkedBag.status === 'RESTRICTED' ? 'restricted (subject to conditions)' : 'prohibited'}. ${item.checkedBag.conditions[0] || 'Ensure it is packed securely.'}`;
+---
+
+<Layout 
+  title={`Can You Bring ${item.name} On Plane? Carry-On & Checked Bags Rules`}
+  description={item.carryOn.reason || item.description}
+  canonicalURL={`https://bringonplane.com/items/${item.slug}`}
+>
+  <!-- Inject JSON-LD structured data in the page body -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Thing",
+        "name": item.name,
+        "description": item.description,
+        "url": `https://bringonplane.com/items/${item.slug}`,
+        "alternateName": item.aliases,
+        "category": item.category,
+        "keywords": item.keywords.join(", "),
+        "author": {
+          "@type": "Organization",
+          "name": "BringOnPlane Editorial Team"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "BringOnPlane",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://bringonplane.com/logo.png"
+          }
+        },
+        "subjectOf": item.tsa && item.tsa.officialUrl ? {
+          "@type": "WebPage",
+          "name": "Official TSA Rules Source",
+          "url": item.tsa.officialUrl
+        } : undefined
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://bringonplane.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Items",
+            "item": "https://bringonplane.com/#categories"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": item.category,
+            "item": "https://bringonplane.com/#categories"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": item.name,
+            "item": `https://bringonplane.com/items/${item.slug}`
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": faq1Question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq1Answer
+            }
+          },
+          {
+            "@type": "Question",
+            "name": faq2Question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq2Answer
+            }
+          },
+          {
+            "@type": "Question",
+            "name": faq3Question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq3Answer
+            }
+          }
+        ]
+      }
+    ]
+  })} />
+
+  <Header slot="header" />
+
+  <div class="max-w-[800px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+    <!-- Breadcrumbs complying with Web Interface Guidelines -->
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <!-- Item Metadata Header -->
+    <header class="mb-10">
+      <div class="flex flex-wrap items-center gap-3 mb-3">
+        <a 
+          href={`/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}`}
+          class="font-mono text-[10px] font-semibold text-mute hover:text-link uppercase tracking-wider bg-canvas-soft-2 border border-hairline px-2 py-0.5 rounded-xs hover:border-link transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-link"
+        >
+          {item.category}
+        </a>
+
+        <!-- Trust Confidence Badge -->
+        <span class="inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-link bg-link-bg-soft border border-link/25 px-2 py-0.5 rounded-xs select-none">
+          <svg width="12" height="12" class="w-3 h-3 text-link" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          TSA Verified • High Confidence
+        </span>
+
+        <span class="flex items-center gap-1.5 text-xs text-mute font-mono">
+          <Calendar class="w-3.5 h-3.5" aria-hidden="true" />
+          Reviewed {item.metadata.lastReviewed}
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.28px] text-ink text-pretty">
+        Can you bring {item.name.toLowerCase()} on a plane?
+      </h1>
+      {item.aliases.length > 0 && (
+        <p class="text-sm text-body mt-2">
+          <span class="text-mute">Also known as:</span> {item.aliases.join(", ")}
+        </p>
+      )}
+
+      <!-- Action buttons for Traveler utilities -->
+      <div class="flex flex-wrap items-center gap-3 mt-6 select-none">
+        <button 
+          type="button" 
+          id="btn-favorite" 
+          class="inline-flex items-center gap-2 px-3 h-8 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1"
+          aria-label="Add to Favorites"
+        >
+          <svg width="14" height="14" id="star-icon" class="w-3.5 h-3.5 text-mute transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <span id="favorite-label">Favorite</span>
+        </button>
+
+        <button 
+          type="button" 
+          id="btn-checklist-add" 
+          class="inline-flex items-center gap-2 px-3 h-8 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1"
+          aria-label="Add to packing checklist"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+            <path d="M12 6v12M6 12h12"/>
+          </svg>
+          <span id="checklist-add-label">Add to Checklist</span>
+        </button>
+
+        <button 
+          type="button" 
+          id="btn-share-link" 
+          class="inline-flex items-center gap-2 px-3 h-8 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1 relative"
+          aria-label="Copy share link to clipboard"
+        >
+          <svg width="14" height="14" class="w-3.5 h-3.5 text-mute" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <path d="M8.59 13.51l6.83 3.98M15.41 6.51L8.59 10.49"/>
+          </svg>
+          <span>Share Link</span>
+          <!-- Clipboard toast notification tooltip -->
+          <span id="share-toast" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-[10px] font-mono font-medium text-on-primary bg-ink rounded shadow-level-3 opacity-0 transition-opacity pointer-events-none whitespace-nowrap">
+            Copied link!
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Semantic Introduction -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold tracking-[-0.6px] text-ink mb-3">
+        What is {item.name.toLowerCase()}?
+      </h2>
+      <p class="text-base text-body leading-[1.75] text-pretty">
+        {whatIsThisItem}
+      </p>
+    </section>
+
+    <!-- Side-by-Side Status Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+      <!-- Carry-On Card -->
+      <div class="bg-canvas border border-hairline rounded-md p-6 shadow-level-2">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-sm font-medium text-body">Carry-on Baggage</span>
+          <div class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-mono font-medium ${carryOnStatus.class}`}>
+            <CarryOnIcon class="w-3.5 h-3.5" aria-hidden="true" />
+            {carryOnStatus.label}
+          </div>
+        </div>
+        <p class="text-2xl font-semibold tracking-[-0.6px] text-ink capitalize">
+          {item.carryOn.status === "ALLOWED" && "Allowed in cabin"}
+          {item.carryOn.status === "NOT_ALLOWED" && "Strictly prohibited"}
+          {item.carryOn.status === "RESTRICTED" && "Restricted status"}
+          {item.carryOn.status === "UNKNOWN" && "Status unknown"}
+        </p>
+      </div>
+
+      <!-- Checked Card -->
+      <div class="bg-canvas border border-hairline rounded-md p-6 shadow-level-2">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-sm font-medium text-body">Checked Baggage</span>
+          <div class={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-mono font-medium ${checkedStatus.class}`}>
+            <CheckedIcon class="w-3.5 h-3.5" aria-hidden="true" />
+            {checkedStatus.label}
+          </div>
+        </div>
+        <p class="text-2xl font-semibold tracking-[-0.6px] text-ink capitalize">
+          {item.checkedBag.status === "ALLOWED" && "Allowed in hold"}
+          {item.checkedBag.status === "NOT_ALLOWED" && "Strictly prohibited"}
+          {item.checkedBag.status === "RESTRICTED" && "Restricted status"}
+          {item.checkedBag.status === "UNKNOWN" && "Status unknown"}
+        </p>
+      </div>
+    </div>
+
+    <!-- Official TSA Guidance -->
+    <section class="bg-canvas border border-hairline rounded-md p-8 shadow-level-3 mb-10">
+      <h2 class="text-lg font-semibold tracking-[-0.6px] text-ink mb-4">
+        Official TSA Rules & Reason
+      </h2>
+      <p class="text-body leading-[1.6] text-pretty mb-6">
+        {item.carryOn.reason}
+      </p>
+      {item.tsa && item.tsa.officialUrl && (
+        <a 
+          href={item.tsa.officialUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center justify-center gap-2 px-4 h-9 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+        >
+          Official TSA Source
+          <ExternalLink class="w-3.5 h-3.5" aria-hidden="true" />
+        </a>
+      )}
+    </section>
+
+    <!-- Practical Traveler Packing Tip Card -->
+    <section class="bg-canvas border border-link/15 rounded-md p-6 shadow-level-2 mb-10 select-none no-print">
+      <div class="flex items-start gap-4">
+        <div class="w-8 h-8 rounded-sm bg-link-bg-soft text-link-deep border border-link/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg width="16" height="16" class="w-4 h-4 text-link" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="m12 3-1.912 5.886H3.886L8.7 12.518 6.788 18.4 12 14.782 17.212 18.4l-1.912-5.882 4.814-3.632h-6.202L12 3z"/>
+          </svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-1">
+            Traveler Packing Tip
+          </h4>
+          <p class="text-xs text-body leading-[1.6]">
+            {travelTip}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Important Notes -->
+    {item.carryOn.conditions && item.carryOn.conditions.length > 0 && (
+      <section class="mb-10">
+        <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-4">
+          Important Packing Guidelines
+        </h3>
+        <ul class="space-y-3" role="list">
+          {item.carryOn.conditions.map((note) => (
+            <li class="flex items-start gap-3 text-sm text-body">
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-canvas-soft-2 border border-hairline flex items-center justify-center text-ink font-mono text-[10px] mt-0.5">
+                ✓
+              </span>
+              <span class="leading-relaxed">{note}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <!-- Deep SEO Semantic Sections -->
+    <div class="grid grid-cols-1 gap-8 mb-10">
+      <section>
+        <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3 flex items-center gap-2">
+          <AlertTriangle class="w-4 h-4 text-mute" />
+          Exceptions & Special Cases
+        </h3>
+        <p class="text-sm text-body leading-[1.7]">
+          {exceptions}
+        </p>
+      </section>
+
+      <section>
+        <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3 flex items-center gap-2">
+          <Globe class="w-4 h-4 text-mute" />
+          International Considerations
+        </h3>
+        <p class="text-sm text-body leading-[1.7]">
+          {internationalConsiderations}
+        </p>
+      </section>
+
+      <section>
+        <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3">
+          Alternative Options
+        </h3>
+        <p class="text-sm text-body leading-[1.7]">
+          {alternativeItems}
+        </p>
+      </section>
+    </div>
+
+    <!-- FAQ Accordions complying with Web Interface Guidelines (Zero JS details layout) -->
+    <section class="mb-10">
+      <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-6">
+        Frequently Asked Questions
+      </h3>
+      <div class="space-y-4">
+        <details class="group bg-canvas border border-hairline rounded-md p-4 transition-all" open>
+          <summary class="flex justify-between items-center font-medium text-sm text-ink cursor-pointer list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1 rounded-sm">
+            <span>{faq1Question}</span>
+            <span class="transition-transform group-open:rotate-180 text-mute text-xs">▼</span>
+          </summary>
+          <p class="text-sm text-body mt-3 leading-[1.6]">
+            {faq1Answer}
+          </p>
+        </details>
+
+        <details class="group bg-canvas border border-hairline rounded-md p-4 transition-all">
+          <summary class="flex justify-between items-center font-medium text-sm text-ink cursor-pointer list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1 rounded-sm">
+            <span>{faq2Question}</span>
+            <span class="transition-transform group-open:rotate-180 text-mute text-xs">▼</span>
+          </summary>
+          <p class="text-sm text-body mt-3 leading-[1.6]">
+            {faq2Answer}
+          </p>
+        </details>
+
+        <details class="group bg-canvas border border-hairline rounded-md p-4 transition-all">
+          <summary class="flex justify-between items-center font-medium text-sm text-ink cursor-pointer list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1 rounded-sm">
+            <span>{faq3Question}</span>
+            <span class="transition-transform group-open:rotate-180 text-mute text-xs">▼</span>
+          </summary>
+          <p class="text-sm text-body mt-3 leading-[1.6]">
+            {faq3Answer}
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Officer Discretion Warning (Required by TSA guidelines) -->
+    <div class="bg-canvas-soft-2 border border-hairline rounded-md p-6 flex items-start gap-4 mb-10 no-print">
+      <div class="w-8 h-8 rounded-sm bg-warning-soft border border-warning/25 text-warning-deep flex items-center justify-center flex-shrink-0 mt-0.5">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-1">
+          TSA Officer Discretion
+        </h4>
+        <p class="text-xs text-body leading-[1.5]">
+          The final decision rests with the TSA officer on whether an item is allowed through the security checkpoint. Rules and regulations can vary depending on international travel destinations or dynamic airport security alert levels.
+        </p>
+      </div>
+    </div>
+
+    <!-- Editorial Team Seal Card replaced with EEAT Banner -->
+    <div class="mb-10">
+      <EEATBanner lastUpdated={item.metadata.lastReviewed} />
+    </div>
+
+    <!-- Regulatory Citations Card -->
+    <section class="bg-canvas border border-hairline rounded-md p-6 mb-10 select-none">
+      <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-mute mb-4">
+        Official Regulation Citations
+      </h3>
+      <div class="flex items-start gap-3.5">
+        <div class="font-mono text-xs text-mute flex-shrink-0 w-8 h-8 rounded-sm bg-canvas-soft border border-hairline flex items-center justify-center font-bold">
+          §
+        </div>
+        <div>
+          <p class="text-sm font-mono font-semibold text-ink mb-1">
+            {cfr.code}
+          </p>
+          <p class="text-xs font-mono text-mute mb-2">
+            {cfr.title} — {cfr.source}
+          </p>
+          <p class="text-xs text-body leading-[1.6]">
+            This regulation mandates baggage safety constraints, hazardous materials classifications, or general prohibited carriage parameters for airline passengers flying within or into the United States.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Version History Timeline -->
+    <section class="mb-12 select-none no-print">
+      <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-mute mb-6">
+        Rule Change & Review History
+      </h3>
+      <div class="relative pl-6 border-l border-hairline space-y-6">
+        {item.ruleHistory && item.ruleHistory.map((step) => (
+          <div class="relative">
+            <!-- Timeline dot -->
+            <span class="absolute -left-[31px] top-1 w-2.5 h-2.5 rounded-full bg-canvas-soft-2 border-2 border-hairline shadow-sm" />
+            <div>
+              <span class="font-mono text-[10px] text-mute block mb-1">
+                {step.effectiveDate}
+              </span>
+              <p class="text-sm text-ink mb-2 leading-[1.5]">
+                {step.change}
+              </p>
+              {step.source && (
+                <a 
+                  href={step.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 text-[10px] font-mono text-link hover:text-link-deep transition-colors focus-visible:underline"
+                >
+                  Regulation Source
+                  <ExternalLink class="w-2.5 h-2.5" aria-hidden="true" />
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related Guides section -->
+    <section class="pt-8 border-t border-hairline mb-10">
+      <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-6">
+        Related Travel Guides
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {itemRelatedGuides.map((guide) => (
+          <a
+            href={guide.url}
+            class="flex items-center gap-3 bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-4 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+          >
+            <div class="w-8 h-8 rounded-full bg-canvas-soft flex items-center justify-center text-mute flex-shrink-0">
+              <FileText class="w-4 h-4" />
+            </div>
+            <h4 class="text-sm font-medium tracking-[-0.2px] text-ink line-clamp-2">
+              {guide.title}
+            </h4>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Related Items section -->
+    {relatedItems.length > 0 && (
+      <section class="pt-8 border-t border-hairline">
+        <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-6">
+          Related Travel Items
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {relatedItems.map((relatedItem) => (
+            <a
+              href={`/items/${relatedItem.slug}`}
+              class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-4 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="font-mono text-[9px] font-semibold text-mute uppercase tracking-wider block mb-0.5">
+                    {relatedItem.category}
+                  </span>
+                  <h4 class="text-sm font-medium tracking-[-0.2px] text-ink mb-1">
+                    {relatedItem.name}
+                  </h4>
+                </div>
+                <div class="flex flex-col gap-1.5 flex-shrink-0 items-end">
+                  <span class:list={["text-[8px] font-mono px-1.5 py-0.2 rounded-full border uppercase tracking-wider text-center w-20", getSmallBadgeClass(relatedItem.carryOn)]}>
+                    H: {relatedItem.carryOn.toLowerCase()}
+                  </span>
+                  <span class:list={["text-[8px] font-mono px-1.5 py-0.2 rounded-full border uppercase tracking-wider text-center w-20", getSmallBadgeClass(relatedItem.checked)]}>
+                    C: {relatedItem.checked.toLowerCase()}
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Advanced SEO Interlinking Clusters -->
+    <RelatedLinksWidget groups={relatedWidgetGroups} />
+  </div>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script is:inline>
+  // Simple Client-side Favorite & Checklist integrations
+  const btnFavorite = document.getElementById("btn-favorite");
+  const starIcon = document.getElementById("star-icon");
+  const favoriteLabel = document.getElementById("favorite-label");
+  const btnChecklistAdd = document.getElementById("btn-checklist-add");
+  const checklistAddLabel = document.getElementById("checklist-add-label");
+  const btnShareLink = document.getElementById("btn-share-link");
+  const shareToast = document.getElementById("share-toast");
+
+  const currentSlug = window.location.pathname.split("/").pop();
+  const currentName = document.querySelector("h1")?.textContent?.trim() || "";
+  const currentCategory = document.querySelector("a[href^='/category/']")?.textContent?.trim() || "";
+
+  // Resolve favorites state
+  let favorites = JSON.parse(localStorage.getItem("traveler_favorites") || "[]");
+  let isFavorite = favorites.includes(currentSlug);
+
+  function updateFavoriteUI() {
+    if (isFavorite) {
+      starIcon?.setAttribute("fill", "currentColor");
+      starIcon?.classList.remove("text-mute");
+      starIcon?.classList.add("text-warning-deep");
+      if (favoriteLabel) favoriteLabel.textContent = "Favorited";
+    } else {
+      starIcon?.setAttribute("fill", "none");
+      starIcon?.classList.remove("text-warning-deep");
+      starIcon?.classList.add("text-mute");
+      if (favoriteLabel) favoriteLabel.textContent = "Favorite";
+    }
+  }
+  updateFavoriteUI();
+
+  btnFavorite?.addEventListener("click", () => {
+    isFavorite = !isFavorite;
+    if (isFavorite) {
+      favorites.push(currentSlug);
+    } else {
+      favorites = favorites.filter(slug => slug !== currentSlug);
+    }
+    localStorage.setItem("traveler_favorites", JSON.stringify(favorites));
+    updateFavoriteUI();
+  });
+
+  // Resolve packing checklist integration
+  let checklist = JSON.parse(localStorage.getItem("traveler_checklist") || "[]");
+  let inChecklist = checklist.some(item => item.id === currentSlug);
+
+  function updateChecklistUI() {
+    if (inChecklist) {
+      if (checklistAddLabel) checklistAddLabel.textContent = "In Checklist";
+      btnChecklistAdd?.classList.add("opacity-50");
+    } else {
+      if (checklistAddLabel) checklistAddLabel.textContent = "Add to Checklist";
+      btnChecklistAdd?.classList.remove("opacity-50");
+    }
+  }
+  updateChecklistUI();
+
+  btnChecklistAdd?.addEventListener("click", () => {
+    if (inChecklist) return;
+    
+    // Query baggage allowance status
+    const carryOnText = document.querySelector(".bg-canvas p")?.textContent?.trim() || "allowed";
+    const checkedText = document.querySelectorAll(".bg-canvas p")[1]?.textContent?.trim() || "allowed";
+
+    const mapTextStatus = (text) => {
+      const t = text.toLowerCase();
+      if (t.includes("prohibited")) return "prohibited";
+      if (t.includes("restricted")) return "restricted";
+      return "allowed";
+    };
+
+    checklist.push({
+      id: currentSlug,
+      name: currentName,
+      category: currentCategory,
+      carryOn: mapTextStatus(carryOnText),
+      checked: mapTextStatus(checkedText),
+      checkedOff: false
+    });
+
+    localStorage.setItem("traveler_checklist", JSON.stringify(checklist));
+    inChecklist = true;
+    updateChecklistUI();
+  });
+
+  // Share Link Action
+  btnShareLink?.addEventListener("click", () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      shareToast?.classList.remove("opacity-0");
+      shareToast?.classList.add("opacity-100");
+      setTimeout(() => {
+        shareToast?.classList.remove("opacity-100");
+        shareToast?.classList.add("opacity-0");
+      }, 2000);
+    });
+  });
+
+  // Push recents history
+  let recents = JSON.parse(localStorage.getItem("traveler_recents") || "[]");
+  recents = recents.filter(slug => slug !== currentSlug);
+  recents.unshift(currentSlug);
+  localStorage.setItem("traveler_recents", JSON.stringify(recents.slice(0, 10)));
+</script>

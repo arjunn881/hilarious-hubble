@@ -1,0 +1,77 @@
+{
+  "id": "aa-batteries",
+  "slug": "aa-batteries",
+  "name": "AA Batteries",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "double a batteries",
+    "alkaline batteries"
+  ],
+  "keywords": [
+    "batteries",
+    "aa",
+    "alkaline",
+    "cell"
+  ],
+  "description": "Guidelines for traveling with aa batteries in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Standard dry cell AA batteries (alkaline) are allowed in carry-on. Protect terminals to prevent short circuits.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Alkaline AA batteries are allowed in checked baggage, though carrying them in original packages is recommended.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/aa-batteries",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring aa batteries on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/aa-batteries",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Standard dry cell AA batteries (alkaline) are allowed in carry-on. Protect terminals to prevent short circuits."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is aa batteries allowed in carry-on bags?",
+      "answer": "AA Batteries is allowed in carry-on luggage. Standard dry cell AA batteries (alkaline) are allowed in carry-on. Protect terminals to prevent short circuits."
+    },
+    {
+      "question": "Can you pack aa batteries in checked baggage?",
+      "answer": "Yes, AA Batteries is allowed in checked bags. Alkaline AA batteries are allowed in checked baggage, though carrying them in original packages is recommended."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/aa-batteries"
+    }
+  ]
+}

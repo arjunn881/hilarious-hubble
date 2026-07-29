@@ -1,0 +1,77 @@
+{
+  "id": "boots",
+  "slug": "boots",
+  "name": "Boots",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "hiking boots",
+    "rain boots"
+  ],
+  "keywords": [
+    "boots",
+    "shoes",
+    "footwear",
+    "heavy"
+  ],
+  "description": "Guidelines for traveling with boots in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Boots (hiking boots, winter boots) are allowed in carry-on. You may need to remove them for screening at security checkpoints.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Boots are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/boots",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring boots on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/boots",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Boots (hiking boots, winter boots) are allowed in carry-on. You may need to remove them for screening at security checkpoints."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is boots allowed in carry-on bags?",
+      "answer": "Boots is allowed in carry-on luggage. Boots (hiking boots, winter boots) are allowed in carry-on. You may need to remove them for screening at security checkpoints."
+    },
+    {
+      "question": "Can you pack boots in checked baggage?",
+      "answer": "Yes, Boots is allowed in checked bags. Boots are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/boots"
+    }
+  ]
+}

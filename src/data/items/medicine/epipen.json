@@ -1,0 +1,91 @@
+{
+  "id": "epipen",
+  "slug": "epipen",
+  "name": "EpiPen (Epinephrine Auto-Injector)",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "epinephrine auto-injector",
+    "allergy shot"
+  ],
+  "keywords": [
+    "allergy",
+    "injector",
+    "needle",
+    "epinephrine"
+  ],
+  "description": "Guidelines for traveling with epipen (epinephrine auto-injector) in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "EpiPens are fully allowed in both carry-on and checked bags. Having them in the cabin is highly advised for emergency access.",
+    "conditions": [
+      "Must be declared to TSA officers if you choose to take them out of your bag for screening."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "EpiPens are fully allowed in both carry-on and checked bags. Having them in the cabin is highly advised for emergency access.",
+    "conditions": [
+      "Must be declared to TSA officers if you choose to take them out of your bag for screening."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/epipens",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring epipen (epinephrine auto-injector) on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/epipens",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Must be declared to TSA officers if you choose to take them out of your bag for screening."
+  ],
+  "relatedItems": [
+    "insulin-syringes",
+    "prescription-pills",
+    "cough-syrup",
+    "liquid-medicine"
+  ],
+  "faq": [
+    {
+      "question": "Is epipen (epinephrine auto-injector) allowed in carry-on bags?",
+      "answer": "EpiPen (Epinephrine Auto-Injector) is allowed in carry-on luggage. EpiPens are fully allowed in both carry-on and checked bags. Having them in the cabin is highly advised for emergency access."
+    },
+    {
+      "question": "Can you pack epipen (epinephrine auto-injector) in checked baggage?",
+      "answer": "Yes, EpiPen (Epinephrine Auto-Injector) is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/epipens"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

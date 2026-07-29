@@ -1,0 +1,77 @@
+{
+  "id": "pet-medication",
+  "slug": "pet-medication",
+  "name": "Pet Medication",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "veterinary medicine",
+    "animal medication"
+  ],
+  "keywords": [
+    "medication",
+    "pet",
+    "veterinary",
+    "medicine"
+  ],
+  "description": "Guidelines for traveling with pet medication in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Pet medications (pills) are allowed in carry-on. Liquid veterinary medicines are exempt from 3-1-1 rules if declared.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Pet medications are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pet-medication",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring pet medication on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pet-medication",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Pet medications (pills) are allowed in carry-on. Liquid veterinary medicines are exempt from 3-1-1 rules if declared."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is pet medication allowed in carry-on bags?",
+      "answer": "Pet Medication is allowed in carry-on luggage. Pet medications (pills) are allowed in carry-on. Liquid veterinary medicines are exempt from 3-1-1 rules if declared."
+    },
+    {
+      "question": "Can you pack pet medication in checked baggage?",
+      "answer": "Yes, Pet Medication is allowed in checked bags. Pet medications are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pet-medication"
+    }
+  ]
+}

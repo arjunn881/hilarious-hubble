@@ -1,0 +1,91 @@
+{
+  "id": "baby-wipes",
+  "slug": "baby-wipes",
+  "name": "Baby Wipes",
+  "category": "Baby",
+  "subcategory": "General",
+  "aliases": [
+    "wet wipes",
+    "diaper wipes"
+  ],
+  "keywords": [
+    "wipes",
+    "cleaning",
+    "diaper",
+    "baby"
+  ],
+  "description": "Guidelines for traveling with baby wipes in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Wet baby wipes are classified as solids (not liquids) and are fully allowed in carry-on and checked luggage without restriction.",
+    "conditions": [
+      "You do not need to pack wet wipes inside your 3-1-1 liquids plastic bag."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Wet baby wipes are classified as solids (not liquids) and are fully allowed in carry-on and checked luggage without restriction.",
+    "conditions": [
+      "You do not need to pack wet wipes inside your 3-1-1 liquids plastic bag."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring baby wipes on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "You do not need to pack wet wipes inside your 3-1-1 liquids plastic bag."
+  ],
+  "relatedItems": [
+    "baby-toy",
+    "baby-formula",
+    "breast-milk",
+    "collapsible-stroller"
+  ],
+  "faq": [
+    {
+      "question": "Is baby wipes allowed in carry-on bags?",
+      "answer": "Baby Wipes is allowed in carry-on luggage. Wet baby wipes are classified as solids (not liquids) and are fully allowed in carry-on and checked luggage without restriction."
+    },
+    {
+      "question": "Can you pack baby wipes in checked baggage?",
+      "answer": "Yes, Baby Wipes is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

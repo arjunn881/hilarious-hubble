@@ -1,0 +1,530 @@
+---
+import { Search, X, CornerDownLeft } from "@lucide/astro";
+---
+
+<div 
+  id="search-modal" 
+  class="fixed inset-0 z-50 hidden bg-primary/20 backdrop-blur-sm transition-all duration-150 flex items-start justify-center pt-[10vh] px-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Spotlight Search"
+>
+  <!-- Modal Content Box -->
+  <div 
+    id="search-modal-content"
+    class="w-full max-w-[600px] bg-canvas border border-hairline rounded-lg shadow-level-5 flex flex-col overflow-hidden max-h-[80vh] transform scale-98 opacity-0 transition-all duration-200"
+  >
+    <!-- Input Header -->
+    <div class="h-14 border-b border-hairline flex items-center px-4 gap-3 relative flex-shrink-0">
+      <Search class="w-5 h-5 text-mute flex-shrink-0" aria-hidden="true" />
+      <input 
+        type="text" 
+        id="search-modal-input" 
+        placeholder="Search travel items (e.g., sunscreen, battery)…" 
+        autocomplete="off" 
+        spellcheck="false" 
+        class="w-full h-full text-base font-sans text-ink bg-transparent border-none outline-none placeholder:text-mute"
+      />
+      <div class="flex items-center gap-1.5 flex-shrink-0">
+        <kbd class="hidden sm:inline-flex items-center justify-center h-5 px-1.5 text-[9px] font-mono font-medium border border-hairline bg-canvas-soft text-mute rounded-xs shadow-sm">
+          ESC
+        </kbd>
+        <button 
+          type="button" 
+          id="search-modal-close" 
+          aria-label="Close search" 
+          class="p-1 hover:bg-canvas-soft-2 text-mute hover:text-ink rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link"
+        >
+          <X class="w-4 h-4" aria-hidden="true" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Scrollable Results Panel -->
+    <div id="search-modal-results" class="flex-1 overflow-y-auto min-h-[200px] max-h-[50vh] p-2 scroll-smooth">
+      <!-- Content populated dynamically by JavaScript -->
+      <div class="p-6 text-center text-sm text-mute">
+        Loading search index…
+      </div>
+    </div>
+
+    <!-- Keyboard Navigation Footer -->
+    <div class="h-10 border-t border-hairline bg-canvas-soft px-4 flex items-center justify-between text-[11px] text-mute font-mono flex-shrink-0 select-none">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1">
+          <kbd class="border border-hairline bg-canvas px-1 rounded-xs">↓↑</kbd> Navigate
+        </span>
+        <span class="flex items-center gap-1">
+          <kbd class="border border-hairline bg-canvas px-1 rounded-xs flex items-center justify-center h-4 w-6"><CornerDownLeft class="w-2.5 h-2.5" /></kbd> Select
+        </span>
+      </div>
+      <div>
+        <span class="flex items-center gap-1">
+          <kbd class="border border-hairline bg-canvas px-1 rounded-xs">ESC</kbd> Close
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  interface SearchItem {
+    slug: string;
+    name: string;
+    category: string;
+    aliases: string[];
+    keywords: string[];
+    carryOn: 'allowed' | 'prohibited' | 'restricted';
+    checked: 'allowed' | 'prohibited' | 'restricted';
+  }
+
+  let searchIndex: SearchItem[] = [];
+  let isIndexLoaded = false;
+  let activeIndex = -1;
+  let currentResults: SearchItem[] = [];
+
+  const modal = document.getElementById("search-modal");
+  const content = document.getElementById("search-modal-content");
+  const input = document.getElementById("search-modal-input") as HTMLInputElement;
+  const closeBtn = document.getElementById("search-modal-close");
+  const resultsContainer = document.getElementById("search-modal-results");
+
+  // Popular searches static list
+  const popularSearches = [
+    { slug: "power-bank", name: "Power Bank" },
+    { slug: "sunscreen", name: "Sunscreen Lotion" },
+    { slug: "laptop", name: "Laptop Computer" },
+    { slug: "baby-formula", name: "Baby Formula" },
+    { slug: "multi-tool", name: "Multi-tool" }
+  ];
+
+  // SVG Icons for categories with explicit width and height to prevent CLS
+  const icons: Record<string, string> = {
+    electronics: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>`,
+    liquids: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>`,
+    food: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v12"/><path d="M6 12h12"/></svg>`,
+    medicine: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m2 22 20-20"/><path d="M8.3 8.3c-2.3 2.3-2.3 6 0 8.3s6 2.3 8.3 0"/><path d="M12.5 12.5a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"/></svg>`,
+    baby: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>`,
+    tools: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    sports: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"/><path d="M12 2a4 4 0 0 0-4 4v3a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4Z"/></svg>`,
+    personalcare: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 3-1.912 5.886H3.886L8.7 12.518 6.788 18.4 12 14.782 17.212 18.4l-1.912-5.882 4.814-3.632h-6.202L12 3z"/></svg>`,
+    jewelry: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9z"/></svg>`,
+    documents: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>`,
+    camping: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>`,
+    beauty: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m12 3-1.912 5.886H3.886L8.7 12.518 6.788 18.4 12 14.782 17.212 18.4l-1.912-5.882 4.814-3.632h-6.202L12 3z"/></svg>`,
+    health: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>`,
+    default: `<svg width="16" height="16" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/></svg>`
+  };
+
+  const statusColors = {
+    allowed: "bg-link-bg-soft border-link/25 text-link-deep",
+    prohibited: "bg-error-soft border-error/25 text-error-deep",
+    not_allowed: "bg-error-soft border-error/25 text-error-deep",
+    restricted: "bg-warning-soft border-warning/25 text-warning-deep",
+    unknown: "bg-canvas-soft-2 border-hairline text-mute"
+  };
+
+  // Open Modal
+  async function openSearch() {
+    if (!modal || !content || !input) return;
+    
+    modal.classList.remove("hidden");
+    // Force a reflow for transition
+    void modal.offsetWidth;
+    content.classList.remove("scale-98", "opacity-0");
+    input.value = "";
+    input.focus();
+    activeIndex = -1;
+    document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
+
+    // Lazy load the search index
+    if (!isIndexLoaded) {
+      try {
+        const res = await fetch("/search-index.json");
+        if (!res.ok) throw new Error("Failed to load search index");
+        searchIndex = await res.json();
+        isIndexLoaded = true;
+      } catch (err) {
+        console.error(err);
+        if (resultsContainer) {
+          resultsContainer.innerHTML = `<div class="p-6 text-center text-sm text-error">Failed to load search database.</div>`;
+        }
+        return;
+      }
+    }
+    renderResults();
+  }
+
+  // Close Modal
+  function closeSearch() {
+    if (!modal || !content) return;
+    content.classList.add("scale-98", "opacity-0");
+    setTimeout(() => {
+      modal.classList.add("hidden");
+      document.body.style.overflow = "";
+    }, 150);
+  }
+
+  // Fetch recent searches
+  function getRecentSearches(): { slug: string; name: string }[] {
+    try {
+      return JSON.parse(localStorage.getItem("recent_searches") || "[]");
+    } catch {
+      return [];
+    }
+  }
+
+  // Store recent search
+  function saveRecentSearch(slug: string, name: string) {
+    let recent = getRecentSearches();
+    recent = recent.filter(item => item.slug !== slug);
+    recent.unshift({ slug, name });
+    recent = recent.slice(0, 5); // Limit to 5
+    localStorage.setItem("recent_searches", JSON.stringify(recent));
+  }
+
+  // Clear recent searches
+  function clearRecentSearches() {
+    localStorage.removeItem("recent_searches");
+    renderResults();
+  }
+
+  // Subsequence match helper for fuzzy typo tolerance
+  function isSubsequence(needle: string, haystack: string): boolean {
+    let nIdx = 0;
+    let hIdx = 0;
+    while (nIdx < needle.length && hIdx < haystack.length) {
+      if (needle[nIdx] === haystack[hIdx]) {
+        nIdx++;
+      }
+      hIdx++;
+    }
+    return nIdx === needle.length;
+  }
+
+  // Spotlight Ranking Function
+  function getQueryResults(query: string): SearchItem[] {
+    const q = query.toLowerCase().trim();
+    if (!q) return [];
+
+    const scored = searchIndex.map(item => {
+      let score = 0;
+      const nameLower = item.name.toLowerCase();
+      const catLower = item.category.toLowerCase();
+
+      // 1. Exact Match on Name
+      if (nameLower === q) {
+        score = 100;
+      }
+      // 2. Starts With Name
+      else if (nameLower.startsWith(q)) {
+        score = 80;
+      }
+      // 3. Contains Name
+      else if (nameLower.includes(q)) {
+        score = 60;
+      }
+      // 4. Matches category
+      else if (catLower === q || catLower.startsWith(q)) {
+        score = 50;
+      }
+      // 5. Matches Alias
+      else if (item.aliases.some(alias => alias.toLowerCase() === q || alias.toLowerCase().startsWith(q))) {
+        score = 40;
+      }
+      // 6. Matches Keyword
+      else if (item.keywords.some(keyword => keyword.toLowerCase() === q || keyword.toLowerCase().includes(q))) {
+        score = 25;
+      }
+      // 7. Subsequence/Fuzzy typo match
+      else if (isSubsequence(q, nameLower)) {
+        score = 10;
+      }
+
+      return { item, score };
+    });
+
+    // Filter out items with 0 score, and sort by score descending, then alphabetically by name
+    return scored
+      .filter(x => x.score > 0)
+      .sort((a, b) => b.score - a.score || a.item.name.localeCompare(b.item.name))
+      .map(x => x.item);
+  }
+
+  // Render HTML based on input state
+  function renderResults() {
+    if (!resultsContainer) return;
+
+    const query = input.value;
+    
+    // Empty query state: show Recent & Popular
+    if (!query) {
+      activeIndex = -1;
+      const recent = getRecentSearches();
+      
+      let html = "";
+      
+      // Recent Searches
+      if (recent.length > 0) {
+        html += `
+          <div class="mb-4">
+            <div class="flex items-center justify-between px-3 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-mute">
+              <span>Recent Searches</span>
+              <button type="button" id="clear-recents-btn" class="hover:text-ink cursor-pointer transition-colors">Clear All</button>
+            </div>
+            <div class="flex flex-col">
+              ${recent.map((item, idx) => `
+                <a 
+                  href="/items/${item.slug}" 
+                  class="search-result-item flex items-center justify-between px-3 py-2.5 rounded-sm hover:bg-canvas-soft-2 text-sm text-ink transition-colors"
+                  data-slug="${item.slug}"
+                  data-name="${item.name}"
+                  data-index="${idx}"
+                >
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <svg class="w-4 h-4 text-mute flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span class="truncate font-medium">${item.name}</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-mute uppercase">Recent</span>
+                </a>
+              `).join("")}
+            </div>
+          </div>
+        `;
+      }
+
+      // Popular Searches
+      const popularIdxOffset = recent.length;
+      html += `
+        <div>
+          <div class="px-3 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-mute">
+            Popular Searches
+          </div>
+          <div class="flex flex-col">
+            ${popularSearches.map((item, idx) => `
+              <a 
+                href="/items/${item.slug}" 
+                class="search-result-item flex items-center justify-between px-3 py-2.5 rounded-sm hover:bg-canvas-soft-2 text-sm text-ink transition-colors"
+                data-slug="${item.slug}"
+                data-name="${item.name}"
+                data-index="${popularIdxOffset + idx}"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <svg class="w-4 h-4 text-mute flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <span class="truncate font-medium">${item.name}</span>
+                </div>
+                <span class="text-[10px] font-mono text-mute uppercase">Popular</span>
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      `;
+
+      resultsContainer.innerHTML = html;
+      currentResults = []; // No results list keyable for navigation in this view
+      
+      // Wire up clear button if rendered
+      const clearBtn = document.getElementById("clear-recents-btn");
+      if (clearBtn) {
+        clearBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          clearRecentSearches();
+        });
+      }
+      
+      // Bind mouse hover logic for static items
+      bindResultItemEvents();
+      return;
+    }
+
+    // Query state
+    currentResults = getQueryResults(query);
+    activeIndex = -1;
+
+    if (currentResults.length === 0) {
+      resultsContainer.innerHTML = `
+        <div class="p-8 text-center text-sm text-mute">
+          No matches found for "<span class="font-semibold text-ink">${query}</span>"…
+        </div>
+      `;
+      return;
+    }
+
+    resultsContainer.innerHTML = `
+      <div class="px-3 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-mute">
+        Items Found (${currentResults.length})
+      </div>
+      <div class="flex flex-col">
+        ${currentResults.map((item, idx) => {
+          const iconKey = item.category.toLowerCase().replace(/\s+/g, "");
+          const svgIcon = icons[iconKey] || icons.default;
+          
+          return `
+            <a 
+              href="/items/${item.slug}" 
+              class="search-result-item flex items-center justify-between px-3 py-2 rounded-sm hover:bg-canvas-soft-2 border-l-2 border-transparent transition-all"
+              data-slug="${item.slug}"
+              data-name="${item.name}"
+              data-index="${idx}"
+            >
+              <div class="flex items-center gap-2.5 min-w-0 flex-1">
+                <div class="text-mute flex-shrink-0">
+                  ${svgIcon}
+                </div>
+                <div class="min-w-0 flex-1">
+                  <p class="text-sm font-medium text-ink truncate">${item.name}</p>
+                  <p class="text-[10px] font-mono text-mute uppercase tracking-wide">${item.category}</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-1.5 flex-shrink-0 ml-4">
+                <span class="text-[9px] font-mono px-1.5 py-0.2 rounded-full border uppercase tracking-wider ${statusColors[item.carryOn.toLowerCase()] || statusColors.unknown}">
+                  H: ${item.carryOn.replace('_', ' ').toLowerCase()}
+                </span>
+                <span class="text-[9px] font-mono px-1.5 py-0.2 rounded-full border uppercase tracking-wider ${statusColors[item.checked.toLowerCase()] || statusColors.unknown}">
+                  C: ${item.checked.replace('_', ' ').toLowerCase()}
+                </span>
+              </div>
+            </a>
+          `;
+        }).join("")}
+      </div>
+    `;
+
+    bindResultItemEvents();
+  }
+
+  // Highlight helper for keyboard/mouse movement
+  function updateHighlight() {
+    const items = resultsContainer?.querySelectorAll(".search-result-item");
+    if (!items) return;
+
+    items.forEach((item, idx) => {
+      if (idx === activeIndex) {
+        item.classList.add("bg-canvas-soft-2", "border-l-primary");
+        item.scrollIntoView({ block: "nearest" });
+      } else {
+        item.classList.remove("bg-canvas-soft-2", "border-l-primary");
+      }
+    });
+  }
+
+  // Bind mouseover/click callbacks dynamically
+  function bindResultItemEvents() {
+    const items = resultsContainer?.querySelectorAll(".search-result-item");
+    if (!items) return;
+
+    items.forEach(item => {
+      const idx = parseInt(item.getAttribute("data-index") || "-1");
+      const slug = item.getAttribute("data-slug") || "";
+      const name = item.getAttribute("data-name") || "";
+
+      item.addEventListener("mouseenter", () => {
+        activeIndex = idx;
+        updateHighlight();
+      });
+
+      item.addEventListener("click", () => {
+        saveRecentSearch(slug, name);
+        if (typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'search_select', {
+            search_query: input.value,
+            item_slug: slug,
+            item_name: name
+          });
+        }
+      });
+    });
+  }
+
+  // Global hotkey triggers (⌘ K, Control K, /)
+  window.addEventListener("keydown", (e) => {
+    // ⌘ K or Ctrl K
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      openSearch();
+    }
+    // Forward slash (/) trigger when not in an input
+    else if (e.key === "/" && document.activeElement?.tagName !== "INPUT" && document.activeElement?.tagName !== "TEXTAREA") {
+      e.preventDefault();
+      openSearch();
+    }
+  });
+
+  // Modal local keyboard listeners
+  input.addEventListener("keydown", (e) => {
+    const items = resultsContainer?.querySelectorAll(".search-result-item") || [];
+    
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeSearch();
+    }
+    else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      activeIndex = (activeIndex + 1) % items.length;
+      updateHighlight();
+    }
+    else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      activeIndex = (activeIndex - 1 + items.length) % items.length;
+      updateHighlight();
+    }
+    else if (e.key === "Enter") {
+      e.preventDefault();
+      
+      // If we have an activeIndex, trigger navigation
+      if (activeIndex >= 0 && activeIndex < items.length) {
+        const activeElem = items[activeIndex] as HTMLAnchorElement;
+        const slug = activeElem.getAttribute("data-slug") || "";
+        const name = activeElem.getAttribute("data-name") || "";
+        if (slug) {
+          saveRecentSearch(slug, name);
+          if (typeof (window as any).gtag === 'function') {
+            (window as any).gtag('event', 'search_select', {
+              search_query: input.value,
+              item_slug: slug,
+              item_name: name
+            });
+          }
+          window.location.href = `/items/${slug}`;
+        }
+      } 
+      // If no activeIndex but matching results, select the first result
+      else if (currentResults.length > 0) {
+        const item = currentResults[0];
+        saveRecentSearch(item.slug, item.name);
+        if (typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'search_select', {
+            search_query: input.value,
+            item_slug: item.slug,
+            item_name: item.name
+          });
+        }
+        window.location.href = `/items/${item.slug}`;
+      }
+    }
+  });
+
+  // Real-time input search
+  input.addEventListener("input", () => {
+    renderResults();
+  });
+
+  // Close triggers
+  closeBtn?.addEventListener("click", closeSearch);
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeSearch();
+    }
+  });
+
+  // Trigger elements on the page (data-open-search attribute)
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    const trigger = target.closest("[data-open-search]");
+    if (trigger) {
+      e.preventDefault();
+      openSearch();
+    }
+  });
+</script>

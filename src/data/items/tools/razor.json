@@ -1,0 +1,77 @@
+{
+  "id": "razor",
+  "slug": "razor",
+  "name": "Razor",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "shaving razor",
+    "shaver"
+  ],
+  "keywords": [
+    "razor",
+    "shave",
+    "blade",
+    "shaver"
+  ],
+  "description": "Guidelines for traveling with razor in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Disposable cartridge razors and electric shavers are allowed in carry-on. Safety razors are only allowed if the blades are removed. Straight razors are prohibited in carry-on.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "All types of razors and replacement blades are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/razor",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring razor on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/razor",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Disposable cartridge razors and electric shavers are allowed in carry-on. Safety razors are only allowed if the blades are removed. Straight razors are prohibited in carry-on."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is razor allowed in carry-on bags?",
+      "answer": "Razor is restricted in carry-on luggage. Disposable cartridge razors and electric shavers are allowed in carry-on. Safety razors are only allowed if the blades are removed. Straight razors are prohibited in carry-on."
+    },
+    {
+      "question": "Can you pack razor in checked baggage?",
+      "answer": "Yes, Razor is allowed in checked bags. All types of razors and replacement blades are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/razor"
+    }
+  ]
+}

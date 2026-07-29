@@ -1,0 +1,77 @@
+{
+  "id": "tea-bags",
+  "slug": "tea-bags",
+  "name": "Tea Bags",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "tea",
+    "herbal tea"
+  ],
+  "keywords": [
+    "tea",
+    "bags",
+    "dry",
+    "drink"
+  ],
+  "description": "Guidelines for traveling with tea bags in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Dry tea bags and loose leaf tea are fully allowed through security checkpoints.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Tea bags are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tea-bags",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring tea bags on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tea-bags",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Dry tea bags and loose leaf tea are fully allowed through security checkpoints."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is tea bags allowed in carry-on bags?",
+      "answer": "Tea Bags is allowed in carry-on luggage. Dry tea bags and loose leaf tea are fully allowed through security checkpoints."
+    },
+    {
+      "question": "Can you pack tea bags in checked baggage?",
+      "answer": "Yes, Tea Bags is allowed in checked bags. Tea bags are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tea-bags"
+    }
+  ]
+}

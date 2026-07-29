@@ -1,0 +1,93 @@
+{
+  "id": "sunscreen",
+  "slug": "sunscreen",
+  "name": "Sunscreen Lotion",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "sunblock",
+    "suntan lotion"
+  ],
+  "keywords": [
+    "lotion",
+    "beach",
+    "liquid",
+    "sunblock"
+  ],
+  "description": "Guidelines for traveling with sunscreen lotion in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Sunscreen in carry-on bags is restricted by the 3-1-1 liquids rule. Containers must be 3.4 ounces (100 ml) or less. Larger quantities must be packed in checked bags.",
+    "conditions": [
+      "Carry-on sunscreen containers must fit inside a single quart-sized, clear plastic bag.",
+      "Squeeze bottles or sprays are subject to the same volume constraints."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Sunscreen in carry-on bags is restricted by the 3-1-1 liquids rule. Containers must be 3.4 ounces (100 ml) or less. Larger quantities must be packed in checked bags.",
+    "conditions": [
+      "Carry-on sunscreen containers must fit inside a single quart-sized, clear plastic bag.",
+      "Squeeze bottles or sprays are subject to the same volume constraints."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/sunscreen",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring sunscreen lotion on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/sunscreen",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Carry-on sunscreen containers must fit inside a single quart-sized, clear plastic bag."
+  ],
+  "relatedItems": [
+    "hand-sanitizer",
+    "aerosol-insect-repellent",
+    "shampoo",
+    "water-bottle"
+  ],
+  "faq": [
+    {
+      "question": "Is sunscreen lotion allowed in carry-on bags?",
+      "answer": "Sunscreen Lotion is restricted in carry-on luggage. Sunscreen in carry-on bags is restricted by the 3-1-1 liquids rule. Containers must be 3.4 ounces (100 ml) or less. Larger quantities must be packed in checked bags."
+    },
+    {
+      "question": "Can you pack sunscreen lotion in checked baggage?",
+      "answer": "Yes, Sunscreen Lotion is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/sunscreen"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

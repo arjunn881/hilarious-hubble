@@ -1,0 +1,77 @@
+{
+  "id": "protein-powder",
+  "slug": "protein-powder",
+  "name": "Protein Powder",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "whey protein",
+    "supplement powder"
+  ],
+  "keywords": [
+    "protein",
+    "powder",
+    "fitness",
+    "supplement"
+  ],
+  "description": "Guidelines for traveling with protein powder in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Protein powder is allowed in carry-on. Powders over 12 oz (350 ml) may require separate screening and may be opened by security officers.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Protein powder is allowed in checked baggage in any quantity.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/protein-powder",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring protein powder on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/protein-powder",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Protein powder is allowed in carry-on. Powders over 12 oz (350 ml) may require separate screening and may be opened by security officers."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is protein powder allowed in carry-on bags?",
+      "answer": "Protein Powder is allowed in carry-on luggage. Protein powder is allowed in carry-on. Powders over 12 oz (350 ml) may require separate screening and may be opened by security officers."
+    },
+    {
+      "question": "Can you pack protein powder in checked baggage?",
+      "answer": "Yes, Protein Powder is allowed in checked bags. Protein powder is allowed in checked baggage in any quantity."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/protein-powder"
+    }
+  ]
+}

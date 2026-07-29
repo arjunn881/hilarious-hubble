@@ -1,0 +1,78 @@
+{
+  "id": "curling-iron",
+  "slug": "curling-iron",
+  "name": "Curling Iron",
+  "category": "Beauty",
+  "subcategory": "General",
+  "aliases": [
+    "hair curler",
+    "butane curling iron"
+  ],
+  "keywords": [
+    "curling",
+    "iron",
+    "hair",
+    "electric",
+    "butane"
+  ],
+  "description": "Guidelines for traveling with curling iron in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Electric curling irons are allowed in carry-on and checked bags. Gas/butane-powered curling irons are allowed in carry-on only (must have a safety cover over heating element).",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Butane/gas-powered curling irons are prohibited in checked baggage holds. Electric curling irons are allowed in checked bags.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/curling-iron",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring curling iron on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/curling-iron",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Electric curling irons are allowed in carry-on and checked bags. Gas/butane-powered curling irons are allowed in carry-on only (must have a safety cover over heating element)."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is curling iron allowed in carry-on bags?",
+      "answer": "Curling Iron is allowed in carry-on luggage. Electric curling irons are allowed in carry-on and checked bags. Gas/butane-powered curling irons are allowed in carry-on only (must have a safety cover over heating element)."
+    },
+    {
+      "question": "Can you pack curling iron in checked baggage?",
+      "answer": "No, Curling Iron is not allowed in checked bags. Butane/gas-powered curling irons are prohibited in checked baggage holds. Electric curling irons are allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/curling-iron"
+    }
+  ]
+}

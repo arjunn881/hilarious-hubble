@@ -1,0 +1,77 @@
+{
+  "id": "chocolate",
+  "slug": "chocolate",
+  "name": "Chocolate",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "candy bar",
+    "chocolate bar"
+  ],
+  "keywords": [
+    "chocolate",
+    "candy",
+    "sweet",
+    "food"
+  ],
+  "description": "Guidelines for traveling with chocolate in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Solid chocolate is allowed in carry-on baggage. (Note: Chocolate syrups or liquid chocolate are subject to the 3-1-1 rule).",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Chocolate is allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/chocolate",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring chocolate on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/chocolate",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Solid chocolate is allowed in carry-on baggage. (Note: Chocolate syrups or liquid chocolate are subject to the 3-1-1 rule)."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is chocolate allowed in carry-on bags?",
+      "answer": "Chocolate is allowed in carry-on luggage. Solid chocolate is allowed in carry-on baggage. (Note: Chocolate syrups or liquid chocolate are subject to the 3-1-1 rule)."
+    },
+    {
+      "question": "Can you pack chocolate in checked baggage?",
+      "answer": "Yes, Chocolate is allowed in checked bags. Chocolate is allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/chocolate"
+    }
+  ]
+}

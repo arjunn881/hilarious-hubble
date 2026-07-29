@@ -1,0 +1,92 @@
+{
+  "id": "safety-razor",
+  "slug": "safety-razor",
+  "name": "Safety Razor (with blade)",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "double edge razor",
+    "straight razor",
+    "razor blades"
+  ],
+  "keywords": [
+    "blade",
+    "shave",
+    "safety",
+    "razors"
+  ],
+  "description": "Guidelines for traveling with safety razor (with blade) in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Safety razor handles are allowed in carry-on bags, but the loose double-edge razor blades themselves are strictly prohibited in the cabin. The blades must go in checked luggage.",
+    "conditions": [
+      "If you pack a safety razor in carry-on, you must remove the blade before security screening and buy blades at your destination."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Safety razor handles are allowed in carry-on bags, but the loose double-edge razor blades themselves are strictly prohibited in the cabin. The blades must go in checked luggage.",
+    "conditions": [
+      "If you pack a safety razor in carry-on, you must remove the blade before security screening and buy blades at your destination."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/safety-razor",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring safety razor (with blade) on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/safety-razor",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "If you pack a safety razor in carry-on, you must remove the blade before security screening and buy blades at your destination."
+  ],
+  "relatedItems": [
+    "disposable-razor",
+    "perfume",
+    "toothpaste",
+    "hair-dryer"
+  ],
+  "faq": [
+    {
+      "question": "Is safety razor (with blade) allowed in carry-on bags?",
+      "answer": "Safety Razor (with blade) is restricted in carry-on luggage. Safety razor handles are allowed in carry-on bags, but the loose double-edge razor blades themselves are strictly prohibited in the cabin. The blades must go in checked luggage."
+    },
+    {
+      "question": "Can you pack safety razor (with blade) in checked baggage?",
+      "answer": "Yes, Safety Razor (with blade) is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/safety-razor"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

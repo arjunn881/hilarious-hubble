@@ -1,0 +1,92 @@
+{
+  "id": "disposable-razor",
+  "slug": "disposable-razor",
+  "name": "Disposable Razor",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "gillette razor",
+    "shaving razor",
+    "razor cartridges"
+  ],
+  "keywords": [
+    "shave",
+    "razor",
+    "grooming",
+    "hygiene"
+  ],
+  "description": "Guidelines for traveling with disposable razor in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Disposable razors (blades embedded in plastic handles) and replacement cartridge blades are fully permitted in carry-on and checked bags.",
+    "conditions": [
+      "Safety razors with removable blades are subject to different rules."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Disposable razors (blades embedded in plastic handles) and replacement cartridge blades are fully permitted in carry-on and checked bags.",
+    "conditions": [
+      "Safety razors with removable blades are subject to different rules."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/disposable-razor",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring disposable razor on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/disposable-razor",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Safety razors with removable blades are subject to different rules."
+  ],
+  "relatedItems": [
+    "safety-razor",
+    "toothpaste",
+    "hair-dryer",
+    "perfume"
+  ],
+  "faq": [
+    {
+      "question": "Is disposable razor allowed in carry-on bags?",
+      "answer": "Disposable Razor is allowed in carry-on luggage. Disposable razors (blades embedded in plastic handles) and replacement cartridge blades are fully permitted in carry-on and checked bags."
+    },
+    {
+      "question": "Can you pack disposable razor in checked baggage?",
+      "answer": "Yes, Disposable Razor is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/disposable-razor"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

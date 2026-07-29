@@ -1,0 +1,91 @@
+{
+  "id": "skateboard",
+  "slug": "skateboard",
+  "name": "Skateboard",
+  "category": "Sports",
+  "subcategory": "General",
+  "aliases": [
+    "longboard",
+    "penny board"
+  ],
+  "keywords": [
+    "skate",
+    "board",
+    "wheels",
+    "sports"
+  ],
+  "description": "Guidelines for traveling with skateboard in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "TSA allows skateboards in carry-on and checked luggage. However, airlines regulate carry-on size/weight, and some airlines require skateboards to be checked.",
+    "conditions": [
+      "Verify size guidelines with your specific air carrier before arriving at the gate."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "TSA allows skateboards in carry-on and checked luggage. However, airlines regulate carry-on size/weight, and some airlines require skateboards to be checked.",
+    "conditions": [
+      "Verify size guidelines with your specific air carrier before arriving at the gate."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/skateboards",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring skateboard on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/skateboards",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Verify size guidelines with your specific air carrier before arriving at the gate."
+  ],
+  "relatedItems": [
+    "baseball-bat",
+    "bicycle",
+    "golf-clubs",
+    "hiking-poles"
+  ],
+  "faq": [
+    {
+      "question": "Is skateboard allowed in carry-on bags?",
+      "answer": "Skateboard is restricted in carry-on luggage. TSA allows skateboards in carry-on and checked luggage. However, airlines regulate carry-on size/weight, and some airlines require skateboards to be checked."
+    },
+    {
+      "question": "Can you pack skateboard in checked baggage?",
+      "answer": "Yes, Skateboard is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/skateboards"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

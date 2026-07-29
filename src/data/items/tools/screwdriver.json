@@ -1,0 +1,92 @@
+{
+  "id": "screwdriver",
+  "slug": "screwdriver",
+  "name": "Screwdriver (under 7 inches)",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "screwdrivers",
+    "flathead",
+    "phillips head"
+  ],
+  "keywords": [
+    "hand tools",
+    "repair",
+    "screwdriver",
+    "length"
+  ],
+  "description": "Guidelines for traveling with screwdriver (under 7 inches) in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Screwdrivers are allowed in carry-on luggage only if they measure less than 7 inches (approx. 18 cm) in length from tip to handle end. Longer screwdrivers must be checked.",
+    "conditions": [
+      "Measured from the tip of the shaft to the very back of the handle."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Screwdrivers are allowed in carry-on luggage only if they measure less than 7 inches (approx. 18 cm) in length from tip to handle end. Longer screwdrivers must be checked.",
+    "conditions": [
+      "Measured from the tip of the shaft to the very back of the handle."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/screwdrivers",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring screwdriver (under 7 inches) on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/screwdrivers",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Measured from the tip of the shaft to the very back of the handle."
+  ],
+  "relatedItems": [
+    "scissors",
+    "hammer",
+    "multi-tool",
+    "utility-knife"
+  ],
+  "faq": [
+    {
+      "question": "Is screwdriver (under 7 inches) allowed in carry-on bags?",
+      "answer": "Screwdriver (under 7 inches) is restricted in carry-on luggage. Screwdrivers are allowed in carry-on luggage only if they measure less than 7 inches (approx. 18 cm) in length from tip to handle end. Longer screwdrivers must be checked."
+    },
+    {
+      "question": "Can you pack screwdriver (under 7 inches) in checked baggage?",
+      "answer": "Yes, Screwdriver (under 7 inches) is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/screwdrivers"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

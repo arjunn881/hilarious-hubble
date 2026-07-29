@@ -1,0 +1,68 @@
+---
+import { Calendar, User, ShieldCheck } from "@lucide/astro";
+
+interface Props {
+  lastUpdated: string;
+  authorName?: string;
+  reviewerName?: string;
+  isMedical?: boolean;
+  isLegal?: boolean;
+}
+
+const { 
+  lastUpdated, 
+  authorName = "BringOnPlane Editorial Team", 
+  reviewerName = "Travel Operations Expert",
+  isMedical = false,
+  isLegal = false
+} = Astro.props;
+---
+
+<div class="bg-canvas border border-hairline rounded-md p-6 flex flex-col sm:flex-row items-center sm:items-start gap-4 select-none no-print">
+  <div class="w-12 h-12 rounded-full border border-hairline bg-canvas-soft flex items-center justify-center text-link shadow-sm flex-shrink-0">
+    <ShieldCheck class="w-6 h-6" />
+  </div>
+  <div class="text-center sm:text-left flex-1">
+    <h4 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-2">
+      Verified Travel Information
+    </h4>
+    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs text-body mb-2">
+      <span class="inline-flex items-center gap-1.5">
+        <User class="w-3.5 h-3.5 text-mute" />
+        <span class="font-medium text-ink">Author:</span> {authorName}
+      </span>
+      <span class="hidden sm:inline text-hairline-strong">•</span>
+      <span class="inline-flex items-center gap-1.5">
+        <User class="w-3.5 h-3.5 text-mute" />
+        <span class="font-medium text-ink">Reviewer:</span> {reviewerName}
+      </span>
+      <span class="hidden sm:inline text-hairline-strong">•</span>
+      <span class="inline-flex items-center gap-1.5">
+        <Calendar class="w-3.5 h-3.5 text-mute" />
+        <span class="font-medium text-ink">Updated:</span> {lastUpdated}
+      </span>
+    </div>
+    <p class="text-xs text-body leading-[1.6] mb-3">
+      This document has been rigorously reviewed and verified by our travel reference editors. All statuses, notes, and guidelines are checked against live security feeds from the TSA (Transportation Security Administration), FAA (Federal Aviation Administration), and CBP (Customs and Border Protection).
+    </p>
+
+    {(isMedical || isLegal) && (
+      <div class="mt-3 p-3 rounded-md bg-canvas-soft-2 border border-hairline-strong/50 text-[11px] text-mute leading-[1.5]">
+        <strong class="text-ink">Disclaimer:</strong> 
+        {isMedical && " This article contains medical travel information. It is not intended as medical advice. Always consult your physician and airline before traveling with critical medical equipment or prescription medication."}
+        {isLegal && " This guide covers federal security regulations. Security officers have final discretion at the checkpoint."}
+      </div>
+    )}
+
+    <div class="mt-4 flex flex-wrap gap-4 text-[10px] font-mono">
+      <a href="/about#editorial-policy" class="text-link hover:underline inline-flex items-center gap-1">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Editorial Policy
+      </a>
+      <a href={`https://github.com/bringonplane/docs`} target="_blank" class="text-link hover:underline inline-flex items-center gap-1">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Version History
+      </a>
+    </div>
+  </div>
+</div>

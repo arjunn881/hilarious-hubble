@@ -1,0 +1,77 @@
+{
+  "id": "wedding-dress",
+  "slug": "wedding-dress",
+  "name": "Wedding Dress",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "bridal gown",
+    "wedding gown"
+  ],
+  "keywords": [
+    "wedding",
+    "dress",
+    "gown",
+    "clothing"
+  ],
+  "description": "Guidelines for traveling with wedding dress in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Wedding dresses are allowed in carry-on baggage. Call your airline in advance to see if they have closet space to hang the dress in the cabin.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Wedding dresses are allowed in checked baggage, though carry-on is highly recommended to protect against damage or lost bags.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/wedding-dress",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring wedding dress on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/wedding-dress",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Wedding dresses are allowed in carry-on baggage. Call your airline in advance to see if they have closet space to hang the dress in the cabin."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is wedding dress allowed in carry-on bags?",
+      "answer": "Wedding Dress is allowed in carry-on luggage. Wedding dresses are allowed in carry-on baggage. Call your airline in advance to see if they have closet space to hang the dress in the cabin."
+    },
+    {
+      "question": "Can you pack wedding dress in checked baggage?",
+      "answer": "Yes, Wedding Dress is allowed in checked bags. Wedding dresses are allowed in checked baggage, though carry-on is highly recommended to protect against damage or lost bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/wedding-dress"
+    }
+  ]
+}

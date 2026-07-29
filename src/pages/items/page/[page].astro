@@ -1,0 +1,132 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { getAllItems } from "../../../lib/items";
+import type { GetStaticPathsOptions } from "astro";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const items = getAllItems().sort((a, b) => a.name.localeCompare(b.name));
+  return paginate(items, { pageSize: 12 });
+}
+
+const { page } = Astro.props;
+
+// Absolute canonical URL and prev/next links for Google crawlers
+const canonicalURL = `https://bringonplane.com/items/page/${page.currentPage}`;
+const prevURL = page.url.prev ? `https://bringonplane.com${page.url.prev}` : undefined;
+const nextURL = page.url.next ? `https://bringonplane.com${page.url.next}` : undefined;
+
+function getStatusClass(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKNOWN') {
+  if (status === 'ALLOWED') return "bg-link-bg-soft border-link/25 text-link-deep";
+  if (status === 'NOT_ALLOWED') return "bg-error-soft border-error/25 text-error-deep";
+  if (status === 'RESTRICTED') return "bg-warning-soft border-warning/25 text-warning-deep";
+  return "bg-canvas-soft-2 border-hairline text-mute";
+}
+---
+
+<Layout 
+  title={`TSA Travel Items Catalog - Page ${page.currentPage} | Bring On Plane`}
+  description={`Browse allowed, prohibited, and restricted TSA travel items on Bring On Plane. Page ${page.currentPage} of static catalog listings.`}
+  canonicalURL={canonicalURL}
+  prevURL={prevURL}
+  nextURL={nextURL}
+  noIndex="noindex, follow"
+>
+  <Header slot="header" />
+
+  <div class="max-w-[1000px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+    
+    <!-- Title block -->
+    <header class="mb-10 text-center sm:text-left">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-medium rounded-full bg-canvas-soft border border-hairline text-body mb-4 select-none">
+        Page {page.currentPage} of {page.lastPage}
+      </div>
+      <h1 class="text-3xl font-semibold tracking-[-1.2px] text-ink mb-2">
+        TSA Baggage Rules Catalog
+      </h1>
+      <p class="text-sm text-body">
+        Browse our comprehensive list of TSA travel item classifications, carry-on rules, and checked hold guidelines.
+      </p>
+    </header>
+
+    <!-- Paginated Items Listing Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      {page.data.map((item) => (
+        <a
+          href={`/items/${item.slug}`}
+          class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="font-mono text-[9px] font-semibold text-mute uppercase tracking-wider block mb-0.5">
+                {item.category}
+              </span>
+              <h2 class="text-base font-medium tracking-[-0.2px] text-ink mb-1">
+                {item.name}
+              </h2>
+              {item.aliases.length > 0 && (
+                <p class="text-xs text-mute line-clamp-1">
+                  Also: {item.aliases.slice(0, 2).join(", ")}
+                </p>
+              )}
+            </div>
+            <div class="flex flex-col gap-1.5 flex-shrink-0 items-end">
+              <span class:list={["text-[9px] font-mono px-2 py-0.2 rounded-full border uppercase tracking-wider text-center w-24", getStatusClass(item.carryOn)]}>
+                Carry-on: {item.carryOn.toLowerCase()}
+              </span>
+              <span class:list={["text-[9px] font-mono px-2 py-0.2 rounded-full border uppercase tracking-wider text-center w-24", getStatusClass(item.checked)]}>
+                Checked: {item.checked.toLowerCase()}
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Monospaced Pagination Links -->
+    <nav aria-label="Pagination" class="flex items-center justify-between border-t border-hairline pt-6 font-mono text-xs text-mute select-none no-print">
+      <!-- Previous Button -->
+      <div>
+        {page.url.prev ? (
+          <a href={page.url.prev} class="inline-flex items-center gap-1 hover:text-ink transition-colors focus-visible:underline">
+            &larr; Previous
+          </a>
+        ) : (
+          <span class="text-mute/40 select-none">&larr; Previous</span>
+        )}
+      </div>
+
+      <!-- Page Numbers List -->
+      <div class="hidden sm:flex items-center gap-3">
+        {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((p) => (
+          <a
+            href={p === 1 ? "/items/page/1" : `/items/page/${p}`}
+            class:list={[
+              "px-2 py-1 rounded-sm transition-all focus-visible:ring-2 focus-visible:ring-link",
+              p === page.currentPage 
+                ? "bg-primary text-on-primary font-bold shadow-sm" 
+                : "hover:text-ink hover:bg-canvas-soft-2"
+            ]}
+          >
+            {p}
+          </a>
+        ))}
+      </div>
+
+      <!-- Next Button -->
+      <div>
+        {page.url.next ? (
+          <a href={page.url.next} class="inline-flex items-center gap-1 hover:text-ink transition-colors focus-visible:underline">
+            Next &rarr;
+          </a>
+        ) : (
+          <span class="text-mute/40 select-none">Next &rarr;</span>
+        )}
+      </div>
+    </nav>
+
+  </div>
+
+  <Footer slot="footer" />
+</Layout>

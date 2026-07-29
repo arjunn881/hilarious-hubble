@@ -1,0 +1,78 @@
+{
+  "id": "ibuprofen",
+  "slug": "ibuprofen",
+  "name": "Ibuprofen",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "advil",
+    "motrin",
+    "painkillers"
+  ],
+  "keywords": [
+    "ibuprofen",
+    "pills",
+    "pain",
+    "advil"
+  ],
+  "description": "Guidelines for traveling with ibuprofen in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Ibuprofen (Advil, Motrin) and other pain relievers in tablet/gummy form are fully allowed through security checkpoints.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Ibuprofen is allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/ibuprofen",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring ibuprofen on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/ibuprofen",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Ibuprofen (Advil, Motrin) and other pain relievers in tablet/gummy form are fully allowed through security checkpoints."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is ibuprofen allowed in carry-on bags?",
+      "answer": "Ibuprofen is allowed in carry-on luggage. Ibuprofen (Advil, Motrin) and other pain relievers in tablet/gummy form are fully allowed through security checkpoints."
+    },
+    {
+      "question": "Can you pack ibuprofen in checked baggage?",
+      "answer": "Yes, Ibuprofen is allowed in checked bags. Ibuprofen is allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/ibuprofen"
+    }
+  ]
+}

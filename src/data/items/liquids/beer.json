@@ -1,0 +1,78 @@
+{
+  "id": "beer",
+  "slug": "beer",
+  "name": "Beer",
+  "category": "Liquids",
+  "subcategory": "General",
+  "aliases": [
+    "ale",
+    "lager",
+    "canned beer"
+  ],
+  "keywords": [
+    "beer",
+    "alcohol",
+    "can",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with beer in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Beer is a liquid and is subject to the 3-1-1 liquids rule. Cans or bottles over 3.4 oz must be checked.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Beer is allowed in checked baggage in any quantity (ABV is under 24%, so no TSA volume limit applies).",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/beer",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring beer on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/beer",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Beer is a liquid and is subject to the 3-1-1 liquids rule. Cans or bottles over 3.4 oz must be checked."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is beer allowed in carry-on bags?",
+      "answer": "Beer is restricted in carry-on luggage. Beer is a liquid and is subject to the 3-1-1 liquids rule. Cans or bottles over 3.4 oz must be checked."
+    },
+    {
+      "question": "Can you pack beer in checked baggage?",
+      "answer": "Yes, Beer is allowed in checked bags. Beer is allowed in checked baggage in any quantity (ABV is under 24%, so no TSA volume limit applies)."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/beer"
+    }
+  ]
+}

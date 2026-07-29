@@ -1,0 +1,77 @@
+{
+  "id": "apples",
+  "slug": "apples",
+  "name": "Apples",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "apple",
+    "fresh apples"
+  ],
+  "keywords": [
+    "apples",
+    "fruit",
+    "fresh",
+    "food"
+  ],
+  "description": "Guidelines for traveling with apples in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Apples are solid foods and are allowed through security. Agricultural customs controls apply for international arrivals.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Apples are allowed in checked baggage, subject to local agricultural rules.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/apples",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring apples on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/apples",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Apples are solid foods and are allowed through security. Agricultural customs controls apply for international arrivals."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is apples allowed in carry-on bags?",
+      "answer": "Apples is allowed in carry-on luggage. Apples are solid foods and are allowed through security. Agricultural customs controls apply for international arrivals."
+    },
+    {
+      "question": "Can you pack apples in checked baggage?",
+      "answer": "Yes, Apples is allowed in checked bags. Apples are allowed in checked baggage, subject to local agricultural rules."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/apples"
+    }
+  ]
+}

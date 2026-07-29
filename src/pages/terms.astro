@@ -1,0 +1,185 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { FileText, ArrowLeft } from "@lucide/astro";
+
+const lastUpdated = "June 30, 2026";
+const sections = [
+  {
+    id: "acceptance",
+    title: "1. Acceptance of Terms",
+    content: `By accessing or using BringOnPlane ("Service", "we", "us", "our") at bringonplane.com, you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree with any part of these terms, you may not access the Service.
+
+These Terms apply to all visitors, users, and others who access or use the Service. We reserve the right to update these Terms at any time. Continued use of the Service after changes constitutes acceptance of the revised Terms.`
+  },
+  {
+    id: "service-description",
+    title: "2. Service Description",
+    content: `BringOnPlane provides an informational web application that allows users to:
+
+• Search TSA (Transportation Security Administration) baggage rules for specific items
+• Generate travel packing lists categorized by carry-on and checked bag rules
+• Access travel guides, airline-specific rules, and FAQs about airport security
+• Compare TSA rules across different categories of travel items
+
+The Service is provided free of charge with no account registration required. Your packing lists and preferences are stored locally on your device via browser localStorage.`
+  },
+  {
+    id: "accuracy-disclaimer",
+    title: "3. Accuracy & Informational Disclaimer",
+    content: `<strong>IMPORTANT: BringOnPlane is an informational tool, not a substitute for official government guidance.</strong>
+
+While we make every effort to maintain accurate, up-to-date TSA and baggage rule information sourced from official publications (TSA.gov, FAA.gov, CBP.gov), we make no warranty that the information on this Site is complete, current, or error-free.
+
+TSA regulations, airline policies, and international customs rules change frequently. Individual TSA officers have final discretion at security checkpoints, and rules may vary by airport, airline, or international jurisdiction.
+
+<strong>BringOnPlane, its owners, contributors, and operators shall not be liable for:</strong>
+• Items confiscated at any security checkpoint
+• Travel disruptions caused by reliance on information from this Service
+• Customs fees, fines, or penalties incurred during international travel
+• Any financial or personal loss resulting from use of this Service
+
+Always verify current rules at TSA.gov and with your airline before travel.`
+  },
+  {
+    id: "intellectual-property",
+    title: "4. Intellectual Property",
+    content: `The Service and its original content (including but not limited to item descriptions, category structures, guide articles, packing list formats, UI design, and software code) are and remain the exclusive intellectual property of BringOnPlane and its licensors.
+
+You may not reproduce, distribute, modify, create derivative works from, publicly display, or otherwise exploit any portion of the Service's content for commercial purposes without our express written permission.
+
+You may share individual item rulings and FAQ answers for personal, non-commercial, informational purposes, provided you attribute BringOnPlane as the source and include a link to the original page.`
+  },
+  {
+    id: "user-conduct",
+    title: "5. Acceptable Use",
+    content: `When using BringOnPlane, you agree not to:
+
+• Scrape, crawl, or harvest data from the Service in bulk via automated tools without prior written permission
+• Attempt to circumvent, disable, or interfere with security features of the Service
+• Transmit malicious code, viruses, or any technology designed to damage the Service
+• Use the Service to provide false or misleading information
+• Attempt to gain unauthorized access to any part of the Service or its related infrastructure
+• Use the Service in any way that violates applicable local, national, or international law
+
+We reserve the right to terminate or block access for any user found in violation of these terms.`
+  },
+  {
+    id: "third-party-links",
+    title: "6. Third-Party Links & External Content",
+    content: `BringOnPlane may contain links to third-party websites including TSA.gov, FAA.gov, airline websites, and other travel resources. These links are provided for informational purposes only.
+
+We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites. We strongly advise you to review the Privacy Policy and Terms of any third-party site you visit.
+
+The inclusion of any link does not imply endorsement by BringOnPlane of the site or any association with its operators.`
+  },
+  {
+    id: "limitation-liability",
+    title: "7. Limitation of Liability",
+    content: `TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, BRINGONPLANE AND ITS OPERATORS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES — INCLUDING BUT NOT LIMITED TO LOSS OF TRAVEL, CONFISCATED GOODS, MISSED FLIGHTS, FINES, OR DATA LOSS — ARISING FROM YOUR USE OF OR INABILITY TO USE THE SERVICE.
+
+IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS EXCEED THE AMOUNT YOU PAID TO ACCESS THE SERVICE (WHICH IS ZERO, AS THE SERVICE IS FREE).
+
+SOME JURISDICTIONS DO NOT ALLOW LIMITATION OF CERTAIN WARRANTIES OR EXCLUSIONS OF CERTAIN DAMAGES; IF THESE LAWS APPLY TO YOU, SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY.`
+  },
+  {
+    id: "indemnification",
+    title: "8. Indemnification",
+    content: `You agree to defend, indemnify, and hold harmless BringOnPlane and its operators, contributors, and agents from any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from your use of the Service, your violation of these Terms, or your violation of any rights of another person or entity.`
+  },
+  {
+    id: "governing-law",
+    title: "9. Governing Law & Disputes",
+    content: `These Terms are governed by and construed in accordance with applicable law. Any dispute arising from these Terms or your use of the Service shall first be subject to good-faith negotiation between the parties.
+
+If a dispute cannot be resolved through negotiation within 30 days, either party may pursue resolution through binding arbitration or small claims court, as applicable.
+
+These Terms do not affect any statutory rights you may have as a consumer in your country of residence.`
+  },
+  {
+    id: "changes-terms",
+    title: "10. Changes to These Terms",
+    content: `We reserve the right to modify these Terms at any time. When we do, we will update the "Last Updated" date at the top of this page. Material changes will be communicated via a notice on the Service.
+
+Your continued use of BringOnPlane after changes are posted constitutes your acceptance of the updated Terms. If you do not agree to the updated Terms, please stop using the Service.`
+  },
+  {
+    id: "contact-terms",
+    title: "11. Contact",
+    content: `If you have questions about these Terms, please contact us:
+
+<strong>Email:</strong> legal@bringonplane.com
+<strong>General Contact:</strong> <a href="/contact" class="text-link hover:underline">bringonplane.com/contact</a>`
+  }
+];
+---
+
+<Layout
+  title="Terms & Conditions — BringOnPlane"
+  description="BringOnPlane Terms and Conditions: service description, disclaimer, acceptable use, intellectual property, limitation of liability, and governing law."
+  canonicalURL="https://bringonplane.com/terms"
+  keywords="bringonplane terms of service, terms and conditions, tsa rules website terms, disclaimer"
+>
+  <Header slot="header" />
+
+  <main class="flex-1">
+
+    <!-- Hero -->
+    <div class="border-b border-hairline bg-canvas-soft">
+      <div class="max-w-[760px] mx-auto px-4 md:px-6 py-12">
+        <a href="/" class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors mb-6">
+          <ArrowLeft class="w-3.5 h-3.5" /> Back to Home
+        </a>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-md bg-canvas border border-hairline text-mute flex items-center justify-center flex-shrink-0 mt-1">
+            <FileText class="w-5 h-5" />
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.5px] text-ink leading-tight mb-2">Terms & Conditions</h1>
+            <p class="text-xs text-mute font-mono">Last updated: {lastUpdated}</p>
+            <p class="text-sm text-body leading-[1.7] mt-3 max-w-[540px]">
+              Please read these terms carefully before using BringOnPlane. By using the site you agree to these terms, including our important accuracy disclaimer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick nav -->
+    <div class="border-b border-hairline bg-canvas">
+      <div class="max-w-[760px] mx-auto px-4 md:px-6 py-6">
+        <p class="text-xs font-mono text-mute uppercase tracking-wider mb-3">Jump to Section</p>
+        <div class="flex flex-wrap gap-2">
+          {sections.map(s => (
+            <a href={`#${s.id}`} class="text-[11px] text-body hover:text-ink border border-hairline hover:border-hairline-strong bg-canvas-soft rounded-md px-2.5 py-1 transition-all">
+              {s.title.split(". ")[1]}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-[760px] mx-auto px-4 md:px-6 py-14 space-y-10">
+      {sections.map(s => (
+        <section id={s.id} class="scroll-mt-24 border-b border-hairline pb-10 last:border-0">
+          <h2 class="text-base font-semibold text-ink mb-4">{s.title}</h2>
+          <div class="text-sm text-body leading-[1.9] space-y-3" set:html={s.content.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('')} />
+        </section>
+      ))}
+
+      <div class="border border-hairline rounded-md bg-canvas-soft p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <p class="text-sm font-medium text-ink">Questions about these terms?</p>
+          <p class="text-xs text-body">We're happy to clarify anything.</p>
+        </div>
+        <a href="/contact" class="inline-flex items-center gap-2 px-4 h-9 text-xs font-medium text-link border border-link/25 hover:border-link bg-link-bg-soft rounded-md transition-all flex-shrink-0">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer slot="footer" />
+</Layout>

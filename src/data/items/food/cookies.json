@@ -1,0 +1,77 @@
+{
+  "id": "cookies",
+  "slug": "cookies",
+  "name": "Cookies",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "biscuits",
+    "baked goods"
+  ],
+  "keywords": [
+    "cookies",
+    "snack",
+    "sweet",
+    "food"
+  ],
+  "description": "Guidelines for traveling with cookies in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Cookies, biscuits, and brownies are solid foods and are allowed in carry-on luggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Cookies are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cookies",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring cookies on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cookies",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Cookies, biscuits, and brownies are solid foods and are allowed in carry-on luggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is cookies allowed in carry-on bags?",
+      "answer": "Cookies is allowed in carry-on luggage. Cookies, biscuits, and brownies are solid foods and are allowed in carry-on luggage."
+    },
+    {
+      "question": "Can you pack cookies in checked baggage?",
+      "answer": "Yes, Cookies is allowed in checked bags. Cookies are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cookies"
+    }
+  ]
+}

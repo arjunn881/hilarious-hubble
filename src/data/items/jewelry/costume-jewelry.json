@@ -1,0 +1,92 @@
+{
+  "id": "costume-jewelry",
+  "slug": "costume-jewelry",
+  "name": "Costume Jewelry",
+  "category": "Jewelry",
+  "subcategory": "General",
+  "aliases": [
+    "fake jewelry",
+    "plastic beads",
+    "fashion accessories"
+  ],
+  "keywords": [
+    "fashion",
+    "costume",
+    "fake",
+    "beads"
+  ],
+  "description": "Guidelines for traveling with costume jewelry in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Low-value costume jewelry is allowed in both luggage types.",
+    "conditions": [
+      "If you have many metal fashion items, pack them in checked bags to avoid triggering security line delays."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Low-value costume jewelry is allowed in both luggage types.",
+    "conditions": [
+      "If you have many metal fashion items, pack them in checked bags to avoid triggering security line delays."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring costume jewelry on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "If you have many metal fashion items, pack them in checked bags to avoid triggering security line delays."
+  ],
+  "relatedItems": [
+    "diamond-necklace",
+    "gold-ring",
+    "metal-watch",
+    "smartwatch"
+  ],
+  "faq": [
+    {
+      "question": "Is costume jewelry allowed in carry-on bags?",
+      "answer": "Costume Jewelry is allowed in carry-on luggage. Low-value costume jewelry is allowed in both luggage types."
+    },
+    {
+      "question": "Can you pack costume jewelry in checked baggage?",
+      "answer": "Yes, Costume Jewelry is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

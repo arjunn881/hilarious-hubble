@@ -1,0 +1,79 @@
+{
+  "id": "propane-canister",
+  "slug": "propane-canister",
+  "name": "Propane Canister",
+  "category": "Camping",
+  "subcategory": "General",
+  "aliases": [
+    "propane tank",
+    "butane canister",
+    "camp fuel"
+  ],
+  "keywords": [
+    "propane",
+    "fuel",
+    "canister",
+    "gas",
+    "camping"
+  ],
+  "description": "Guidelines for traveling with propane canister in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Propane, butane, and other compressed fuel canisters are strictly prohibited in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Propane and camp fuel canisters are strictly prohibited in checked baggage holds as hazardous materials.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/propane-canister",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring propane canister on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/propane-canister",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Propane, butane, and other compressed fuel canisters are strictly prohibited in carry-on baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is propane canister allowed in carry-on bags?",
+      "answer": "Propane Canister is not_allowed in carry-on luggage. Propane, butane, and other compressed fuel canisters are strictly prohibited in carry-on baggage."
+    },
+    {
+      "question": "Can you pack propane canister in checked baggage?",
+      "answer": "No, Propane Canister is not allowed in checked bags. Propane and camp fuel canisters are strictly prohibited in checked baggage holds as hazardous materials."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/propane-canister"
+    }
+  ]
+}

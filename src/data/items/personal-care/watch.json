@@ -1,0 +1,77 @@
+{
+  "id": "watch",
+  "slug": "watch",
+  "name": "Watch",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "smartwatch",
+    "wrist watch"
+  ],
+  "keywords": [
+    "watch",
+    "smartwatch",
+    "time",
+    "wrist"
+  ],
+  "description": "Guidelines for traveling with watch in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Watches (analog, digital, or smartwatches) are allowed in carry-on baggage. You may be asked to remove them at security.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Watches are allowed in checked baggage, though carrying them in carry-on is recommended.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/watch",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring watch on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/watch",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Watches (analog, digital, or smartwatches) are allowed in carry-on baggage. You may be asked to remove them at security."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is watch allowed in carry-on bags?",
+      "answer": "Watch is allowed in carry-on luggage. Watches (analog, digital, or smartwatches) are allowed in carry-on baggage. You may be asked to remove them at security."
+    },
+    {
+      "question": "Can you pack watch in checked baggage?",
+      "answer": "Yes, Watch is allowed in checked bags. Watches are allowed in checked baggage, though carrying them in carry-on is recommended."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/watch"
+    }
+  ]
+}

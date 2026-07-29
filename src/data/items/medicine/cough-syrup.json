@@ -1,0 +1,92 @@
+{
+  "id": "cough-syrup",
+  "slug": "cough-syrup",
+  "name": "Over-the-Counter Cough Syrup",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "nyquil",
+    "robitussin",
+    "cough medicine"
+  ],
+  "keywords": [
+    "cough",
+    "syrup",
+    "otc",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with over-the-counter cough syrup in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "OTC cough syrups in carry-on baggage must conform strictly to the 3.4 oz liquids limit. If the bottle is larger than 3.4 oz, it must go in checked baggage, even if partially empty.",
+    "conditions": [
+      "Only prescription liquid medications enjoy the volume exemption."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "OTC cough syrups in carry-on baggage must conform strictly to the 3.4 oz liquids limit. If the bottle is larger than 3.4 oz, it must go in checked baggage, even if partially empty.",
+    "conditions": [
+      "Only prescription liquid medications enjoy the volume exemption."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring over-the-counter cough syrup on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Only prescription liquid medications enjoy the volume exemption."
+  ],
+  "relatedItems": [
+    "liquid-medicine",
+    "epipen",
+    "insulin-syringes",
+    "prescription-pills"
+  ],
+  "faq": [
+    {
+      "question": "Is over-the-counter cough syrup allowed in carry-on bags?",
+      "answer": "Over-the-Counter Cough Syrup is restricted in carry-on luggage. OTC cough syrups in carry-on baggage must conform strictly to the 3.4 oz liquids limit. If the bottle is larger than 3.4 oz, it must go in checked baggage, even if partially empty."
+    },
+    {
+      "question": "Can you pack over-the-counter cough syrup in checked baggage?",
+      "answer": "Yes, Over-the-Counter Cough Syrup is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

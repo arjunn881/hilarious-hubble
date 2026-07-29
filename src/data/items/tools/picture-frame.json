@@ -1,0 +1,77 @@
+{
+  "id": "picture-frame",
+  "slug": "picture-frame",
+  "name": "Picture Frame",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "photo frame",
+    "framed photo"
+  ],
+  "keywords": [
+    "frame",
+    "picture",
+    "glass",
+    "photo"
+  ],
+  "description": "Guidelines for traveling with picture frame in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Picture frames are allowed in carry-on. Frames with glass should be packed carefully to avoid injury or damage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Picture frames are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/picture-frame",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring picture frame on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/picture-frame",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Picture frames are allowed in carry-on. Frames with glass should be packed carefully to avoid injury or damage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is picture frame allowed in carry-on bags?",
+      "answer": "Picture Frame is allowed in carry-on luggage. Picture frames are allowed in carry-on. Frames with glass should be packed carefully to avoid injury or damage."
+    },
+    {
+      "question": "Can you pack picture frame in checked baggage?",
+      "answer": "Yes, Picture Frame is allowed in checked bags. Picture frames are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/picture-frame"
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { ArrowLeft, Sparkles, ClipboardCheck, AlertTriangle, ShieldCheck } from "@lucide/astro";
+
+export async function getStaticPaths() {
+  const templates = [
+    {
+      slug: "weekend-trip",
+      name: "Weekend Trip",
+      desc: "Perfect for quick 2-3 day getaways, focusing on light luggage and carry-on efficiency.",
+      items: [
+        { name: "T-Shirts & Underwear", cat: "Clothing" },
+        { name: "Socks & Comfortable Shoes", cat: "Clothing" },
+        { name: "Toothbrush & Toothpaste", cat: "Personal Care" },
+        { name: "Smartphone & Charger", cat: "Electronics" },
+        { name: "Deodorant (under 3.4 oz)", cat: "Personal Care" }
+      ],
+      mistakes: [
+        "Packing full-sized aerosols or deodorants in your carry-on (exceeds the TSA 3-1-1 liquids limit).",
+        "Forgetting that multi-tools or Swiss army knives must be packed in checked holds."
+      ]
+    },
+    {
+      slug: "business-trip",
+      name: "Business Trip",
+      desc: "Optimized for professional travelers who need wrinkle-free suits and laptop safety clearances.",
+      items: [
+        { name: "Wrinkle-Free Suits / Blazers", cat: "Clothing" },
+        { name: "Laptop Computer & Charger", cat: "Electronics" },
+        { name: "Notepad & Pen", cat: "Documents" },
+        { name: "Passport & Boarding Pass", cat: "Documents" },
+        { name: "Power Bank (Cabin only!)", cat: "Electronics" },
+        { name: "Business Cards", cat: "Documents" }
+      ],
+      mistakes: [
+        "Placing your laptop or power bank in checked baggage (violates FAA hazardous cargo regulations).",
+        "Forgetting to pull out large electronics at TSA checkpoints for individual X-ray bins."
+      ]
+    },
+    {
+      slug: "international-trip",
+      name: "International Trip",
+      desc: "Designed for long-haul global flights requiring border clearance documents and universal plug adapters.",
+      items: [
+        { name: "Passport & Travel Visa", cat: "Documents" },
+        { name: "Universal Travel Adapter", cat: "Electronics" },
+        { name: "Prescription Medicines & Copies", cat: "Medicine" },
+        { name: "Local Currency Cash", cat: "Documents" },
+        { name: "Travel Insurance Policy", cat: "Documents" }
+      ],
+      mistakes: [
+        "Carrying liquid medicines without pharmacy labels or doctor prescriptions.",
+        "Failing to declare agricultural foods or cash amounts exceeding $10,000 at international customs borders."
+      ]
+    },
+    {
+      slug: "beach-vacation",
+      name: "Beach Vacation",
+      desc: "Includes swimsuits, high-SPF sun protection lotions, and summer wear requirements.",
+      items: [
+        { name: "Swimsuits & Sunglasses", cat: "Clothing" },
+        { name: "Sunscreen Lotion", cat: "Liquids" },
+        { name: "Flip Flops & Beach Towel", cat: "Clothing" },
+        { name: "Water Bottle (Empty for TSA)", cat: "Camping" },
+        { name: "Lip Balm & Aloe Vera Gel", cat: "Personal Care" }
+      ],
+      mistakes: [
+        "Carrying aerosol sunscreens larger than 3.4 oz in carry-on bags (must be checked).",
+        "Filling your water bottle before passing security (must go through empty, fill at gates)."
+      ]
+    },
+    {
+      slug: "camping-trip",
+      name: "Camping Trip",
+      desc: "Prepares hikers for wilderness journeys with tents, pegs, and outdoor survival gears.",
+      items: [
+        { name: "Sleeping Bag & Flashlight", cat: "Camping" },
+        { name: "Tent Pegs & Hiking Poles", cat: "Camping" },
+        { name: "Matches / Spark Lighter", cat: "Camping" },
+        { name: "Utility Knife / Multi-tool", cat: "Tools" },
+        { name: "Insect Repellent Spray", cat: "Liquids" }
+      ],
+      mistakes: [
+        "Packing metal tent pegs or pocket knives in cabin luggage (confiscated by TSA).",
+        "Carrying camp stove fuel canisters (banned entirely from passenger flights in both cabin and hold)."
+      ]
+    },
+    {
+      slug: "family-vacation",
+      name: "Family Vacation",
+      desc: "Keeps parents prepared with kids' toys, baby wipes, formula, and travel snacks.",
+      items: [
+        { name: "Baby Formula / Breast Milk", cat: "Baby" },
+        { name: "Baby Wipes & Diapers", cat: "Baby" },
+        { name: "First Aid Kit", cat: "Medicine" },
+        { name: "Snacks & Juice Pouches", cat: "Food" },
+        { name: "Travel Games & Coloring Books", cat: "Baby" }
+      ],
+      mistakes: [
+        "Assuming baby formula falls under the 3.4 oz limit. Formula and breast milk are medically exempt liquids, but must be declared for separate screening.",
+        "Packing child safety items like metal cutlery or blunt scissors in carry-on baggage."
+      ]
+    }
+  ];
+
+  return templates.map(tpl => ({
+    params: { slug: tpl.slug },
+    props: { template: tpl }
+  }));
+}
+
+const { template } = Astro.props;
+const currentUrl = new URL(Astro.url.pathname, "https://bringonplane.com").toString();
+
+// SEO Parameters
+const seoTitle = `${template.name} Travel Packing Checklist & Baggage Rules (2026)`;
+const seoDescription = `Get a complete packing checklist for your ${template.name.toLowerCase()}. Learn about prohibited cabin items, restricted baggage rules, and common packing mistakes.`;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bringonplane.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Packing Lists", "item": "https://bringonplane.com/checklist" },
+    { "@type": "ListItem", "position": 3, "name": template.name, "item": currentUrl }
+  ]
+};
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <link rel="canonical" href={currentUrl} slot="head" />
+
+  <Header slot="header" />
+
+  <div class="max-w-[800px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+    
+    <div class="mb-8 select-none">
+      <a href="/checklist" class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        Back to Assistant
+      </a>
+    </div>
+
+    <header class="mb-8 border-b border-hairline pb-6">
+      <div class="flex items-center gap-2 mb-2">
+        <Sparkles class="w-4 h-4 text-link" />
+        <span class="text-xs font-mono font-semibold uppercase text-mute tracking-wider">SEO Programmatic Checklist</span>
+      </div>
+      <h1 class="text-3xl font-semibold tracking-[-1.28px] text-ink">
+        {template.name} Packing Guide
+      </h1>
+      <p class="text-sm text-body leading-[1.6] mt-2">
+        {template.desc} Follow standard TSA regulations to prevent security delays.
+      </p>
+      
+      <!-- CTA button to launch trip assistant -->
+      <button 
+        type="button" 
+        id="btn-import-checklist"
+        class="mt-5 inline-flex items-center gap-2 h-9 px-4 text-xs font-medium text-on-primary bg-primary hover:bg-ink rounded-sm shadow-sm transition-all cursor-pointer focus:outline-none"
+      >
+        <ClipboardCheck class="w-4 h-4" />
+        Import to Packing Assistant
+      </button>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Checklist Column -->
+      <div class="md:col-span-2 space-y-6">
+        <h2 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3">Recommended Items</h2>
+        <div class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
+          <ul class="space-y-4">
+            {template.items.map(item => (
+              <li class="flex items-center justify-between border-b border-hairline/40 last:border-0 pb-3 last:pb-0">
+                <div class="flex items-center gap-2.5">
+                  <input type="checkbox" readonly class="w-4 h-4 rounded-xs text-primary border-hairline pointer-events-none" />
+                  <span class="text-xs font-semibold text-ink">{item.name}</span>
+                </div>
+                <span class="text-[9px] font-mono text-mute uppercase px-1.5 border border-hairline rounded-xs">{item.cat}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tips & Warnings Column -->
+      <div class="space-y-6">
+        <div>
+          <h2 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-3 flex items-center gap-1.5">
+            <AlertTriangle class="w-3.5 h-3.5 text-error-deep" />
+            Common Mistakes
+          </h2>
+          <div class="space-y-3">
+            {template.mistakes.map(m => (
+              <div class="p-3 bg-error-soft border border-error/15 rounded-sm text-[10px] font-mono text-error-deep leading-[1.5]">
+                {m}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-3 flex items-center gap-1.5">
+            <ShieldCheck class="w-3.5 h-3.5 text-link" />
+            TSA Approved Status
+          </h2>
+          <div class="p-3 bg-link-bg-soft border border-link/15 rounded-sm text-[10px] font-mono text-link-deep leading-[1.5]">
+            Medically necessary liquids (baby milk, saline sprays) are exempt from 3-1-1, but must be declared.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script define:vars={{ template }}>
+  // Import checklist values directly to localStorage active trip
+  document.getElementById("btn-import-checklist")?.addEventListener("click", () => {
+    const activeTrip = {
+      id: `trip-${Date.now()}`,
+      name: `${template.name} Itinerary`,
+      destination: "Imported Route",
+      departureDate: new Date().toISOString().split('T')[0],
+      returnDate: new Date(Date.now() + 259200000).toISOString().split('T')[0],
+      airline: "Delta Air Lines",
+      tripType: template.slug.split("-")[0] || "vacation",
+      lists: [
+        { id: "carry-on", name: "Carry-on Bag", isCustom: false, items: [] },
+        { id: "checked-bag", name: "Checked Bag", isCustom: false, items: [] },
+        { id: "personal-item", name: "Personal Item", isCustom: false, items: [] },
+        { id: "documents", name: "Documents", isCustom: false, items: [] },
+        { id: "essentials", name: "Essentials", isCustom: false, items: [] }
+      ],
+      notes: ""
+    };
+
+    // Populate items
+    template.items.forEach((item, idx) => {
+      let listId = "carry-on";
+      if (item.cat === 'Documents') listId = "documents";
+      if (item.cat === 'Liquids' || item.name.includes("sunscreen") || item.name.includes("tent")) listId = "checked-bag";
+
+      const targetList = activeTrip.lists.find(l => l.id === listId);
+      if (targetList) {
+        targetList.items.push({
+          id: `imp-${Date.now()}-${idx}`,
+          name: item.name,
+          category: item.cat,
+          carryOnStatus: 'UNKNOWN',
+          checkedStatus: 'UNKNOWN',
+          reason: 'Imported preset rules.',
+          travelTip: 'Packed from checklist template.',
+          packed: false,
+          compliance: { status: 'SAFE', message: 'Verified compliant.' }
+        });
+      }
+    });
+
+    localStorage.setItem("active_trip", JSON.stringify(activeTrip));
+    localStorage.setItem("traveler_checklist", JSON.stringify([])); // clear legacy
+    
+    // Redirect to Packing Assistant page!
+    window.location.href = "/checklist";
+  });
+</script>

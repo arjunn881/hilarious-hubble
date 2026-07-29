@@ -1,0 +1,78 @@
+{
+  "id": "camera-battery",
+  "slug": "camera-battery",
+  "name": "Camera Battery",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "spare battery",
+    "lithium battery",
+    "rechargeable battery"
+  ],
+  "keywords": [
+    "battery",
+    "camera",
+    "lithium",
+    "spare"
+  ],
+  "description": "Guidelines for traveling with camera battery in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Spare rechargeable lithium camera batteries must be carried in carry-on baggage only. Protecting terminal contacts (with tape or plastic caps) is recommended.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Spare lithium camera batteries are prohibited in checked baggage holds due to fire risk.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camera-battery",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring camera battery on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camera-battery",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Spare rechargeable lithium camera batteries must be carried in carry-on baggage only. Protecting terminal contacts (with tape or plastic caps) is recommended."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is camera battery allowed in carry-on bags?",
+      "answer": "Camera Battery is allowed in carry-on luggage. Spare rechargeable lithium camera batteries must be carried in carry-on baggage only. Protecting terminal contacts (with tape or plastic caps) is recommended."
+    },
+    {
+      "question": "Can you pack camera battery in checked baggage?",
+      "answer": "No, Camera Battery is not allowed in checked bags. Spare lithium camera batteries are prohibited in checked baggage holds due to fire risk."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camera-battery"
+    }
+  ]
+}

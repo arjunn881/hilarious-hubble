@@ -1,0 +1,77 @@
+{
+  "id": "honey",
+  "slug": "honey",
+  "name": "Honey",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "honey jar",
+    "syrup"
+  ],
+  "keywords": [
+    "honey",
+    "liquid",
+    "spread",
+    "sweet"
+  ],
+  "description": "Guidelines for traveling with honey in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Honey is a liquid/gel and is subject to the 3-1-1 liquids rule. Carry-on jars must be 3.4 oz (100 ml) or less.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Honey is allowed in checked baggage in any quantity.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/honey",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring honey on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/honey",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Honey is a liquid/gel and is subject to the 3-1-1 liquids rule. Carry-on jars must be 3.4 oz (100 ml) or less."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is honey allowed in carry-on bags?",
+      "answer": "Honey is restricted in carry-on luggage. Honey is a liquid/gel and is subject to the 3-1-1 liquids rule. Carry-on jars must be 3.4 oz (100 ml) or less."
+    },
+    {
+      "question": "Can you pack honey in checked baggage?",
+      "answer": "Yes, Honey is allowed in checked bags. Honey is allowed in checked baggage in any quantity."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/honey"
+    }
+  ]
+}

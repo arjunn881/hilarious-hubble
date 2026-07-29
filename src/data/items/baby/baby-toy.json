@@ -1,0 +1,92 @@
+{
+  "id": "baby-toy",
+  "slug": "baby-toy",
+  "name": "Baby Toy (Plush or Solid)",
+  "category": "Baby",
+  "subcategory": "General",
+  "aliases": [
+    "stuffed animal",
+    "rattle",
+    "teething ring"
+  ],
+  "keywords": [
+    "plush",
+    "rattle",
+    "teether",
+    "play"
+  ],
+  "description": "Guidelines for traveling with baby toy (plush or solid) in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Plush or solid plastic toys are allowed in carry-on and checked bags. Liquid-filled teething rings are prohibited in carry-on unless frozen solid.",
+    "conditions": [
+      "Avoid bringing liquid-filled toys in carry-on bags."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Plush or solid plastic toys are allowed in carry-on and checked bags. Liquid-filled teething rings are prohibited in carry-on unless frozen solid.",
+    "conditions": [
+      "Avoid bringing liquid-filled toys in carry-on bags."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring baby toy (plush or solid) on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Avoid bringing liquid-filled toys in carry-on bags."
+  ],
+  "relatedItems": [
+    "baby-wipes",
+    "baby-formula",
+    "breast-milk",
+    "collapsible-stroller"
+  ],
+  "faq": [
+    {
+      "question": "Is baby toy (plush or solid) allowed in carry-on bags?",
+      "answer": "Baby Toy (Plush or Solid) is allowed in carry-on luggage. Plush or solid plastic toys are allowed in carry-on and checked bags. Liquid-filled teething rings are prohibited in carry-on unless frozen solid."
+    },
+    {
+      "question": "Can you pack baby toy (plush or solid) in checked baggage?",
+      "answer": "Yes, Baby Toy (Plush or Solid) is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

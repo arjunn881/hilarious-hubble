@@ -1,0 +1,77 @@
+{
+  "id": "straight-razor",
+  "slug": "straight-razor",
+  "name": "Straight Razor",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "barber razor",
+    "shaving blade"
+  ],
+  "keywords": [
+    "razor",
+    "straight",
+    "blade",
+    "barber"
+  ],
+  "description": "Guidelines for traveling with straight razor in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Straight razors (barber style with exposed blades) are prohibited in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Straight razors are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/straight-razor",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring straight razor on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/straight-razor",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Straight razors (barber style with exposed blades) are prohibited in carry-on baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is straight razor allowed in carry-on bags?",
+      "answer": "Straight Razor is not_allowed in carry-on luggage. Straight razors (barber style with exposed blades) are prohibited in carry-on baggage."
+    },
+    {
+      "question": "Can you pack straight razor in checked baggage?",
+      "answer": "Yes, Straight Razor is allowed in checked bags. Straight razors are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/straight-razor"
+    }
+  ]
+}

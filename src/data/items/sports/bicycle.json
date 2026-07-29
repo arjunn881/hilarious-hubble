@@ -1,0 +1,92 @@
+{
+  "id": "bicycle",
+  "slug": "bicycle",
+  "name": "Bicycle (boxed)",
+  "category": "Sports",
+  "subcategory": "General",
+  "aliases": [
+    "bike",
+    "road bike",
+    "mountain bike"
+  ],
+  "keywords": [
+    "bike",
+    "cycling",
+    "wheels",
+    "transport"
+  ],
+  "description": "Guidelines for traveling with bicycle (boxed) in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Bicycles are allowed in checked baggage. They must be packaged in a specific bike box or bag with handle bars and pedals removed.",
+    "conditions": [
+      "Subject to oversized baggage fees on most commercial airlines."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Bicycles are allowed in checked baggage. They must be packaged in a specific bike box or bag with handle bars and pedals removed.",
+    "conditions": [
+      "Subject to oversized baggage fees on most commercial airlines."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring bicycle (boxed) on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Subject to oversized baggage fees on most commercial airlines."
+  ],
+  "relatedItems": [
+    "skateboard",
+    "baseball-bat",
+    "golf-clubs",
+    "hiking-poles"
+  ],
+  "faq": [
+    {
+      "question": "Is bicycle (boxed) allowed in carry-on bags?",
+      "answer": "Bicycle (boxed) is not allowed in carry-on luggage. Bicycles are allowed in checked baggage. They must be packaged in a specific bike box or bag with handle bars and pedals removed."
+    },
+    {
+      "question": "Can you pack bicycle (boxed) in checked baggage?",
+      "answer": "Yes, Bicycle (boxed) is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

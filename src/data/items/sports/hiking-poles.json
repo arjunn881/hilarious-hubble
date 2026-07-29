@@ -1,0 +1,91 @@
+{
+  "id": "hiking-poles",
+  "slug": "hiking-poles",
+  "name": "Hiking Poles / Trekking Poles",
+  "category": "Sports",
+  "subcategory": "General",
+  "aliases": [
+    "trekking poles",
+    "walking sticks"
+  ],
+  "keywords": [
+    "hiking",
+    "walking",
+    "poles",
+    "trekking"
+  ],
+  "description": "Guidelines for traveling with hiking poles / trekking poles in your luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Hiking and trekking poles are prohibited in carry-on luggage due to sharp tips and potential use as weapons. They must be checked.",
+    "conditions": [
+      "Disassemble collapsible poles to fit inside standard checked suitcases."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Hiking and trekking poles are prohibited in carry-on luggage due to sharp tips and potential use as weapons. They must be checked.",
+    "conditions": [
+      "Disassemble collapsible poles to fit inside standard checked suitcases."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hiking-poles",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring hiking poles / trekking poles on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hiking-poles",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Disassemble collapsible poles to fit inside standard checked suitcases."
+  ],
+  "relatedItems": [
+    "baseball-bat",
+    "bicycle",
+    "golf-clubs",
+    "skateboard"
+  ],
+  "faq": [
+    {
+      "question": "Is hiking poles / trekking poles allowed in carry-on bags?",
+      "answer": "Hiking Poles / Trekking Poles is not allowed in carry-on luggage. Hiking and trekking poles are prohibited in carry-on luggage due to sharp tips and potential use as weapons. They must be checked."
+    },
+    {
+      "question": "Can you pack hiking poles / trekking poles in checked baggage?",
+      "answer": "Yes, Hiking Poles / Trekking Poles is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hiking-poles"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

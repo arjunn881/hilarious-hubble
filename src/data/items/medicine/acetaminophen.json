@@ -1,0 +1,77 @@
+{
+  "id": "acetaminophen",
+  "slug": "acetaminophen",
+  "name": "Acetaminophen",
+  "category": "Medicine",
+  "subcategory": "General",
+  "aliases": [
+    "tylenol",
+    "paracetamol"
+  ],
+  "keywords": [
+    "tylenol",
+    "pills",
+    "pain",
+    "paracetamol"
+  ],
+  "description": "Guidelines for traveling with acetaminophen in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Acetaminophen (Tylenol) tablets are allowed in carry-on luggage without size limits.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Acetaminophen is allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/acetaminophen",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring acetaminophen on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/acetaminophen",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Acetaminophen (Tylenol) tablets are allowed in carry-on luggage without size limits."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is acetaminophen allowed in carry-on bags?",
+      "answer": "Acetaminophen is allowed in carry-on luggage. Acetaminophen (Tylenol) tablets are allowed in carry-on luggage without size limits."
+    },
+    {
+      "question": "Can you pack acetaminophen in checked baggage?",
+      "answer": "Yes, Acetaminophen is allowed in checked bags. Acetaminophen is allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/acetaminophen"
+    }
+  ]
+}

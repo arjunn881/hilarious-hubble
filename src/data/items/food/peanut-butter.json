@@ -1,0 +1,77 @@
+{
+  "id": "peanut-butter",
+  "slug": "peanut-butter",
+  "name": "Peanut Butter",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "nut butter",
+    "almond butter"
+  ],
+  "keywords": [
+    "peanut",
+    "butter",
+    "spread",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with peanut butter in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Peanut butter is classified as a liquid/gel because it is spreadable. Carry-on jars must be 3.4 oz (100 ml) or less. Larger jars must go in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Peanut butter is allowed in checked baggage in any size.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/peanut-butter",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring peanut butter on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/peanut-butter",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Peanut butter is classified as a liquid/gel because it is spreadable. Carry-on jars must be 3.4 oz (100 ml) or less. Larger jars must go in checked baggage."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is peanut butter allowed in carry-on bags?",
+      "answer": "Peanut Butter is restricted in carry-on luggage. Peanut butter is classified as a liquid/gel because it is spreadable. Carry-on jars must be 3.4 oz (100 ml) or less. Larger jars must go in checked baggage."
+    },
+    {
+      "question": "Can you pack peanut butter in checked baggage?",
+      "answer": "Yes, Peanut Butter is allowed in checked bags. Peanut butter is allowed in checked baggage in any size."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/peanut-butter"
+    }
+  ]
+}

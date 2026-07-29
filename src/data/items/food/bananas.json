@@ -1,0 +1,77 @@
+{
+  "id": "bananas",
+  "slug": "bananas",
+  "name": "Bananas",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "banana",
+    "fresh banana"
+  ],
+  "keywords": [
+    "bananas",
+    "fruit",
+    "fresh",
+    "food"
+  ],
+  "description": "Guidelines for traveling with bananas in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Bananas are solid foods allowed through security checkpoints. Declare all fresh produce at international customs.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Bananas are allowed in checked baggage, subject to agricultural controls.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bananas",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring bananas on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bananas",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Bananas are solid foods allowed through security checkpoints. Declare all fresh produce at international customs."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is bananas allowed in carry-on bags?",
+      "answer": "Bananas is allowed in carry-on luggage. Bananas are solid foods allowed through security checkpoints. Declare all fresh produce at international customs."
+    },
+    {
+      "question": "Can you pack bananas in checked baggage?",
+      "answer": "Yes, Bananas is allowed in checked bags. Bananas are allowed in checked baggage, subject to agricultural controls."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bananas"
+    }
+  ]
+}

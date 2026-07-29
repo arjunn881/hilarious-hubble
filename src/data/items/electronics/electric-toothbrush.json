@@ -1,0 +1,92 @@
+{
+  "id": "electric-toothbrush",
+  "slug": "electric-toothbrush",
+  "name": "Electric Toothbrush",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "toothbrush",
+    "sonicare",
+    "oral-b"
+  ],
+  "keywords": [
+    "hygiene",
+    "teeth",
+    "battery",
+    "bathroom"
+  ],
+  "description": "Guidelines for traveling with electric toothbrush in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Electric toothbrushes with built-in batteries are allowed in both carry-on and checked bags, although carry-on is preferred.",
+    "conditions": [
+      "If packed in checked baggage, take steps to prevent the device from turning on accidentally."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Electric toothbrushes with built-in batteries are allowed in both carry-on and checked bags, although carry-on is preferred.",
+    "conditions": [
+      "If packed in checked baggage, take steps to prevent the device from turning on accidentally."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring electric toothbrush on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "If packed in checked baggage, take steps to prevent the device from turning on accidentally."
+  ],
+  "relatedItems": [
+    "power-bank",
+    "drone",
+    "laptop",
+    "smartphone"
+  ],
+  "faq": [
+    {
+      "question": "Is electric toothbrush allowed in carry-on bags?",
+      "answer": "Electric Toothbrush is allowed in carry-on luggage. Electric toothbrushes with built-in batteries are allowed in both carry-on and checked bags, although carry-on is preferred."
+    },
+    {
+      "question": "Can you pack electric toothbrush in checked baggage?",
+      "answer": "Yes, Electric Toothbrush is allowed in checked bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Verified baggage allowance statuses and aligned conditions with TSA What Can I Bring updates.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    },
+    {
+      "effectiveDate": "2025-06-30",
+      "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "chips",
+  "slug": "chips",
+  "name": "Chips",
+  "category": "Food",
+  "subcategory": "General",
+  "aliases": [
+    "crisps",
+    "potato chips",
+    "snacks"
+  ],
+  "keywords": [
+    "chips",
+    "snack",
+    "food",
+    "crisps"
+  ],
+  "description": "Guidelines for traveling with chips in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Chips, crackers, pretzels, and other dry snacks are fully allowed through security with no size restrictions.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Chips are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/chips",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring chips on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/chips",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Chips, crackers, pretzels, and other dry snacks are fully allowed through security with no size restrictions."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is chips allowed in carry-on bags?",
+      "answer": "Chips is allowed in carry-on luggage. Chips, crackers, pretzels, and other dry snacks are fully allowed through security with no size restrictions."
+    },
+    {
+      "question": "Can you pack chips in checked baggage?",
+      "answer": "Yes, Chips is allowed in checked bags. Chips are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/chips"
+    }
+  ]
+}

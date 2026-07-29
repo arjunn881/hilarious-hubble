@@ -1,0 +1,77 @@
+{
+  "id": "camera-batteries",
+  "slug": "camera-batteries",
+  "name": "Camera Batteries",
+  "category": "Electronics",
+  "subcategory": "General",
+  "aliases": [
+    "spare camera batteries",
+    "camera lithium batteries"
+  ],
+  "keywords": [
+    "batteries",
+    "camera",
+    "lithium",
+    "spare"
+  ],
+  "description": "Guidelines for traveling with camera batteries in your luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Spare rechargeable lithium camera batteries must be carried in carry-on baggage only.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Spare camera lithium batteries are prohibited in checked luggage due to safety rules.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camera-batteries",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring camera batteries on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camera-batteries",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Spare rechargeable lithium camera batteries must be carried in carry-on baggage only."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is camera batteries allowed in carry-on bags?",
+      "answer": "Camera Batteries is allowed in carry-on luggage. Spare rechargeable lithium camera batteries must be carried in carry-on baggage only."
+    },
+    {
+      "question": "Can you pack camera batteries in checked baggage?",
+      "answer": "No, Camera Batteries is not allowed in checked bags. Spare camera lithium batteries are prohibited in checked luggage due to safety rules."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camera-batteries"
+    }
+  ]
+}

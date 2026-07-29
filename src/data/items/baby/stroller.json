@@ -1,0 +1,78 @@
+{
+  "id": "stroller",
+  "slug": "stroller",
+  "name": "Stroller",
+  "category": "Baby",
+  "subcategory": "General",
+  "aliases": [
+    "pram",
+    "pushchair",
+    "baby stroller"
+  ],
+  "keywords": [
+    "stroller",
+    "pram",
+    "baby",
+    "gate"
+  ],
+  "description": "Guidelines for traveling with stroller in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Standard strollers are too large for the cabin and must be checked (often for free at the gate/jetbridge). Small collapsible strollers that fit overhead are allowed.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Strollers are checked for free by almost all airlines at check-in or at the gate.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/stroller",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring stroller on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/stroller",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Standard strollers are too large for the cabin and must be checked (often for free at the gate/jetbridge). Small collapsible strollers that fit overhead are allowed."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is stroller allowed in carry-on bags?",
+      "answer": "Stroller is restricted in carry-on luggage. Standard strollers are too large for the cabin and must be checked (often for free at the gate/jetbridge). Small collapsible strollers that fit overhead are allowed."
+    },
+    {
+      "question": "Can you pack stroller in checked baggage?",
+      "answer": "Yes, Stroller is allowed in checked bags. Strollers are checked for free by almost all airlines at check-in or at the gate."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/stroller"
+    }
+  ]
+}

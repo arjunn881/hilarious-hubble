@@ -1,0 +1,78 @@
+{
+  "id": "face-wash",
+  "slug": "face-wash",
+  "name": "Face Wash",
+  "category": "Personal Care",
+  "subcategory": "General",
+  "aliases": [
+    "cleanser",
+    "facial wash",
+    "face cleanser"
+  ],
+  "keywords": [
+    "wash",
+    "cleanser",
+    "face",
+    "liquid"
+  ],
+  "description": "Guidelines for traveling with face wash in your luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Face wash cleansers (liquid, foam, or gel) must comply with the 3-1-1 liquids rule (3.4 oz or less in carry-on).",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Face wash is allowed in checked baggage in any size.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/face-wash",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring face wash on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/face-wash",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Face wash cleansers (liquid, foam, or gel) must comply with the 3-1-1 liquids rule (3.4 oz or less in carry-on)."
+  ],
+  "relatedItems": [],
+  "faq": [
+    {
+      "question": "Is face wash allowed in carry-on bags?",
+      "answer": "Face Wash is restricted in carry-on luggage. Face wash cleansers (liquid, foam, or gel) must comply with the 3-1-1 liquids rule (3.4 oz or less in carry-on)."
+    },
+    {
+      "question": "Can you pack face wash in checked baggage?",
+      "answer": "Yes, Face Wash is allowed in checked bags. Face wash is allowed in checked baggage in any size."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/face-wash"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+---
+import { Plane } from "@lucide/astro";
+import { CATEGORIES, POPULAR_AIRLINES, GUIDES } from "../lib/relatedEngine";
+
+const topCategories = CATEGORIES.slice(0, 5);
+const topAirlines = POPULAR_AIRLINES.slice(0, 5);
+const topGuides = GUIDES.slice(0, 5);
+---
+
+<footer class="w-full bg-canvas border-t border-hairline py-16 px-6 mt-auto">
+  <div class="max-w-[1200px] mx-auto">
+
+    <!-- Main grid -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+
+      <!-- Col 1: Brand -->
+      <div id="about" class="col-span-2 md:col-span-1 flex flex-col gap-4">
+        <a href="/" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <div class="flex items-center justify-center w-6 h-6 rounded-sm bg-primary text-on-primary">
+            <Plane class="w-3.5 h-3.5 rotate-45" aria-hidden="true" />
+          </div>
+          <span class="font-sans font-semibold tracking-[-0.4px] text-base text-ink">BringOnPlane</span>
+        </a>
+        <p class="text-xs text-body max-w-[200px] leading-[1.7]">
+          Free TSA baggage rules checker and smart packing list generator for travelers worldwide.
+        </p>
+        <p class="text-[11px] text-mute font-mono">
+          &copy; {new Date().getFullYear()} BringOnPlane
+        </p>
+      </div>
+
+      <!-- Col 2: Tools -->
+      <div class="flex flex-col gap-3">
+        <span class="font-mono text-[11px] font-medium uppercase tracking-wider text-mute">Tools</span>
+        <ul class="flex flex-col gap-2 text-sm text-body">
+          <li><a href="/" class="hover:text-ink transition-colors focus-visible:underline">TSA Item Search</a></li>
+          <li><a href="/checklist" class="hover:text-ink transition-colors focus-visible:underline">Packing Assistant</a></li>
+          <li><a href="/faq" class="hover:text-ink transition-colors focus-visible:underline">FAQ Guide</a></li>
+          <li><a href="/guides" class="hover:text-ink transition-colors focus-visible:underline">Travel Guides</a></li>
+          <li><a href="/items" class="hover:text-ink transition-colors focus-visible:underline">All Items A–Z</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Official Sources -->
+      <div class="flex flex-col gap-3">
+        <span class="font-mono text-[11px] font-medium uppercase tracking-wider text-mute">Official Sources</span>
+        <ul class="flex flex-col gap-2 text-sm text-body">
+          <li>
+            <a href="https://www.tsa.gov" target="_blank" rel="noopener noreferrer" class="hover:text-ink transition-colors focus-visible:underline inline-flex items-center gap-1">
+              TSA.gov ↗
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tsa.gov/travel/security-screening/whatcanibring/all" target="_blank" rel="noopener noreferrer" class="hover:text-ink transition-colors focus-visible:underline inline-flex items-center gap-1">
+              What Can I Bring? ↗
+            </a>
+          </li>
+          <li>
+            <a href="https://www.faa.gov" target="_blank" rel="noopener noreferrer" class="hover:text-ink transition-colors focus-visible:underline inline-flex items-center gap-1">
+              FAA.gov ↗
+            </a>
+          </li>
+          <li>
+            <a href="https://www.cbp.gov" target="_blank" rel="noopener noreferrer" class="hover:text-ink transition-colors focus-visible:underline inline-flex items-center gap-1">
+              CBP.gov ↗
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Company -->
+      <div class="flex flex-col gap-3">
+        <span class="font-mono text-[11px] font-medium uppercase tracking-wider text-mute">Company</span>
+        <ul class="flex flex-col gap-2 text-sm text-body">
+          <li><a href="/about" class="hover:text-ink transition-colors focus-visible:underline">About Us</a></li>
+          <li><a href="/contact" class="hover:text-ink transition-colors focus-visible:underline">Contact Us</a></li>
+          <li><a href="/airlines" class="hover:text-ink transition-colors focus-visible:underline">Airline Rules</a></li>
+          <li><a href="/countries" class="hover:text-ink transition-colors focus-visible:underline">Country Customs</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Legal -->
+      <div class="flex flex-col gap-3">
+        <span class="font-mono text-[11px] font-medium uppercase tracking-wider text-mute">Legal</span>
+        <ul class="flex flex-col gap-2 text-sm text-body">
+          <li><a href="/privacy-policy" class="hover:text-ink transition-colors focus-visible:underline">Privacy Policy</a></li>
+          <li><a href="/terms" class="hover:text-ink transition-colors focus-visible:underline">Terms & Conditions</a></li>
+          <li>
+            <a href="mailto:legal@bringonplane.com" class="hover:text-ink transition-colors focus-visible:underline">
+              legal@bringonplane.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- SEO Internal Linking Hubs -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-8 border-t border-hairline mb-8">
+      <div>
+        <span class="font-mono text-[11px] font-medium uppercase tracking-wider text-mute mb-3 block">Top Categories</span>
+        <ul class="flex flex-col gap-2 text-sm text-body">
+          {topCategories.map(c => (
+            <li><a href={`/category/${c.slug}`} class="hover:text-ink transition-colors focus-visible:underline">{c.name}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <span class="font-mono text-[11px] font-medium uppercase tracking-wider text-mute mb-3 block">Top Airlines</span>
+        <ul class="flex flex-col gap-2 text-sm text-body">
+          {topAirlines.map(a => (
+            <li><a href="/airlines" class="hover:text-ink transition-colors focus-visible:underline">{a.name}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <span class="font-mono text-[11px] font-medium uppercase tracking-wider text-mute mb-3 block">Popular Guides</span>
+        <ul class="flex flex-col gap-2 text-sm text-body">
+          {topGuides.map(g => (
+            <li><a href={`/guide/${g.slug}`} class="hover:text-ink transition-colors focus-visible:underline line-clamp-1">{g.title}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="border border-hairline rounded-md bg-canvas-soft px-5 py-4 mb-8">
+      <p class="text-[11px] text-mute leading-[1.7] max-w-[900px]">
+        <strong class="text-body">Disclaimer:</strong> BringOnPlane is an independent informational tool, not affiliated with the TSA, FAA, or any airline. Information is sourced from official publications and updated regularly, but rules change frequently. Always verify with <a href="https://www.tsa.gov" target="_blank" rel="noopener noreferrer" class="text-link hover:underline">TSA.gov</a> and your airline before travel. TSA officers have final authority at all checkpoints.
+      </p>
+    </div>
+
+    <!-- Bottom strip -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-mute font-mono">
+      <div class="flex items-center gap-4 flex-wrap justify-center md:justify-start">
+        <a href="/privacy-policy" class="hover:text-ink transition-colors">Privacy</a>
+        <span>&bull;</span>
+        <a href="/terms" class="hover:text-ink transition-colors">Terms</a>
+        <span>&bull;</span>
+        <a href="/contact" class="hover:text-ink transition-colors">Contact</a>
+        <span>&bull;</span>
+        <a href="/about" class="hover:text-ink transition-colors">About</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-success animate-pulse" aria-hidden="true"></span>
+          <span>TSA feeds operational</span>
+        </div>
+        <span>&bull;</span>
+        <span>English (US)</span>
+      </div>
+    </div>
+  </div>
+</footer>
