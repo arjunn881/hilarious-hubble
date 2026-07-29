@@ -48,6 +48,90 @@ export function getRelatedGuides(item: any): any[] {
   return [guides[2], guides[3]];
 }
 
+export function getScreeningProcedure(item: any): string {
+  const cat = item.category.toLowerCase();
+  
+  if (cat.includes('liquid') || cat.includes('beauty') || cat.includes('personal-care')) {
+    return `When passing through the TSA checkpoint with ${item.name.toLowerCase()}, place your travel-sized container (3.4 oz / 100 mL or less) inside a clear, quart-sized plastic bag. If standard 2D X-ray machines are operating at your lane, extract the quart bag and lay it flat in a screening bin. At airports equipped with modern 3D CT computed tomography scanners, you may leave your liquids inside your bag unless instructed otherwise by Transportation Security Officers. Medical liquids or baby nourishment exceeding 3.4 oz must be declared immediately prior to screening for manual inspection or explosive trace detection (ETD) testing.`;
+  }
+  if (cat.includes('electronic') || cat.includes('battery')) {
+    return `During security screening for ${item.name.toLowerCase()}, any device larger than a standard smartphone (such as laptops, tablets, or large camera equipment) must be removed from your carry-on luggage and placed in a dedicated screening bin with nothing underneath or on top. Power banks, spare lithium-ion batteries, and rechargeable devices must remain in your carry-on luggage and are strictly forbidden in checked baggage due to FAA cargo fire safety protocols. Turn off high-capacity battery units to prevent accidental activation during flight.`;
+  }
+  if (cat.includes('medicine') || cat.includes('health')) {
+    return `Medication and medical devices such as ${item.name.toLowerCase()} receive special consideration from TSA security personnel. Inform the officer at the start of the screening belt if you are carrying prescription drugs, liquid pharmaceuticals, or specialized equipment. Medical items are not required to fit inside a 3-1-1 liquids bag. Officers may visually inspect the containers, test for trace explosives, or ask you to open non-sterile outer packaging while ensuring your medical items remain sanitary.`;
+  }
+  if (cat.includes('tool') || cat.includes('camping') || cat.includes('sports')) {
+    return `Security officers evaluate ${item.name.toLowerCase()} under strict hazard criteria. Items with sharp edges, heavy weight, or weaponized potential will trigger an automatic secondary bag inspection. If ${item.name.toLowerCase()} is prohibited in carry-on bags, attempting to pass through the checkpoint with it will lead to mandatory confiscation. Ensure tools under 7 inches, sports equipment, or camping gear are clearly accessible in your bag if permitted, or securely wrapped inside checked luggage.`;
+  }
+  return `At the airport screening lane, ${item.name.toLowerCase()} will pass through standard X-ray or CT scanning equipment. Keep ${item.name.toLowerCase()} neatly arranged in your luggage so officers can get a clear image. If an item appears opaque or clustered with wires or dense materials on the monitor, a secondary manual bag search will be conducted. Cooperate with TSA personnel and allow them to inspect the item without opening sealed packaging yourself.`;
+}
+
+export function getRegulatoryDetails(item: any): string {
+  const cat = item.category.toLowerCase();
+  if (cat.includes('electronic') || cat.includes('battery')) {
+    return `Under Federal Aviation Administration (FAA) HazMat safety regulations (49 CFR § 175.10(a)(18)) and IATA Dangerous Goods Regulations, lithium-ion batteries powering ${item.name.toLowerCase()} are capped at 100 Watt-hours (Wh) per battery for standard carry-on. Spare batteries between 100 Wh and 160 Wh require explicit airline approval. Uninstalled lithium batteries are strictly prohibited in checked cargo holds because cargo fires involving lithium chemistries cannot be easily extinguished in flight.`;
+  }
+  if (cat.includes('liquid') || cat.includes('beauty') || cat.includes('personal-care')) {
+    return `Title 49 of the Code of Federal Regulations (§ 1540.111) dictates the 3-1-1 liquids rule for passenger cabin baggage. Containers carrying ${item.name.toLowerCase()} must be 3.4 fluid ounces (100 milliliters) or smaller by capacity. Larger containers that are only partially full are still prohibited in cabin baggage unless they fall under medical or infant care exemptions. Containers larger than 3.4 oz must be packed in checked luggage.`;
+  }
+  if (cat.includes('medicine') || cat.includes('health')) {
+    return `The TSA operates under 49 CFR § 1544.219 guidelines permitting medically necessary liquids, gels, and aerosols in reasonable quantities exceeding standard 3.4 oz limits. While prescription labels matching your photo ID are not strictly legally required by federal law, carrying original labeled pharmacy packaging drastically reduces checkpoint screening friction.`;
+  }
+  return `Carriage of ${item.name.toLowerCase()} is governed by TSA security directives under 49 CFR § 1540.111 regarding passenger screening and baggage security. Security rules distinguish sharply between accessible passenger cabin space (where items that could serve as weapons or hazards are prohibited) and cargo hold baggage (where items are safely stowed during flight).`;
+}
+
+export function getAirlineDifferences(item: any): string {
+  return `While TSA establishes baseline security screening at U.S. airports, individual airlines reserve the right to enforce more stringent baggage policies for ${item.name.toLowerCase()}. Legacy U.S. carriers like Delta, United, and American Airlines generally align directly with TSA standards. However, ultra-low-cost carriers (such as Spirit or Frontier) and international airlines (including Ryanair, Lufthansa, and Emirates) strictly enforce cabin bag dimensions and weight limits (typically 7 kg to 10 kg total carry-on allowance). If traveling internationally, foreign aviation authorities like EASA (European Union) or CAA (United Kingdom) may have additional custom rules regarding ${item.category.toLowerCase()} items.`;
+}
+
+export function getStepByStepPackingGuide(item: any): string[] {
+  const isCarryOnAllowed = item.carryOn.status === 'ALLOWED' || item.carryOn.status === 'RESTRICTED';
+  if (isCarryOnAllowed) {
+    return [
+      `Check container size or battery specifications to verify ${item.name.toLowerCase()} meets TSA carry-on limits.`,
+      `Place ${item.name.toLowerCase()} in a protective case or clear pouch near the top of your carry-on bag for quick access.`,
+      `If ${item.name.toLowerCase()} features a power switch or heating element, ensure it is completely powered off or safety-locked to prevent accidental activation during travel.`,
+      `At the security line, remove ${item.name.toLowerCase()} from your main bag only if requested by officers or if it contains large electronics/liquids.`,
+      `Store your bag in the overhead compartment or under the seat in front of you once boarded.`
+    ];
+  }
+  return [
+    `Verify that ${item.name.toLowerCase()} does not contain uninstalled lithium batteries or prohibited HAZMAT elements before placing in hold luggage.`,
+    `Wrap ${item.name.toLowerCase()} in bubble wrap, soft apparel, or a cushioned travel case to protect against rough mechanical baggage sorting systems.`,
+    `Pack the item deep in the center of your hardshell or soft checked suitcase away from outer zippers.`,
+    `Lock your suitcase using a TSA-approved combination lock so inspectors can re-seal your bag if selected for random audit.`,
+    `Confirm your checked bag weight stays under your airline's maximum limit (usually 50 lbs / 23 kg) at ticket check-in.`
+  ];
+}
+
+export function getExpandedItemFAQs(item: any): Array<{ question: string; answer: string }> {
+  const name = item.name.toLowerCase();
+  const cat = item.category.toLowerCase();
+  
+  return [
+    {
+      question: `Is ${name} allowed on a plane in 2026?`,
+      answer: `Yes, ${name} is ${item.carryOn.status.toLowerCase().replace('_', ' ')} in carry-on cabin baggage and ${item.checkedBag.status.toLowerCase().replace('_', ' ')} in checked hold luggage according to official TSA regulations. ${item.carryOn.reason}`
+    },
+    {
+      question: `Can I put ${name} in my carry-on bag?`,
+      answer: `${item.carryOn.status === 'ALLOWED' ? `Yes, ${name} is fully permitted in your carry-on bag.` : item.carryOn.status === 'RESTRICTED' ? `Yes, but ${name} is subject to specific restrictions in carry-on luggage.` : `No, ${name} is prohibited in carry-on bags.`} ${item.carryOn.conditions && item.carryOn.conditions.length > 0 ? item.carryOn.conditions.join(' ') : 'Ensure it is packed safely and complies with security guidelines.'}`
+    },
+    {
+      question: `Can I pack ${name} in checked luggage?`,
+      answer: `${item.checkedBag.status === 'ALLOWED' ? `Yes, ${name} can be safely packed in your checked hold bag without quantity restrictions.` : item.checkedBag.status === 'RESTRICTED' ? `Yes, ${name} is permitted in checked bags under strict conditions.` : `No, ${name} cannot be checked in cargo baggage.`} ${item.checkedBag.reason}`
+    },
+    {
+      question: `What happens if security officers flag ${name} at the airport?`,
+      answer: `If a TSA officer flags ${name} during X-ray inspection, your bag will be pulled aside for manual inspection. The officer will inspect the item, potentially test it for explosive residue, and verify compliance. The final decision always rests with the TSA officer on duty.`
+    },
+    {
+      question: `Do international baggage rules for ${name} differ from TSA rules?`,
+      answer: `While U.S. TSA rules cover all domestic flights, foreign aviation agencies (such as EASA in Europe or CAA in the UK) may enforce slight variations for ${cat} items. Always verify the rules of your destination country and transit airports before embarking on international flights.`
+    }
+  ];
+}
+
 // ==========================================
 // Category Page Generators
 // ==========================================

@@ -23,6 +23,13 @@ Disallow: /items/page/
 Crawl-delay: 1
 
 # ─────────────────────────────────────────────────────────────────────────────
+# 1B. MEDIAPARTNERS-GOOGLE — Google AdSense Crawler
+# ─────────────────────────────────────────────────────────────────────────────
+User-agent: Mediapartners-Google
+Allow: /
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # 2. GOOGLEBOT-IMAGE — Google Images crawler
 # ─────────────────────────────────────────────────────────────────────────────
 User-agent: Googlebot-Image

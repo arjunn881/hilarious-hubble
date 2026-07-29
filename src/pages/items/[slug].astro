@@ -9,7 +9,12 @@ import {
   getExceptions, 
   getInternationalConsiderations, 
   getAlternativeItems, 
-  getRelatedGuides 
+  getRelatedGuides,
+  getScreeningProcedure,
+  getRegulatoryDetails,
+  getAirlineDifferences,
+  getStepByStepPackingGuide,
+  getExpandedItemFAQs
 } from "../../lib/contentGenerator";
 import EEATBanner from "../../components/seo/EEATBanner.astro";
 import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
@@ -35,6 +40,12 @@ const exceptions = getExceptions(item);
 const internationalConsiderations = getInternationalConsiderations(item);
 const alternativeItems = getAlternativeItems(item);
 const itemRelatedGuides = getRelatedGuides(item);
+
+const screeningProcedure = getScreeningProcedure(item);
+const regulatoryDetails = getRegulatoryDetails(item);
+const airlineDifferences = getAirlineDifferences(item);
+const stepByStepPacking = getStepByStepPackingGuide(item);
+const itemFaqs = getExpandedItemFAQs(item);
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
@@ -225,32 +236,14 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
       },
       {
         "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": faq1Question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq1Answer
-            }
-          },
-          {
-            "@type": "Question",
-            "name": faq2Question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq2Answer
-            }
-          },
-          {
-            "@type": "Question",
-            "name": faq3Question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq3Answer
-            }
+        "mainEntity": itemFaqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
           }
-        ]
+        }))
       }
     ]
   })} />
@@ -445,8 +438,59 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
       </section>
     )}
 
+    <!-- Step-by-Step Packing Guide -->
+    <section class="bg-canvas border border-hairline rounded-md p-6 shadow-level-2 mb-10">
+      <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-4 flex items-center gap-2">
+        <svg class="w-4 h-4 text-link" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/><path d="M10 12h.01"/></svg>
+        Step-by-Step Packing Instructions for {item.name}
+      </h3>
+      <ol class="space-y-3" role="list">
+        {stepByStepPacking.map((step, idx) => (
+          <li class="flex items-start gap-3 text-sm text-body">
+            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-link-bg-soft border border-link/25 flex items-center justify-center font-mono text-xs font-bold text-link-deep mt-0.5">
+              {idx + 1}
+            </span>
+            <span class="leading-relaxed mt-0.5">{step}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <!-- Deep Security & Regulatory Breakdown -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <section class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
+        <h3 class="text-sm font-semibold tracking-[-0.3px] text-ink mb-3 flex items-center gap-2">
+          <ShieldAlert class="w-4 h-4 text-link" />
+          TSA Security Screening Procedure
+        </h3>
+        <p class="text-xs text-body leading-[1.75]">
+          {screeningProcedure}
+        </p>
+      </section>
+
+      <section class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
+        <h3 class="text-sm font-semibold tracking-[-0.3px] text-ink mb-3 flex items-center gap-2">
+          <FileText class="w-4 h-4 text-link" />
+          Federal Aviation & HazMat Regulations
+        </h3>
+        <p class="text-xs text-body leading-[1.75]">
+          {regulatoryDetails}
+        </p>
+      </section>
+    </div>
+
     <!-- Deep SEO Semantic Sections -->
     <div class="grid grid-cols-1 gap-8 mb-10">
+      <section>
+        <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3 flex items-center gap-2">
+          <Globe class="w-4 h-4 text-mute" />
+          Airline & International Rule Variations
+        </h3>
+        <p class="text-sm text-body leading-[1.7]">
+          {airlineDifferences}
+        </p>
+      </section>
+
       <section>
         <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3 flex items-center gap-2">
           <AlertTriangle class="w-4 h-4 text-mute" />
@@ -477,41 +521,23 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
       </section>
     </div>
 
-    <!-- FAQ Accordions complying with Web Interface Guidelines (Zero JS details layout) -->
+    <!-- Expanded FAQ Accordions -->
     <section class="mb-10">
       <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-6">
-        Frequently Asked Questions
+        Frequently Asked Questions About {item.name}
       </h3>
       <div class="space-y-4">
-        <details class="group bg-canvas border border-hairline rounded-md p-4 transition-all" open>
-          <summary class="flex justify-between items-center font-medium text-sm text-ink cursor-pointer list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1 rounded-sm">
-            <span>{faq1Question}</span>
-            <span class="transition-transform group-open:rotate-180 text-mute text-xs">▼</span>
-          </summary>
-          <p class="text-sm text-body mt-3 leading-[1.6]">
-            {faq1Answer}
-          </p>
-        </details>
-
-        <details class="group bg-canvas border border-hairline rounded-md p-4 transition-all">
-          <summary class="flex justify-between items-center font-medium text-sm text-ink cursor-pointer list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1 rounded-sm">
-            <span>{faq2Question}</span>
-            <span class="transition-transform group-open:rotate-180 text-mute text-xs">▼</span>
-          </summary>
-          <p class="text-sm text-body mt-3 leading-[1.6]">
-            {faq2Answer}
-          </p>
-        </details>
-
-        <details class="group bg-canvas border border-hairline rounded-md p-4 transition-all">
-          <summary class="flex justify-between items-center font-medium text-sm text-ink cursor-pointer list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1 rounded-sm">
-            <span>{faq3Question}</span>
-            <span class="transition-transform group-open:rotate-180 text-mute text-xs">▼</span>
-          </summary>
-          <p class="text-sm text-body mt-3 leading-[1.6]">
-            {faq3Answer}
-          </p>
-        </details>
+        {itemFaqs.map((faq, idx) => (
+          <details class="group bg-canvas border border-hairline rounded-md p-4 transition-all" open={idx === 0}>
+            <summary class="flex justify-between items-center font-medium text-sm text-ink cursor-pointer list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1 rounded-sm">
+              <span>{faq.question}</span>
+              <span class="transition-transform group-open:rotate-180 text-mute text-xs">▼</span>
+            </summary>
+            <p class="text-sm text-body mt-3 leading-[1.6]">
+              {faq.answer}
+            </p>
+          </details>
+        ))}
       </div>
     </section>
 
