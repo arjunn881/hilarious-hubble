@@ -126,7 +126,7 @@ export class RuleEngine {
     if (slug === 'power-bank' && list === 'checked-bag') {
       return {
         status: 'DANGER',
-        message: '⚠️ Power banks must travel in your Carry-on cabin bag. Prohibited in checked luggage due to fire risk.'
+        message: 'Power banks must travel in your Carry-on cabin bag. Prohibited in checked luggage due to fire risk.'
       };
     }
 
@@ -134,7 +134,7 @@ export class RuleEngine {
     if (cat === 'liquids' && (list === 'carry-on' || list === 'personal-item')) {
       return {
         status: 'WARNING',
-        message: '⚠️ Liquids inside cabin luggage must follow the 3-1-1 rule (containers under 3.4 oz / 100ml in a clear pouch).'
+        message: 'Liquids inside cabin luggage must follow the 3-1-1 rule (containers under 3.4 oz / 100ml in a clear pouch).'
       };
     }
 
@@ -144,7 +144,7 @@ export class RuleEngine {
       if (name.includes("hammer") || name.includes("knife") || name.includes("peg") || name.includes("bat") || name.includes("cutter") || name.includes("axe")) {
         return {
           status: 'DANGER',
-          message: '❌ Bladed tools and sports clubs are strictly prohibited in the cabin. Move to Checked Bag.'
+          message: 'Bladed tools and sports clubs are strictly prohibited in the cabin. Move to Checked Bag.'
         };
       }
     }
@@ -154,25 +154,25 @@ export class RuleEngine {
       if ((list === 'carry-on' || list === 'personal-item') && itemData.carryOn.status === 'NOT_ALLOWED') {
         return {
           status: 'DANGER',
-          message: `❌ ${itemData.name} is prohibited in cabin bags. Move to Checked Bag.`
+          message: `${itemData.name} is prohibited in cabin bags. Move to Checked Bag.`
         };
       }
       if (list === 'checked-bag' && itemData.checkedBag.status === 'NOT_ALLOWED') {
         return {
           status: 'DANGER',
-          message: `❌ ${itemData.name} is prohibited in checked cargo holds. Move to Carry-on.`
+          message: `${itemData.name} is prohibited in checked cargo holds. Move to Carry-on.`
         };
       }
       if ((list === 'carry-on' || list === 'personal-item') && itemData.carryOn.status === 'RESTRICTED') {
         return {
           status: 'WARNING',
-          message: `⚠️ TSA restrictions apply: ${itemData.carryOn.reason}`
+          message: `TSA restrictions apply: ${itemData.carryOn.reason}`
         };
       }
       if (list === 'checked-bag' && itemData.checkedBag.status === 'RESTRICTED') {
         return {
           status: 'WARNING',
-          message: `⚠️ hold baggage restrictions apply: ${itemData.checkedBag.reason}`
+          message: `Hold baggage restrictions apply: ${itemData.checkedBag.reason}`
         };
       }
     }

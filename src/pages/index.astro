@@ -103,16 +103,16 @@ function getStatusClass(status: 'allowed' | 'prohibited' | 'restricted') {
 
 function getCarryOnLabel(status: string) {
   const s = status?.toUpperCase();
-  if (s === 'ALLOWED') return '✅ Allowed';
-  if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') return '❌ Not Allowed';
-  return '⚠️ Restricted';
+  if (s === 'ALLOWED') return 'Allowed';
+  if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') return 'Not Allowed';
+  return 'Restricted';
 }
 
 function getCheckedLabel(status: string) {
   const s = status?.toUpperCase();
-  if (s === 'ALLOWED') return '✅ Allowed';
-  if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') return '❌ Not Allowed';
-  return '⚠️ Restricted';
+  if (s === 'ALLOWED') return 'Allowed';
+  if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') return 'Not Allowed';
+  return 'Restricted';
 }
 
 function getStatusBadgeClass(status: string) {
@@ -208,33 +208,59 @@ function getStatusBadgeClass(status: string) {
        + inline search result preview card
   ════════════════════════════════════════════════════════════════ -->
   <section class="relative overflow-hidden bg-canvas border-b border-hairline" id="hero">
-    <!-- Mesh Gradient Decorator -->
+    <!-- Mesh Gradient & Radar Sweep Background -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.10]" aria-hidden="true" style="background: radial-gradient(80% 60% at 50% -5%, #007cf0 0%, #7928ca 40%, #ff0080 70%, #ff4d4d 100%); filter: blur(72px);"></div>
+
+    <!-- Aviation Animated Background Elements -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
+      <!-- Radar Scanner Sweep Circle -->
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full border border-link/10 dark:border-link/20 opacity-30 flex items-center justify-center">
+        <div class="w-[500px] h-[500px] rounded-full border border-link/10 dark:border-link/20 flex items-center justify-center">
+          <div class="w-[300px] h-[300px] rounded-full border border-link/10 dark:border-link/20"></div>
+        </div>
+        <!-- Rotating Radar Sweep Line -->
+        <div class="absolute inset-0 animate-radar-sweep opacity-20 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(0,112,243,0.4)_0deg,transparent_60deg)] rounded-full"></div>
+      </div>
+
+      <!-- Animated Airplane Contrail & Vector Flight Path -->
+      <svg class="absolute top-12 left-0 w-full h-48 opacity-35 dark:opacity-45" viewBox="0 0 1200 200" fill="none">
+        <path d="M-50 150 Q 300 30, 600 120 T 1250 40" stroke="url(#flightGrad)" stroke-width="2.5" class="animate-contrail" />
+        <defs>
+          <linearGradient id="flightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#0070f3" stop-opacity="0.1" />
+            <stop offset="50%" stop-color="#0070f3" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#7928ca" stop-opacity="0.2" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
 
     <div class="relative z-10">
       <!-- Top hero: headline + search bar -->
-      <div class="max-w-[720px] mx-auto px-4 pt-28 pb-10 text-center flex flex-col items-center">
+      <div class="max-w-[760px] mx-auto px-4 pt-24 pb-12 text-center flex flex-col items-center">
 
         <!-- Eyebrow Badge -->
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-medium rounded-full bg-canvas-soft border border-hairline text-body mb-6 hover:border-hairline-strong transition-all select-none">
-          <span class="w-1.5 h-1.5 rounded-full bg-link animate-pulse"></span>
-          TSA · FAA · IATA Database
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 text-xs font-mono font-medium rounded-full bg-canvas-soft border border-hairline text-body mb-6 hover:border-hairline-strong transition-all select-none shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-link animate-pulse"></span>
+          <span>TSA · FAA · IATA Aviation Baggage Rules</span>
         </div>
 
-        <!-- Brand mark -->
-        <div class="flex items-center gap-2 mb-5">
-          <span class="text-3xl" aria-hidden="true">✈️</span>
-          <span class="font-semibold text-lg tracking-[-0.4px] text-ink font-mono">BringOnPlane</span>
+        <!-- Brand mark & Aviation Jet Icon Badge -->
+        <div class="flex items-center gap-2.5 mb-6 px-4 py-1.5 rounded-full bg-link-bg-soft/70 dark:bg-link-bg-soft/20 border border-link/20 shadow-sm animate-float-plane">
+          <div class="w-7 h-7 rounded-full bg-link text-white flex items-center justify-center shadow-md">
+            <PlaneTakeoff class="w-4 h-4" aria-hidden="true" />
+          </div>
+          <span class="font-semibold text-xs md:text-sm tracking-[-0.3px] text-ink font-mono">BringOnPlane Aviation Hub</span>
         </div>
 
         <!-- Main Headline -->
-        <h1 class="text-4xl md:text-[52px] font-semibold tracking-[-2px] leading-[1.08] text-ink mb-4 text-balance">
+        <h1 class="text-4xl md:text-[54px] font-semibold tracking-[-2px] leading-[1.08] text-ink mb-4 text-balance">
           Can I bring this on a plane?
         </h1>
 
         <!-- Subtitle -->
-        <p class="text-base md:text-lg text-body font-normal leading-[1.65] max-w-[560px] mb-8 text-pretty">
-          Instantly check TSA carry-on &amp; checked bag rules for any item. Simple, fast, always up-to-date.
+        <p class="text-base md:text-lg text-body font-normal leading-[1.65] max-w-[580px] mb-8 text-pretty">
+          Instant airport security &amp; TSA baggage rule check for cabin carry-ons and checked cargo holds.
         </p>
 
         <!-- Large Search Bar -->

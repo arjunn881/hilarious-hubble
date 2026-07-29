@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { Mail, MapPin, Clock, MessageSquare, Send, HelpCircle, ExternalLink } from "@lucide/astro";
+import { Mail, MapPin, Clock, MessageSquare, Send, HelpCircle, ExternalLink, CheckCircle2, XCircle } from "@lucide/astro";
 ---
 
 <Layout
@@ -171,11 +171,13 @@ import { Mail, MapPin, Clock, MessageSquare, Send, HelpCircle, ExternalLink } fr
             </button>
 
             <!-- Status messages -->
-            <div id="cf-success" class="hidden text-xs text-success bg-success-soft border border-success/25 rounded-md px-4 py-3">
-              ✅ Message sent! We'll get back to you within 48 hours.
+            <div id="cf-success" class="hidden text-xs text-success bg-success-soft border border-success/25 rounded-md px-4 py-3 items-center gap-2">
+              <CheckCircle2 class="w-4 h-4 flex-shrink-0" />
+              <span>Message sent! We'll get back to you within 48 hours.</span>
             </div>
-            <div id="cf-error" class="hidden text-xs text-error bg-error-soft border border-error/25 rounded-md px-4 py-3">
-              ❌ Something went wrong. Please email us directly at hello@bringonplane.com
+            <div id="cf-error" class="hidden text-xs text-error bg-error-soft border border-error/25 rounded-md px-4 py-3 items-center gap-2">
+              <XCircle class="w-4 h-4 flex-shrink-0" />
+              <span>Something went wrong. Please email us directly at hello@bringonplane.com</span>
             </div>
           </form>
         </div>
