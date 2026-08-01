@@ -207,140 +207,137 @@ function getStatusBadgeClass(status: string) {
        HERO — redesigned per mockup: focused search + popular chips
        + inline search result preview card
   ════════════════════════════════════════════════════════════════ -->
-  <section class="relative overflow-hidden bg-[#0f172a] text-white border-b border-slate-800" id="hero">
-    <!-- Mesh Gradient & Radar Sweep Background -->
-    <div class="absolute inset-0 pointer-events-none opacity-[0.20]" aria-hidden="true" style="background: radial-gradient(80% 60% at 50% -5%, #1d4ed8 0%, #0f172a 70%); filter: blur(72px);"></div>
+  <section class="relative overflow-hidden bg-slate-950 text-white border-b border-slate-800/80 max-w-full" id="hero">
+    <!-- Mesh Gradient & Ambient Glow Background -->
+    <div class="absolute inset-0 pointer-events-none opacity-30 select-none" aria-hidden="true" style="background: radial-gradient(circle at 50% 10%, #1e40af 0%, #0f172a 60%, #020617 100%); filter: blur(60px);"></div>
 
-    <!-- Animated Radar Scanner & Flight Path Contrail Graphics -->
+    <!-- Animated Radar Scanner & Contrail Line -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
-      <!-- Radar Scanner Sweep Circle -->
-      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[750px] h-[750px] rounded-full border border-blue-500/20 opacity-40 flex items-center justify-center">
-        <div class="w-[550px] h-[550px] rounded-full border border-blue-500/20 flex items-center justify-center">
-          <div class="w-[350px] h-[350px] rounded-full border border-blue-500/20"></div>
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] sm:w-[750px] h-[600px] sm:h-[750px] rounded-full border border-blue-500/15 opacity-30 flex items-center justify-center">
+        <div class="w-[400px] sm:w-[550px] h-[400px] sm:h-[550px] rounded-full border border-blue-500/15 flex items-center justify-center">
+          <div class="w-[250px] sm:w-[350px] h-[250px] sm:h-[350px] rounded-full border border-blue-500/15"></div>
         </div>
-        <!-- Rotating Radar Sweep Line -->
-        <div class="absolute inset-0 animate-radar-sweep opacity-30 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(37,99,235,0.6)_0deg,transparent_60deg)] rounded-full"></div>
+        <div class="absolute inset-0 animate-radar-sweep opacity-20 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(37,99,235,0.5)_0deg,transparent_60deg)] rounded-full"></div>
       </div>
-
-      <!-- Animated SVG Flight Path Contrail Line -->
-      <svg class="absolute top-8 left-0 w-full h-56 opacity-40" viewBox="0 0 1200 200" fill="none">
-        <path d="M-50 150 Q 300 30, 600 120 T 1250 40" stroke="url(#flightGrad)" stroke-width="2.5" class="animate-contrail" />
-        <defs>
-          <linearGradient id="flightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#2563eb" stop-opacity="0.1" />
-            <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.9" />
-            <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.2" />
-          </linearGradient>
-        </defs>
-      </svg>
     </div>
 
-    <div class="relative z-10 max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 py-16 text-center flex flex-col items-center">
+    <div class="relative z-10 max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-center flex flex-col items-center">
 
-      <!-- Eyebrow Badge with Floating Jet Icon -->
-      <div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/80 border border-blue-500/30 text-blue-300 mb-6 select-none shadow-sm animate-float-plane">
-        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-        <span class="font-mono text-xs font-semibold uppercase tracking-wider">TSA · FAA · IATA Baggage Rules Directory</span>
+      <!-- Eyebrow Badge -->
+      <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 mb-5 select-none shadow-sm animate-float-plane max-w-full">
+        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse flex-shrink-0"></span>
+        <span class="font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-wider truncate">Official TSA · FAA · IATA Baggage Directory</span>
       </div>
 
       <!-- Main Headline -->
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white mb-4 max-w-[900px] text-balance">
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] text-white mb-4 max-w-[900px] text-balance">
         Can I Bring This On A Plane?
       </h1>
 
-      <!-- Featured Snippet Answer (Google Position-0 target) -->
-      <p class="text-sm text-blue-200/80 font-mono max-w-[680px] mb-3 leading-snug text-pretty">
-        <strong class="text-blue-100">Quick Answer:</strong> Search any item below to instantly see if it's <span class="text-emerald-400 font-semibold">✓ Allowed</span>, <span class="text-amber-400 font-semibold">⚠ Restricted</span>, or <span class="text-red-400 font-semibold">✗ Banned</span> — in carry-on bags and checked bags — according to TSA rules.
-      </p>
-
-      <!-- Subtitle -->
-      <p class="text-base md:text-xl text-slate-300 font-normal leading-[1.65] max-w-[720px] mb-10 text-pretty">
-        Free TSA carry-on checker for items. Get a color-coded verdict before you pack.
-      </p>
-
-        <!-- Large Search Bar -->
-        <div class="w-full max-w-[580px] relative mb-6 group focus-within:ring-2 focus-within:ring-link/10 rounded-xl transition-all" id="homepage-search-container">
-          <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-mute group-focus-within:text-link transition-colors z-10">
-            <Search class="w-5 h-5" aria-hidden="true" />
-          </div>
-          <input 
-            type="text" 
-            id="homepage-search-input"
-            placeholder="Search an item..." 
-            autocomplete="off" 
-            spellcheck="false"
-            class="w-full h-14 pl-12 pr-24 bg-canvas border border-hairline hover:border-hairline-strong focus:border-link rounded-xl text-sm text-ink placeholder:text-mute shadow-level-3 focus:shadow-level-4 outline-none transition-all"
-          />
-          
-          <!-- Clear Button (hidden by default) -->
-          <button 
-            type="button" 
-            id="homepage-search-clear" 
-            class="absolute inset-y-0 right-14 flex items-center text-mute hover:text-ink hidden cursor-pointer px-2.5 transition-colors z-10" 
-            aria-label="Clear search"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <line x1="18" x2="6" y1="6" y2="18"></line>
-              <line x1="6" x2="18" y1="6" y2="18"></line>
-            </svg>
-          </button>
-
-          <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none gap-1 z-10">
-            <kbd class="hidden sm:inline-flex items-center justify-center h-6 px-1.5 text-[10px] font-mono font-medium border border-hairline bg-canvas-soft text-mute rounded-xs shadow-sm">⌘</kbd>
-            <kbd class="hidden sm:inline-flex items-center justify-center h-6 px-1.5 text-[10px] font-mono font-medium border border-hairline bg-canvas-soft text-mute rounded-xs shadow-sm">K</kbd>
-          </div>
-          
-          <!-- Suggestions Dropdown (floating below the input) -->
-          <div 
-            id="homepage-suggestions" 
-            class="absolute top-[calc(100%+8px)] left-0 right-0 z-30 hidden bg-canvas/95 backdrop-blur-md border border-hairline rounded-xl shadow-level-5 overflow-hidden max-h-[300px] overflow-y-auto text-left transition-all"
-          >
-            <!-- Suggestions populated dynamically -->
-          </div>
+      <!-- Featured Snippet Quick Answer Box -->
+      <div class="w-full max-w-[680px] bg-slate-900/80 border border-slate-800 backdrop-blur-md rounded-2xl p-4 sm:p-5 text-slate-300 text-xs sm:text-sm leading-relaxed mb-8 shadow-xl text-left">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue-400">Quick Answer & Rules Checker</span>
         </div>
-
-        <!-- Popular Searches chips (10 items) -->
-        <div class="w-full">
-          <p class="text-xs text-mute font-mono mb-3 text-left">Popular Searches</p>
-          <div class="flex flex-wrap gap-2" id="popular-chips" role="list">
-            {popularItems.map((chip, i) => (
-              <button
-                type="button"
-                role="listitem"
-                data-chip-index={i}
-                data-chip-slug={chip.slug}
-                class="popular-chip px-3.5 py-1.5 rounded-full border border-hairline bg-canvas text-xs font-medium text-body hover:border-ink hover:text-ink hover:bg-canvas-soft-2 cursor-pointer transition-all select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1"
-                aria-pressed="false"
-              >
-                {chip.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <!-- Quick-Click Category Grid (Feature 3) -->
-        <div class="w-full mt-6 pt-6 border-t border-white/10">
-          <p class="text-xs text-slate-400 font-mono mb-3 text-left">Browse by Category</p>
-          <div class="grid grid-cols-3 sm:grid-cols-6 gap-2">
-            {[
-              { label: "Liquids", slug: "liquids", color: "bg-blue-500/15 border-blue-500/30 text-blue-300 hover:bg-blue-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>` },
-              { label: "Electronics", slug: "electronics", color: "bg-purple-500/15 border-purple-500/30 text-purple-300 hover:bg-purple-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>` },
-              { label: "Food", slug: "food", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>` },
-              { label: "Medicine", slug: "medicine", color: "bg-red-500/15 border-red-500/30 text-red-300 hover:bg-red-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>` },
-              { label: "Tools", slug: "tools", color: "bg-orange-500/15 border-orange-500/30 text-orange-300 hover:bg-orange-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>` },
-              { label: "Personal Care", slug: "personal-care", color: "bg-pink-500/15 border-pink-500/30 text-pink-300 hover:bg-pink-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>` },
-            ].map(cat => (
-              <a
-                href={`/category/${cat.slug}`}
-                class={`flex flex-col items-center gap-1.5 px-2 py-3 rounded-lg border text-center cursor-pointer transition-all select-none ${cat.color}`}
-              >
-                <span set:html={cat.icon} />
-                <span class="text-[10px] font-semibold leading-tight">{cat.label}</span>
-              </a>
-            ))}
-          </div>
+        <p class="text-slate-300 leading-normal mb-3">
+          Type any item name into the tool below to see instant official TSA verdicts:
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs font-medium">
+          <span class="px-2.5 py-1 rounded-md bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ✓ Allowed in Carry-on
+          </span>
+          <span class="px-2.5 py-1 rounded-md bg-amber-950/80 border border-amber-500/40 text-amber-300 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> ⚠ Restricted / Conditions
+          </span>
+          <span class="px-2.5 py-1 rounded-md bg-red-950/80 border border-red-500/40 text-red-300 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> ✗ Prohibited in Carry-on
+          </span>
         </div>
       </div>
+
+      <!-- Large Search Bar -->
+      <div class="w-full max-w-[580px] relative mb-6 group" id="homepage-search-container">
+        <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-blue-400 transition-colors z-10">
+          <Search class="w-5 h-5" aria-hidden="true" />
+        </div>
+        <input 
+          type="text" 
+          id="homepage-search-input"
+          placeholder="Type any item (e.g. Razor, Power Bank, Shampoo)..." 
+          autocomplete="off" 
+          spellcheck="false"
+          class="w-full h-14 pl-12 pr-20 sm:pr-24 bg-slate-900/90 border border-slate-700 hover:border-slate-600 focus:border-blue-500 rounded-2xl text-sm sm:text-base text-white placeholder:text-slate-500 shadow-xl focus:shadow-2xl focus:shadow-blue-500/10 outline-none transition-all"
+        />
+        
+        <!-- Clear Button -->
+        <button 
+          type="button" 
+          id="homepage-search-clear" 
+          class="absolute inset-y-0 right-12 sm:right-16 flex items-center text-slate-400 hover:text-white hidden cursor-pointer px-2 transition-colors z-10" 
+          aria-label="Clear search"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="18" x2="6" y1="6" y2="18"></line>
+            <line x1="6" x2="18" y1="6" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none gap-1 z-10">
+          <kbd class="hidden sm:inline-flex items-center justify-center h-6 px-1.5 text-[10px] font-mono font-medium border border-slate-700 bg-slate-800 text-slate-300 rounded shadow-xs">⌘K</kbd>
+        </div>
+        
+        <!-- Suggestions Dropdown -->
+        <div 
+          id="homepage-suggestions" 
+          class="absolute top-[calc(100%+8px)] left-0 right-0 z-30 hidden bg-slate-900/95 backdrop-blur-xl border border-slate-700 rounded-2xl shadow-2xl overflow-hidden max-h-[320px] overflow-y-auto text-left transition-all"
+        >
+          <!-- Suggestions populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Popular Searches chips -->
+      <div class="w-full max-w-[580px] mb-8">
+        <p class="text-[11px] text-slate-400 font-mono mb-2.5 text-center sm:text-left uppercase tracking-wider font-semibold">Popular Searches</p>
+        <div class="flex flex-wrap justify-center sm:justify-start gap-2" id="popular-chips" role="list">
+          {popularItems.map((chip, i) => (
+            <button
+              type="button"
+              role="listitem"
+              data-chip-index={i}
+              data-chip-slug={chip.slug}
+              class="popular-chip px-3 py-1.5 rounded-xl border border-slate-700/80 bg-slate-900/80 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 hover:border-blue-500/50 cursor-pointer transition-all select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              aria-pressed="false"
+            >
+              {chip.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Quick-Click Category Grid -->
+      <div class="w-full max-w-[760px] pt-6 border-t border-slate-800/80">
+        <p class="text-[11px] text-slate-400 font-mono mb-3 text-center sm:text-left uppercase tracking-wider font-semibold">Browse by Category</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5">
+          {[
+            { label: "Liquids", slug: "liquids", color: "bg-blue-500/10 border-blue-500/25 text-blue-300 hover:bg-blue-500/20 hover:border-blue-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>` },
+            { label: "Electronics", slug: "electronics", color: "bg-purple-500/10 border-purple-500/25 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>` },
+            { label: "Food", slug: "food", color: "bg-emerald-500/10 border-emerald-500/25 text-emerald-300 hover:bg-emerald-500/20 hover:border-emerald-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>` },
+            { label: "Medicine", slug: "medicine", color: "bg-rose-500/10 border-rose-500/25 text-rose-300 hover:bg-rose-500/20 hover:border-rose-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>` },
+            { label: "Tools", slug: "tools", color: "bg-amber-500/10 border-amber-500/25 text-amber-300 hover:bg-amber-500/20 hover:border-amber-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>` },
+            { label: "Personal Care", slug: "personal-care", color: "bg-pink-500/10 border-pink-500/25 text-pink-300 hover:bg-pink-500/20 hover:border-pink-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>` },
+          ].map(cat => (
+            <a
+              href={`/category/${cat.slug}`}
+              class={`flex flex-col items-center gap-1.5 px-3 py-3 rounded-xl border text-center cursor-pointer transition-all duration-200 hover:-translate-y-0.5 select-none ${cat.color}`}
+            >
+              <span set:html={cat.icon} />
+              <span class="text-xs font-semibold leading-tight">{cat.label}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
 
       <!-- ── Inline Search Result Panel (hidden until a chip/search clicked) ── -->
       <div
