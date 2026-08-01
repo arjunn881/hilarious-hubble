@@ -454,40 +454,44 @@ function getStatusBadgeClass(status: string) {
       )} />
   </section>
 
-  <!-- ═══ FIRST-SIGHT TRUST & NAVIGATION STRIP ════════════════════════════ -->
-  <!-- This strip is visible immediately below the hero — no scrolling needed -->
-  <div class="w-full bg-canvas border-b border-hairline">
+  <!-- ═══ MANDATORY ADSENSE POLICY & Essential Site Links ═══════════════════════ -->
+  <div class="w-full bg-canvas border-b border-hairline py-8 select-none">
     <div class="max-w-[1200px] mx-auto px-4 md:px-6">
-      <!-- Top row: page quick-links -->
-      <div class="flex flex-wrap items-center justify-between gap-y-3 py-4 border-b border-hairline/40">
-        <div class="flex flex-wrap items-center gap-1">
-          {[
-            { label: "About Us", href: "/about" },
-            { label: "FAQ Guide", href: "/faq" },
-            { label: "Contact", href: "/contact" },
-            { label: "Travel Guides", href: "/guides" },
-            { label: "Airline Rules", href: "/airlines" },
-            { label: "Country Customs", href: "/countries" },
-            { label: "All Items A–Z", href: "/items" },
-          ].map(l => (
-            <a
-              href={l.href}
-              class="px-3 py-1 text-[11px] font-medium text-body hover:text-ink hover:bg-canvas-soft rounded-md border border-transparent hover:border-hairline transition-all whitespace-nowrap"
-            >
-              {l.label}
-            </a>
-          ))}
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-hairline">
+        <div>
+          <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Official Directives &amp; Compliance</span>
+          <h2 class="text-base font-bold text-ink tracking-tight">Essential Site Links &amp; AdSense Policy Pages</h2>
         </div>
-        <div class="flex items-center gap-3 text-[11px] text-mute font-mono flex-shrink-0">
-          <a href="/privacy-policy" class="hover:text-ink transition-colors">Privacy</a>
-          <span aria-hidden="true">&bull;</span>
-          <a href="/terms" class="hover:text-ink transition-colors">Terms</a>
-          <span aria-hidden="true">&bull;</span>
-          <div class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-success" aria-hidden="true"></span>
-            <span>TSA Live</span>
-          </div>
+        <div class="flex items-center gap-1.5 text-xs text-mute font-mono">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Google AdSense &amp; TSA Compliant</span>
         </div>
+      </div>
+
+      <!-- 6 Essential AdSense Required Pages Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+        {[
+          { label: "About Us", desc: "Our Mission & Team", href: "/about", icon: "ℹ️" },
+          { label: "Contact Us", desc: "Support & Inquiries", href: "/contact", icon: "✉️" },
+          { label: "FAQ Guide", desc: "Common TSA Questions", href: "/faq", icon: "❓" },
+          { label: "Privacy Policy", desc: "Data & Cookie Rules", href: "/privacy-policy", icon: "🔒" },
+          { label: "Terms of Use", desc: "Service Terms", href: "/terms", icon: "📜" },
+          { label: "Disclaimer", desc: "TSA Authority Notice", href: "/disclaimer", icon: "⚠️" },
+        ].map(p => (
+          <a
+            href={p.href}
+            class="group p-3 bg-canvas-soft hover:bg-link-bg-soft border border-hairline hover:border-link rounded-xl transition-all text-left flex flex-col justify-between"
+          >
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="text-sm">{p.icon}</span>
+              <span class="text-[10px] font-mono text-mute group-hover:text-link transition-colors">&rarr;</span>
+            </div>
+            <div>
+              <span class="block text-xs font-semibold text-ink group-hover:text-link transition-colors leading-tight">{p.label}</span>
+              <span class="text-[10px] text-mute block mt-0.5 leading-tight">{p.desc}</span>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </div>

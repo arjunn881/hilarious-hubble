@@ -5,10 +5,10 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Search Items", href: "/items" },
   { label: "Packing Assistant", href: "/checklist" },
-  { label: "Categories", href: "/#categories" },
   { label: "Travel Guides", href: "/guides" },
   { label: "FAQ", href: "/faq" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 ---
 
@@ -150,7 +150,7 @@ const navLinks = [
 
       <!-- Category Quick Links in Mobile Menu -->
       <div>
-        <p class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-3 px-1">Top Categories</p>
+        <p class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-3 px-1 font-semibold">Top Categories</p>
         <div class="grid grid-cols-2 gap-2">
           {[
             { name: "Liquids (3-1-1 Rule)", href: "/category/liquids" },
@@ -170,9 +170,22 @@ const navLinks = [
         </div>
       </div>
 
+      <!-- Essential Policy & AdSense Required Links in Mobile Menu -->
+      <div>
+        <p class="text-xs font-mono uppercase tracking-wider text-blue-400 mb-3 px-1 font-semibold">Essential Policies &amp; Directives</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          <a href="/about" class="mobile-nav-link p-2 bg-slate-800/80 hover:bg-blue-600 border border-slate-700 rounded-lg text-xs font-medium text-slate-200 hover:text-white transition-all text-center">About Us</a>
+          <a href="/contact" class="mobile-nav-link p-2 bg-slate-800/80 hover:bg-blue-600 border border-slate-700 rounded-lg text-xs font-medium text-slate-200 hover:text-white transition-all text-center">Contact Us</a>
+          <a href="/faq" class="mobile-nav-link p-2 bg-slate-800/80 hover:bg-blue-600 border border-slate-700 rounded-lg text-xs font-medium text-slate-200 hover:text-white transition-all text-center">FAQ Guide</a>
+          <a href="/privacy-policy" class="mobile-nav-link p-2 bg-slate-800/80 hover:bg-blue-600 border border-slate-700 rounded-lg text-xs font-medium text-slate-200 hover:text-white transition-all text-center">Privacy Policy</a>
+          <a href="/terms" class="mobile-nav-link p-2 bg-slate-800/80 hover:bg-blue-600 border border-slate-700 rounded-lg text-xs font-medium text-slate-200 hover:text-white transition-all text-center">Terms &amp; Conditions</a>
+          <a href="/disclaimer" class="mobile-nav-link p-2 bg-slate-800/80 hover:bg-blue-600 border border-slate-700 rounded-lg text-xs font-medium text-slate-200 hover:text-white transition-all text-center">Disclaimer</a>
+        </div>
+      </div>
+
       <!-- Footer Info in Mobile Menu -->
-      <div class="pt-4 text-center">
-        <p class="text-xs text-slate-400">Official TSA, FAA & IATA Rules Checker</p>
+      <div class="pt-4 text-center border-t border-slate-800">
+        <p class="text-xs text-slate-400">Official TSA, FAA &amp; IATA Rules Directory</p>
       </div>
 
     </div>
