@@ -1,0 +1,90 @@
+{
+  "id": "razor-blades",
+  "slug": "razor-blades",
+  "name": "Razor Blades",
+  "category": "Personal Care",
+  "subcategory": "Grooming",
+  "aliases": [
+    "spare blades",
+    "safety razor blades",
+    "blade cartridges",
+    "shaving blades"
+  ],
+  "keywords": [
+    "razor blades",
+    "blades",
+    "shaving",
+    "safety razor",
+    "spare blades"
+  ],
+  "description": "TSA rules for loose razor blades on planes.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Loose or detached razor blades are not allowed in carry-on baggage. Only blades fully enclosed in a cartridge razor or electric razor are permitted in carry-on.",
+    "conditions": [],
+    "exceptions": [
+      "Razor blades inside a safety razor cartridge are allowed"
+    ]
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Loose razor blades are allowed in checked baggage when properly packaged to prevent injury.",
+    "conditions": [
+      "Must be wrapped or packaged securely to prevent injury to baggage handlers"
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/razors",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring razor blades on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/razors",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Pack spare blades in your checked bag; only cartridge-enclosed blades may travel in carry-on",
+    "Wrap loose blades in cardboard or tape before placing in checked baggage"
+  ],
+  "relatedItems": [
+    "razor",
+    "safety-razor",
+    "straight-razor",
+    "disposable-razor"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring razor blades in my carry-on?",
+      "answer": "No. Loose, detached razor blades are not allowed in carry-on bags. They must go in checked baggage."
+    },
+    {
+      "question": "Can I bring razor blades in checked luggage?",
+      "answer": "Yes, loose razor blades are allowed in checked baggage when properly wrapped to prevent injury."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/razors"
+    }
+  ]
+}

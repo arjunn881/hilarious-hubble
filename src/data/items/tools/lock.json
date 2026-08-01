@@ -1,0 +1,88 @@
+{
+  "id": "lock",
+  "slug": "lock",
+  "name": "Lock",
+  "category": "Tools",
+  "subcategory": "Security",
+  "aliases": [
+    "padlock",
+    "tsa lock",
+    "combination lock",
+    "luggage lock",
+    "key lock"
+  ],
+  "keywords": [
+    "lock",
+    "padlock",
+    "tsa lock",
+    "combination lock",
+    "luggage lock",
+    "security"
+  ],
+  "description": "TSA rules for padlocks and luggage locks on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Padlocks and combination locks are allowed in carry-on and checked baggage. TSA-approved locks (with TSA key access) are recommended for checked bags.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Locks are allowed on checked baggage. TSA-approved locks are strongly recommended since TSA may need to open your bag for inspection.",
+    "conditions": [
+      "Use TSA-approved locks (marked with a red diamond TSA logo) to allow inspection without breaking the lock"
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring a lock on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Use only TSA-approved locks on checked baggage — non-TSA locks can be cut off during security inspection"
+  ],
+  "relatedItems": [
+    "passport",
+    "cash",
+    "jewelry"
+  ],
+  "faq": [
+    {
+      "question": "Can I use a lock on my checked luggage?",
+      "answer": "Yes, you can use a lock. TSA-approved locks (with the red diamond logo) are strongly recommended — TSA can open them with a master key without damaging them."
+    },
+    {
+      "question": "Can I bring a padlock in my carry-on?",
+      "answer": "Yes, padlocks are allowed in carry-on baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

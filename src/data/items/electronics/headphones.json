@@ -1,0 +1,88 @@
+{
+  "id": "headphones",
+  "slug": "headphones",
+  "name": "Headphones",
+  "category": "Electronics",
+  "subcategory": "Audio",
+  "aliases": [
+    "over-ear headphones",
+    "noise cancelling headphones",
+    "wireless headphones",
+    "sony headphones",
+    "bose headphones"
+  ],
+  "keywords": [
+    "headphones",
+    "over-ear",
+    "noise cancelling",
+    "wireless",
+    "audio",
+    "music",
+    "headset"
+  ],
+  "description": "TSA rules for headphones on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Headphones of all types (wired, wireless, noise-cancelling) are fully allowed in carry-on baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Headphones are allowed in checked baggage but carry-on is recommended to prevent damage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring headphones on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Carry headphones in your personal item or carry-on for easy in-flight access",
+    "Large over-ear headphones can go in checked baggage but risk damage"
+  ],
+  "relatedItems": [
+    "earbuds",
+    "smartphone",
+    "laptop"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring headphones on a plane?",
+      "answer": "Yes, all types of headphones (wired, wireless, noise-cancelling) are fully allowed in carry-on and checked bags."
+    },
+    {
+      "question": "Do I need to remove headphones at TSA security?",
+      "answer": "No, headphones do not need to be removed from your bag separately at TSA screening."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

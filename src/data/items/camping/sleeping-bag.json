@@ -1,0 +1,88 @@
+{
+  "id": "sleeping-bag",
+  "slug": "sleeping-bag",
+  "name": "Sleeping Bag",
+  "category": "Camping",
+  "subcategory": "Gear",
+  "aliases": [
+    "camp sleeping bag",
+    "travel sleeping bag",
+    "mummy bag",
+    "backpacking sleeping bag"
+  ],
+  "keywords": [
+    "sleeping bag",
+    "camp gear",
+    "backpacking",
+    "mummy bag",
+    "camping"
+  ],
+  "description": "TSA rules for sleeping bags on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Sleeping bags are allowed in carry-on baggage if they fit within the airline's overhead bin size limits. Most compressed sleeping bags fit as carry-on.",
+    "conditions": [
+      "Must fit within airline carry-on size limits when compressed",
+      "Bulky bags may need to be checked"
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Sleeping bags are fully allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring a sleeping bag on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Compress your sleeping bag into its stuff sack for carry-on to save space",
+    "Large sleeping bags are best checked in to avoid overhead bin space issues"
+  ],
+  "relatedItems": [
+    "tent-pegs",
+    "camping-stove",
+    "hiking-poles"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring a sleeping bag on a plane?",
+      "answer": "Yes, sleeping bags are allowed in carry-on and checked baggage. If compressed it must fit the airline's carry-on size limit."
+    },
+    {
+      "question": "Can a sleeping bag be a carry-on item?",
+      "answer": "Yes, if compressed into its stuff sack and within airline carry-on size limits. Most airlines allow 22x14x9 inches."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

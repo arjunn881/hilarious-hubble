@@ -1,0 +1,84 @@
+{
+  "id": "umbrella",
+  "slug": "umbrella",
+  "name": "Umbrella",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "compact umbrella",
+    "folding umbrella",
+    "travel umbrella",
+    "rain umbrella"
+  ],
+  "keywords": [
+    "umbrella",
+    "compact umbrella",
+    "folding umbrella",
+    "rain",
+    "travel"
+  ],
+  "description": "TSA rules for umbrellas on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Umbrellas are allowed in carry-on baggage. Compact folding umbrellas easily fit in personal items.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Umbrellas are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/umbrella",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring an umbrella on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/umbrella",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Compact travel umbrellas are ideal carry-on items",
+    "Full-size golf umbrellas may need to be checked depending on size"
+  ],
+  "relatedItems": [
+    "shoes",
+    "boots"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring an umbrella on a plane?",
+      "answer": "Yes, umbrellas of all types are allowed in carry-on and checked bags. Compact umbrellas fit easily in personal items."
+    },
+    {
+      "question": "Do I need to remove my umbrella at TSA security?",
+      "answer": "No, umbrellas can stay in your bag. TSA may ask you to remove it if the X-ray image is unclear."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/umbrella"
+    }
+  ]
+}

@@ -409,6 +409,31 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "fire-starter",
+    "slug": "fire-starter",
+    "name": "Fire Starter",
+    "category": "Camping",
+    "aliases": [
+      "firestarter",
+      "fire stick",
+      "tinder",
+      "flint and steel",
+      "ferro rod",
+      "magnesium rod"
+    ],
+    "keywords": [
+      "fire starter",
+      "ferro rod",
+      "flint steel",
+      "tinder",
+      "camping fire",
+      "survival"
+    ],
+    "carryOn": "NOT_ALLOWED",
+    "checked": "RESTRICTED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
     "id": "propane-canister",
     "slug": "propane-canister",
     "name": "Propane Canister",
@@ -428,6 +453,28 @@
     "carryOn": "NOT_ALLOWED",
     "checked": "NOT_ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "sleeping-bag",
+    "slug": "sleeping-bag",
+    "name": "Sleeping Bag",
+    "category": "Camping",
+    "aliases": [
+      "camp sleeping bag",
+      "travel sleeping bag",
+      "mummy bag",
+      "backpacking sleeping bag"
+    ],
+    "keywords": [
+      "sleeping bag",
+      "camp gear",
+      "backpacking",
+      "mummy bag",
+      "camping"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "tent-pegs",
@@ -529,6 +576,27 @@
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "gift-cards",
+    "slug": "gift-cards",
+    "name": "Gift Cards",
+    "category": "Documents",
+    "aliases": [
+      "store gift card",
+      "prepaid card",
+      "visa gift card",
+      "amazon gift card"
+    ],
+    "keywords": [
+      "gift cards",
+      "prepaid card",
+      "store card",
+      "voucher"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "passport",
@@ -785,6 +853,76 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "e-reader",
+    "slug": "e-reader",
+    "name": "E-Reader",
+    "category": "Electronics",
+    "aliases": [
+      "kindle",
+      "kobo",
+      "nook",
+      "ebook reader",
+      "electronic book"
+    ],
+    "keywords": [
+      "e-reader",
+      "kindle",
+      "kobo",
+      "ebook",
+      "reading",
+      "tablet"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
+    "id": "earbuds",
+    "slug": "earbuds",
+    "name": "Earbuds",
+    "category": "Electronics",
+    "aliases": [
+      "earphones",
+      "in-ear headphones",
+      "wireless earbuds",
+      "airpods"
+    ],
+    "keywords": [
+      "earbuds",
+      "earphones",
+      "headphones",
+      "airpods",
+      "wireless",
+      "audio",
+      "music"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
+    "id": "electric-kettle",
+    "slug": "electric-kettle",
+    "name": "Electric Kettle",
+    "category": "Electronics",
+    "aliases": [
+      "travel kettle",
+      "portable kettle",
+      "tea kettle"
+    ],
+    "keywords": [
+      "electric kettle",
+      "kettle",
+      "travel kettle",
+      "hot water",
+      "tea",
+      "appliance"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
     "id": "electric-toothbrush",
     "slug": "electric-toothbrush",
     "name": "Electric Toothbrush",
@@ -844,6 +982,53 @@
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "hair-clippers",
+    "slug": "hair-clippers",
+    "name": "Hair Clippers",
+    "category": "Electronics",
+    "aliases": [
+      "beard clippers",
+      "electric clippers",
+      "hair trimmer",
+      "clipper machine"
+    ],
+    "keywords": [
+      "hair clippers",
+      "clippers",
+      "beard trimmer",
+      "grooming",
+      "electric"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
+    "id": "headphones",
+    "slug": "headphones",
+    "name": "Headphones",
+    "category": "Electronics",
+    "aliases": [
+      "over-ear headphones",
+      "noise cancelling headphones",
+      "wireless headphones",
+      "sony headphones",
+      "bose headphones"
+    ],
+    "keywords": [
+      "headphones",
+      "over-ear",
+      "noise cancelling",
+      "wireless",
+      "audio",
+      "music",
+      "headset"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "ipad",
@@ -1320,6 +1505,31 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "energy-drink",
+    "slug": "energy-drink",
+    "name": "Energy Drink",
+    "category": "Food",
+    "aliases": [
+      "red bull",
+      "monster energy",
+      "gatorade",
+      "sports drink",
+      "energy can"
+    ],
+    "keywords": [
+      "energy drink",
+      "red bull",
+      "monster",
+      "sports drink",
+      "beverage",
+      "can",
+      "liquid"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
     "id": "fresh-fruits",
     "slug": "fresh-fruits",
     "name": "Fresh Fruits",
@@ -1399,6 +1609,57 @@
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "instant-noodles",
+    "slug": "instant-noodles",
+    "name": "Instant Noodles",
+    "category": "Food",
+    "aliases": [
+      "ramen",
+      "cup noodles",
+      "instant ramen",
+      "maggi",
+      "cup of noodles"
+    ],
+    "keywords": [
+      "instant noodles",
+      "ramen",
+      "cup noodles",
+      "maggi",
+      "packaged food",
+      "noodles"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
+    "id": "nuts",
+    "slug": "nuts",
+    "name": "Nuts",
+    "category": "Food",
+    "aliases": [
+      "almonds",
+      "cashews",
+      "peanuts",
+      "mixed nuts",
+      "trail mix",
+      "walnuts",
+      "pistachios"
+    ],
+    "keywords": [
+      "nuts",
+      "almonds",
+      "cashews",
+      "peanuts",
+      "snacks",
+      "trail mix",
+      "dry food"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "peanut-butter",
@@ -1677,6 +1938,28 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "baby-lotion",
+    "slug": "baby-lotion",
+    "name": "Baby Lotion",
+    "category": "Liquids",
+    "aliases": [
+      "baby cream",
+      "infant lotion",
+      "baby moisturizer"
+    ],
+    "keywords": [
+      "baby lotion",
+      "baby cream",
+      "infant lotion",
+      "baby care",
+      "moisturizer",
+      "liquid"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
     "id": "beer",
     "slug": "beer",
     "name": "Beer",
@@ -1695,6 +1978,29 @@
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "cooking-oil",
+    "slug": "cooking-oil",
+    "name": "Cooking Oil",
+    "category": "Liquids",
+    "aliases": [
+      "vegetable oil",
+      "olive oil",
+      "coconut oil",
+      "oil bottle"
+    ],
+    "keywords": [
+      "cooking oil",
+      "vegetable oil",
+      "olive oil",
+      "coconut oil",
+      "liquid",
+      "oil"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "glass-bottle",
@@ -2046,6 +2352,32 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "face-mask",
+    "slug": "face-mask",
+    "name": "Face Mask",
+    "category": "Medicine",
+    "aliases": [
+      "surgical mask",
+      "n95 mask",
+      "kn95",
+      "respirator",
+      "cloth mask",
+      "disposable mask"
+    ],
+    "keywords": [
+      "face mask",
+      "surgical mask",
+      "n95",
+      "kn95",
+      "respirator",
+      "cloth mask",
+      "covid"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
     "id": "ibuprofen",
     "slug": "ibuprofen",
     "name": "Ibuprofen",
@@ -2142,6 +2474,27 @@
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "melatonin",
+    "slug": "melatonin",
+    "name": "Melatonin",
+    "category": "Medicine",
+    "aliases": [
+      "sleep aid",
+      "melatonin tablets",
+      "sleep supplement"
+    ],
+    "keywords": [
+      "melatonin",
+      "sleep aid",
+      "supplement",
+      "tablets",
+      "pills"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "pet-medication",
@@ -2258,6 +2611,28 @@
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "beard-oil",
+    "slug": "beard-oil",
+    "name": "Beard Oil",
+    "category": "Personal Care",
+    "aliases": [
+      "facial oil",
+      "beard balm",
+      "beard serum"
+    ],
+    "keywords": [
+      "beard oil",
+      "beard balm",
+      "facial oil",
+      "grooming",
+      "liquid",
+      "men"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "belt",
@@ -2635,6 +3010,28 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "razor-blades",
+    "slug": "razor-blades",
+    "name": "Razor Blades",
+    "category": "Personal Care",
+    "aliases": [
+      "spare blades",
+      "safety razor blades",
+      "blade cartridges",
+      "shaving blades"
+    ],
+    "keywords": [
+      "razor blades",
+      "blades",
+      "shaving",
+      "safety razor",
+      "spare blades"
+    ],
+    "carryOn": "NOT_ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
     "id": "safety-razor",
     "slug": "safety-razor",
     "name": "Safety Razor (with blade)",
@@ -2653,6 +3050,28 @@
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "shaving-cream",
+    "slug": "shaving-cream",
+    "name": "Shaving Cream",
+    "category": "Personal Care",
+    "aliases": [
+      "shaving gel",
+      "shave foam",
+      "shaving foam"
+    ],
+    "keywords": [
+      "shaving cream",
+      "shaving gel",
+      "shave foam",
+      "grooming",
+      "liquid",
+      "aerosol"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "shoes",
@@ -2923,6 +3342,27 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "jump-rope",
+    "slug": "jump-rope",
+    "name": "Jump Rope",
+    "category": "Sports",
+    "aliases": [
+      "skipping rope",
+      "speed rope",
+      "skipping cord"
+    ],
+    "keywords": [
+      "jump rope",
+      "skipping rope",
+      "fitness",
+      "exercise",
+      "workout"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
     "id": "skateboard",
     "slug": "skateboard",
     "name": "Skateboard",
@@ -2978,6 +3418,27 @@
     "carryOn": "NOT_ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "yoga-mat",
+    "slug": "yoga-mat",
+    "name": "Yoga Mat",
+    "category": "Sports",
+    "aliases": [
+      "exercise mat",
+      "fitness mat",
+      "gym mat"
+    ],
+    "keywords": [
+      "yoga mat",
+      "exercise mat",
+      "fitness",
+      "gym",
+      "workout"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "candles",
@@ -3148,6 +3609,52 @@
     "carryOn": "ALLOWED",
     "checked": "NOT_ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "lock",
+    "slug": "lock",
+    "name": "Lock",
+    "category": "Tools",
+    "aliases": [
+      "padlock",
+      "tsa lock",
+      "combination lock",
+      "luggage lock",
+      "key lock"
+    ],
+    "keywords": [
+      "lock",
+      "padlock",
+      "tsa lock",
+      "combination lock",
+      "luggage lock",
+      "security"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
+    "id": "matchbox",
+    "slug": "matchbox",
+    "name": "Matchbox",
+    "category": "Tools",
+    "aliases": [
+      "box of matches",
+      "strike on box matches",
+      "safety matchbox"
+    ],
+    "keywords": [
+      "matchbox",
+      "matches",
+      "fire",
+      "strike",
+      "box",
+      "safety"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "NOT_ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "matches",
@@ -3340,6 +3847,50 @@
     "carryOn": "NOT_ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "torch-lighter",
+    "slug": "torch-lighter",
+    "name": "Torch Lighter",
+    "category": "Tools",
+    "aliases": [
+      "jet lighter",
+      "butane torch",
+      "blue flame lighter",
+      "wind-proof lighter"
+    ],
+    "keywords": [
+      "torch lighter",
+      "jet lighter",
+      "butane",
+      "flame",
+      "cigar lighter"
+    ],
+    "carryOn": "NOT_ALLOWED",
+    "checked": "NOT_ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
+    "id": "umbrella",
+    "slug": "umbrella",
+    "name": "Umbrella",
+    "category": "Tools",
+    "aliases": [
+      "compact umbrella",
+      "folding umbrella",
+      "travel umbrella",
+      "rain umbrella"
+    ],
+    "keywords": [
+      "umbrella",
+      "compact umbrella",
+      "folding umbrella",
+      "rain",
+      "travel"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
   },
   {
     "id": "utility-knife",

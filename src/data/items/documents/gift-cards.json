@@ -1,0 +1,83 @@
+{
+  "id": "gift-cards",
+  "slug": "gift-cards",
+  "name": "Gift Cards",
+  "category": "Documents",
+  "subcategory": "Financial",
+  "aliases": [
+    "store gift card",
+    "prepaid card",
+    "visa gift card",
+    "amazon gift card"
+  ],
+  "keywords": [
+    "gift cards",
+    "prepaid card",
+    "store card",
+    "voucher"
+  ],
+  "description": "TSA rules for gift cards on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Gift cards and prepaid cards are fully allowed in carry-on baggage with no restrictions.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Gift cards are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring gift cards on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Gift cards are allowed on planes — keep them in your wallet or carry-on for safekeeping"
+  ],
+  "relatedItems": [
+    "cash",
+    "passport",
+    "boarding-pass"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring gift cards on a plane?",
+      "answer": "Yes, gift cards are fully allowed in carry-on and checked baggage with no restrictions."
+    },
+    {
+      "question": "Do gift cards need to be declared at customs?",
+      "answer": "Gift cards generally do not need to be declared unless they represent substantial monetary value — check your destination country's customs rules."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

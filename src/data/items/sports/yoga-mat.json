@@ -1,0 +1,87 @@
+{
+  "id": "yoga-mat",
+  "slug": "yoga-mat",
+  "name": "Yoga Mat",
+  "category": "Sports",
+  "subcategory": "Fitness",
+  "aliases": [
+    "exercise mat",
+    "fitness mat",
+    "gym mat"
+  ],
+  "keywords": [
+    "yoga mat",
+    "exercise mat",
+    "fitness",
+    "gym",
+    "workout"
+  ],
+  "description": "TSA rules for yoga mats on planes.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Yoga mats are allowed in carry-on baggage if they fit within the airline's overhead bin dimensions when rolled or folded. Most airlines allow yoga mats as an additional personal item.",
+    "conditions": [
+      "Must fit overhead bin or under seat dimensions",
+      "Some airlines allow as a free additional item — check your airline policy"
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Yoga mats are fully allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring a yoga mat on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Carry a travel-size yoga mat as a personal item",
+    "Check your specific airline's policy on yoga mats as extra carry-on items"
+  ],
+  "relatedItems": [
+    "dumbbells",
+    "tennis-racket",
+    "hiking-poles"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring a yoga mat on a plane?",
+      "answer": "Yes, yoga mats are allowed in carry-on and checked bags. They must fit within overhead bin dimensions or your airline may allow it as a free extra item."
+    },
+    {
+      "question": "Do I have to pay to check a yoga mat?",
+      "answer": "A yoga mat counts as checked baggage if you check it — standard checked bag fees apply. Many airlines allow it as a personal item if it's a travel size mat."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

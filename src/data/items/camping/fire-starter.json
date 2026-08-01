@@ -1,0 +1,92 @@
+{
+  "id": "fire-starter",
+  "slug": "fire-starter",
+  "name": "Fire Starter",
+  "category": "Camping",
+  "subcategory": "Fire",
+  "aliases": [
+    "firestarter",
+    "fire stick",
+    "tinder",
+    "flint and steel",
+    "ferro rod",
+    "magnesium rod"
+  ],
+  "keywords": [
+    "fire starter",
+    "ferro rod",
+    "flint steel",
+    "tinder",
+    "camping fire",
+    "survival"
+  ],
+  "description": "TSA rules for fire starters and ferro rods on planes.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Fire starters including flint and steel, magnesium fire starters, and solid fuel tablets are not allowed in carry-on baggage due to fire risk.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "RESTRICTED",
+    "reason": "Some fire starters (metal ferro rods without fuel) may be allowed in checked baggage. Flammable solid fire starters and chemical tinder are prohibited.",
+    "conditions": [
+      "Metal ferro rods (flint) may be allowed when no flammable material present",
+      "Solid fuel fire-starting tablets are prohibited in all baggage"
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camping-equipment",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring a fire starter on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camping-equipment",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Do not pack fire starters in carry-on. Contact TSA for specific ferro rod guidance before travel",
+    "Purchase fire starters at your camping destination to avoid issues"
+  ],
+  "relatedItems": [
+    "matches",
+    "lighter",
+    "matchbox",
+    "camping-stove"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring a fire starter on a plane?",
+      "answer": "No, fire starters are not allowed in carry-on bags. Solid fuel fire starters are prohibited in all baggage. Plain metal ferro rods may be allowed in checked bags — check with TSA."
+    },
+    {
+      "question": "Can I bring a ferro rod on a plane?",
+      "answer": "Plain metal ferro rods (without flammable material) may be allowed in checked baggage. They are not permitted in carry-on. Always confirm with TSA before travel."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camping-equipment"
+    }
+  ]
+}

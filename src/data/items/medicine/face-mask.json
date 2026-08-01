@@ -1,0 +1,88 @@
+{
+  "id": "face-mask",
+  "slug": "face-mask",
+  "name": "Face Mask",
+  "category": "Medicine",
+  "subcategory": "Health Protection",
+  "aliases": [
+    "surgical mask",
+    "n95 mask",
+    "kn95",
+    "respirator",
+    "cloth mask",
+    "disposable mask"
+  ],
+  "keywords": [
+    "face mask",
+    "surgical mask",
+    "n95",
+    "kn95",
+    "respirator",
+    "cloth mask",
+    "covid"
+  ],
+  "description": "TSA rules for face masks on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Face masks of all types (surgical, N95, KN95, cloth, disposable) are fully allowed in carry-on and checked baggage. Airlines may have their own mask policies.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Face masks are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring face masks on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Carry extra face masks in your personal bag — some international destinations may still require them"
+  ],
+  "relatedItems": [
+    "vitamins",
+    "hand-sanitizer",
+    "prescription-medicine"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring face masks on a plane?",
+      "answer": "Yes, face masks of all types are fully allowed in carry-on and checked baggage with no restrictions."
+    },
+    {
+      "question": "Are N95 masks allowed in carry-on bags?",
+      "answer": "Yes, N95 and KN95 respirators are allowed in carry-on bags. You can pack as many as you need."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

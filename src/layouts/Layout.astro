@@ -16,8 +16,8 @@ interface Props {
 }
 
 const {
-  title = "Bring On Plane — Can I Bring It? TSA Baggage Rules & Packing Assistant",
-  description = "Instantly check what you can bring on a plane. Search TSA carry-on & checked bag rules for food, vapes, lighters, razors, power banks, toiletries & more. Free packing list generator.",
+  title = "TSA Carry-On Checker: Is It Allowed on a Plane?",
+  description = "Type any item to instantly see if it goes in your carry-on or checked bag. Free TSA tool — razors, liquids, power banks, food & more. Try it now.",
   image = "/og-image.png",
   imageAlt = "BringOnPlane — TSA Baggage Rules & Smart Packing Assistant",
   canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://bringonplane.com").href,
@@ -132,6 +132,29 @@ const resolvedImage = new URL(image, Astro.site || "https://bringonplane.com").h
 
       gtag('config', 'G-PYTY68WGKQ');
     </script>
+
+    <!-- SoftwareApplication schema: signals to Google this is an interactive tool -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "BringOnPlane TSA Checker",
+      "description": "Instantly check TSA carry-on and checked bag rules for any item. Search 196+ items with instant color-coded verdicts.",
+      "url": "https://bringonplane.com",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Instant TSA carry-on checker",
+        "Checked bag rules lookup",
+        "196+ items database",
+        "Color-coded YES/NO verdicts",
+        "Free packing checklist builder"
+      ]
+    })} />
 
     <slot name="head" />
   </head>

@@ -1,0 +1,219 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ShieldAlert, ArrowLeft, ExternalLink } from "@lucide/astro";
+
+const lastUpdated = "August 1, 2026";
+
+const sections = [
+  {
+    id: "overview",
+    title: "1. Overview",
+    content: `BringOnPlane ("we", "us", "the Service") is an independent, free-to-use informational web tool that aggregates and summarizes publicly available baggage and security rules published by the U.S. Transportation Security Administration (TSA), the Federal Aviation Administration (FAA), U.S. Customs and Border Protection (CBP), and airlines.
+
+We are NOT affiliated with, endorsed by, or operated by the TSA, FAA, CBP, any airline, or any government authority. All trademarks, logos, and agency names mentioned on this site belong to their respective owners.`
+  },
+  {
+    id: "no-official-advice",
+    title: "2. Not Official Government Advice",
+    content: `<strong>The information on BringOnPlane is for general reference only and does not constitute official government guidance, legal advice, or a guarantee of what will be permitted at any security checkpoint.</strong>
+
+TSA rules are set by the U.S. federal government and can change without notice. Individual TSA security officers have final discretion on whether any item is permitted through a checkpoint, regardless of what is listed on TSA.gov or this site.
+
+You should always consult:
+• <a href="https://www.tsa.gov/travel/security-screening/whatcanibring/all" target="_blank" rel="noopener noreferrer" class="text-link hover:underline inline-flex items-center gap-1">TSA's official "What Can I Bring?" page ↗</a>
+• Your airline's official baggage policy page
+• Your destination country's customs authority (for international travel)
+
+before making final packing decisions.`
+  },
+  {
+    id: "accuracy",
+    title: "3. Accuracy & Currency of Information",
+    content: `We make reasonable efforts to keep item data accurate and current by sourcing information from official government publications. However:
+
+• TSA regulations, airline policies, and customs rules <strong>change frequently</strong> — sometimes without public notice.
+• Our database may not reflect the most recent regulatory changes at the time you read it.
+• Rules can vary by <strong>airport, airline, aircraft type, flight route, and individual officer</strong>.
+• International rules differ significantly from U.S. TSA rules and are not fully covered by this tool.
+
+We do not guarantee that any information on BringOnPlane is complete, accurate, timely, or applicable to your specific situation.`
+  },
+  {
+    id: "no-liability",
+    title: "4. Limitation of Liability",
+    content: `<strong>BringOnPlane, its owners, operators, contributors, and affiliates shall not be held liable for any direct, indirect, incidental, consequential, or punitive damages arising from:</strong>
+
+• Items confiscated, seized, or detained at any security checkpoint or border crossing
+• Travel delays, missed flights, or disruptions caused by security screening
+• Fines, penalties, or legal consequences resulting from customs violations
+• Financial loss, emotional distress, or any other harm resulting from reliance on information found on this site
+• Errors, omissions, or outdated information in our database
+
+Your use of this site is at your own risk. Always verify rules with official sources before you travel.`
+  },
+  {
+    id: "final-authority",
+    title: "5. TSA Officer Final Authority",
+    content: `It is important to understand that a TSA security officer at the checkpoint has final, absolute authority on what items are permitted through security — even if an item is listed as "Allowed" on this site or on TSA.gov itself.
+
+Security screening decisions can be influenced by:
+• How an item is packed or presented
+• Quantity or volume of items
+• Individual officer interpretation of regulations
+• Specific airport or checkpoint policies
+• Heightened security conditions
+
+BringOnPlane cannot predict or guarantee any security screening outcome.`
+  },
+  {
+    id: "international",
+    title: "6. International Travel",
+    content: `This tool is primarily designed around U.S. TSA security rules for flights departing from the United States. It does not comprehensively cover:
+
+• Security rules at non-U.S. airports (departure or transit)
+• Import/export customs restrictions of destination countries
+• Airline-specific international baggage policies
+• IATA Dangerous Goods Regulations in full detail
+
+For international travel, always consult the relevant authority for each country you are passing through or visiting, as rules can differ dramatically from U.S. standards.`
+  },
+  {
+    id: "affiliate",
+    title: "7. Advertising & Affiliate Disclosure",
+    content: `BringOnPlane may display advertising (including Google AdSense) and may include links to third-party products, services, or websites. These are provided for convenience and do not constitute an endorsement by BringOnPlane.
+
+We are not responsible for the content, accuracy, or practices of any third-party website or advertiser. Clicking on third-party links is done entirely at your own risk.
+
+We currently do not operate a formal affiliate program, but this may change in the future. Any material relationships with advertisers or sponsors will be clearly disclosed on the relevant pages.`
+  },
+  {
+    id: "changes",
+    title: "8. Changes to This Disclaimer",
+    content: `We reserve the right to update this Disclaimer at any time. When we make changes, we will update the "Last Updated" date at the top of this page.
+
+Your continued use of BringOnPlane after any changes constitutes your acceptance of the updated Disclaimer. We encourage you to review this page periodically.`
+  },
+  {
+    id: "contact",
+    title: "9. Contact",
+    content: `If you believe any information on BringOnPlane is inaccurate or outdated, please let us know so we can review and correct it promptly.
+
+<strong>Email:</strong> legal@bringonplane.com
+<strong>Contact form:</strong> <a href="/contact" class="text-link hover:underline">bringonplane.com/contact</a>`
+  }
+];
+---
+
+<Layout
+  title="Disclaimer — BringOnPlane"
+  description="BringOnPlane is an independent informational tool not affiliated with the TSA or any government agency. Information is for reference only — always verify with TSA.gov before travel."
+  canonicalURL="https://bringonplane.com/disclaimer"
+  keywords="bringonplane disclaimer, tsa rules disclaimer, not official tsa, informational only, baggage rules disclaimer"
+>
+  <Header slot="header" />
+
+  <main class="flex-1">
+
+    <!-- Hero -->
+    <div class="border-b border-hairline bg-canvas-soft">
+      <div class="max-w-[760px] mx-auto px-4 md:px-6 py-12">
+        <a href="/" class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors mb-6">
+          <ArrowLeft class="w-3.5 h-3.5" /> Back to Home
+        </a>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-md bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center flex-shrink-0 mt-1">
+            <ShieldAlert class="w-5 h-5" />
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.5px] text-ink leading-tight mb-2">Disclaimer</h1>
+            <p class="text-xs text-mute font-mono">Last updated: {lastUpdated}</p>
+            <p class="text-sm text-body leading-[1.7] mt-3 max-w-[540px]">
+              Please read this disclaimer carefully. BringOnPlane is an independent reference tool — not an official government resource. TSA officers have final authority at all checkpoints.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Critical warning banner -->
+    <div class="border-b border-amber-200 bg-amber-50">
+      <div class="max-w-[760px] mx-auto px-4 md:px-6 py-4 flex items-start gap-3">
+        <ShieldAlert class="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+        <p class="text-xs text-amber-800 leading-[1.7]">
+          <strong>Important:</strong> BringOnPlane is NOT affiliated with the TSA, FAA, or any government agency.
+          Information here is for general reference only. Always verify with&nbsp;
+          <a href="https://www.tsa.gov" target="_blank" rel="noopener noreferrer" class="font-semibold underline underline-offset-2 hover:text-amber-900 inline-flex items-center gap-0.5">
+            TSA.gov <ExternalLink class="w-3 h-3" />
+          </a>
+          &nbsp;before you travel.
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick nav -->
+    <div class="border-b border-hairline bg-canvas">
+      <div class="max-w-[760px] mx-auto px-4 md:px-6 py-6">
+        <p class="text-xs font-mono text-mute uppercase tracking-wider mb-3">Jump to Section</p>
+        <div class="flex flex-wrap gap-2">
+          {sections.map(s => (
+            <a href={`#${s.id}`} class="text-[11px] text-body hover:text-ink border border-hairline hover:border-hairline-strong bg-canvas-soft rounded-md px-2.5 py-1 transition-all">
+              {s.title.split(". ")[1]}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-[760px] mx-auto px-4 md:px-6 py-14 space-y-10">
+      {sections.map(s => (
+        <section id={s.id} class="scroll-mt-24 border-b border-hairline pb-10 last:border-0">
+          <h2 class="text-base font-semibold text-ink mb-4">{s.title}</h2>
+          <div class="text-sm text-body leading-[1.9] space-y-3" set:html={s.content.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('')} />
+        </section>
+      ))}
+
+      <!-- Official Sources box -->
+      <div class="border border-hairline rounded-md bg-canvas-soft p-6 space-y-4">
+        <p class="text-sm font-semibold text-ink">Always Verify with Official Sources</p>
+        <ul class="space-y-2 text-sm text-body">
+          <li>
+            <a href="https://www.tsa.gov/travel/security-screening/whatcanibring/all" target="_blank" rel="noopener noreferrer" class="text-link hover:underline inline-flex items-center gap-1.5">
+              <ExternalLink class="w-3.5 h-3.5" /> TSA — What Can I Bring?
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tsa.gov" target="_blank" rel="noopener noreferrer" class="text-link hover:underline inline-flex items-center gap-1.5">
+              <ExternalLink class="w-3.5 h-3.5" /> TSA.gov — Official TSA Website
+            </a>
+          </li>
+          <li>
+            <a href="https://www.faa.gov/hazmat/packsafe" target="_blank" rel="noopener noreferrer" class="text-link hover:underline inline-flex items-center gap-1.5">
+              <ExternalLink class="w-3.5 h-3.5" /> FAA — Pack Safe (Hazardous Materials)
+            </a>
+          </li>
+          <li>
+            <a href="https://www.cbp.gov/travel/us-citizens/know-before-you-go" target="_blank" rel="noopener noreferrer" class="text-link hover:underline inline-flex items-center gap-1.5">
+              <ExternalLink class="w-3.5 h-3.5" /> CBP — Know Before You Go (Customs)
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="border border-hairline rounded-md bg-canvas-soft p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <p class="text-sm font-medium text-ink">Found inaccurate information?</p>
+          <p class="text-xs text-body">Please let us know and we'll review and correct it.</p>
+        </div>
+        <a href="/contact" class="inline-flex items-center gap-2 px-4 h-9 text-xs font-medium text-link border border-link/25 hover:border-link bg-link-bg-soft rounded-md transition-all flex-shrink-0">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer slot="footer" />
+</Layout>

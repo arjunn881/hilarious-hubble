@@ -1,0 +1,84 @@
+{
+  "id": "hair-clippers",
+  "slug": "hair-clippers",
+  "name": "Hair Clippers",
+  "category": "Electronics",
+  "subcategory": "Personal Grooming",
+  "aliases": [
+    "beard clippers",
+    "electric clippers",
+    "hair trimmer",
+    "clipper machine"
+  ],
+  "keywords": [
+    "hair clippers",
+    "clippers",
+    "beard trimmer",
+    "grooming",
+    "electric"
+  ],
+  "description": "TSA rules for hair clippers on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Hair clippers and beard clippers are allowed in carry-on baggage. They are not considered sharp weapons by TSA.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Hair clippers are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring hair clippers on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Hair clippers are fine in carry-on — they are not considered sharp objects by TSA"
+  ],
+  "relatedItems": [
+    "beard-trimmer",
+    "electric-razor",
+    "scissors"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring hair clippers on a plane?",
+      "answer": "Yes, hair clippers are fully allowed in carry-on and checked baggage. TSA does not classify them as sharp weapons."
+    },
+    {
+      "question": "Are beard clippers allowed in carry-on?",
+      "answer": "Yes, beard clippers and hair trimmers are permitted in carry-on bags."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

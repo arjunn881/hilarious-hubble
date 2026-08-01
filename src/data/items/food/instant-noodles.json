@@ -1,0 +1,87 @@
+{
+  "id": "instant-noodles",
+  "slug": "instant-noodles",
+  "name": "Instant Noodles",
+  "category": "Food",
+  "subcategory": "Packaged Food",
+  "aliases": [
+    "ramen",
+    "cup noodles",
+    "instant ramen",
+    "maggi",
+    "cup of noodles"
+  ],
+  "keywords": [
+    "instant noodles",
+    "ramen",
+    "cup noodles",
+    "maggi",
+    "packaged food",
+    "noodles"
+  ],
+  "description": "TSA rules for instant noodles and packaged ramen on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Instant noodles (dry packaged) are allowed in carry-on baggage without restrictions. Cup noodles without liquid are also fine.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Instant noodles are fully allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring instant noodles on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Dry instant noodles pass through security without any issue",
+    "Pre-made liquid cup noodles may trigger the 3-1-1 rule if containing liquid broth"
+  ],
+  "relatedItems": [
+    "spices",
+    "tea-bags",
+    "coffee-beans"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring instant noodles on a plane?",
+      "answer": "Yes, dry instant noodles and packaged ramen are fully allowed in carry-on and checked bags."
+    },
+    {
+      "question": "Can I bring cup noodles on a plane?",
+      "answer": "Yes, sealed dry cup noodles are allowed in carry-on. Pre-made liquid noodles with broth may be subject to the 3-1-1 liquids rule."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages"
+    }
+  ]
+}

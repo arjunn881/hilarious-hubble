@@ -159,6 +159,49 @@ function getTravelTip(itemData: typeof item) {
 }
 const travelTip = getTravelTip(item);
 
+// ── SEO: Verdict-aware title (Feature 5) ─────────────────────────────────────
+const carryOnVerdict = item.carryOn.status === 'ALLOWED' ? 'Yes'
+  : item.carryOn.status === 'NOT_ALLOWED' ? 'No'
+  : 'Restricted';
+const checkedVerdict = item.checkedBag.status === 'ALLOWED' ? 'Yes'
+  : item.checkedBag.status === 'NOT_ALLOWED' ? 'No'
+  : 'Restricted';
+const seoTitle = `Can You Bring ${item.name} on a Plane? (${carryOnVerdict} Carry-On, ${checkedVerdict} Checked)`;
+
+// ── SEO: CTR-optimised meta description (Feature 6) ─────────────────────────
+// Target: keyword-first, rule summary, CTA, under 160 chars
+const carryOnShort = item.carryOn.status === 'ALLOWED' ? 'allowed in carry-on'
+  : item.carryOn.status === 'NOT_ALLOWED' ? 'NOT allowed in carry-on'
+  : 'restricted in carry-on';
+const checkedShort = item.checkedBag.status === 'ALLOWED' ? 'allowed in checked bags'
+  : item.checkedBag.status === 'NOT_ALLOWED' ? 'NOT allowed in checked bags'
+  : 'restricted in checked bags';
+const rawDesc = `${item.name} is ${carryOnShort} and ${checkedShort}. ${item.carryOn.reason || ''} Check the full TSA rule now.`;
+const seoDescription = rawDesc.length > 160 ? rawDesc.slice(0, 157) + '...' : rawDesc;
+
+// ── SEO: Featured Snippet answer (Feature 8) ─────────────────────────────────
+const featuredSnippetAnswer = item.carryOn.status === 'ALLOWED'
+  ? `Yes — ${item.name} is allowed in carry-on bags by TSA. ${item.carryOn.reason || ''}`
+  : item.carryOn.status === 'NOT_ALLOWED'
+  ? `No — ${item.name} is NOT allowed in carry-on bags. ${item.carryOn.reason || ''} Pack it in your checked bag instead.`
+  : `${item.name} is allowed in carry-on with restrictions. ${item.carryOn.reason || ''}`;
+
+// ── Extra FAQ questions for JSON-LD (Feature 7) ───────────────────────────────
+const faq4Question = `What happens if I bring ${item.name.toLowerCase()} through TSA security?`;
+const faq4Answer = item.carryOn.status === 'ALLOWED'
+  ? `If you bring ${item.name.toLowerCase()} through TSA security in your carry-on, it should pass through the X-ray screening without issue. ${item.carryOn.reason || ''}`
+  : item.carryOn.status === 'NOT_ALLOWED'
+  ? `If you attempt to bring ${item.name.toLowerCase()} through TSA in a carry-on bag, the TSA officer will confiscate it at the security checkpoint. You must place it in your checked bag or surrender it before security.`
+  : `TSA officers may pull your ${item.name.toLowerCase()} for secondary screening. You may be asked to declare it or meet specific conditions. ${item.carryOn.reason || ''}`;
+
+const faq5Question = `Can I bring ${item.name.toLowerCase()} on an international flight?`;
+const faq5Answer = `TSA rules govern US departure security checkpoints. ${item.name} is ${carryOnShort} at US airports. For international destinations, each country has its own customs and aviation security rules. Check your destination country's customs authority rules in addition to the TSA.`;
+
+const faq6Question = `Is there a size or quantity limit for ${item.name.toLowerCase()} in carry-on?`;
+const faq6Answer = item.carryOn.conditions && item.carryOn.conditions.length > 0
+  ? `Yes, there are specific conditions: ${item.carryOn.conditions.join('. ')}`
+  : `Standard TSA rules apply to ${item.name.toLowerCase()}. Always check with your specific airline for additional restrictions as airline policies may vary.`;
+
 // Dynamically generate FAQs for SEO schemas
 const faq1Question = `Is ${item.name.toLowerCase()} allowed on a plane?`;
 const faq1Answer = `According to the TSA, ${item.name.toLowerCase()} is ${item.carryOn.status.replace('_', ' ').toLowerCase()} in carry-on bags and ${item.checkedBag.status.replace('_', ' ').toLowerCase()} in checked baggage. ${item.carryOn.reason}`;
@@ -168,11 +211,12 @@ const faq2Answer = `Yes, ${item.name.toLowerCase()} is ${item.carryOn.status ===
 
 const faq3Question = `Are there any special rules for packing ${item.name.toLowerCase()} in checked baggage?`;
 const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checkedBag.status === 'ALLOWED' ? 'allowed without restrictions' : item.checkedBag.status === 'RESTRICTED' ? 'restricted (subject to conditions)' : 'prohibited'}. ${item.checkedBag.conditions[0] || 'Ensure it is packed securely.'}`;
+
 ---
 
 <Layout 
-  title={`Can You Bring ${item.name} On Plane? Carry-On & Checked Bags Rules`}
-  description={item.carryOn.reason || item.description}
+  title={seoTitle}
+  description={seoDescription}
   canonicalURL={`https://bringonplane.com/items/${item.slug}`}
 >
   <!-- Inject JSON-LD structured data in the page body -->
@@ -236,14 +280,31 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
       },
       {
         "@type": "FAQPage",
-        "mainEntity": itemFaqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
+        "mainEntity": [
+          ...itemFaqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          })),
+          {
+            "@type": "Question",
+            "name": faq4Question,
+            "acceptedAnswer": { "@type": "Answer", "text": faq4Answer }
+          },
+          {
+            "@type": "Question",
+            "name": faq5Question,
+            "acceptedAnswer": { "@type": "Answer", "text": faq5Answer }
+          },
+          {
+            "@type": "Question",
+            "name": faq6Question,
+            "acceptedAnswer": { "@type": "Answer", "text": faq6Answer }
           }
-        }))
+        ]
       }
     ]
   })} />
@@ -277,9 +338,53 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
           Reviewed {item.metadata.lastReviewed}
         </span>
       </div>
+      <!-- Feature 10: Verdict Color Banner at top of item page -->
+      {item.carryOn.status === 'ALLOWED' && (
+        <div class="mb-6 flex items-center gap-4 px-5 py-4 rounded-lg bg-emerald-50 border border-emerald-200 select-none">
+          <span class="flex items-center justify-center w-9 h-9 rounded-full bg-emerald-100 border border-emerald-300 flex-shrink-0">
+            <CheckCircle2 class="w-5 h-5 text-emerald-600" />
+          </span>
+          <div>
+            <p class="text-sm font-bold text-emerald-800">YES — Allowed in Carry-on Bags</p>
+            <p class="text-xs text-emerald-700 leading-snug mt-0.5">{item.carryOn.reason}</p>
+          </div>
+        </div>
+      )}
+      {item.carryOn.status === 'NOT_ALLOWED' && (
+        <div class="mb-6 flex items-center gap-4 px-5 py-4 rounded-lg bg-red-50 border border-red-200 select-none">
+          <span class="flex items-center justify-center w-9 h-9 rounded-full bg-red-100 border border-red-300 flex-shrink-0">
+            <XCircle class="w-5 h-5 text-red-600" />
+          </span>
+          <div>
+            <p class="text-sm font-bold text-red-800">NO — Not Allowed in Carry-on Bags</p>
+            <p class="text-xs text-red-700 leading-snug mt-0.5">{item.carryOn.reason}</p>
+          </div>
+        </div>
+      )}
+      {item.carryOn.status === 'RESTRICTED' && (
+        <div class="mb-6 flex items-center gap-4 px-5 py-4 rounded-lg bg-amber-50 border border-amber-200 select-none">
+          <span class="flex items-center justify-center w-9 h-9 rounded-full bg-amber-100 border border-amber-300 flex-shrink-0">
+            <AlertCircle class="w-5 h-5 text-amber-600" />
+          </span>
+          <div>
+            <p class="text-sm font-bold text-amber-800">RESTRICTED — Allowed with Conditions</p>
+            <p class="text-xs text-amber-700 leading-snug mt-0.5">{item.carryOn.reason}</p>
+          </div>
+        </div>
+      )}
+
       <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.28px] text-ink text-pretty">
         Can you bring {item.name.toLowerCase()} on a plane?
       </h1>
+
+      <!-- Feature 8: Featured Snippet Quick Answer box -->
+      <div class="mt-5 mb-2 p-4 rounded-md bg-canvas-soft border-l-4 border-link">
+        <p class="text-xs font-mono text-link uppercase tracking-wider mb-1.5 font-semibold">Quick Answer</p>
+        <p class="text-sm text-body leading-[1.7] text-pretty">
+          {featuredSnippetAnswer}
+        </p>
+      </div>
+
       {item.aliases.length > 0 && (
         <p class="text-sm text-body mt-2">
           <span class="text-mute">Also known as:</span> {item.aliases.join(", ")}

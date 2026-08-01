@@ -1,0 +1,87 @@
+{
+  "id": "earbuds",
+  "slug": "earbuds",
+  "name": "Earbuds",
+  "category": "Electronics",
+  "subcategory": "Audio",
+  "aliases": [
+    "earphones",
+    "in-ear headphones",
+    "wireless earbuds",
+    "airpods"
+  ],
+  "keywords": [
+    "earbuds",
+    "earphones",
+    "headphones",
+    "airpods",
+    "wireless",
+    "audio",
+    "music"
+  ],
+  "description": "TSA rules for earbuds and wireless earphones on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Earbuds, earphones, and wireless earbuds (AirPods, etc.) are fully allowed in carry-on bags and can be used during flight.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Earbuds are allowed in checked baggage, though it's best to keep them in carry-on to prevent loss or damage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring earbuds on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Keep earbuds in carry-on to prevent loss",
+    "Wireless charging cases with lithium batteries should stay in carry-on"
+  ],
+  "relatedItems": [
+    "headphones",
+    "smartphone",
+    "laptop"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring earbuds on a plane?",
+      "answer": "Yes, earbuds and wireless earphones (including AirPods) are fully allowed in carry-on and checked baggage."
+    },
+    {
+      "question": "Can I use earbuds on the plane?",
+      "answer": "Yes, earbuds can be used throughout the flight including during takeoff and landing on most airlines."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "energy-drink",
+  "slug": "energy-drink",
+  "name": "Energy Drink",
+  "category": "Food",
+  "subcategory": "Beverages",
+  "aliases": [
+    "red bull",
+    "monster energy",
+    "gatorade",
+    "sports drink",
+    "energy can"
+  ],
+  "keywords": [
+    "energy drink",
+    "red bull",
+    "monster",
+    "sports drink",
+    "beverage",
+    "can",
+    "liquid"
+  ],
+  "description": "TSA rules for energy drinks on planes.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Canned or bottled energy drinks purchased before security are subject to the TSA 3-1-1 rule — containers must be 3.4 oz (100ml) or less. Full-size cans/bottles must be purchased after security or checked.",
+    "conditions": [
+      "Must be 3.4 oz or less if brought through security",
+      "Sealed full-size cans purchased after the security checkpoint are allowed",
+      "Empty reusable bottles allowed and can be filled airside"
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Sealed factory cans and bottles of energy drinks are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring energy drinks on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Buy your energy drink after clearing the security checkpoint at the airport",
+    "Pack full cans in your checked baggage to avoid confiscation"
+  ],
+  "relatedItems": [
+    "water-bottle",
+    "juice",
+    "soda"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring energy drinks on a plane?",
+      "answer": "Full-size cans of energy drinks cannot pass through TSA security (they exceed 3.4 oz). Buy them after security, check them, or bring a container under 3.4 oz."
+    },
+    {
+      "question": "Can I put Red Bull in my checked bag?",
+      "answer": "Yes, sealed factory cans of Red Bull and other energy drinks are allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages"
+    }
+  ]
+}

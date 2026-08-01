@@ -1,0 +1,87 @@
+{
+  "id": "beard-oil",
+  "slug": "beard-oil",
+  "name": "Beard Oil",
+  "category": "Personal Care",
+  "subcategory": "Grooming",
+  "aliases": [
+    "facial oil",
+    "beard balm",
+    "beard serum"
+  ],
+  "keywords": [
+    "beard oil",
+    "beard balm",
+    "facial oil",
+    "grooming",
+    "liquid",
+    "men"
+  ],
+  "description": "TSA rules for beard oil on planes.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Beard oil is a liquid and is subject to the TSA 3-1-1 rule in carry-on bags. Containers must be 3.4 oz (100ml) or less.",
+    "conditions": [
+      "3.4 oz (100ml) or less per container",
+      "Must fit in quart-sized clear bag"
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Beard oil is allowed in checked baggage in any size container.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/toiletries",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring beard oil on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/toiletries",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Most beard oil bottles are already under 3.4 oz — check the label before packing in carry-on"
+  ],
+  "relatedItems": [
+    "cologne",
+    "perfume",
+    "lotion"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring beard oil on a plane?",
+      "answer": "Yes, beard oil is allowed in carry-on bags in containers of 3.4 oz (100ml) or less, placed in your quart-sized liquids bag."
+    },
+    {
+      "question": "Is beard oil allowed in checked luggage?",
+      "answer": "Yes, beard oil in any size container is fully allowed in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/toiletries"
+    }
+  ]
+}

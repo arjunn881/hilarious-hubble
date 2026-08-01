@@ -1,0 +1,83 @@
+{
+  "id": "jump-rope",
+  "slug": "jump-rope",
+  "name": "Jump Rope",
+  "category": "Sports",
+  "subcategory": "Fitness",
+  "aliases": [
+    "skipping rope",
+    "speed rope",
+    "skipping cord"
+  ],
+  "keywords": [
+    "jump rope",
+    "skipping rope",
+    "fitness",
+    "exercise",
+    "workout"
+  ],
+  "description": "TSA rules for jump ropes on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Jump ropes and skipping ropes are allowed in carry-on baggage. TSA does not classify them as weapons.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Jump ropes are allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring a jump rope on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Jump ropes are a great travel workout tool — lightweight and carry-on friendly"
+  ],
+  "relatedItems": [
+    "yoga-mat",
+    "dumbbells",
+    "tennis-racket"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring a jump rope on a plane?",
+      "answer": "Yes, jump ropes are fully allowed in carry-on and checked baggage."
+    },
+    {
+      "question": "Will TSA allow a jump rope in carry-on?",
+      "answer": "Yes, TSA permits jump ropes in carry-on bags. They are not classified as weapons."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

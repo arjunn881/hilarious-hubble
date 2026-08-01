@@ -1,0 +1,90 @@
+{
+  "id": "nuts",
+  "slug": "nuts",
+  "name": "Nuts",
+  "category": "Food",
+  "subcategory": "Snacks",
+  "aliases": [
+    "almonds",
+    "cashews",
+    "peanuts",
+    "mixed nuts",
+    "trail mix",
+    "walnuts",
+    "pistachios"
+  ],
+  "keywords": [
+    "nuts",
+    "almonds",
+    "cashews",
+    "peanuts",
+    "snacks",
+    "trail mix",
+    "dry food"
+  ],
+  "description": "TSA rules for nuts and trail mix on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "All types of nuts (almonds, cashews, peanuts, mixed nuts, trail mix) are fully allowed in carry-on bags without restrictions.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Nuts are fully allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring nuts on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Nuts and trail mix are ideal travel snacks — lightweight and allowed without restriction",
+    "Check airline policies if you have a severe nut allergy — some airlines may accommodate requests"
+  ],
+  "relatedItems": [
+    "protein-bars",
+    "chips",
+    "candy"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring nuts on a plane?",
+      "answer": "Yes, all types of nuts (almonds, cashews, peanuts, pistachios) and trail mix are fully allowed in carry-on and checked bags."
+    },
+    {
+      "question": "Can I bring peanut butter on a plane?",
+      "answer": "Peanut butter is considered a paste/spread and is subject to the 3-1-1 rule in carry-on — containers must be 3.4 oz or less. Solid peanut butter bars are fine."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages"
+    }
+  ]
+}

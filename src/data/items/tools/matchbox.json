@@ -1,0 +1,89 @@
+{
+  "id": "matchbox",
+  "slug": "matchbox",
+  "name": "Matchbox",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "box of matches",
+    "strike on box matches",
+    "safety matchbox"
+  ],
+  "keywords": [
+    "matchbox",
+    "matches",
+    "fire",
+    "strike",
+    "box",
+    "safety"
+  ],
+  "description": "Guidelines for traveling with a matchbox on a plane.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "One book or box of safety matches is allowed in carry-on baggage or on your person. Strike-anywhere matches are completely prohibited.",
+    "conditions": [
+      "Only safety (strike-on-box) matches are permitted",
+      "Limit of one small box",
+      "Strike-anywhere matches are prohibited entirely"
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Matchboxes are prohibited in checked baggage by TSA and IATA regulations.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/matches",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring a matchbox on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/matches",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Carry the matchbox in your pocket or top of your carry-on bag for easy access at security",
+    "Strike-anywhere matches are never permitted"
+  ],
+  "relatedItems": [
+    "matches",
+    "lighter",
+    "candles"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring a matchbox on a plane?",
+      "answer": "Yes, one small box of safety matches is allowed in carry-on baggage or on your person. Strike-anywhere matches are prohibited entirely."
+    },
+    {
+      "question": "Are matchboxes allowed in checked baggage?",
+      "answer": "No. Matchboxes are prohibited in checked baggage. You must carry them in your carry-on or on your person."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/matches"
+    }
+  ]
+}

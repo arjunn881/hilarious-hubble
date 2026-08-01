@@ -1,0 +1,84 @@
+{
+  "id": "torch-lighter",
+  "slug": "torch-lighter",
+  "name": "Torch Lighter",
+  "category": "Tools",
+  "subcategory": "General",
+  "aliases": [
+    "jet lighter",
+    "butane torch",
+    "blue flame lighter",
+    "wind-proof lighter"
+  ],
+  "keywords": [
+    "torch lighter",
+    "jet lighter",
+    "butane",
+    "flame",
+    "cigar lighter"
+  ],
+  "description": "TSA rules for torch lighters and jet flame lighters on planes.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Torch lighters (jet lighters, blue-flame lighters) are prohibited in both carry-on and checked baggage by TSA regulations.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "NOT_ALLOWED",
+    "reason": "Torch lighters are prohibited in checked baggage regardless of fuel content.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/torch-lighters",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring a torch lighter on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/torch-lighters",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Torch lighters are always prohibited. Use a standard Bic or Zippo lighter instead — one is allowed in carry-on."
+  ],
+  "relatedItems": [
+    "lighter",
+    "matches",
+    "matchbox"
+  ],
+  "faq": [
+    {
+      "question": "Are torch lighters allowed on planes?",
+      "answer": "No. Torch lighters (jet lighters, blue-flame lighters) are prohibited in both carry-on and checked baggage by TSA."
+    },
+    {
+      "question": "What is the difference between a regular lighter and a torch lighter on a plane?",
+      "answer": "A standard disposable lighter (Bic, Zippo) is allowed in carry-on. A torch lighter with a blue flame jet is completely prohibited in all baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/torch-lighters"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "e-reader",
+  "slug": "e-reader",
+  "name": "E-Reader",
+  "category": "Electronics",
+  "subcategory": "Computing",
+  "aliases": [
+    "kindle",
+    "kobo",
+    "nook",
+    "ebook reader",
+    "electronic book"
+  ],
+  "keywords": [
+    "e-reader",
+    "kindle",
+    "kobo",
+    "ebook",
+    "reading",
+    "tablet"
+  ],
+  "description": "TSA rules for e-readers and Kindle devices on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "E-readers (Kindle, Kobo, Nook) are fully allowed in carry-on baggage. They do not need to be removed separately at security checkpoints.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "E-readers are allowed in checked baggage though carry-on is recommended.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring an e-reader on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "E-readers are ideal for flights — long battery life and lightweight",
+    "No need to remove from bag during TSA screening"
+  ],
+  "relatedItems": [
+    "kindle",
+    "tablet",
+    "laptop"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring a Kindle on a plane?",
+      "answer": "Yes, Kindles and all e-readers are fully allowed in carry-on bags and can be used during flights."
+    },
+    {
+      "question": "Do I need to take my e-reader out of my bag at security?",
+      "answer": "No, e-readers do not need to be removed separately from your bag at TSA security screening."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

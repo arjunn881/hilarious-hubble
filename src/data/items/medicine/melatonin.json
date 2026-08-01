@@ -1,0 +1,84 @@
+{
+  "id": "melatonin",
+  "slug": "melatonin",
+  "name": "Melatonin",
+  "category": "Medicine",
+  "subcategory": "Supplements",
+  "aliases": [
+    "sleep aid",
+    "melatonin tablets",
+    "sleep supplement"
+  ],
+  "keywords": [
+    "melatonin",
+    "sleep aid",
+    "supplement",
+    "tablets",
+    "pills"
+  ],
+  "description": "TSA rules for melatonin supplements on planes.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Melatonin tablets and sleep supplements are fully allowed in carry-on bags without restriction. No prescription required.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Melatonin is allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pills",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring melatonin on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pills",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Keep melatonin in its original labeled bottle to avoid questions at security",
+    "Great for adjusting to new time zones after long flights"
+  ],
+  "relatedItems": [
+    "vitamins",
+    "ibuprofen",
+    "prescription-pills"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring melatonin on a plane?",
+      "answer": "Yes, melatonin tablets are fully allowed in carry-on and checked bags. No prescription is needed."
+    },
+    {
+      "question": "Do I need to declare melatonin at customs?",
+      "answer": "Generally no, but check destination country rules — some countries restrict certain supplements."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pills"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "id": "electric-kettle",
+  "slug": "electric-kettle",
+  "name": "Electric Kettle",
+  "category": "Electronics",
+  "subcategory": "Appliances",
+  "aliases": [
+    "travel kettle",
+    "portable kettle",
+    "tea kettle"
+  ],
+  "keywords": [
+    "electric kettle",
+    "kettle",
+    "travel kettle",
+    "hot water",
+    "tea",
+    "appliance"
+  ],
+  "description": "TSA rules for electric kettles in carry-on and checked baggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Electric kettles are allowed in carry-on baggage. Ensure they are empty and dry before packing.",
+    "conditions": [
+      "Must be empty and completely dry",
+      "No heating elements containing flammable material"
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Electric kettles are allowed in checked baggage when empty and dry.",
+    "conditions": [
+      "Must be empty and completely dry"
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring an electric kettle on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/all",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Always empty and dry your electric kettle before going through security",
+    "Travel-sized kettles fit better in carry-on luggage"
+  ],
+  "relatedItems": [
+    "water-bottle",
+    "coffee-beans"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring an electric kettle on a plane?",
+      "answer": "Yes, electric kettles are allowed in carry-on and checked baggage as long as they are empty and dry."
+    },
+    {
+      "question": "Can I use an electric kettle on a plane?",
+      "answer": "No, electric kettles cannot be used on board aircraft. They are for ground use only."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "cooking-oil",
+  "slug": "cooking-oil",
+  "name": "Cooking Oil",
+  "category": "Liquids",
+  "subcategory": "Food Liquid",
+  "aliases": [
+    "vegetable oil",
+    "olive oil",
+    "coconut oil",
+    "oil bottle"
+  ],
+  "keywords": [
+    "cooking oil",
+    "vegetable oil",
+    "olive oil",
+    "coconut oil",
+    "liquid",
+    "oil"
+  ],
+  "description": "TSA rules for cooking oil on planes.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Cooking oils (olive oil, vegetable oil, coconut oil) are liquids and subject to the TSA 3-1-1 rule in carry-on bags. Containers must be 3.4 oz (100ml) or less.",
+    "conditions": [
+      "3.4 oz (100ml) or less per container",
+      "Must fit in quart-sized clear bag"
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Cooking oil in sealed containers is allowed in checked baggage. Pack securely to prevent leaks.",
+    "conditions": [
+      "Seal containers tightly",
+      "Place in zip-lock bags to prevent leaks"
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring cooking oil on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Pack larger oil bottles in checked baggage in sealed zip-lock bags to prevent leaks at altitude"
+  ],
+  "relatedItems": [
+    "olive-oil",
+    "hot-sauce",
+    "honey"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring cooking oil on a plane?",
+      "answer": "In carry-on bags, cooking oil must be 3.4 oz or less (3-1-1 rule). Full-size bottles must go in checked baggage."
+    },
+    {
+      "question": "Can I bring olive oil in my checked suitcase?",
+      "answer": "Yes, sealed bottles of olive oil and other cooking oils are allowed in checked baggage. Pack them securely to prevent leaks."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages"
+    }
+  ]
+}

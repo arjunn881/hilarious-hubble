@@ -1,0 +1,89 @@
+{
+  "id": "baby-lotion",
+  "slug": "baby-lotion",
+  "name": "Baby Lotion",
+  "category": "Liquids",
+  "subcategory": "Baby",
+  "aliases": [
+    "baby cream",
+    "infant lotion",
+    "baby moisturizer"
+  ],
+  "keywords": [
+    "baby lotion",
+    "baby cream",
+    "infant lotion",
+    "baby care",
+    "moisturizer",
+    "liquid"
+  ],
+  "description": "TSA rules for baby lotion on planes.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Baby lotion is subject to the 3-1-1 liquids rule (3.4 oz/100ml or less) in carry-on bags, UNLESS it is for use on the baby during travel, in which case larger quantities are permitted if declared to the TSA officer.",
+    "conditions": [
+      "3.4 oz or less under normal 3-1-1 rule",
+      "Larger quantities allowed if for infant use during flight — must be declared to TSA officer"
+    ],
+    "exceptions": [
+      "Medical/infant necessity exception applies for quantities exceeding 3.4 oz"
+    ]
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Baby lotion is fully allowed in checked baggage.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-formula-baby-food-breast-milk-and-juice",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring baby lotion on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-formula-baby-food-breast-milk-and-juice",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Declare baby lotion to the TSA officer if you need more than 3.4 oz for infant care during travel"
+  ],
+  "relatedItems": [
+    "baby-wipes",
+    "baby-formula",
+    "lotion"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring baby lotion on a plane?",
+      "answer": "Yes, baby lotion in 3.4 oz or less goes in your liquids bag. Larger quantities for infant use are allowed — just declare them to the TSA officer."
+    },
+    {
+      "question": "Is there an exemption for baby lotions at TSA?",
+      "answer": "Yes, TSA allows reasonable quantities of baby care items for infant use. Declare them separately at the security checkpoint."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/baby-formula-baby-food-breast-milk-and-juice"
+    }
+  ]
+}

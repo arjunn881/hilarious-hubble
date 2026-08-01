@@ -1,0 +1,90 @@
+{
+  "id": "shaving-cream",
+  "slug": "shaving-cream",
+  "name": "Shaving Cream",
+  "category": "Personal Care",
+  "subcategory": "Grooming",
+  "aliases": [
+    "shaving gel",
+    "shave foam",
+    "shaving foam"
+  ],
+  "keywords": [
+    "shaving cream",
+    "shaving gel",
+    "shave foam",
+    "grooming",
+    "liquid",
+    "aerosol"
+  ],
+  "description": "TSA rules for shaving cream and shaving gel on planes.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Shaving cream, gel, and foam are subject to TSA 3-1-1 liquids rule in carry-on bags. Containers must be 3.4 oz (100ml) or less and fit in a quart-sized clear bag.",
+    "conditions": [
+      "3.4 oz (100ml) or less per container",
+      "Must fit in a single quart-sized clear zip bag",
+      "1 quart-sized bag per passenger"
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Full-size shaving cream and gels are allowed in checked baggage without volume restrictions.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shaving-cream",
+    "lastVerified": "2026-07-01",
+    "pageTitle": "Can I bring shaving cream on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shaving-cream",
+      "verified": "2026-07-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Buy travel-size shaving cream (under 3.4 oz) for carry-on",
+    "Pack full-size cans in your checked bag for longer trips"
+  ],
+  "relatedItems": [
+    "razor",
+    "disposable-razor",
+    "deodorant",
+    "lotion"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring shaving cream on a plane?",
+      "answer": "Yes, in carry-on bags shaving cream must be 3.4 oz or less and fit in your quart-size liquids bag. Full sizes are allowed in checked baggage."
+    },
+    {
+      "question": "Is shaving gel allowed on planes?",
+      "answer": "Yes, same rules apply — 3.4 oz or less in carry-on. Full size is fine in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-07-01",
+    "nextReviewDue": "2027-07-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-07-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shaving-cream"
+    }
+  ]
+}

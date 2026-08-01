@@ -124,8 +124,8 @@ function getStatusBadgeClass(status: string) {
 ---
 
 <Layout 
-  title="Can I Bring It on a Plane? TSA Rules for Food, Vapes, Razors & More (2026)"
-  description="Search TSA carry-on & checked bag rules instantly. Can I bring food through TSA? Vape on a plane? Razor, scissors, portable charger, toothpaste, deodorant? Get official answers + free packing list."
+  title="TSA Carry-On Checker: Is It Allowed on a Plane?"
+  description="Type any item to instantly see if it goes in your carry-on or checked bag. Free TSA tool — razors, liquids, power banks, food & more. Try it now."
   image="/og-image.png"
   imageAlt="BringOnPlane — Search TSA Rules for Any Item You Want to Pack"
   canonicalURL="https://bringonplane.com/"
@@ -248,9 +248,14 @@ function getStatusBadgeClass(status: string) {
         Can I Bring This On A Plane?
       </h1>
 
+      <!-- Featured Snippet Answer (Google Position-0 target) -->
+      <p class="text-sm text-blue-200/80 font-mono max-w-[680px] mb-3 leading-snug text-pretty">
+        <strong class="text-blue-100">Quick Answer:</strong> Search any item below to instantly see if it's <span class="text-emerald-400 font-semibold">✓ Allowed</span>, <span class="text-amber-400 font-semibold">⚠ Restricted</span>, or <span class="text-red-400 font-semibold">✗ Banned</span> — in carry-on bags and checked bags — according to TSA rules.
+      </p>
+
       <!-- Subtitle -->
       <p class="text-base md:text-xl text-slate-300 font-normal leading-[1.65] max-w-[720px] mb-10 text-pretty">
-        Search TSA security screening rules for 170+ items across cabin carry-on bags and checked hold baggage.
+        Free TSA carry-on checker for items. Get a color-coded verdict before you pack.
       </p>
 
         <!-- Large Search Bar -->
@@ -312,9 +317,32 @@ function getStatusBadgeClass(status: string) {
             ))}
           </div>
         </div>
+
+        <!-- Quick-Click Category Grid (Feature 3) -->
+        <div class="w-full mt-6 pt-6 border-t border-white/10">
+          <p class="text-xs text-slate-400 font-mono mb-3 text-left">Browse by Category</p>
+          <div class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+            {[
+              { label: "Liquids", slug: "liquids", color: "bg-blue-500/15 border-blue-500/30 text-blue-300 hover:bg-blue-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>` },
+              { label: "Electronics", slug: "electronics", color: "bg-purple-500/15 border-purple-500/30 text-purple-300 hover:bg-purple-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>` },
+              { label: "Food", slug: "food", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>` },
+              { label: "Medicine", slug: "medicine", color: "bg-red-500/15 border-red-500/30 text-red-300 hover:bg-red-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>` },
+              { label: "Tools", slug: "tools", color: "bg-orange-500/15 border-orange-500/30 text-orange-300 hover:bg-orange-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>` },
+              { label: "Personal Care", slug: "personal-care", color: "bg-pink-500/15 border-pink-500/30 text-pink-300 hover:bg-pink-500/25", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>` },
+            ].map(cat => (
+              <a
+                href={`/category/${cat.slug}`}
+                class={`flex flex-col items-center gap-1.5 px-2 py-3 rounded-lg border text-center cursor-pointer transition-all select-none ${cat.color}`}
+              >
+                <span set:html={cat.icon} />
+                <span class="text-[10px] font-semibold leading-tight">{cat.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <!-- ── Inline Search Result Panel (hidden until a chip is clicked) ── -->
+      <!-- ── Inline Search Result Panel (hidden until a chip/search clicked) ── -->
       <div
         id="hero-result-panel"
         class="hidden"
@@ -324,51 +352,58 @@ function getStatusBadgeClass(status: string) {
         <div class="max-w-[720px] mx-auto px-4 pb-14 animate-fade-in">
           <!-- Result Card -->
           <div class="bg-canvas border border-hairline rounded-xl shadow-level-4 overflow-hidden">
-            <!-- Card Header -->
-            <div class="px-6 pt-5 pb-4 border-b border-hairline flex items-start justify-between gap-4">
-              <div>
-                <p class="text-xs font-mono text-mute uppercase tracking-wider mb-1.5" id="result-category">Category</p>
-                <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink flex items-center gap-2.5" id="result-name">
-                  <span id="result-title-icon-container" class="text-mute flex-shrink-0"></span>
-                  <span id="result-title-text">Item Name</span>
-                </h2>
+
+            <!-- ── BIG BINARY YES/NO VERDICT BANNER (Feature 2) ── -->
+            <div id="result-verdict-banner" class="px-6 py-4 border-b border-hairline flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <span id="result-verdict-icon" class="flex-shrink-0"></span>
+                <div>
+                  <p class="text-[10px] font-mono text-mute uppercase tracking-wider mb-0.5">Carry-On Answer</p>
+                  <p id="result-verdict-text" class="text-2xl font-extrabold tracking-tight">Loading…</p>
+                </div>
               </div>
               <button
                 type="button"
                 id="result-close-btn"
                 aria-label="Close result"
-                class="p-1.5 rounded-md hover:bg-canvas-soft text-mute hover:text-ink transition-colors flex-shrink-0 mt-0.5"
+                class="p-1.5 rounded-md hover:bg-canvas-soft text-mute hover:text-ink transition-colors flex-shrink-0"
               >
                 <X class="w-4 h-4" aria-hidden="true" />
               </button>
+            </div>
+
+            <!-- Card Header -->
+            <div class="px-6 pt-4 pb-3 border-b border-hairline flex items-center gap-3">
+              <span id="result-title-icon-container" class="text-mute flex-shrink-0"></span>
+              <div>
+                <p class="text-xs font-mono text-mute uppercase tracking-wider" id="result-category">Category</p>
+                <h2 class="text-base font-semibold tracking-[-0.4px] text-ink" id="result-name">
+                  <span id="result-title-text">Item Name</span>
+                </h2>
+              </div>
             </div>
 
             <!-- Carry-on / Checked rows -->
             <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-hairline">
               <!-- Carry-on -->
               <div class="px-6 py-5">
-                <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">Carry-on</p>
+                <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">Carry-on (cabin)</p>
                 <div id="result-carryon-badge-container"></div>
               </div>
               <!-- Checked Bag -->
               <div class="px-6 py-5">
-                <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">Checked baggage</p>
+                <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">Checked bag (hold)</p>
                 <div id="result-checked-badge-container"></div>
               </div>
             </div>
 
             <!-- Status / Reason Row -->
             <div class="px-6 py-5 bg-canvas-soft border-t border-hairline">
-              <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">Status</p>
+              <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">TSA Rule</p>
               <div class="flex items-start gap-2.5">
                 <span id="result-status-icon-container" class="flex-shrink-0 mt-0.5"></span>
                 <p class="text-sm text-body leading-[1.65]" id="result-reason">Status details…</p>
               </div>
-            </div>
-
-            <!-- Separator line per user mockup -->
-            <div class="px-6 py-2 flex justify-center text-hairline-strong/30 select-none">
-              <span>──────────────────────────</span>
             </div>
 
             <!-- Quick Summary + CTA -->
@@ -383,12 +418,12 @@ function getStatusBadgeClass(status: string) {
                 </div>
                 <div class="flex items-center gap-2.5">
                   <span id="result-summary-checked-icon-container"></span>
-                  <span>Checked baggage:</span>
+                  <span>Checked bag:</span>
                   <span class="font-medium text-ink" id="result-summary-checked-text">No</span>
                 </div>
                 <div class="flex items-center gap-2.5">
                   <span id="result-summary-personal-icon-container"></span>
-                  <span>Personal Item:</span>
+                  <span>Personal item:</span>
                   <span class="font-medium text-ink" id="result-summary-personal-text">Yes</span>
                 </div>
               </div>
@@ -399,7 +434,7 @@ function getStatusBadgeClass(status: string) {
                   href="#"
                   class="inline-flex items-center gap-1.5 text-sm font-semibold text-link hover:text-link-deep transition-colors"
                 >
-                  Read Full Rules ↓
+                  Read Full TSA Rules →
                 </a>
               </div>
             </div>
@@ -586,23 +621,33 @@ function getStatusBadgeClass(status: string) {
           {mostSearched.map((item) => (
             <a
               href={`/items/${item.slug}`}
-              class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+              class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2 group"
             >
               <div class="flex items-start justify-between gap-4">
-                <div>
+                <div class="min-w-0">
                   <span class="font-mono text-[9px] font-semibold text-mute uppercase tracking-wider block mb-0.5">
                     {item.category}
                   </span>
-                  <h3 class="text-base font-medium tracking-[-0.2px] text-ink">
+                  <h3 class="text-base font-medium tracking-[-0.2px] text-ink group-hover:text-link transition-colors">
                     {item.name}
                   </h3>
                 </div>
-                <div class="flex gap-2 flex-shrink-0">
-                  <span class:list={["text-[9px] font-mono px-2 py-0.5 rounded-full border uppercase tracking-wider", getStatusClass(item.carryOn)]}>
-                    H: {item.carryOn}
+                <div class="flex gap-2 flex-shrink-0 flex-col sm:flex-row">
+                  <span class:list={[
+                    "inline-flex items-center gap-1 text-[9px] font-semibold px-2 py-1 rounded-full border uppercase tracking-wider",
+                    item.carryOn === 'allowed' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
+                    item.carryOn === 'prohibited' ? 'bg-red-50 text-red-700 border-red-200' :
+                    'bg-amber-50 text-amber-700 border-amber-200'
+                  ]}>
+                    {item.carryOn === 'allowed' ? '✓' : item.carryOn === 'prohibited' ? '✗' : '!'} Carry-on
                   </span>
-                  <span class:list={["text-[9px] font-mono px-2 py-0.5 rounded-full border uppercase tracking-wider", getStatusClass(item.checked)]}>
-                    C: {item.checked}
+                  <span class:list={[
+                    "inline-flex items-center gap-1 text-[9px] font-semibold px-2 py-1 rounded-full border uppercase tracking-wider",
+                    item.checked === 'allowed' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
+                    item.checked === 'prohibited' ? 'bg-red-50 text-red-700 border-red-200' :
+                    'bg-amber-50 text-amber-700 border-amber-200'
+                  ]}>
+                    {item.checked === 'allowed' ? '✓' : item.checked === 'prohibited' ? '✗' : '!'} Checked
                   </span>
                 </div>
               </div>
@@ -1233,6 +1278,30 @@ function getStatusBadgeClass(status: string) {
       if (carryonBadgeContainer) carryonBadgeContainer.innerHTML = getStatusBadgeHtml(item.carryOn.status);
       if (checkedBadgeContainer) checkedBadgeContainer.innerHTML = getStatusBadgeHtml(item.checkedBag.status);
 
+      // Feature 2: Big YES/NO verdict banner
+      const verdictBanner = document.getElementById('result-verdict-banner');
+      const verdictText = document.getElementById('result-verdict-text');
+      const verdictIcon = document.getElementById('result-verdict-icon');
+      const coS = item.carryOn.status.toUpperCase();
+      if (verdictText && verdictIcon && verdictBanner) {
+        if (coS === 'ALLOWED') {
+          verdictText.textContent = 'YES — Allowed in Carry-on';
+          verdictText.className = 'text-2xl font-extrabold tracking-tight text-emerald-600';
+          verdictBanner.className = verdictBanner.className.replace(/bg-\S+/, '') + ' bg-emerald-50/80';
+          verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 border border-emerald-300"><svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>`;
+        } else if (coS === 'NOT_ALLOWED' || coS === 'PROHIBITED') {
+          verdictText.textContent = 'NO — Not Allowed in Carry-on';
+          verdictText.className = 'text-2xl font-extrabold tracking-tight text-red-600';
+          verdictBanner.className = verdictBanner.className.replace(/bg-\S+/, '') + ' bg-red-50/80';
+          verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 border border-red-300"><svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg></span>`;
+        } else {
+          verdictText.textContent = 'RESTRICTED — Conditions Apply';
+          verdictText.className = 'text-2xl font-extrabold tracking-tight text-amber-600';
+          verdictBanner.className = verdictBanner.className.replace(/bg-\S+/, '') + ' bg-amber-50/80';
+          verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 border border-amber-300"><svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg></span>`;
+        }
+      }
+
       // Status/Reason message
       const reason = item.carryOn.reason || item.checkedBag.reason || 'Must comply with standard airline limits.';
       if (reasonEl) reasonEl.textContent = reason;
@@ -1262,7 +1331,7 @@ function getStatusBadgeClass(status: string) {
 
       if (fullLink) {
         fullLink.href = `/items/${item.slug}`;
-        fullLink.innerHTML = `Read Full Rules ↓`;
+        fullLink.innerHTML = `Read Full TSA Rules →`;
       }
 
       // Smooth reveal
@@ -1338,20 +1407,31 @@ function getStatusBadgeClass(status: string) {
         return;
       }
 
+      // Feature 1: Color-coded status in suggestion dropdown
       suggestions.innerHTML = matchingSuggestions.map((item, idx) => {
         const iconSvg = getCategoryIconSvg(item.category);
+        const coStatus = (item.carryOn || '').toUpperCase();
+        const badgeColor = coStatus === 'ALLOWED'
+          ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+          : coStatus === 'NOT_ALLOWED' || coStatus === 'PROHIBITED'
+          ? 'bg-red-50 text-red-700 border-red-200'
+          : 'bg-amber-50 text-amber-700 border-amber-200';
+        const badgeLabel = coStatus === 'ALLOWED' ? 'Allowed' : coStatus === 'NOT_ALLOWED' || coStatus === 'PROHIBITED' ? 'Not Allowed' : 'Restricted';
         return `
           <button 
             type="button" 
-            class="suggestion-item w-full flex items-center justify-between px-4 py-3 hover:bg-canvas-soft-2 text-sm text-ink transition-colors cursor-pointer text-left border-l-2 border-transparent transition-all"
+            class="suggestion-item w-full flex items-center justify-between px-4 py-3 hover:bg-canvas-soft-2 text-sm text-ink cursor-pointer text-left border-l-2 border-transparent transition-all"
             data-slug="${item.slug}"
             data-index="${idx}"
           >
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 min-w-0">
               <span class="text-mute flex-shrink-0">${iconSvg}</span>
-              <span class="font-medium">${item.name}</span>
+              <div class="min-w-0">
+                <span class="font-medium block">${item.name}</span>
+                <span class="text-[10px] font-mono text-mute uppercase">${item.category}</span>
+              </div>
             </div>
-            <span class="text-[10px] font-mono text-mute uppercase">${item.category}</span>
+            <span class="inline-flex items-center text-[9px] font-bold px-2 py-0.5 rounded-full border uppercase tracking-wider flex-shrink-0 ml-2 ${badgeColor}">${badgeLabel}</span>
           </button>
         `;
       }).join('');
