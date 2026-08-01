@@ -25,7 +25,11 @@ import {
   XCircle,
   AlertCircle,
   ExternalLink,
-  X
+  X,
+  Info,
+  Mail,
+  Lock,
+  ShieldAlert
 } from "@lucide/astro";
 
 const items = getAllItems();
@@ -454,44 +458,49 @@ function getStatusBadgeClass(status: string) {
       )} />
   </section>
 
-  <!-- ═══ MANDATORY ADSENSE POLICY & Essential Site Links ═══════════════════════ -->
+  <!-- ═══ ESSENTIAL SITE INFORMATION & LEGAL POLICIES ═══════════════════════ -->
   <div class="w-full bg-canvas border-b border-hairline py-8 select-none">
     <div class="max-w-[1200px] mx-auto px-4 md:px-6">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-hairline">
         <div>
-          <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Official Directives &amp; Compliance</span>
-          <h2 class="text-base font-bold text-ink tracking-tight">Essential Site Links &amp; AdSense Policy Pages</h2>
+          <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Official Directives &amp; Site Resources</span>
+          <h2 class="text-base font-bold text-ink tracking-tight">Essential Site Information &amp; Legal Policies</h2>
         </div>
         <div class="flex items-center gap-1.5 text-xs text-mute font-mono">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Google AdSense &amp; TSA Compliant</span>
+          <span>TSA &amp; FAA Guideline Directory</span>
         </div>
       </div>
 
-      <!-- 6 Essential AdSense Required Pages Grid -->
+      <!-- 6 Essential Policy Pages Grid with Lucide Icons -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
         {[
-          { label: "About Us", desc: "Our Mission & Team", href: "/about", icon: "ℹ️" },
-          { label: "Contact Us", desc: "Support & Inquiries", href: "/contact", icon: "✉️" },
-          { label: "FAQ Guide", desc: "Common TSA Questions", href: "/faq", icon: "❓" },
-          { label: "Privacy Policy", desc: "Data & Cookie Rules", href: "/privacy-policy", icon: "🔒" },
-          { label: "Terms of Use", desc: "Service Terms", href: "/terms", icon: "📜" },
-          { label: "Disclaimer", desc: "TSA Authority Notice", href: "/disclaimer", icon: "⚠️" },
-        ].map(p => (
-          <a
-            href={p.href}
-            class="group p-3 bg-canvas-soft hover:bg-link-bg-soft border border-hairline hover:border-link rounded-xl transition-all text-left flex flex-col justify-between"
-          >
-            <div class="flex items-center justify-between gap-1 mb-1">
-              <span class="text-sm">{p.icon}</span>
-              <span class="text-[10px] font-mono text-mute group-hover:text-link transition-colors">&rarr;</span>
-            </div>
-            <div>
-              <span class="block text-xs font-semibold text-ink group-hover:text-link transition-colors leading-tight">{p.label}</span>
-              <span class="text-[10px] text-mute block mt-0.5 leading-tight">{p.desc}</span>
-            </div>
-          </a>
-        ))}
+          { label: "About Us", desc: "Mission & Standards", href: "/about", icon: Info },
+          { label: "Contact Us", desc: "Support & Inquiries", href: "/contact", icon: Mail },
+          { label: "FAQ Guide", desc: "Common TSA Answers", href: "/faq", icon: HelpCircle },
+          { label: "Privacy Policy", desc: "Data & Cookie Rules", href: "/privacy-policy", icon: Lock },
+          { label: "Terms of Use", desc: "Service Terms", href: "/terms", icon: FileText },
+          { label: "Disclaimer", desc: "TSA Authority Notice", href: "/disclaimer", icon: ShieldAlert },
+        ].map(p => {
+          const PageIcon = p.icon;
+          return (
+            <a
+              href={p.href}
+              class="group p-3.5 bg-canvas-soft hover:bg-link-bg-soft border border-hairline hover:border-link rounded-xl transition-all text-left flex flex-col justify-between"
+            >
+              <div class="flex items-center justify-between gap-1 mb-2">
+                <div class="w-7 h-7 rounded-lg bg-canvas border border-hairline group-hover:border-link group-hover:bg-primary group-hover:text-on-primary text-body flex items-center justify-center transition-all">
+                  <PageIcon class="w-3.5 h-3.5" />
+                </div>
+                <span class="text-[10px] font-mono text-mute group-hover:text-link transition-colors">&rarr;</span>
+              </div>
+              <div>
+                <span class="block text-xs font-semibold text-ink group-hover:text-link transition-colors leading-tight">{p.label}</span>
+                <span class="text-[10px] text-mute block mt-0.5 leading-tight">{p.desc}</span>
+              </div>
+            </a>
+          );
+        })}
       </div>
     </div>
   </div>
