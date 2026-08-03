@@ -91,6 +91,14 @@ const categories = [
         a: "Yes. Laptops, tablets, iPads, digital cameras, Kindles, e-readers, and similar electronics are allowed in both carry-on and checked baggage. At TSA security checkpoints, you may be required to remove laptops from your bag and place them in a separate screening bin. Two laptops can be brought on a single flight. Kindles and e-readers can be kept in your bag at most checkpoints."
       },
       {
+        q: "Can I put electronics in checked luggage? What electronics can go in a checked bag?",
+        a: "Most electronics can go in checked luggage: laptops, cameras, tablets, Kindles, gaming consoles, e-readers, and most devices. However, electronics with lithium batteries that cannot be removed (such as power banks, vapes, e-cigarettes, and hoverboards) must be in carry-on only. For valuable electronics, carry-on is strongly recommended since checked bags risk theft and rough handling. Remove lithium battery packs from devices before checking them if possible."
+      },
+      {
+        q: "Which phones are banned from planes? Can you take any phone on a plane?",
+        a: "The Samsung Galaxy Note 7 is permanently banned from all US flights (both carry-on and checked baggage) due to its history of battery fires — this ban remains in effect. All other smartphones, including all iPhone models, Samsung Galaxy models, Google Pixel, and other Android phones, are fully permitted on planes in carry-on and checked baggage. Multiple phones can be carried. Phones should be in flight mode or powered off during takeoff and landing as directed by the crew."
+      },
+      {
         q: "Can I bring an Xbox, game console, or video game controller on a plane?",
         a: "Yes. Xbox, PlayStation, Nintendo Switch, Xbox Series X, and other game consoles are allowed in both carry-on and checked bags. Game controllers can also travel in carry-on or checked bags. If packing in checked baggage, pad the devices well to prevent damage. Larger consoles in carry-on bags may need to be removed for separate X-ray screening."
       },
@@ -125,6 +133,10 @@ const categories = [
         a: "Yes. Tweezers, nail clippers, nail files, nail polish, nail glue, and eyebrow tools are all allowed in both carry-on and checked bags. Nail polish remover (liquid) must be 3.4 oz or less in carry-on bags. These small grooming tools do not require any special declaration."
       },
       {
+        q: "Can I bring a camping knife on a plane?",
+        a: "Camping knives, hunting knives, and fixed-blade knives are NOT allowed in carry-on bags — they must be in checked baggage, sheathed or wrapped to protect baggage handlers. Folding camping knives (pocket knives, Swiss army knives) are also prohibited in carry-on. In checked luggage, all camping knives are permitted. If you need a knife at your campsite, either pack it in your checked bag or purchase it at your destination."
+      },
+      {
         q: "Can I bring hiking poles and sports equipment on a plane?",
         a: "Hiking poles and trekking poles are NOT allowed in carry-on bags because their sharp tips could be used as weapons. They must be checked in your checked baggage. Golf clubs must also be in checked bags. Baseball bats, hockey sticks, and other sporting equipment must be checked. Tennis rackets and fishing rods can go in carry-on bags depending on their length."
       }
@@ -153,6 +165,14 @@ const categories = [
       {
         q: "Can I bring edibles and THC gummies through TSA?",
         a: "TSA officers focus on security threats and are not required to search for marijuana. However, if TSA agents discover marijuana or THC products, they are required by federal law to refer the matter to local law enforcement. Marijuana remains federally illegal in the USA even where state laws permit it. On interstate flights, federal law governs — bringing edibles through TSA is high risk and not recommended."
+      },
+      {
+        q: "Can someone pack scissors AND a vape pen in a checked bag?",
+        a: "For a checked (hold) bag: scissors of any size are allowed in checked baggage with no restriction. However, a vape pen, e-cigarette, or any device with a lithium battery is strictly PROHIBITED in checked baggage — vapes must travel in carry-on only. So the answer is: scissors ✅ yes in checked bag; vape pen ❌ no in checked bag. If you want both items, pack your scissors in checked luggage and your vape in your carry-on bag."
+      },
+      {
+        q: "Can I bring raw cones (rolling papers/pre-rolled cones) on a plane?",
+        a: "Yes — empty raw cones (pre-rolled paper cones, rolling papers) are allowed in carry-on and checked bags. Raw cones and rolling papers are legal tobacco accessories and are not restricted by TSA. TSA focuses on security threats, not the intent of legal paper products. If your raw cones contain marijuana or cannabis, that is a different matter — marijuana is federally illegal and TSA will refer it to law enforcement if discovered."
       }
     ]
   },
@@ -160,6 +180,10 @@ const categories = [
     id: "medications",
     label: "Medications & Medical Items",
     faqs: [
+      {
+        q: "Can I take baby milk through airport security in the UK (Stansted, Heathrow, Gatwick)?",
+        a: "Yes. At UK airports including Stansted, Heathrow, and Gatwick, baby milk (formula, expressed breast milk, and cow's milk for infants) is exempt from the 100ml liquids rule. You can carry as much baby milk as is reasonably required for your journey. You may be asked to open the container for verification. This applies to all UK airports and follows UK Civil Aviation Authority exemptions for baby food and milk. Baby food pouches and infant formula are also exempt."
+      },
       {
         q: "Can I bring prescription medications and pills on a plane?",
         a: "Yes. Prescription medications, over-the-counter pills, vitamins, supplements, and medical supplies are allowed in carry-on and checked bags. The TSA recommends carrying medications in their original labeled containers. Liquid medications (including cough syrup, liquid Tylenol, and liquid ibuprofen) are allowed in carry-on in reasonable quantities, exempted from the 3-1-1 rule but must be declared. Insulin syringes and needles are permitted with a professional letter or prescription."
@@ -197,6 +221,10 @@ const categories = [
       {
         q: "Can I bring makeup and cosmetics in my carry-on?",
         a: "Yes. Solid cosmetics (pressed powder, eyeshadow palettes, lipstick, blush, solid foundation) can be packed freely. Liquid or gel makeup (liquid foundation, mascara, BB cream, liquid lipstick, liquid eyeliner, concealer) must comply with the 3-1-1 rule in carry-on bags — containers must be 3.4 oz or smaller and fit inside one quart-sized bag. Makeup brushes and beauty tools are allowed with no restrictions."
+      },
+      {
+        q: "Is there a way to bring my full hair routine on a flight without checking a bag?",
+        a: "Yes — with some smart packing. The key is the 3-1-1 rule: each liquid/gel container must be 3.4 oz (100ml) or less. Strategy: (1) Buy travel-sized versions of shampoo, conditioner, and styling products. (2) Switch to solid alternatives — solid shampoo bars, solid conditioner bars, and solid pomade/wax have no liquid restrictions. (3) Dry shampoo powder (not spray) has no size limit. (4) Styling tools (hair dryer, straightener, Dyson Airwrap) can all go in carry-on. (5) Pack full-size bottles only if you're checking a bag. A quart-sized bag fits approximately 6–8 travel-sized products."
       }
     ]
   },
@@ -381,6 +409,14 @@ const categories = [
       {
         q: "Can I take boxing gloves, a skipping rope, or gym equipment on a plane?",
         a: "Boxing gloves are allowed in both carry-on and checked bags — they are soft and not considered a security threat. Skipping ropes can go in carry-on unless the handles are made of very dense heavy material. Yoga mats can travel carry-on (rolled outside the bag) or in checked luggage. Most soft gym accessories (resistance bands, yoga blocks, gym gloves) are fully permitted in carry-on."
+      },
+      {
+        q: "Can I bring a kettlebell on a plane?",
+        a: "Kettlebells are allowed in checked baggage only. Like dumbbells, their solid iron construction makes them potential weapons and TSA officers will typically disallow them in carry-on bags at their discretion. In checked bags, kettlebells are permitted — but note that most airlines have checked bag weight limits (50 lbs / 23 kg), so a heavy kettlebell will quickly max out your allowance. Pack light kettlebells in checked bags; heavier ones are better shipped to your destination."
+      },
+      {
+        q: "Can I bring a bicycle on a plane?",
+        a: "Yes — bicycles are allowed on most commercial flights as oversized checked baggage. You must pack the bike in a hard-sided case or cardboard bike box (available from bike shops). Handlebars must be turned, pedals removed, and tyres may need to be deflated. Most airlines charge an oversized baggage fee for bikes (typically $50–$200 each way). CO2 cartridges used for tyre inflation are prohibited — pump up tyres at the destination instead."
       }
     ]
   },
@@ -477,6 +513,124 @@ const categories = [
       {
         q: "Can I bring carbonated beverages in checked luggage?",
         a: "Yes — carbonated drinks like canned soda, sparkling water, and carbonated beverages can be packed in your checked luggage without TSA restrictions. Cabin pressure changes and turbulence can rarely cause carbonated cans to leak, so place them in a sealed plastic bag inside your checked bag. Opened carbonated beverages may fizz, so seal them tightly. There is no TSA restriction on the quantity of carbonated drinks in checked bags."
+      }
+    ]
+  },
+  {
+    id: "airline-specific",
+    label: "Airline-Specific Baggage Rules",
+    faqs: [
+      {
+        q: "Ryanair: Can I bring an electric toothbrush or electric razor in carry-on or checked bags?",
+        a: "Yes — Ryanair allows electric toothbrushes and electric razors/shavers in both hand luggage (carry-on) and checked baggage. Ryanair follows standard EU aviation security rules: electric grooming devices are not restricted items. If the device has a built-in lithium battery, Ryanair (like all EU airlines) recommends keeping it in hand luggage. Disposable razors are fully permitted in Ryanair hand luggage. Safety razors require blade removal before hand luggage — the bare razor handle is fine in the cabin."
+      },
+      {
+        q: "Ryanair: Can I take a razor in my hand luggage?",
+        a: "Yes. Ryanair permits disposable razors and electric razors in hand luggage (carry-on). Cartridge razors (like Gillette Fusion or Mach3) are allowed in hand luggage since the blades are enclosed. Safety razors are only allowed in hand luggage if the blade is removed — the metal head and handle can travel cabin-side; loose razor blades must go in your checked bag. Straight razors and cut-throat razors must be in checked baggage only."
+      },
+      {
+        q: "United Airlines: What is the policy for power banks, lithium batteries, and electric toothbrushes?",
+        a: "United Airlines follows FAA lithium battery rules: power banks and portable chargers must be in carry-on bags only (not checked bags). Power banks up to 100Wh are unrestricted in carry-on; 100–160Wh require airline approval; over 160Wh are prohibited. AA/AAA alkaline batteries can travel in carry-on or checked bags. Electric toothbrushes are allowed in both carry-on and checked luggage on United flights."
+      },
+      {
+        q: "British Airways: Can I bring an electric shaver or vape on my flight?",
+        a: "British Airways allows electric shavers in both hand baggage and hold luggage. Shavers with built-in lithium batteries are permitted in hold luggage as long as they are not spare batteries. For vapes: British Airways permits vaping devices (e-cigarettes, vape pens) in hand baggage only — they are prohibited in hold luggage due to fire risk from lithium batteries. Vaping on board or in airport terminals is not permitted. Vape juice (e-liquid) must comply with the 100ml liquid rule in hand baggage."
+      },
+      {
+        q: "Air France: What are the rules for power banks in carry-on and checked baggage?",
+        a: "Air France follows IATA and French DGAC regulations: power banks (batterie externe) must be in carry-on baggage only — they are strictly prohibited in checked/hold baggage. Power banks up to 100Wh are allowed in carry-on without prior approval. Banks between 100–160Wh require airline approval. Banks over 160Wh are banned entirely. Each passenger may carry a maximum of two spare lithium batteries (power banks) in carry-on. Air France applies these rules consistently on all routes."
+      },
+      {
+        q: "Singapore Airlines: What is the vape and e-cigarette policy?",
+        a: "Singapore Airlines prohibits vaping devices (e-cigarettes, vape pens, electronic nicotine delivery devices) in checked baggage — they must travel in carry-on only, as a lithium battery safety measure. However, note that Singapore has extremely strict laws against vaping: possession, use, or importation of vaping devices in Singapore is illegal and can result in a fine up to SGD 2,000. If you are flying to or through Singapore, you should be aware of this law regardless of what you carry on board."
+      },
+      {
+        q: "United Airlines camera policy — can I bring my camera and camera bag on United?",
+        a: "United Airlines allows cameras and photography equipment in both carry-on and checked bags. Camera bags and cases count toward your carry-on or personal item allowance. DSLR cameras, mirrorless cameras, GoPros, and film cameras are all permitted. Camera batteries (lithium) should be kept in carry-on; spare camera batteries must be in carry-on only. United does not have a special photography policy restricting camera equipment beyond standard TSA rules."
+      },
+      {
+        q: "Lufthansa: Can I bring alcohol in checked baggage?",
+        a: "Yes — Lufthansa permits alcohol in checked baggage following IATA hazardous goods rules: alcohol with 24%–70% ABV (48–140 proof) is allowed in checked bags up to 5 litres per passenger in sealed retail packaging. Alcohol under 24% ABV (beer, wine, most table wines and champagne) has no quantity limit in checked bags. Alcohol over 70% ABV is prohibited. Miniature alcohol bottles (under 100ml) can travel in carry-on inside the liquids bag."
+      }
+    ]
+  },
+  {
+    id: "travel-utilities",
+    label: "Travel Accessories & Utilities",
+    faqs: [
+      {
+        q: "Can I bring an empty water bottle on a plane through TSA?",
+        a: "Yes — empty reusable water bottles (Yeti, Hydro Flask, Owala, Stanley, Nalgene, CamelBak) are completely allowed through TSA security checkpoints in carry-on bags. The 3-1-1 rule only applies to liquids — an empty bottle contains no liquid, so it passes through security without issue. After clearing security, you can fill your bottle at airport water fountains. Empty collapsible water bottles and metal/plastic bottles of any size are permitted."
+      },
+      {
+        q: "Can I bring an extension cord on a plane?",
+        a: "Yes — extension cords (power strips, extension boards, multi-socket adapters) are allowed in both carry-on and checked baggage. TSA does not specifically restrict extension cords. However, extension cords with surge protectors or built-in batteries may be flagged for additional X-ray screening. Carry-on is recommended for travel extension cords. Extension cords with lithium battery packs must follow carry-on-only lithium battery rules."
+      },
+      {
+        q: "Can I bring a corkscrew on a plane?",
+        a: "A corkscrew without a blade (plain corkscrew with spiral and no knife) is allowed in carry-on and checked bags. A combination corkscrew with a folding knife blade (like a sommelier's corkscrew) must go in your checked bag — the knife blade makes it a prohibited carry-on item. A simple waiter's corkscrew with only a foil cutter (no blade) is generally allowed in carry-on. When in doubt, pack corkscrews in your checked bag to avoid confiscation."
+      },
+      {
+        q: "Can I bring a heating pad on a plane?",
+        a: "Electric heating pads are allowed in both carry-on and checked bags. They are standard electrical appliances with no restricted components. At TSA checkpoints, heating pads may appear dense on X-ray and be pulled for secondary inspection — pack them accessibly. Air-activated or chemical heat packs (hand warmers) are also allowed in carry-on and checked bags. USB-powered heating pads follow normal electronics rules and can travel in either bag."
+      },
+      {
+        q: "Can I bring an AirTag or GPS tracker on a plane?",
+        a: "Yes — Apple AirTags, Tile trackers, and similar Bluetooth/GPS tracking devices are allowed in carry-on and checked bags. TSA does not restrict small tracking devices. AirTags use a CR2032 coin cell battery, which is permitted in both carry-on and checked luggage. Many travelers attach AirTags to their checked bags to track luggage — this is completely legal and encouraged. Airlines are aware of AirTags and do not prohibit them."
+      },
+      {
+        q: "Can I bring a thermometer on a plane — digital or mercury?",
+        a: "Digital thermometers (fever thermometers, oral, ear, or forehead thermometers) are allowed in both carry-on and checked bags with no restrictions. Mercury thermometers are prohibited on commercial flights — mercury is a hazardous material banned from air travel entirely. Glass alcohol thermometers (non-mercury) are generally permitted in checked bags but may be fragile. Always travel with a digital thermometer when flying."
+      }
+    ]
+  },
+  {
+    id: "customs-international",
+    label: "Customs, Money & International Items",
+    faqs: [
+      {
+        q: "How much cash can I bring to or from Australia?",
+        a: "You can bring any amount of cash into or out of Australia, but you must declare amounts of AUD $10,000 or more (or foreign equivalent) on the Incoming Passenger Card (IPC) when arriving, or to the Australian Border Force when departing. Failure to declare does not mean your cash will be confiscated, but it is a criminal offence. There is no hard limit on how much cash you can carry — only the declaration threshold of AUD $10,000."
+      },
+      {
+        q: "How much wine or alcohol can I bring into Australia?",
+        a: "Australian duty-free alcohol allowance: passengers aged 18+ can bring in 2.25 litres of alcoholic beverages duty-free. This equals approximately 3 standard wine bottles. Quantities above 2.25 litres are subject to customs duty and GST. Wine must be in sealed, commercially produced bottles. All alcohol must be declared on the Incoming Passenger Card. Alcohol purchased at duty-free shops in Australian airports does not count toward the 2.25L limit."
+      },
+      {
+        q: "Do I need to declare spices or seasonings at customs?",
+        a: "In most countries, commercially packaged, sealed spices and dried seasonings (like pepper, chilli powder, turmeric, masala, cinnamon, cumin, and dried herbs) are permitted through customs without restriction. In the USA, most sealed spices are allowed. In Australia, you must declare all food items including spices — inspectors may allow commercially sealed spices but will reject fresh herbs or homemade spice blends that may carry pests. In Japan, most commercially packaged dried spices are permitted."
+      },
+      {
+        q: "Can I bring chocolate or candy to Japan or Australia?",
+        a: "Japan: commercially packaged chocolate, sweets, and candy are generally allowed into Japan. Most sealed confectionery is fine. Australia: most commercially produced chocolate and candy is allowed, but you must declare all food on the Incoming Passenger Card. Fresh or homemade goods may be inspected more closely. Lollies, candy bars, and wrapped sweets in sealed commercial packaging typically clear Australian biosecurity without issue."
+      },
+      {
+        q: "Is hair wax, pomade, or hair clay considered a liquid by TSA?",
+        a: "Yes — hair wax, pomade, hair clay, and hair cream are classified as gels or pastes under TSA rules, making them subject to the 3-1-1 liquids rule in carry-on bags. Each container must be 3.4 oz (100ml) or less and fit inside your single quart-sized clear bag. Solid pomade sticks are not restricted. Full-size jars of hair wax or pomade must be in your checked bag. This applies to all brands: American Crew, Layrite, Suavecito, Uppercut Deluxe, etc."
+      },
+      {
+        q: "Is olive oil or cooking oil allowed in checked luggage?",
+        a: "Yes — olive oil and cooking oils can be packed in checked baggage with no restrictions. Bottles should be sealed tightly and placed inside a sealed plastic bag to prevent leaks from cabin pressure changes. Olive oil in carry-on bags is subject to the 3-1-1 liquids rule — containers must be 3.4 oz (100ml) or less. Most commercially bottled olive oil (250ml, 500ml, or 1-litre bottles) must go in checked bags."
+      },
+      {
+        q: "Are Swiss Army knives legal to carry in the UK? Can I put one in checked luggage on a flight?",
+        a: "In the UK, Swiss Army knives with blades under 3 inches (7.62cm) are legal to carry in public unless the blade is locking — locking blade knives are illegal to carry in public regardless of size. On UK flights: Swiss Army knives of any size are NOT allowed in carry-on (hand) luggage. In checked baggage, Swiss Army knives are permitted as long as they are packed safely. If arriving in the UK with a Swiss Army knife in your pocket, you may be in violation of UK knife law if the blade is locking."
+      },
+      {
+        q: "Can I bring an air freshener in checked baggage?",
+        a: "Aerosol air fresheners (spray cans) are permitted in checked baggage. FAA rules limit individual aerosol cans to 18 oz or less, and total aerosols in a checked bag to 70 oz per passenger. Solid air fresheners (gel blocks, plug-in solid) are permitted in both carry-on and checked bags. Liquid spray air fresheners follow the 3-1-1 rule in carry-on (3.4 oz or less). Highly flammable or industrial aerosols are banned from all baggage."
+      },
+      {
+        q: "Duty free perfume allowance into the UK — how much can I bring?",
+        a: "UK duty-free allowance for perfume and fragrance: you can bring in up to 50ml of perfume (parfum) or 250ml of eau de toilette duty-free when entering the UK. Larger quantities are subject to customs duty and VAT. Perfume bought at duty-free shops inside UK airports (after security) does not count toward this limit. Perfume in carry-on bags must be 100ml or less per container (standard UK liquid rules for flights departing the UK)."
+      },
+      {
+        q: "Can I bring milk powder or baby formula powder into Canada?",
+        a: "Yes — commercially packaged milk powder and baby formula powder can be brought into Canada. Powdered infant formula is allowed in both carry-on and checked bags. Canada Border Services Agency (CBSA) may ask you to declare food items; declare it honestly and you will typically be allowed to keep it. Large commercial quantities may be subject to inspection. Unopened factory-sealed tins/bags of milk powder pass Canadian customs without issue for personal use quantities."
+      },
+      {
+        q: "Can I bring a snow globe on a plane?",
+        a: "Snow globes are tricky — they contain liquid inside. TSA considers snow globes as liquids subject to the 3-1-1 rule: only snow globes that appear to contain less than 3.4 oz (100ml) of liquid are allowed in carry-on bags, and they must fit in your quart-sized liquids bag. Larger snow globes must be in checked baggage. When in doubt, pack snow globes in your checked bag to avoid confiscation at the security checkpoint."
       }
     ]
   }
