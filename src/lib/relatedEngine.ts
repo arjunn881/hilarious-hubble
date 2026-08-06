@@ -44,12 +44,9 @@ export function getRelatedCategories(currentCategorySlug?: string, limit: number
 }
 
 export function getAirlineCombinationsForItem(itemSlug: string, limit: number = 5) {
-  // Rotate airlines based on itemSlug length for variety
-  const seed = itemSlug.length % POPULAR_AIRLINES.length;
-  const rotated = [...POPULAR_AIRLINES.slice(seed), ...POPULAR_AIRLINES.slice(0, seed)];
-  return rotated.slice(0, limit).map(a => ({
-    title: `Can I bring on ${a.name}?`,
-    url: `/items/${itemSlug}/airline/${a.slug}`
+  return POPULAR_AIRLINES.slice(0, limit).map(a => ({
+    title: `${a.name} Baggage Rules`,
+    url: `/airlines#${a.slug}`
   }));
 }
 

@@ -19,6 +19,7 @@ import {
 import EEATBanner from "../../components/seo/EEATBanner.astro";
 import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
 import RelatedLinksWidget from "../../components/seo/RelatedLinksWidget.astro";
+import AirlineCountrySelector from "../../components/AirlineCountrySelector.astro";
 import { getAirlineCombinationsForItem, getPopularGuides, getRelatedCategories } from "../../lib/relatedEngine";
 export async function getStaticPaths() {
   const items = getAllItems();
@@ -599,9 +600,17 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
           <Globe class="w-4 h-4 text-mute" />
           Airline & International Rule Variations
         </h3>
-        <p class="text-sm text-body leading-[1.7]">
+        <p class="text-sm text-body leading-[1.7] mb-6">
           {airlineDifferences}
         </p>
+        <AirlineCountrySelector 
+          itemName={item.name} 
+          carryOnStatus={item.carryOn.status} 
+          checkedStatus={item.checkedBag.status} 
+          carryOnReason={item.carryOn.reason} 
+          checkedReason={item.checkedBag.reason} 
+          category={item.category} 
+        />
       </section>
 
       <section>

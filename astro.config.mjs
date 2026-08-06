@@ -34,10 +34,7 @@ function getPriority(url) {
   if (['/airlines', '/countries'].includes(path)) return 0.85;
 
   // Item detail pages — highest-traffic long-tail targets
-  if (path.startsWith('/items/') && !path.includes('/airline/')) return 0.8;
-
-  // Airline specific item rules
-  if (path.includes('/airline/')) return 0.75;
+  if (path.startsWith('/items/')) return 0.8;
 
   // Category pages
   if (path.startsWith('/category/')) return 0.75;
@@ -77,11 +74,13 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
-      // Exclude 404, 500, API routes, and redirect pages
+      // Exclude 404, 500, API routes, redirect pages, and auto-generated thin matrix paths (/airline/, /country/)
       filter: (page) => {
         const path = page.replace(SITE, '');
         return !EXCLUDED_PATTERNS.some(pattern => path.startsWith(pattern))
-          && path !== '/items'; // /items is a redirect page; exclude in favor of /items/page/1
+          && path !== '/items'
+          && !path.includes('/airline/')
+          && !path.includes('/country/');
       },
       // Customize each URL entry: set priority + changefreq & force trailing slash alignment matching Cloudflare Pages 200 OK endpoints
       serialize: (item) => ({

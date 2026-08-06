@@ -2,69 +2,173 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { ArrowLeft, Compass } from "@lucide/astro";
+import { ArrowLeft, Globe, ShieldCheck, AlertCircle, FileText, Landmark } from "@lucide/astro";
 
 const countries = [
-  { slug: "canada", name: "Canada" },
-  { slug: "japan", name: "Japan" },
-  { slug: "united-kingdom", name: "United Kingdom" },
-  { slug: "germany", name: "Germany" },
-  { slug: "france", name: "France" },
-  { slug: "usa", name: "United States" },
-  { slug: "australia", name: "Australia" },
-  { slug: "singapore", name: "Singapore" }
+  { 
+    slug: "usa", 
+    name: "United States", 
+    agency: "TSA / U.S. Customs and Border Protection (CBP)", 
+    liquidRule: "Standard 3-1-1 Rule (containers under 3.4 oz / 100ml in 1 quart bag).", 
+    biosecurity: "All agricultural items, meats, plants, seeds, and fresh fruits must be declared.", 
+    medicineRule: "Prescription pills in original bottles recommended. Declare amounts over 90-day supply.", 
+    dutyFreeLimit: "$800 exemption per returning resident; currency over $10,000 must be declared on Form FinCEN 105." 
+  },
+  { 
+    slug: "canada", 
+    name: "Canada", 
+    agency: "CATSA / Canada Border Services Agency (CBSA)", 
+    liquidRule: "3-1-1 liquids rule enforced at CATSA checkpoints.", 
+    biosecurity: "Strict biosecurity screening on incoming food, wood, and organic products.", 
+    medicineRule: "Prescription medications must be declared if carrying more than personal 90-day supply.", 
+    dutyFreeLimit: "CAN $800 exemption for stays over 48 hours. Declare cannabis (strictly illegal to cross borders)." 
+  },
+  { 
+    slug: "uk", 
+    name: "United Kingdom", 
+    agency: "DFT / UK Border Force", 
+    liquidRule: "100ml container limits in 1-liter clear bag (Next-gen CT scanners deploying at major UK airports).", 
+    biosecurity: "Restrictions on fresh meat, dairy, and plants from outside the EU/UK.", 
+    medicineRule: "Controlled substances require personal license or official doctor letter.", 
+    dutyFreeLimit: "Goods allowance of £390 per traveler. Declare tobacco and spirits exceeding allowances." 
+  },
+  { 
+    slug: "australia", 
+    name: "Australia", 
+    agency: "Australian Border Force (ABF) / Dept of Agriculture", 
+    liquidRule: "International flights enforce 100ml liquid limits in cabin bags.", 
+    biosecurity: "Extreme biosecurity enforcement. ALL food, seeds, wooden souvenirs, and soil must be declared on Incoming Passenger Card.", 
+    medicineRule: "Prescription medicines must be declared; max 3-month supply permitted with doctor certificate.", 
+    dutyFreeLimit: "AUD $900 general goods allowance per adult." 
+  },
+  { 
+    slug: "japan", 
+    name: "Japan", 
+    agency: "JCAB / Japan Customs", 
+    liquidRule: "Standard 100ml liquid rule for international arrivals and departures.", 
+    biosecurity: "Meat products and fresh fruits strictly prohibited without quarantine certificates.", 
+    medicineRule: "STRICT PROHIBITION on stimulants, pseudoephedrine (Vicks inhalers, Sudafed), and certain pain relievers without Yakukan Shoumei import permit.", 
+    dutyFreeLimit: "200,000 JPY exemption for personal purchases." 
+  },
+  { 
+    slug: "germany", 
+    name: "Germany", 
+    agency: "Federal Police (BPOL) / German Customs (Zoll)", 
+    liquidRule: "EU 100ml liquid rule strictly enforced.", 
+    biosecurity: "Food imports from non-EU nations restricted.", 
+    medicineRule: "Medicines for personal travel permitted for up to 3 months' supply.", 
+    dutyFreeLimit: "€430 exemption for air travelers." 
+  },
+  { 
+    slug: "france", 
+    name: "France", 
+    agency: "DGAC / French Customs (Douane)", 
+    liquidRule: "EU liquid rules in effect. STEB (Security Tamper Evident Bags) required for duty-free liquids.", 
+    biosecurity: "Plant and animal product import limits apply for non-EU passengers.", 
+    medicineRule: "Doctor note required for narcotics or psychotropic prescription medicines.", 
+    dutyFreeLimit: "€430 duty-free allowance for non-EU arrivals." 
+  },
+  { 
+    slug: "singapore", 
+    name: "Singapore", 
+    agency: "CAAS / ICA (Immigration & Checkpoints Authority)", 
+    liquidRule: "Standard 100ml cabin liquid rule for flights departing Changi Airport.", 
+    biosecurity: "Food imports limited to approved sources; fresh food restricted.", 
+    medicineRule: "Select sleeping pills, codeine, and tranquilizers require HSA permit approval prior to arrival.", 
+    dutyFreeLimit: "Chewing gum, e-cigarettes, vaporizers, and chewing tobacco strictly BANNED from import." 
+  }
 ];
 
-const popularItems = [
-  { slug: "prescription-pills", name: "Prescription Pills" },
-  { slug: "baby-food", name: "Baby Food" },
-  { slug: "sunscreen", name: "Sunscreen Lotion" },
-  { slug: "power-bank", name: "Power Bank" },
-  { slug: "utility-knife", name: "Utility Knife" }
+const coreCategories = [
+  { name: "Prescription Medication Rules", slug: "medicine" },
+  { name: "Electronics & Lithium Battery Rules", slug: "electronics" },
+  { name: "Food & Agricultural Rules", slug: "food" },
+  { name: "Liquids, Creams & Gels", slug: "liquids" }
 ];
 ---
 
 <Layout 
-  title="International Customs & Aviation Security Rules | Bring On Plane"
-  description="Verify customs declaration rules, biosecurity limits, and security screening protocols across destination countries."
+  title="International Customs & Airport Security Regulations (2026)"
+  description="Guide to customs declarations, biosecurity limits, liquid rules, and restricted items for USA, UK, Canada, Australia, Japan, Germany, France, and Singapore."
+  canonicalURL="https://bringonplane.com/countries"
 >
   <Header slot="header" />
 
-  <div class="max-w-[800px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+  <div class="max-w-[1000px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
     
     <div class="mb-8 select-none">
       <a href="/" class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors">
         <ArrowLeft class="w-3.5 h-3.5" />
-        Back to Home
+        Back to TSA Checker
       </a>
     </div>
 
     <header class="mb-10">
-      <div class="flex items-center gap-2.5 mb-2">
-        <Compass class="w-5 h-5 text-mute" />
-        <h1 class="text-3xl font-semibold tracking-[-1px] text-ink">Countries Customs Index</h1>
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-link-bg-soft text-link-deep border border-link/25 rounded-xs text-xs font-mono mb-3">
+        <Globe class="w-3.5 h-3.5" />
+        Border Control & Customs 2026
       </div>
-      <p class="text-sm text-body leading-[1.6]">
-        Select a country to review official customs limits, declarations requirements, and border control regulations for travel items.
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.2px] text-ink mb-3 leading-tight">
+        International Airport Security & Customs Regulations
+      </h1>
+      <p class="text-sm text-body leading-[1.7] max-w-[760px]">
+        Official airport screening protocols, biosecurity declaration requirements, liquid limits, and medication rules across major global travel destinations.
       </p>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Category Shortcuts -->
+    <div class="mb-10 p-5 bg-canvas border border-hairline rounded-md shadow-xs">
+      <h2 class="text-xs font-mono uppercase tracking-wider font-semibold text-mute mb-3">
+        Check Specific Item Rules By Category:
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {coreCategories.map(cat => (
+          <a 
+            href={`/category/${cat.slug}`} 
+            class="px-3 py-1.5 bg-canvas-soft hover:bg-canvas-soft-2 text-xs font-medium text-ink border border-hairline rounded-sm transition-colors"
+          >
+            {cat.name}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Country Cards -->
+    <div class="space-y-6">
       {countries.map(country => (
-        <div class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
-          <h2 class="text-base font-semibold text-ink mb-3">{country.name}</h2>
-          <ul class="space-y-1.5 text-xs font-mono">
-            {popularItems.map(item => (
-              <li>
-                <a 
-                  href={`/items/${item.slug}/country/${country.slug}`} 
-                  class="text-link hover:text-link-deep hover:underline block"
-                >
-                  Can I bring {item.name.toLowerCase()} to {country.name}?
-                </a>
-              </li>
-            ))}
-          </ul>
+        <div id={country.slug} class="bg-canvas border border-hairline rounded-md p-6 shadow-xs scroll-mt-20">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-hairline gap-2">
+            <h2 class="text-xl font-semibold text-ink flex items-center gap-2">
+              <Landmark class="w-4.5 h-4.5 text-link" />
+              {country.name}
+            </h2>
+            <span class="text-xs font-mono text-mute">{country.agency}</span>
+          </div>
+
+          <div class="space-y-3 my-5 text-xs text-body">
+            <div class="p-3 bg-canvas-soft rounded border border-hairline">
+              <strong class="text-ink block mb-0.5 font-semibold">Liquid & Security Screening Protocol:</strong>
+              <span>{country.liquidRule}</span>
+            </div>
+
+            <div class="p-3 bg-canvas-soft rounded border border-hairline">
+              <strong class="text-ink block mb-0.5 font-semibold">Biosecurity & Agriculture Rules:</strong>
+              <span>{country.biosecurity}</span>
+            </div>
+
+            <div class="p-3 bg-canvas-soft rounded border border-hairline">
+              <strong class="text-ink block mb-0.5 font-semibold">Medication & Prescription Protocol:</strong>
+              <span>{country.medicineRule}</span>
+            </div>
+          </div>
+
+          <div class="p-3 bg-canvas-soft rounded border border-hairline/80 text-xs text-body flex items-start gap-2.5">
+            <AlertCircle class="w-4 h-4 text-warning-deep flex-shrink-0 mt-0.5" />
+            <div>
+              <strong class="text-ink block mb-0.5">Duty-Free Exemption & Customs Limit:</strong>
+              <span>{country.dutyFreeLimit}</span>
+            </div>
+          </div>
         </div>
       ))}
     </div>

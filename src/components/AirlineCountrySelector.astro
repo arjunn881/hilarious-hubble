@@ -1,0 +1,239 @@
+---
+import { Plane, Globe, ShieldCheck, AlertCircle, Info } from "@lucide/astro";
+
+interface Props {
+  itemName: string;
+  carryOnStatus: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKNOWN';
+  checkedStatus: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKNOWN';
+  carryOnReason?: string;
+  checkedReason?: string;
+  category?: string;
+}
+
+const { itemName, carryOnStatus, checkedStatus, carryOnReason = "", checkedReason = "", category = "" } = Astro.props;
+
+const airlines = [
+  { slug: "delta", name: "Delta Air Lines", cabinLimit: "10 kg (22 lbs)", checkedLimit: "23 kg (50 lbs)", note: "Follows standard TSA cabin baggage rules. Lithium batteries must remain in carry-on." },
+  { slug: "united", name: "United Airlines", cabinLimit: "8 kg (17 lbs)", checkedLimit: "23 kg (50 lbs)", note: "Strict size limit of 9 x 14 x 22 inches for overhead carry-on bags." },
+  { slug: "american", name: "American Airlines", cabinLimit: "10 kg (22 lbs)", checkedLimit: "23 kg (50 lbs)", note: "Basic Economy tickets include 1 carry-on and 1 personal item." },
+  { slug: "lufthansa", name: "Lufthansa", cabinLimit: "8 kg (17 lbs)", checkedLimit: "23 kg (50 lbs)", note: "EU regulations strictly apply. Liquids must fit in 1-liter transparent bag." },
+  { slug: "air-france", name: "Air France", cabinLimit: "12 kg (26 lbs)", checkedLimit: "23 kg (50 lbs)", note: "Combined weight of carry-on and personal item must not exceed 12 kg." },
+  { slug: "british-airways", name: "British Airways", cabinLimit: "23 kg (50 lbs)", checkedLimit: "23 kg (50 lbs)", note: "Generous 23 kg allowance for carry-on bag, subject to dimensions." },
+  { slug: "ryanair", name: "Ryanair", cabinLimit: "10 kg (22 lbs)", checkedLimit: "20 kg (44 lbs)", note: "Strictly measures cabin bag dimensions at gate (40 x 20 x 25 cm free)." },
+  { slug: "emirates", name: "Emirates", cabinLimit: "7 kg (15 lbs)", checkedLimit: "30 kg (66 lbs)", note: "Economy class permits 1 piece of carry-on up to 7 kg." },
+  { slug: "singapore-airlines", name: "Singapore Airlines", cabinLimit: "7 kg (15 lbs)", checkedLimit: "30 kg (66 lbs)", note: "Requires prior approval for non-standard battery devices over 100Wh." }
+];
+
+const countries = [
+  { slug: "usa", name: "United States", agency: "TSA", rule: "Follows standard TSA 3-1-1 liquids rule and FAA hazardous material packaging rules.", declaration: "Declare cash over $10k and agricultural imports." },
+  { slug: "uk", name: "United Kingdom", agency: "DFT / UK Border Force", rule: "3-1-1 liquid rule applies. Sharp objects prohibited in cabin bags.", declaration: "Declare duty-free alcohol and tobacco exceeding allowances." },
+  { slug: "canada", name: "Canada", agency: "CATSA", rule: "CATSA regulates cabin baggage. Power banks prohibited in checked luggage.", declaration: "Requires declaration for food, plants, and animal products." },
+  { slug: "australia", name: "Australia", agency: "ABF / Biosecurity", rule: "Strict biosecurity laws. All organic items and food must be declared on incoming card.", declaration: "Mandatory declaration of food, wooden items, seeds, and soil." },
+  { slug: "japan", name: "Japan", agency: "JCAB / Japan Customs", rule: "Strict rules on prescription medications (stimulants and certain painkillers restricted).", declaration: "Declare gold, currency over 1 million JPY, and controlled medicines." },
+  { slug: "germany", name: "Germany", agency: "Federal Police (BPOL)", rule: "German customs rules apply for non-EU arrivals. Pharmaceuticals subject to verification.", declaration: "Declare duty-free items exceeding EU exemption thresholds." },
+  { slug: "france", name: "France", agency: "DGAC / French Customs", rule: "Liquid regulations strictly enforced at Paris CDG and Orly security checkpoints.", declaration: "Original receipts required for duty-free liquid purchases." },
+  { slug: "singapore", name: "Singapore", agency: "CAAS / ICA", rule: "Chewing gum, e-cigarettes, and vaporizers strictly prohibited from import.", declaration: "Declare controlled items, medicines, and tobacco products." }
+];
+
+const carryBadge = carryOnStatus === 'ALLOWED' 
+  ? 'bg-link-bg-soft text-link-deep border-link/25' 
+  : carryOnStatus === 'NOT_ALLOWED' 
+  ? 'bg-error-soft text-error-deep border-error/25' 
+  : 'bg-warning-soft text-warning-deep border-warning/25';
+
+const checkedBadge = checkedStatus === 'ALLOWED' 
+  ? 'bg-link-bg-soft text-link-deep border-link/25' 
+  : checkedStatus === 'NOT_ALLOWED' 
+  ? 'bg-error-soft text-error-deep border-error/25' 
+  : 'bg-warning-soft text-warning-deep border-warning/25';
+---
+
+<div class="my-10 border border-hairline rounded-lg bg-canvas overflow-hidden shadow-xs">
+  
+  <!-- Widget Header -->
+  <div class="px-6 py-5 bg-canvas-soft border-b border-hairline flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <div class="flex items-center gap-2 mb-1">
+        <ShieldCheck class="w-4 h-4 text-link" />
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-mute">Interactive Guidance</span>
+      </div>
+      <h3 class="text-lg font-semibold text-ink tracking-tight">
+        Airline & Country Specific Baggage Checker
+      </h3>
+      <p class="text-xs text-body mt-0.5">
+        Select your airline or destination to verify tailored limits for <strong class="text-ink">{itemName}</strong>.
+      </p>
+    </div>
+
+    <!-- Mode Selector Tabs -->
+    <div class="inline-flex p-1 bg-canvas border border-hairline rounded-md" id="tab-controls">
+      <button 
+        type="button" 
+        id="tab-btn-airlines"
+        class="px-3.5 py-1.5 text-xs font-medium rounded-sm transition-all bg-primary text-on-primary shadow-xs"
+        onclick="switchTab('airlines')"
+      >
+        <span class="flex items-center gap-1.5">
+          <Plane class="w-3.5 h-3.5" />
+          Airlines
+        </span>
+      </button>
+      <button 
+        type="button" 
+        id="tab-btn-countries"
+        class="px-3.5 py-1.5 text-xs font-medium rounded-sm transition-all text-body hover:text-ink"
+        onclick="switchTab('countries')"
+      >
+        <span class="flex items-center gap-1.5">
+          <Globe class="w-3.5 h-3.5" />
+          Countries
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="p-6">
+
+    <!-- AIRLINES PANEL -->
+    <div id="panel-airlines" class="space-y-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <label for="airline-select" class="text-xs font-semibold text-ink uppercase tracking-wider font-mono">
+          Select Airline Carrier:
+        </label>
+        <select 
+          id="airline-select" 
+          class="w-full sm:w-auto min-w-[240px] px-3 py-2 text-xs font-medium bg-canvas border border-hairline-strong rounded-md text-ink focus:outline-none focus:ring-2 focus:ring-link focus:border-link"
+          onchange="updateAirlineView(this.value)"
+        >
+          {airlines.map((a, idx) => (
+            <option value={a.slug} selected={idx === 0}>{a.name}</option>
+          ))}
+        </select>
+      </div>
+
+      <div id="airline-details-card" class="mt-4 p-5 rounded-md border border-hairline bg-canvas-soft transition-all">
+        <div class="flex items-center justify-between mb-3 border-b border-hairline pb-3">
+          <span id="selected-airline-name" class="text-sm font-semibold text-ink">Delta Air Lines</span>
+          <span class="text-[11px] font-mono text-mute">Carriage Protocol 2026</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div class="p-3 bg-canvas rounded border border-hairline">
+            <span class="text-[10px] font-mono uppercase text-mute block mb-1">Carry-On Status</span>
+            <span id="airline-carry-status" class={`inline-flex px-2 py-0.5 text-xs font-semibold rounded border ${carryBadge}`}>
+              {carryOnStatus.replace('_', ' ')}
+            </span>
+            <span id="airline-cabin-limit" class="block text-xs text-body mt-2">
+              Cabin Baggage Limit: <strong>10 kg (22 lbs)</strong>
+            </span>
+          </div>
+
+          <div class="p-3 bg-canvas rounded border border-hairline">
+            <span class="text-[10px] font-mono uppercase text-mute block mb-1">Checked Hold Status</span>
+            <span id="airline-checked-status" class={`inline-flex px-2 py-0.5 text-xs font-semibold rounded border ${checkedBadge}`}>
+              {checkedStatus.replace('_', ' ')}
+            </span>
+            <span id="airline-checked-limit" class="block text-xs text-body mt-2">
+              Checked Hold Limit: <strong>23 kg (50 lbs)</strong>
+            </span>
+          </div>
+        </div>
+
+        <div class="p-3 bg-canvas rounded border border-hairline/80 text-xs text-body flex items-start gap-2.5">
+          <Info class="w-4 h-4 text-link flex-shrink-0 mt-0.5" />
+          <div>
+            <strong class="text-ink block mb-0.5">Carrier Note:</strong>
+            <span id="selected-airline-note">Follows standard TSA cabin baggage rules. Lithium batteries must remain in carry-on.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COUNTRIES PANEL -->
+    <div id="panel-countries" class="space-y-4 hidden">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <label for="country-select" class="text-xs font-semibold text-ink uppercase tracking-wider font-mono">
+          Select Destination Country:
+        </label>
+        <select 
+          id="country-select" 
+          class="w-full sm:w-auto min-w-[240px] px-3 py-2 text-xs font-medium bg-canvas border border-hairline-strong rounded-md text-ink focus:outline-none focus:ring-2 focus:ring-link focus:border-link"
+          onchange="updateCountryView(this.value)"
+        >
+          {countries.map((c, idx) => (
+            <option value={c.slug} selected={idx === 0}>{c.name}</option>
+          ))}
+        </select>
+      </div>
+
+      <div id="country-details-card" class="mt-4 p-5 rounded-md border border-hairline bg-canvas-soft transition-all">
+        <div class="flex items-center justify-between mb-3 border-b border-hairline pb-3">
+          <span id="selected-country-name" class="text-sm font-semibold text-ink">United States</span>
+          <span id="selected-country-agency" class="text-[11px] font-mono text-mute">Authority: TSA</span>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-3 bg-canvas rounded border border-hairline">
+            <span class="text-[10px] font-mono uppercase text-mute block mb-1">Customs & Security Rule</span>
+            <p id="selected-country-rule" class="text-xs text-body leading-relaxed">
+              Follows standard TSA 3-1-1 liquids rule and FAA hazardous material packaging rules.
+            </p>
+          </div>
+
+          <div class="p-3 bg-canvas rounded border border-hairline/80 text-xs text-body flex items-start gap-2.5">
+            <AlertCircle class="w-4 h-4 text-warning-deep flex-shrink-0 mt-0.5" />
+            <div>
+              <strong class="text-ink block mb-0.5">Declaration & Entry Notice:</strong>
+              <span id="selected-country-declaration">Declare cash over $10k and agricultural imports.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script is:inline define:vars={{ airlines, countries }}>
+  function switchTab(tab) {
+    const btnAirlines = document.getElementById('tab-btn-airlines');
+    const btnCountries = document.getElementById('tab-btn-countries');
+    const panelAirlines = document.getElementById('panel-airlines');
+    const panelCountries = document.getElementById('panel-countries');
+
+    if (tab === 'airlines') {
+      btnAirlines.className = "px-3.5 py-1.5 text-xs font-medium rounded-sm transition-all bg-primary text-on-primary shadow-xs";
+      btnCountries.className = "px-3.5 py-1.5 text-xs font-medium rounded-sm transition-all text-body hover:text-ink";
+      panelAirlines.classList.remove('hidden');
+      panelCountries.classList.add('hidden');
+    } else {
+      btnCountries.className = "px-3.5 py-1.5 text-xs font-medium rounded-sm transition-all bg-primary text-on-primary shadow-xs";
+      btnAirlines.className = "px-3.5 py-1.5 text-xs font-medium rounded-sm transition-all text-body hover:text-ink";
+      panelCountries.classList.remove('hidden');
+      panelAirlines.classList.add('hidden');
+    }
+  }
+
+  function updateAirlineView(slug) {
+    const item = airlines.find(a => a.slug === slug);
+    if (!item) return;
+    document.getElementById('selected-airline-name').textContent = item.name;
+    document.getElementById('airline-cabin-limit').innerHTML = 'Cabin Baggage Limit: <strong>' + item.cabinLimit + '</strong>';
+    document.getElementById('airline-checked-limit').innerHTML = 'Checked Hold Limit: <strong>' + item.checkedLimit + '</strong>';
+    document.getElementById('selected-airline-note').textContent = item.note;
+  }
+
+  function updateCountryView(slug) {
+    const item = countries.find(c => c.slug === slug);
+    if (!item) return;
+    document.getElementById('selected-country-name').textContent = item.name;
+    document.getElementById('selected-country-agency').textContent = 'Authority: ' + item.agency;
+    document.getElementById('selected-country-rule').textContent = item.rule;
+    document.getElementById('selected-country-declaration').textContent = item.declaration;
+  }
+
+  // Global window functions for onclick access
+  window.switchTab = switchTab;
+  window.updateAirlineView = updateAirlineView;
+  window.updateCountryView = updateCountryView;
+</script>
