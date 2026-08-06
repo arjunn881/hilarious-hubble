@@ -159,25 +159,27 @@ function getTravelTip(itemData: typeof item) {
 }
 const travelTip = getTravelTip(item);
 
-// ── SEO: Verdict-aware title (Feature 5) ─────────────────────────────────────
-const carryOnVerdict = item.carryOn.status === 'ALLOWED' ? 'Yes'
-  : item.carryOn.status === 'NOT_ALLOWED' ? 'No'
-  : 'Restricted';
-const checkedVerdict = item.checkedBag.status === 'ALLOWED' ? 'Yes'
-  : item.checkedBag.status === 'NOT_ALLOWED' ? 'No'
-  : 'Restricted';
-const seoTitle = `Can You Bring ${item.name} on a Plane? (${carryOnVerdict} Carry-On, ${checkedVerdict} Checked)`;
+// ── SEO: Verdict-aware High-CTR title & dynamic year injection ──────────────────
+const currentYear = new Date().getFullYear();
+const carryOnVerdict = item.carryOn.status === 'ALLOWED' ? 'YES'
+  : item.carryOn.status === 'NOT_ALLOWED' ? 'NO'
+  : 'RESTRICTED';
+const checkedVerdict = item.checkedBag.status === 'ALLOWED' ? 'YES'
+  : item.checkedBag.status === 'NOT_ALLOWED' ? 'NO'
+  : 'RESTRICTED';
 
-// ── SEO: CTR-optimised meta description (Feature 6) ─────────────────────────
-// Target: keyword-first, rule summary, CTA, under 160 chars
-const carryOnShort = item.carryOn.status === 'ALLOWED' ? 'allowed in carry-on'
-  : item.carryOn.status === 'NOT_ALLOWED' ? 'NOT allowed in carry-on'
-  : 'restricted in carry-on';
+const seoTitle = `Can You Bring ${item.name} on a Plane? [${carryOnVerdict} Carry-On] (${currentYear} TSA Rules)`;
+
+// ── SEO: High-Converting Meta Description (<155 chars) ─────────────────────────
+const carryOnShort = item.carryOn.status === 'ALLOWED' ? 'Allowed in carry-on'
+  : item.carryOn.status === 'NOT_ALLOWED' ? 'PROHIBITED in carry-on'
+  : 'Restricted in carry-on';
 const checkedShort = item.checkedBag.status === 'ALLOWED' ? 'allowed in checked bags'
-  : item.checkedBag.status === 'NOT_ALLOWED' ? 'NOT allowed in checked bags'
-  : 'restricted in checked bags';
-const rawDesc = `${item.name} is ${carryOnShort} and ${checkedShort}. ${item.carryOn.reason || ''} Check the full TSA rule now.`;
-const seoDescription = rawDesc.length > 160 ? rawDesc.slice(0, 157) + '...' : rawDesc;
+  : item.checkedBag.status === 'NOT_ALLOWED' ? 'prohibited in checked'
+  : 'restricted in checked';
+
+const rawDesc = `${carryOnShort} & ${checkedShort}. Official TSA rules for ${item.name.toLowerCase()}: see exact limits & 1 critical packing catch before your flight.`;
+const seoDescription = rawDesc.length > 155 ? rawDesc.slice(0, 152) + '...' : rawDesc;
 
 // ── SEO: Featured Snippet answer (Feature 8) ─────────────────────────────────
 const featuredSnippetAnswer = item.carryOn.status === 'ALLOWED'

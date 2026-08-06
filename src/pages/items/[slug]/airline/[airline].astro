@@ -41,8 +41,10 @@ if (!item) {
 const currentUrl = new URL(Astro.url.pathname, "https://bringonplane.com").toString();
 
 // SEO Parameters
-const seoTitle = `Can You Bring ${item.name} on ${airline.name}? Carry-on & Checked Rules (2026)`;
-const seoDescription = `Learn whether you can bring ${item.name.toLowerCase()} on ${airline.name} flights. Read official TSA regulations, cabin limits, and checked bag rules.`;
+const currentYear = new Date().getFullYear();
+const carryOnVerdict = item.carryOn.status === 'ALLOWED' ? 'YES' : item.carryOn.status === 'NOT_ALLOWED' ? 'NO' : 'RESTRICTED';
+const seoTitle = `Can You Bring ${item.name} on ${airline.name}? [${carryOnVerdict}] (${currentYear} Rules)`;
+const seoDescription = `${item.name} on ${airline.name} (${currentYear}): ${item.carryOn.status === 'ALLOWED' ? 'Allowed in cabin' : item.carryOn.status === 'NOT_ALLOWED' ? 'Prohibited in cabin' : 'Restricted'}. Check bag limits & TSA rules before packing.`;
 
 // 8 Unique FAQs generation
 const faqs = [

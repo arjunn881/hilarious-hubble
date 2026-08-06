@@ -74,6 +74,7 @@ export default defineConfig({
     port: 3000,
   },
   site: SITE,
+  trailingSlash: 'never',
   integrations: [
     sitemap({
       // Exclude 404, 500, API routes, and redirect pages
@@ -82,9 +83,10 @@ export default defineConfig({
         return !EXCLUDED_PATTERNS.some(pattern => path.startsWith(pattern))
           && path !== '/items'; // /items is a redirect page; exclude in favor of /items/page/1
       },
-      // Customize each URL entry: set priority + changefreq
+      // Customize each URL entry: set priority + changefreq & force non-trailing slash alignment
       serialize: (item) => ({
         ...item,
+        url: (item.url.endsWith('/') && item.url !== `${SITE}/`) ? item.url.slice(0, -1) : item.url,
         priority: getPriority(item.url),
         changefreq: getChangefreq(item.url),
         // lastmod defaults to build time — Astro sitemap integration handles this
