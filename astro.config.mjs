@@ -72,6 +72,10 @@ export default defineConfig({
   },
   site: SITE,
   trailingSlash: 'always',
+  redirects: {
+    '/category/personal care': '/category/personal-care/',
+    '/category/personal%20care': '/category/personal-care/',
+  },
   integrations: [
     sitemap({
       // Exclude 404, 500, API routes, redirect pages, and auto-generated thin matrix paths (/airline/, /country/)

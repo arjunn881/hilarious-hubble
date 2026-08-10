@@ -253,35 +253,6 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
         } : undefined
       },
       {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://bringonplane.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Items",
-            "item": "https://bringonplane.com/#categories"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": item.category,
-            "item": "https://bringonplane.com/#categories"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": item.name,
-            "item": `https://bringonplane.com/items/${item.slug}`
-          }
-        ]
-      },
-      {
         "@type": "FAQPage",
         "mainEntity": [
           ...itemFaqs.map(faq => ({

@@ -12,7 +12,23 @@ interface Props {
 
 const { items } = Astro.props;
 
-// Generate JSON-LD schema
+const siteUrl = "https://bringonplane.com";
+const rawPathname = Astro.url.pathname || "/";
+const formattedPathname = rawPathname.endsWith("/") ? rawPathname : `${rawPathname}/`;
+const currentFullUrl = `${siteUrl}${formattedPathname}`;
+
+function getItemUrl(item: BreadcrumbItem): string {
+  if (item.href) {
+    if (item.href.startsWith("http://") || item.href.startsWith("https://")) {
+      return item.href;
+    }
+    const path = item.href.startsWith("/") ? item.href : `/${item.href}`;
+    return `${siteUrl}${path}`;
+  }
+  return currentFullUrl;
+}
+
+// Generate JSON-LD schema with required "item" property on every ListItem
 const schema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -20,7 +36,7 @@ const schema = {
     "@type": "ListItem",
     "position": index + 1,
     "name": item.label,
-    ...(item.href ? { "item": `https://bringonplane.com${item.href}` } : {})
+    "item": getItemUrl(item)
   }))
 };
 ---
@@ -29,6 +45,7 @@ const schema = {
   <ol class="flex items-center gap-1.5 m-0 p-0 list-none" itemscope itemtype="https://schema.org/BreadcrumbList">
     {items.map((item, index) => {
       const isLast = index === items.length - 1;
+      const itemUrl = getItemUrl(item);
       
       return (
         <li 
@@ -50,6 +67,7 @@ const schema = {
             <span class="text-ink font-medium capitalize flex items-center gap-1" aria-current={isLast ? "page" : undefined}>
               {index === 0 && <Home class="w-3.5 h-3.5" />}
               <span itemprop="name">{item.label}</span>
+              <link itemprop="item" href={itemUrl} />
             </span>
           )}
           

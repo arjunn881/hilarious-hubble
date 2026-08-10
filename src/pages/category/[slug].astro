@@ -16,8 +16,15 @@ export async function getStaticPaths() {
   // Extract all unique categories and form slugs
   const categoryMap = new Map<string, string>();
   items.forEach(item => {
-    const slug = item.category.toLowerCase().trim().replace(/\s+/g, "-");
-    categoryMap.set(slug, item.category);
+    const canonicalSlug = item.category.toLowerCase().trim().replace(/\s+/g, "-");
+    categoryMap.set(canonicalSlug, item.category);
+
+    // Support raw and space-encoded category variants so URLs like /category/personal%20care do not 404
+    const rawSlug = item.category.toLowerCase().trim();
+    if (rawSlug !== canonicalSlug) {
+      categoryMap.set(rawSlug, item.category);
+      categoryMap.set(encodeURIComponent(rawSlug), item.category);
+    }
   });
 
   return Array.from(categoryMap.entries()).map(([slug, name]) => {
@@ -30,6 +37,8 @@ export async function getStaticPaths() {
 }
 
 const { categoryName, categoryItems } = Astro.props;
+const canonicalSlug = categoryName.toLowerCase().trim().replace(/\s+/g, "-");
+const canonicalUrl = `https://bringonplane.com/category/${canonicalSlug}/`;
 
 // Load all markdown travel guide articles for Pillar Page matching
 const posts = import.meta.glob("../../data/articles/*.md", { eager: true });
@@ -75,6 +84,7 @@ const relatedWidgetGroups = [
 <Layout 
   title={`${categoryName} TSA Baggage Allowance & Rules | Bring On Plane`}
   description={`Find official TSA carry-on and checked luggage rules for ${categoryName.toLowerCase()} travel items. Detailed baggage allowance rules.`}
+  canonicalURL={canonicalUrl}
 >
   <!-- Inject JSON-LD structured data in the page body -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
