@@ -75,7 +75,7 @@ const breadcrumbItems = [
 ];
 
 const relatedWidgetGroups = [
-  { title: "Related Categories", links: getRelatedCategories(categoryName.toLowerCase().trim().replace(/\\s+/g, "-"), 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) },
+  { title: "Related Categories", links: getRelatedCategories(categoryName.toLowerCase().trim().replace(/\s+/g, "-"), 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) },
   { title: "Popular Airlines", links: POPULAR_AIRLINES.slice(0, 4).map(a => ({ title: `${a.name} Rules`, url: `/airlines` })) },
   { title: "Travel Guides", links: getPopularGuides(4) }
 ];

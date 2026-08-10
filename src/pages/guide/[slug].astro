@@ -33,7 +33,7 @@ const breadcrumbItems = [
 ];
 
 const relatedWidgetGroups = [
-  { title: "Relevant Categories", links: getRelatedCategories(category.toLowerCase().trim().replace(/\\s+/g, "-"), 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) },
+  { title: "Relevant Categories", links: getRelatedCategories(category.toLowerCase().trim().replace(/\s+/g, "-"), 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) },
   { title: "Relevant Airlines", links: POPULAR_AIRLINES.slice(0, 4).map(a => ({ title: `${a.name} Rules`, url: `/airlines` })) },
   { title: "Tools", links: [{ title: "Packing Assistant", url: "/checklist" }, { title: "TSA Item Search", url: "/items" }] }
 ];

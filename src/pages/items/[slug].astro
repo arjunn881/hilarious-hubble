@@ -51,7 +51,7 @@ const itemFaqs = getExpandedItemFAQs(item);
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "Categories", href: "/#categories" },
-  { label: item.category, href: `/category/${item.category.toLowerCase().trim().replace(/\\s+/g, "-")}` },
+  { label: item.category, href: `/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}` },
   { label: item.name }
 ];
 

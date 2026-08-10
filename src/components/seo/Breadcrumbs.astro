@@ -19,10 +19,11 @@ const currentFullUrl = `${siteUrl}${formattedPathname}`;
 
 function getItemUrl(item: BreadcrumbItem): string {
   if (item.href) {
-    if (item.href.startsWith("http://") || item.href.startsWith("https://")) {
-      return item.href;
+    const rawHref = item.href.trim().replace(/\s+/g, "-");
+    if (rawHref.startsWith("http://") || rawHref.startsWith("https://")) {
+      return rawHref;
     }
-    const path = item.href.startsWith("/") ? item.href : `/${item.href}`;
+    const path = rawHref.startsWith("/") ? rawHref : `/${rawHref}`;
     return `${siteUrl}${path}`;
   }
   return currentFullUrl;
@@ -46,6 +47,7 @@ const schema = {
     {items.map((item, index) => {
       const isLast = index === items.length - 1;
       const itemUrl = getItemUrl(item);
+      const cleanHref = item.href ? item.href.trim().replace(/\s+/g, "-") : undefined;
       
       return (
         <li 
@@ -54,9 +56,9 @@ const schema = {
           itemtype="https://schema.org/ListItem"
           class="flex items-center gap-1.5"
         >
-          {item.href ? (
+          {cleanHref ? (
             <a 
-              href={item.href} 
+              href={cleanHref} 
               class="hover:text-ink transition-colors focus-visible:underline flex items-center gap-1"
               itemprop="item"
             >
