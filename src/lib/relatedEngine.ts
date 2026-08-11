@@ -36,6 +36,17 @@ export const GUIDES = [
   { slug: "tsa-food-rules", title: "TSA Food Rules Guide" }
 ];
 
+export const POPULAR_COUNTRIES = [
+  { slug: "canada", name: "Canada" },
+  { slug: "japan", name: "Japan" },
+  { slug: "usa", name: "United States" },
+  { slug: "uk", name: "United Kingdom" },
+  { slug: "germany", name: "Germany" },
+  { slug: "france", name: "France" },
+  { slug: "australia", name: "Australia" },
+  { slug: "singapore", name: "Singapore" }
+];
+
 export function getRelatedCategories(currentCategorySlug?: string, limit: number = 4) {
   const others = CATEGORIES.filter(c => c.slug !== currentCategorySlug);
   // Pseudo-random deterministic rotation based on string length or just return top
@@ -46,7 +57,14 @@ export function getRelatedCategories(currentCategorySlug?: string, limit: number
 export function getAirlineCombinationsForItem(itemSlug: string, limit: number = 5) {
   return POPULAR_AIRLINES.slice(0, limit).map(a => ({
     title: `${a.name} Baggage Rules`,
-    url: `/airlines#${a.slug}`
+    url: `/items/${itemSlug}/airline/${a.slug}/`
+  }));
+}
+
+export function getCountryCombinationsForItem(itemSlug: string, limit: number = 5) {
+  return POPULAR_COUNTRIES.slice(0, limit).map(c => ({
+    title: `${c.name} Customs Rules`,
+    url: `/items/${itemSlug}/country/${c.slug}/`
   }));
 }
 

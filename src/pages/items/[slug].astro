@@ -20,7 +20,7 @@ import EEATBanner from "../../components/seo/EEATBanner.astro";
 import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
 import RelatedLinksWidget from "../../components/seo/RelatedLinksWidget.astro";
 import AirlineCountrySelector from "../../components/AirlineCountrySelector.astro";
-import { getAirlineCombinationsForItem, getPopularGuides, getRelatedCategories } from "../../lib/relatedEngine";
+import { getAirlineCombinationsForItem, getCountryCombinationsForItem, getPopularGuides, getRelatedCategories } from "../../lib/relatedEngine";
 export async function getStaticPaths() {
   const items = getAllItems();
   return items.map((item) => ({
@@ -56,9 +56,10 @@ const breadcrumbItems = [
 ];
 
 const relatedWidgetGroups = [
-  { title: "Relevant Airlines", links: getAirlineCombinationsForItem(item.slug, 5) },
-  { title: "Popular Guides", links: getPopularGuides(5) },
-  { title: "Related Categories", links: getRelatedCategories(item.category, 5).map(c => ({ title: c.name, url: `/category/${c.slug}` })) }
+  { title: "Airline Rules", links: getAirlineCombinationsForItem(item.slug, 5) },
+  { title: "Customs & Country Rules", links: getCountryCombinationsForItem(item.slug, 5) },
+  { title: "Popular Guides", links: getPopularGuides(4) },
+  { title: "Related Categories", links: getRelatedCategories(item.category, 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) }
 ];
 
 // Strict Rule Status config mapping

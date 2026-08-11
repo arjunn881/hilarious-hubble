@@ -82,9 +82,7 @@ export default defineConfig({
       filter: (page) => {
         const path = page.replace(SITE, '');
         return !EXCLUDED_PATTERNS.some(pattern => path.startsWith(pattern))
-          && path !== '/items'
-          && !path.includes('/airline/')
-          && !path.includes('/country/');
+          && path !== '/items';
       },
       // Customize each URL entry: set priority + changefreq & force trailing slash alignment matching Cloudflare Pages 200 OK endpoints
       serialize: (item) => ({
