@@ -2,17 +2,116 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Breadcrumbs from "../components/seo/Breadcrumbs.astro";
+import EEATBanner from "../components/seo/EEATBanner.astro";
+import RelatedLinksWidget from "../components/seo/RelatedLinksWidget.astro";
 import { 
   ArrowLeft, Trash2, Plus, Printer, Download, Share2, 
   Calendar, ClipboardList, AlertTriangle, ShieldCheck, 
-  CheckCircle2, Sparkles, Edit3, Save, X, AlertCircle, FileText
+  CheckCircle2, Sparkles, Edit3, Save, X, AlertCircle, FileText,
+  ChevronDown, Plane, BadgeCheck, HelpCircle, Check, Luggage, Globe, Scale
 } from "@lucide/astro";
+
+const currentYear = new Date().getFullYear();
+const currentUrl = "https://bringonplane.com/checklist";
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "Smart Packing Assistant" }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": item.label,
+    "item": item.href ? `https://bringonplane.com${item.href}` : currentUrl
+  }))
+};
+
+const checklistFaqs = [
+  { q: "How does the Smart Packing Assistant verify TSA baggage compliance?", a: "The Smart Packing Assistant queries our comprehensive database of over 196+ categorized travel items mapped directly against Transportation Security Administration (TSA), Federal Aviation Administration (FAA), and International Air Transport Association (IATA) regulations. Every item you add is evaluated for status (Allowed, Restricted, or Prohibited) in both carry-on cabin bags and checked hold baggage." },
+  { q: "Are my travel packing lists stored on external servers or private?", a: "Your packing lists and itinerary data are stored 100% locally inside your browser's private localStorage memory. No personal travel data is ever sent to external cloud servers, guaranteeing absolute privacy and full offline availability even without internet connectivity." },
+  { q: "How does the 3-1-1 liquids rule work when building a packing list?", a: "Under TSA's 3-1-1 liquids rule, any liquid, aerosol, gel, cream, or paste carried in hand luggage must be in containers of 3.4 ounces (100 milliliters) or smaller. All containers must fit comfortably inside one clear, quart-sized, resealable plastic bag. The assistant automatically flags liquid items and reminds you of 3-1-1 container restrictions." },
+  { q: "Where must portable power banks and lithium batteries be packed?", a: "Standalone lithium-ion battery power banks, cell phone battery cases, and spare laptop batteries MUST be carried in cabin hand luggage ONLY. FAA and aviation authorities strictly prohibit loose lithium batteries in checked hold baggage due to thermal runaway fire hazards." },
+  { q: "What items are strictly prohibited in carry-on cabin luggage?", a: "Strictly prohibited carry-on items include pocket knives, safety razor blades, scissors with blades over 4 inches, metal tent stakes, hiking poles, baseball bats, strike-anywhere matches, and liquid containers larger than 3.4 oz. These items must be packed in checked hold baggage or left at home." },
+  { q: "Can I print my packing list or export it as a PDF?", a: "Yes. The assistant includes built-in one-click 'Print' and 'Download PDF' features. The print layout formats your active trip into a clean, printer-friendly paper checklist grouped by bag type with physical checkboxes." },
+  { q: "What items are exempt from the 3.4 oz liquid rule?", a: "Medically necessary liquids (prescription cough syrups, eye drops, saline solutions), baby formula, breast milk, and toddler juice are fully exempt from the 3.4 oz container limit. However, you must declare these liquids to security officers for standalone X-ray screening." },
+  { q: "How do I pack liquid prescription medications for flights?", a: "Keep liquid medications in their original pharmacy-labeled containers inside carry-on baggage. Inform TSA officers before screening begins. A doctor's letter is recommended for international travel." },
+  { q: "Can I bring baby formula and breast milk on a plane without a baby present?", a: "Yes. TSA regulations permit parents to carry breast milk, baby formula, cooling gel ice packs, and breast pumps in hand luggage even when traveling without an infant." },
+  { q: "How do airline carry-on weight limits differ across carriers?", a: "While US domestic carriers (Delta, United, American) generally do not enforce weight limits on carry-on bags, major international and European budget airlines (Ryanair, Lufthansa, Emirates, Singapore Airlines) enforce strict cabin bag weight limits between 7 kg (15 lbs) and 12 kg (26 lbs)." },
+  { q: "What happens if airport security officers flag an item in my bag?", a: "If security screeners detect a prohibited or un-declared restricted item, they will pull your bag for secondary manual inspection. Prohibited carry-on items must be surrendered to screeners or placed into checked luggage." },
+  { q: "How do preset packing templates work in the assistant?", a: "Preset templates (Weekend Trip, Business Suit, International, Beach Vacation, Camping, Family Trip) pre-load expert-curated lists of essential gear, TSA status warnings, and category placements into your workspace with a single click." }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": checklistFaqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Use the Smart Packing Assistant",
+  "description": "Create a customized, TSA-compliant travel packing checklist in 5 easy steps.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Enter Trip Details", "text": "Input your trip name, destination, travel dates, airline carrier, and trip profile." },
+    { "@type": "HowToStep", "position": 2, "name": "Choose a Preset Template", "text": "Select a pre-configured template like Weekend Trip, Business Suit, International, or Beach Vacation." },
+    { "@type": "HowToStep", "position": 3, "name": "Review TSA Compliance Alerts", "text": "Check automatic warnings for liquids, lithium power banks, sharp tools, and restricted items." },
+    { "@type": "HowToStep", "position": 4, "name": "Add Custom Items", "text": "Use the real-time search bar to add specific gear and see instant cabin vs hold placement rules." },
+    { "@type": "HowToStep", "position": 5, "name": "Print or Export Your Checklist", "text": "Check off items as you pack, or export your list as a clean printable PDF." }
+  ]
+};
+
+const airlineLimits = [
+  { name: "Delta Air Lines", carryOn: "22 x 14 x 9 in (No weight limit)", checked: "50 lbs (23 kg)" },
+  { name: "United Airlines", carryOn: "22 x 14 x 9 in (17 lbs / 8 kg)", checked: "50 lbs (23 kg)" },
+  { name: "American Airlines", carryOn: "22 x 14 x 9 in (22 lbs / 10 kg)", checked: "50 lbs (23 kg)" },
+  { name: "Lufthansa", carryOn: "21.6 x 15.7 x 9 in (17 lbs / 8 kg)", checked: "50 lbs (23 kg)" },
+  { name: "Air France", carryOn: "21.7 x 13.8 x 9.9 in (26 lbs / 12 kg)", checked: "50 lbs (23 kg)" },
+  { name: "British Airways", carryOn: "22 x 18 x 10 in (50 lbs / 23 kg)", checked: "50 lbs (23 kg)" },
+  { name: "Ryanair", carryOn: "21.6 x 15.7 x 7.8 in (22 lbs / 10 kg)", checked: "44 lbs (20 kg)" },
+  { name: "Emirates", carryOn: "22 x 15 x 8 in (15 lbs / 7 kg)", checked: "66 lbs (30 kg)" },
+  { name: "Singapore Airlines", carryOn: "22 x 15 x 8 in (15 lbs / 7 kg)", checked: "66 lbs (30 kg)" }
+];
+
+const relatedWidgetGroups = [
+  { title: "Packing Presets", links: [
+    { title: "Weekend Trip Packing List", url: "/packing-list/weekend-trip" },
+    { title: "Business Trip Packing List", url: "/packing-list/business-trip" },
+    { title: "International Flight List", url: "/packing-list/international-trip" },
+    { title: "Beach Vacation List", url: "/packing-list/beach-vacation" },
+    { title: "Camping & Hiking List", url: "/packing-list/camping-trip" },
+    { title: "Family Vacation List", url: "/packing-list/family-vacation" }
+  ]},
+  { title: "Baggage Directories", links: [
+    { title: "All 196+ Baggage Items", url: "/#categories" },
+    { title: "Airline Baggage Rules", url: "/airlines" },
+    { title: "Country Customs Guides", url: "/countries" },
+    { title: "TSA FAQ Knowledgebase", url: "/faq" }
+  ]}
+];
 ---
 
 <Layout 
-  title="Smart Packing Assistant | Bring On Plane"
-  description="Apple Reminders + Notion + TSA. An enterprise-grade, offline-capable smart packing assistant that eliminates airline baggage mistakes."
+  title={`Smart Packing Assistant & TSA Baggage Checklist (${currentYear})`}
+  description="Free interactive Smart Packing Assistant & TSA baggage checklist. Check carry-on rules, 3-1-1 liquid limits, airline weight limits, and prohibited item alerts."
+  canonicalURL={currentUrl}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howToSchema)} />
+
   <Header slot="header" />
 
   <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 py-12 flex-1 flex flex-col lg:flex-row gap-8">
@@ -347,12 +446,149 @@ import {
 
       </section>
 
+      <!-- Static Google-Indexable Below-Fold SEO Content Section -->
+      <section class="mt-16 border-t border-hairline pt-12 no-print">
+        
+        <!-- Intro Header -->
+        <div class="mb-10">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="font-mono text-[10px] font-semibold text-mute uppercase tracking-wider bg-canvas-soft-2 border border-hairline px-2 py-0.5 rounded-xs">
+              TSA Baggage Assistant
+            </span>
+            <span class="inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-link bg-link-bg-soft border border-link/25 px-2 py-0.5 rounded-xs select-none">
+              <BadgeCheck class="w-3 h-3 text-link" />
+              TSA Verified Database
+            </span>
+          </div>
+          <h2 class="text-2xl font-semibold tracking-[-0.8px] text-ink">
+            What is the Smart Packing Assistant?
+          </h2>
+          <p class="text-sm text-body leading-[1.7] mt-3 text-pretty">
+            The BringOnPlane Smart Packing Assistant is an intelligent, privacy-first travel organizer designed to eliminate airport security headaches and gate-check fees. By cross-referencing your custom itinerary with our comprehensive database of over 196+ travel items mapped against Transportation Security Administration (TSA), Federal Aviation Administration (FAA), and International Air Transport Association (IATA) guidelines, the assistant automatically flags prohibited items, checks 3-1-1 liquid container limits, and warns against unsafe lithium battery placement.
+          </p>
+          <p class="text-sm text-body leading-[1.7] mt-3 text-pretty">
+            Whether you are embarking on a quick 2-day weekend trip, an executive business flight, a long-haul international vacation, or a wilderness camping excursion, our assistant helps you pack with confidence. All data remains stored locally on your device for 100% privacy and full offline access at the airport gate.
+          </p>
+        </div>
+
+        <!-- 6 Feature Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <ShieldCheck class="w-5 h-5 text-link mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">Real-Time TSA Matching</h3>
+            <p class="text-xs text-body leading-relaxed">Every item added is evaluated against 196+ security rules for carry-on vs checked baggage eligibility.</p>
+          </div>
+
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <AlertTriangle class="w-5 h-5 text-amber-600 mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">3-1-1 Liquid Quantity Warnings</h3>
+            <p class="text-xs text-body leading-relaxed">Automatically detects liquids, gels, and aerosols, warning you to keep containers under 3.4 oz (100ml).</p>
+          </div>
+
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <Sparkles class="w-5 h-5 text-link mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">Lithium Battery Safety Alerts</h3>
+            <p class="text-xs text-body leading-relaxed">Flags power banks and spare batteries, ensuring they stay in cabin luggage to satisfy FAA safety rules.</p>
+          </div>
+
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <Globe class="w-5 h-5 text-link mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">Destination Intelligence</h3>
+            <p class="text-xs text-body leading-relaxed">Suggests essential gear based on your flight destination, such as universal plug adapters or passport copies.</p>
+          </div>
+
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <Printer class="w-5 h-5 text-link mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">One-Click PDF & Print Export</h3>
+            <p class="text-xs text-body leading-relaxed">Format your active trip into a clean, printer-friendly paper checklist grouped by bag type with physical checkboxes.</p>
+          </div>
+
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <ClipboardList class="w-5 h-5 text-link mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">100% Offline & Private</h3>
+            <p class="text-xs text-body leading-relaxed">All itineraries are saved inside your browser's private storage—no account creation or server sync required.</p>
+          </div>
+        </div>
+
+        <!-- TSA 3-1-1 Liquids Rule Reference Panel -->
+        <div class="my-10 p-6 rounded-lg bg-canvas-soft border border-hairline">
+          <div class="flex items-start gap-3">
+            <FileText class="w-5 h-5 text-link mt-0.5 flex-shrink-0" />
+            <div>
+              <h3 class="text-sm font-semibold text-ink">TSA 3-1-1 Liquids Rule Quick Reference</h3>
+              <p class="text-xs text-mute font-mono mt-0.5">49 CFR § 1540.111 — Transportation Security Administration</p>
+              <p class="text-xs text-body leading-relaxed mt-2">
+                All liquids, gels, creams, pastes, and aerosols carried through security checkpoints must be in containers of <strong>3.4 ounces (100ml) or smaller</strong>. All containers must fit inside <strong>one clear, quart-sized zip-top bag</strong> per passenger. Medically necessary liquids, prescription medications, baby formula, breast milk, and toddler juice are exempt from the 3.4 oz container limit, but must be declared to TSA officers for separate screening.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Airline Baggage Weight Limits Reference Table -->
+        <div class="my-10">
+          <h3 class="text-lg font-semibold text-ink mb-4 tracking-tight flex items-center gap-2">
+            <Plane class="w-5 h-5 text-link" />
+            Major Airline Carry-On & Checked Baggage Weight Limits
+          </h3>
+          <div class="overflow-x-auto border border-hairline rounded-lg bg-canvas shadow-xs">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-canvas-soft border-b border-hairline text-[10px] font-mono font-semibold text-mute uppercase tracking-wider">
+                  <th class="py-3 px-4">Airline Carrier</th>
+                  <th class="py-3 px-4">Cabin Baggage Allowance</th>
+                  <th class="py-3 px-4">Checked Hold Allowance</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-hairline/60 text-xs">
+                {airlineLimits.map(al => (
+                  <tr class="hover:bg-canvas-soft/50 transition-colors">
+                    <td class="py-3 px-4 font-semibold text-ink">{al.name}</td>
+                    <td class="py-3 px-4 font-mono text-body">{al.carryOn}</td>
+                    <td class="py-3 px-4 font-mono text-body">{al.checked}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 12 FAQ Accordions -->
+        <div class="my-10">
+          <h3 class="text-lg font-semibold text-ink mb-5 tracking-tight">Frequently Asked Questions</h3>
+          <div class="space-y-3">
+            {checklistFaqs.map((faq, idx) => (
+              <div class="border border-hairline rounded-md bg-canvas shadow-xs">
+                <button 
+                  type="button" 
+                  class="faq-header-btn w-full text-left px-5 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+                  data-target={`faq-body-chk-${idx}`}
+                >
+                  <span>{faq.q}</span>
+                  <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+                </button>
+                <div id={`faq-body-chk-${idx}`} class="hidden px-5 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+                  {faq.a}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- E-E-A-T Editorial Banner -->
+        <EEATBanner />
+
+        <!-- Related Links Widget -->
+        <RelatedLinksWidget groups={relatedWidgetGroups} />
+
+      </section>
+
     </main>
 
   </div>
 
   <Footer slot="footer" />
 </Layout>
+
 
 <script>
   import { 
@@ -1281,6 +1517,26 @@ import {
 
     renderWorkspace();
     renderRecentTrips();
+
+    // Accordion FAQ Event Listeners
+    document.querySelectorAll(".faq-header-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const targetId = (e.currentTarget as HTMLElement).getAttribute("data-target") || "";
+        const body = document.getElementById(targetId);
+        const icon = (e.currentTarget as HTMLElement).querySelector("svg");
+        
+        if (body) {
+          const isHidden = body.classList.contains("hidden");
+          if (isHidden) {
+            body.classList.remove("hidden");
+            if (icon) icon.classList.add("rotate-180");
+          } else {
+            body.classList.add("hidden");
+            if (icon) icon.classList.remove("rotate-180");
+          }
+        }
+      });
+    });
   }
 
   init();

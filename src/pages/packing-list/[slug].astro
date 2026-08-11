@@ -2,226 +2,617 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import { ArrowLeft, Sparkles, ClipboardCheck, AlertTriangle, ShieldCheck } from "@lucide/astro";
+import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
+import EEATBanner from "../../components/seo/EEATBanner.astro";
+import RelatedLinksWidget from "../../components/seo/RelatedLinksWidget.astro";
+import { 
+  ArrowLeft, Sparkles, ClipboardCheck, AlertTriangle, ShieldCheck, 
+  CheckCircle2, XCircle, AlertCircle, FileText, ChevronDown, Calendar, 
+  Luggage, Info, BadgeCheck, Scale, Plane
+} from "@lucide/astro";
 
 export async function getStaticPaths() {
   const templates = [
     {
       slug: "weekend-trip",
       name: "Weekend Trip",
-      desc: "Perfect for quick 2-3 day getaways, focusing on light luggage and carry-on efficiency.",
+      tagline: "Ultra-Light 2-3 Day Carry-On Only Packing Guide",
+      desc: "Comprehensive packing checklist and TSA baggage guidelines for short weekend getaways. Optimized for quick airport transit, single carry-on bag efficiency, and strict liquid compliance.",
+      quickAnswer: "For a 2-3 day weekend trip, pack 3 t-shirts, 1 extra pair of pants, 3 sets of underwear, travel-sized liquids (under 3.4 oz / 100ml in a 1-quart bag), phone charger, and essential toiletries in a single 22x14x9 inch carry-on bag to avoid checked baggage fees.",
       items: [
-        { name: "T-Shirts & Underwear", cat: "Clothing" },
-        { name: "Socks & Comfortable Shoes", cat: "Clothing" },
-        { name: "Toothbrush & Toothpaste", cat: "Personal Care" },
-        { name: "Smartphone & Charger", cat: "Electronics" },
-        { name: "Deodorant (under 3.4 oz)", cat: "Personal Care" }
+        { name: "Lightweight T-Shirts & Tops (3x)", cat: "Clothing", status: "ALLOWED", placement: "Carry-on or Checked", note: "Roll tightly to prevent wrinkles and maximize space." },
+        { name: "Underwear & Socks (3x pairs)", cat: "Clothing", status: "ALLOWED", placement: "Carry-on or Checked", note: "Pack in small compression cubes." },
+        { name: "Casual Pants or Jeans (1-2x)", cat: "Clothing", status: "ALLOWED", placement: "Carry-on or Checked", note: "Wear heaviest pair on the plane." },
+        { name: "Travel-Size Toothpaste (<3.4 oz)", cat: "Personal Care", status: "RESTRICTED", placement: "3-1-1 Quart Bag", note: "Must fit in 1-quart transparent bag at security." },
+        { name: "Toothbrush & Floss", cat: "Personal Care", status: "ALLOWED", placement: "Carry-on or Checked", note: "Keep in protective hygiene cover." },
+        { name: "Solid Deodorant Stick", cat: "Personal Care", status: "ALLOWED", placement: "Carry-on or Checked", note: "Solid sticks exempt from 3-1-1 liquid limits." },
+        { name: "Smartphone & Fast Charger", cat: "Electronics", status: "ALLOWED", placement: "Personal Item", note: "Keep accessible for mobile boarding passes." },
+        { name: "Lithium Power Bank (<100Wh)", cat: "Electronics", status: "RESTRICTED", placement: "Carry-on ONLY", note: "STRICTLY PROHIBITED in checked hold luggage by FAA." },
+        { name: "Government ID / Passport", cat: "Documents", status: "ALLOWED", placement: "Personal Item", note: "Keep in secure inner zip pocket." },
+        { name: "Slip-on Travel Shoes", cat: "Clothing", status: "ALLOWED", placement: "Worn on Body", note: "Speeds up TSA security line screening." },
+        { name: "Prescription Medications", cat: "Medicine", status: "ALLOWED", placement: "Carry-on ONLY", note: "Always carry in original labeled pharmacy bottles." },
+        { name: "Refillable Water Bottle (Empty)", cat: "Personal Care", status: "RESTRICTED", placement: "Carry-on Bag", note: "Must be completely empty passing TSA X-ray." }
       ],
       mistakes: [
-        "Packing full-sized aerosols or deodorants in your carry-on (exceeds the TSA 3-1-1 liquids limit).",
-        "Forgetting that multi-tools or Swiss army knives must be packed in checked holds."
+        "Packing full-sized shampoo or aerosol deodorants exceeding 3.4 oz (100ml) in carry-on luggage.",
+        "Placing portable battery power banks or lithium-ion spare batteries into checked hold baggage.",
+        "Forgetting that multi-tools, pocket knives, or scissors with blades over 4 inches are confiscated at TSA checkpoints.",
+        "Filling water bottles before passing airport security checkpoints instead of filling at gate refilling stations.",
+        "Packing essential daily prescription medicines inside checked bags that could be lost or delayed."
+      ],
+      steps: [
+        { title: "Select Bag Dimensions", desc: "Choose a soft-sided 22x14x9 inch carry-on backpack or rolling spinner that fits all major airline overhead bins." },
+        { title: "Separate Liquids (3-1-1 Rule)", desc: "Gather all liquid cosmetics, gels, pastes, and aerosols into containers 3.4 oz (100ml) or smaller inside one clear quart zip bag." },
+        { title: "Organize Electronics & Power", desc: "Pack your laptop, tablet, and power banks at the top of your personal bag for rapid TSA bin removal." },
+        { title: "Roll Clothes using Packing Cubes", desc: "Roll t-shirts, underwear, and pants tightly inside medium packing cubes to compress volume by up to 40%." },
+        { title: "Verify Meds & Documents", desc: "Double-check that ID, boarding passes, credit cards, and vital medications are stored in an easily accessible front pocket." },
+        { title: "Final TSA Compliance Audit", desc: "Inspect bag for accidental pocket knives, full liquid bottles, or loose lithium batteries before leaving home." }
+      ],
+      faqs: [
+        { q: "Can I bring a weekend bag and a personal item on the plane?", a: "Yes. Most standard airlines allow one carry-on bag (up to 22x14x9 inches) plus one personal item (laptop bag or purse fitting under the seat in front of you) free of charge." },
+        { q: "What toiletries can I take for a weekend trip?", a: "All travel-sized liquid toiletries (shampoo, toothpaste, lotion) must be in containers 3.4 oz (100ml) or less and fit into a single quart-sized clear bag. Solid toiletries like bar soap and stick deodorant have no size restrictions." },
+        { q: "Where should I pack my laptop for a 2-day trip?", a: "Always pack laptops, tablets, and e-readers in your carry-on or personal item bag. They must be removed and placed in a dedicated bin for X-ray screening at TSA checkpoints unless using a TSA PreCheck line." },
+        { q: "How do I avoid baggage fees on weekend flights?", a: "Travel with carry-on luggage only. Verify your airline's exact cabin bag weight and dimension limits before arriving at the airport to ensure your bag doesn't get gate-checked." },
+        { q: "Are razor blades allowed in carry-on weekend bags?", a: "Disposable razors and cartridge razors are fully allowed in carry-on bags. However, loose safety razor blades and straight razor blades are strictly prohibited in cabin luggage." },
+        { q: "Can I bring snacks on a short weekend flight?", a: "Solid food items like sandwiches, fruit, nuts, and energy bars are allowed through TSA security. Gel-like foods (yogurt, peanut butter, soup) must adhere to the 3.4 oz liquid limit." },
+        { q: "What is the best way to pack clothes for 3 days?", a: "Use rolling techniques combined with lightweight packing cubes. Wear your heaviest jacket and shoes onto the aircraft to save interior bag space." },
+        { q: "What happens if my weekend bag is slightly over size limits?", a: "On budget airlines like Ryanair or Spirit, oversized carry-on bags are flagged at the boarding gate and subject to heavy gate-check fees ($50-$75)." }
       ]
     },
     {
       slug: "business-trip",
       name: "Business Trip",
-      desc: "Optimized for professional travelers who need wrinkle-free suits and laptop safety clearances.",
+      tagline: "Professional Executive Travel & Tech Safety Checklist",
+      desc: "Essential packing guidelines for corporate travel, executive meetings, and business trips. Designed for suit protection, laptop security screening, power bank compliance, and efficient travel.",
+      quickAnswer: "For a business trip, pack 2 wrinkle-resistant suits/blazers, dress shirts, polished shoes, laptop with charger, lithium power bank (carry-on only), business cards, travel documents, and travel-size grooming items in a suit garment bag or rolling carry-on.",
       items: [
-        { name: "Wrinkle-Free Suits / Blazers", cat: "Clothing" },
-        { name: "Laptop Computer & Charger", cat: "Electronics" },
-        { name: "Notepad & Pen", cat: "Documents" },
-        { name: "Passport & Boarding Pass", cat: "Documents" },
-        { name: "Power Bank (Cabin only!)", cat: "Electronics" },
-        { name: "Business Cards", cat: "Documents" }
+        { name: "Wrinkle-Free Suits / Blazers (2x)", cat: "Clothing", status: "ALLOWED", placement: "Garment Bag / Carry-on", note: "Use plastic dry cleaner bags to prevent fabric creasing." },
+        { name: "Button-Down Dress Shirts (3-4x)", cat: "Clothing", status: "ALLOWED", placement: "Carry-on or Checked", note: "Fold with collar stays or stiffeners." },
+        { name: "Dress Shoes & Shoe Trees", cat: "Clothing", status: "ALLOWED", placement: "Carry-on or Checked", note: "Stuff shoes with socks to preserve leather shape." },
+        { name: "Laptop Computer & Charger", cat: "Electronics", status: "ALLOWED", placement: "Personal Item Bag", note: "Must be removed at TSA X-ray bins (unless PreCheck)." },
+        { name: "Power Bank / Portable Charger (<100Wh)", cat: "Electronics", status: "RESTRICTED", placement: "Carry-on ONLY", note: "Banned from checked hold. Keep under 100Wh capacity." },
+        { name: "Notepad, Pen & Business Cards", cat: "Documents", status: "ALLOWED", placement: "Personal Item", note: "Store in dedicated organization pouch." },
+        { name: "Passport / Photo ID & Corporate Card", cat: "Documents", status: "ALLOWED", placement: "Personal Item", note: "Ensure passport is valid for 6+ months." },
+        { name: "Noise-Canceling Headphones", cat: "Electronics", status: "ALLOWED", placement: "Personal Item", note: "Essential for working on long flights." },
+        { name: "Travel Garment Steamer (Water-Empty)", cat: "Electronics", status: "ALLOWED", placement: "Carry-on or Checked", note: "Must be completely dry and drained." },
+        { name: "Executive Toiletries Kit (<3.4 oz)", cat: "Personal Care", status: "RESTRICTED", placement: "3-1-1 Quart Bag", note: "Cologne, aftershave, and hair gel must comply with 3-1-1." },
+        { name: "Prescription Glasses & Spare Contacts", cat: "Personal Care", status: "ALLOWED", placement: "Carry-on Bag", note: "Contact solution containers must be under 3.4 oz unless declared." },
+        { name: "Universal Plug Adapter & Multi-Cable", cat: "Electronics", status: "ALLOWED", placement: "Personal Item", note: "Multi-port USB-C fast chargers reduce cable clutter." }
       ],
       mistakes: [
-        "Placing your laptop or power bank in checked baggage (violates FAA hazardous cargo regulations).",
-        "Forgetting to pull out large electronics at TSA checkpoints for individual X-ray bins."
+        "Placing laptops, tablets, or lithium power banks in checked hold baggage, violating FAA hazardous material rules.",
+        "Folding suits tightly without garment bags, leading to deep wrinkles before important presentations.",
+        "Carrying full-sized cologne or aftershave bottles exceeding 3.4 oz (100ml) in carry-on briefcases.",
+        "Forgetting to check destination electrical outlet voltages and socket types before international business travel.",
+        "Not leaving laptop chargers accessible for airport lounge working sessions or security screening."
+      ],
+      steps: [
+        { title: "Prepare Professional Suit Carrier", desc: "Place suits and dress shirts inside lightweight garment bags or fold carefully using suit-folding boards." },
+        { title: "Organize Tech Electronics", desc: "Consolidate laptop, presentation clicker, dongles, and power banks into a dedicated TSA-friendly checkpoint sleeve." },
+        { title: "Audit Liquid Grooming Products", desc: "Ensure luxury colognes, styling pomades, and shaving cream containers meet 3.4 oz / 100ml limits inside a clear pouch." },
+        { title: "Protect Leather Footwear", desc: "Place dress shoes inside cloth shoe bags to prevent polish or dirt from transferring onto business attire." },
+        { title: "Verify Travel Documents & Visas", desc: "Store physical boarding passes, corporate cards, hotel vouchers, and passport in an RFID-blocking wallet." },
+        { title: "Final Baggage Weight Inspection", desc: "Weigh carry-on luggage to ensure strict compliance with international airline cabin limits (e.g. 7-10 kg)." }
+      ],
+      faqs: [
+        { q: "Can I bring a garment bag as a carry-on for a business trip?", a: "Yes. Most major carriers count a suit garment bag as a standard carry-on item if dimensions do not exceed total linear limits (45 inches). Many planes have coat closets for hanging suits upon request." },
+        { q: "Are portable power banks allowed in checked luggage on business flights?", a: "No. FAA and IATA aviation safety rules strictly prohibit standalone lithium power banks in checked hold luggage due to fire risks. They MUST be carried in cabin baggage." },
+        { q: "How do I keep dress shirts from wrinkling in my suitcase?", a: "Use plastic dry-cleaner bags over hangers, roll shirts with tissue paper lining, or pack them in rigid shirt-folding cases." },
+        { q: "Can I bring a mini travel steamer on a plane?", a: "Yes. Electric garment steamers are allowed in both carry-on and checked luggage provided all liquid reservoirs are completely emptied." },
+        { q: "Is full-sized cologne allowed in checked baggage for business travel?", a: "Yes. Full-sized cologne and perfume bottles (up to 16.9 oz / 500ml per container) are permitted in checked hold luggage, up to a total aggregate limit of 68 oz per passenger." },
+        { q: "What electronics must be removed at TSA security for business travelers?", a: "Laptops, tablets, e-readers, and handheld gaming consoles larger than a smartphone must be removed from bags and placed in individual screening bins unless you have TSA PreCheck." },
+        { q: "What size laptop bag counts as a personal item?", a: "A laptop briefcase or slim backpack measuring under 18 x 14 x 8 inches that fits under the seat in front of you qualifies as a personal item." },
+        { q: "Can I bring business presentation tools like laser pointers?", a: "Yes. Standard handheld battery-powered laser pointers and wireless presentation clickers are allowed in carry-on baggage." }
       ]
     },
     {
       slug: "international-trip",
       name: "International Trip",
-      desc: "Designed for long-haul global flights requiring border clearance documents and universal plug adapters.",
+      tagline: "Long-Haul Global Flight & Border Customs Compliance",
+      desc: "Complete international travel checklist covering border customs control, passport regulations, duty-free restrictions, medical declarations, and long-haul flight comfort gear.",
+      quickAnswer: "For international travel, pack a valid passport (with 6+ months validity), necessary visas, universal plug adapters, prescribed medications with original labels, local currency, long-haul flight comfort items (neck pillow, earplugs), and liquid toiletries adhering to international 100ml security rules.",
       items: [
-        { name: "Passport & Travel Visa", cat: "Documents" },
-        { name: "Universal Travel Adapter", cat: "Electronics" },
-        { name: "Prescription Medicines & Copies", cat: "Medicine" },
-        { name: "Local Currency Cash", cat: "Documents" },
-        { name: "Travel Insurance Policy", cat: "Documents" }
+        { name: "Valid Passport (6+ Months Validity)", cat: "Documents", status: "ALLOWED", placement: "Personal Item", note: "Check destination entry requirements and page count." },
+        { name: "Travel Visas & Entry Permits", cat: "Documents", status: "ALLOWED", placement: "Personal Item", note: "Keep printed copies of e-visas and hotel confirmations." },
+        { name: "Universal International Plug Adapter", cat: "Electronics", status: "ALLOWED", placement: "Carry-on Bag", note: "Includes Type C, G, I, and A adapter plugs for global outlets." },
+        { name: "Prescription Medications & Prescriptions", cat: "Medicine", status: "ALLOWED", placement: "Carry-on ONLY", note: "Keep in original pharmacy packaging with doctor's letter." },
+        { name: "Local Currency Cash & Forex Cards", cat: "Documents", status: "ALLOWED", placement: "Personal Item", note: "Declare amounts exceeding $10,000 equivalent at customs." },
+        { name: "Travel Insurance Documentation", cat: "Documents", status: "ALLOWED", placement: "Personal Item", note: "Include emergency assistance phone numbers and policy ID." },
+        { name: "Lithium Power Bank (<100Wh)", cat: "Electronics", status: "RESTRICTED", placement: "Carry-on ONLY", note: "Must remain in cabin. Maximum 20,000mAh capacity." },
+        { name: "Travel Pillow & Sleep Eye Mask", cat: "Personal Care", status: "ALLOWED", placement: "Carry-on / Worn", note: "Essential for long-haul overnight flights." },
+        { name: "Noise-Canceling Headphones", cat: "Electronics", status: "ALLOWED", placement: "Personal Item", note: "Includes flight headphone audio adapter jack." },
+        { name: "Compression Travel Socks", cat: "Clothing", status: "ALLOWED", placement: "Worn on Flight", note: "Prevents deep vein thrombosis (DVT) during 8+ hour flights." },
+        { name: "100ml Liquid Toiletries Kit", cat: "Personal Care", status: "RESTRICTED", placement: "3-1-1 Quart Bag", note: "Strict international 100ml container limits enforced globally." },
+        { name: "Disinfecting Wipes & Hand Sanitizer", cat: "Personal Care", status: "RESTRICTED", placement: "Personal Item", note: "Sanitizer bottles under 3.4 oz permitted at security." }
       ],
       mistakes: [
-        "Carrying liquid medicines without pharmacy labels or doctor prescriptions.",
-        "Failing to declare agricultural foods or cash amounts exceeding $10,000 at international customs borders."
+        "Traveling with a passport expiring within 6 months of your planned return date (triggers immediate airline boarding denial).",
+        "Carrying liquid prescription medications without official doctor's certificates or original pharmacy labels.",
+        "Failing to declare fresh agricultural produce, seeds, meat, or plant items at international border customs.",
+        "Packing cash or equivalent monetary instruments exceeding $10,000 USD without filing customs declaration forms.",
+        "Placing vital travel documents or daily prescription drugs inside checked hold luggage."
+      ],
+      steps: [
+        { title: "Audit Passport Expiry & Visas", desc: "Verify your passport has at least 6 months validity remaining and contains 2+ blank visa pages." },
+        { title: "Verify Country-Specific Medication Rules", desc: "Research destination country drug laws (e.g. Japan, UAE, Singapore prohibit certain OTC decongestants and painkillers)." },
+        { title: "Pack Global Power & Electronics", desc: "Include multi-region power plug adapters and certified USB fast-charging hubs in your carry-on." },
+        { title: "Organize Border Declaration Items", desc: "Prepare customs declaration details for high-value gear, duty-free purchases, or commercial samples." },
+        { title: "Assemble Long-Haul Comfort Kit", desc: "Pack neck pillow, compression socks, earplugs, hydration tablets, and lip balm inside your personal item." },
+        { title: "Double-Check Checked Bag Limits", desc: "Verify international airline luggage allowances (e.g. 23 kg / 50 lbs weight limits and linear size restrictions)." }
+      ],
+      faqs: [
+        { q: "What passport validity is required for international flights?", a: "Most foreign countries require your passport to be valid for at least 6 months beyond your scheduled departure date, along with 2-4 blank visa pages." },
+        { q: "Can I take prescription medication on international flights?", a: "Yes. Always carry medications in their original pharmacy-labeled containers inside carry-on baggage. Bring a written doctor's prescription or letter explaining your medical condition, especially for controlled substances." },
+        { q: "Are liquid rules the same at international airport security?", a: "Yes. Almost all international aviation security authorities (CATSA, ECAC, JCAB, CASA) enforce the standard 100ml (3.4 oz) limit per container, sealed in a single 1-quart transparent bag." },
+        { q: "How much cash can I carry on an international flight without declaring?", a: "You can carry up to $10,000 USD (or foreign currency equivalent) without declaring. Amounts equal to or exceeding $10,000 must be reported on customs forms upon arrival or departure." },
+        { q: "Can I bring duty-free liquids bought at airport shops onto connecting flights?", a: "Duty-free liquids exceeding 100ml are allowed ONLY if sealed in a Secure Tamper-Evident Bag (STEB) with the original purchase receipt visible inside. If re-clearing security in another country, they may be re-inspected." },
+        { q: "What food items are banned at international border customs?", a: "Most countries strictly prohibit fresh fruits, vegetables, seeds, plants, unprocessed meats, and dairy products to prevent agricultural pest infestation." },
+        { q: "What should I do if my checked bag is lost internationally?", a: "Report lost luggage immediately at your arriving airline's baggage service desk before exiting customs. Fill out a Property Irregularity Report (PIR) and retain your baggage claim check tags." },
+        { q: "Do I need a power converter or just a plug adapter for overseas travel?", a: "Most modern smartphones, laptops, and camera chargers are dual-voltage (100V-240V) and only require a plug adapter. High-wattage hair dryers or straighteners may require a voltage transformer." }
       ]
     },
     {
       slug: "beach-vacation",
       name: "Beach Vacation",
-      desc: "Includes swimsuits, high-SPF sun protection lotions, and summer wear requirements.",
+      tagline: "Sun, Swimwear & TSA Liquid Rules Guide",
+      desc: "Complete beach packing checklist covering sun protection cosmetics, liquid sunscreen regulations, water safety gear, resort attire, and TSA carry-on guidelines.",
+      quickAnswer: "For a beach vacation, pack 2-3 swimsuits, reef-safe sunscreen (under 3.4 oz for carry-on or full size in checked bags), sunglasses, UV cover-ups, flip-flops, aloe vera gel, reusable water bottle (empty for TSA), and beach tote bag.",
       items: [
-        { name: "Swimsuits & Sunglasses", cat: "Clothing" },
-        { name: "Sunscreen Lotion", cat: "Liquids" },
-        { name: "Flip Flops & Beach Towel", cat: "Clothing" },
-        { name: "Water Bottle (Empty for TSA)", cat: "Camping" },
-        { name: "Lip Balm & Aloe Vera Gel", cat: "Personal Care" }
+        { name: "Swimsuits & Trunks (2-3x)", cat: "Clothing", status: "ALLOWED", placement: "Carry-on or Checked", note: "Rotate pairs to allow thorough drying between uses." },
+        { name: "Reef-Safe Sunscreen Lotion (<3.4 oz)", cat: "Liquids", status: "RESTRICTED", placement: "3-1-1 Quart Bag", note: "Non-nano zinc oxide formula safe for coral reefs." },
+        { name: "Full-Sized Sunscreen (>3.4 oz)", cat: "Liquids", status: "ALLOWED", placement: "Checked Bag ONLY", note: "Must be packed in checked hold luggage due to size." },
+        { name: "Polarized Sunglasses & Case", cat: "Personal Care", status: "ALLOWED", placement: "Personal Item", note: "Protect lenses with hard protective cases." },
+        { name: "UV Protective Sun Hat / Cap", cat: "Clothing", status: "ALLOWED", placement: "Worn or Carry-on", note: "Wear wide-brim hats onto flight to avoid crushing." },
+        { name: "Flip Flops & Water Shoes", cat: "Clothing", status: "ALLOWED", placement: "Carry-on or Checked", note: "Pack in washable mesh shoe bags." },
+        { name: "Aloe Vera After-Sun Gel (<3.4 oz)", cat: "Personal Care", status: "RESTRICTED", placement: "3-1-1 Quart Bag", note: "Soothes sun exposure; must follow 3-1-1 limits." },
+        { name: "Stainless Steel Water Bottle (Empty)", cat: "Personal Care", status: "RESTRICTED", placement: "Carry-on Bag", note: "Must pass security empty; refill at airport hydration stations." },
+        { name: "Quick-Dry Microfiber Beach Towel", cat: "Clothing", status: "ALLOWED", placement: "Carry-on or Checked", note: "Takes up 70% less space than standard terry cloth towels." },
+        { name: "Waterproof Phone Pouch / Dry Bag", cat: "Electronics", status: "ALLOWED", placement: "Carry-on Bag", note: "Keeps phones safe from ocean sand and water." },
+        { name: "Lightweight Summer Dresses / Shorts", cat: "Clothing", status: "ALLOWED", placement: "Carry-on or Checked", note: "Choose breathable linen or quick-dry fabrics." },
+        { name: "Insect Repellent Spray (<3.4 oz)", cat: "Liquids", status: "RESTRICTED", placement: "3-1-1 Quart Bag", note: "Pump sprays allowed in carry-on; aerosols under 3.4 oz." }
       ],
       mistakes: [
-        "Carrying aerosol sunscreens larger than 3.4 oz in carry-on bags (must be checked).",
-        "Filling your water bottle before passing security (must go through empty, fill at gates)."
+        "Attempting to carry full-sized liquid sunscreen (exceeding 3.4 oz / 100ml) through TSA security in carry-on bags.",
+        "Carrying aerosol sunscreens larger than 3.4 oz in carry-on luggage (confiscated at security checkpoints).",
+        "Filling reusable water bottles with water before passing airport X-ray security screeners.",
+        "Packing wet swimsuits in sealed plastic bags for long flights, causing mildew odors.",
+        "Forgetting that non-reef-safe sunscreens containing oxybenzone are legally banned in destinations like Hawaii, USVI, and Mexico."
+      ],
+      steps: [
+        { title: "Audit Sunscreen & Liquid Sizes", desc: "Decide whether to bring travel-sized 3.4 oz sunscreens in carry-on or pack full-sized bottles inside checked bags." },
+        { title: "Check Destination Coral Reef Laws", desc: "Select mineral sunscreens (zinc oxide or titanium dioxide) to comply with environmental laws in tropical destinations." },
+        { title: "Protect Eyewear & Electronics", desc: "Store polarized sunglasses and camera electronics inside dust-proof, shock-resistant hard cases." },
+        { title: "Pack Quick-Dry Fabrics", desc: "Select synthetic or linen clothing that dries fast in humid seaside climates." },
+        { title: "Empty All Hydration Containers", desc: "Ensure water bottles, hydroflasks, and hydration packs are 100% dry and empty prior to TSA checkpoint queuing." },
+        { title: "Seal Liquids in Double Zip Bags", desc: "Prevent elevation pressure leaks by double-bagging all liquid suntan oils and lotions." }
+      ],
+      faqs: [
+        { q: "Can I bring full-sized sunscreen in my carry-on bag?", a: "No. Any liquid, gel, or aerosol sunscreen container larger than 3.4 oz (100ml) is strictly prohibited in carry-on luggage and must be packed in checked hold baggage." },
+        { q: "Are aerosol sunscreen spray cans allowed on planes?", a: "Yes. Aerosol sunscreens under 3.4 oz (100ml) are permitted in carry-on 3-1-1 bags. Larger aerosol cans (up to 18 fl oz / 500ml) are allowed in checked baggage, provided cap covers prevent accidental release." },
+        { q: "Can I bring a beach umbrella or pop-up tent on a flight?", a: "Small collapsible beach umbrellas fitting standard carry-on dimensions are allowed in cabin bags. Larger beach umbrellas and tent poles generally must be checked." },
+        { q: "Is reef-safe sunscreen required for travel to Hawaii or Mexico?", a: "Yes. Hawaii, the US Virgin Islands, Key West, and many Caribbean resorts legally mandate reef-safe mineral sunscreens free from oxybenzone and octinoxate." },
+        { q: "Can I bring sea shells or sand back on a flight?", a: "Small quantities of clean beach sand and shells are generally allowed in carry-on and checked bags for US domestic flights. International customs may restrict natural animal or coral products." },
+        { q: "How do I prevent sunscreen bottles from leaking on a flight?", a: "Unscrew the bottle cap, place a piece of plastic wrap over the opening, screw the cap back on tightly, and place the bottle inside a zip-top bag." },
+        { q: "Are beach towels allowed in carry-on luggage?", a: "Yes. Beach towels are fully permitted in carry-on bags. Microfiber travel towels are recommended to save luggage space." },
+        { q: "Can I bring a snorkel set and fins in carry-on luggage?", a: "Yes. Snorkel masks, tubes, and swimming fins are permitted in carry-on baggage provided they fit within your airline's overhead bin size limits." }
       ]
     },
     {
       slug: "camping-trip",
       name: "Camping Trip",
-      desc: "Prepares hikers for wilderness journeys with tents, pegs, and outdoor survival gears.",
+      tagline: "Wilderness Hiking, Tent Pegs & Gear Security Rules",
+      desc: "Comprehensive wilderness camping packing checklist detailing TSA regulations for tent stakes, outdoor knives, camping stoves, fire starters, and hiking equipment.",
+      quickAnswer: "For a camping trip, pack sleeping gear, tent (tent stakes must be in checked bags), flashlight, sleeping pad, multi-tool/pocket knife (checked bags ONLY), matches (1 book allowed on body), and empty camp stove (fuel canisters are BANNED entirely).",
       items: [
-        { name: "Sleeping Bag & Flashlight", cat: "Camping" },
-        { name: "Tent Pegs & Hiking Poles", cat: "Camping" },
-        { name: "Matches / Spark Lighter", cat: "Camping" },
-        { name: "Utility Knife / Multi-tool", cat: "Tools" },
-        { name: "Insect Repellent Spray", cat: "Liquids" }
+        { name: "Sleeping Bag & Air Pad", cat: "Camping", status: "ALLOWED", placement: "Carry-on or Checked", note: "Compress inside waterproof compression sacks." },
+        { name: "Camping Tent & Poles", cat: "Camping", status: "ALLOWED", placement: "Carry-on or Checked", note: "Tent fabric and non-sharp poles permitted in cabin." },
+        { name: "Metal Tent Stakes / Pegs", cat: "Camping", status: "NOT_ALLOWED", placement: "Checked Bag ONLY", note: "PROHIBITED in carry-on cabin luggage by TSA due to sharp point rules." },
+        { name: "Pocket Knife / Utility Multi-Tool", cat: "Tools", status: "NOT_ALLOWED", placement: "Checked Bag ONLY", note: "STRICTLY BANNED from carry-on bags regardless of blade length." },
+        { name: "Camp Stove (Clean & Empty)", cat: "Camping", status: "RESTRICTED", placement: "Carry-on or Checked", note: "Must be completely free of fuel residue and vapors." },
+        { name: "Camp Stove Fuel Canisters (Propane/Isobutane)", cat: "Camping", status: "NOT_ALLOWED", placement: "BANNED ENTIRELY", note: "STRICTLY PROHIBITED on passenger aircraft in BOTH carry-on and checked hold." },
+        { name: "Safety Matches (1 Book / Box)", cat: "Camping", status: "RESTRICTED", placement: "Carried on Body ONLY", note: "Strike-anywhere matches banned. 1 safety book allowed on person." },
+        { name: "Headlamp & Spare Batteries", cat: "Electronics", status: "ALLOWED", placement: "Carry-on Bag", note: "Keep loose lithium batteries in protective battery cases." },
+        { name: "Trekking / Hiking Poles", cat: "Sports", status: "NOT_ALLOWED", placement: "Checked Bag ONLY", note: "TSA classifies hiking poles as blunt spears; must be checked." },
+        { name: "Bear Spray / Defense Pepper Aerosol", cat: "Tools", status: "NOT_ALLOWED", placement: "Checked Bag ONLY", note: "Banned in carry-on. 1 bottle (max 4 oz / 118ml with safety latch) allowed in checked." },
+        { name: "First Aid Wilderness Kit", cat: "Medicine", status: "ALLOWED", placement: "Carry-on or Checked", note: "Ensure scissors have blades under 4 inches." },
+        { name: "Aerosol Insect Repellent (<3.4 oz)", cat: "Liquids", status: "RESTRICTED", placement: "3-1-1 Quart Bag", note: "Containers under 3.4 oz allowed in cabin bag." }
       ],
       mistakes: [
-        "Packing metal tent pegs or pocket knives in cabin luggage (confiscated by TSA).",
-        "Carrying camp stove fuel canisters (banned entirely from passenger flights in both cabin and hold)."
+        "Packing metal tent stakes or spikes inside carry-on cabin luggage (confiscated immediately at security).",
+        "Attempting to fly with propane, isobutane, or white gas fuel canisters (banned completely from all flights).",
+        "Carrying pocket knives, multi-tools, or Swiss army knives inside carry-on backpacks.",
+        "Packing trekking/hiking poles in carry-on bags (TSA requires them to be checked).",
+        "Carrying strike-anywhere matches or torch lighters (banned from aircraft)."
+      ],
+      steps: [
+        { title: "Separate Sharp Outdoor Tools", desc: "Place all tent stakes, hiking poles, pocket knives, multi-tools, and hatchets into checked luggage." },
+        { title: "Purge & Clean Camping Stoves", desc: "Clean camp stoves thoroughly with soapy water to eliminate all flammable fuel vapors and residues." },
+        { title: "Dispose of All Gas Canisters", desc: "Do not attempt to fly with fuel canisters; purchase propane/isobutane at your arrival destination." },
+        { title: "Audit Lighting & Batteries", desc: "Remove lithium-ion batteries from headlamps and pack them inside protective plastic battery cases in carry-on." },
+        { title: "Check Match & Lighter Limits", desc: "Keep 1 ordinary book of safety matches or 1 common disposable lighter on your person." },
+        { title: "Pack Sleeping Gear Compressively", desc: "Use compression dry-sacks to shrink sleeping bag and tent volume." }
+      ],
+      faqs: [
+        { q: "Can I bring tent stakes in carry-on luggage?", a: "No. Metal or plastic tent stakes, pegs, and spikes are classified as sharp objects and are strictly prohibited in carry-on bags. They MUST be packed in checked hold baggage." },
+        { q: "Are camping gas fuel canisters allowed on planes?", a: "No. Fuel canisters containing propane, butane, isobutane, or white gas are STRICTLY BANNED from all passenger aircraft in both carry-on and checked baggage." },
+        { q: "Can I bring a camp stove on a plane?", a: "Yes, but ONLY if the stove is completely empty and thoroughly cleaned of all fuel residues and vapors. If any fuel smell remains, screeners will confiscate it." },
+        { q: "Are trekking poles allowed in carry-on bags?", a: "No. TSA rules require hiking poles, trekking poles, and ski poles to be packed in checked hold luggage." },
+        { q: "Can I bring a pocket knife in my checked bag?", a: "Yes. Pocket knives, hunting knives, multi-tools, and axes are allowed in checked luggage. Ensure blades are securely wrapped to prevent injury to baggage handlers." },
+        { q: "How many matches can I take on a flight?", a: "You are allowed 1 single book of safety matches or 1 common lighter carried on your person. Strike-anywhere matches and torch lighters are strictly prohibited." },
+        { q: "Is bear spray allowed on airplanes?", a: "Bear spray is banned in carry-on bags. A single 4 oz (118ml) container of bear spray with a 14% OC capsaicin concentration and safety latch is allowed in checked luggage on select airlines." },
+        { q: "Can I pack a sleeping bag as a carry-on item?", a: "Yes. Sleeping bags, sleeping pads, and bivvy sacks are fully permitted in carry-on luggage provided they meet your airline's size limits." }
       ]
     },
     {
       slug: "family-vacation",
       name: "Family Vacation",
-      desc: "Keeps parents prepared with kids' toys, baby wipes, formula, and travel snacks.",
+      tagline: "Parent Travel, Kids' Gear & Exempt Liquid Rules",
+      desc: "Ultimate family travel checklist for parents flying with infants, toddlers, or kids. Details TSA exemptions for baby formula, breast milk, juice, stroller gate-checking, and child travel gear.",
+      quickAnswer: "For a family trip, pack baby formula, breast milk, or juice (EXEMPT from 3.4 oz limits), baby wipes, diapers, snacks, travel games, change of clothes, and collapsible stroller (gate-check allowed). Always declare baby liquids at TSA security.",
       items: [
-        { name: "Baby Formula / Breast Milk", cat: "Baby" },
-        { name: "Baby Wipes & Diapers", cat: "Baby" },
-        { name: "First Aid Kit", cat: "Medicine" },
-        { name: "Snacks & Juice Pouches", cat: "Food" },
-        { name: "Travel Games & Coloring Books", cat: "Baby" }
+        { name: "Baby Formula & Prepared Bottles", cat: "Baby", status: "ALLOWED", placement: "Declare at TSA", note: "EXEMPT from 3-1-1 3.4 oz rules in reasonable quantities." },
+        { name: "Breast Milk & Cooling Ice Packs", cat: "Baby", status: "ALLOWED", placement: "Declare at TSA", note: "Allowed in carry-on even if flying without the infant present." },
+        { name: "Baby Wipes & Diapers (1-2 Days Extra)", cat: "Baby", status: "ALLOWED", placement: "Carry-on Bag", note: "Pack extra to handle flight delays or cancellations." },
+        { name: "Juice & Toddler Snack Pouches", cat: "Baby", status: "ALLOWED", placement: "Declare at TSA", note: "Medically necessary child liquids are exempt from 3.4 oz limits." },
+        { name: "Collapsible Stroller / Car Seat", cat: "Baby", status: "ALLOWED", placement: "Gate-Checked Free", note: "Most airlines permit free gate-checking of strollers and car seats." },
+        { name: "Spare Clothing Sets for Kids & Parents", cat: "Clothing", status: "ALLOWED", placement: "Carry-on Bag", note: "Keep an extra outfit handy for accidental spills." },
+        { name: "Child Prescription & Fever Meds", cat: "Medicine", status: "ALLOWED", placement: "Carry-on Bag", note: "Liquid infant Tylenol/Motrin exempt from 3-1-1 rules upon declaration." },
+        { name: "Compact Toys, Coloring Books & Crayons", cat: "Baby", status: "ALLOWED", placement: "Personal Item", note: "Keeps children entertained during long boarding waits." },
+        { name: "Kid-Friendly Headphones (Volume-Limited)", cat: "Electronics", status: "ALLOWED", placement: "Personal Item", note: "Protects young ears while watching inflight movies." },
+        { name: "Sanitizing Surface Wipes", cat: "Personal Care", status: "ALLOWED", placement: "Carry-on Bag", note: "Wipe down seat tray tables, armrests, and window shades." },
+        { name: "Pacifiers & Teething Toys", cat: "Baby", status: "ALLOWED", placement: "Carry-on Bag", note: "Sucking on pacifiers reduces ear pressure pain during takeoff." },
+        { name: "Ziploc Bags for Soiled Items", cat: "Personal Care", status: "ALLOWED", placement: "Carry-on Bag", note: "Essential for storing dirty clothes or trash in flight." }
       ],
       mistakes: [
-        "Assuming baby formula falls under the 3.4 oz limit. Formula and breast milk are medically exempt liquids, but must be declared for separate screening.",
-        "Packing child safety items like metal cutlery or blunt scissors in carry-on baggage."
+        "Assuming baby formula, breast milk, or toddler juice fall under the 3.4 oz limit (they are medically exempt but MUST be declared).",
+        "Not removing frozen gel ice packs for baby milk before passing X-ray screening.",
+        "Packing essential diapers, formula, or children's daily medications inside checked baggage.",
+        "Forgetting to check your airline's specific car seat and stroller gate-check weight limits.",
+        "Packing toy weapons, plastic guns, or metal cutlery in children's carry-on backpacks."
+      ],
+      steps: [
+        { title: "Separate Baby Formula & Liquids", desc: "Place all baby formula, breast milk, toddler juice, and ice packs into a separate pouch for TSA declaration." },
+        { title: "Inform TSA Officers at Security", desc: "Notify the security officer before screening that you are carrying baby liquids exceeding 3.4 oz." },
+        { title: "Prepare Stroller for Screening", desc: "Collapse your stroller at the TSA security line so it can pass through the X-ray scanner or be manually inspected." },
+        { title: "Pack Emergency Diaper Bag Supplies", desc: "Include at least 24 hours worth of extra diapers, wipes, formula, and change of clothes for unexpected travel delays." },
+        { title: "Organize Entertainment & Electronics", desc: "Pre-load tablets with offline movies and games, and pack volume-limited child headphones." },
+        { title: "Utilize Gate-Checking for Heavy Gear", desc: "Check car seats and strollers at the boarding gate right before stepping onto the aircraft jetbridge." }
+      ],
+      faqs: [
+        { q: "Is baby formula exempt from the TSA 3.4 oz liquid rule?", a: "YES! Baby formula, breast milk, toddler juice, and baby food in reasonable quantities are fully exempt from the 3.4 oz (100ml) liquid limit. You must declare these items to TSA officers at the checkpoint." },
+        { q: "Can I bring breast milk on a plane if my baby is not traveling with me?", a: "YES. TSA regulations allow parents to carry breast milk, cooling ice packs, and breast pumps in carry-on baggage regardless of whether the child is present." },
+        { q: "Do airlines charge extra for checking strollers and car seats?", a: "No. Almost all major airlines allow parents to check 1 stroller and 1 car seat free of charge, either at the ticket counter or right at the boarding gate." },
+        { q: "How are baby liquids screened at TSA security?", a: "TSA officers may test formula or breast milk using advanced liquid bottle scanners (which do not open or contaminate the liquid) or request a small sample for testing." },
+        { q: "Can I bring gel ice packs to keep baby milk cold?", a: "Yes. Ice packs, gel packs, and freezer packs are allowed to keep baby milk cold. If ice packs are partially melted, officers may perform additional screening." },
+        { q: "Are baby wipes allowed in carry-on bags?", a: "Yes. Baby wipes, moist towelettes, and diaper cream (in containers under 3.4 oz unless declared as medically necessary) are allowed in carry-on luggage." },
+        { q: "Can I bring a FAA-approved car seat to use on an airplane seat?", a: "Yes. If you purchased a ticketed seat for your child, you can install a FAA-approved car seat (bearing a label stating 'Certified for Use in Motor Vehicles and Aircraft')." },
+        { q: "What snacks can I pack for kids on a flight?", a: "Solid snacks like crackers, cereal, dried fruit, cheese sticks, and sandwiches are fully allowed through TSA checkpoints." }
       ]
     }
   ];
 
   return templates.map(tpl => ({
     params: { slug: tpl.slug },
-    props: { template: tpl }
+    props: { template: tpl, allTemplates: templates }
   }));
 }
 
-const { template } = Astro.props;
+const { template, allTemplates } = Astro.props;
 const currentUrl = new URL(Astro.url.pathname, "https://bringonplane.com").toString();
+const currentYear = new Date().getFullYear();
 
-// SEO Parameters
-const seoTitle = `${template.name} Travel Packing Checklist & Baggage Rules (2026)`;
-const seoDescription = `Get a complete packing checklist for your ${template.name.toLowerCase()}. Learn about prohibited cabin items, restricted baggage rules, and common packing mistakes.`;
+// High-CTR SEO Metadata
+const seoTitle = `${template.name} Packing List & TSA Baggage Rules (${currentYear})`;
+const seoDescription = `Complete ${template.name.toLowerCase()} packing checklist with TSA rules, prohibited items, airline weight limits & common packing mistakes. Updated ${currentYear}.`;
+
+// Schema JSON-LD blocks
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "Packing Assistant", href: "/checklist" },
+  { label: `${template.name} Checklist` }
+];
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bringonplane.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Packing Lists", "item": "https://bringonplane.com/checklist" },
-    { "@type": "ListItem", "position": 3, "name": template.name, "item": currentUrl }
-  ]
+  "itemListElement": breadcrumbItems.map((item, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": item.label,
+    "item": item.href ? `https://bringonplane.com${item.href}` : currentUrl
+  }))
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": template.faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": `How to Pack for a ${template.name}`,
+  "description": template.desc,
+  "step": template.steps.map((step, idx) => ({
+    "@type": "HowToStep",
+    "position": idx + 1,
+    "name": step.title,
+    "text": step.desc
+  }))
+};
+
+// Airline Comparison Table Data
+const airlineLimits = [
+  { name: "Delta Air Lines", carryOn: "22 x 14 x 9 in (No weight limit)", checked: "50 lbs (23 kg)" },
+  { name: "United Airlines", carryOn: "22 x 14 x 9 in (17 lbs / 8 kg)", checked: "50 lbs (23 kg)" },
+  { name: "American Airlines", carryOn: "22 x 14 x 9 in (22 lbs / 10 kg)", checked: "50 lbs (23 kg)" },
+  { name: "Lufthansa", carryOn: "21.6 x 15.7 x 9 in (17 lbs / 8 kg)", checked: "50 lbs (23 kg)" },
+  { name: "Air France", carryOn: "21.7 x 13.8 x 9.9 in (26 lbs / 12 kg)", checked: "50 lbs (23 kg)" },
+  { name: "British Airways", carryOn: "22 x 18 x 10 in (50 lbs / 23 kg)", checked: "50 lbs (23 kg)" },
+  { name: "Ryanair", carryOn: "21.6 x 15.7 x 7.8 in (22 lbs / 10 kg)", checked: "44 lbs (20 kg)" },
+  { name: "Emirates", carryOn: "22 x 15 x 8 in (15 lbs / 7 kg)", checked: "66 lbs (30 kg)" },
+  { name: "Singapore Airlines", carryOn: "22 x 15 x 8 in (15 lbs / 7 kg)", checked: "66 lbs (30 kg)" }
+];
+
+const relatedWidgetGroups = [
+  { title: "Packing Lists", links: allTemplates.map(t => ({ title: `${t.name} Checklist`, url: `/packing-list/${t.slug}` })) },
+  { title: "Travel Tools", links: [
+    { title: "Smart Packing Assistant", url: "/checklist" },
+    { title: "Item Baggage Directory", url: "/#categories" },
+    { title: "Airline Baggage Rules", url: "/airlines" },
+    { title: "Country Customs Rules", url: "/countries" }
+  ]}
+];
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
-  <link rel="canonical" href={currentUrl} slot="head" />
+<Layout title={seoTitle} description={seoDescription} canonicalURL={currentUrl}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howToSchema)} />
 
   <Header slot="header" />
 
-  <div class="max-w-[800px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+  <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 py-12 flex-1">
     
-    <div class="mb-8 select-none">
-      <a href="/checklist" class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors">
-        <ArrowLeft class="w-3.5 h-3.5" />
-        Back to Assistant
-      </a>
-    </div>
+    <!-- Breadcrumbs -->
+    <Breadcrumbs items={breadcrumbItems} />
 
-    <header class="mb-8 border-b border-hairline pb-6">
-      <div class="flex items-center gap-2 mb-2">
-        <Sparkles class="w-4 h-4 text-link" />
-        <span class="text-xs font-mono font-semibold uppercase text-mute tracking-wider">SEO Programmatic Checklist</span>
+    <!-- Page Header -->
+    <header class="mb-10">
+      <div class="flex flex-wrap items-center gap-3 mb-3">
+        <span class="font-mono text-[10px] font-semibold text-mute uppercase tracking-wider bg-canvas-soft-2 border border-hairline px-2 py-0.5 rounded-xs">
+          TSA Baggage Rules
+        </span>
+
+        <span class="inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-link bg-link-bg-soft border border-link/25 px-2 py-0.5 rounded-xs select-none">
+          <BadgeCheck class="w-3 h-3 text-link" />
+          TSA Verified • High Confidence
+        </span>
+
+        <span class="flex items-center gap-1.5 text-xs text-mute font-mono">
+          <Calendar class="w-3.5 h-3.5" />
+          Updated {currentYear}
+        </span>
       </div>
-      <h1 class="text-3xl font-semibold tracking-[-1.28px] text-ink">
-        {template.name} Packing Guide
+
+      <!-- Verdict Banner -->
+      <div class="mb-6 flex items-center gap-4 px-5 py-4 rounded-lg bg-emerald-50 border border-emerald-200 select-none">
+        <span class="flex items-center justify-center w-9 h-9 rounded-full bg-emerald-100 border border-emerald-300 flex-shrink-0">
+          <CheckCircle2 class="w-5 h-5 text-emerald-600" />
+        </span>
+        <div>
+          <p class="text-sm font-bold text-emerald-800">COMPLETE PACKING CHECKLIST — {template.name.toUpperCase()}</p>
+          <p class="text-xs text-emerald-700 leading-snug mt-0.5">{template.tagline}</p>
+        </div>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.28px] text-ink text-pretty">
+        {template.name} Packing List & Baggage Rules
       </h1>
-      <p class="text-sm text-body leading-[1.6] mt-2">
-        {template.desc} Follow standard TSA regulations to prevent security delays.
-      </p>
-      
-      <!-- CTA button to launch trip assistant -->
-      <button 
-        type="button" 
-        id="btn-import-checklist"
-        class="mt-5 inline-flex items-center gap-2 h-9 px-4 text-xs font-medium text-on-primary bg-primary hover:bg-ink rounded-sm shadow-sm transition-all cursor-pointer focus:outline-none"
-      >
-        <ClipboardCheck class="w-4 h-4" />
-        Import to Packing Assistant
-      </button>
+
+      <!-- Featured Snippet Quick Answer Box -->
+      <div class="mt-5 mb-4 p-4 rounded-md bg-canvas-soft border-l-4 border-link">
+        <p class="text-xs font-mono text-link uppercase tracking-wider mb-1.5 font-semibold">Quick Answer & Summary</p>
+        <p class="text-sm text-body leading-[1.7] text-pretty">
+          {template.quickAnswer}
+        </p>
+      </div>
+
+      <!-- CTA to Launch Interactive Assistant -->
+      <div class="flex flex-wrap items-center gap-4 mt-6">
+        <button 
+          type="button" 
+          id="btn-import-checklist"
+          class="inline-flex items-center gap-2 h-10 px-5 text-xs font-semibold text-on-primary bg-primary hover:bg-ink rounded-sm shadow-sm transition-all cursor-pointer"
+        >
+          <ClipboardCheck class="w-4 h-4" />
+          Import to Smart Packing Assistant
+        </button>
+
+        <a 
+          href="/checklist" 
+          class="inline-flex items-center gap-2 h-10 px-5 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all"
+        >
+          <Luggage class="w-4 h-4 text-mute" />
+          Build Custom Trip List
+        </a>
+      </div>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- Checklist Column -->
-      <div class="md:col-span-2 space-y-6">
-        <h2 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3">Recommended Items</h2>
-        <div class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
-          <ul class="space-y-4">
+    <!-- Overview Section -->
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold text-ink mb-3 tracking-tight">Overview & TSA Compliance</h2>
+      <p class="text-sm text-body leading-[1.7] text-pretty">{template.desc}</p>
+    </section>
+
+    <!-- Essential Packing Items Table Grid -->
+    <section class="my-10">
+      <h2 class="text-xl font-semibold text-ink mb-4 tracking-tight">Recommended {template.name} Packing Checklist</h2>
+      <div class="overflow-x-auto border border-hairline rounded-lg bg-canvas shadow-xs">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-canvas-soft border-b border-hairline text-[10px] font-mono font-semibold text-mute uppercase tracking-wider">
+              <th class="py-3 px-4">Item Name</th>
+              <th class="py-3 px-4">Category</th>
+              <th class="py-3 px-4">TSA Status</th>
+              <th class="py-3 px-4">Placement</th>
+              <th class="py-3 px-4">Packing Note</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-hairline/60 text-xs">
             {template.items.map(item => (
-              <li class="flex items-center justify-between border-b border-hairline/40 last:border-0 pb-3 last:pb-0">
-                <div class="flex items-center gap-2.5">
-                  <input type="checkbox" readonly class="w-4 h-4 rounded-xs text-primary border-hairline pointer-events-none" />
-                  <span class="text-xs font-semibold text-ink">{item.name}</span>
-                </div>
-                <span class="text-[9px] font-mono text-mute uppercase px-1.5 border border-hairline rounded-xs">{item.cat}</span>
-              </li>
+              <tr class="hover:bg-canvas-soft/50 transition-colors">
+                <td class="py-3.5 px-4 font-semibold text-ink">{item.name}</td>
+                <td class="py-3.5 px-4 font-mono text-[10px] text-mute uppercase">{item.cat}</td>
+                <td class="py-3.5 px-4">
+                  {item.status === 'ALLOWED' && (
+                    <span class="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-xs">
+                      <CheckCircle2 class="w-3 h-3" /> ALLOWED
+                    </span>
+                  )}
+                  {item.status === 'RESTRICTED' && (
+                    <span class="inline-flex items-center gap-1 text-[10px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-xs">
+                      <AlertCircle class="w-3 h-3" /> RESTRICTED
+                    </span>
+                  )}
+                  {item.status === 'NOT_ALLOWED' && (
+                    <span class="inline-flex items-center gap-1 text-[10px] font-semibold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-xs">
+                      <XCircle class="w-3 h-3" /> CHECKED ONLY / BANNED
+                    </span>
+                  )}
+                </td>
+                <td class="py-3.5 px-4 font-mono text-[10px] text-body">{item.placement}</td>
+                <td class="py-3.5 px-4 text-mute text-pretty">{item.note}</td>
+              </tr>
             ))}
-          </ul>
-        </div>
+          </tbody>
+        </table>
       </div>
+    </section>
 
-      <!-- Tips & Warnings Column -->
-      <div class="space-y-6">
-        <div>
-          <h2 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-3 flex items-center gap-1.5">
-            <AlertTriangle class="w-3.5 h-3.5 text-error-deep" />
-            Common Mistakes
-          </h2>
-          <div class="space-y-3">
-            {template.mistakes.map(m => (
-              <div class="p-3 bg-error-soft border border-error/15 rounded-sm text-[10px] font-mono text-error-deep leading-[1.5]">
-                {m}
-              </div>
+    <!-- Common Packing Mistakes Grid -->
+    <section class="my-10">
+      <h2 class="text-xl font-semibold text-ink mb-4 tracking-tight flex items-center gap-2">
+        <AlertTriangle class="w-5 h-5 text-amber-600" />
+        5 Critical {template.name} Packing Mistakes to Avoid
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {template.mistakes.map((mistake, idx) => (
+          <div class="p-4 rounded-md bg-amber-50/60 border border-amber-200/80 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-amber-100 border border-amber-300 text-amber-800 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+              {idx + 1}
+            </span>
+            <p class="text-xs text-amber-900 leading-relaxed font-medium">{mistake}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Step-by-Step Packing Guide -->
+    <section class="my-10">
+      <h2 class="text-xl font-semibold text-ink mb-4 tracking-tight">Step-by-Step Packing Guide for {template.name}</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {template.steps.map((step, idx) => (
+          <div class="p-5 rounded-md border border-hairline bg-canvas shadow-xs flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-link font-semibold block mb-1">Step {idx + 1}</span>
+              <h3 class="text-sm font-semibold text-ink mb-2">{step.title}</h3>
+              <p class="text-xs text-body leading-relaxed">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Airline Baggage Weight Limits Reference Table -->
+    <section class="my-10">
+      <h2 class="text-xl font-semibold text-ink mb-4 tracking-tight flex items-center gap-2">
+        <Plane class="w-5 h-5 text-link" />
+        Major Airline Baggage Allowance Reference Table
+      </h2>
+      <div class="overflow-x-auto border border-hairline rounded-lg bg-canvas shadow-xs">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-canvas-soft border-b border-hairline text-[10px] font-mono font-semibold text-mute uppercase tracking-wider">
+              <th class="py-3 px-4">Airline Carrier</th>
+              <th class="py-3 px-4">Cabin Baggage Allowance</th>
+              <th class="py-3 px-4">Checked Hold Allowance</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-hairline/60 text-xs">
+            {airlineLimits.map(al => (
+              <tr class="hover:bg-canvas-soft/50 transition-colors">
+                <td class="py-3 px-4 font-semibold text-ink">{al.name}</td>
+                <td class="py-3 px-4 font-mono text-body">{al.carryOn}</td>
+                <td class="py-3 px-4 font-mono text-body">{al.checked}</td>
+              </tr>
             ))}
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-3 flex items-center gap-1.5">
-            <ShieldCheck class="w-3.5 h-3.5 text-link" />
-            TSA Approved Status
-          </h2>
-          <div class="p-3 bg-link-bg-soft border border-link/15 rounded-sm text-[10px] font-mono text-link-deep leading-[1.5]">
-            Medically necessary liquids (baby milk, saline sprays) are exempt from 3-1-1, but must be declared.
-          </div>
-        </div>
+          </tbody>
+        </table>
       </div>
+    </section>
 
-    </div>
+    <!-- Frequently Asked Questions Accordion -->
+    <section class="my-10">
+      <h2 class="text-xl font-semibold text-ink mb-5 tracking-tight">Frequently Asked Questions ({template.name})</h2>
+      <div class="space-y-3">
+        {template.faqs.map((faq, idx) => (
+          <div class="border border-hairline rounded-md bg-canvas shadow-xs">
+            <button 
+              type="button" 
+              class="faq-header-btn w-full text-left px-5 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+              data-target={`faq-body-tpl-${idx}`}
+            >
+              <span>{faq.q}</span>
+              <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+            </button>
+            <div id={`faq-body-tpl-${idx}`} class="hidden px-5 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+              {faq.a}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
+    <!-- E-E-A-T Editorial Banner -->
+    <EEATBanner />
+
+    <!-- Related Packing Lists Widget -->
+    <RelatedLinksWidget groups={relatedWidgetGroups} />
   </div>
 
   <Footer slot="footer" />
 </Layout>
 
 <script define:vars={{ template }}>
+  // FAQ accordion toggles
+  document.querySelectorAll(".faq-header-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const targetId = e.currentTarget.getAttribute("data-target") || "";
+      const body = document.getElementById(targetId);
+      const icon = e.currentTarget.querySelector("svg");
+      
+      if (body) {
+        const isHidden = body.classList.contains("hidden");
+        if (isHidden) {
+          body.classList.remove("hidden");
+          if (icon) icon.classList.add("rotate-180");
+        } else {
+          body.classList.add("hidden");
+          if (icon) icon.classList.remove("rotate-180");
+        }
+      }
+    });
+  });
+
   // Import checklist values directly to localStorage active trip
   document.getElementById("btn-import-checklist")?.addEventListener("click", () => {
     const activeTrip = {
@@ -246,7 +637,7 @@ const breadcrumbSchema = {
     template.items.forEach((item, idx) => {
       let listId = "carry-on";
       if (item.cat === 'Documents') listId = "documents";
-      if (item.cat === 'Liquids' || item.name.includes("sunscreen") || item.name.includes("tent")) listId = "checked-bag";
+      if (item.cat === 'Liquids' || item.status === 'NOT_ALLOWED' || item.placement.includes("Checked")) listId = "checked-bag";
 
       const targetList = activeTrip.lists.find(l => l.id === listId);
       if (targetList) {
@@ -254,10 +645,10 @@ const breadcrumbSchema = {
           id: `imp-${Date.now()}-${idx}`,
           name: item.name,
           category: item.cat,
-          carryOnStatus: 'UNKNOWN',
-          checkedStatus: 'UNKNOWN',
-          reason: 'Imported preset rules.',
-          travelTip: 'Packed from checklist template.',
+          carryOnStatus: item.status,
+          checkedStatus: 'ALLOWED',
+          reason: item.note,
+          travelTip: `Placement: ${item.placement}`,
           packed: false,
           compliance: { status: 'SAFE', message: 'Verified compliant.' }
         });
@@ -265,7 +656,7 @@ const breadcrumbSchema = {
     });
 
     localStorage.setItem("active_trip", JSON.stringify(activeTrip));
-    localStorage.setItem("traveler_checklist", JSON.stringify([])); // clear legacy
+    localStorage.setItem("traveler_checklist", JSON.stringify([]));
     
     // Redirect to Packing Assistant page!
     window.location.href = "/checklist";
