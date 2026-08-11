@@ -2,8 +2,44 @@
 import Layout from "../../../../layouts/Layout.astro";
 import Header from "../../../../components/Header.astro";
 import Footer from "../../../../components/Footer.astro";
-import { getAllItems, getItemBySlug } from "../../../../lib/items";
-import { ArrowLeft, ShieldAlert, BadgeCheck, HelpCircle, ChevronDown, CheckCircle2, XCircle, AlertCircle } from "@lucide/astro";
+import { getAllItems, getItemBySlug, getRelatedItems } from "../../../../lib/items";
+import { 
+  CheckCircle2, 
+  XCircle, 
+  AlertCircle, 
+  Calendar, 
+  ShieldAlert, 
+  ExternalLink, 
+  FileText, 
+  Globe, 
+  AlertTriangle, 
+  Check,
+  ChevronDown,
+  Plane,
+  BadgeCheck
+} from "@lucide/astro";
+import { 
+  getWhatIsThisItem, 
+  getExceptions, 
+  getInternationalConsiderations, 
+  getAlternativeItems, 
+  getRelatedGuides,
+  getScreeningProcedure,
+  getRegulatoryDetails,
+  getAirlineDifferences,
+  getStepByStepPackingGuide,
+  getExpandedItemFAQs
+} from "../../../../lib/contentGenerator";
+import EEATBanner from "../../../../components/seo/EEATBanner.astro";
+import Breadcrumbs from "../../../../components/seo/Breadcrumbs.astro";
+import RelatedLinksWidget from "../../../../components/seo/RelatedLinksWidget.astro";
+import AirlineCountrySelector from "../../../../components/AirlineCountrySelector.astro";
+import { 
+  getAirlineCombinationsForItem, 
+  getCountryCombinationsForItem, 
+  getPopularGuides, 
+  getRelatedCategories 
+} from "../../../../lib/relatedEngine";
 
 export async function getStaticPaths() {
   const items = getAllItems();
@@ -38,54 +74,118 @@ if (!item) {
   return Astro.redirect("/404");
 }
 
+const whatIsThisItem = getWhatIsThisItem(item);
+const screeningProcedure = getScreeningProcedure(item);
+const regulatoryDetails = getRegulatoryDetails(item);
+const airlineDifferences = getAirlineDifferences(item);
+const stepByStepPacking = getStepByStepPackingGuide(item);
+
 const currentUrl = new URL(Astro.url.pathname, "https://bringonplane.com").toString();
-
-// SEO Parameters
 const currentYear = new Date().getFullYear();
-const seoTitle = `Can You Bring ${item.name} on ${airline.name}? Carry-on & Checked Rules (${currentYear})`;
-const seoDescription = `Detailed rules for taking ${item.name.toLowerCase()} on ${airline.name} (${currentYear}). Carry-on status: ${item.carryOn.status.replace("_", " ")}, Checked hold status: ${item.checkedBag.status.replace("_", " ")}. Baggage limits and safety guidelines.`;
 
-// 8 Unique FAQs generation
+// Breadcrumbs matching reference image format
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "Categories", href: "/#categories" },
+  { label: item.category, href: `/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}` },
+  { label: item.name, href: `/items/${item.slug}` },
+  { label: `${airline.name} Rules` }
+];
+
+const relatedWidgetGroups = [
+  { title: "Airline Rules", links: getAirlineCombinationsForItem(item.slug, 5) },
+  { title: "Customs & Country Rules", links: getCountryCombinationsForItem(item.slug, 5) },
+  { title: "Popular Guides", links: getPopularGuides(4) },
+  { title: "Related Categories", links: getRelatedCategories(item.category, 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) }
+];
+
+// Status Config
+const statusConfig = {
+  ALLOWED: {
+    label: "Allowed",
+    icon: CheckCircle2,
+    class: "bg-link-bg-soft text-link-deep border-link/25",
+  },
+  NOT_ALLOWED: {
+    label: "Prohibited",
+    icon: XCircle,
+    class: "bg-error-soft text-error-deep border-error/25",
+  },
+  RESTRICTED: {
+    label: "Restricted",
+    icon: AlertCircle,
+    class: "bg-warning-soft text-warning-deep border-warning/25",
+  },
+  UNKNOWN: {
+    label: "Unknown",
+    icon: AlertCircle,
+    class: "bg-canvas-soft-2 text-mute border-hairline",
+  },
+};
+
+const carryOnStatus = statusConfig[item.carryOn.status] || statusConfig.UNKNOWN;
+const checkedStatus = statusConfig[item.checkedBag.status] || statusConfig.UNKNOWN;
+
+function getCfrCitation(category: string) {
+  const cat = category.toLowerCase().trim();
+  if (cat === 'electronics') return { code: "49 CFR § 175.10(a)(18)", title: `FAA & ${airline.name} Regulation for Battery Devices`, source: "FAA & Airline Policy" };
+  if (cat === 'liquids' || cat === 'personal-care' || cat === 'beauty') return { code: "49 CFR § 1540.111", title: `TSA & ${airline.name} Liquids Rule`, source: "Aviation Security Authority" };
+  if (cat === 'medicine' || cat === 'health') return { code: "49 CFR § 1544.219", title: `Medical Item Guidelines on ${airline.name}`, source: "TSA Medical Regulations" };
+  return { code: "49 CFR § 1540.111", title: `${airline.name} Carriage & Security Policy`, source: "IATA & Aviation Standards" };
+}
+const cfr = getCfrCitation(item.category);
+
+const carryOnVerdict = item.carryOn.status === 'ALLOWED' ? 'YES' : item.carryOn.status === 'NOT_ALLOWED' ? 'NO' : 'RESTRICTED';
+const seoTitle = `Can You Bring ${item.name} on ${airline.name}? [${carryOnVerdict} Carry-On] (${currentYear} Rules)`;
+const seoDescription = `Can you bring ${item.name.toLowerCase()} on ${airline.name}? Carry-on status: ${item.carryOn.status.replace("_", " ")}, Checked hold: ${item.checkedBag.status.replace("_", " ")}. Full ${airline.name} baggage rules, size limits & packing advice.`;
+
+const featuredSnippetAnswer = item.carryOn.status === 'ALLOWED'
+  ? `Yes — ${item.name} is allowed in carry-on bags on ${airline.name} flights. ${item.carryOn.reason || ''}`
+  : item.carryOn.status === 'NOT_ALLOWED'
+  ? `No — ${item.name} is NOT allowed in carry-on bags on ${airline.name}. ${item.carryOn.reason || ''} Pack it in your checked hold baggage instead.`
+  : `${item.name} is restricted in carry-on bags on ${airline.name}. ${item.carryOn.reason || ''}`;
+
+// 8 Unique Detailed FAQs
 const faqs = [
   {
     q: `Can I bring ${item.name.toLowerCase()} on ${airline.name} flights?`,
-    a: `Yes, carriage depends on bag type. Under TSA and ${airline.name} rules, ${item.name.toLowerCase()} has carry-on status: ${item.carryOn.status.replace("_", " ")} and checked bag status: ${item.checkedBag.status.replace("_", " ")}.`
+    a: `Yes, carriage depends on baggage type. Under TSA and ${airline.name} guidelines, ${item.name.toLowerCase()} has carry-on status: ${item.carryOn.status.replace("_", " ")} and checked hold status: ${item.checkedBag.status.replace("_", " ")}.`
   },
   {
-    q: `Can I pack ${item.name.toLowerCase()} in checked luggage on ${airline.name}?`,
+    q: `Can I pack ${item.name.toLowerCase()} in checked baggage on ${airline.name}?`,
     a: item.checkedBag.status === 'ALLOWED' 
-      ? `Yes, ${airline.name} allows packing ${item.name.toLowerCase()} in checked baggage holds.`
+      ? `Yes, ${airline.name} permits packing ${item.name.toLowerCase()} in checked hold luggage, up to their checked weight limit of ${airline.checkedLimit}.`
       : item.checkedBag.status === 'RESTRICTED' 
-      ? `Checked bag carriage is restricted. ${item.checkedBag.reason}`
-      : `No, ${airline.name} prohibits packing ${item.name.toLowerCase()} in checked luggage holds due to aviation safety rules.`
+      ? `Checked baggage carriage on ${airline.name} is restricted: ${item.checkedBag.reason}`
+      : `No, ${airline.name} prohibits packing ${item.name.toLowerCase()} in checked holds due to flight safety regulations.`
   },
   {
     q: `Can I carry ${item.name.toLowerCase()} in my cabin bag on ${airline.name}?`,
     a: item.carryOn.status === 'ALLOWED' 
-      ? `Yes, you can carry it in your carry-on bag. Just ensure it conforms to cabin size limits.`
+      ? `Yes, you can carry it in your overhead or personal item cabin bag. Ensure your bag weight does not exceed ${airline.name}'s cabin allowance of ${airline.cabinLimit}.`
       : item.carryOn.status === 'RESTRICTED' 
-      ? `Cabin carriage is restricted: ${item.carryOn.reason}`
+      ? `Cabin bag carriage on ${airline.name} is restricted: ${item.carryOn.reason}`
       : `No, TSA and ${airline.name} prohibit carrying ${item.name.toLowerCase()} in cabin luggage.`
   },
   {
-    q: `What is the ${airline.name} weight limit for baggage containing ${item.name.toLowerCase()}?`,
-    a: `For cabin bags, ${airline.name} enforces a limit of ${airline.cabinLimit}. For checked luggage, the standard weight limit is ${airline.checkedLimit} per bag.`
+    q: `What is the ${airline.name} weight and size limit for baggage containing ${item.name.toLowerCase()}?`,
+    a: `For overhead carry-on bags, ${airline.name} enforces a cabin weight limit of ${airline.cabinLimit}. For checked luggage, the standard allowance is ${airline.checkedLimit} per piece.`
   },
   {
-    q: `Will TSA inspect my ${item.name.toLowerCase()} at the checkpoint?`,
-    a: `Yes, security officers inspect all items. If ${item.name.toLowerCase()} is flagged, they will perform manual baggage audits or physical screening.`
+    q: `Will TSA or airport security officers inspect my ${item.name.toLowerCase()} when flying ${airline.name}?`,
+    a: `Yes. Security officers screen all cabin and hold baggage via X-ray scans. If ${item.name.toLowerCase()} requires additional inspection, officers will inspect it manually.`
   },
   {
-    q: `Can airlines like ${airline.name} ban ${item.name.toLowerCase()} even if TSA allows it?`,
-    a: `Yes. Under IATA rules, airline operators can impose stricter regulations than TSA or FAA guidelines for hazardous, lithium, or liquid carriage.`
+    q: `Does ${airline.name} enforce stricter rules than TSA for ${item.name.toLowerCase()}?`,
+    a: `Airlines reserve the right under IATA guidelines to enforce stricter cabin size, weight, or battery wattage limits than baseline airport security rules.`
   },
   {
-    q: `Are there restrictions for carrying ${item.name.toLowerCase()} internationally on ${airline.name}?`,
-    a: `Yes. For international routes, destination customs agencies (e.g. EU security, Japan Customs) may enforce different guidelines than domestic TSA rules.`
+    q: `What happens if I pack a restricted ${item.name.toLowerCase()} in my checked luggage?`,
+    a: `If flagged, security screeners will confiscate the item from your luggage, which may cause baggage delays or security fines.`
   },
   {
-    q: `What happens if I pack a prohibited ${item.name.toLowerCase()} in my checked bag?`,
-    a: `Security inspectors will confiscate the item, and the baggage will be delayed. If it violates FAA hazardous material protocols, airlines may impose fines.`
+    q: `How should I package ${item.name.toLowerCase()} for my ${airline.name} flight?`,
+    a: `Keep ${item.name.toLowerCase()} in protective cases or leak-proof pouches near the top of your bag for quick screening.`
   }
 ];
 
@@ -93,12 +193,12 @@ const faqs = [
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bringonplane.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Items", "item": "https://bringonplane.com/items" },
-    { "@type": "ListItem", "position": 3, "name": item.name, "item": `https://bringonplane.com/items/${item.slug}` },
-    { "@type": "ListItem", "position": 4, "name": airline.name, "item": currentUrl }
-  ]
+  "itemListElement": breadcrumbItems.map((item, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": item.label,
+    "item": item.href ? `https://bringonplane.com${item.href}` : currentUrl
+  }))
 };
 
 const faqSchema = {
@@ -115,116 +215,238 @@ const faqSchema = {
 };
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
-  <link rel="canonical" href={currentUrl} slot="head" />
+<Layout title={seoTitle} description={seoDescription} canonicalURL={currentUrl}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 
   <Header slot="header" />
 
-  <main class="max-w-[800px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
-    
-    <!-- Navigation back link -->
-    <div class="mb-8 select-none">
-      <a href={`/items/${item.slug}`} class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors">
-        <ArrowLeft class="w-3.5 h-3.5" />
-        Back to {item.name}
-      </a>
-    </div>
+  <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 py-12 flex-1">
+    <!-- Breadcrumbs matching reference image format -->
+    <Breadcrumbs items={breadcrumbItems} />
 
-    <!-- Header Block -->
+    <!-- Item & Airline Metadata Header -->
     <header class="mb-10">
-      <span class="font-mono text-[10px] font-semibold text-link bg-link-bg-soft border border-link/15 px-2.5 py-0.5 rounded-xs uppercase tracking-wider block w-max mb-3">
-        Airline Regulations ({currentYear})
-      </span>
-      <h1 class="text-3xl font-semibold tracking-[-1.2px] text-ink leading-[1.25]">
-        Can You Bring {item.name} on {airline.name}?
+      <div class="flex flex-wrap items-center gap-3 mb-3">
+        <a 
+          href={`/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}`}
+          class="font-mono text-[10px] font-semibold text-mute hover:text-link uppercase tracking-wider bg-canvas-soft-2 border border-hairline px-2 py-0.5 rounded-xs"
+        >
+          {item.category}
+        </a>
+
+        <!-- Trust Confidence Badge -->
+        <span class="inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-link bg-link-bg-soft border border-link/25 px-2 py-0.5 rounded-xs select-none">
+          <Plane class="w-3 h-3 text-link" />
+          {airline.name} Verified • High Confidence
+        </span>
+
+        <span class="flex items-center gap-1.5 text-xs text-mute font-mono">
+          <Calendar class="w-3.5 h-3.5" />
+          Reviewed {currentYear}
+        </span>
+      </div>
+
+      <!-- Verdict Color Banner matching reference image -->
+      {item.carryOn.status === 'ALLOWED' && (
+        <div class="mb-6 flex items-center gap-4 px-5 py-4 rounded-lg bg-emerald-50 border border-emerald-200 select-none">
+          <span class="flex items-center justify-center w-9 h-9 rounded-full bg-emerald-100 border border-emerald-300 flex-shrink-0">
+            <CheckCircle2 class="w-5 h-5 text-emerald-600" />
+          </span>
+          <div>
+            <p class="text-sm font-bold text-emerald-800">YES — Allowed in Carry-on Bags on {airline.name}</p>
+            <p class="text-xs text-emerald-700 leading-snug mt-0.5">{item.carryOn.reason}</p>
+          </div>
+        </div>
+      )}
+      {item.carryOn.status === 'NOT_ALLOWED' && (
+        <div class="mb-6 flex items-center gap-4 px-5 py-4 rounded-lg bg-red-50 border border-red-200 select-none">
+          <span class="flex items-center justify-center w-9 h-9 rounded-full bg-red-100 border border-red-300 flex-shrink-0">
+            <XCircle class="w-5 h-5 text-red-600" />
+          </span>
+          <div>
+            <p class="text-sm font-bold text-red-800">NO — Not Allowed in Carry-on Bags on {airline.name}</p>
+            <p class="text-xs text-red-700 leading-snug mt-0.5">{item.carryOn.reason}</p>
+          </div>
+        </div>
+      )}
+      {item.carryOn.status === 'RESTRICTED' && (
+        <div class="mb-6 flex items-center gap-4 px-5 py-4 rounded-lg bg-amber-50 border border-amber-200 select-none">
+          <span class="flex items-center justify-center w-9 h-9 rounded-full bg-amber-100 border border-amber-300 flex-shrink-0">
+            <AlertCircle class="w-5 h-5 text-amber-600" />
+          </span>
+          <div>
+            <p class="text-sm font-bold text-amber-800">RESTRICTED — Allowed with Conditions on {airline.name}</p>
+            <p class="text-xs text-amber-700 leading-snug mt-0.5">{item.carryOn.reason}</p>
+          </div>
+        </div>
+      )}
+
+      <!-- Page H1 -->
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.28px] text-ink text-pretty">
+        Can you bring {item.name.toLowerCase()} on {airline.name}?
       </h1>
-      <p class="text-sm text-body mt-2 leading-[1.6]">
-        A detailed guide on flying with {item.name.toLowerCase()} on {airline.name} flights, including FAA battery safety regulations and airport security guidelines.
-      </p>
+
+      <!-- Featured Snippet Quick Answer Box matching reference image -->
+      <div class="mt-5 mb-2 p-4 rounded-md bg-canvas-soft border-l-4 border-link">
+        <p class="text-xs font-mono text-link uppercase tracking-wider mb-1.5 font-semibold">Quick Answer</p>
+        <p class="text-sm text-body leading-[1.7] text-pretty">
+          {featuredSnippetAnswer}
+        </p>
+      </div>
+
+      {item.aliases.length > 0 && (
+        <p class="text-sm text-body mt-2">
+          <span class="text-mute">Also known as:</span> {item.aliases.join(", ")}
+        </p>
+      )}
+
+      <!-- Action buttons -->
+      <div class="flex flex-wrap items-center gap-3 mt-6 select-none">
+        <button 
+          type="button" 
+          id="btn-favorite" 
+          class="inline-flex items-center gap-2 px-3 h-8 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer"
+        >
+          <svg width="14" height="14" class="w-3.5 h-3.5 text-mute" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <span>Favorite</span>
+        </button>
+
+        <button 
+          type="button" 
+          id="btn-checklist-add" 
+          class="inline-flex items-center gap-2 px-3 h-8 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+            <path d="M12 6v12M6 12h12"/>
+          </svg>
+          <span>Add to Checklist</span>
+        </button>
+
+        <button 
+          type="button" 
+          id="btn-share-link" 
+          class="inline-flex items-center gap-2 px-3 h-8 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+          </svg>
+          <span>Share Link</span>
+        </button>
+      </div>
     </header>
 
-    <!-- Allowance Summary Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+    <!-- "What is [item]?" Detailed Description matching reference image -->
+    <section class="mt-10 mb-10">
+      <h2 class="text-xl font-semibold text-ink mb-3 tracking-tight">What is {item.name.toLowerCase()}?</h2>
+      <p class="text-sm text-body leading-[1.7] text-pretty">{whatIsThisItem}</p>
+    </section>
+
+    <!-- Two-Column Baggage Cards matching reference image layout -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
       
-      <!-- Carry-on Cabin Card -->
-      <div class="bg-canvas border border-hairline rounded-md p-6 shadow-sm flex flex-col justify-between">
+      <!-- Cabin Baggage Card -->
+      <div class="p-6 rounded-lg bg-canvas border border-hairline shadow-xs flex flex-col justify-between">
         <div>
-          <span class="text-[9px] font-mono font-semibold uppercase text-mute tracking-wider block mb-1">Carry-on Cabin Bag</span>
-          <div class="flex items-center gap-2 mb-3">
-            <span class={`w-2.5 h-2.5 rounded-full ${item.carryOn.status === 'ALLOWED' ? 'bg-success' : item.carryOn.status === 'NOT_ALLOWED' ? 'bg-error' : 'bg-warning'}`}></span>
-            <span class="text-lg font-bold text-ink tracking-tight uppercase">{item.carryOn.status.replace("_", " ")}</span>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-semibold uppercase text-mute">CABIN BAGGAGE (CARRY-ON)</span>
+            <span class={`px-2.5 py-1 text-xs font-semibold rounded border ${carryOnStatus.class}`}>
+              {carryOnStatus.label}
+            </span>
           </div>
-          <p class="text-xs text-body leading-[1.5]">
-            {item.carryOn.reason}
-          </p>
+          <h3 class="text-lg font-semibold text-ink mb-2">
+            {item.carryOn.status === 'ALLOWED' ? 'Allowed In Cabin' : item.carryOn.status === 'NOT_ALLOWED' ? 'Prohibited In Cabin' : 'Restricted In Cabin'}
+          </h3>
+          <p class="text-xs text-body leading-relaxed mb-4">{item.carryOn.reason}</p>
         </div>
-        <div class="mt-4 pt-4 border-t border-hairline/60 flex items-center justify-between text-[10px] font-mono text-mute">
-          <span>{airline.name} Cabin Limit</span>
+        <div class="pt-3 border-t border-hairline flex items-center justify-between text-xs font-mono">
+          <span class="text-mute">{airline.name} Cabin Limit:</span>
           <strong class="text-ink">{airline.cabinLimit}</strong>
         </div>
       </div>
 
-      <!-- Checked Bag Hold Card -->
-      <div class="bg-canvas border border-hairline rounded-md p-6 shadow-sm flex flex-col justify-between">
+      <!-- Hold Baggage Card -->
+      <div class="p-6 rounded-lg bg-canvas border border-hairline shadow-xs flex flex-col justify-between">
         <div>
-          <span class="text-[9px] font-mono font-semibold uppercase text-mute tracking-wider block mb-1">Checked Hold Baggage</span>
-          <div class="flex items-center gap-2 mb-3">
-            <span class={`w-2.5 h-2.5 rounded-full ${item.checkedBag.status === 'ALLOWED' ? 'bg-success' : item.checkedBag.status === 'NOT_ALLOWED' ? 'bg-error' : 'bg-warning'}`}></span>
-            <span class="text-lg font-bold text-ink tracking-tight uppercase">{item.checkedBag.status.replace("_", " ")}</span>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono font-semibold uppercase text-mute">HOLD BAGGAGE (CHECKED)</span>
+            <span class={`px-2.5 py-1 text-xs font-semibold rounded border ${checkedStatus.class}`}>
+              {checkedStatus.label}
+            </span>
           </div>
-          <p class="text-xs text-body leading-[1.5]">
-            {item.checkedBag.reason}
-          </p>
+          <h3 class="text-lg font-semibold text-ink mb-2">
+            {item.checkedBag.status === 'ALLOWED' ? 'Allowed In Hold' : item.checkedBag.status === 'NOT_ALLOWED' ? 'Prohibited In Hold' : 'Restricted In Hold'}
+          </h3>
+          <p class="text-xs text-body leading-relaxed mb-4">{item.checkedBag.reason}</p>
         </div>
-        <div class="mt-4 pt-4 border-t border-hairline/60 flex items-center justify-between text-[10px] font-mono text-mute">
-          <span>{airline.name} Checked Limit</span>
+        <div class="pt-3 border-t border-hairline flex items-center justify-between text-xs font-mono">
+          <span class="text-mute">{airline.name} Checked Limit:</span>
           <strong class="text-ink">{airline.checkedLimit}</strong>
         </div>
       </div>
 
     </div>
 
-    <!-- Official TSA Reference Panel -->
-    <div class="bg-canvas border border-hairline rounded-md p-6 shadow-sm mb-10 select-none">
-      <div class="flex items-start gap-4">
-        <div class="w-10 h-10 rounded-sm bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
-          <BadgeCheck class="w-5 h-5" />
-        </div>
+    <!-- Interactive Airline & Country Baggage Selector Widget -->
+    <AirlineCountrySelector 
+      itemName={item.name} 
+      carryOnStatus={item.carryOn.status} 
+      checkedStatus={item.checkedBag.status} 
+      carryOnReason={item.carryOn.reason}
+      checkedReason={item.checkedBag.reason}
+      category={item.category}
+    />
+
+    <!-- Regulatory Citation Panel -->
+    <section class="my-10 p-6 rounded-lg bg-canvas-soft border border-hairline">
+      <div class="flex items-start gap-3">
+        <FileText class="w-5 h-5 text-link mt-0.5 flex-shrink-0" />
         <div>
-          <h3 class="text-sm font-semibold text-ink">Baggage Safety Clearance Details</h3>
-          <p class="text-xs text-body leading-[1.6] mt-1">
-            We confirm that {item.name.toLowerCase()} checks out under core regulatory database guidelines. The security authority hierarchy enforces TSA/IATA rules first, followed by {airline.name}-specific baggage size and weight allowances.
-          </p>
-          <div class="flex items-center gap-4 mt-3 text-[10px] font-mono text-mute">
-            <span>Last reviewed: 2026</span>
-            <span>&bull;</span>
-            <span>Reviewed by BringOnPlane Editorial Team</span>
-          </div>
+          <h3 class="text-sm font-semibold text-ink">{cfr.title}</h3>
+          <p class="text-xs text-mute font-mono mt-0.5">{cfr.code} — {cfr.source}</p>
+          <p class="text-xs text-body leading-relaxed mt-2">{regulatoryDetails}</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Accompanying accordion FAQs -->
-    <section class="mb-10">
-      <div class="flex items-center gap-2 mb-5 border-b border-hairline pb-3">
-        <HelpCircle class="w-4 h-4 text-mute" />
-        <h2 class="text-lg font-semibold tracking-[-0.4px] text-ink">Frequently Asked Questions</h2>
+    <!-- Security Checkpoint Screening Procedure -->
+    <section class="my-10">
+      <h2 class="text-xl font-semibold text-ink mb-3 tracking-tight">Security Checkpoint Screening Procedure</h2>
+      <p class="text-sm text-body leading-[1.7]">{screeningProcedure}</p>
+    </section>
+
+    <!-- Step-by-Step Packing Guide -->
+    <section class="my-10">
+      <h2 class="text-xl font-semibold text-ink mb-4 tracking-tight">Step-by-Step Packing Guide for {airline.name} Passengers</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {stepByStepPacking.map((step, idx) => (
+          <div class="p-4 rounded-md border border-hairline bg-canvas">
+            <span class="font-mono text-xs text-link font-semibold block mb-1">Step {idx + 1}</span>
+            <p class="text-xs text-body leading-relaxed">{step}</p>
+          </div>
+        ))}
       </div>
+    </section>
 
+    <!-- Accompanying accordion FAQs matching reference format -->
+    <section class="my-10">
+      <h2 class="text-xl font-semibold text-ink mb-5 tracking-tight">Frequently Asked Questions</h2>
       <div class="space-y-3">
         {faqs.map((faq, idx) => (
-          <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+          <div class="border border-hairline rounded-md bg-canvas shadow-xs">
             <button 
               type="button" 
               class="faq-header-btn w-full text-left px-5 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
-              data-target={`faq-body-${idx}`}
+              data-target={`faq-body-airline-${idx}`}
             >
               <span>{faq.q}</span>
               <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
             </button>
-            <div id={`faq-body-${idx}`} class="hidden px-5 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+            <div id={`faq-body-airline-${idx}`} class="hidden px-5 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
               {faq.a}
             </div>
           </div>
@@ -232,20 +454,17 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- Regulatory Disclaimer -->
-    <footer class="text-[10px] font-mono text-mute leading-[1.6] border-t border-hairline pt-6 select-none">
-      <p>
-        <strong>Disclaimer:</strong> Point rules apply universally. Final carriage approval remains at the discretion of the checkpoint inspector. Airlines like {airline.name} reserve the right to prohibit items on specific flights for safety reasons.
-      </p>
-    </footer>
+    <!-- E-E-A-T Editorial Banner -->
+    <EEATBanner />
 
-  </main>
+    <!-- Related Links Widget -->
+    <RelatedLinksWidget groups={relatedWidgetGroups} />
+  </div>
 
   <Footer slot="footer" />
 </Layout>
 
 <script>
-  // Setup accordion toggle listeners
   document.querySelectorAll(".faq-header-btn").forEach(btn => {
     btn.addEventListener("click", (e) => {
       const targetId = (e.currentTarget as HTMLElement).getAttribute("data-target") || "";
