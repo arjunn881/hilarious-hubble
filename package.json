@@ -20,7 +20,7 @@
     "sitemap": "node scripts/seo-report.js",
     "schema": "node scripts/validate.js",
     "metadata": "node scripts/build-search-index.js",
-    "deploy": "npx wrangler pages deploy dist"
+    "deploy": "npm run build && npx wrangler pages deploy dist"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
