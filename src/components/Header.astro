@@ -1,5 +1,6 @@
 ---
 import { Plane, Sun, Moon, Menu, X, Search, ChevronRight } from "@lucide/astro";
+import LanguageSelector from "./LanguageSelector.astro";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -26,7 +27,7 @@ const navLinks = [
         <Plane class="w-4.5 h-4.5 rotate-45" aria-hidden="true" />
       </div>
       <div class="flex flex-col min-w-0">
-        <span class="font-sans font-bold tracking-tight text-sm sm:text-base text-white leading-tight truncate">
+        <span class="font-sans font-bold tracking-tight text-sm sm:text-base text-white leading-tight truncate notranslate">
           BringOnPlane
         </span>
         <span class="font-mono text-[9px] uppercase tracking-wider text-blue-400 font-medium hidden sm:block">
@@ -60,6 +61,9 @@ const navLinks = [
         <span class="hidden sm:inline">Search Items</span>
         <kbd class="hidden md:inline-block px-1.5 py-0.2 text-[9px] bg-blue-800/80 rounded border border-blue-400/40 text-blue-200">Ctrl K</kbd>
       </button>
+
+      <!-- Global Multi-Language Selector (Desktop) -->
+      <LanguageSelector />
 
       <!-- Dark mode toggle -->
       <button
@@ -134,6 +138,12 @@ const navLinks = [
         <span class="flex-1">Search any item (e.g. razor, battery)...</span>
         <span class="text-xs font-mono bg-blue-600 text-white px-2 py-0.5 rounded">Search</span>
       </button>
+
+      <!-- Global Multi-Language Selector (Mobile Drawer) -->
+      <div class="w-full py-1">
+        <p class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1.5 px-1 font-semibold">Change Language</p>
+        <LanguageSelector isMobileDrawer={true} />
+      </div>
 
       <!-- Main Mobile Navigation Links -->
       <nav class="flex flex-col gap-1 border-t border-b border-slate-800/80 py-4">
