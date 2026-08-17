@@ -173,20 +173,20 @@ const resolvedImage = new URL(image, Astro.site || "https://bringonplane.com").h
     <slot name="footer" />
     <SearchModal />
 
-    <!-- Hidden Google Translate Element Anchor -->
-    <div id="google_translate_element" style="display:none !important;" class="notranslate" aria-hidden="true"></div>
+    <!-- Google Translate Anchor (rendered off-screen, not display:none, so script initializes properly) -->
+    <div id="google_translate_element" style="position: fixed; left: -9999px; top: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; z-index: -1;" class="notranslate" aria-hidden="true"></div>
 
     <!-- Google Translate Script Loader with Automatic Language & RTL Sync -->
     <script is:inline>
-      function googleTranslateElementInit() {
+      window.googleTranslateElementInit = function() {
         if (typeof google !== 'undefined' && google.translate) {
           new google.translate.TranslateElement({
             pageLanguage: 'en',
             autoDisplay: false,
-            multilanguagePage: true
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
           }, 'google_translate_element');
         }
-      }
+      };
     </script>
     <script is:inline src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
   </body>
