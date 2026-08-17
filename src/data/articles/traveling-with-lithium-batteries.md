@@ -36,5 +36,15 @@ FAA rules specify limits based on the battery capacity measured in **Watt-hours 
 ## Safety Tips for Packing Batteries
 
 1. **Keep Power Banks in Cabin**: Never pack portable power banks in luggage that you check at the ticket counter or gate.
-2. **Prevent Accidental Activation**: Turn devices containing batteries (like electric toothbrushes or laptops) completely off. Do not leave them in sleep or standby mode.
+2. **Prevent Accidental Activation**: Turn devices containing batteries (like [electric toothbrushes](/guide/electric-toothbrush-on-plane) or laptops) completely off. Do not leave them in sleep or standby mode.
 3. **Tape Terminals**: Protect spare battery connection terminals with electrical tape or place them in individual zip baggies.
+
+---
+
+## See Also
+
+- [Can You Bring an Electric Toothbrush on a Plane?](/guide/electric-toothbrush-on-plane)
+- [Can You Bring a Laptop on a Plane?](/guide/laptop-on-plane)
+- [Can You Bring a Power Bank on a Plane?](/guide/power-bank-on-plane)
+- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item)
+- [What Is TSA PreCheck? Laptops Stay in Your Bag](/guide/what-is-tsa-precheck)

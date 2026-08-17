@@ -37,3 +37,11 @@ If you carry needles or medical machines:
 - **Syringes and Auto-injectors**: EpiPens and unused syringes are allowed in carry-ons if accompanied by the injectable medication (like insulin).
 - **CPAP Machines**: CPAP and nebulizer machines are allowed. You must remove the CPAP machine from its carrying case and place it in a bin for X-ray, but the mask and tubing can stay in the bag.
 - **Declared Devices**: Inform officers if you wear a glucose monitor (CGM) or insulin pump, as these should not go through body scanners or X-ray machines.
+
+---
+
+## See Also
+
+- [TSA 3-1-1 Liquids Rule: Complete Guide](/guide/tsa-311-liquids-rule)
+- [What Is TSA PreCheck? Fast-Track Medical Travel](/guide/what-is-tsa-precheck)
+- [Can You Bring a Carry-On AND a Personal Item? (Medical Bags Are Exempt)](/guide/carry-on-and-personal-item)

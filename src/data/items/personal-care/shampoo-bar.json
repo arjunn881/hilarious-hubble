@@ -1,0 +1,87 @@
+{
+  "id": "shampoo-bar",
+  "slug": "shampoo-bar",
+  "name": "Shampoo Bar",
+  "category": "Personal Care",
+  "subcategory": "Hair Care",
+  "aliases": [
+    "solid shampoo",
+    "shampoo bar soap",
+    "hair soap bar",
+    "solid conditioner"
+  ],
+  "keywords": [
+    "shampoo bar",
+    "solid shampoo",
+    "hair soap",
+    "bar soap",
+    "toiletry"
+  ],
+  "description": "Guidelines for traveling with solid shampoo bars in carry-on and checked luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Solid shampoo bars are completely exempt from the TSA 3-1-1 liquids rule. Any size is allowed in carry-on luggage with no quart-sized plastic bag requirement.",
+    "conditions": [
+      "Keep dry in a soap tin, pouch, or travel case to prevent moisture in luggage."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Solid shampoo bars are fully allowed in checked baggage with no quantity or weight restrictions.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bar-soap",
+    "lastVerified": "2026-06-30",
+    "pageTitle": "Can I bring bar soap and solid toiletries on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bar-soap",
+      "verified": "2026-06-30",
+      "priority": 1
+    }
+  ],
+  "airlines": [],
+  "international": {},
+  "travelTips": [
+    "Switching to a solid shampoo bar frees up space in your quart-sized liquids bag for other liquid cosmetics."
+  ],
+  "relatedItems": [
+    "shampoo",
+    "conditioner",
+    "deodorant",
+    "toothpaste"
+  ],
+  "faq": [
+    {
+      "question": "Is a shampoo bar considered a liquid by TSA?",
+      "answer": "No. Solid shampoo bars are not liquids, gels, or aerosols. They are solid items and are completely exempt from the 3-1-1 liquids rule."
+    },
+    {
+      "question": "Can you pack shampoo bars in checked baggage?",
+      "answer": "Yes, solid shampoo bars are fully permitted in checked baggage without restrictions."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-06-30",
+    "nextReviewDue": "2027-06-30",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-06-30",
+      "change": "Initial solid toiletry allowance entry and baggage guidelines indexing.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bar-soap"
+    }
+  ]
+}

@@ -3052,6 +3052,28 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "shampoo-bar",
+    "slug": "shampoo-bar",
+    "name": "Shampoo Bar",
+    "category": "Personal Care",
+    "aliases": [
+      "solid shampoo",
+      "shampoo bar soap",
+      "hair soap bar",
+      "solid conditioner"
+    ],
+    "keywords": [
+      "shampoo bar",
+      "solid shampoo",
+      "hair soap",
+      "bar soap",
+      "toiletry"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-06-30"
+  },
+  {
     "id": "shaving-cream",
     "slug": "shaving-cream",
     "name": "Shaving Cream",
