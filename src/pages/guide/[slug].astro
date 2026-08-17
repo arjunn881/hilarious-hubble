@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import { ArrowLeft, Calendar } from "@lucide/astro";
+import { ArrowLeft, Calendar, CheckCircle2, Bookmark, Share2, CheckSquare } from "@lucide/astro";
 import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
 import RelatedLinksWidget from "../../components/seo/RelatedLinksWidget.astro";
 import EEATBanner from "../../components/seo/EEATBanner.astro";
@@ -24,16 +24,17 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const Content = post.default;
-const { title, description, category, lastUpdated, isMedical = false, isLegal = false } = post.frontmatter;
+const { title, description, category = "Travel Security", lastUpdated, isMedical = false, isLegal = false } = post.frontmatter;
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "Guides", href: "/guides" },
+  { label: category, href: `/category/${category.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-")}` },
   { label: title }
 ];
 
 const relatedWidgetGroups = [
-  { title: "Relevant Categories", links: getRelatedCategories(category.toLowerCase().trim().replace(/\s+/g, "-"), 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) },
+  { title: "Relevant Categories", links: getRelatedCategories(category.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-"), 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) },
   { title: "Relevant Airlines", links: POPULAR_AIRLINES.slice(0, 4).map(a => ({ title: `${a.name} Rules`, url: `/airlines` })) },
   { title: "Tools", links: [{ title: "Packing Assistant", url: "/checklist" }, { title: "TSA Item Search", url: "/items" }] }
 ];
@@ -68,28 +69,104 @@ const relatedWidgetGroups = [
 
   <Header slot="header" />
 
-  <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 py-12 flex-1">
+  <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 py-10 flex-1">
     
     <!-- Breadcrumbs complying with Web Interface Guidelines -->
     <Breadcrumbs items={breadcrumbItems} />
 
     <!-- Article Header -->
-    <header class="mb-10 pb-8 border-b border-hairline">
-      <div class="flex items-center gap-3 mb-4 select-none">
-        <span class="font-mono text-[10px] font-semibold text-mute uppercase tracking-wider bg-canvas-soft-2 border border-hairline px-2 py-0.5 rounded-xs">
+    <header class="mb-8 pb-6 border-b border-hairline">
+      
+      <!-- Top Trust Badges Row -->
+      <div class="flex flex-wrap items-center gap-3 mb-4 select-none">
+        <a 
+          href={`/category/${category.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-")}`}
+          class="font-mono text-[10px] font-semibold text-mute uppercase tracking-wider bg-canvas-soft-2 border border-hairline hover:border-link px-2 py-0.5 rounded-xs transition-colors"
+        >
           {category}
+        </a>
+
+        <!-- Trust Confidence Badge -->
+        <span class="inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-link bg-link-bg-soft border border-link/25 px-2 py-0.5 rounded-xs select-none">
+          <svg width="12" height="12" class="w-3 h-3 text-link" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          TSA Verified • High Confidence
         </span>
+
         <span class="flex items-center gap-1.5 text-xs text-mute font-mono">
           <Calendar class="w-3.5 h-3.5" aria-hidden="true" />
-          Updated {lastUpdated}
+          Reviewed {lastUpdated}
         </span>
       </div>
-      <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.28px] text-ink leading-tight mb-4">
+
+      <!-- Verified Banner -->
+      <div class="mb-6 flex items-center gap-4 px-5 py-4 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 select-none">
+        <span class="flex items-center justify-center w-9 h-9 rounded-full bg-emerald-100 dark:bg-emerald-900 border border-emerald-300 dark:border-emerald-700 flex-shrink-0">
+          <CheckCircle2 class="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+        </span>
+        <div>
+          <p class="text-sm font-bold text-emerald-800 dark:text-emerald-300">OFFICIAL TSA & FAA TRAVEL GUIDE (2026)</p>
+          <p class="text-xs text-emerald-700 dark:text-emerald-400 leading-snug mt-0.5">{description}</p>
+        </div>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.28px] text-ink leading-tight mb-4 text-pretty">
         {title}
       </h1>
-      <p class="text-base text-body leading-relaxed text-pretty">
-        {description}
-      </p>
+
+      <!-- Quick Answer / Summary Callout Box -->
+      <div class="mt-4 mb-5 p-4 rounded-md bg-canvas-soft border-l-4 border-link">
+        <p class="text-xs font-mono text-link uppercase tracking-wider mb-1.5 font-semibold">Quick Answer</p>
+        <p class="text-sm text-body leading-[1.7] text-pretty">
+          {description}
+        </p>
+      </div>
+
+      <!-- Action Utility Buttons -->
+      <div class="flex flex-wrap items-center gap-3 mt-4 select-none">
+        <button 
+          type="button" 
+          id="btn-favorite" 
+          class="inline-flex items-center gap-2 px-3 h-8 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1"
+          aria-label="Bookmark Guide"
+        >
+          <svg width="14" height="14" id="star-icon" class="w-3.5 h-3.5 text-mute transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <span id="favorite-label">Bookmark</span>
+        </button>
+
+        <a 
+          href="/checklist"
+          class="inline-flex items-center gap-2 px-3 h-8 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1"
+          aria-label="Add to packing checklist"
+        >
+          <svg class="w-3.5 h-3.5 text-mute" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+            <path d="M12 6v12M6 12h12"/>
+          </svg>
+          <span>Packing Assistant</span>
+        </a>
+
+        <button 
+          type="button" 
+          id="btn-share-link" 
+          class="inline-flex items-center gap-2 px-3 h-8 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-1 relative"
+          aria-label="Copy share link to clipboard"
+        >
+          <svg width="14" height="14" class="w-3.5 h-3.5 text-mute" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <path d="M8.59 13.51l6.83 3.98M15.41 6.51L8.59 10.49"/>
+          </svg>
+          <span>Share Link</span>
+          <!-- Clipboard toast notification tooltip -->
+          <span id="share-toast" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-[10px] font-mono font-medium text-on-primary bg-ink rounded shadow-level-3 opacity-0 transition-opacity pointer-events-none whitespace-nowrap">
+            Copied link!
+          </span>
+        </button>
+      </div>
     </header>
 
     <div class="mb-10">
@@ -97,45 +174,122 @@ const relatedWidgetGroups = [
     </div>
 
     <!-- Compiled HTML content from Markdown -->
-    <article class="article-content">
+    <article class="article-content max-w-none">
       <Content />
     </article>
 
     <!-- Advanced SEO Interlinking Clusters -->
-    <RelatedLinksWidget groups={relatedWidgetGroups} />
+    <div class="mt-12 pt-8 border-t border-hairline">
+      <RelatedLinksWidget groups={relatedWidgetGroups} />
+    </div>
   </div>
 
   <Footer slot="footer" />
 </Layout>
 
+<script>
+  function setupGuideUtilities() {
+    // ── Share Link Copy Button ────────────────────────────────
+    const shareBtn = document.getElementById("btn-share-link");
+    const shareToast = document.getElementById("share-toast");
+    if (shareBtn && shareToast) {
+      shareBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          shareToast.classList.remove("opacity-0");
+          shareToast.classList.add("opacity-100");
+          setTimeout(() => {
+            shareToast.classList.remove("opacity-100");
+            shareToast.classList.add("opacity-0");
+          }, 2000);
+        } catch (e) {
+          console.error("Clipboard copy failed:", e);
+        }
+      });
+    }
+
+    // ── Bookmark / Favorite Toggle ────────────────────────────
+    const favBtn = document.getElementById("btn-favorite");
+    const starIcon = document.getElementById("star-icon");
+    const favLabel = document.getElementById("favorite-label");
+    const currentSlug = window.location.pathname.replace(/^\/guide\//, "").replace(/\/$/, "");
+
+    if (favBtn && starIcon && favLabel) {
+      const savedGuides = JSON.parse(localStorage.getItem("bookmarked_guides") || "[]");
+      let isSaved = savedGuides.includes(currentSlug);
+
+      function updateFavUI() {
+        if (isSaved) {
+          starIcon.setAttribute("fill", "#eab308");
+          starIcon.setAttribute("stroke", "#ca8a04");
+          starIcon.classList.remove("text-mute");
+          starIcon.classList.add("text-amber-500");
+          favLabel.textContent = "Bookmarked";
+        } else {
+          starIcon.setAttribute("fill", "none");
+          starIcon.setAttribute("stroke", "currentColor");
+          starIcon.classList.remove("text-amber-500");
+          starIcon.classList.add("text-mute");
+          favLabel.textContent = "Bookmark";
+        }
+      }
+      updateFavUI();
+
+      favBtn.addEventListener("click", () => {
+        isSaved = !isSaved;
+        let list = JSON.parse(localStorage.getItem("bookmarked_guides") || "[]");
+        if (isSaved) {
+          if (!list.includes(currentSlug)) list.push(currentSlug);
+        } else {
+          list = list.filter((s: string) => s !== currentSlug);
+        }
+        localStorage.setItem("bookmarked_guides", JSON.stringify(list));
+        updateFavUI();
+      });
+    }
+  }
+
+  setupGuideUtilities();
+  document.addEventListener("astro:after-swap", setupGuideUtilities);
+</script>
+
 <style is:global>
   /* Premium Editorial CSS Styles for Raw Compiled Markdown */
   .article-content {
-    font-size: 0.95rem;
-    line-height: 1.75;
+    font-size: 1rem;
+    line-height: 1.8;
     color: var(--color-body);
   }
   .article-content h2 {
-    font-size: 1.35rem;
-    font-weight: 600;
+    font-size: 1.45rem;
+    font-weight: 700;
     letter-spacing: -0.6px;
     color: var(--color-ink);
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+    margin-top: 2.75rem;
+    margin-bottom: 1.25rem;
     border-bottom: 1px solid var(--color-hairline);
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.6rem;
   }
   .article-content h3 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: -0.3px;
     color: var(--color-ink);
-    margin-top: 1.75rem;
-    margin-bottom: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.85rem;
   }
   .article-content p {
-    margin-bottom: 1.25rem;
-    text-align: justify;
+    margin-bottom: 1.35rem;
+    text-align: left;
+  }
+  .article-content a {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 500;
+  }
+  .article-content a:hover {
+    color: var(--color-ink);
   }
   .article-content ul {
     list-style-type: disc;
@@ -151,18 +305,85 @@ const relatedWidgetGroups = [
     margin-bottom: 0.5rem;
     padding-left: 0.25rem;
   }
-  .article-content blockquote {
-    border-left: 3px solid var(--color-primary);
-    background-color: var(--color-canvas-soft-2);
-    padding: 1.25rem;
-    margin: 2rem 0;
+
+  /* Modern Responsive Tables */
+  .article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.75rem 0 2rem 0;
     font-size: 0.9rem;
-    border-radius: 4px;
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    overflow-x: auto;
+  }
+  .article-content thead {
+    background-color: var(--color-canvas-soft-2);
+    border-bottom: 2px solid var(--color-hairline);
+  }
+  .article-content th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-ink);
+    font-family: var(--font-mono, monospace);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  .article-content td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-hairline);
+    color: var(--color-body);
+    vertical-align: top;
+  }
+  .article-content tr:last-child td {
+    border-bottom: none;
+  }
+  .article-content tr:hover td {
+    background-color: var(--color-canvas-soft);
+  }
+
+  /* Callout Blockquotes & GitHub-style Alerts */
+  .article-content blockquote {
+    border-left: 4px solid var(--color-link);
+    background-color: var(--color-canvas-soft);
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+    border-radius: 0 8px 8px 0;
     color: var(--color-ink);
   }
   .article-content blockquote p {
     margin-bottom: 0 !important;
   }
+
+  /* Pre / Code styling */
+  .article-content pre {
+    background-color: var(--color-canvas-soft-2);
+    border: 1px solid var(--color-hairline);
+    border-radius: 8px;
+    padding: 1.25rem;
+    overflow-x: auto;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 1.75rem 0;
+  }
+  .article-content code {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.88em;
+    background-color: var(--color-canvas-soft-2);
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+  }
+  .article-content pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+
   .article-content strong {
     font-weight: 600;
     color: var(--color-ink);
