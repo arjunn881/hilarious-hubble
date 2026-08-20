@@ -38,12 +38,19 @@ const resolvedImage = new URL(image, Astro.site || "https://bringonplane.com").h
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422" crossorigin="anonymous"></script>
     <script is:inline>
       (function() {
-        const theme = localStorage.getItem('theme') || 'light';
-        if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
+        try {
+          const theme = localStorage.getItem('theme') || 'light';
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+          const rtlLangs = ['ar', 'he', 'ur', 'fa', 'ps', 'yi', 'sd'];
+          const userLang = localStorage.getItem('user_lang');
+          if (userLang && rtlLangs.includes(userLang)) {
+            document.documentElement.setAttribute('dir', 'rtl');
+          }
+        } catch(e) {}
       })();
     </script>
     <meta charset="UTF-8" />
@@ -173,8 +180,8 @@ const resolvedImage = new URL(image, Astro.site || "https://bringonplane.com").h
     <slot name="footer" />
     <SearchModal />
 
-    <!-- Google Translate Anchor (rendered off-screen, not display:none, so script initializes properly) -->
-    <div id="google_translate_element" style="position: fixed; left: -9999px; top: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; z-index: -1;" class="notranslate" aria-hidden="true"></div>
+    <!-- Google Translate Mount Element (must NOT have notranslate class) -->
+    <div id="google_translate_element" style="position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; z-index: -9999;" aria-hidden="true"></div>
 
     <!-- Google Translate Script Loader with Automatic Language & RTL Sync -->
     <script is:inline>

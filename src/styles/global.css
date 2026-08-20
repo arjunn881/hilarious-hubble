@@ -211,16 +211,27 @@
    GOOGLE TRANSLATE SEAMLESS INTEGRATION & CLEAN STYLING OVERRIDES
    ═════════════════════════════════════════════════════════════════════ */
 
-/* Suppress default Google Translate top frames, banners, and tooltips */
-.goog-te-banner-frame.skiptranslate,
+/* Hide Google Translate top banner without breaking worker iframes */
 .goog-te-banner-frame,
-#goog-gt-tt,
-.goog-te-balloon-frame,
+.goog-te-banner-frame.skiptranslate,
 .VIpgJd-ZVi9od-ORHb-OEVmcd,
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-.VIpgJd-ZVi9od-aZ2wEe-OiiCO {
+#goog-gt-tt,
+.goog-te-balloon-frame {
   display: none !important;
   visibility: hidden !important;
+}
+
+/* Position translation engine elements off-screen instead of display:none */
+iframe.skiptranslate:not(.goog-te-banner-frame),
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO {
+  opacity: 0 !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  pointer-events: none !important;
 }
 
 /* Prevent Google Translate from pushing body down */
