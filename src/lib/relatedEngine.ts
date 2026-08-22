@@ -71,7 +71,7 @@ export function getCountryCombinationsForItem(itemSlug: string, limit: number = 
 export function getPopularGuides(limit: number = 4) {
   return GUIDES.slice(0, limit).map(g => ({
     title: g.title,
-    url: `/guide/${g.slug}`
+    url: `/guide/${g.slug}/`
   }));
 }
 
@@ -80,6 +80,6 @@ export function getRelatedItemsWidget(itemSlug: string, category: string, limit:
   const sameCategory = allItems.filter(i => i.category === category && i.slug !== itemSlug);
   return sameCategory.slice(0, limit).map(i => ({
     title: i.name,
-    url: `/items/${i.slug}`
+    url: `/items/${i.slug}/`
   }));
 }

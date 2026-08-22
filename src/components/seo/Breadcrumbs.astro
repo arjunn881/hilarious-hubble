@@ -17,14 +17,23 @@ const rawPathname = Astro.url.pathname || "/";
 const formattedPathname = rawPathname.endsWith("/") ? rawPathname : `${rawPathname}/`;
 const currentFullUrl = `${siteUrl}${formattedPathname}`;
 
+function formatPath(pathOrUrl: string): string {
+  const trimmed = pathOrUrl.trim();
+  if (trimmed.includes('#') || trimmed.includes('?')) return trimmed;
+  if (!trimmed.endsWith('/') && !/\.[a-zA-Z0-9]+$/.test(trimmed)) {
+    return `${trimmed}/`;
+  }
+  return trimmed;
+}
+
 function getItemUrl(item: BreadcrumbItem): string {
   if (item.href) {
     const rawHref = item.href.trim().replace(/\s+/g, "-");
     if (rawHref.startsWith("http://") || rawHref.startsWith("https://")) {
-      return rawHref;
+      return formatPath(rawHref);
     }
     const path = rawHref.startsWith("/") ? rawHref : `/${rawHref}`;
-    return `${siteUrl}${path}`;
+    return `${siteUrl}${formatPath(path)}`;
   }
   return currentFullUrl;
 }
@@ -47,7 +56,7 @@ const schema = {
     {items.map((item, index) => {
       const isLast = index === items.length - 1;
       const itemUrl = getItemUrl(item);
-      const cleanHref = item.href ? item.href.trim().replace(/\s+/g, "-") : undefined;
+      const cleanHref = item.href ? formatPath(item.href.trim().replace(/\s+/g, "-")) : undefined;
       
       return (
         <li 

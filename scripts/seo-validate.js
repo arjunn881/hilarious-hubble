@@ -36,6 +36,7 @@ function runAudit() {
   const missingTitles = [];
   const missingDescriptions = [];
   const missingCanonicals = [];
+  const invalidCanonicals = [];
   const missingSchemas = [];
   const lengthWarnings = [];
 
@@ -61,6 +62,12 @@ function runAudit() {
     const canonicalMatch = html.match(/<link\s+rel="canonical"\s+href="([^"]*)"/i) ||
                            html.match(/<link\s+href="([^"]*)"\s+rel="canonical"/i);
     const canonical = canonicalMatch ? canonicalMatch[1] : null;
+
+    // Count canonical tags (ensure no duplicate canonical tags in head)
+    const allCanonicalMatches = html.match(/<link\s+[^>]*rel="canonical"[^>]*>/gi) || [];
+    if (allCanonicalMatches.length > 1) {
+      invalidCanonicals.push(`${relativePath}: Multiple (${allCanonicalMatches.length}) canonical tags found`);
+    }
 
     // 4. Extract Schema JSON-LD scripts
     const schemaMatches = html.match(/<script\s+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi);
@@ -95,6 +102,12 @@ function runAudit() {
     // Audit Canonical
     if (!canonical) {
       missingCanonicals.push(relativePath);
+    } else {
+      if (!canonical.startsWith('https://bringonplane.com/')) {
+        invalidCanonicals.push(`${relativePath}: Canonical "${canonical}" does not start with https://bringonplane.com/`);
+      } else if (!canonical.endsWith('/') && !/\.[a-zA-Z0-9]+$/.test(canonical)) {
+        invalidCanonicals.push(`${relativePath}: Canonical "${canonical}" is missing trailing slash`);
+      }
     }
 
     // Audit Schema count
@@ -115,6 +128,7 @@ function runAudit() {
   console.log(`Missing Titles:           ${missingTitles.length}`);
   console.log(`Missing Descriptions:     ${missingDescriptions.length}`);
   console.log(`Missing Canonical Tags:   ${missingCanonicals.length}`);
+  console.log(`Invalid / No-Slash Can.:  ${invalidCanonicals.length}`);
   console.log(`Missing JSON-LD Schemas:  ${missingSchemas.length}`);
   console.log(`Duplicate Titles:         ${duplicateTitles.length}`);
   console.log(`Duplicate Descriptions:   ${duplicateDescriptions.length}`);
@@ -132,6 +146,18 @@ function runAudit() {
   if (missingDescriptions.length > 0) {
     console.error("❌ Missing Descriptions found in:");
     missingDescriptions.slice(0, 10).forEach(p => console.error(`  - ${p}`));
+    hasErrors = true;
+  }
+
+  if (missingCanonicals.length > 0) {
+    console.error("❌ Missing Canonical Tags found in:");
+    missingCanonicals.slice(0, 10).forEach(p => console.error(`  - ${p}`));
+    hasErrors = true;
+  }
+
+  if (invalidCanonicals.length > 0) {
+    console.error("❌ Invalid / Missing Trailing Slash Canonicals found in:");
+    invalidCanonicals.slice(0, 10).forEach(p => console.error(`  - ${p}`));
     hasErrors = true;
   }
 

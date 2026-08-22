@@ -17,32 +17,35 @@ export async function getStaticPaths() {
     
     return {
       params: { slug },
-      props: { post: module },
+      props: { post: module, slug },
     };
   });
 }
 
-const { post } = Astro.props;
+const { post, slug } = Astro.props;
 const Content = post.default;
 const { title, description, category = "Travel Security", lastUpdated, isMedical = false, isLegal = false } = post.frontmatter;
 
+const canonicalURL = `https://bringonplane.com/guide/${slug}/`;
+
 const breadcrumbItems = [
   { label: "Home", href: "/" },
-  { label: "Guides", href: "/guides" },
-  { label: category, href: `/category/${category.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-")}` },
+  { label: "Guides", href: "/guides/" },
+  { label: category, href: `/category/${category.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-")}/` },
   { label: title }
 ];
 
 const relatedWidgetGroups = [
-  { title: "Relevant Categories", links: getRelatedCategories(category.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-"), 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) },
-  { title: "Relevant Airlines", links: POPULAR_AIRLINES.slice(0, 4).map(a => ({ title: `${a.name} Rules`, url: `/airlines` })) },
-  { title: "Tools", links: [{ title: "Packing Assistant", url: "/checklist" }, { title: "TSA Item Search", url: "/items" }] }
+  { title: "Relevant Categories", links: getRelatedCategories(category.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-"), 4).map(c => ({ title: c.name, url: `/category/${c.slug}/` })) },
+  { title: "Relevant Airlines", links: POPULAR_AIRLINES.slice(0, 4).map(a => ({ title: `${a.name} Rules`, url: `/airlines/` })) },
+  { title: "Tools", links: [{ title: "Packing Assistant", url: "/checklist/" }, { title: "TSA Item Search", url: "/items/page/1/" }] }
 ];
 ---
 
 <Layout 
   title={`${title} | Bring On Plane`}
   description={description}
+  canonicalURL={canonicalURL}
   type="article"
 >
   <!-- Inject JSON-LD structured data for Article EEAT -->

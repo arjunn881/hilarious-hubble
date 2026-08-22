@@ -13,9 +13,9 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 const { page } = Astro.props;
 
 // Absolute canonical URL and prev/next links for Google crawlers
-const canonicalURL = `https://bringonplane.com/items/page/${page.currentPage}`;
-const prevURL = page.url.prev ? `https://bringonplane.com${page.url.prev}` : undefined;
-const nextURL = page.url.next ? `https://bringonplane.com${page.url.next}` : undefined;
+const canonicalURL = `https://bringonplane.com/items/page/${page.currentPage}/`;
+const prevURL = page.url.prev ? `https://bringonplane.com${page.url.prev.endsWith('/') ? page.url.prev : page.url.prev + '/'}` : undefined;
+const nextURL = page.url.next ? `https://bringonplane.com${page.url.next.endsWith('/') ? page.url.next : page.url.next + '/'}` : undefined;
 
 function getStatusClass(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKNOWN') {
   if (status === 'ALLOWED') return "bg-link-bg-soft border-link/25 text-link-deep";
@@ -54,7 +54,7 @@ function getStatusClass(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKN
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
       {page.data.map((item) => (
         <a
-          href={`/items/${item.slug}`}
+          href={`/items/${item.slug}/`}
           class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
         >
           <div class="flex items-start justify-between gap-4">
@@ -89,7 +89,7 @@ function getStatusClass(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKN
       <!-- Previous Button -->
       <div>
         {page.url.prev ? (
-          <a href={page.url.prev} class="inline-flex items-center gap-1 hover:text-ink transition-colors focus-visible:underline">
+          <a href={page.url.prev.endsWith('/') ? page.url.prev : `${page.url.prev}/`} class="inline-flex items-center gap-1 hover:text-ink transition-colors focus-visible:underline">
             &larr; Previous
           </a>
         ) : (
@@ -101,7 +101,7 @@ function getStatusClass(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKN
       <div class="hidden sm:flex items-center gap-3">
         {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((p) => (
           <a
-            href={p === 1 ? "/items/page/1" : `/items/page/${p}`}
+            href={p === 1 ? "/items/page/1/" : `/items/page/${p}/`}
             class:list={[
               "px-2 py-1 rounded-sm transition-all focus-visible:ring-2 focus-visible:ring-link",
               p === page.currentPage 
@@ -117,7 +117,7 @@ function getStatusClass(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKN
       <!-- Next Button -->
       <div>
         {page.url.next ? (
-          <a href={page.url.next} class="inline-flex items-center gap-1 hover:text-ink transition-colors focus-visible:underline">
+          <a href={page.url.next.endsWith('/') ? page.url.next : `${page.url.next}/`} class="inline-flex items-center gap-1 hover:text-ink transition-colors focus-visible:underline">
             Next &rarr;
           </a>
         ) : (

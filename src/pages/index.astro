@@ -141,7 +141,7 @@ function getStatusBadgeClass(status: string) {
     "@type": "WebSite",
     "name": "Bring On Plane",
     "alternateName": "BringOnPlane",
-    "url": "https://bringonplane.com",
+    "url": "https://bringonplane.com/",
     "description": "Search TSA carry-on and checked bag rules for any item you want to bring on a plane.",
     "potentialAction": {
       "@type": "SearchAction",
@@ -208,77 +208,65 @@ function getStatusBadgeClass(status: string) {
   <Header slot="header" />
 
   <!-- ════════════════════════════════════════════════════════════════
-       HERO — redesigned per mockup: focused search + popular chips
-       + inline search result preview card
+       HERO — World-Class Aviation UI/UX (Dual Light/Dark Theme Engine)
   ════════════════════════════════════════════════════════════════ -->
-  <section class="relative overflow-hidden bg-slate-950 text-white border-b border-slate-800/80 max-w-full" id="hero">
-    <!-- Mesh Gradient & Ambient Glow Background -->
-    <div class="absolute inset-0 pointer-events-none opacity-30 select-none" aria-hidden="true" style="background: radial-gradient(circle at 50% 10%, #1e40af 0%, #0f172a 60%, #020617 100%); filter: blur(60px);"></div>
+  <section class="relative overflow-hidden bg-gradient-to-b from-sky-50/90 via-blue-50/40 to-slate-50/80 dark:from-[#060a14] dark:via-[#090e1a] dark:to-[#070b14] text-slate-900 dark:text-white border-b border-slate-200/90 dark:border-slate-800/80 max-w-full transition-colors" id="hero">
+    
+    <!-- Ambient Radial Mesh Glow -->
+    <div class="absolute inset-0 pointer-events-none opacity-40 dark:opacity-30 select-none" aria-hidden="true" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(59, 130, 246, 0.14), transparent 70%);"></div>
 
-    <!-- Animated Radar Scanner & Contrail Line -->
+    <!-- Animated Radar Scanner & Circular Vector Grid -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
-      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] sm:w-[750px] h-[600px] sm:h-[750px] rounded-full border border-blue-500/15 opacity-30 flex items-center justify-center">
-        <div class="w-[400px] sm:w-[550px] h-[400px] sm:h-[550px] rounded-full border border-blue-500/15 flex items-center justify-center">
-          <div class="w-[250px] sm:w-[350px] h-[250px] sm:h-[350px] rounded-full border border-blue-500/15"></div>
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[620px] sm:w-[800px] h-[620px] sm:h-[800px] rounded-full border border-blue-500/10 dark:border-blue-500/20 opacity-40 flex items-center justify-center">
+        <div class="w-[420px] sm:w-[580px] h-[420px] sm:h-[580px] rounded-full border border-blue-500/10 dark:border-blue-500/20 flex items-center justify-center">
+          <div class="w-[260px] sm:w-[380px] h-[260px] sm:h-[380px] rounded-full border border-blue-500/10 dark:border-blue-500/20"></div>
         </div>
-        <div class="absolute inset-0 animate-radar-sweep opacity-20 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(37,99,235,0.5)_0deg,transparent_60deg)] rounded-full"></div>
+        <div class="absolute inset-0 animate-radar-sweep opacity-15 dark:opacity-20 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(37,99,235,0.3)_0deg,transparent_60deg)] rounded-full"></div>
       </div>
     </div>
 
-    <div class="relative z-10 max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-center flex flex-col items-center">
+    <!-- Main Hero Container -->
+    <div class="relative z-10 max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-14 text-center flex flex-col items-center">
 
-      <!-- Eyebrow Badge -->
-      <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 mb-5 select-none shadow-sm animate-float-plane max-w-full">
-        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse flex-shrink-0"></span>
-        <span class="font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-wider truncate">Official TSA · FAA · IATA Baggage Directory</span>
+      <!-- Floating Eyebrow Badge with Live Beacon -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 dark:bg-slate-900/90 border border-blue-200/90 dark:border-blue-800/80 text-blue-700 dark:text-blue-300 mb-6 select-none shadow-sm shadow-blue-500/5 backdrop-blur-md animate-float-gentle max-w-full">
+        <span class="relative flex h-2 w-2 flex-shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600 dark:bg-blue-400"></span>
+        </span>
+        <span class="font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-wider truncate">Official TSA · FAA · IATA Baggage Directory 2026</span>
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] text-white mb-4 max-w-[900px] text-balance">
-        Can I Bring This On A Plane?
+      <!-- Main Punch Headline -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] text-slate-900 dark:text-white mb-4 w-full max-w-[960px]">
+        Can I Bring This <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 dark:from-blue-400 dark:via-sky-300 dark:to-indigo-300">On A Plane?</span>
       </h1>
 
-      <!-- Featured Snippet Quick Answer Box -->
-      <div class="w-full max-w-[680px] bg-slate-900/80 border border-slate-800 backdrop-blur-md rounded-2xl p-4 sm:p-5 text-slate-300 text-xs sm:text-sm leading-relaxed mb-8 shadow-xl text-left">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-          <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue-400">Quick Answer & Rules Checker</span>
-        </div>
-        <p class="text-slate-300 leading-normal mb-3">
-          Type any item name into the tool below to see instant official TSA verdicts:
-        </p>
-        <div class="flex flex-wrap gap-2 text-xs font-medium">
-          <span class="px-2.5 py-1 rounded-md bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ✓ Allowed in Carry-on
-          </span>
-          <span class="px-2.5 py-1 rounded-md bg-amber-950/80 border border-amber-500/40 text-amber-300 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> ⚠ Restricted / Conditions
-          </span>
-          <span class="px-2.5 py-1 rounded-md bg-red-950/80 border border-red-500/40 text-red-300 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> ✗ Prohibited in Carry-on
-          </span>
-        </div>
-      </div>
+      <!-- Refined Subtitle -->
+      <p class="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 w-full max-w-[640px] mx-auto mb-8 font-normal leading-relaxed">
+        Instantly search <strong>196+ travel items</strong> to check official Carry-On and Checked Baggage rules before heading to airport security.
+      </p>
 
-      <!-- Large Search Bar -->
-      <div class="w-full max-w-[580px] relative mb-6 group" id="homepage-search-container">
-        <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-blue-400 transition-colors z-10">
+      <!-- Large Tactile Search Bar with Focus Glow -->
+      <div class="w-full max-w-[640px] relative mb-6 group" id="homepage-search-container">
+        <div class="absolute inset-y-0 left-4 sm:left-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 transition-colors z-10">
           <Search class="w-5 h-5" aria-hidden="true" />
         </div>
+        
         <input 
           type="text" 
           id="homepage-search-input"
-          placeholder="Type any item (e.g. Razor, Power Bank, Shampoo)..." 
+          placeholder="Search any item (e.g. Razor, Power Bank, Shampoo)..." 
           autocomplete="off" 
           spellcheck="false"
-          class="w-full h-14 pl-12 pr-20 sm:pr-24 bg-slate-900/90 border border-slate-700 hover:border-slate-600 focus:border-blue-500 rounded-2xl text-sm sm:text-base text-white placeholder:text-slate-500 shadow-xl focus:shadow-2xl focus:shadow-blue-500/10 outline-none transition-all"
+          class="w-full h-14 sm:h-16 pl-12 sm:pl-14 pr-24 sm:pr-28 bg-white dark:bg-slate-900/95 border-2 border-slate-200/90 dark:border-slate-700/80 hover:border-slate-300 dark:hover:border-slate-600 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-4 focus:ring-blue-500/15 rounded-2xl text-sm sm:text-base text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-xl shadow-blue-900/5 dark:shadow-2xl outline-none transition-all"
         />
         
         <!-- Clear Button -->
         <button 
           type="button" 
           id="homepage-search-clear" 
-          class="absolute inset-y-0 right-12 sm:right-16 flex items-center text-slate-400 hover:text-white hidden cursor-pointer px-2 transition-colors z-10" 
+          class="absolute inset-y-0 right-16 sm:right-20 flex items-center text-slate-400 hover:text-slate-700 dark:hover:text-white hidden cursor-pointer px-2 transition-colors z-10" 
           aria-label="Clear search"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -287,22 +275,48 @@ function getStatusBadgeClass(status: string) {
           </svg>
         </button>
 
-        <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none gap-1 z-10">
-          <kbd class="hidden sm:inline-flex items-center justify-center h-6 px-1.5 text-[10px] font-mono font-medium border border-slate-700 bg-slate-800 text-slate-300 rounded shadow-xs">⌘K</kbd>
+        <!-- KBD tag / Search Trigger Pill -->
+        <div class="absolute inset-y-0 right-2 sm:right-3 flex items-center gap-1.5 z-10">
+          <button
+            type="button"
+            id="homepage-search-submit"
+            class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white rounded-xl text-xs font-semibold shadow-xs transition-all cursor-pointer flex items-center gap-1"
+            aria-label="Search items"
+          >
+            <span>Search</span>
+            <kbd class="hidden sm:inline-block text-[9px] bg-blue-700/80 px-1 py-0.2 rounded border border-blue-400/40 font-mono">⌘K</kbd>
+          </button>
         </div>
         
         <!-- Suggestions Dropdown -->
         <div 
           id="homepage-suggestions" 
-          class="absolute top-[calc(100%+8px)] left-0 right-0 z-30 hidden bg-slate-900/95 backdrop-blur-xl border border-slate-700 rounded-2xl shadow-2xl overflow-hidden max-h-[320px] overflow-y-auto text-left transition-all"
+          class="absolute top-[calc(100%+8px)] left-0 right-0 z-30 hidden bg-white/98 dark:bg-slate-900/98 backdrop-blur-xl border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl overflow-hidden max-h-[340px] overflow-y-auto text-left transition-all divide-y divide-slate-100 dark:divide-slate-800"
         >
           <!-- Suggestions populated dynamically -->
         </div>
       </div>
 
-      <!-- Popular Searches chips -->
-      <div class="w-full max-w-[580px] mb-8">
-        <p class="text-[11px] text-slate-400 font-mono mb-2.5 text-center sm:text-left uppercase tracking-wider font-semibold">Popular Searches</p>
+      <!-- Quick Answer & Rules Guide (Glassmorphic Status Bar) -->
+      <div class="w-full max-w-[640px] bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 backdrop-blur-md rounded-2xl p-3 sm:p-4 mb-6 shadow-sm flex flex-wrap items-center justify-center gap-2 sm:gap-3 transition-colors">
+        <span class="text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mr-1">
+          <ShieldCheck class="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+          <span>Verdicts:</span>
+        </span>
+        <span class="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-700/60 text-emerald-800 dark:text-emerald-300 text-xs font-medium flex items-center gap-1.5 shadow-2xs">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> ✓ Allowed
+        </span>
+        <span class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/80 border border-amber-200 dark:border-amber-700/60 text-amber-800 dark:text-amber-300 text-xs font-medium flex items-center gap-1.5 shadow-2xs">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> ⚠ Restricted
+        </span>
+        <span class="px-2.5 py-1 rounded-lg bg-rose-50 dark:bg-rose-950/80 border border-rose-200 dark:border-rose-700/60 text-rose-800 dark:text-rose-300 text-xs font-medium flex items-center gap-1.5 shadow-2xs">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> ✗ Prohibited
+        </span>
+      </div>
+
+      <!-- Popular Searches Chips with Micro-Animations -->
+      <div class="w-full max-w-[640px] mb-8">
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono mb-2.5 text-center sm:text-left uppercase tracking-wider font-semibold">Popular Searches</p>
         <div class="flex flex-wrap justify-center sm:justify-start gap-2" id="popular-chips" role="list">
           {popularItems.map((chip, i) => (
             <button
@@ -310,7 +324,7 @@ function getStatusBadgeClass(status: string) {
               role="listitem"
               data-chip-index={i}
               data-chip-slug={chip.slug}
-              class="popular-chip px-3 py-1.5 rounded-xl border border-slate-700/80 bg-slate-900/80 text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 hover:border-blue-500/50 cursor-pointer transition-all select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              class="popular-chip card-hover-lift px-3.5 py-1.5 rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400 dark:hover:border-blue-600 shadow-xs cursor-pointer transition-all duration-200 select-none active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               aria-pressed="false"
             >
               {chip.label}
@@ -319,154 +333,208 @@ function getStatusBadgeClass(status: string) {
         </div>
       </div>
 
-      <!-- Quick-Click Category Grid -->
-      <div class="w-full max-w-[760px] pt-6 border-t border-slate-800/80">
-        <p class="text-[11px] text-slate-400 font-mono mb-3 text-center sm:text-left uppercase tracking-wider font-semibold">Browse by Category</p>
+      <!-- Quick Bento Category Grid -->
+      <div class="w-full max-w-[840px] pt-6 border-t border-slate-200/90 dark:border-slate-800/80">
+        <div class="flex items-center justify-between mb-3 px-1">
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono uppercase tracking-wider font-semibold">Top Categories</p>
+          <a href="/items/page/1/" class="text-xs font-mono font-semibold text-blue-600 dark:text-blue-400 hover:underline">View All 196+ Items &rarr;</a>
+        </div>
+
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5">
           {[
-            { label: "Liquids", slug: "liquids", color: "bg-blue-500/10 border-blue-500/25 text-blue-300 hover:bg-blue-500/20 hover:border-blue-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>` },
-            { label: "Electronics", slug: "electronics", color: "bg-purple-500/10 border-purple-500/25 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>` },
-            { label: "Food", slug: "food", color: "bg-emerald-500/10 border-emerald-500/25 text-emerald-300 hover:bg-emerald-500/20 hover:border-emerald-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>` },
-            { label: "Medicine", slug: "medicine", color: "bg-rose-500/10 border-rose-500/25 text-rose-300 hover:bg-rose-500/20 hover:border-rose-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>` },
-            { label: "Tools", slug: "tools", color: "bg-amber-500/10 border-amber-500/25 text-amber-300 hover:bg-amber-500/20 hover:border-amber-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>` },
-            { label: "Personal Care", slug: "personal-care", color: "bg-pink-500/10 border-pink-500/25 text-pink-300 hover:bg-pink-500/20 hover:border-pink-400", icon: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>` },
-          ].map(cat => (
-            <a
-              href={`/category/${cat.slug}`}
-              class={`flex flex-col items-center gap-1.5 px-3 py-3 rounded-xl border text-center cursor-pointer transition-all duration-200 hover:-translate-y-0.5 select-none ${cat.color}`}
-            >
-              <span set:html={cat.icon} />
-              <span class="text-xs font-semibold leading-tight">{cat.label}</span>
-            </a>
-          ))}
+            { label: "Liquids (3-1-1)", slug: "liquids", bg: "bg-blue-50 dark:bg-blue-950/40", border: "border-blue-200 dark:border-blue-800/60", text: "text-blue-700 dark:text-blue-300", iconBg: "bg-blue-600 text-white", icon: Droplet },
+            { label: "Electronics", slug: "electronics", bg: "bg-purple-50 dark:bg-purple-950/40", border: "border-purple-200 dark:border-purple-800/60", text: "text-purple-700 dark:text-purple-300", iconBg: "bg-purple-600 text-white", icon: Laptop },
+            { label: "Food & Snacks", slug: "food", bg: "bg-emerald-50 dark:bg-emerald-950/40", border: "border-emerald-200 dark:border-emerald-800/60", text: "text-emerald-700 dark:text-emerald-300", iconBg: "bg-emerald-600 text-white", icon: Apple },
+            { label: "Medicine", slug: "medicine", bg: "bg-rose-50 dark:bg-rose-950/40", border: "border-rose-200 dark:border-rose-800/60", text: "text-rose-700 dark:text-rose-300", iconBg: "bg-rose-600 text-white", icon: Activity },
+            { label: "Tools & Knives", slug: "tools", bg: "bg-amber-50 dark:bg-amber-950/40", border: "border-amber-200 dark:border-amber-800/60", text: "text-amber-800 dark:text-amber-300", iconBg: "bg-amber-600 text-white", icon: Wrench },
+            { label: "Personal Care", slug: "personal-care", bg: "bg-pink-50 dark:bg-pink-950/40", border: "border-pink-200 dark:border-pink-800/60", text: "text-pink-700 dark:text-pink-300", iconBg: "bg-pink-600 text-white", icon: Sparkles },
+          ].map(cat => {
+            const CatIcon = cat.icon;
+            return (
+              <a
+                href={`/category/${cat.slug}/`}
+                class={`card-hover-lift flex flex-col items-center gap-2 p-3 rounded-2xl border ${cat.bg} ${cat.border} ${cat.text} text-center cursor-pointer transition-all duration-200 select-none shadow-xs group`}
+              >
+                <div class={`w-8 h-8 rounded-xl ${cat.iconBg} flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform`}>
+                  <CatIcon class="w-4 h-4" />
+                </div>
+                <span class="text-xs font-semibold leading-tight">{cat.label}</span>
+              </a>
+            );
+          })}
         </div>
       </div>
+
     </div>
 
-      <!-- ── Inline Search Result Panel (hidden until a chip/search clicked) ── -->
-      <div
-        id="hero-result-panel"
-        class="hidden"
-        aria-live="polite"
-        aria-label="Search result"
-      >
-        <div class="max-w-[720px] mx-auto px-4 pb-14 animate-fade-in">
-          <!-- Result Card -->
-          <div class="bg-canvas border border-hairline rounded-xl shadow-level-4 overflow-hidden">
+    <!-- ── Inline Search Result Panel (hidden until a chip/search clicked) ── -->
+    <div
+      id="hero-result-panel"
+      class="hidden w-full"
+      aria-live="polite"
+      aria-label="Search result"
+    >
+      <div class="max-w-[720px] mx-auto px-4 pb-14 animate-fade-in">
+        <!-- Result Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden text-left transition-colors">
 
-            <!-- ── BIG BINARY YES/NO VERDICT BANNER (Feature 2) ── -->
-            <div id="result-verdict-banner" class="px-6 py-4 border-b border-hairline flex items-center justify-between gap-4">
-              <div class="flex items-center gap-3">
-                <span id="result-verdict-icon" class="flex-shrink-0"></span>
-                <div>
-                  <p class="text-[10px] font-mono text-mute uppercase tracking-wider mb-0.5">Carry-On Answer</p>
-                  <p id="result-verdict-text" class="text-2xl font-extrabold tracking-tight">Loading…</p>
-                </div>
-              </div>
-              <button
-                type="button"
-                id="result-close-btn"
-                aria-label="Close result"
-                class="p-1.5 rounded-md hover:bg-canvas-soft text-mute hover:text-ink transition-colors flex-shrink-0"
-              >
-                <X class="w-4 h-4" aria-hidden="true" />
-              </button>
-            </div>
-
-            <!-- Card Header -->
-            <div class="px-6 pt-4 pb-3 border-b border-hairline flex items-center gap-3">
-              <span id="result-title-icon-container" class="text-mute flex-shrink-0"></span>
+          <!-- ── BIG BINARY YES/NO VERDICT BANNER (Feature 2) ── -->
+          <div id="result-verdict-banner" class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 bg-slate-50/80 dark:bg-slate-950/60">
+            <div class="flex items-center gap-3">
+              <span id="result-verdict-icon" class="flex-shrink-0"></span>
               <div>
-                <p class="text-xs font-mono text-mute uppercase tracking-wider" id="result-category">Category</p>
-                <h2 class="text-base font-semibold tracking-[-0.4px] text-ink" id="result-name">
-                  <span id="result-title-text">Item Name</span>
-                </h2>
+                <p class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-0.5">Carry-On Answer</p>
+                <p id="result-verdict-text" class="text-2xl font-extrabold tracking-tight">Loading…</p>
               </div>
             </div>
+            <button
+              type="button"
+              id="result-close-btn"
+              aria-label="Close result"
+              class="p-1.5 rounded-md hover:bg-slate-200/80 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors flex-shrink-0 cursor-pointer"
+            >
+              <X class="w-4 h-4" aria-hidden="true" />
+            </button>
+          </div>
 
-            <!-- Carry-on / Checked rows -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-hairline">
-              <!-- Carry-on -->
-              <div class="px-6 py-5">
-                <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">Carry-on (cabin)</p>
-                <div id="result-carryon-badge-container"></div>
-              </div>
-              <!-- Checked Bag -->
-              <div class="px-6 py-5">
-                <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">Checked bag (hold)</p>
-                <div id="result-checked-badge-container"></div>
-              </div>
+          <!-- Card Header -->
+          <div class="px-6 pt-4 pb-3 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3">
+            <span id="result-title-icon-container" class="text-slate-400 flex-shrink-0"></span>
+            <div>
+              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider" id="result-category">Category</p>
+              <h2 class="text-base font-semibold tracking-tight text-slate-900 dark:text-white" id="result-name">
+                <span id="result-title-text">Item Name</span>
+              </h2>
             </div>
+          </div>
 
-            <!-- Status / Reason Row -->
-            <div class="px-6 py-5 bg-canvas-soft border-t border-hairline">
-              <p class="text-xs font-mono text-mute uppercase tracking-wider mb-2.5">TSA Rule</p>
-              <div class="flex items-start gap-2.5">
-                <span id="result-status-icon-container" class="flex-shrink-0 mt-0.5"></span>
-                <p class="text-sm text-body leading-[1.65]" id="result-reason">Status details…</p>
-              </div>
-            </div>
-
-            <!-- Quick Summary + CTA -->
+          <!-- Carry-on / Checked rows -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 dark:divide-slate-800">
+            <!-- Carry-on -->
             <div class="px-6 py-5">
-              <p class="text-xs font-mono text-mute uppercase tracking-wider mb-4">Quick Summary</p>
-              
-              <div class="space-y-3 mb-6 text-sm text-body">
-                <div class="flex items-center gap-2.5">
-                  <span id="result-summary-carryon-icon-container"></span>
-                  <span>Carry-on:</span>
-                  <span class="font-medium text-ink" id="result-summary-carryon-text">Yes</span>
-                </div>
-                <div class="flex items-center gap-2.5">
-                  <span id="result-summary-checked-icon-container"></span>
-                  <span>Checked bag:</span>
-                  <span class="font-medium text-ink" id="result-summary-checked-text">No</span>
-                </div>
-                <div class="flex items-center gap-2.5">
-                  <span id="result-summary-personal-icon-container"></span>
-                  <span>Personal item:</span>
-                  <span class="font-medium text-ink" id="result-summary-personal-text">Yes</span>
-                </div>
-              </div>
+              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2.5">Carry-on (cabin)</p>
+              <div id="result-carryon-badge-container"></div>
+            </div>
+            <!-- Checked Bag -->
+            <div class="px-6 py-5">
+              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2.5">Checked bag (hold)</p>
+              <div id="result-checked-badge-container"></div>
+            </div>
+          </div>
 
-              <div class="border-t border-hairline pt-4 flex justify-start">
-                <a
-                  id="result-full-link"
-                  href="#"
-                  class="inline-flex items-center gap-1.5 text-sm font-semibold text-link hover:text-link-deep transition-colors"
-                >
-                  Read Full TSA Rules →
-                </a>
+          <!-- Status / Reason Row -->
+          <div class="px-6 py-5 bg-slate-50/80 dark:bg-slate-950/60 border-t border-slate-200 dark:border-slate-800">
+            <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2.5">TSA Rule</p>
+            <div class="flex items-start gap-2.5">
+              <span id="result-status-icon-container" class="flex-shrink-0 mt-0.5"></span>
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed" id="result-reason">Status details…</p>
+            </div>
+          </div>
+
+          <!-- Quick Summary + CTA -->
+          <div class="px-6 py-5">
+            <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">Quick Summary</p>
+            
+            <div class="space-y-3 mb-6 text-sm text-slate-700 dark:text-slate-300">
+              <div class="flex items-center gap-2.5">
+                <span id="result-summary-carryon-icon-container"></span>
+                <span>Carry-on:</span>
+                <span class="font-medium text-slate-900 dark:text-white" id="result-summary-carryon-text">Yes</span>
               </div>
+              <div class="flex items-center gap-2.5">
+                <span id="result-summary-checked-icon-container"></span>
+                <span>Checked bag:</span>
+                <span class="font-medium text-slate-900 dark:text-white" id="result-summary-checked-text">No</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span id="result-summary-personal-icon-container"></span>
+                <span>Personal item:</span>
+                <span class="font-medium text-slate-900 dark:text-white" id="result-summary-personal-text">Yes</span>
+              </div>
+            </div>
+
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 flex justify-start">
+              <a
+                id="result-full-link"
+                href="#"
+                class="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+              >
+                Read Full TSA Rules →
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Hidden JSON data island for popular item previews -->
-      <script type="application/json" id="popular-items-data" is:inline set:html={JSON.stringify(
-        popularItems.map(chip => ({
-          slug: chip.slug,
-          label: chip.label,
-          name: chip.item?.name ?? chip.label,
-          category: chip.item?.category ?? '',
-          carryOn: chip.item?.carryOn?.status ?? '',
-          carryOnReason: chip.item?.carryOn?.reason ?? '',
-          checked: chip.item?.checkedBag?.status ?? '',
-          checkedReason: chip.item?.checkedBag?.reason ?? '',
-        }))
-      )} />
+    <!-- Hidden JSON data island for popular item previews -->
+    <script type="application/json" id="popular-items-data" is:inline set:html={JSON.stringify(
+      popularItems.map(chip => ({
+        slug: chip.slug,
+        label: chip.label,
+        name: chip.item?.name ?? chip.label,
+        category: chip.item?.category ?? '',
+        carryOn: chip.item?.carryOn?.status ?? '',
+        carryOnReason: chip.item?.carryOn?.reason ?? '',
+        checked: chip.item?.checkedBag?.status ?? '',
+        checkedReason: chip.item?.checkedBag?.reason ?? '',
+      }))
+    )} />
   </section>
 
-  <!-- ═══ ESSENTIAL SITE INFORMATION & LEGAL POLICIES ═══════════════════════ -->
-  <div class="w-full bg-canvas border-b border-hairline py-8 select-none">
+  <!-- ═══ TRUST & SECURITY METRICS BAR ═══════════════════════════════════════ -->
+  <div class="w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 py-6 select-none transition-colors">
     <div class="max-w-[1200px] mx-auto px-4 md:px-6">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-4 pb-3 border-b border-hairline">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 flex items-center justify-center flex-shrink-0">
+            <PlaneTakeoff class="w-5 h-5" />
+          </div>
+          <div>
+            <p class="text-sm font-bold text-slate-900 dark:text-white">196+ TSA Rules</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Comprehensive baggage directory</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
+            <ShieldCheck class="w-5 h-5" />
+          </div>
+          <div>
+            <p class="text-sm font-bold text-slate-900 dark:text-white">Instant Verdicts</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Color-coded YES/NO status</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0">
+            <Laptop class="w-5 h-5" />
+          </div>
+          <div>
+            <p class="text-sm font-bold text-slate-900 dark:text-white">FAA Battery Rules</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Lithium-ion safety standards</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-800 text-purple-600 dark:text-purple-400 flex items-center justify-center flex-shrink-0">
+            <Sparkles class="w-5 h-5" />
+          </div>
+          <div>
+            <p class="text-sm font-bold text-slate-900 dark:text-white">2026 Updated</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Real-time official guidelines</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ESSENTIAL SITE INFORMATION & LEGAL POLICIES ═══════════════════════ -->
+  <div class="w-full bg-slate-50 dark:bg-[#070b14] border-b border-slate-200 dark:border-slate-800 py-10 select-none transition-colors">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-6 pb-3 border-b border-slate-200 dark:border-slate-800">
         <div>
           <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Official Directives &amp; Site Resources</span>
-          <h2 class="text-base font-bold text-ink tracking-tight">Essential Site Information &amp; Legal Policies</h2>
+          <h2 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Essential Site Information &amp; Legal Policies</h2>
         </div>
-        <div class="flex items-center gap-1.5 text-xs text-mute font-mono">
+        <div class="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-mono">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           <span>TSA &amp; FAA Guideline Directory</span>
         </div>
@@ -475,28 +543,28 @@ function getStatusBadgeClass(status: string) {
       <!-- 6 Essential Policy Pages Grid with Lucide Icons -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
         {[
-          { label: "About Us", desc: "Mission & Standards", href: "/about", icon: Info },
-          { label: "Contact Us", desc: "Support & Inquiries", href: "/contact", icon: Mail },
-          { label: "FAQ Guide", desc: "Common TSA Answers", href: "/faq", icon: HelpCircle },
-          { label: "Privacy Policy", desc: "Data & Cookie Rules", href: "/privacy-policy", icon: Lock },
-          { label: "Terms of Use", desc: "Service Terms", href: "/terms", icon: FileText },
-          { label: "Disclaimer", desc: "TSA Authority Notice", href: "/disclaimer", icon: ShieldAlert },
+          { label: "About Us", desc: "Mission & Standards", href: "/about/", icon: Info },
+          { label: "Contact Us", desc: "Support & Inquiries", href: "/contact/", icon: Mail },
+          { label: "FAQ Guide", desc: "Common TSA Answers", href: "/faq/", icon: HelpCircle },
+          { label: "Privacy Policy", desc: "Data & Cookie Rules", href: "/privacy-policy/", icon: Lock },
+          { label: "Terms of Use", desc: "Service Terms", href: "/terms/", icon: FileText },
+          { label: "Disclaimer", desc: "TSA Authority Notice", href: "/disclaimer/", icon: ShieldAlert },
         ].map(p => {
           const PageIcon = p.icon;
           return (
             <a
               href={p.href}
-              class="group p-3.5 bg-canvas-soft hover:bg-link-bg-soft border border-hairline hover:border-link rounded-xl transition-all text-left flex flex-col justify-between"
+              class="card-hover-lift group p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 rounded-2xl transition-all text-left flex flex-col justify-between shadow-xs hover:shadow-md"
             >
-              <div class="flex items-center justify-between gap-1 mb-2">
-                <div class="w-7 h-7 rounded-lg bg-canvas border border-hairline group-hover:border-link group-hover:bg-primary group-hover:text-on-primary text-body flex items-center justify-center transition-all">
-                  <PageIcon class="w-3.5 h-3.5" />
+              <div class="flex items-center justify-between gap-1 mb-3">
+                <div class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 group-hover:bg-blue-600 group-hover:text-white text-slate-700 dark:text-slate-300 flex items-center justify-center transition-all">
+                  <PageIcon class="w-4 h-4" />
                 </div>
-                <span class="text-[10px] font-mono text-mute group-hover:text-link transition-colors">&rarr;</span>
+                <span class="text-xs font-mono text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">&rarr;</span>
               </div>
               <div>
-                <span class="block text-xs font-semibold text-ink group-hover:text-link transition-colors leading-tight">{p.label}</span>
-                <span class="text-[10px] text-mute block mt-0.5 leading-tight">{p.desc}</span>
+                <span class="block text-xs font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-tight">{p.label}</span>
+                <span class="text-[10px] text-slate-500 dark:text-slate-400 block mt-0.5 leading-tight">{p.desc}</span>
               </div>
             </a>
           );
@@ -506,46 +574,49 @@ function getStatusBadgeClass(status: string) {
   </div>
 
   <!-- Traveler Dashboard Section (Dashboard for Checklist, Compare, Starred & Recents) -->
-  <section id="traveler-dashboard" class="py-16 bg-canvas border-b border-hairline select-none">
+  <section id="traveler-dashboard" class="py-16 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 select-none transition-colors">
     <div class="max-w-[1200px] mx-auto px-4 md:px-6">
       <div class="flex items-baseline justify-between mb-8">
-        <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink">
-          Traveler Dashboard
-        </h2>
-        <span class="font-mono text-xs text-mute">Offline Tools</span>
+        <div>
+          <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Interactive Luggage Tools</span>
+          <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+            Traveler Dashboard &amp; Assistant
+          </h2>
+        </div>
+        <span class="font-mono text-xs text-slate-500 dark:text-slate-400">Offline Ready</span>
       </div>
 
       <!-- Quick Tool Links Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <!-- Compare Tool Card -->
-        <a href="/compare" class="group block bg-canvas border border-hairline hover:border-link hover:shadow-level-3 rounded-md p-6 transition-all hover:-translate-y-0.5">
+        <a href="/compare/" class="card-hover-lift group block bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 rounded-2xl p-6 transition-all shadow-xs hover:shadow-lg">
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-sm bg-canvas-soft border border-hairline flex items-center justify-center text-ink group-hover:bg-primary group-hover:text-on-primary transition-all">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 3h5v5M8 21H3v-5M12 12l9-9M12 12l-9 9"/></svg>
+            <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-xs flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 3h5v5M8 21H3v-5M12 12l9-9M12 12l-9 9"/></svg>
             </div>
             <div>
-              <h3 class="text-sm font-medium tracking-[-0.4px] text-ink mb-1 group-hover:text-link transition-colors">
-                Side-by-Side Comparison
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                Side-by-Side Baggage Comparison
               </h3>
-              <p class="text-xs text-body leading-relaxed">
-                Compare carry-on and checked baggage rules for any two travel items side-by-side.
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Compare carry-on and checked baggage rules for any two travel items side-by-side with instant color verdicts.
               </p>
             </div>
           </div>
         </a>
 
         <!-- Checklist Tool Card -->
-        <a href="/checklist" class="group block bg-canvas border border-hairline hover:border-link hover:shadow-level-3 rounded-md p-6 transition-all hover:-translate-y-0.5">
+        <a href="/checklist/" class="card-hover-lift group block bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 rounded-2xl p-6 transition-all shadow-xs hover:shadow-lg">
           <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-sm bg-canvas-soft border border-hairline flex items-center justify-center text-ink group-hover:bg-primary group-hover:text-on-primary transition-all">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-xs flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
             </div>
             <div>
-              <h3 class="text-sm font-medium tracking-[-0.4px] text-ink mb-1 group-hover:text-link transition-colors">
-                Packing Checklist Builder
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                Smart Packing Checklist Assistant
               </h3>
-              <p class="text-xs text-body leading-relaxed">
-                Build your baggage checklist, track security regulations, write travel notes, and export PDF.
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Build your baggage packing checklist, track security regulations, write travel notes, and export PDF instantly.
               </p>
             </div>
           </div>
@@ -553,24 +624,24 @@ function getStatusBadgeClass(status: string) {
       </div>
 
       <!-- Favorites and Recents dynamic list split -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-hairline">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-200 dark:border-slate-800">
         <!-- Starred items box -->
         <div>
-          <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-mute mb-4">
+          <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">
             Starred Items
           </h3>
           <div id="favorites-dashboard-list" class="space-y-3">
-            <p class="text-xs text-mute font-mono">Loading starred items…</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Loading starred items…</p>
           </div>
         </div>
 
         <!-- Recently viewed items box -->
         <div>
-          <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-mute mb-4">
+          <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">
             Recently Viewed
           </h3>
           <div id="recents-dashboard-list" class="space-y-3">
-            <p class="text-xs text-mute font-mono">Loading recently viewed items…</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Loading recently viewed items…</p>
           </div>
         </div>
       </div>
@@ -578,33 +649,36 @@ function getStatusBadgeClass(status: string) {
   </section>
 
   <!-- Category Cards Section -->
-  <section id="categories" class="py-20 bg-canvas-soft border-b border-hairline">
+  <section id="categories" class="py-20 bg-slate-50 dark:bg-[#070b14] border-b border-slate-200 dark:border-slate-800 transition-colors">
     <div class="max-w-[1200px] mx-auto px-4 md:px-6">
       <div class="flex items-baseline justify-between mb-10">
-        <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.6px] text-ink">
-          Browse by Category
-        </h2>
-        <span class="font-mono text-xs text-mute">
-          13 major categories
+        <div>
+          <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Baggage Classifications</span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+            Browse Items by Category
+          </h2>
+        </div>
+        <span class="font-mono text-xs text-slate-500 dark:text-slate-400">
+          10 major categories
         </span>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
         {categories.map((category) => {
           const Icon = category.icon;
           const slug = category.name.toLowerCase().trim().replace(/\s+/g, "-");
           return (
             <a 
               href={`/category/${slug}`}
-              class="group text-left bg-canvas border border-hairline hover:border-hairline-strong hover:shadow-level-3 rounded-md p-6 transition-all hover:-translate-y-0.5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+              class="card-hover-lift group text-left bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 rounded-2xl p-6 transition-all shadow-xs hover:shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             >
-              <div class="w-10 h-10 rounded-sm bg-canvas-soft border border-hairline flex items-center justify-center text-ink group-hover:bg-primary group-hover:text-on-primary transition-all mb-4">
+              <div class="w-11 h-11 rounded-xl bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-800 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all mb-4 shadow-xs">
                 <Icon class="w-5 h-5" aria-hidden="true" />
               </div>
-              <h3 class="text-sm font-medium tracking-[-0.4px] text-ink mb-1 group-hover:text-link transition-colors">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {category.name}
               </h3>
-              <p class="text-[11px] text-mute font-mono">
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">
                 {category.count} items cataloged
               </p>
             </a>
@@ -615,47 +689,50 @@ function getStatusBadgeClass(status: string) {
   </section>
 
   <!-- Split Section: Most Searched vs. Latest Reviewed -->
-  <section class="py-20 bg-canvas border-b border-hairline">
-    <div class="max-w-[1200px] mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+  <section class="py-20 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
       
       <!-- Most Searched Items -->
       <div>
         <div class="flex items-baseline justify-between mb-8">
-          <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink">
-            Most Searched Items
-          </h2>
-          <span class="font-mono text-xs text-mute">Top queries</span>
+          <div>
+            <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Frequent Searches</span>
+            <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+              Most Searched Items
+            </h2>
+          </div>
+          <span class="font-mono text-xs text-slate-500 dark:text-slate-400">Top queries</span>
         </div>
 
-        <div class="space-y-4">
+        <div class="space-y-3.5">
           {mostSearched.map((item) => (
             <a
-              href={`/items/${item.slug}`}
-              class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2 group"
+              href={`/items/${item.slug}/`}
+              class="card-hover-lift block bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 rounded-2xl p-4 sm:p-5 transition-all shadow-xs hover:shadow-md group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             >
               <div class="flex items-start justify-between gap-4">
                 <div class="min-w-0">
-                  <span class="font-mono text-[9px] font-semibold text-mute uppercase tracking-wider block mb-0.5">
+                  <span class="font-mono text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider block mb-0.5">
                     {item.category}
                   </span>
-                  <h3 class="text-base font-medium tracking-[-0.2px] text-ink group-hover:text-link transition-colors">
+                  <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {item.name}
                   </h3>
                 </div>
-                <div class="flex gap-2 flex-shrink-0 flex-col sm:flex-row">
+                <div class="flex gap-1.5 flex-shrink-0 flex-col sm:flex-row">
                   <span class:list={[
-                    "inline-flex items-center gap-1 text-[9px] font-semibold px-2 py-1 rounded-full border uppercase tracking-wider",
-                    item.carryOn === 'allowed' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
-                    item.carryOn === 'prohibited' ? 'bg-red-50 text-red-700 border-red-200' :
-                    'bg-amber-50 text-amber-700 border-amber-200'
+                    "inline-flex items-center gap-1 text-[10px] font-semibold px-2.5 py-1 rounded-lg border uppercase tracking-wider",
+                    item.carryOn === 'allowed' ? 'bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700/60' :
+                    item.carryOn === 'prohibited' ? 'bg-rose-50 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-700/60' :
+                    'bg-amber-50 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-700/60'
                   ]}>
                     {item.carryOn === 'allowed' ? '✓' : item.carryOn === 'prohibited' ? '✗' : '!'} Carry-on
                   </span>
                   <span class:list={[
-                    "inline-flex items-center gap-1 text-[9px] font-semibold px-2 py-1 rounded-full border uppercase tracking-wider",
-                    item.checked === 'allowed' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
-                    item.checked === 'prohibited' ? 'bg-red-50 text-red-700 border-red-200' :
-                    'bg-amber-50 text-amber-700 border-amber-200'
+                    "inline-flex items-center gap-1 text-[10px] font-semibold px-2.5 py-1 rounded-lg border uppercase tracking-wider",
+                    item.checked === 'allowed' ? 'bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700/60' :
+                    item.checked === 'prohibited' ? 'bg-rose-50 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-700/60' :
+                    'bg-amber-50 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-700/60'
                   ]}>
                     {item.checked === 'allowed' ? '✓' : item.checked === 'prohibited' ? '✗' : '!'} Checked
                   </span>
@@ -669,31 +746,34 @@ function getStatusBadgeClass(status: string) {
       <!-- Latest Reviewed Items -->
       <div>
         <div class="flex items-baseline justify-between mb-8">
-          <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-success animate-pulse inline-block" aria-hidden="true"></span>
-            TSA Regulation Updates
-          </h2>
-          <span class="font-mono text-xs text-mute">Latest freshness</span>
+          <div>
+            <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Real-time Updates</span>
+            <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse inline-block" aria-hidden="true"></span>
+              TSA Regulation Updates
+            </h2>
+          </div>
+          <span class="font-mono text-xs text-slate-500 dark:text-slate-400">Latest freshness</span>
         </div>
 
-        <div class="space-y-4">
+        <div class="space-y-3.5">
           {latestGuides.map((guide) => (
             <a
-              href={`/guide/${guide.slug}`}
-              class="block bg-link-bg-soft border border-link/25 hover:border-link hover:shadow-level-2 rounded-md p-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+              href={`/guide/${guide.slug}/`}
+              class="card-hover-lift block bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/80 hover:border-blue-500 rounded-2xl p-4 sm:p-5 transition-all shadow-xs hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             >
               <div class="flex items-start justify-between gap-4">
                 <div>
-                  <span class="font-mono text-[9px] font-semibold text-link uppercase tracking-wider block mb-0.5 flex items-center gap-1.5">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                  <span class="font-mono text-[10px] font-semibold text-blue-700 dark:text-blue-300 uppercase tracking-wider block mb-0.5 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                     GUIDE UPDATE • {guide.category}
                   </span>
-                  <h3 class="text-base font-medium tracking-[-0.2px] text-ink">
+                  <h3 class="text-base font-bold text-slate-900 dark:text-white">
                     {guide.title}
                   </h3>
                 </div>
                 <div class="flex items-center flex-shrink-0">
-                  <span class="font-mono text-[10px] text-link font-semibold bg-canvas px-2 py-0.5 rounded-full border border-link/25">
+                  <span class="font-mono text-[11px] text-blue-700 dark:text-blue-300 font-semibold bg-white dark:bg-slate-900 px-2.5 py-1 rounded-lg border border-blue-200 dark:border-blue-800 shadow-2xs">
                     {guide.lastUpdated}
                   </span>
                 </div>
@@ -703,23 +783,23 @@ function getStatusBadgeClass(status: string) {
 
           {latestReviewed.slice(0, 2).map((item) => (
             <a
-              href={`/items/${item.slug}`}
-              class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+              href={`/items/${item.slug}/`}
+              class="card-hover-lift block bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 rounded-2xl p-4 sm:p-5 transition-all shadow-xs hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             >
               <div class="flex items-start justify-between gap-4">
                 <div>
-                  <span class="font-mono text-[9px] font-semibold text-mute uppercase tracking-wider block mb-0.5">
+                  <span class="font-mono text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider block mb-0.5">
                     ITEM REVIEW • {item.category}
                   </span>
-                  <h3 class="text-base font-medium tracking-[-0.2px] text-ink">
+                  <h3 class="text-base font-bold text-slate-900 dark:text-white">
                     {item.name}
                   </h3>
                 </div>
                 <div class="flex items-center gap-3 flex-shrink-0">
-                  <span class="font-mono text-[10px] text-mute hidden sm:inline">
+                  <span class="font-mono text-[11px] text-slate-500 dark:text-slate-400 hidden sm:inline">
                     {item.lastReviewed}
                   </span>
-                  <span class:list={["text-[9px] font-mono px-1.5 py-0.5 rounded-full border uppercase tracking-wider", getStatusClass(item.carryOn)]}>
+                  <span class:list={["text-[10px] font-mono font-semibold px-2.5 py-1 rounded-lg border uppercase tracking-wider", getStatusClass(item.carryOn)]}>
                     {item.carryOn}
                   </span>
                 </div>
@@ -733,39 +813,46 @@ function getStatusBadgeClass(status: string) {
   </section>
 
   <!-- How It Works Section (Minimal, SaaS-style) -->
-  <section class="py-20 bg-canvas-soft border-b border-hairline">
+  <section class="py-20 bg-slate-50 dark:bg-[#070b14] border-b border-slate-200 dark:border-slate-800 transition-colors">
     <div class="max-w-[1200px] mx-auto px-4 md:px-6">
-      <div class="max-w-[600px] mb-12">
-        <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.8px] text-ink mb-3">
-          How security routing works
+      <div class="max-w-[640px] mb-12">
+        <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Security Protocol</span>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-3">
+          How Security Routing Works
         </h2>
-        <p class="text-sm text-body leading-[1.6]">
-          TSA checks categorize items into three security tiers. Follow this three-step workflow before you arrive at the airport check-in.
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          TSA checks categorize items into three security tiers. Follow this three-step workflow before you arrive at airport check-in.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         <!-- Step 1 -->
-        <div class="bg-canvas border border-hairline p-8 rounded-md shadow-sm">
-          <span class="font-mono text-xs font-semibold text-mute block mb-4">01 / QUERY DETAILS</span>
-          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">Search items</h3>
-          <p class="text-xs text-body leading-[1.6]">
+        <div class="card-hover-lift bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 font-mono text-sm font-bold flex items-center justify-center mb-6">
+            01
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Search items</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Query any travel item using our typo-tolerant Search bar to check official TSA baggage classifications.
           </p>
         </div>
         <!-- Step 2 -->
-        <div class="bg-canvas border border-hairline p-8 rounded-md shadow-sm">
-          <span class="font-mono text-xs font-semibold text-mute block mb-4">02 / COMPARE BAGS</span>
-          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">Check status</h3>
-          <p class="text-xs text-body leading-[1.6]">
+        <div class="card-hover-lift bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/80 border border-purple-200 dark:border-purple-800 text-purple-600 dark:text-purple-400 font-mono text-sm font-bold flex items-center justify-center mb-6">
+            02
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Check status</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Compare Carry-On (Cabin) vs. Checked (Cargo Hold) status rules. Identify if items are allowed, prohibited, or restricted.
           </p>
         </div>
         <!-- Step 3 -->
-        <div class="bg-canvas border border-hairline p-8 rounded-md shadow-sm">
-          <span class="font-mono text-xs font-semibold text-mute block mb-4">03 / BOARD PLANE</span>
-          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">Pack accordingly</h3>
-          <p class="text-xs text-body leading-[1.6]">
+        <div class="card-hover-lift bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 text-emerald-600 dark:text-emerald-400 font-mono text-sm font-bold flex items-center justify-center mb-6">
+            03
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Pack accordingly</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Read warnings and packing tips (e.g. tape battery terminals, secure aerosol cap locks) to breeze through security.
           </p>
         </div>
@@ -774,43 +861,46 @@ function getStatusBadgeClass(status: string) {
   </section>
 
   <!-- Travel Tips Section (Clean visual cards) -->
-  <section class="py-20 bg-canvas">
+  <section class="py-20 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors">
     <div class="max-w-[1200px] mx-auto px-4 md:px-6">
       <div class="flex items-baseline justify-between mb-10">
-        <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.6px] text-ink">
-          Essential Travel Rules
-        </h2>
-        <span class="font-mono text-xs text-mute">Packing guidelines</span>
+        <div>
+          <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Security Insights</span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+            Essential Travel Rules
+          </h2>
+        </div>
+        <span class="font-mono text-xs text-slate-500 dark:text-slate-400">Packing guidelines</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         <!-- Tip 1 -->
-        <div class="border border-hairline hover:border-hairline-strong rounded-md p-6 transition-all">
-          <div class="w-8 h-8 rounded-sm bg-link-bg-soft text-link-deep border border-link/15 flex items-center justify-center mb-4">
-            <Luggage class="w-4 h-4" aria-hidden="true" />
+        <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 flex items-center justify-center mb-4">
+            <Luggage class="w-5 h-5" aria-hidden="true" />
           </div>
-          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">The 3-1-1 liquids rule</h3>
-          <p class="text-xs text-body leading-[1.6]">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">The 3-1-1 liquids rule</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Liquids, gels, and aerosols in carry-on baggage must be in containers of <strong>3.4 oz (100ml)</strong> or less, packed inside a single clear, quart-sized plastic bag.
           </p>
         </div>
         <!-- Tip 2 -->
-        <div class="border border-hairline hover:border-hairline-strong rounded-md p-6 transition-all">
-          <div class="w-8 h-8 rounded-sm bg-error-soft text-error-deep border border-error/15 flex items-center justify-center mb-4">
-            <ShieldCheck class="w-4 h-4" aria-hidden="true" />
+        <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 flex items-center justify-center mb-4">
+            <ShieldCheck class="w-5 h-5" aria-hidden="true" />
           </div>
-          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">Lithium battery safety</h3>
-          <p class="text-xs text-body leading-[1.6]">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Lithium battery safety</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             All spare lithium batteries and portable power banks are strictly <strong>prohibited in checked baggage</strong>. They must be carried in cabin baggage to prevent cargo fires.
           </p>
         </div>
         <!-- Tip 3 -->
-        <div class="border border-hairline hover:border-hairline-strong rounded-md p-6 transition-all">
-          <div class="w-8 h-8 rounded-sm bg-warning-soft text-warning-deep border border-warning/15 flex items-center justify-center mb-4">
-            <PlaneTakeoff class="w-4 h-4" aria-hidden="true" />
+        <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 flex items-center justify-center mb-4">
+            <PlaneTakeoff class="w-5 h-5" aria-hidden="true" />
           </div>
-          <h3 class="text-base font-medium tracking-[-0.2px] text-ink mb-2">Infant & medical exceptions</h3>
-          <p class="text-xs text-body leading-[1.6]">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Infant & medical exceptions</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Breast milk, baby formula, baby food, and prescription liquid medicines are <strong>exempt from volume limits</strong> in carry-ons, but you must declare them for manual security screening.
           </p>
         </div>
@@ -821,189 +911,193 @@ function getStatusBadgeClass(status: string) {
   <!-- ═══════════════════════════════════════════════════════
        SEO CONTENT BODY — 600 words targeting all keyword clusters
   ═══════════════════════════════════════════════════════ -->
-  <section class="py-20 bg-canvas-soft border-b border-hairline" id="about-tsa-rules" aria-label="TSA Baggage Rules Guide">
-    <div class="max-w-[800px] mx-auto px-4 md:px-6">
-      <div class="mb-10">
-        <h2 class="text-2xl md:text-3xl font-semibold tracking-[-1px] text-ink mb-3">
-          What Can You Bring on a Plane? The Complete TSA Guide for 2026
-        </h2>
-        <p class="text-sm text-body leading-[1.8]">
-          One of the most common questions travelers type before every flight is <strong>"can I bring this on a plane?"</strong> — and the answer depends on whether the item is going in your carry-on bag or your checked bag, and whether it falls under TSA liquid rules, FAA safety regulations, or international customs rules. BringOnPlane answers every one of these questions instantly.
-        </p>
-      </div>
-
-      <div class="space-y-8 text-sm text-body leading-[1.9]">
-
-        <div>
-          <h3 class="text-base font-semibold text-ink mb-2">Can I Bring Food Through TSA and on a Plane?</h3>
-          <p>
-            Yes — you can bring food on a plane and through TSA security. Solid foods travel freely in both carry-on and checked bags. This includes sandwiches, beef jerky, bananas, granola bars, chips, candy, bread, homemade cookies, fresh fruit, eggs, and even Uncrustables. The golden rule: <strong>if you can spread it or pour it, it follows the liquids rule.</strong> Peanut butter, honey, jam, jelly, yogurt, and queso must each be in containers of 3.4 oz (100ml) or less if you are packing them in your carry-on bag. Full-size jars belong in your checked baggage.
+  <section class="py-20 bg-slate-50 dark:bg-[#070b14] border-b border-slate-200 dark:border-slate-800 transition-colors" id="about-tsa-rules" aria-label="TSA Baggage Rules Guide">
+    <div class="max-w-[840px] mx-auto px-4 md:px-6">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm">
+        <div class="mb-10">
+          <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block mb-1">Official Guide 2026</span>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-3">
+            What Can You Bring on a Plane? The Complete TSA Guide for 2026
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            One of the most common questions travelers type before every flight is <strong>"can I bring this on a plane?"</strong> — and the answer depends on whether the item is going in your carry-on bag or your checked bag, and whether it falls under TSA liquid rules, FAA safety regulations, or international customs rules. BringOnPlane answers every one of these questions instantly.
           </p>
         </div>
 
-        <div>
-          <h3 class="text-base font-semibold text-ink mb-2">Can I Bring a Vape, E-Cigarette, or Weed Vape on a Plane?</h3>
-          <p>
-            Vapes, electronic cigarettes, disposable vapes, and vape pens are allowed on planes — but only in your carry-on bag or on your person. The FAA strictly prohibits lithium battery-powered devices in checked cargo holds due to fire risks. Vape juice and e-liquid must follow the TSA 3-1-1 liquids rule in carry-on bags. Traveling internationally with a vape? Note that countries like Thailand, Singapore, and Australia either ban or heavily restrict vapes, so research local laws before you pack.
-          </p>
+        <div class="space-y-8 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Can I Bring Food Through TSA and on a Plane?</h3>
+            <p>
+              Yes — you can bring food on a plane and through TSA security. Solid foods travel freely in both carry-on and checked bags. This includes sandwiches, beef jerky, bananas, granola bars, chips, candy, bread, homemade cookies, fresh fruit, eggs, and even Uncrustables. The golden rule: <strong>if you can spread it or pour it, it follows the liquids rule.</strong> Peanut butter, honey, jam, jelly, yogurt, and queso must each be in containers of 3.4 oz (100ml) or less if you are packing them in your carry-on bag. Full-size jars belong in your checked baggage.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Can I Bring a Vape, E-Cigarette, or Weed Vape on a Plane?</h3>
+            <p>
+              Vapes, electronic cigarettes, disposable vapes, and vape pens are allowed on planes — but only in your carry-on bag or on your person. The FAA strictly prohibits lithium battery-powered devices in checked cargo holds due to fire risks. Vape juice and e-liquid must follow the TSA 3-1-1 liquids rule in carry-on bags. Traveling internationally with a vape? Note that countries like Thailand, Singapore, and Australia either ban or heavily restrict vapes, so research local laws before you pack.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Can I Bring Razors, Scissors, and Sharp Items in My Carry-On?</h3>
+            <p>
+              Disposable razors, shaving razors, and electric razors are all fully permitted in carry-on bags. Safety razors are allowed carry-on only if the blades are removed — loose blades must go in checked luggage. Scissors with blades shorter than 4 inches from the pivot point (including eyebrow scissors, embroidery scissors, and kids scissors) are permitted in carry-on. Larger scissors, pocket knives, box cutters, and utility knives must be checked. Tweezers, nail clippers, and nail glue are unrestricted.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Can I Bring a Portable Charger, Power Bank, or Lithium Batteries on a Plane?</h3>
+            <p>
+              Portable chargers and power banks must travel in carry-on bags only — they are prohibited in checked baggage due to lithium fire risk. Power banks up to 100Wh are unrestricted in carry-on; banks between 100–160Wh require airline approval. Standard AA and AAA batteries can go in carry-on or checked bags when terminals are protected. Rechargeable lithium-ion batteries (laptop batteries, camera batteries, spare vape batteries) must be in carry-on bags only.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">What Are the TSA Liquid Rules? What Toiletries Can I Bring?</h3>
+            <p>
+              The TSA 3-1-1 rule applies to all liquids, gels, creams, and aerosols in carry-on bags: each container must be <strong>3.4 oz (100ml) or less</strong>, all fitting inside a <strong>single quart-sized clear zip bag</strong>, with one bag allowed per passenger. This covers toothpaste, shampoo, conditioner, liquid deodorant, gel deodorant, cologne, perfume, hairspray, dry shampoo spray, hair gel, lotion, sunscreen, bug spray, and shaving cream. Solid stick deodorant, bar soap, and powder products are exempt from this rule. You may bring any quantity of toiletries in your checked baggage.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Free Packing List Generator & TSA Item Checker</h3>
+            <p>
+              Planning a trip? BringOnPlane is a free <strong>packing list generator</strong> and <strong>travel checklist tool</strong> that automatically categorizes your items into carry-on vs. checked baggage based on the latest TSA rules. Whether you need a carry-on essentials checklist, a family vacation packing list, an international travel checklist, or a quick TSA item lookup, our packing assistant handles it all — no account required, works offline, and instantly saves your packing list to your browser.
+            </p>
+          </div>
+
         </div>
 
-        <div>
-          <h3 class="text-base font-semibold text-ink mb-2">Can I Bring Razors, Scissors, and Sharp Items in My Carry-On?</h3>
-          <p>
-            Disposable razors, shaving razors, and electric razors are all fully permitted in carry-on bags. Safety razors are allowed carry-on only if the blades are removed — loose blades must go in checked luggage. Scissors with blades shorter than 4 inches from the pivot point (including eyebrow scissors, embroidery scissors, and kids scissors) are permitted in carry-on. Larger scissors, pocket knives, box cutters, and utility knives must be checked. Tweezers, nail clippers, and nail glue are unrestricted.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-base font-semibold text-ink mb-2">Can I Bring a Portable Charger, Power Bank, or Lithium Batteries on a Plane?</h3>
-          <p>
-            Portable chargers and power banks must travel in carry-on bags only — they are prohibited in checked baggage due to lithium fire risk. Power banks up to 100Wh are unrestricted in carry-on; banks between 100–160Wh require airline approval. Standard AA and AAA batteries can go in carry-on or checked bags when terminals are protected. Rechargeable lithium-ion batteries (laptop batteries, camera batteries, spare vape batteries) must be in carry-on bags only.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-base font-semibold text-ink mb-2">What Are the TSA Liquid Rules? What Toiletries Can I Bring?</h3>
-          <p>
-            The TSA 3-1-1 rule applies to all liquids, gels, creams, and aerosols in carry-on bags: each container must be <strong>3.4 oz (100ml) or less</strong>, all fitting inside a <strong>single quart-sized clear zip bag</strong>, with one bag allowed per passenger. This covers toothpaste, shampoo, conditioner, liquid deodorant, gel deodorant, cologne, perfume, hairspray, dry shampoo spray, hair gel, lotion, sunscreen, bug spray, and shaving cream. Solid stick deodorant, bar soap, and powder products are exempt from this rule. You may bring any quantity of toiletries in your checked baggage.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-base font-semibold text-ink mb-2">Free Packing List Generator & TSA Item Checker</h3>
-          <p>
-            Planning a trip? BringOnPlane is a free <strong>packing list generator</strong> and <strong>travel checklist tool</strong> that automatically categorizes your items into carry-on vs. checked baggage based on the latest TSA rules. Whether you need a carry-on essentials checklist, a family vacation packing list, an international travel checklist, or a quick TSA item lookup, our packing assistant handles it all — no account required, works offline, and instantly saves your packing list to your browser.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Internal link cluster for topical depth -->
-      <div class="mt-10 pt-8 border-t border-hairline">
-        <p class="text-xs font-mono text-mute uppercase tracking-wider mb-4">Explore More Rules</p>
-        <div class="flex flex-wrap gap-2">
-          {[
-            { label: "Food & Snacks Rules", href: "/items/beef-jerky" },
-            { label: "Vape TSA Rules", href: "/items/power-bank" },
-            { label: "Liquids & Toiletries", href: "/items/shampoo" },
-            { label: "Scissors Rules", href: "/items/scissors" },
-            { label: "Portable Charger Rules", href: "/items/power-bank" },
-            { label: "All Items A–Z", href: "/items" },
-            { label: "Full FAQ Guide", href: "/faq" },
-            { label: "Packing Assistant", href: "/packing-assistant" },
-          ].map(link => (
-            <a
-              href={link.href}
-              class="text-[11px] font-medium text-link hover:text-link-deep border border-link/25 hover:border-link bg-link-bg-soft hover:bg-link-bg rounded-md px-3 py-1.5 transition-all"
-            >
-              {link.label}
-            </a>
-          ))}
+        <!-- Internal link cluster for topical depth -->
+        <div class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-800">
+          <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4 font-semibold">Explore More Rules</p>
+          <div class="flex flex-wrap gap-2">
+            {[
+              { label: "Food & Snacks Rules", href: "/items/beef-jerky/" },
+              { label: "Vape TSA Rules", href: "/items/power-bank/" },
+              { label: "Liquids & Toiletries", href: "/items/shampoo/" },
+              { label: "Scissors Rules", href: "/items/scissors/" },
+              { label: "Portable Charger Rules", href: "/items/power-bank/" },
+              { label: "All Items A–Z", href: "/items/page/1/" },
+              { label: "Full FAQ Guide", href: "/faq/" },
+              { label: "Packing Assistant", href: "/checklist/" },
+            ].map(link => (
+              <a
+                href={link.href}
+                class="card-hover-lift text-xs font-semibold text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 bg-blue-50/70 dark:bg-blue-950/40 hover:bg-blue-100 dark:hover:bg-blue-900/60 rounded-xl px-3 py-1.5 transition-all"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Frequently Asked Questions Section (TSA & On-Page SEO optimization) -->
-  <section class="py-20 bg-canvas border-b border-hairline" id="faq">
-    <div class="max-w-[800px] mx-auto px-4 md:px-6">
+  <section class="py-20 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors" id="faq">
+    <div class="max-w-[840px] mx-auto px-4 md:px-6">
       <div class="text-center mb-12">
-        <h2 class="text-2xl md:text-3xl font-semibold tracking-[-1px] text-ink mb-3 flex items-center justify-center gap-2">
-          <HelpCircle class="w-6 h-6 text-mute" />
+        <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block mb-1">Instant Answers</span>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-3 flex items-center justify-center gap-2">
+          <HelpCircle class="w-6 h-6 text-blue-600 dark:text-blue-400" />
           Frequently Asked Questions
         </h2>
-        <p class="text-sm text-body leading-[1.6] max-w-[540px] mx-auto">
+        <p class="text-sm text-slate-600 dark:text-slate-400 max-w-[540px] mx-auto">
           Quick answers to the most common airport security, baggage rules, and travel packing queries.
         </p>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-3.5">
         <!-- Question 1 -->
-        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 shadow-xs overflow-hidden">
           <button 
             type="button" 
-            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none select-none"
             data-target="home-faq-1"
           >
             <span>Can I bring food or snacks through TSA security?</span>
-            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+            <ChevronDown class="w-4 h-4 text-slate-400 transition-transform duration-200" />
           </button>
-          <div id="home-faq-1" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+          <div id="home-faq-1" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-3">
             Yes, you can bring solid food and snacks (like sandwiches, fresh fruits, bananas, beef jerky, bread, chips, candy, and granola bars) through TSA checkpoints and on the plane in carry-on and checked bags. However, liquid or spreadable foods (such as peanut butter, honey, jam, jelly, yogurt, and baby food puree) are subject to the 3-1-1 liquids rule (under 3.4 oz / 100ml) in carry-on luggage.
           </div>
         </div>
 
         <!-- Question 2 -->
-        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 shadow-xs overflow-hidden">
           <button 
             type="button" 
-            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none select-none"
             data-target="home-faq-2"
           >
             <span>Can I bring a vape, e-cigarette, or electronic cigarette on a plane?</span>
-            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+            <ChevronDown class="w-4 h-4 text-slate-400 transition-transform duration-200" />
           </button>
-          <div id="home-faq-2" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+          <div id="home-faq-2" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-3">
             Yes, you can bring a vape, e-cigarette, and disposable vapes on a plane, but they are strictly restricted to <strong>carry-on baggage only</strong>. FAA safety regulations prohibit carrying lithium battery-powered vapes, vape pens, and spare vape juice in checked hold luggage due to fire hazards.
           </div>
         </div>
 
         <!-- Question 3 -->
-        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 shadow-xs overflow-hidden">
           <button 
             type="button" 
-            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none select-none"
             data-target="home-faq-3"
           >
             <span>Can I pack portable chargers, power banks, and batteries in my luggage?</span>
-            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+            <ChevronDown class="w-4 h-4 text-slate-400 transition-transform duration-200" />
           </button>
-          <div id="home-faq-3" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+          <div id="home-faq-3" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-3">
             Portable chargers, lithium-ion power banks, and spare battery packs must be packed in <strong>carry-on baggage only</strong>. They are prohibited in checked baggage holds. Standard dry cell batteries (AA, AAA, double a batteries) can travel in either carry-on or checked luggage, but must be protected from short circuits.
           </div>
         </div>
 
         <!-- Question 4 -->
-        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 shadow-xs overflow-hidden">
           <button 
             type="button" 
-            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none select-none"
             data-target="home-faq-4"
           >
             <span>Are lighters, matches, and scissors allowed on a plane?</span>
-            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+            <ChevronDown class="w-4 h-4 text-slate-400 transition-transform duration-200" />
           </button>
-          <div id="home-faq-4" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+          <div id="home-faq-4" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-3">
             You can bring one common lighter (like a Bic or Zippo lighter) or one book of safety matches in your pocket or carry-on. Scissors with blades under 4 inches from the pivot point (like kids scissors or eyebrow scissors) are permitted in carry-on bags. Larger tools, utility knives, and box cutters must go in checked baggage.
           </div>
         </div>
 
         <!-- Question 5 -->
-        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 shadow-xs overflow-hidden">
           <button 
             type="button" 
-            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none select-none"
             data-target="home-faq-5"
           >
             <span>Can I bring razors (disposable, electric, or safety razors) in my carry-on?</span>
-            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+            <ChevronDown class="w-4 h-4 text-slate-400 transition-transform duration-200" />
           </button>
-          <div id="home-faq-5" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+          <div id="home-faq-5" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-3">
             Disposable razors (cartridge razors) and electric razors/shavers are 100% allowed in carry-on bags. However, safety razors and straight razors are only allowed in carry-ons if the blades are removed. Spare safety razor blades must be packed in checked bags.
           </div>
         </div>
 
         <!-- Question 6 -->
-        <div class="border border-hairline rounded-md bg-canvas shadow-sm">
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 shadow-xs overflow-hidden">
           <button 
             type="button" 
-            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none select-none"
             data-target="home-faq-6"
           >
             <span>How do toiletries, deodorant, cologne, and toothpaste fit TSA rules?</span>
-            <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+            <ChevronDown class="w-4 h-4 text-slate-400 transition-transform duration-200" />
           </button>
-          <div id="home-faq-6" class="hidden px-6 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+          <div id="home-faq-6" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-3">
             Toiletries in carry-on bags must comply with the 3-1-1 liquids limit. Liquid, gel, or aerosol deodorants, cologne, perfume, and toothpaste must be in containers of 3.4 oz (100ml) or less and fit inside a single quart-sized clear plastic bag. Solid stick deodorants, bar soaps, and dry powders are exempt from this limit.
           </div>
         </div>
@@ -1038,7 +1132,7 @@ function getStatusBadgeClass(status: string) {
       }
 
       listContainer.innerHTML = favorites.map(item => `
-        <a href="/items/${item.slug}" class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-3.5 transition-all">
+        <a href="/items/${item.slug}/" class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-3.5 transition-all">
           <div class="flex items-center justify-between gap-3">
             <div>
               <span class="text-sm font-medium text-ink">${item.name}</span>
@@ -1076,7 +1170,7 @@ function getStatusBadgeClass(status: string) {
       }
 
       listContainer.innerHTML = recents.map(item => `
-        <a href="/items/${item.slug}" class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-3.5 transition-all">
+        <a href="/items/${item.slug}/" class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-3.5 transition-all">
           <div class="flex items-center justify-between gap-3">
             <div>
               <span class="text-sm font-medium text-ink">${item.name}</span>
@@ -1228,133 +1322,205 @@ function getStatusBadgeClass(status: string) {
   let highlightedIndex = -1;
   let matchingSuggestions: SearchItem[] = [];
 
+  // Embedded popular items cache
+  function getPopularItemsCache(): Record<string, any> {
+    try {
+      const el = document.getElementById('popular-items-data');
+      if (!el) return {};
+      const data = JSON.parse(el.textContent || '[]');
+      const map: Record<string, any> = {};
+      data.forEach((d: any) => { if (d.slug) map[d.slug] = d; });
+      return map;
+    } catch {
+      return {};
+    }
+  }
+
   async function loadSearchIndex() {
     if (isIndexLoaded) return;
     try {
       const res = await fetch('/search-index.json');
-      if (!res.ok) throw new Error();
+      if (!res.ok) throw new Error('Search index response not ok');
       searchIndex = await res.json();
       isIndexLoaded = true;
     } catch (e) {
-      console.error('Failed to load search index for suggestions', e);
+      console.warn('Could not load search index from static endpoint', e);
     }
   }
+
+  // Preload search index immediately
+  loadSearchIndex();
 
   // Fetch full item details and render
   async function handleItemSelected(slug: string, sourceChip: HTMLButtonElement | null = null) {
     const panel = document.getElementById('hero-result-panel');
     if (!panel) return;
 
+    // Highlight active chip if it was selected from a chip or matches slug
+    const chips = document.querySelectorAll<HTMLButtonElement>('.popular-chip');
+    chips.forEach(c => {
+      const isMatch = (sourceChip && c === sourceChip) || c.dataset.chipSlug === slug;
+      if (isMatch) {
+        c.classList.add('border-blue-600', 'text-blue-600', 'dark:border-blue-400', 'dark:text-blue-400', 'bg-blue-50', 'dark:bg-blue-950/80', 'font-semibold');
+        c.setAttribute('aria-pressed', 'true');
+      } else {
+        c.classList.remove('border-blue-600', 'text-blue-600', 'dark:border-blue-400', 'dark:text-blue-400', 'bg-blue-50', 'dark:bg-blue-950/80', 'font-semibold');
+        c.setAttribute('aria-pressed', 'false');
+      }
+    });
+
+    const popularCache = getPopularItemsCache();
+    const cachedItem = popularCache[slug];
+    const indexItem = searchIndex.find(i => i.slug === slug);
+
+    let item: FullItem = {
+      slug,
+      name: cachedItem?.name || indexItem?.name || slug.replace(/-/g, ' '),
+      category: cachedItem?.category || indexItem?.category || 'Travel Item',
+      carryOn: {
+        status: cachedItem?.carryOn || indexItem?.carryOn || 'ALLOWED',
+        reason: cachedItem?.carryOnReason || 'Must comply with standard airline baggage security regulations.'
+      },
+      checkedBag: {
+        status: cachedItem?.checked || indexItem?.checked || 'ALLOWED',
+        reason: cachedItem?.checkedReason || 'Permitted in checked baggage according to TSA guidelines.'
+      }
+    };
+
+    // Render immediately with cached/index data
+    renderItemVerdict(item, panel);
+
+    // Try fetching full item JSON for richer descriptions
     try {
       const res = await fetch(`/api/items/${slug}.json`);
-      if (!res.ok) throw new Error();
-      const item: FullItem = await res.json();
-
-      // Highlight active chip if it was selected from a chip
-      const chips = document.querySelectorAll<HTMLButtonElement>('.popular-chip');
-      chips.forEach(c => {
-        c.classList.remove('border-ink', 'text-ink', 'bg-canvas-soft-2', 'font-semibold');
-        c.setAttribute('aria-pressed', 'false');
-      });
-      if (sourceChip) {
-        sourceChip.classList.add('border-ink', 'text-ink', 'bg-canvas-soft-2', 'font-semibold');
-        sourceChip.setAttribute('aria-pressed', 'true');
+      if (res.ok) {
+        const fullItem: FullItem = await res.json();
+        renderItemVerdict(fullItem, panel);
       }
-
-      // Populate elements
-      const nameText = document.getElementById('result-title-text');
-      const iconContainer = document.getElementById('result-title-icon-container');
-      const catEl = document.getElementById('result-category');
-      
-      const carryonBadgeContainer = document.getElementById('result-carryon-badge-container');
-      const checkedBadgeContainer = document.getElementById('result-checked-badge-container');
-      
-      const reasonEl = document.getElementById('result-reason');
-      const statusIconEl = document.getElementById('result-status-icon-container');
-      
-      const summaryCoIcon = document.getElementById('result-summary-carryon-icon-container');
-      const summaryCoText = document.getElementById('result-summary-carryon-text');
-      const summaryCkIcon = document.getElementById('result-summary-checked-icon-container');
-      const summaryCkText = document.getElementById('result-summary-checked-text');
-      const summaryPiIcon = document.getElementById('result-summary-personal-icon-container');
-      const summaryPiText = document.getElementById('result-summary-personal-text');
-      
-      const fullLink = document.getElementById('result-full-link') as HTMLAnchorElement | null;
-
-      if (nameText) nameText.textContent = item.name;
-      if (iconContainer) iconContainer.innerHTML = getCategoryIconSvg(item.category);
-      if (catEl) catEl.textContent = item.category;
-      
-      if (carryonBadgeContainer) carryonBadgeContainer.innerHTML = getStatusBadgeHtml(item.carryOn.status);
-      if (checkedBadgeContainer) checkedBadgeContainer.innerHTML = getStatusBadgeHtml(item.checkedBag.status);
-
-      // Feature 2: Big YES/NO verdict banner
-      const verdictBanner = document.getElementById('result-verdict-banner');
-      const verdictText = document.getElementById('result-verdict-text');
-      const verdictIcon = document.getElementById('result-verdict-icon');
-      const coS = item.carryOn.status.toUpperCase();
-      if (verdictText && verdictIcon && verdictBanner) {
-        if (coS === 'ALLOWED') {
-          verdictText.textContent = 'YES — Allowed in Carry-on';
-          verdictText.className = 'text-2xl font-extrabold tracking-tight text-emerald-600';
-          verdictBanner.className = verdictBanner.className.replace(/bg-\S+/, '') + ' bg-emerald-50/80';
-          verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 border border-emerald-300"><svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>`;
-        } else if (coS === 'NOT_ALLOWED' || coS === 'PROHIBITED') {
-          verdictText.textContent = 'NO — Not Allowed in Carry-on';
-          verdictText.className = 'text-2xl font-extrabold tracking-tight text-red-600';
-          verdictBanner.className = verdictBanner.className.replace(/bg-\S+/, '') + ' bg-red-50/80';
-          verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 border border-red-300"><svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg></span>`;
-        } else {
-          verdictText.textContent = 'RESTRICTED — Conditions Apply';
-          verdictText.className = 'text-2xl font-extrabold tracking-tight text-amber-600';
-          verdictBanner.className = verdictBanner.className.replace(/bg-\S+/, '') + ' bg-amber-50/80';
-          verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 border border-amber-300"><svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg></span>`;
-        }
-      }
-
-      // Status/Reason message
-      const reason = item.carryOn.reason || item.checkedBag.reason || 'Must comply with standard airline limits.';
-      if (reasonEl) reasonEl.textContent = reason;
-      
-      // Status icon based on restriction
-      if (statusIconEl) {
-        const carriesRestricted = item.carryOn.status.toUpperCase() === 'RESTRICTED' || item.carryOn.status.toUpperCase() === 'NOT_ALLOWED';
-        statusIconEl.innerHTML = carriesRestricted 
-          ? `<svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg>`
-          : `<svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></svg>`;
-      }
-
-      // Quick Summary
-      if (summaryCoIcon && summaryCoText) {
-        summaryCoIcon.innerHTML = getSummaryIndicatorSvg(item.carryOn.status);
-        summaryCoText.textContent = getSummaryLabel(item.carryOn.status);
-      }
-      if (summaryCkIcon && summaryCkText) {
-        summaryCkIcon.innerHTML = getSummaryIndicatorSvg(item.checkedBag.status);
-        summaryCkText.textContent = getSummaryLabel(item.checkedBag.status);
-      }
-      if (summaryPiIcon && summaryPiText) {
-        // Personal Item is typically same status as Carry-on
-        summaryPiIcon.innerHTML = getSummaryIndicatorSvg(item.carryOn.status);
-        summaryPiText.textContent = getSummaryLabel(item.carryOn.status);
-      }
-
-      if (fullLink) {
-        fullLink.href = `/items/${item.slug}`;
-        fullLink.innerHTML = `Read Full TSA Rules →`;
-      }
-
-      // Smooth reveal
-      panel.classList.remove('hidden');
-      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-    } catch (e) {
-      console.error('Error fetching details for selected item', e);
+    } catch {
+      // Keep rendered cached version
     }
+  }
+
+  function renderItemVerdict(item: FullItem, panel: HTMLElement) {
+    const nameText = document.getElementById('result-title-text');
+    const iconContainer = document.getElementById('result-title-icon-container');
+    const catEl = document.getElementById('result-category');
+    
+    const carryonBadgeContainer = document.getElementById('result-carryon-badge-container');
+    const checkedBadgeContainer = document.getElementById('result-checked-badge-container');
+    
+    const reasonEl = document.getElementById('result-reason');
+    const statusIconEl = document.getElementById('result-status-icon-container');
+    
+    const summaryCoIcon = document.getElementById('result-summary-carryon-icon-container');
+    const summaryCoText = document.getElementById('result-summary-carryon-text');
+    const summaryCkIcon = document.getElementById('result-summary-checked-icon-container');
+    const summaryCkText = document.getElementById('result-summary-checked-text');
+    const summaryPiIcon = document.getElementById('result-summary-personal-icon-container');
+    const summaryPiText = document.getElementById('result-summary-personal-text');
+    
+    const fullLink = document.getElementById('result-full-link') as HTMLAnchorElement | null;
+
+    if (nameText) nameText.textContent = item.name;
+    if (iconContainer) iconContainer.innerHTML = getCategoryIconSvg(item.category);
+    if (catEl) catEl.textContent = item.category;
+    
+    const coStatus = (item.carryOn?.status || 'ALLOWED').toUpperCase();
+    const ckStatus = (item.checkedBag?.status || 'ALLOWED').toUpperCase();
+
+    if (carryonBadgeContainer) carryonBadgeContainer.innerHTML = getStatusBadgeHtml(coStatus);
+    if (checkedBadgeContainer) checkedBadgeContainer.innerHTML = getStatusBadgeHtml(ckStatus);
+
+    // Big YES/NO verdict banner
+    const verdictBanner = document.getElementById('result-verdict-banner');
+    const verdictText = document.getElementById('result-verdict-text');
+    const verdictIcon = document.getElementById('result-verdict-icon');
+
+    if (verdictText && verdictIcon && verdictBanner) {
+      if (coStatus === 'ALLOWED') {
+        verdictText.textContent = 'YES — Allowed in Carry-on';
+        verdictText.className = 'text-2xl font-extrabold tracking-tight text-emerald-600 dark:text-emerald-400';
+        verdictBanner.className = 'px-6 py-4 border-b border-emerald-200 dark:border-emerald-800/80 flex items-center justify-between gap-4 bg-emerald-50/90 dark:bg-emerald-950/60 transition-colors';
+        verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/60 border border-emerald-300 dark:border-emerald-700 text-emerald-600 dark:text-emerald-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>`;
+      } else if (coStatus === 'NOT_ALLOWED' || coStatus === 'PROHIBITED') {
+        verdictText.textContent = 'NO — Not Allowed in Carry-on';
+        verdictText.className = 'text-2xl font-extrabold tracking-tight text-rose-600 dark:text-rose-400';
+        verdictBanner.className = 'px-6 py-4 border-b border-rose-200 dark:border-rose-800/80 flex items-center justify-between gap-4 bg-rose-50/90 dark:bg-rose-950/60 transition-colors';
+        verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-rose-100 dark:bg-rose-900/60 border border-rose-300 dark:border-rose-700 text-rose-600 dark:text-rose-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg></span>`;
+      } else {
+        verdictText.textContent = 'RESTRICTED — Conditions Apply';
+        verdictText.className = 'text-2xl font-extrabold tracking-tight text-amber-600 dark:text-amber-400';
+        verdictBanner.className = 'px-6 py-4 border-b border-amber-200 dark:border-amber-800/80 flex items-center justify-between gap-4 bg-amber-50/90 dark:bg-amber-950/60 transition-colors';
+        verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/60 border border-amber-300 dark:border-amber-700 text-amber-600 dark:text-amber-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg></span>`;
+      }
+    }
+
+    // Status/Reason message
+    const reason = item.carryOn?.reason || item.checkedBag?.reason || 'Must comply with standard TSA airport screening rules.';
+    if (reasonEl) reasonEl.textContent = reason;
+    
+    // Status icon based on restriction
+    if (statusIconEl) {
+      const carriesRestricted = coStatus === 'RESTRICTED' || coStatus === 'NOT_ALLOWED' || coStatus === 'PROHIBITED';
+      statusIconEl.innerHTML = carriesRestricted 
+        ? `<svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg>`
+        : `<svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
+    }
+
+    // Quick Summary
+    if (summaryCoIcon && summaryCoText) {
+      summaryCoIcon.innerHTML = getSummaryIndicatorSvg(coStatus);
+      summaryCoText.textContent = getSummaryLabel(coStatus);
+    }
+    if (summaryCkIcon && summaryCkText) {
+      summaryCkIcon.innerHTML = getSummaryIndicatorSvg(ckStatus);
+      summaryCkText.textContent = getSummaryLabel(ckStatus);
+    }
+    if (summaryPiIcon && summaryPiText) {
+      summaryPiIcon.innerHTML = getSummaryIndicatorSvg(coStatus);
+      summaryPiText.textContent = getSummaryLabel(coStatus);
+    }
+
+    if (fullLink) {
+      fullLink.href = `/items/${item.slug}/`;
+      fullLink.innerHTML = `Read Full TSA Rules →`;
+    }
+
+    // Smooth reveal
+    panel.classList.remove('hidden');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function findBestMatch(rawQuery: string): SearchItem | undefined {
+    const q = rawQuery.toLowerCase().trim();
+    if (!q || searchIndex.length === 0) return undefined;
+
+    // 1. Direct exact or substring match on name
+    const exactName = searchIndex.find(i => i.name.toLowerCase() === q || i.slug === q);
+    if (exactName) return exactName;
+
+    // 2. Query contains item name (e.g. "Perfume / Cologne" contains "perfume")
+    const containedName = searchIndex.find(i => q.includes(i.name.toLowerCase()) || i.name.toLowerCase().includes(q));
+    if (containedName) return containedName;
+
+    // 3. Token-based word match
+    const tokens = q.split(/[\s,/\-_]+/).filter(t => t.length >= 2);
+    for (const token of tokens) {
+      const match = searchIndex.find(i => 
+        i.name.toLowerCase().includes(token) || 
+        i.aliases.some(a => a.toLowerCase().includes(token)) ||
+        i.keywords.some(k => k.toLowerCase().includes(token))
+      );
+      if (match) return match;
+    }
+
+    return undefined;
   }
 
   function setupInteractiveSearch() {
     const input = document.getElementById('homepage-search-input') as HTMLInputElement | null;
+    const submitBtn = document.getElementById('homepage-search-submit');
     const suggestions = document.getElementById('homepage-suggestions');
     const clearBtn = document.getElementById('homepage-search-clear');
     const chips = document.querySelectorAll<HTMLButtonElement>('.popular-chip');
@@ -1363,7 +1529,8 @@ function getStatusBadgeClass(status: string) {
 
     if (!input || !suggestions) return;
 
-    // Load search index on focus
+    // Ensure index is loaded
+    loadSearchIndex();
     input.addEventListener('focus', () => {
       loadSearchIndex();
     });
@@ -1378,7 +1545,8 @@ function getStatusBadgeClass(status: string) {
       }
     }
 
-    function renderSuggestions() {
+    async function renderSuggestions() {
+      await loadSearchIndex();
       const q = input.value.toLowerCase().trim();
       if (!q) {
         suggestions.classList.add('hidden');
@@ -1388,19 +1556,31 @@ function getStatusBadgeClass(status: string) {
         return;
       }
 
+      const tokens = q.split(/[\s,/\-_]+/).filter(t => t.length >= 2);
+
       matchingSuggestions = searchIndex.filter(item => {
-        return item.name.toLowerCase().includes(q) ||
-               item.category.toLowerCase().includes(q) ||
-               item.aliases.some(alias => alias.toLowerCase().includes(q)) ||
-               item.keywords.some(keyword => keyword.toLowerCase().includes(q));
+        const itemName = item.name.toLowerCase();
+        const itemCat = item.category.toLowerCase();
+        
+        // Exact substring
+        if (itemName.includes(q) || itemCat.includes(q) || q.includes(itemName)) return true;
+        if (item.aliases.some(alias => alias.toLowerCase().includes(q) || q.includes(alias.toLowerCase()))) return true;
+        if (item.keywords.some(kw => kw.toLowerCase().includes(q))) return true;
+
+        // Token match
+        if (tokens.length > 0) {
+          return tokens.some(t => itemName.includes(t) || item.aliases.some(a => a.toLowerCase().includes(t)));
+        }
+
+        return false;
       }).slice(0, 6);
 
       highlightedIndex = -1;
 
       if (matchingSuggestions.length === 0) {
         suggestions.innerHTML = `
-          <div class="p-4 text-sm text-mute">
-            No matches found. Try searching for <button type="button" class="text-link font-medium hover:underline cursor-pointer" id="suggest-powerbank">Power Bank</button> or <a href="/items" class="text-link font-medium hover:underline">All Items</a>.
+          <div class="p-4 text-sm text-slate-500 dark:text-slate-400">
+            No exact match for "<span class="font-medium text-slate-800 dark:text-slate-200">${input.value}</span>". Try <button type="button" class="text-blue-600 dark:text-blue-400 font-medium hover:underline cursor-pointer" id="suggest-powerbank">Power Bank</button> or browse <a href="/items/page/1/" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">All 196+ Items</a>.
           </div>
         `;
         suggestions.classList.remove('hidden');
@@ -1417,28 +1597,28 @@ function getStatusBadgeClass(status: string) {
         return;
       }
 
-      // Feature 1: Color-coded status in suggestion dropdown
+      // Render suggestions
       suggestions.innerHTML = matchingSuggestions.map((item, idx) => {
         const iconSvg = getCategoryIconSvg(item.category);
         const coStatus = (item.carryOn || '').toUpperCase();
         const badgeColor = coStatus === 'ALLOWED'
-          ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+          ? 'bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700/60'
           : coStatus === 'NOT_ALLOWED' || coStatus === 'PROHIBITED'
-          ? 'bg-red-50 text-red-700 border-red-200'
-          : 'bg-amber-50 text-amber-700 border-amber-200';
+          ? 'bg-red-50 dark:bg-red-950/80 text-red-700 dark:text-red-300 border-red-200 dark:border-red-700/60'
+          : 'bg-amber-50 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-700/60';
         const badgeLabel = coStatus === 'ALLOWED' ? 'Allowed' : coStatus === 'NOT_ALLOWED' || coStatus === 'PROHIBITED' ? 'Not Allowed' : 'Restricted';
         return `
           <button 
             type="button" 
-            class="suggestion-item w-full flex items-center justify-between px-4 py-3 hover:bg-canvas-soft-2 text-sm text-ink cursor-pointer text-left border-l-2 border-transparent transition-all"
+            class="suggestion-item w-full flex items-center justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm text-slate-800 dark:text-slate-100 cursor-pointer text-left border-l-2 border-transparent transition-all"
             data-slug="${item.slug}"
             data-index="${idx}"
           >
             <div class="flex items-center gap-3 min-w-0">
-              <span class="text-mute flex-shrink-0">${iconSvg}</span>
+              <span class="text-slate-400 flex-shrink-0">${iconSvg}</span>
               <div class="min-w-0">
-                <span class="font-medium block">${item.name}</span>
-                <span class="text-[10px] font-mono text-mute uppercase">${item.category}</span>
+                <span class="font-medium block truncate">${item.name}</span>
+                <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">${item.category}</span>
               </div>
             </div>
             <span class="inline-flex items-center text-[9px] font-bold px-2 py-0.5 rounded-full border uppercase tracking-wider flex-shrink-0 ml-2 ${badgeColor}">${badgeLabel}</span>
@@ -1472,12 +1652,44 @@ function getStatusBadgeClass(status: string) {
       const items = suggestions.querySelectorAll('.suggestion-item');
       items.forEach((item, idx) => {
         if (idx === highlightedIndex) {
-          item.classList.add('bg-canvas-soft-2', 'border-link');
+          item.classList.add('bg-slate-100', 'dark:bg-slate-800', 'border-blue-600', 'dark:border-blue-400');
           item.scrollIntoView({ block: 'nearest' });
         } else {
-          item.classList.remove('bg-canvas-soft-2', 'border-link');
+          item.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'border-blue-600', 'dark:border-blue-400');
         }
       });
+    }
+
+    function executeSearchAction() {
+      const val = input.value.trim();
+      if (!val) return;
+
+      suggestions.classList.add('hidden');
+
+      if (highlightedIndex >= 0 && highlightedIndex < matchingSuggestions.length) {
+        const selected = matchingSuggestions[highlightedIndex];
+        input.value = selected.name;
+        updateClearButtonVisibility();
+        handleItemSelected(selected.slug);
+        return;
+      }
+
+      if (matchingSuggestions.length > 0) {
+        const first = matchingSuggestions[0];
+        input.value = first.name;
+        updateClearButtonVisibility();
+        handleItemSelected(first.slug);
+        return;
+      }
+
+      const match = findBestMatch(val);
+      if (match) {
+        input.value = match.name;
+        updateClearButtonVisibility();
+        handleItemSelected(match.slug);
+      } else {
+        window.location.href = `/items/page/1/?q=${encodeURIComponent(val)}`;
+      }
     }
 
     // Handle typing / matching suggestions
@@ -1485,6 +1697,14 @@ function getStatusBadgeClass(status: string) {
       renderSuggestions();
       updateClearButtonVisibility();
     });
+
+    // Search button click
+    if (submitBtn) {
+      submitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        executeSearchAction();
+      });
+    }
 
     // Clear Search Input Action
     if (clearBtn) {
@@ -1501,6 +1721,12 @@ function getStatusBadgeClass(status: string) {
 
     // Keyboard navigation (ArrowDown, ArrowUp, Enter, Escape)
     input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        executeSearchAction();
+        return;
+      }
+
       if (suggestions.classList.contains('hidden') || matchingSuggestions.length === 0) return;
 
       if (e.key === 'ArrowDown') {
@@ -1511,15 +1737,6 @@ function getStatusBadgeClass(status: string) {
         e.preventDefault();
         highlightedIndex = (highlightedIndex - 1 + matchingSuggestions.length) % matchingSuggestions.length;
         updateHighlight();
-      } else if (e.key === 'Enter') {
-        if (highlightedIndex >= 0 && highlightedIndex < matchingSuggestions.length) {
-          e.preventDefault();
-          const selected = matchingSuggestions[highlightedIndex];
-          input.value = selected.name;
-          suggestions.classList.add('hidden');
-          updateClearButtonVisibility();
-          handleItemSelected(selected.slug);
-        }
       } else if (e.key === 'Escape') {
         suggestions.classList.add('hidden');
       }
@@ -1527,7 +1744,7 @@ function getStatusBadgeClass(status: string) {
 
     // Close suggestions on click outside
     document.addEventListener('click', (e) => {
-      if (!input.contains(e.target as Node) && !suggestions.contains(e.target as Node) && !clearBtn?.contains(e.target as Node)) {
+      if (!input.contains(e.target as Node) && !suggestions.contains(e.target as Node) && !clearBtn?.contains(e.target as Node) && !submitBtn?.contains(e.target as Node)) {
         suggestions.classList.add('hidden');
       }
     });
@@ -1536,6 +1753,10 @@ function getStatusBadgeClass(status: string) {
     chips.forEach(chip => {
       chip.addEventListener('click', () => {
         const slug = chip.dataset.chipSlug || '';
+        const label = chip.textContent?.trim() || '';
+        input.value = label;
+        updateClearButtonVisibility();
+        suggestions.classList.add('hidden');
         handleItemSelected(slug, chip);
       });
     });
@@ -1545,7 +1766,7 @@ function getStatusBadgeClass(status: string) {
       closeBtn.addEventListener('click', () => {
         if (panel) panel.classList.add('hidden');
         chips.forEach(c => {
-          c.classList.remove('border-ink', 'text-ink', 'bg-canvas-soft-2', 'font-semibold');
+          c.classList.remove('border-blue-600', 'text-blue-600', 'dark:border-blue-400', 'dark:text-blue-400', 'bg-blue-50', 'dark:bg-blue-950/80', 'font-semibold');
           c.setAttribute('aria-pressed', 'false');
         });
       });
@@ -1553,7 +1774,11 @@ function getStatusBadgeClass(status: string) {
   }
 
   // Run on page load
-  setupInteractiveSearch();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupInteractiveSearch);
+  } else {
+    setupInteractiveSearch();
+  }
 
   // Support View Transitions
   document.addEventListener('astro:after-swap', () => {

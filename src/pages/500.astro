@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { AlertTriangle, ArrowLeft, RefreshCcw } from "@lucide/astro";
+import { AlertTriangle, ArrowLeft, RefreshCcw, Mail } from "@lucide/astro";
 ---
 
 <Layout
@@ -12,26 +12,31 @@ import { AlertTriangle, ArrowLeft, RefreshCcw } from "@lucide/astro";
 >
   <Header slot="header" />
 
-  <main class="flex-1 flex items-center justify-center py-24 px-4">
-    <div class="max-w-[520px] w-full text-center">
+  <main class="flex-1 flex items-center justify-center py-20 px-4 bg-slate-50/50 dark:bg-[#060a14] text-slate-900 dark:text-white transition-colors">
+    <div class="max-w-[560px] w-full text-center">
 
       <!-- Error graphic -->
-      <div class="relative mb-10 select-none">
-        <div class="text-[120px] md:text-[160px] font-black font-mono leading-none tracking-tight text-hairline-strong">
+      <div class="relative mb-8 select-none flex items-center justify-center">
+        <div class="text-[110px] sm:text-[150px] font-black font-mono leading-none tracking-tight text-slate-200 dark:text-slate-800/80">
           500
         </div>
         <div class="absolute inset-0 flex items-center justify-center">
-          <div class="w-20 h-20 rounded-full bg-error-soft border-2 border-error/30 flex items-center justify-center">
-            <AlertTriangle class="w-9 h-9 text-error" />
+          <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-rose-50 dark:bg-rose-950/80 border-2 border-rose-200 dark:border-rose-800 shadow-xl flex items-center justify-center">
+            <AlertTriangle class="w-10 h-10 text-rose-600 dark:text-rose-400" />
           </div>
         </div>
       </div>
 
-      <h1 class="text-2xl md:text-3xl font-semibold tracking-[-1px] text-ink mb-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-800 text-rose-700 dark:text-rose-300 text-xs font-mono font-semibold mb-4">
+        <span class="w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-400 animate-ping"></span>
+        FLIGHT TURBULENCE · STATUS 500
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
         Turbulence on our end.
       </h1>
-      <p class="text-sm text-body leading-[1.7] mb-10 max-w-[400px] mx-auto">
-        Our server hit an unexpected error. This is temporary — please reload the page or return home. If the problem persists, <a href="/contact" class="text-link hover:underline">let us know</a>.
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-[440px] mx-auto">
+        Our server encountered an unexpected error. This is temporary — please reload the page or return home. If the problem persists, <a href="/contact/" class="text-blue-600 dark:text-blue-400 hover:underline">contact our flight crew</a>.
       </p>
 
       <!-- Actions -->
@@ -39,28 +44,29 @@ import { AlertTriangle, ArrowLeft, RefreshCcw } from "@lucide/astro";
         <button
           type="button"
           onclick="window.location.reload();"
-          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 h-10 text-sm font-medium text-on-primary bg-primary hover:bg-ink rounded-sm shadow-sm transition-all cursor-pointer"
+          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 h-12 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 rounded-xl shadow-md shadow-blue-600/20 transition-all cursor-pointer"
         >
           <RefreshCcw class="w-4 h-4" />
           Reload Page
         </button>
         <a
           href="/"
-          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 h-10 text-sm font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all"
+          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 h-12 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl shadow-xs transition-all"
         >
           <ArrowLeft class="w-4 h-4" />
-          Back to Home
+          Back to Homepage
         </a>
       </div>
 
       <!-- Status hint -->
-      <div class="border border-hairline rounded-md bg-canvas-soft px-6 py-4">
-        <div class="flex items-center justify-center gap-2 text-xs text-body">
-          <span class="w-2 h-2 rounded-full bg-warning animate-pulse"></span>
-          Investigating issue — most users are unaffected.
+      <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-6 py-4 shadow-sm text-center">
+        <div class="flex items-center justify-center gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          Investigating issue — most travelers are unaffected.
         </div>
-        <p class="text-xs text-mute mt-2">
-          If you keep seeing this, email <a href="mailto:hello@bringonplane.com" class="text-link hover:underline">hello@bringonplane.com</a>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 font-mono flex items-center justify-center gap-1.5">
+          <Mail class="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+          If you keep seeing this, write to <a href="mailto:hello@bringonplane.com" class="text-blue-600 dark:text-blue-400 hover:underline">hello@bringonplane.com</a>
         </p>
       </div>
 

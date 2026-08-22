@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { Search, ArrowLeft, HelpCircle, PlaneTakeoff, List } from "@lucide/astro";
+import { Search, ArrowLeft, HelpCircle, PlaneTakeoff, List, CheckSquare, Info, Mail, Compass } from "@lucide/astro";
 ---
 
 <Layout
@@ -12,26 +12,31 @@ import { Search, ArrowLeft, HelpCircle, PlaneTakeoff, List } from "@lucide/astro
 >
   <Header slot="header" />
 
-  <main class="flex-1 flex items-center justify-center py-24 px-4">
-    <div class="max-w-[560px] w-full text-center">
+  <main class="flex-1 flex items-center justify-center py-20 px-4 bg-slate-50/50 dark:bg-[#060a14] text-slate-900 dark:text-white transition-colors">
+    <div class="max-w-[620px] w-full text-center">
 
-      <!-- Animated 404 graphic -->
-      <div class="relative mb-10 select-none">
-        <div class="text-[120px] md:text-[160px] font-black font-mono leading-none tracking-tight text-hairline-strong">
+      <!-- Animated 404 Radar Graphic -->
+      <div class="relative mb-8 select-none flex items-center justify-center">
+        <div class="text-[110px] sm:text-[150px] font-black font-mono leading-none tracking-tight text-slate-200 dark:text-slate-800/80">
           404
         </div>
         <div class="absolute inset-0 flex items-center justify-center">
-          <div class="w-20 h-20 rounded-full bg-canvas-soft border-2 border-dashed border-hairline-strong flex items-center justify-center animate-spin-slow">
-            <PlaneTakeoff class="w-8 h-8 text-mute" />
+          <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white dark:bg-slate-900 border-2 border-blue-200 dark:border-blue-800/80 shadow-xl flex items-center justify-center animate-bounce duration-1000">
+            <PlaneTakeoff class="w-10 h-10 text-blue-600 dark:text-blue-400 rotate-12" />
           </div>
         </div>
       </div>
 
-      <h1 class="text-2xl md:text-3xl font-semibold tracking-[-1px] text-ink mb-3">
-        This page didn't make it through security.
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs font-mono font-semibold mb-4">
+        <span class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-ping"></span>
+        FLIGHT PATH LOST · STATUS 404
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
+        This page didn't clear airport security.
       </h1>
-      <p class="text-sm text-body leading-[1.7] mb-10 max-w-[420px] mx-auto">
-        The page you're looking for was moved, renamed, or never existed. Don't worry — we can help you find what you need.
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-[460px] mx-auto">
+        The destination you are looking for was moved, renamed, or never existed. Search our TSA baggage directory or jump directly to top sections.
       </p>
 
       <!-- Primary actions -->
@@ -39,40 +44,46 @@ import { Search, ArrowLeft, HelpCircle, PlaneTakeoff, List } from "@lucide/astro
         <button
           type="button"
           data-open-search
-          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 h-10 text-sm font-medium text-on-primary bg-primary hover:bg-ink rounded-sm shadow-sm transition-all cursor-pointer"
+          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 h-12 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 rounded-xl shadow-md shadow-blue-600/20 transition-all cursor-pointer"
         >
           <Search class="w-4 h-4" />
-          Search TSA Items
+          Search 196+ TSA Items
         </button>
         <a
           href="/"
-          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 h-10 text-sm font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all"
+          class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 h-12 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl shadow-xs transition-all"
         >
           <ArrowLeft class="w-4 h-4" />
-          Back to Home
+          Back to Homepage
         </a>
       </div>
 
       <!-- Quick links -->
-      <div class="border border-hairline rounded-md bg-canvas-soft p-6">
-        <p class="text-xs font-mono text-mute uppercase tracking-wider mb-4">Popular Destinations</p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+      <div class="border border-slate-200 dark:border-slate-800/80 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-6 text-left shadow-sm">
+        <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4 font-semibold flex items-center gap-2">
+          <Compass class="w-4 h-4 text-blue-600 dark:text-blue-400" />
+          Popular Airport Destinations
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
           {[
-            { label: "Browse All Items", href: "/items", icon: List },
-            { label: "FAQ Guide", href: "/faq", icon: HelpCircle },
-            { label: "Packing Assistant", href: "/checklist", icon: PlaneTakeoff },
-            { label: "About Us", href: "/about", icon: PlaneTakeoff },
-            { label: "Travel Guides", href: "/guides", icon: PlaneTakeoff },
-            { label: "Contact Us", href: "/contact", icon: PlaneTakeoff },
-          ].map(l => (
-            <a
-              href={l.href}
-              class="flex items-center gap-2 px-3 py-2.5 text-xs text-body hover:text-ink hover:bg-canvas border border-transparent hover:border-hairline rounded-md transition-all"
-            >
-              <span class="w-1.5 h-1.5 rounded-full bg-link/50 flex-shrink-0"></span>
-              {l.label}
-            </a>
-          ))}
+            { label: "Browse All Items", href: "/items/page/1/", icon: List },
+            { label: "Packing Assistant", href: "/checklist/", icon: CheckSquare },
+            { label: "FAQ Guide", href: "/faq/", icon: HelpCircle },
+            { label: "Travel Guides", href: "/guides/", icon: Compass },
+            { label: "About Us", href: "/about/", icon: Info },
+            { label: "Contact Us", href: "/contact/", icon: Mail },
+          ].map(l => {
+            const Icon = l.icon;
+            return (
+              <a
+                href={l.href}
+                class="flex items-center gap-2.5 px-3.5 py-3 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/80 border border-slate-100 dark:border-slate-800 rounded-xl transition-all"
+              >
+                <Icon class="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                <span class="truncate">{l.label}</span>
+              </a>
+            );
+          })}
         </div>
       </div>
 
@@ -81,13 +92,3 @@ import { Search, ArrowLeft, HelpCircle, PlaneTakeoff, List } from "@lucide/astro
 
   <Footer slot="footer" />
 </Layout>
-
-<style>
-  @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-  .animate-spin-slow {
-    animation: spin-slow 8s linear infinite;
-  }
-</style>

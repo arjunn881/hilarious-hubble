@@ -729,7 +729,7 @@ const categories = [
 // Build the flat FAQ list for JSON-LD (all questions across all categories)
 const allFaqs = categories.flatMap(cat => cat.faqs);
 
-const currentUrl = "https://bringonplane.com/faq";
+const currentUrl = "https://bringonplane.com/faq/";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -757,10 +757,10 @@ const faqSchema = {
 <Layout
   title="TSA FAQ: What Can I Bring on a Plane? Baggage Rules for 2026"
   description="Complete FAQ: can I bring a beard trimmer, tent stakes, dumbbells, matches, protein bars, honey to Canada, contact solution, candles, box cutters, electric shaver, dog food, and more on a plane? Updated 2026 TSA rules for carry-on and checked bags."
+  canonicalURL={currentUrl}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
-  <link rel="canonical" href={currentUrl} slot="head" />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} slot="head" />
 
   <Header slot="header" />
 

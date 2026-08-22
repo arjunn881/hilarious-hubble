@@ -275,7 +275,7 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
             <div class="flex flex-col">
               ${recent.map((item, idx) => `
                 <a 
-                  href="/items/${item.slug}" 
+                  href="/items/${item.slug}/" 
                   class="search-result-item flex items-center justify-between px-3 py-2.5 rounded-sm hover:bg-canvas-soft-2 text-sm text-ink transition-colors"
                   data-slug="${item.slug}"
                   data-name="${item.name}"
@@ -303,7 +303,7 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
           <div class="flex flex-col">
             ${popularSearches.map((item, idx) => `
               <a 
-                href="/items/${item.slug}" 
+                href="/items/${item.slug}/" 
                 class="search-result-item flex items-center justify-between px-3 py-2.5 rounded-sm hover:bg-canvas-soft-2 text-sm text-ink transition-colors"
                 data-slug="${item.slug}"
                 data-name="${item.name}"
@@ -362,7 +362,7 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
           
           return `
             <a 
-              href="/items/${item.slug}" 
+              href="/items/${item.slug}/" 
               class="search-result-item flex items-center justify-between px-3 py-2 rounded-sm hover:bg-canvas-soft-2 border-l-2 border-transparent transition-all"
               data-slug="${item.slug}"
               data-name="${item.name}"
@@ -486,7 +486,7 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
               item_name: name
             });
           }
-          window.location.href = `/items/${slug}`;
+          window.location.href = `/items/${slug}/`;
         }
       } 
       // If no activeIndex but matching results, select the first result
@@ -500,7 +500,7 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
             item_name: item.name
           });
         }
-        window.location.href = `/items/${item.slug}`;
+        window.location.href = `/items/${item.slug}/`;
       }
     }
   });

@@ -2,13 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import InstagramIcon from "../components/InstagramIcon.astro";
 import { Mail, MapPin, Clock, MessageSquare, Send, HelpCircle, ExternalLink, CheckCircle2, XCircle } from "@lucide/astro";
 ---
 
 <Layout
   title="Contact BringOnPlane — Get Help, Report an Error, or Partner With Us"
   description="Contact the BringOnPlane team to report incorrect TSA rules, suggest new items, ask about partnerships, or get travel packing help."
-  canonicalURL="https://bringonplane.com/contact"
+  canonicalURL="https://bringonplane.com/contact/"
   keywords="contact bringonplane, report tsa rule error, travel packing help, baggage rules question"
 >
   <Header slot="header" />
@@ -37,21 +38,45 @@ import { Mail, MapPin, Clock, MessageSquare, Send, HelpCircle, ExternalLink, Che
           <div>
             <h2 class="text-lg font-semibold tracking-[-0.5px] text-ink mb-5">Contact Information</h2>
             <div class="space-y-4">
-              {[
-                { icon: Mail, label: "Email", value: "hello@bringonplane.com", href: "mailto:hello@bringonplane.com" },
-                { icon: MessageSquare, label: "Report an Error", value: "errors@bringonplane.com", href: "mailto:errors@bringonplane.com" },
-                { icon: ExternalLink, label: "Partnerships", value: "partners@bringonplane.com", href: "mailto:partners@bringonplane.com" },
-              ].map(c => (
-                <a href={c.href} class="flex items-start gap-4 p-4 border border-hairline rounded-md hover:border-link hover:shadow-sm transition-all group bg-canvas">
-                  <div class="w-9 h-9 rounded-md bg-link-bg-soft text-link border border-link/15 flex items-center justify-center flex-shrink-0">
-                    <c.icon class="w-4.5 h-4.5" />
-                  </div>
-                  <div>
-                    <p class="text-[11px] font-mono text-mute uppercase tracking-wider mb-0.5">{c.label}</p>
-                    <p class="text-sm font-medium text-ink group-hover:text-link transition-colors">{c.value}</p>
-                  </div>
-                </a>
-              ))}
+              <a href="mailto:hello@bringonplane.com" class="flex items-start gap-4 p-4 border border-hairline rounded-md hover:border-link hover:shadow-sm transition-all group bg-canvas">
+                <div class="w-9 h-9 rounded-md bg-link-bg-soft text-link border border-link/15 flex items-center justify-center flex-shrink-0">
+                  <Mail class="w-4.5 h-4.5" />
+                </div>
+                <div>
+                  <p class="text-[11px] font-mono text-mute uppercase tracking-wider mb-0.5">Email</p>
+                  <p class="text-sm font-medium text-ink group-hover:text-link transition-colors">hello@bringonplane.com</p>
+                </div>
+              </a>
+
+              <a href="https://www.instagram.com/bringonplane/" target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 p-4 border border-hairline rounded-md hover:border-pink-500/50 hover:shadow-sm transition-all group bg-canvas">
+                <div class="w-9 h-9 rounded-md bg-pink-500/10 text-pink-500 border border-pink-500/20 flex items-center justify-center flex-shrink-0">
+                  <InstagramIcon class="w-4.5 h-4.5 text-pink-500" />
+                </div>
+                <div>
+                  <p class="text-[11px] font-mono text-mute uppercase tracking-wider mb-0.5">Instagram</p>
+                  <p class="text-sm font-medium text-ink group-hover:text-pink-500 transition-colors inline-flex items-center gap-1">@bringonplane ↗</p>
+                </div>
+              </a>
+
+              <a href="mailto:errors@bringonplane.com" class="flex items-start gap-4 p-4 border border-hairline rounded-md hover:border-link hover:shadow-sm transition-all group bg-canvas">
+                <div class="w-9 h-9 rounded-md bg-link-bg-soft text-link border border-link/15 flex items-center justify-center flex-shrink-0">
+                  <MessageSquare class="w-4.5 h-4.5" />
+                </div>
+                <div>
+                  <p class="text-[11px] font-mono text-mute uppercase tracking-wider mb-0.5">Report an Error</p>
+                  <p class="text-sm font-medium text-ink group-hover:text-link transition-colors">errors@bringonplane.com</p>
+                </div>
+              </a>
+
+              <a href="mailto:partners@bringonplane.com" class="flex items-start gap-4 p-4 border border-hairline rounded-md hover:border-link hover:shadow-sm transition-all group bg-canvas">
+                <div class="w-9 h-9 rounded-md bg-link-bg-soft text-link border border-link/15 flex items-center justify-center flex-shrink-0">
+                  <ExternalLink class="w-4.5 h-4.5" />
+                </div>
+                <div>
+                  <p class="text-[11px] font-mono text-mute uppercase tracking-wider mb-0.5">Partnerships</p>
+                  <p class="text-sm font-medium text-ink group-hover:text-link transition-colors">partners@bringonplane.com</p>
+                </div>
+              </a>
             </div>
           </div>
 

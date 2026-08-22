@@ -20,8 +20,9 @@ const sortedPosts = Object.entries(posts)
 ---
 
 <Layout 
-  title="TSA Travel Packing Guides & Regulations | Bring On Plane"
-  description="Read comprehensive guides on TSA baggage rules: the 3-1-1 liquids rule, traveling with lithium battery cells, packing medication, and more."
+  title="TSA Travel Packing Guides & Regulations (2026) | Bring On Plane"
+  description="Read comprehensive guides on 2026 TSA baggage rules: the 3-1-1 liquids rule, traveling with lithium battery cells, packing medication, and more."
+  canonicalURL="https://bringonplane.com/guides/"
 >
   <Header slot="header" />
 
@@ -42,7 +43,7 @@ const sortedPosts = Object.entries(posts)
       </div>
       <div>
         <h1 class="text-3xl font-semibold tracking-[-1.2px] text-ink">
-          Travel Packing Guides
+          Travel Packing Guides (2026)
         </h1>
         <p class="text-sm text-body mt-1">
           Detailed explanations of security rules, hazard policies, and packing instructions.
@@ -56,7 +57,7 @@ const sortedPosts = Object.entries(posts)
         const slug = post.slug;
         return (
           <a
-            href={`/guide/${slug}`}
+            href={`/guide/${slug}/`}
             class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-6 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
           >
             <div class="flex items-center gap-3 mb-2 flex-wrap">

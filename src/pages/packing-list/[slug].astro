@@ -308,7 +308,7 @@ const seoDescription = `Complete ${template.name.toLowerCase()} packing checklis
 // Schema JSON-LD blocks
 const breadcrumbItems = [
   { label: "Home", href: "/" },
-  { label: "Packing Assistant", href: "/checklist" },
+  { label: "Packing Assistant", href: "/checklist/" },
   { label: `${template.name} Checklist` }
 ];
 
@@ -319,7 +319,7 @@ const breadcrumbSchema = {
     "@type": "ListItem",
     "position": idx + 1,
     "name": item.label,
-    "item": item.href ? `https://bringonplane.com${item.href}` : currentUrl
+    "item": item.href ? `https://bringonplane.com${item.href.endsWith('/') ? item.href : item.href + '/'}` : currentUrl
   }))
 };
 

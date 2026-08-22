@@ -87,8 +87,8 @@ const currentYear = new Date().getFullYear();
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "Categories", href: "/#categories" },
-  { label: item.category, href: `/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}` },
-  { label: item.name, href: `/items/${item.slug}` },
+  { label: item.category, href: `/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}/` },
+  { label: item.name, href: `/items/${item.slug}/` },
   { label: `${airline.name} Rules` }
 ];
 
@@ -96,7 +96,7 @@ const relatedWidgetGroups = [
   { title: "Airline Rules", links: getAirlineCombinationsForItem(item.slug, 5) },
   { title: "Customs & Country Rules", links: getCountryCombinationsForItem(item.slug, 5) },
   { title: "Popular Guides", links: getPopularGuides(4) },
-  { title: "Related Categories", links: getRelatedCategories(item.category, 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) }
+  { title: "Related Categories", links: getRelatedCategories(item.category, 4).map(c => ({ title: c.name, url: `/category/${c.slug}/` })) }
 ];
 
 // Status Config

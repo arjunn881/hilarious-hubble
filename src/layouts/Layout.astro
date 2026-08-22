@@ -20,7 +20,7 @@ const {
   description = "Type any item to instantly see if it goes in your carry-on or checked bag. Free TSA tool — razors, liquids, power banks, food & more. Try it now.",
   image = "/og-image.png",
   imageAlt = "BringOnPlane — TSA Baggage Rules & Smart Packing Assistant",
-  canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://bringonplane.com").href,
+  canonicalURL,
   prevURL,
   nextURL,
   type = "website",
@@ -28,7 +28,19 @@ const {
   noIndex = false,
 } = Astro.props;
 
-const resolvedImage = new URL(image, Astro.site || "https://bringonplane.com").href;
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : "https://bringonplane.com";
+
+function normalizeCanonical(rawUrl?: string): string {
+  const base = `${siteUrl}/`;
+  const parsed = rawUrl ? new URL(rawUrl, base) : new URL(Astro.url.pathname, base);
+  if (!parsed.pathname.endsWith('/') && !/\.[a-zA-Z0-9]+$/.test(parsed.pathname)) {
+    parsed.pathname = `${parsed.pathname}/`;
+  }
+  return parsed.href;
+}
+
+const finalCanonicalURL = normalizeCanonical(canonicalURL);
+const resolvedImage = new URL(image, `${siteUrl}/`).href;
 ---
 
 <!doctype html>
@@ -79,7 +91,7 @@ const resolvedImage = new URL(image, Astro.site || "https://bringonplane.com").h
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL} />
+    <link rel="canonical" href={finalCanonicalURL} />
     <meta name="robots" content={typeof noIndex === 'string' ? noIndex : (noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1")} />
     <meta name="author" content="BringOnPlane" />
     <meta name="copyright" content="BringOnPlane" />
@@ -93,7 +105,7 @@ const resolvedImage = new URL(image, Astro.site || "https://bringonplane.com").h
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="BringOnPlane" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:url" content={finalCanonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={resolvedImage} />
@@ -109,7 +121,7 @@ const resolvedImage = new URL(image, Astro.site || "https://bringonplane.com").h
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@bringonplane" />
     <meta name="twitter:creator" content="@bringonplane" />
-    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:url" content={finalCanonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={resolvedImage} />
@@ -139,6 +151,18 @@ const resolvedImage = new URL(image, Astro.site || "https://bringonplane.com").h
 
       gtag('config', 'G-PYTY68WGKQ');
     </script>
+
+    <!-- Organization schema with social profiles -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BringOnPlane",
+      "url": "https://bringonplane.com",
+      "logo": "https://bringonplane.com/logo.png",
+      "sameAs": [
+        "https://www.instagram.com/bringonplane/"
+      ]
+    })} />
 
     <!-- SoftwareApplication schema: signals to Google this is an interactive tool -->
     <script type="application/ld+json" is:inline set:html={JSON.stringify({

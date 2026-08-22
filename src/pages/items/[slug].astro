@@ -51,7 +51,7 @@ const itemFaqs = getExpandedItemFAQs(item);
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "Categories", href: "/#categories" },
-  { label: item.category, href: `/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}` },
+  { label: item.category, href: `/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}/` },
   { label: item.name }
 ];
 
@@ -59,7 +59,7 @@ const relatedWidgetGroups = [
   { title: "Airline Rules", links: getAirlineCombinationsForItem(item.slug, 5) },
   { title: "Customs & Country Rules", links: getCountryCombinationsForItem(item.slug, 5) },
   { title: "Popular Guides", links: getPopularGuides(4) },
-  { title: "Related Categories", links: getRelatedCategories(item.category, 4).map(c => ({ title: c.name, url: `/category/${c.slug}` })) }
+  { title: "Related Categories", links: getRelatedCategories(item.category, 4).map(c => ({ title: c.name, url: `/category/${c.slug}/` })) }
 ];
 
 // Strict Rule Status config mapping
@@ -221,7 +221,7 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
 <Layout 
   title={seoTitle}
   description={seoDescription}
-  canonicalURL={`https://bringonplane.com/items/${item.slug}`}
+  canonicalURL={`https://bringonplane.com/items/${item.slug}/`}
 >
   <!-- Inject JSON-LD structured data in the page body -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
@@ -231,7 +231,7 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
         "@type": "Thing",
         "name": item.name,
         "description": item.description,
-        "url": `https://bringonplane.com/items/${item.slug}`,
+        "url": `https://bringonplane.com/items/${item.slug}/`,
         "alternateName": item.aliases,
         "category": item.category,
         "keywords": item.keywords.join(", "),
@@ -294,7 +294,7 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
     <header class="mb-10">
       <div class="flex flex-wrap items-center gap-3 mb-3">
         <a 
-          href={`/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}`}
+          href={`/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}/`}
           class="font-mono text-[10px] font-semibold text-mute hover:text-link uppercase tracking-wider bg-canvas-soft-2 border border-hairline px-2 py-0.5 rounded-xs hover:border-link transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-link"
         >
           {item.category}
