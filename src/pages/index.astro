@@ -204,53 +204,74 @@ function getStatusBadgeClass(status: string) {
     ]
   })} />
 
-  <!-- Header Slot -->
-  <Header slot="header" />
+  <!-- Header Slot (Transparent on Landing Page) -->
+  <Header slot="header" transparent={true} />
 
   <!-- ════════════════════════════════════════════════════════════════
        HERO — World-Class Aviation UI/UX (Dual Light/Dark Theme Engine)
   ════════════════════════════════════════════════════════════════ -->
-  <section class="relative overflow-hidden bg-gradient-to-b from-sky-50/90 via-blue-50/40 to-slate-50/80 dark:from-[#060a14] dark:via-[#090e1a] dark:to-[#070b14] text-slate-900 dark:text-white border-b border-slate-200/90 dark:border-slate-800/80 max-w-full transition-colors" id="hero">
+  <section class="relative overflow-hidden bg-slate-900 text-slate-900 dark:text-white border-b border-slate-200/90 dark:border-slate-800/80 max-w-full transition-colors -mt-[92px] sm:-mt-[98px] md:-mt-[100px] pt-[92px] sm:pt-[98px] md:pt-[100px]" id="hero">
     
+    <!-- Hero Aviation Photography Background Image (Vivid & Responsive) -->
+    <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+      <img 
+        src="/hero-aviation-bg.jpg" 
+        alt="" 
+        class="w-full h-full object-cover object-[72%_center] sm:object-[center_35%] md:object-center transform-gpu opacity-95 dark:opacity-75 transition-opacity duration-300"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+
+    <!-- Dual Adaptive Theme Overlays for Contrast & High Image Visibility -->
+    <!-- Light mode overlay: gentle sky depth at top, soft natural blend at bottom -->
+    <div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-sky-950/45 via-sky-900/10 to-slate-100/80 dark:hidden" aria-hidden="true"></div>
+    
+    <!-- Dark mode overlay: deep midnight aviation gradient -->
+    <div class="absolute inset-0 pointer-events-none hidden dark:block bg-gradient-to-b from-[#060a14]/75 via-[#090e1a]/60 to-[#070b14]/90" aria-hidden="true"></div>
+
     <!-- Ambient Radial Mesh Glow -->
-    <div class="absolute inset-0 pointer-events-none opacity-40 dark:opacity-30 select-none" aria-hidden="true" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(59, 130, 246, 0.14), transparent 70%);"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-30 dark:opacity-35 select-none" aria-hidden="true" style="background: radial-gradient(ellipse 70% 50% at 50% 15%, rgba(59, 130, 246, 0.25), transparent 70%);"></div>
 
     <!-- Animated Radar Scanner & Circular Vector Grid -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
-      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[620px] sm:w-[800px] h-[620px] sm:h-[800px] rounded-full border border-blue-500/10 dark:border-blue-500/20 opacity-40 flex items-center justify-center">
-        <div class="w-[420px] sm:w-[580px] h-[420px] sm:h-[580px] rounded-full border border-blue-500/10 dark:border-blue-500/20 flex items-center justify-center">
-          <div class="w-[260px] sm:w-[380px] h-[260px] sm:h-[380px] rounded-full border border-blue-500/10 dark:border-blue-500/20"></div>
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[620px] sm:w-[800px] h-[620px] sm:h-[800px] rounded-full border border-blue-400/15 dark:border-blue-500/20 opacity-40 flex items-center justify-center">
+        <div class="w-[420px] sm:w-[580px] h-[420px] sm:h-[580px] rounded-full border border-blue-400/15 dark:border-blue-500/20 flex items-center justify-center">
+          <div class="w-[260px] sm:w-[380px] h-[260px] sm:h-[380px] rounded-full border border-blue-400/15 dark:border-blue-500/20"></div>
         </div>
-        <div class="absolute inset-0 animate-radar-sweep opacity-15 dark:opacity-20 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(37,99,235,0.3)_0deg,transparent_60deg)] rounded-full"></div>
+        <div class="absolute inset-0 animate-radar-sweep opacity-20 dark:opacity-20 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(37,99,235,0.35)_0deg,transparent_60deg)] rounded-full"></div>
       </div>
     </div>
 
     <!-- Main Hero Container -->
     <div class="relative z-10 max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-14 text-center flex flex-col items-center">
 
-      <!-- Floating Eyebrow Badge with Live Beacon -->
-      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 dark:bg-slate-900/90 border border-blue-200/90 dark:border-blue-800/80 text-blue-700 dark:text-blue-300 mb-6 select-none shadow-sm shadow-blue-500/5 backdrop-blur-md animate-float-gentle max-w-full">
+      <!-- Floating Eyebrow Badge with Live Beacon (Transparent Floating Pill) -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/15 dark:bg-slate-900/25 border border-white/40 dark:border-white/15 text-white mb-6 select-none shadow-xs backdrop-blur-xs animate-float-gentle max-w-full">
         <span class="relative flex h-2 w-2 flex-shrink-0">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600 dark:bg-blue-400"></span>
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-400"></span>
         </span>
-        <span class="font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-wider truncate">Official TSA · FAA · IATA Baggage Directory 2026</span>
+        <span class="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider truncate text-white drop-shadow-xs">Official TSA · FAA · IATA Baggage Directory 2026</span>
       </div>
 
       <!-- Main Punch Headline -->
-      <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] text-slate-900 dark:text-white mb-4 w-full max-w-[960px]">
-        Can I Bring This <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 dark:from-blue-400 dark:via-sky-300 dark:to-indigo-300">On A Plane?</span>
+      <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] text-white mb-4 w-full max-w-[960px] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
+        Can I Bring This <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-300 via-blue-200 to-amber-200">On A Plane?</span>
       </h1>
 
-      <!-- Refined Subtitle -->
-      <p class="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 w-full max-w-[640px] mx-auto mb-8 font-normal leading-relaxed">
-        Instantly search <strong>196+ travel items</strong> to check official Carry-On and Checked Baggage rules before heading to airport security.
+      <!-- Refined Subtitle with Backdrop Clarity -->
+      <p class="text-sm sm:text-base md:text-lg text-white/95 dark:text-slate-200 w-full max-w-[640px] mx-auto mb-8 font-medium leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)]">
+        Instantly search <strong class="text-white font-bold underline decoration-sky-400 decoration-2 underline-offset-2">196+ travel items</strong> to check official Carry-On and Checked Baggage rules before heading to airport security.
       </p>
 
-      <!-- Large Tactile Search Bar with Focus Glow -->
+      <!-- Large Tactile Search Bar with Focus Glow (Compact Height) -->
       <div class="w-full max-w-[640px] relative mb-6 group" id="homepage-search-container">
-        <div class="absolute inset-y-0 left-4 sm:left-5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 transition-colors z-10">
-          <Search class="w-5 h-5" aria-hidden="true" />
+        <!-- Ambient Focus Aura around Search Bar -->
+        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600/35 via-sky-500/35 to-indigo-600/35 rounded-2xl blur-md opacity-80 group-focus-within:opacity-100 group-hover:opacity-100 transition-opacity pointer-events-none" aria-hidden="true"></div>
+
+        <div class="absolute inset-y-0 left-3.5 sm:left-4 flex items-center pointer-events-none text-slate-500 dark:text-slate-400 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 transition-colors z-10">
+          <Search class="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
         </div>
         
         <input 
@@ -259,14 +280,14 @@ function getStatusBadgeClass(status: string) {
           placeholder="Search any item (e.g. Razor, Power Bank, Shampoo)..." 
           autocomplete="off" 
           spellcheck="false"
-          class="w-full h-14 sm:h-16 pl-12 sm:pl-14 pr-24 sm:pr-28 bg-white dark:bg-slate-900/95 border-2 border-slate-200/90 dark:border-slate-700/80 hover:border-slate-300 dark:hover:border-slate-600 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-4 focus:ring-blue-500/15 rounded-2xl text-sm sm:text-base text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-xl shadow-blue-900/5 dark:shadow-2xl outline-none transition-all"
+          class="relative z-1 w-full h-12 sm:h-13 pl-11 sm:pl-12 pr-22 sm:pr-24 bg-white dark:bg-slate-900/98 border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 focus:border-blue-600 dark:focus:border-blue-400 focus:ring-4 focus:ring-blue-500/25 rounded-xl sm:rounded-2xl text-sm sm:text-base text-slate-950 dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-400 shadow-2xl shadow-blue-950/20 dark:shadow-2xl outline-none transition-all"
         />
         
         <!-- Clear Button -->
         <button 
           type="button" 
           id="homepage-search-clear" 
-          class="absolute inset-y-0 right-16 sm:right-20 flex items-center text-slate-400 hover:text-slate-700 dark:hover:text-white hidden cursor-pointer px-2 transition-colors z-10" 
+          class="absolute inset-y-0 right-14 sm:right-16 flex items-center text-slate-400 hover:text-slate-700 dark:hover:text-white hidden cursor-pointer px-2 transition-colors z-10" 
           aria-label="Clear search"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -276,11 +297,11 @@ function getStatusBadgeClass(status: string) {
         </button>
 
         <!-- KBD tag / Search Trigger Pill -->
-        <div class="absolute inset-y-0 right-2 sm:right-3 flex items-center gap-1.5 z-10">
+        <div class="absolute inset-y-0 right-1.5 sm:right-2 flex items-center gap-1.5 z-10">
           <button
             type="button"
             id="homepage-search-submit"
-            class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white rounded-xl text-xs font-semibold shadow-xs transition-all cursor-pointer flex items-center gap-1"
+            class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white rounded-lg sm:rounded-xl text-xs font-bold shadow-md transition-all cursor-pointer flex items-center gap-1"
             aria-label="Search items"
           >
             <span>Search</span>
@@ -291,32 +312,32 @@ function getStatusBadgeClass(status: string) {
         <!-- Suggestions Dropdown -->
         <div 
           id="homepage-suggestions" 
-          class="absolute top-[calc(100%+8px)] left-0 right-0 z-30 hidden bg-white/98 dark:bg-slate-900/98 backdrop-blur-xl border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl overflow-hidden max-h-[340px] overflow-y-auto text-left transition-all divide-y divide-slate-100 dark:divide-slate-800"
+          class="absolute top-[calc(100%+6px)] left-0 right-0 z-30 hidden bg-white/98 dark:bg-slate-900/98 backdrop-blur-xl border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl overflow-hidden max-h-[340px] overflow-y-auto text-left transition-all divide-y divide-slate-100 dark:divide-slate-800"
         >
           <!-- Suggestions populated dynamically -->
         </div>
       </div>
 
-      <!-- Quick Answer & Rules Guide (Glassmorphic Status Bar) -->
-      <div class="w-full max-w-[640px] bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 backdrop-blur-md rounded-2xl p-3 sm:p-4 mb-6 shadow-sm flex flex-wrap items-center justify-center gap-2 sm:gap-3 transition-colors">
-        <span class="text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mr-1">
+      <!-- Quick Answer & Rules Guide (Transparent Floating Badges) -->
+      <div class="w-full max-w-[640px] bg-transparent flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-6">
+        <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-1.5 mr-1 drop-shadow-xs">
           <ShieldCheck class="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
           <span>Verdicts:</span>
         </span>
-        <span class="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-700/60 text-emerald-800 dark:text-emerald-300 text-xs font-medium flex items-center gap-1.5 shadow-2xs">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> ✓ Allowed
+        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/15 dark:bg-emerald-500/20 border border-emerald-600/30 dark:border-emerald-400/40 text-emerald-950 dark:text-emerald-300 text-xs font-bold flex items-center gap-1.5 backdrop-blur-xs">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400"></span> ✓ Allowed
         </span>
-        <span class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/80 border border-amber-200 dark:border-amber-700/60 text-amber-800 dark:text-amber-300 text-xs font-medium flex items-center gap-1.5 shadow-2xs">
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> ⚠ Restricted
+        <span class="px-2.5 py-1 rounded-lg bg-amber-500/15 dark:bg-amber-500/20 border border-amber-600/30 dark:border-amber-400/40 text-amber-950 dark:text-amber-300 text-xs font-bold flex items-center gap-1.5 backdrop-blur-xs">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-600 dark:bg-amber-400"></span> ⚠ Restricted
         </span>
-        <span class="px-2.5 py-1 rounded-lg bg-rose-50 dark:bg-rose-950/80 border border-rose-200 dark:border-rose-700/60 text-rose-800 dark:text-rose-300 text-xs font-medium flex items-center gap-1.5 shadow-2xs">
-          <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> ✗ Prohibited
+        <span class="px-2.5 py-1 rounded-lg bg-rose-500/15 dark:bg-rose-500/20 border border-rose-600/30 dark:border-rose-400/40 text-rose-950 dark:text-rose-300 text-xs font-bold flex items-center gap-1.5 backdrop-blur-xs">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-600 dark:bg-rose-400"></span> ✗ Prohibited
         </span>
       </div>
 
       <!-- Popular Searches Chips with Micro-Animations -->
       <div class="w-full max-w-[640px] mb-8">
-        <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono mb-2.5 text-center sm:text-left uppercase tracking-wider font-semibold">Popular Searches</p>
+        <p class="text-[11px] text-slate-900 dark:text-white font-mono mb-2.5 text-center sm:text-left uppercase tracking-wider font-extrabold drop-shadow-xs">Popular Searches</p>
         <div class="flex flex-wrap justify-center sm:justify-start gap-2" id="popular-chips" role="list">
           {popularItems.map((chip, i) => (
             <button
@@ -324,7 +345,7 @@ function getStatusBadgeClass(status: string) {
               role="listitem"
               data-chip-index={i}
               data-chip-slug={chip.slug}
-              class="popular-chip card-hover-lift px-3.5 py-1.5 rounded-xl border border-slate-200/90 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400 dark:hover:border-blue-600 shadow-xs cursor-pointer transition-all duration-200 select-none active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              class="popular-chip card-hover-lift px-3.5 py-1.5 rounded-xl border border-white/40 dark:border-white/15 bg-white/20 dark:bg-slate-900/30 backdrop-blur-xs text-xs font-bold text-slate-900 dark:text-white hover:bg-white/40 dark:hover:bg-slate-900/50 hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-300 shadow-2xs cursor-pointer transition-all duration-200 select-none active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               aria-pressed="false"
             >
               {chip.label}
@@ -333,32 +354,32 @@ function getStatusBadgeClass(status: string) {
         </div>
       </div>
 
-      <!-- Quick Bento Category Grid -->
-      <div class="w-full max-w-[840px] pt-6 border-t border-slate-200/90 dark:border-slate-800/80">
+      <!-- Quick Bento Category Grid (Transparent Glassmorphic Cards) -->
+      <div class="w-full max-w-[840px] pt-6 border-t border-slate-300/60 dark:border-slate-800/80">
         <div class="flex items-center justify-between mb-3 px-1">
-          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono uppercase tracking-wider font-semibold">Top Categories</p>
-          <a href="/items/page/1/" class="text-xs font-mono font-semibold text-blue-600 dark:text-blue-400 hover:underline">View All 196+ Items &rarr;</a>
+          <p class="text-[11px] text-slate-900 dark:text-white font-mono uppercase tracking-wider font-extrabold drop-shadow-xs">Top Categories</p>
+          <a href="/items/page/1/" class="text-xs font-mono font-bold text-blue-700 dark:text-blue-400 hover:underline">View All 196+ Items &rarr;</a>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5">
           {[
-            { label: "Liquids (3-1-1)", slug: "liquids", bg: "bg-blue-50 dark:bg-blue-950/40", border: "border-blue-200 dark:border-blue-800/60", text: "text-blue-700 dark:text-blue-300", iconBg: "bg-blue-600 text-white", icon: Droplet },
-            { label: "Electronics", slug: "electronics", bg: "bg-purple-50 dark:bg-purple-950/40", border: "border-purple-200 dark:border-purple-800/60", text: "text-purple-700 dark:text-purple-300", iconBg: "bg-purple-600 text-white", icon: Laptop },
-            { label: "Food & Snacks", slug: "food", bg: "bg-emerald-50 dark:bg-emerald-950/40", border: "border-emerald-200 dark:border-emerald-800/60", text: "text-emerald-700 dark:text-emerald-300", iconBg: "bg-emerald-600 text-white", icon: Apple },
-            { label: "Medicine", slug: "medicine", bg: "bg-rose-50 dark:bg-rose-950/40", border: "border-rose-200 dark:border-rose-800/60", text: "text-rose-700 dark:text-rose-300", iconBg: "bg-rose-600 text-white", icon: Activity },
-            { label: "Tools & Knives", slug: "tools", bg: "bg-amber-50 dark:bg-amber-950/40", border: "border-amber-200 dark:border-amber-800/60", text: "text-amber-800 dark:text-amber-300", iconBg: "bg-amber-600 text-white", icon: Wrench },
-            { label: "Personal Care", slug: "personal-care", bg: "bg-pink-50 dark:bg-pink-950/40", border: "border-pink-200 dark:border-pink-800/60", text: "text-pink-700 dark:text-pink-300", iconBg: "bg-pink-600 text-white", icon: Sparkles },
+            { label: "Liquids (3-1-1)", slug: "liquids", iconBg: "bg-blue-600 text-white", icon: Droplet },
+            { label: "Electronics", slug: "electronics", iconBg: "bg-purple-600 text-white", icon: Laptop },
+            { label: "Food & Snacks", slug: "food", iconBg: "bg-emerald-600 text-white", icon: Apple },
+            { label: "Medicine", slug: "medicine", iconBg: "bg-rose-600 text-white", icon: Activity },
+            { label: "Tools & Knives", slug: "tools", iconBg: "bg-amber-600 text-white", icon: Wrench },
+            { label: "Personal Care", slug: "personal-care", iconBg: "bg-pink-600 text-white", icon: Sparkles },
           ].map(cat => {
             const CatIcon = cat.icon;
             return (
               <a
                 href={`/category/${cat.slug}/`}
-                class={`card-hover-lift flex flex-col items-center gap-2 p-3 rounded-2xl border ${cat.bg} ${cat.border} ${cat.text} text-center cursor-pointer transition-all duration-200 select-none shadow-xs group`}
+                class="card-hover-lift flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/20 dark:bg-slate-900/30 hover:bg-white/40 dark:hover:bg-slate-900/50 border border-white/40 dark:border-white/10 backdrop-blur-xs text-slate-900 dark:text-white text-center cursor-pointer transition-all duration-200 select-none shadow-xs group"
               >
                 <div class={`w-8 h-8 rounded-xl ${cat.iconBg} flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform`}>
                   <CatIcon class="w-4 h-4" />
                 </div>
-                <span class="text-xs font-semibold leading-tight">{cat.label}</span>
+                <span class="text-xs font-bold leading-tight">{cat.label}</span>
               </a>
             );
           })}
@@ -367,117 +388,129 @@ function getStatusBadgeClass(status: string) {
 
     </div>
 
-    <!-- ── Inline Search Result Panel (hidden until a chip/search clicked) ── -->
+    <!-- ── Search Result Popup Modal (Fixed Overlay Dialog) ── -->
     <div
-      id="hero-result-panel"
-      class="hidden w-full"
-      aria-live="polite"
-      aria-label="Search result"
+      id="hero-result-modal"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="result-title-text"
     >
-      <div class="max-w-[720px] mx-auto px-4 pb-14 animate-fade-in">
-        <!-- Result Card -->
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden text-left transition-colors">
+      <!-- Backdrop Dimmer Overlay -->
+      <div 
+        id="hero-result-backdrop" 
+        class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity duration-200 cursor-pointer" 
+        aria-hidden="true"
+      ></div>
 
-          <!-- ── BIG BINARY YES/NO VERDICT BANNER (Feature 2) ── -->
-          <div id="result-verdict-banner" class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 bg-slate-50/80 dark:bg-slate-950/60">
-            <div class="flex items-center gap-3">
-              <span id="result-verdict-icon" class="flex-shrink-0"></span>
-              <div>
-                <p class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-0.5">Carry-On Answer</p>
-                <p id="result-verdict-text" class="text-2xl font-extrabold tracking-tight">Loading…</p>
-              </div>
+      <!-- Modal Card Content -->
+      <div class="relative z-10 w-full max-w-[620px] max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 border-2 border-slate-300/80 dark:border-slate-700 rounded-3xl shadow-2xl text-left transition-all">
+
+        <!-- ── BIG BINARY YES/NO VERDICT BANNER ── -->
+        <div id="result-verdict-banner" class="sticky top-0 z-20 px-6 py-4.5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 bg-emerald-50 dark:bg-emerald-950/90 backdrop-blur-md">
+          <div class="flex items-center gap-3.5">
+            <span id="result-verdict-icon" class="flex-shrink-0"></span>
+            <div>
+              <p class="text-[10px] font-mono text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold mb-0.5">Carry-On Verdict</p>
+              <p id="result-verdict-text" class="text-xl sm:text-2xl font-black tracking-tight text-slate-950 dark:text-white">Loading…</p>
             </div>
+          </div>
+          <button
+            type="button"
+            id="result-close-btn"
+            aria-label="Close result"
+            class="p-2 rounded-xl bg-slate-200/80 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white transition-colors flex-shrink-0 cursor-pointer shadow-xs"
+          >
+            <X class="w-5 h-5" aria-hidden="true" />
+          </button>
+        </div>
+
+        <!-- Card Header -->
+        <div class="px-6 pt-5 pb-4 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3.5 bg-white dark:bg-slate-900">
+          <span id="result-title-icon-container" class="text-blue-600 dark:text-blue-400 flex-shrink-0 p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800"></span>
+          <div>
+            <p class="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-wider font-bold" id="result-category">Category</p>
+            <h2 class="text-lg sm:text-xl font-bold tracking-tight text-slate-950 dark:text-white" id="result-name">
+              <span id="result-title-text">Item Name</span>
+            </h2>
+          </div>
+        </div>
+
+        <!-- Carry-on / Checked rows -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-900">
+          <!-- Carry-on -->
+          <div class="px-6 py-4">
+            <p class="text-xs font-mono text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold mb-2">Carry-on (cabin)</p>
+            <div id="result-carryon-badge-container"></div>
+          </div>
+          <!-- Checked Bag -->
+          <div class="px-6 py-4">
+            <p class="text-xs font-mono text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold mb-2">Checked bag (hold)</p>
+            <div id="result-checked-badge-container"></div>
+          </div>
+        </div>
+
+        <!-- Status / Reason Row -->
+        <div class="px-6 py-4.5 bg-slate-50 dark:bg-slate-950/70 border-t border-slate-200 dark:border-slate-800">
+          <p class="text-xs font-mono text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold mb-2">TSA Official Rule</p>
+          <div class="flex items-start gap-3">
+            <span id="result-status-icon-container" class="flex-shrink-0 mt-0.5"></span>
+            <p class="text-sm text-slate-900 dark:text-slate-100 font-medium leading-relaxed" id="result-reason">Status details…</p>
+          </div>
+        </div>
+
+        <!-- Quick Summary + CTA -->
+        <div class="px-6 py-5 bg-white dark:bg-slate-900">
+          <p class="text-xs font-mono text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold mb-3.5">Quick Summary</p>
+          
+          <div class="space-y-2.5 mb-5 text-sm text-slate-900 dark:text-slate-100 font-medium">
+            <div class="flex items-center gap-2.5">
+              <span id="result-summary-carryon-icon-container"></span>
+              <span class="text-slate-700 dark:text-slate-300">Carry-on:</span>
+              <span class="font-bold text-slate-950 dark:text-white" id="result-summary-carryon-text">Yes</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span id="result-summary-checked-icon-container"></span>
+              <span class="text-slate-700 dark:text-slate-300">Checked bag:</span>
+              <span class="font-bold text-slate-950 dark:text-white" id="result-summary-checked-text">No</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span id="result-summary-personal-icon-container"></span>
+              <span class="text-slate-700 dark:text-slate-300">Personal item:</span>
+              <span class="font-bold text-slate-950 dark:text-white" id="result-summary-personal-text">Yes</span>
+            </div>
+          </div>
+
+          <div class="border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col sm:flex-row gap-3 justify-between items-center">
+            <a
+              id="result-full-link"
+              href="#"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold shadow-md transition-all cursor-pointer"
+            >
+              Read Full TSA Rules &amp; Guide →
+            </a>
             <button
               type="button"
-              id="result-close-btn"
-              aria-label="Close result"
-              class="p-1.5 rounded-md hover:bg-slate-200/80 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors flex-shrink-0 cursor-pointer"
+              id="result-dismiss-btn"
+              class="w-full sm:w-auto px-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-xl transition-colors cursor-pointer text-center"
             >
-              <X class="w-4 h-4" aria-hidden="true" />
+              Close
             </button>
-          </div>
-
-          <!-- Card Header -->
-          <div class="px-6 pt-4 pb-3 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3">
-            <span id="result-title-icon-container" class="text-slate-400 flex-shrink-0"></span>
-            <div>
-              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider" id="result-category">Category</p>
-              <h2 class="text-base font-semibold tracking-tight text-slate-900 dark:text-white" id="result-name">
-                <span id="result-title-text">Item Name</span>
-              </h2>
-            </div>
-          </div>
-
-          <!-- Carry-on / Checked rows -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 dark:divide-slate-800">
-            <!-- Carry-on -->
-            <div class="px-6 py-5">
-              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2.5">Carry-on (cabin)</p>
-              <div id="result-carryon-badge-container"></div>
-            </div>
-            <!-- Checked Bag -->
-            <div class="px-6 py-5">
-              <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2.5">Checked bag (hold)</p>
-              <div id="result-checked-badge-container"></div>
-            </div>
-          </div>
-
-          <!-- Status / Reason Row -->
-          <div class="px-6 py-5 bg-slate-50/80 dark:bg-slate-950/60 border-t border-slate-200 dark:border-slate-800">
-            <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2.5">TSA Rule</p>
-            <div class="flex items-start gap-2.5">
-              <span id="result-status-icon-container" class="flex-shrink-0 mt-0.5"></span>
-              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed" id="result-reason">Status details…</p>
-            </div>
-          </div>
-
-          <!-- Quick Summary + CTA -->
-          <div class="px-6 py-5">
-            <p class="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">Quick Summary</p>
-            
-            <div class="space-y-3 mb-6 text-sm text-slate-700 dark:text-slate-300">
-              <div class="flex items-center gap-2.5">
-                <span id="result-summary-carryon-icon-container"></span>
-                <span>Carry-on:</span>
-                <span class="font-medium text-slate-900 dark:text-white" id="result-summary-carryon-text">Yes</span>
-              </div>
-              <div class="flex items-center gap-2.5">
-                <span id="result-summary-checked-icon-container"></span>
-                <span>Checked bag:</span>
-                <span class="font-medium text-slate-900 dark:text-white" id="result-summary-checked-text">No</span>
-              </div>
-              <div class="flex items-center gap-2.5">
-                <span id="result-summary-personal-icon-container"></span>
-                <span>Personal item:</span>
-                <span class="font-medium text-slate-900 dark:text-white" id="result-summary-personal-text">Yes</span>
-              </div>
-            </div>
-
-            <div class="border-t border-slate-200 dark:border-slate-800 pt-4 flex justify-start">
-              <a
-                id="result-full-link"
-                href="#"
-                class="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
-              >
-                Read Full TSA Rules →
-              </a>
-            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Hidden JSON data island for popular item previews -->
-    <script type="application/json" id="popular-items-data" is:inline set:html={JSON.stringify(
-      popularItems.map(chip => ({
-        slug: chip.slug,
-        label: chip.label,
-        name: chip.item?.name ?? chip.label,
-        category: chip.item?.category ?? '',
-        carryOn: chip.item?.carryOn?.status ?? '',
-        carryOnReason: chip.item?.carryOn?.reason ?? '',
-        checked: chip.item?.checkedBag?.status ?? '',
-        checkedReason: chip.item?.checkedBag?.reason ?? '',
+    <!-- Full JSON data island for instant zero-network lookups (zero 404s) -->
+    <script type="application/json" id="all-items-data" is:inline set:html={JSON.stringify(
+      items.map(item => ({
+        slug: item.slug,
+        name: item.name,
+        category: item.category,
+        carryOn: item.carryOn?.status ?? 'ALLOWED',
+        carryOnReason: item.carryOn?.reason ?? 'Must comply with standard airline security rules.',
+        checked: item.checkedBag?.status ?? 'ALLOWED',
+        checkedReason: item.checkedBag?.reason ?? 'Permitted in checked hold luggage.',
       }))
     )} />
   </section>
@@ -1216,7 +1249,6 @@ function getStatusBadgeClass(status: string) {
     renderFavorites();
     renderRecents();
     setupFaq();
-    setupPopularChips();
   });
 </script>
 
@@ -1271,29 +1303,29 @@ function getStatusBadgeClass(status: string) {
     return categoryIcons[category] || defaultIcon;
   }
 
-  // Premium Status Badges utilizing SVG icons instead of emojis
+  // Premium Status Badges utilizing SVG icons instead of emojis (High Contrast)
   function getStatusBadgeHtml(status: string): string {
     const s = (status || '').toUpperCase();
     if (s === 'ALLOWED') {
       return `
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/20 dark:text-emerald-400 dark:border-emerald-900/30">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-900 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700 shadow-xs">
+          <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
           Allowed
         </span>
       `;
     }
     if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') {
       return `
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-700 border border-red-200 dark:bg-red-950/20 dark:text-red-400 dark:border-red-900/30">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
-          Not Allowed
+        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-rose-100 dark:bg-rose-950 text-rose-900 dark:text-rose-200 border border-rose-300 dark:border-rose-700 shadow-xs">
+          <svg class="w-4 h-4 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+          Prohibited / Not Allowed
         </span>
       `;
     }
     return `
-      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 dark:bg-amber-950/20 dark:text-amber-400 dark:border-amber-900/30">
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg>
-        Restricted
+      <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 shadow-xs">
+        <svg class="w-4 h-4 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg>
+        Restricted (Conditions Apply)
       </span>
     `;
   }
@@ -1302,12 +1334,12 @@ function getStatusBadgeClass(status: string) {
   function getSummaryIndicatorSvg(status: string): string {
     const s = (status || '').toUpperCase();
     if (s === 'ALLOWED') {
-      return `<svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
+      return `<svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
     }
     if (s === 'NOT_ALLOWED' || s === 'PROHIBITED') {
-      return `<svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>`;
+      return `<svg class="w-4 h-4 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>`;
     }
-    return `<svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>`;
+    return `<svg class="w-4 h-4 text-amber-500 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>`;
   }
 
   function getSummaryLabel(status: string): string {
@@ -1322,10 +1354,10 @@ function getStatusBadgeClass(status: string) {
   let highlightedIndex = -1;
   let matchingSuggestions: SearchItem[] = [];
 
-  // Embedded popular items cache
-  function getPopularItemsCache(): Record<string, any> {
+  // Embedded all items database cache (0ms instant lookup)
+  function getAllItemsDatabase(): Record<string, any> {
     try {
-      const el = document.getElementById('popular-items-data');
+      const el = document.getElementById('all-items-data');
       if (!el) return {};
       const data = JSON.parse(el.textContent || '[]');
       const map: Record<string, any> = {};
@@ -1351,10 +1383,10 @@ function getStatusBadgeClass(status: string) {
   // Preload search index immediately
   loadSearchIndex();
 
-  // Fetch full item details and render
-  async function handleItemSelected(slug: string, sourceChip: HTMLButtonElement | null = null) {
-    const panel = document.getElementById('hero-result-panel');
-    if (!panel) return;
+  // Fetch full item details and render in popup modal
+  function handleItemSelected(slug: string, sourceChip: HTMLButtonElement | null = null) {
+    const modal = document.getElementById('hero-result-modal');
+    if (!modal) return;
 
     // Highlight active chip if it was selected from a chip or matches slug
     const chips = document.querySelectorAll<HTMLButtonElement>('.popular-chip');
@@ -1369,40 +1401,29 @@ function getStatusBadgeClass(status: string) {
       }
     });
 
-    const popularCache = getPopularItemsCache();
-    const cachedItem = popularCache[slug];
+    const itemsDb = getAllItemsDatabase();
+    const dbItem = itemsDb[slug];
     const indexItem = searchIndex.find(i => i.slug === slug);
 
     let item: FullItem = {
       slug,
-      name: cachedItem?.name || indexItem?.name || slug.replace(/-/g, ' '),
-      category: cachedItem?.category || indexItem?.category || 'Travel Item',
+      name: dbItem?.name || indexItem?.name || slug.replace(/-/g, ' '),
+      category: dbItem?.category || indexItem?.category || 'Travel Item',
       carryOn: {
-        status: cachedItem?.carryOn || indexItem?.carryOn || 'ALLOWED',
-        reason: cachedItem?.carryOnReason || 'Must comply with standard airline baggage security regulations.'
+        status: dbItem?.carryOn || indexItem?.carryOn || 'ALLOWED',
+        reason: dbItem?.carryOnReason || 'Must comply with standard airline baggage security regulations.'
       },
       checkedBag: {
-        status: cachedItem?.checked || indexItem?.checked || 'ALLOWED',
-        reason: cachedItem?.checkedReason || 'Permitted in checked baggage according to TSA guidelines.'
+        status: dbItem?.checked || indexItem?.checked || 'ALLOWED',
+        reason: dbItem?.checkedReason || 'Permitted in checked baggage according to TSA guidelines.'
       }
     };
 
-    // Render immediately with cached/index data
-    renderItemVerdict(item, panel);
-
-    // Try fetching full item JSON for richer descriptions
-    try {
-      const res = await fetch(`/api/items/${slug}.json`);
-      if (res.ok) {
-        const fullItem: FullItem = await res.json();
-        renderItemVerdict(fullItem, panel);
-      }
-    } catch {
-      // Keep rendered cached version
-    }
+    // Render immediately with complete data (no failed network requests)
+    renderItemVerdict(item, modal);
   }
 
-  function renderItemVerdict(item: FullItem, panel: HTMLElement) {
+  function renderItemVerdict(item: FullItem, modal: HTMLElement) {
     const nameText = document.getElementById('result-title-text');
     const iconContainer = document.getElementById('result-title-icon-container');
     const catEl = document.getElementById('result-category');
@@ -1432,7 +1453,7 @@ function getStatusBadgeClass(status: string) {
     if (carryonBadgeContainer) carryonBadgeContainer.innerHTML = getStatusBadgeHtml(coStatus);
     if (checkedBadgeContainer) checkedBadgeContainer.innerHTML = getStatusBadgeHtml(ckStatus);
 
-    // Big YES/NO verdict banner
+    // Big YES/NO verdict banner (High Contrast)
     const verdictBanner = document.getElementById('result-verdict-banner');
     const verdictText = document.getElementById('result-verdict-text');
     const verdictIcon = document.getElementById('result-verdict-icon');
@@ -1440,32 +1461,32 @@ function getStatusBadgeClass(status: string) {
     if (verdictText && verdictIcon && verdictBanner) {
       if (coStatus === 'ALLOWED') {
         verdictText.textContent = 'YES — Allowed in Carry-on';
-        verdictText.className = 'text-2xl font-extrabold tracking-tight text-emerald-600 dark:text-emerald-400';
-        verdictBanner.className = 'px-6 py-4 border-b border-emerald-200 dark:border-emerald-800/80 flex items-center justify-between gap-4 bg-emerald-50/90 dark:bg-emerald-950/60 transition-colors';
-        verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/60 border border-emerald-300 dark:border-emerald-700 text-emerald-600 dark:text-emerald-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>`;
+        verdictText.className = 'text-xl sm:text-2xl font-black tracking-tight text-emerald-950 dark:text-emerald-100';
+        verdictBanner.className = 'sticky top-0 z-20 px-6 py-4.5 border-b border-emerald-300 dark:border-emerald-700/80 flex items-center justify-between gap-4 bg-emerald-500/20 dark:bg-emerald-950 backdrop-blur-md transition-colors';
+        verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-600 text-white shadow-sm flex-shrink-0"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>`;
       } else if (coStatus === 'NOT_ALLOWED' || coStatus === 'PROHIBITED') {
-        verdictText.textContent = 'NO — Not Allowed in Carry-on';
-        verdictText.className = 'text-2xl font-extrabold tracking-tight text-rose-600 dark:text-rose-400';
-        verdictBanner.className = 'px-6 py-4 border-b border-rose-200 dark:border-rose-800/80 flex items-center justify-between gap-4 bg-rose-50/90 dark:bg-rose-950/60 transition-colors';
-        verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-rose-100 dark:bg-rose-900/60 border border-rose-300 dark:border-rose-700 text-rose-600 dark:text-rose-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg></span>`;
+        verdictText.textContent = 'NO — Prohibited in Carry-on';
+        verdictText.className = 'text-xl sm:text-2xl font-black tracking-tight text-rose-950 dark:text-rose-100';
+        verdictBanner.className = 'sticky top-0 z-20 px-6 py-4.5 border-b border-rose-300 dark:border-rose-700/80 flex items-center justify-between gap-4 bg-rose-500/20 dark:bg-rose-950 backdrop-blur-md transition-colors';
+        verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-rose-600 text-white shadow-sm flex-shrink-0"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg></span>`;
       } else {
         verdictText.textContent = 'RESTRICTED — Conditions Apply';
-        verdictText.className = 'text-2xl font-extrabold tracking-tight text-amber-600 dark:text-amber-400';
-        verdictBanner.className = 'px-6 py-4 border-b border-amber-200 dark:border-amber-800/80 flex items-center justify-between gap-4 bg-amber-50/90 dark:bg-amber-950/60 transition-colors';
-        verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/60 border border-amber-300 dark:border-amber-700 text-amber-600 dark:text-amber-400"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg></span>`;
+        verdictText.className = 'text-xl sm:text-2xl font-black tracking-tight text-amber-950 dark:text-amber-100';
+        verdictBanner.className = 'sticky top-0 z-20 px-6 py-4.5 border-b border-amber-300 dark:border-amber-700/80 flex items-center justify-between gap-4 bg-amber-500/20 dark:bg-amber-950 backdrop-blur-md transition-colors';
+        verdictIcon.innerHTML = `<span class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-600 text-white shadow-sm flex-shrink-0"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg></span>`;
       }
     }
 
     // Status/Reason message
-    const reason = item.carryOn?.reason || item.checkedBag?.reason || 'Must comply with standard TSA airport screening rules.';
+    const reason = item.carryOn?.reason || item.checkedBag?.reason || 'Must comply with standard TSA airport security rules.';
     if (reasonEl) reasonEl.textContent = reason;
     
     // Status icon based on restriction
     if (statusIconEl) {
       const carriesRestricted = coStatus === 'RESTRICTED' || coStatus === 'NOT_ALLOWED' || coStatus === 'PROHIBITED';
       statusIconEl.innerHTML = carriesRestricted 
-        ? `<svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg>`
-        : `<svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
+        ? `<svg class="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg>`
+        : `<svg class="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
     }
 
     // Quick Summary
@@ -1484,12 +1505,12 @@ function getStatusBadgeClass(status: string) {
 
     if (fullLink) {
       fullLink.href = `/items/${item.slug}/`;
-      fullLink.innerHTML = `Read Full TSA Rules →`;
+      fullLink.innerHTML = `Read Full TSA Rules &amp; Guide →`;
     }
 
-    // Smooth reveal
-    panel.classList.remove('hidden');
-    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // Open popup modal cleanly
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
   }
 
   function findBestMatch(rawQuery: string): SearchItem | undefined {
@@ -1524,8 +1545,10 @@ function getStatusBadgeClass(status: string) {
     const suggestions = document.getElementById('homepage-suggestions');
     const clearBtn = document.getElementById('homepage-search-clear');
     const chips = document.querySelectorAll<HTMLButtonElement>('.popular-chip');
+    const modal = document.getElementById('hero-result-modal');
     const closeBtn = document.getElementById('result-close-btn');
-    const panel = document.getElementById('hero-result-panel');
+    const dismissBtn = document.getElementById('result-dismiss-btn');
+    const backdrop = document.getElementById('hero-result-backdrop');
 
     if (!input || !suggestions) return;
 
@@ -1543,6 +1566,17 @@ function getStatusBadgeClass(status: string) {
           clearBtn.classList.add('hidden');
         }
       }
+    }
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+      chips.forEach(c => {
+        c.classList.remove('border-blue-600', 'text-blue-600', 'dark:border-blue-400', 'dark:text-blue-400', 'bg-blue-50', 'dark:bg-blue-950/80', 'font-semibold');
+        c.setAttribute('aria-pressed', 'false');
+      });
     }
 
     async function renderSuggestions() {
@@ -1579,8 +1613,8 @@ function getStatusBadgeClass(status: string) {
 
       if (matchingSuggestions.length === 0) {
         suggestions.innerHTML = `
-          <div class="p-4 text-sm text-slate-500 dark:text-slate-400">
-            No exact match for "<span class="font-medium text-slate-800 dark:text-slate-200">${input.value}</span>". Try <button type="button" class="text-blue-600 dark:text-blue-400 font-medium hover:underline cursor-pointer" id="suggest-powerbank">Power Bank</button> or browse <a href="/items/page/1/" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">All 196+ Items</a>.
+          <div class="p-4 text-sm text-slate-700 dark:text-slate-200">
+            No exact match for "<span class="font-bold text-slate-950 dark:text-white">${input.value}</span>". Try <button type="button" class="text-blue-600 dark:text-blue-400 font-bold hover:underline cursor-pointer" id="suggest-powerbank">Power Bank</button> or browse <a href="/items/page/1/" class="text-blue-600 dark:text-blue-400 font-bold hover:underline">All 196+ Items</a>.
           </div>
         `;
         suggestions.classList.remove('hidden');
@@ -1597,31 +1631,31 @@ function getStatusBadgeClass(status: string) {
         return;
       }
 
-      // Render suggestions
+      // Render suggestions with high contrast
       suggestions.innerHTML = matchingSuggestions.map((item, idx) => {
         const iconSvg = getCategoryIconSvg(item.category);
         const coStatus = (item.carryOn || '').toUpperCase();
         const badgeColor = coStatus === 'ALLOWED'
-          ? 'bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700/60'
+          ? 'bg-emerald-100 dark:bg-emerald-950 text-emerald-900 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700'
           : coStatus === 'NOT_ALLOWED' || coStatus === 'PROHIBITED'
-          ? 'bg-red-50 dark:bg-red-950/80 text-red-700 dark:text-red-300 border-red-200 dark:border-red-700/60'
-          : 'bg-amber-50 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-700/60';
+          ? 'bg-rose-100 dark:bg-rose-950 text-rose-900 dark:text-rose-200 border-rose-300 dark:border-rose-700'
+          : 'bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-700';
         const badgeLabel = coStatus === 'ALLOWED' ? 'Allowed' : coStatus === 'NOT_ALLOWED' || coStatus === 'PROHIBITED' ? 'Not Allowed' : 'Restricted';
         return `
           <button 
             type="button" 
-            class="suggestion-item w-full flex items-center justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm text-slate-800 dark:text-slate-100 cursor-pointer text-left border-l-2 border-transparent transition-all"
+            class="suggestion-item w-full flex items-center justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 cursor-pointer text-left border-l-4 border-transparent hover:border-blue-600 transition-all font-medium"
             data-slug="${item.slug}"
             data-index="${idx}"
           >
             <div class="flex items-center gap-3 min-w-0">
-              <span class="text-slate-400 flex-shrink-0">${iconSvg}</span>
+              <span class="text-blue-600 dark:text-blue-400 flex-shrink-0">${iconSvg}</span>
               <div class="min-w-0">
-                <span class="font-medium block truncate">${item.name}</span>
-                <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">${item.category}</span>
+                <span class="font-bold block truncate text-slate-950 dark:text-white">${item.name}</span>
+                <span class="text-[10px] font-mono text-slate-600 dark:text-slate-400 uppercase font-semibold">${item.category}</span>
               </div>
             </div>
-            <span class="inline-flex items-center text-[9px] font-bold px-2 py-0.5 rounded-full border uppercase tracking-wider flex-shrink-0 ml-2 ${badgeColor}">${badgeLabel}</span>
+            <span class="inline-flex items-center text-[10px] font-bold px-2.5 py-0.5 rounded-full border uppercase tracking-wider flex-shrink-0 ml-2 ${badgeColor}">${badgeLabel}</span>
           </button>
         `;
       }).join('');
@@ -1633,7 +1667,7 @@ function getStatusBadgeClass(status: string) {
       items.forEach(el => {
         el.addEventListener('click', (e) => {
           const slug = (e.currentTarget as HTMLElement).dataset.slug || '';
-          const name = (e.currentTarget as HTMLElement).querySelector('.font-medium')?.textContent || '';
+          const name = (e.currentTarget as HTMLElement).querySelector('.font-bold')?.textContent || '';
           input.value = name;
           suggestions.classList.add('hidden');
           updateClearButtonVisibility();
@@ -1652,10 +1686,10 @@ function getStatusBadgeClass(status: string) {
       const items = suggestions.querySelectorAll('.suggestion-item');
       items.forEach((item, idx) => {
         if (idx === highlightedIndex) {
-          item.classList.add('bg-slate-100', 'dark:bg-slate-800', 'border-blue-600', 'dark:border-blue-400');
+          item.classList.add('bg-blue-50', 'dark:bg-slate-800', 'border-blue-600', 'dark:border-blue-400');
           item.scrollIntoView({ block: 'nearest' });
         } else {
-          item.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'border-blue-600', 'dark:border-blue-400');
+          item.classList.remove('bg-blue-50', 'dark:bg-slate-800', 'border-blue-600', 'dark:border-blue-400');
         }
       });
     }
@@ -1761,16 +1795,21 @@ function getStatusBadgeClass(status: string) {
       });
     });
 
-    // Close result panel
+    // Close result modal handlers
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        if (panel) panel.classList.add('hidden');
-        chips.forEach(c => {
-          c.classList.remove('border-blue-600', 'text-blue-600', 'dark:border-blue-400', 'dark:text-blue-400', 'bg-blue-50', 'dark:bg-blue-950/80', 'font-semibold');
-          c.setAttribute('aria-pressed', 'false');
-        });
-      });
+      closeBtn.addEventListener('click', closeModal);
     }
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', closeModal);
+    }
+    if (backdrop) {
+      backdrop.addEventListener('click', closeModal);
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
   }
 
   // Run on page load

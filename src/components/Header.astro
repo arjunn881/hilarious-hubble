@@ -2,6 +2,12 @@
 import { Plane, Sun, Moon, Menu, X, Search, ChevronRight } from "@lucide/astro";
 import LanguageSelector from "./LanguageSelector.astro";
 
+interface Props {
+  transparent?: boolean;
+}
+
+const { transparent = false } = Astro.props;
+
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Search Items", href: "/items/page/1/" },
@@ -13,39 +19,56 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white shadow-xs dark:shadow-md transition-colors max-w-full">
+<header
+  class={`sticky top-0 z-50 w-full transition-all max-w-full ${transparent ? 'bg-gradient-to-b from-slate-950/80 via-sky-950/50 to-slate-900/30 dark:from-[#060a14]/90 dark:via-[#090e1a]/70 dark:to-transparent backdrop-blur-xl border-b border-white/15 dark:border-white/10 text-white shadow-sm' : 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white shadow-xs dark:shadow-md'}`}
+>
   <!-- Top Bar -->
-  <div class="max-w-[1200px] h-16 mx-auto px-3 sm:px-6 flex items-center justify-between gap-2 sm:gap-4 relative">
-
+  <div
+    class="max-w-[1200px] h-16 mx-auto px-3 sm:px-6 flex items-center justify-between gap-2 sm:gap-4 relative"
+  >
     <!-- Brand Logo -->
     <a
       href="/"
       class="flex items-center gap-2.5 hover:opacity-95 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl flex-shrink-0 min-w-0 group"
       aria-label="Bring On Plane Home"
     >
-      <div class="flex items-center justify-center w-9 h-9 rounded-xl bg-blue-600 group-hover:bg-blue-500 text-white shadow-sm shadow-blue-500/20 flex-shrink-0 transition-transform group-hover:scale-105">
-        <Plane class="w-5 h-5 rotate-45 transition-transform group-hover:rotate-90 duration-300" aria-hidden="true" />
+      <div
+        class="flex items-center justify-center w-9 h-9 rounded-xl bg-blue-600 group-hover:bg-blue-500 text-white shadow-sm shadow-blue-500/20 flex-shrink-0 transition-transform group-hover:scale-105"
+      >
+        <Plane
+          class="w-5 h-5 rotate-45 transition-transform group-hover:rotate-90 duration-300"
+          aria-hidden="true"
+        />
       </div>
       <div class="flex flex-col min-w-0">
-        <span class="font-sans font-extrabold tracking-tight text-sm sm:text-base text-slate-900 dark:text-white leading-tight truncate notranslate">
+        <span
+          class={`font-sans font-extrabold tracking-tight text-sm sm:text-base leading-tight truncate notranslate ${transparent ? 'text-white drop-shadow-xs' : 'text-slate-900 dark:text-white'}`}
+        >
           BringOnPlane
         </span>
-        <span class="font-mono text-[9px] uppercase tracking-wider text-blue-600 dark:text-blue-400 font-semibold hidden sm:block">
+        <span
+          class={`font-mono text-[9px] uppercase tracking-wider font-semibold hidden sm:block ${transparent ? 'text-sky-300 font-bold drop-shadow-xs' : 'text-blue-600 dark:text-blue-400'}`}
+        >
           TSA Baggage Directory
         </span>
       </div>
     </a>
 
     <!-- Nav Links (desktop only) -->
-    <nav class="hidden lg:flex items-center gap-1 flex-1 justify-center" aria-label="Main Navigation">
-      {navLinks.map(link => (
-        <a
-          href={link.href}
-          class="px-3 py-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/80 rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 whitespace-nowrap"
-        >
-          {link.label}
-        </a>
-      ))}
+    <nav
+      class="hidden lg:flex items-center gap-1 flex-1 justify-center"
+      aria-label="Main Navigation"
+    >
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 whitespace-nowrap ${transparent ? 'text-white/90 hover:text-white hover:bg-white/15 font-bold drop-shadow-xs focus-visible:ring-blue-400' : 'text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/80 focus-visible:ring-blue-500'}`}
+          >
+            {link.label}
+          </a>
+        ))
+      }
     </nav>
 
     <!-- Right side actions -->
@@ -59,7 +82,10 @@ const navLinks = [
       >
         <Search class="w-3.5 h-3.5" aria-hidden="true" />
         <span class="hidden sm:inline">Search Items</span>
-        <kbd class="hidden md:inline-block px-1.5 py-0.2 text-[9px] bg-blue-800/80 rounded border border-blue-400/40 text-blue-200 font-mono">Ctrl K</kbd>
+        <kbd
+          class="hidden md:inline-block px-1.5 py-0.2 text-[9px] bg-blue-800/80 rounded border border-blue-400/40 text-blue-200 font-mono"
+          >Ctrl K</kbd
+        >
       </button>
 
       <!-- Global Multi-Language Selector (Desktop & Tablet) -->
@@ -71,18 +97,18 @@ const navLinks = [
       <button
         type="button"
         id="theme-toggle-btn"
-        class="inline-flex items-center justify-center w-9 h-9 rounded-xl text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-800 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 select-none flex-shrink-0"
+        class={`inline-flex items-center justify-center w-9 h-9 rounded-xl transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 select-none flex-shrink-0 ${transparent ? 'text-white hover:bg-white/20 border border-white/20 dark:border-white/15' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-800'}`}
         aria-label="Toggle dark mode"
       >
         <Sun class="w-4 h-4 hidden dark:block text-amber-400" />
-        <Moon class="w-4 h-4 block dark:hidden text-slate-600" />
+        <Moon class={`w-4 h-4 block dark:hidden ${transparent ? 'text-white' : 'text-slate-600'}`} />
       </button>
 
       <!-- Mobile menu trigger -->
       <button
         type="button"
         id="mobile-menu-btn"
-        class="lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-xl text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white bg-slate-100/90 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 flex-shrink-0"
+        class={`lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-xl transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 flex-shrink-0 ${transparent ? 'text-white hover:text-white bg-white/15 hover:bg-white/25 border border-white/20' : 'text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white bg-slate-100/90 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700'}`}
         aria-label="Open navigation menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -94,28 +120,42 @@ const navLinks = [
   </div>
 
   <!-- Secondary Category Navigation Bar (Desktop/Tablet) -->
-  <div class="hidden md:block bg-slate-50/95 dark:bg-slate-950/90 border-t border-slate-200 dark:border-slate-800/80 py-1.5 px-4 text-xs font-mono max-w-full overflow-hidden">
-    <div class="max-w-[1200px] mx-auto flex items-center justify-between gap-4 overflow-x-auto no-scrollbar">
-      <span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold whitespace-nowrap flex-shrink-0">
+  <div
+    class={`hidden md:block py-1.5 px-4 text-xs font-mono max-w-full overflow-hidden ${transparent ? 'bg-gradient-to-r from-slate-950/60 via-sky-950/40 to-slate-950/60 border-t border-white/10 backdrop-blur-md' : 'bg-slate-50/95 dark:bg-slate-950/90 border-t border-slate-200 dark:border-slate-800/80'}`}
+  >
+    <div
+      class="max-w-[1200px] mx-auto flex items-center justify-between gap-4 overflow-x-auto no-scrollbar"
+    >
+      <span
+        class={`text-[10px] uppercase tracking-wider font-semibold whitespace-nowrap flex-shrink-0 ${transparent ? 'text-sky-200 font-bold drop-shadow-xs' : 'text-slate-500 dark:text-slate-400'}`}
+      >
         CATEGORIES:
       </span>
       <div class="flex items-center gap-3 overflow-x-auto whitespace-nowrap">
-        {[
-          { name: "Electronics", href: "/category/electronics/" },
-          { name: "Liquids", href: "/category/liquids/" },
-          { name: "Medicine", href: "/category/medicine/" },
-          { name: "Tools", href: "/category/tools/" },
-          { name: "Food", href: "/category/food/" },
-          { name: "Personal Care", href: "/category/personal-care/" },
-          { name: "Sports", href: "/category/sports/" },
-          { name: "Jewelry", href: "/category/jewelry/" },
-        ].map(cat => (
-          <a href={cat.href} class="text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 transition-colors text-[11px]">
-            {cat.name}
-          </a>
-        ))}
+        {
+          [
+            { name: "Electronics", href: "/category/electronics/" },
+            { name: "Liquids", href: "/category/liquids/" },
+            { name: "Medicine", href: "/category/medicine/" },
+            { name: "Tools", href: "/category/tools/" },
+            { name: "Food", href: "/category/food/" },
+            { name: "Personal Care", href: "/category/personal-care/" },
+            { name: "Sports", href: "/category/sports/" },
+            { name: "Jewelry", href: "/category/jewelry/" },
+          ].map((cat) => (
+            <a
+              href={cat.href}
+              class={`transition-colors text-[11px] ${transparent ? 'text-white/85 hover:text-white font-medium drop-shadow-xs' : 'text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400'}`}
+            >
+              {cat.name}
+            </a>
+          ))
+        }
       </div>
-      <a href="/items/page/1/" class="text-blue-600 dark:text-blue-400 hover:underline text-[10px] uppercase font-bold flex-shrink-0">
+      <a
+        href="/items/page/1/"
+        class={`text-[10px] uppercase font-bold flex-shrink-0 ${transparent ? 'text-sky-300 hover:text-white drop-shadow-xs' : 'text-blue-600 dark:text-blue-400 hover:underline'}`}
+      >
         View All 196+ Items &rarr;
       </a>
     </div>
@@ -126,7 +166,8 @@ const navLinks = [
     id="mobile-menu-backdrop"
     class="lg:hidden hidden fixed inset-0 top-16 bg-slate-950/60 backdrop-blur-xs z-40 transition-opacity duration-200"
     aria-hidden="true"
-  ></div>
+  >
+  </div>
 
   <!-- Mobile Menu Drawer (Fixed overlay with full viewport height & scroll) -->
   <div
@@ -136,77 +177,128 @@ const navLinks = [
     aria-label="Mobile navigation"
   >
     <div class="max-w-[600px] mx-auto px-4 py-6 flex flex-col gap-5">
-      
       <!-- Quick Search Bar Trigger inside Mobile Menu -->
       <button
         type="button"
         data-open-search
         class="w-full flex items-center gap-3 px-4 h-12 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-blue-500 transition-all text-left shadow-xs cursor-pointer"
       >
-        <Search class="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0" />
-        <span class="flex-1 truncate">Search any item (e.g. razor, battery)...</span>
-        <span class="text-xs font-mono bg-blue-600 text-white px-2.5 py-1 rounded-md font-semibold">Search</span>
+        <Search
+          class="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0"
+        />
+        <span class="flex-1 truncate"
+          >Search any item (e.g. razor, battery)...</span
+        >
+        <span
+          class="text-xs font-mono bg-blue-600 text-white px-2.5 py-1 rounded-md font-semibold"
+          >Search</span
+        >
       </button>
 
       <!-- Global Multi-Language Selector (Mobile Drawer) -->
       <div class="w-full py-1">
-        <p class="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5 px-1 font-semibold">Change Language</p>
+        <p
+          class="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5 px-1 font-semibold"
+        >
+          Change Language
+        </p>
         <LanguageSelector isMobileDrawer={true} />
       </div>
 
       <!-- Main Mobile Navigation Links -->
-      <nav class="flex flex-col gap-1 border-t border-b border-slate-200 dark:border-slate-800/80 py-4">
-        {navLinks.map(link => (
-          <a
-            href={link.href}
-            class="mobile-nav-link flex items-center justify-between px-3.5 py-3 text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900 rounded-xl transition-all"
-          >
-            <span>{link.label}</span>
-            <ChevronRight class="w-4 h-4 text-slate-400 dark:text-slate-500" />
-          </a>
-        ))}
+      <nav
+        class="flex flex-col gap-1 border-t border-b border-slate-200 dark:border-slate-800/80 py-4"
+      >
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="mobile-nav-link flex items-center justify-between px-3.5 py-3 text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900 rounded-xl transition-all"
+            >
+              <span>{link.label}</span>
+              <ChevronRight class="w-4 h-4 text-slate-400 dark:text-slate-500" />
+            </a>
+          ))
+        }
       </nav>
 
       <!-- Category Quick Links in Mobile Menu -->
       <div>
-        <p class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 px-1 font-semibold">Top Categories</p>
+        <p
+          class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 px-1 font-semibold"
+        >
+          Top Categories
+        </p>
         <div class="grid grid-cols-2 gap-2">
-          {[
-            { name: "Liquids (3-1-1 Rule)", href: "/category/liquids/" },
-            { name: "Electronics", href: "/category/electronics/" },
-            { name: "Food & Beverages", href: "/category/food/" },
-            { name: "Medicine & Health", href: "/category/medicine/" },
-            { name: "Tools & Razor Rules", href: "/category/tools/" },
-            { name: "Personal Care", href: "/category/personal-care/" },
-          ].map(cat => (
-            <a
-              href={cat.href}
-              class="mobile-nav-link p-2.5 bg-slate-100/80 dark:bg-slate-900/60 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all text-center truncate"
-            >
-              {cat.name}
-            </a>
-          ))}
+          {
+            [
+              { name: "Liquids (3-1-1 Rule)", href: "/category/liquids/" },
+              { name: "Electronics", href: "/category/electronics/" },
+              { name: "Food & Beverages", href: "/category/food/" },
+              { name: "Medicine & Health", href: "/category/medicine/" },
+              { name: "Tools & Razor Rules", href: "/category/tools/" },
+              { name: "Personal Care", href: "/category/personal-care/" },
+            ].map((cat) => (
+              <a
+                href={cat.href}
+                class="mobile-nav-link p-2.5 bg-slate-100/80 dark:bg-slate-900/60 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all text-center truncate"
+              >
+                {cat.name}
+              </a>
+            ))
+          }
         </div>
       </div>
 
       <!-- Essential Policy & AdSense Required Links in Mobile Menu -->
       <div>
-        <p class="text-xs font-mono uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-3 px-1 font-semibold">Essential Policies &amp; Directives</p>
+        <p
+          class="text-xs font-mono uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-3 px-1 font-semibold"
+        >
+          Essential Policies &amp; Directives
+        </p>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-          <a href="/about/" class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center">About Us</a>
-          <a href="/contact/" class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center">Contact Us</a>
-          <a href="/faq/" class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center">FAQ Guide</a>
-          <a href="/privacy-policy/" class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center">Privacy Policy</a>
-          <a href="/terms/" class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center">Terms &amp; Conditions</a>
-          <a href="/disclaimer/" class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center">Disclaimer</a>
+          <a
+            href="/about/"
+            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
+            >About Us</a
+          >
+          <a
+            href="/contact/"
+            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
+            >Contact Us</a
+          >
+          <a
+            href="/faq/"
+            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
+            >FAQ Guide</a
+          >
+          <a
+            href="/privacy-policy/"
+            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
+            >Privacy Policy</a
+          >
+          <a
+            href="/terms/"
+            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
+            >Terms &amp; Conditions</a
+          >
+          <a
+            href="/disclaimer/"
+            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
+            >Disclaimer</a
+          >
         </div>
       </div>
 
       <!-- Footer Info in Mobile Menu -->
-      <div class="pt-4 text-center border-t border-slate-200 dark:border-slate-800">
-        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Official TSA, FAA &amp; IATA Rules Directory</p>
+      <div
+        class="pt-4 text-center border-t border-slate-200 dark:border-slate-800"
+      >
+        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">
+          Official TSA, FAA &amp; IATA Rules Directory
+        </p>
       </div>
-
     </div>
   </div>
 </header>
@@ -268,13 +360,16 @@ const navLinks = [
       });
 
       // Close mobile menu when any nav link inside is clicked
-      document.querySelectorAll(".mobile-nav-link").forEach(link => {
+      document.querySelectorAll(".mobile-nav-link").forEach((link) => {
         link.addEventListener("click", () => toggleMenu(false));
       });
 
       // Close mobile menu on Escape key
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && menuBtn.getAttribute("aria-expanded") === "true") {
+        if (
+          e.key === "Escape" &&
+          menuBtn.getAttribute("aria-expanded") === "true"
+        ) {
           toggleMenu(false);
         }
       });

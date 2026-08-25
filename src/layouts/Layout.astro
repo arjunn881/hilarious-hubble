@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import SearchModal from "../components/SearchModal.astro";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title?: string;
@@ -46,6 +47,7 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
 <!doctype html>
 <html lang="en" class="scroll-smooth overflow-x-hidden max-w-full">
   <head>
+    <ClientRouter />
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422" crossorigin="anonymous"></script>
     <script is:inline>
