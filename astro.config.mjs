@@ -71,11 +71,8 @@ export default defineConfig({
     port: 3000,
   },
   site: SITE,
-  trailingSlash: 'always',
-  redirects: {
-    '/category/personal care': '/category/personal-care/',
-    '/category/personal%20care': '/category/personal-care/',
-  },
+  trailingSlash: 'ignore',
+
   integrations: [
     sitemap({
       // Exclude 404, 500, API routes, redirect pages, and auto-generated thin matrix paths (/airline/, /country/)

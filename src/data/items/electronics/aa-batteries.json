@@ -6,7 +6,18 @@
   "subcategory": "General",
   "aliases": [
     "double a batteries",
-    "alkaline batteries"
+    "alkaline batteries",
+    "can you take triple as in a carry on",
+    "can you bring aa batteries on a plane",
+    "can you take aa batteries on a plane",
+    "batteries airplane",
+    "batteries on airplane",
+    "can you take aa batteries on a plane uk",
+    "are double a batteries allowed on planes",
+    "can i bring double a batteries on a plane",
+    "can i carry batteries on a plane",
+    "triple a batteries",
+    "alkaline aa batteries"
   ],
   "keywords": [
     "batteries",
@@ -58,6 +69,10 @@
     {
       "question": "Can you pack aa batteries in checked baggage?",
       "answer": "Yes, AA Batteries is allowed in checked bags. Alkaline AA batteries are allowed in checked baggage, though carrying them in original packages is recommended."
+    },
+    {
+      "question": "Can you bring AA and AAA batteries on a plane?",
+      "answer": "Yes! Standard alkaline AA and AAA batteries are allowed in both carry-on bags and checked luggage. Keep them in original packaging or protect terminals to prevent short circuits."
     }
   ],
   "metadata": {
@@ -73,5 +88,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/aa-batteries"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

@@ -8,7 +8,12 @@
     "nintendo switch",
     "steam deck",
     "ps5",
-    "xbox"
+    "xbox",
+    "can you take a playstation on a plane",
+    "can you take an xbox on a plane as carry on american airlines",
+    "playstation on plane",
+    "ps5 carry on",
+    "xbox on plane"
   ],
   "keywords": [
     "gaming",
@@ -60,6 +65,10 @@
     {
       "question": "Can you pack gaming console in checked baggage?",
       "answer": "Yes, Gaming Console is allowed in checked bags. Consoles are allowed in checked baggage, but handheld systems with lithium batteries should travel in the cabin."
+    },
+    {
+      "question": "Can you take an Xbox or PlayStation on a plane as carry-on?",
+      "answer": "Yes! Full-size gaming consoles (PS5, Xbox Series X/S) and portable consoles (Nintendo Switch) are allowed in carry-on bags. Remove from your bag for separate X-ray screening at TSA checkpoints."
     }
   ],
   "metadata": {
@@ -75,5 +84,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/gaming-console"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

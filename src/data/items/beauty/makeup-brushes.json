@@ -72,5 +72,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/makeup-brushes"
     }
-  ]
+  ],
+  "restrictionType": "Liquid",
+  "customNote": ""
 }

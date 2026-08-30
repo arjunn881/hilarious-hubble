@@ -54,19 +54,23 @@ const categories = categoriesList.map(cat => {
   return { ...cat, count };
 });
 
-// ── Popular Searches (10 chips shown in hero) ────────────────────────────────
+// ── Popular Searches (Top search console queries shown in hero) ──────────────
 // Maps label → slug.
 const popularSearchChips = [
-  { label: "Power Bank",     slug: "power-bank" },
-  { label: "Perfume",        slug: "perfume" },
-  { label: "Toothpaste",     slug: "toothpaste" },
-  { label: "Scissors",       slug: "scissors" },
-  { label: "Laptop",         slug: "laptop" },
-  { label: "Drone",          slug: "drone" },
-  { label: "Protein Powder", slug: "protein-powder" },
-  { label: "Vape",           slug: "vape" },
-  { label: "Razor",          slug: "razor" },
-  { label: "Camera",         slug: "camera" },
+  { label: "Power Bank",        slug: "power-bank" },
+  { label: "Laptop Charger",    slug: "laptop-charger" },
+  { label: "Apple AirTag",      slug: "airtag" },
+  { label: "Melatonin",         slug: "melatonin" },
+  { label: "Nicotine Pouches",  slug: "nicotine-pouches" },
+  { label: "Jump Rope",         slug: "jump-rope" },
+  { label: "Tent Stakes",       slug: "tent-stakes" },
+  { label: "Cup Noodles",       slug: "instant-noodles" },
+  { label: "Shoes & Heels",     slug: "shoes" },
+  { label: "Beard Trimmer",     slug: "beard-trimmer" },
+  { label: "Perfume",           slug: "perfume" },
+  { label: "Vape",              slug: "vape" },
+  { label: "Toothpaste",        slug: "toothpaste" },
+  { label: "Razor",             slug: "razor" }
 ];
 
 // Pre-load full item data for each popular chip (build-time)
@@ -76,7 +80,7 @@ const popularItems = popularSearchChips.map(chip => ({
 }));
 
 // Most searched queries (TSA heavy queries — used in the section below the hero)
-const mostSearchedSlugs = ["power-bank", "sunscreen", "laptop", "aerosol-insect-repellent"];
+const mostSearchedSlugs = ["power-bank", "laptop-charger", "airtag", "melatonin", "sunscreen", "laptop", "aerosol-insect-repellent"];
 const mostSearched = mostSearchedSlugs.map(slug => items.find(i => i.slug === slug)).filter((x): x is NonNullable<typeof x> => !!x);
 
 // Latest reviewed items (sorted by lastReviewed date descending)
@@ -129,11 +133,11 @@ function getStatusBadgeClass(status: string) {
 
 <Layout 
   title="TSA Carry-On Checker: Is It Allowed on a Plane?"
-  description="Type any item to instantly see if it goes in your carry-on or checked bag. Free TSA tool — razors, liquids, power banks, food & more. Try it now."
+  description="Type any item to instantly see if it goes in your carry-on or checked bag. Free TSA & airline checker — power banks, laptop chargers, AirTags, melatonin, food & more."
   image="/og-image.png"
   imageAlt="BringOnPlane — Search TSA Rules for Any Item You Want to Pack"
   canonicalURL="https://bringonplane.com/"
-  keywords="can i bring food through tsa, can you bring food through tsa, can you take food through tsa, can i bring food on a plane, can i bring a vape on a plane, what can i bring on a plane, can i bring snacks on a plane, can i bring a portable charger on a plane, can i bring toothpaste on a plane, can i bring scissors on a plane, can i bring a razor on a plane, can i bring deodorant on a plane, can i bring a lighter on a plane, can i bring batteries on a plane, can i bring cologne on a plane, can i bring hairspray on a plane, can i bring a power bank on a plane, tsa liquid rules, tsa liquid limit, tsa 3-1-1 rule, tsa precheck, tsa pre check, tsa, tsa wait times, iah tsa wait times, tsa wait times iah, ord tsa wait times, atl tsa wait times, mia tsa wait times, tsa precheck cost, tsa shutdown, tsa confirm id, tsa precheck touchless id, tsa touchless id, idemia tsa precheck, tsa precheck application, how much is tsa precheck, lax tsa wait times, jfk tsa wait times, dfw tsa wait times, what is tsa precheck, can you bring a carry on and a personal item, global entry vs tsa precheck, how long does tsa precheck last, how long is tsa precheck good for, how long does it take to get tsa precheck, how to get tsa precheck, does global entry include tsa precheck, how to renew tsa precheck, is tsa precheck worth it, is tsa precheck open, how much does tsa precheck cost, is tsa getting paid now, how much do tsa agents make, is deodorant a liquid tsa, what does tsa stand for, is toothpaste a liquid tsa, what is tsa, carry on packing list, packing list generator, can i bring a beard trimmer on a plane, beard trimmer carry on, is beard trimmer allowed in cabin baggage, beard trimmer tsa, trimmer allowed in carry on, can i take a beard trimmer in my carry on, can you take a beard trimmer on a plane, electric razor on plane, electric shaver carry on, electric razor carry on, can i bring tent stakes on a plane, tsa tent stakes, tent stakes carry on, can i bring tent stakes in checked luggage, can you bring dumbbells on a plane, can you take dumbbells on a plane, can i bring dumbbells on a plane, can you bring weights on a plane, can i bring matches on a plane, can you bring matches on a plane, safety matches tsa, matchbook on plane, can i bring dog food on a plane, can you bring dog treats on a plane, dog treats tsa, can i take dog treats in my carry on, can you bring honey to canada, can i bring honey to canada, bringing honey into canada, can i bring protein bars on a plane, protein bars carry on, tsa protein bars, are protein bars allowed in carry on, can i bring bananas on a plane, banana tsa, can bananas go through tsa, can i bring a banana on a plane, can you bring a screwdriver on a plane, screwdriver tsa, can i take a screwdriver on a plane, can i take a screwdriver in my carry on, box cutter in checked luggage, can you put a box cutter in checked luggage, can i bring a box cutter in checked luggage, are box cutters allowed in checked luggage, can i bring contact solution on a plane, tsa contact solution, contact lens solution plane, can i bring candles on a plane, can you bring candles on a plane, candles on plane, are candles allowed on planes, can i bring a hookah on a plane, can you bring a hookah on the plane, can you bring carbonated drinks on a plane, can you fly with carbonated beverages, are chips allowed in carry on luggage, can you take potato chips on a plane, can you take dog food on a plane, can i bring coffee beans on a plane, coffee beans carry on, can i put smart watch in checked luggage, smart watch in checked luggage, can i bring high heels in my carry on, can you bring heels on a plane, can you take a beard trimmer on an airplane, is trimmer allowed in checked baggage, electric shaver airplane, are electric shavers allowed on planes, can you bring an electric shaver on a plane, ryanair electric toothbrush, ryanair electric shaver, can you bring propane on a plane, can you fly with propane canisters, can you fly with butane canisters, can someone pack scissors and a vape in a checked bag, vape pen in checked luggage, can i bring raw cones on a plane, raw cones tsa, baby milk stansted, taking baby milk through airport security uk, is there a way to bring my full hair routine on a plane, hair routine carry on, electronics in checked luggage, can i put electronics in checked luggage, which phone is banned from planes, samsung galaxy note 7 banned flight, united airlines camera policy, can i bring camera on united airlines, lufthansa alcohol checked baggage, can i bring alcohol in checked luggage lufthansa, can i bring a camping knife on a plane, camping knife checked luggage, can i bring a kettlebell on a plane, kettlebell checked luggage, can i bring a bicycle on a plane, bicycle on plane checked baggage, duty free perfume allowance uk, how much perfume can i bring into uk, can i bring milk powder to canada, baby formula powder canada customs, can i bring snow globes on a plane, snow globe tsa, can i bring a snow globe in carry on"
+  keywords="nicotine pouches singapore airport, singapore airlines cup noodles, can i take a jump rope in my carry on, lufthansa cigarettes allowance, air france, emirates, american airlines bluetooth speaker, can i bring melatonin on a plane uk, can you bring melatonin into the uk, can you take triple as in a carry on, can.inshipped sealed.glass.kuice.in checked luggag, tsa precheck, singapore airlines bike policy, apple airtag, air france power bank rules, can you check a bag wiu button batteries, can you bring tent stakes on a plane, can i bring pistachios on a plane, can i bring protein bars on a plane, can i bring a banana through tsa, what size mouthwash can you take on a plane, tsa shaving cream, what is tsa, can you bring a jump rope on a plane, can you bring melatonin gummies on a plane, tsa shaving cream size, electric toothbrush carry on, can you bring aa batteries on a plane, airtags, tsa matches, united airlines deodorant size, is melatonin legal in france, air france battery policy, can you take melatonin through tsa, can you bring spices on a plane, do conditioner bars count as liquids for tsa, how much is tsa precheck, can i bring hot sauce on a plane, can i bring shoes in my carry on, can you bring dog treats on a plane, air france powerbank, delta battery pack policy, what is the 3-1-1 rule on air france, tsa tent stakes, can you bring almonds on a plane, can you bring dumbbells on a plane, can you bring rope on a plane, can i bring melatonin on a plane international flight, batteries airplane, can i put melatonin in my carry on, are beard trimmers allowed on planes, laptop charger can check in baggage, can you bring a banana through tsa, cn i bring oassion fruits through securty, can i take melatonin through tsa, air france powerbank limit, can i bring extension cord on plane, can you bring melatonin on a plane, can you bring mouthwash on a plane, can you take tent stakes on a plane, can i bring a mug in my carry on, can u bring melatonin gummies on a plane, us customs baby formula, can you bring an electric shaver on a plane, is there a way to bring my full hair routine on a flight without checking a bag, tsa carry on rules, taking medication on a plane uk, british airways electric toothbrush, can i bring almonds on a plane, can i bring melatonin through tsa, can you check in laptop charger, can you take protein bars on a plane, beard trimmer on plane, united airlines fishing rod policy, can you bring melatonin on a plane in a ziploc bag, can i put shoes in my carry on, melatonin singapore airport, air france power bank, can i check in my laptop charger, what is the 3-1-1 rule on singapore airlines, tsa tweezers carry on, can i take shaving foam on a plane, can you take matches on a plane, can i bring cup noodles into australia, can i bring beard oil on a plane, singapore airlines stroller policy, delta portable battery, can you take aa batteries on a plane, can i bring lighters on a plane, are shampoo bars tsa-friendly for carry-on bags, tsa power bank rules, batteries on airplane, can i bring a jump rope on an airplane, does coconut oil count as a liquid when flying, can you take a jump rope on a plane, can i check in ipad, ryanair lighter, can i bring heels in my carry on, can i bring cup noodles on plane, can you bring candy on a plane international flight, can laptop charger be checked in, can i put heels in my carry on, can you put shoes in your carry on, laptop charger in checked luggage, are you allowed to bring melatonin on a plane, what size shaving cream can you take on a plane, air canada electric toothbrush, can i pack laptop charger in checked baggage, tsa umbrella policy, can you take pistachios on a plane, can you bring bananas on a plane, uk caa melatonin, can you bring protein bars on a plane, tent stakes tsa, is hairspray allowed in checked baggage, can you bring nuts on a plane, do you get headphones on emirates flights, baby food hand luggage lufthansa, can you take melatonin gummies on a plane, can you bring instant noodles on a plane, can i take my vape to france, can you bring bug spray on airplane, can you bring melatonin on a plane international, can i bring dry shampoo on a plane, can i bring a lighter on a plane, how to travel with dog food, emirates cigarette electronique, can you take aa batteries on a plane uk, tsa carry on guidelines, air tags, singapore airlines, can you bring lollipops on a plane, can i bring face mask on plane, singapore airlines bicycle policy, can i take a jar of honey on the plane, france, can i bring a jump rope on a plane, can i bring shoes in my personal bag, united vape policy, ryanair camera batteries, can you take tweezers in hand luggage ryanair, can you put shoes in carry on bag, air france cookies, can i take a banana on a plane, can you bring shoes in carry on, can i bring tent stakes on a plane, can i carry melatonin on a plane, can you take dumbbells on a plane, can you take face masks on a plane, can i bring melatonin on a plane, can i check in laptop charger, can you bring hot sauce on a plane, can you take melatonin through airport security, can i take protein bars on a plane, can you fly with tent stakes, lufthansa portable charger rules, can i bring shaving cream on a plane, can you bring melatonin into singapore, matches on a plane, can i put my laptop charger in checked luggage, can i put shaving foam in checked luggage, can i take beard oil on a plane, can you bring gummy candy on a plane, tsa extension cord, can i take mouthwash on a plane, can you bring a beard trimmer on a plane, can you take rope on a plane, ryanair lithium battery policy, can tent stakes go in carry on, delta power bank rules, can i put clippers in my carry on, can i put shoes in my carry on bag, can you bring raw cones on a plane, can you bring canned cat food on a plane, ryanair skateboard, ryanair hand luggage razor, can you bring cat food on a plane, can you take a playstation on a plane, is shaving foam allowed on airplanes, british airways battery policy, can you bring portable chargers on planes, tsa rules for carry on items, can you bring a lighter in a checked bag, are you allowed to bring tweezers on a plane, can i bring double a batteries on a plane, flight packing rules, are battery packs allowed on carry on, can i bring tweezers on a plane, can i carry batteries on a plane, tsa rules for power banks, can you bring prescription medication on a plane, pre tsa, can you take pills on a plane, can you take a lighter on a plane, air tag, tsa banana, can i carry cashew nuts in hand luggage, american airlines perfume policy, can i bring monster energy on a plane, can you carry melatonin on a plane, can i carry a pair of shoes on a plane, singapore, can you bring bananas through tsa, can you bring shoes on a plane, can you bring wet cat food on a plane, british airways umbrella, can you bring face masks on a plane, air france airtag, can i bring jolly ranchers on a plane, can i bring protein bars in my carry on, can you bring weights on a plane, is honey considered a liquid for tsa, singapore airlines bicycle, are headphones considered electronics, can bluetooth speaker be checked in, can i carry shoes in my carry on, can i check in my ipad, emirates airtag, singapore airlines instant noodles, can you bring instant noodles on a plane carry-on international, can you carry shoes on a plane, can you take dog treats on a plane, laptop charger can check in, melatonin tsa, air france car seat policy, can you fly with an extension cord, emirates cigarettes, is it okay to bring nail machin product in australia by yourself, can i bring cashews on a plane, can i bring energy drinks on a plane, can i bring nuts in my carry on bag, can i put shoes in my personal bag, can you bring face masks on carry on, can i bring a protein bar on a plane, can you have shoes in your carry on, max sunscreen size tsa, are extension cords allowed on planes, are shoes allowed in carry on, can i bring a banana on a plane, can i bring canned cat food on a plane, can you carry bananas on a plane, can you take face masks on carry on, can i bring epipen to japan, can you bring a lighter on a plane ryanair, headphones singapore airlines, is dog food allowed on planes, is trimmer allowed in hand luggage emirates, can i bring canned food on a plane, can i bring laptop charger on plane, can you bring a box cutter on a plane, can you bring gummy bears through tsa, power bank air france, air france portable charger policy, bringing epipen to japan, can i bring cashew nuts to australia, can i bring spices on a plane, can i take wooden photo frames to australia, can you bring laptop charger on plane, can you take a matchbox on a plane, laptop charger hand carry or check in, can i bring my epipen to japan, can we check in laptop charger, can you bring cashews on a plane, can you bring mouthwash on a plane checked baggage, can you pack protein bars in carry on, can you take electric toothbrush in hand luggage emirates, are headphones considered electronics tsa, can i bring shampoo and conditioner on a plane, can you bring dog food on a plane, can you carry dumbbells on a plane, is beard balm considered a liquid when flying, can you bring a gillette razor on an airplane canada, tent stakes in carry on luggage, can you take shaving foam on a plane, box cutter in checked luggage, can you bring melatonin through tsa, can you bring earbuds on a plane, are watches allowed in check in baggage, can i take a beard trimmer in my carry on, can you bring vitamins on a plane, bring cigarettes to sg, can i bring nicotine pouches on a plane to singapore, tsa canned food, can i bring a beard trimmer on a plane, delta battery pack, can you put headphones in checked luggage, can you bring candy on a plane, shoes allowed in hand luggage, can you take mouthwash on a plane, flying with aerosol bug spray, shaving cream on plane, are bic lighters allowed on planes, can you bring a torch lighter on a plane, tsa backpack rules, can you carry on an electric razor, melatonin uk customs, razor in carry on, delta airlines power bank rules, is melatonin allowed through tsa, are tweezers allowed on planes, are double a batteries allowed on planes, how much shaving cream can i bring on a plane, engagement ring airport security uk, can you bring floss on a plane, traveling with injectable meds tsa rules, can i bring chocolate in my carry on, can i bring an umbrella on a plane, tsa precheck cost, does tsa allow power banks, can you bring tweezers on a plane, atlanta tsa, can you bring a laptop on a plane, laptops on planes, tsa carryon rules, flight bag restrictions, tsa checked bag liquids, can i take prescription pills on a plane, tsa weight limit, tsa pre check levels, can you take tweezers on a plane, tsa precheck passport, tsa luggage guidelines, what to expect with tsa precheck, can you take chocolate on the plane, airline baggage policy, tsa liquid guidelines, can you bring a shaving razor on a plane, tsa precheck rules, can you bring prescription meds on a plane, can i take medicine on a plane, flying with lithium batteries, flying with medicine rules, tsa liquid rules, what is pre tsa, what is tsa precheck, how much is tsa pre check, internationally, airtag, american airlines carry on items, apple airtag uk, delta airlines liquid policy, طيران الامارات, can i bring cat food on a plane international, can you take lollipops through airport security, melatonin, ryanair hair straightener, are jump ropes allowed on airplanes, are you allowed to bring face masks on a plane, air france vape policy, american airlines, can i put extension cord in checked luggage, can you take bananas through airport security, changi airport perfume theft, honey tsa, can bananas go through tsa, can i bring a dumbbell on a plane, can i bring bluetooth speaker in checked luggage, can i bring bluetooth speaker on plane, can i bring instant noodles to uk, can i bring ipad on plane, can i bring m&ms on an a plane, can i bring shoes in my carry on bag, can i take lollipops on a plane, ryanair umbrella, can i bring dumbbells on a plane, can i bring face masks on a plane, can i bring jewellery on a plane, can laptop charger be put in checked luggage, can shoes go in carry on luggage, can you put shoes in your personal item bag, emirates cigarettes allowance, is bic lighter allowed on plane, lufthansa lithium batteries, can i bring a face mask on the plane, can i bring bananas on a plane, can i take an umbrella on a plane ryanair, can u bring face masks on a plane, can you bring a face mask on a plane, can you carry spices in carry on luggage, emirates umbrella, are protein bars allowed in carry on luggage, banana through tsa, can i bring mouthwash in my carry on, can i take hookah in flight, can you bring an extra pair of shoes on a plane, ryanair nicotine pouches, are face masks allowed on carry on, are supplements allowed in carry on, can bring cigarettes on plane, can i bring a face mask in my carry on, can i bring extension wire on plane, can i bring face masks in my carry on, can i bring vitamins to singapore, can you bring an umbrella on a plane ryanair, can you bring heating pad on plane, can you carry spices on a plane, can you put laptop charger in checked luggage, can you take an umbrella on a plane ryanair, can you take an xbox on a plane as carry on american airlines, laptop charger check in, lufthansa golf clubs, united airlines drone policy, ba lithium batteries, can a kindle go in hold luggage, can i bring a bottle of hot sauce on a plane, can i bring nail polish on a plane, can i bring wet cat food on a plane, can i carry almonds in cabin baggage, can i take face masks on carry on, can you take hair straighteners in hand luggage ryanair, is extension cord allowed in hand carry, is shaving cream allowed on planes, is shaving foam allowed in flight, tsa earbuds, air france battery pack policy, can check in laptop charger, can i bring gummy worms through tsa, can i bring melatonin in my carry on, can i bring mixed nuts on a plane, can i take monster energy on a plane, can i take walnuts on the plane, can you take a sleeping bag on a plane, do laptop chargers have lithium batteries, powerbank air france, stakes on a plane, beard trimmer airplane, can extension cord be checked in, can i put laptop charger in checked luggage, can we put laptop charger in check in baggage, can you bring barbasol on a plane, can you bring shoes in your personal bag, can you take a surge protector on a plane, face mask tsa, lufthansa medication rules, united power bank rules, american airlines scissors in carry on, can i bring a lighter on a plane ryanair, can i bring an epipen to japan, can i bring walnuts on a plane, can i take tent pegs on a plane, can you bring heels on a plane, can you have shaving cream in checked bag, can you take a can of soda on a plane, how many pairs of shoes can you take on a plane, how much candy can i bring on a plane, air france batteries, american airlines bicycle policy, american airlines electric razor, can i bring a surge protector on a plane, can i bring canned tuna to australia, can i bring chocolate to the us, can i bring cigarette on plane, can i bring dog food in my checked luggage international, can i bring my beard trimmer on a plane, can i bring my vape to france, can i pack melatonin gummies in my carry on, can i take bananas on a plane, can you bring candy through tsa, can you bring cigarettes to singapore, can you fly with shaving cream, can you take instant noodles on a plane, can you take mugs in carry on luggage, can you take protein bars in your carry on, can you take seasoning through tsa, can you take skipping rope on a plane, ryanair hair straighteners, united airlines powerbank, united airlines powerbank rules, are spices allowed in checked baggage, can i bring cigarettes to singapore, can i bring rope on a plane, can i carry dumbbells in flight, can i take spices on a plane, can you bring cigarettes on a plane singapore, can you bring cigarettes to singapore airport, can you bring instant noodles on a plane carry-on, can you bring razor blades in checked luggage, can you bring seasonings on a plane, can you take bananas on a plane, flying with matches, air france powerbank rules, are mugs allowed in carry on, are tent stakes allowed in carry on, can cigarettes be carried on a plane, can hair clippers go in checked luggage, can hair gel be brought on a plane, can i bring a mug on a plane, can i bring a pack of cigarettes in my carry on to singapore, can i bring an extension cord on a plane, can i bring cooking oil from malaysia to singapore, can i bring dog treats on a plane, can shaving foam go in hold luggage, can shoes go in carry on, can you bring a mug in your carry on, can you carry on tent stakes, can you take a bottle of melatonin on a plane, can you take almonds on a plane, can you take hard candy through tsa, delta portable charger policy, is laptop charger allowed in check in baggage"
 >
   <!-- WebSite + SearchAction JSON-LD -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
@@ -155,50 +159,66 @@ function getStatusBadgeClass(status: string) {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Can I bring food or snacks through TSA security?",
+        "name": "Can I put my laptop charger in checked luggage?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, you can bring solid food and snacks (like sandwiches, fresh fruits, bananas, beef jerky, bread, chips, candy, and granola bars) through TSA checkpoints and on the plane in carry-on and checked bags. However, liquid or spreadable foods (such as peanut butter, honey, jam, jelly, yogurt, and baby food puree) are subject to the 3-1-1 liquids rule (under 3.4 oz / 100ml) in carry-on luggage."
+          "text": "Yes! Standard laptop chargers, cords, and power bricks contain no internal battery cells and are 100% allowed in checked luggage as well as carry-on bags. Only portable power banks (external battery packs) are restricted to carry-on."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I bring a vape, e-cigarette, or electronic cigarette on a plane?",
+        "name": "Can I put an Apple AirTag in checked luggage?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, you can bring a vape, e-cigarette, and disposable vapes on a plane, but they are strictly restricted to carry-on baggage only. FAA safety regulations prohibit carrying lithium battery-powered vapes, vape pens, and spare vape juice in checked hold luggage due to fire hazards."
+          "text": "Yes! The FAA, TSA, EASA, Air France, Lufthansa, and Emirates all officially approve Apple AirTags and CR2032 button-cell luggage trackers inside checked baggage."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I pack portable chargers, power banks, and batteries in my luggage?",
+        "name": "Can I bring melatonin on a plane into the UK or internationally?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Portable chargers, lithium-ion power banks, and spare battery packs must be packed in carry-on baggage only. They are prohibited in checked baggage holds. Standard dry cell batteries (AA, AAA, double a batteries) can travel in either carry-on or checked luggage, but must be protected from short circuits."
+          "text": "Yes. Solid melatonin pills and gummies are fully allowed through TSA checkpoints. While melatonin is prescription-only inside the UK, UK Border Force and MHRA allow incoming international visitors to bring up to a 3-month personal supply."
         }
       },
       {
         "@type": "Question",
-        "name": "Are lighters, matches, and scissors allowed on a plane?",
+        "name": "Can I bring nicotine pouches (ZYN) to Singapore or on planes?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can bring one common lighter (like a Bic or Zippo lighter) or one book of safety matches in your pocket or carry-on. Scissors with blades under 4 inches from the pivot point (like kids scissors or eyebrow scissors) are permitted in carry-on bags. Larger tools, utility knives, and box cutters must go in checked baggage."
+          "text": "Nicotine pouches are allowed on domestic US flights and throughout Europe (like Ryanair) in carry-on and checked luggage. However, they are STRICTLY PROHIBITED in Singapore, with fines up to SGD $2,000 at Changi Airport."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I bring razors (disposable, electric, or safety razors) in my carry-on?",
+        "name": "Can I take a jump rope, dumbbells, or tent stakes on a plane?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Disposable razors (cartridge razors) and electric razors/shavers are 100% allowed in carry-on bags. However, safety razors and straight razors are only allowed in carry-ons if the blades are removed. Spare safety razor blades must be packed in checked bags."
+          "text": "Jump ropes are 100% permitted in carry-on and checked bags. Metal tent stakes are prohibited in carry-on bags and MUST go in checked luggage. Heavy dumbbells are best checked due to cabin bludgeon hazards."
         }
       },
       {
         "@type": "Question",
-        "name": "How do toiletries, deodorant, cologne, and toothpaste fit TSA rules?",
+        "name": "Can I bring food, cup noodles, nuts (pistachios/almonds), and bananas on a plane?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Toiletries in carry-on bags must comply with the 3-1-1 liquids limit. Liquid, gel, or aerosol deodorants, cologne, perfume, and toothpaste must be in containers of 3.4 oz (100ml) or less and fit inside a single quart-sized clear plastic bag. Solid stick deodorants, bar soaps, and dry powders are exempt from this limit."
+          "text": "Solid snacks (nuts, whole bananas, protein bars, dry instant noodles) are fully allowed through TSA. For international flights (like Australia or the UK), declare all agricultural items and food on arrival."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I pack portable chargers, power banks, and AA batteries?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Power banks and lithium portable chargers must stay in carry-on baggage only (under 100Wh). Standard dry alkaline AA and AAA batteries can travel in either carry-on or checked luggage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are beard trimmers, electric shavers, and hair straighteners allowed on planes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Electric beard trimmers, hair clippers, cordless shavers, and corded hair straighteners are allowed in both carry-on and checked luggage across TSA, Emirates, British Airways, and European carriers."
         }
       }
     ]
@@ -1134,6 +1154,189 @@ function getStatusBadgeClass(status: string) {
             Toiletries in carry-on bags must comply with the 3-1-1 liquids limit. Liquid, gel, or aerosol deodorants, cologne, perfume, and toothpaste must be in containers of 3.4 oz (100ml) or less and fit inside a single quart-sized clear plastic bag. Solid stick deodorants, bar soaps, and dry powders are exempt from this limit.
           </div>
         </div>
+
+        <!-- Question 7 (Laptop Charger) -->
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 shadow-xs overflow-hidden">
+          <button 
+            type="button" 
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none select-none"
+            data-target="home-faq-7"
+          >
+            <span>Can I put my laptop charger in checked luggage?</span>
+            <ChevronDown class="w-4 h-4 text-slate-400 transition-transform duration-200" />
+          </button>
+          <div id="home-faq-7" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-3">
+            <strong>Yes!</strong> Standard laptop chargers, MacBook power adapters, USB-C chargers, and power cords contain no battery cells and are 100% permitted in checked suitcases. Only standalone battery packs and power banks are restricted to carry-on baggage.
+          </div>
+        </div>
+
+        <!-- Question 8 (Apple AirTags) -->
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 shadow-xs overflow-hidden">
+          <button 
+            type="button" 
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none select-none"
+            data-target="home-faq-8"
+          >
+            <span>Are Apple AirTags allowed in checked bags?</span>
+            <ChevronDown class="w-4 h-4 text-slate-400 transition-transform duration-200" />
+          </button>
+          <div id="home-faq-8" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-3">
+            <strong>Yes!</strong> The FAA, TSA, EASA, and airlines worldwide (including Air France, Emirates, and Lufthansa) officially approve Apple AirTags and CR2032 button-cell luggage trackers inside checked baggage.
+          </div>
+        </div>
+
+        <!-- Question 9 (Melatonin International) -->
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 shadow-xs overflow-hidden">
+          <button 
+            type="button" 
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none select-none"
+            data-target="home-faq-9"
+          >
+            <span>Can I bring melatonin on a plane into the UK, France, or Singapore?</span>
+            <ChevronDown class="w-4 h-4 text-slate-400 transition-transform duration-200" />
+          </button>
+          <div id="home-faq-9" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-3">
+            <strong>Yes.</strong> Melatonin tablets and gummies are permitted through TSA checkpoints in carry-on and checked luggage. UK Border Force and MHRA permit incoming visitors to bring up to a 3-month personal supply. France allows OTC supplements under 1.9mg, and Singapore HSA classifies it as an allowed health supplement.
+          </div>
+        </div>
+
+        <!-- Question 10 (Nicotine Pouches & Singapore) -->
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl bg-slate-50 dark:bg-slate-900 shadow-xs overflow-hidden">
+          <button 
+            type="button" 
+            class="home-faq-btn w-full text-left px-6 py-4 flex items-center justify-between text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer outline-none select-none"
+            data-target="home-faq-10"
+          >
+            <span>Can I bring nicotine pouches (ZYN) on a plane or to Singapore?</span>
+            <ChevronDown class="w-4 h-4 text-slate-400 transition-transform duration-200" />
+          </button>
+          <div id="home-faq-10" class="hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-3">
+            Nicotine pouches are 100% allowed on domestic US flights and across Europe in carry-on and checked luggage. However, <strong>they are strictly banned in Singapore</strong> (fines up to SGD $2,000 at Changi Airport).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DIRECT ANSWERS: TOP AIRPORT & BAGGAGE SEARCHES ═════════════════════ -->
+  <section class="py-16 bg-slate-50 dark:bg-[#070b14] border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-8 pb-3 border-b border-slate-200 dark:border-slate-800">
+        <div>
+          <span class="font-mono text-[10px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">Direct Answers &amp; Regulations</span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Top Search Topics: Quick Verdicts</h2>
+        </div>
+        <div class="flex items-center gap-3 text-xs font-mono">
+          <a href="/airlines/" class="text-blue-600 dark:text-blue-400 hover:underline">Airlines Matrix &rarr;</a>
+          <span class="text-slate-300 dark:text-slate-700">|</span>
+          <a href="/countries/" class="text-blue-600 dark:text-blue-400 hover:underline">Customs Hub &rarr;</a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Card 1 -->
+        <a href="/items/laptop-charger/" class="card-hover-lift p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between shadow-xs hover:border-blue-500 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono font-bold uppercase text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800">Checked: Allowed</span>
+              <span class="text-xs text-slate-400 font-mono">Electronics</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Laptop Chargers &amp; Power Bricks</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Allowed in carry-on and checked luggage. Contains no lithium cells.</p>
+          </div>
+          <span class="mt-3 text-xs font-semibold text-blue-600 dark:text-blue-400 inline-flex items-center gap-1">Read Rule &rarr;</span>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="/items/airtag/" class="card-hover-lift p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between shadow-xs hover:border-blue-500 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono font-bold uppercase text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800">FAA &amp; IATA Approved</span>
+              <span class="text-xs text-slate-400 font-mono">Electronics</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Apple AirTags &amp; Trackers</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">CR2032 button batteries approved for checked suitcases by all airlines.</p>
+          </div>
+          <span class="mt-3 text-xs font-semibold text-blue-600 dark:text-blue-400 inline-flex items-center gap-1">Read Rule &rarr;</span>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="/items/melatonin/" class="card-hover-lift p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between shadow-xs hover:border-blue-500 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono font-bold uppercase text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800">Carry-On: Allowed</span>
+              <span class="text-xs text-slate-400 font-mono">Medicine</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Melatonin Pills &amp; Gummies</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">TSA solid exempt. Up to 3-month personal supply permitted in UK, France &amp; SG.</p>
+          </div>
+          <span class="mt-3 text-xs font-semibold text-blue-600 dark:text-blue-400 inline-flex items-center gap-1">Read Rule &rarr;</span>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="/items/nicotine-pouches/" class="card-hover-lift p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between shadow-xs hover:border-blue-500 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono font-bold uppercase text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded border border-amber-200 dark:border-amber-800">Singapore Banned</span>
+              <span class="text-xs text-slate-400 font-mono">Personal Care</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Nicotine Pouches (ZYN)</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Allowed on US &amp; EU flights. Strictly prohibited at Singapore Changi Airport.</p>
+          </div>
+          <span class="mt-3 text-xs font-semibold text-blue-600 dark:text-blue-400 inline-flex items-center gap-1">Read Rule &rarr;</span>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="/items/jump-rope/" class="card-hover-lift p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between shadow-xs hover:border-blue-500 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono font-bold uppercase text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800">Cabin &amp; Hold: OK</span>
+              <span class="text-xs text-slate-400 font-mono">Sports</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Jump Ropes &amp; Speed Ropes</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">100% permitted in carry-on backpacks. Pack weighted handles neatly for X-ray.</p>
+          </div>
+          <span class="mt-3 text-xs font-semibold text-blue-600 dark:text-blue-400 inline-flex items-center gap-1">Read Rule &rarr;</span>
+        </a>
+
+        <!-- Card 6 -->
+        <a href="/items/tent-stakes/" class="card-hover-lift p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between shadow-xs hover:border-blue-500 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono font-bold uppercase text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded border border-rose-200 dark:border-rose-800">Carry-On: Prohibited</span>
+              <span class="text-xs text-slate-400 font-mono">Camping</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Tent Stakes &amp; Metal Pegs</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Prohibited in carry-on bags. Must be packed in checked hold luggage.</p>
+          </div>
+          <span class="mt-3 text-xs font-semibold text-blue-600 dark:text-blue-400 inline-flex items-center gap-1">Read Rule &rarr;</span>
+        </a>
+
+        <!-- Card 7 -->
+        <a href="/items/instant-noodles/" class="card-hover-lift p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between shadow-xs hover:border-blue-500 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono font-bold uppercase text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800">Airline Approved</span>
+              <span class="text-xs text-slate-400 font-mono">Food</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Cup Noodles &amp; Ramen</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Allowed in carry-on. Declare on arrival in Australia (pork/beef broths inspected).</p>
+          </div>
+          <span class="mt-3 text-xs font-semibold text-blue-600 dark:text-blue-400 inline-flex items-center gap-1">Read Rule &rarr;</span>
+        </a>
+
+        <!-- Card 8 -->
+        <a href="/items/shoes/" class="card-hover-lift p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between shadow-xs hover:border-blue-500 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono font-bold uppercase text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800">Carry-On: Allowed</span>
+              <span class="text-xs text-slate-400 font-mono">Apparel</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Shoes, High Heels &amp; Boots</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">No quantity limits in cabin bags. Wear heaviest pair at airport to save space.</p>
+          </div>
+          <span class="mt-3 text-xs font-semibold text-blue-600 dark:text-blue-400 inline-flex items-center gap-1">Read Rule &rarr;</span>
+        </a>
       </div>
     </div>
   </section>

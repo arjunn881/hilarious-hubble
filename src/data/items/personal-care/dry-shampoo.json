@@ -6,7 +6,9 @@
   "subcategory": "General",
   "aliases": [
     "aerosol dry shampoo",
-    "powder shampoo"
+    "powder shampoo",
+    "can i bring dry shampoo on a plane",
+    "dry shampoo aerosol"
   ],
   "keywords": [
     "shampoo",
@@ -73,5 +75,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/dry-shampoo"
     }
-  ]
+  ],
+  "restrictionType": "Liquid/Solid",
+  "customNote": ""
 }

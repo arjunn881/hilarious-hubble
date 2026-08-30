@@ -6,7 +6,12 @@
   "subcategory": "General",
   "aliases": [
     "honey jar",
-    "syrup"
+    "syrup",
+    "can i take a jar of honey on the plane",
+    "is honey considered a liquid for tsa",
+    "honey tsa",
+    "jar of honey",
+    "liquid honey"
   ],
   "keywords": [
     "honey",
@@ -58,6 +63,10 @@
     {
       "question": "Can you pack honey in checked baggage?",
       "answer": "Yes, Honey is allowed in checked bags. Honey is allowed in checked baggage in any quantity."
+    },
+    {
+      "question": "Is honey considered a liquid for TSA?",
+      "answer": "Yes! TSA classifies honey as a liquid/gel. In carry-on luggage, honey jars must be 3.4 oz (100 ml) or less. Larger jars must be packed in checked bags."
     }
   ],
   "metadata": {
@@ -73,5 +82,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/honey"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

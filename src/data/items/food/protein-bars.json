@@ -6,7 +6,17 @@
   "subcategory": "General",
   "aliases": [
     "energy bars",
-    "granola bars"
+    "granola bars",
+    "can i bring protein bars on a plane",
+    "can you take protein bars on a plane",
+    "can you bring protein bars on a plane",
+    "can i take protein bars on a plane",
+    "can i bring protein bars in my carry on",
+    "can i bring a protein bar on a plane",
+    "can you pack protein bars in carry on",
+    "are protein bars allowed in carry on luggage",
+    "can you take protein bars in your carry on",
+    "protein bars"
   ],
   "keywords": [
     "bars",
@@ -73,5 +83,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/protein-bars"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

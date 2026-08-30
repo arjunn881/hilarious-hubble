@@ -1,10 +1,173 @@
+/**
+ * Quick Answer Compiler Engine — Semantic Tokenization Edition
+ *
+ * Self-contained: verb resolved internally, no caller arguments beyond item.
+ * Uses item.checkedBag (correct JSON field name — not item.checked).
+ *
+ * Redundancy detection upgrades over simple regex:
+ *  • Parentheticals: "(Puree)", "(alkaline)" stripped before tokenising
+ *  • Plurals: proper stemming — batteries→battery, foxes→fox, bags→bag
+ *  • Fuzzy order: "Insect repellent aerosols" matches "Aerosol Insect Repellent"
+ *    via token-overlap ratio rather than fixed prefix anchors
+ *
+ * Branch strategy:
+ *  NOT_ALLOWED  — reason returned directly if it declares the ban; avoids
+ *                 double-negative "No — X NOT allowed. X are prohibited."
+ *  ALLOWED      — semantic filter strips restatements; specificity terms
+ *                 (ml, oz, rule, must, protect…) always preserved
+ *  RESTRICTED   — full reason unfiltered; "restricted by 3-1-1 rule" is
+ *                 context, not a restatement, so it must not be stripped
+ */
 export function getWhatIsThisItem(item: any): string {
-  const aliasesText = item.aliases && item.aliases.length > 0 
-    ? ` Often referred to as ${item.aliases.join(', ')}, it is` 
-    : ' It is';
-    
-  return `${item.name} is a common item that passengers frequently pack when traveling. ${aliasesText} classified under the ${item.category} category by aviation security authorities. When preparing for a trip, understanding exactly what this item is and how it functions can help you determine the best way to pack it in compliance with Transportation Security Administration (TSA) regulations. Generally, ${item.description.toLowerCase()} Making sure you properly identify the item before arriving at the airport checkpoint ensures a smoother screening process.`;
+  if (!item) return "";
+
+  const name: string = item.name.trim();
+
+  // ── Verb resolver (IIFE) ───────────────────────────────────────────────────
+  const verb: "is" | "are" = (() => {
+    const lower = name.toLowerCase();
+    const irregulars = ["feet", "teeth", "mice", "geese", "oxen", "children"];
+    if (irregulars.includes(lower)) return "are";
+    if (
+      lower.endsWith("ies") ||
+      (lower.endsWith("s") && !lower.endsWith("ss") && !lower.endsWith("us") && !lower.endsWith("is"))
+    )
+      return "are";
+    return "is";
+  })();
+
+  // ── Data extraction — correct JSON field names ─────────────────────────────
+  const cabinStatus: string = item.carryOn?.status  || "ALLOWED";        // "ALLOWED" | "NOT_ALLOWED" | "RESTRICTED"
+  const cabinReason: string = (item.carryOn?.reason || "").trim();
+  const holdStatus:  string = item.checkedBag?.status || "ALLOWED";      // NOTE: checkedBag, not checked
+  const holdReason:  string = (item.checkedBag?.reason || "").trim();
+
+  // ── Semantic token extractor ───────────────────────────────────────────────
+  // Normalises a string into a stemmed token set for fuzzy overlap comparison.
+  //   Step 1 — strip parentheticals:  "Baby Food (Puree)" → "Baby Food"
+  //   Step 2 — strip symbols:          "3-1-1" → "3 1 1"
+  //   Step 3 — split on whitespace
+  //   Step 4 — drop short words        (≤2 chars: a, in, of, on, by…)
+  //   Step 5 — stem common plurals:    batteries→battery  foxes→fox  bags→bag
+  function extractTokens(str: string): string[] {
+    return str
+      .toLowerCase()
+      .replace(/\([^)]*\)/g, " ")           // "(Puree)" → " "
+      .replace(/[^a-z0-9\s]/g, " ")         // symbols → space
+      .split(/\s+/)
+      .filter(t => t.length > 2)             // drop: a, in, of, on, by, is…
+      .map(t =>
+        t.endsWith("ies") && t.length > 4  ? t.slice(0, -3) + "y"  // batteries→battery
+        : t.endsWith("es")  && t.length > 4  ? t.slice(0, -2)        // foxes→fox
+        : t.endsWith("s")   && t.length > 3  ? t.slice(0, -1)        // bags→bag
+        : t
+      );
+  }
+
+  const nameTokens: string[] = extractTokens(name);
+
+  // ── Specificity guard terms ────────────────────────────────────────────────
+  // Any sentence containing at least one of these is considered to carry
+  // concrete information beyond a bare status declaration — always kept.
+  const SPECIFICITY_TERMS = [
+    "oz", "ml", "wh", "gram", "liter", "litre",
+    "limit", "maximum", "quantity", "per",
+    "rule", "regulation", "must", "cannot", "only",
+    "protect", "terminal", "short circuit", "secure",
+    "original", "packaging", "because", "due to", "under", "ensure", "place"
+  ];
+
+  // ── Semantic redundancy filter (ALLOWED branch only) ──────────────────────
+  // Removes sentences from cabinReason / holdReason whose sole purpose is to
+  // restate "X is allowed in carry-on", which the primary sentence already says.
+  //
+  // A sentence is flagged as redundant when ALL three conditions hold:
+  //   1. It contains "allow" or "permit"
+  //   2. It shares ≥ 40% token overlap with the item name
+  //   3. It contains none of the specificity guard terms
+  function filterAllowedRestatements(text: string): string {
+    return text
+      .split(/(?<=[.!?])\s+/)
+      .filter(Boolean)
+      .filter(sentence => {
+        const lower = sentence.toLowerCase();
+        // Condition 1: status word present?
+        const hasStatusWord = lower.includes("allow") || lower.includes("permit");
+        if (!hasStatusWord) return true;                             // no status word → always keep
+        // Condition 3: does it carry concrete specifics?
+        const hasSpecificity = SPECIFICITY_TERMS.some(t => lower.includes(t));
+        if (hasSpecificity) return true;                            // has limits/rules → keep
+        // Condition 2: token overlap ratio with item name
+        const sentTokens = extractTokens(sentence);
+        const overlap    = nameTokens.filter(t => sentTokens.includes(t)).length;
+        const ratio      = nameTokens.length > 0 ? overlap / nameTokens.length : 0;
+        return ratio < 0.4;                                         // low overlap → keep; high → restatement → strip
+      })
+      .join(" ")
+      .trim();
+  }
+
+  // ── Segment pipeline helpers ───────────────────────────────────────────────
+  const cap      = (s: string): string => s ? s.charAt(0).toUpperCase() + s.slice(1) : "";
+  const terminate = (s: string): string => /[.!?]$/.test(s) ? s : `${s}.`;
+
+  function buildOutput(raw: string[]): string {
+    const seen = new Set<string>();
+    return raw
+      .map(s => terminate(s.trim()))
+      .filter(s => s.length > 1 && !seen.has(s) && seen.add(s))
+      .join(" ");
+  }
+
+  // ── Branch 1: NOT_ALLOWED ──────────────────────────────────────────────────
+  // Return the data reason as the sole sentence when it already declares the
+  // ban. Prepending "No — X is NOT allowed..." creates a redundant double-negative.
+  if (cabinStatus === "NOT_ALLOWED") {
+    if (cabinReason && /prohibited|not allowed|forbidden|banned/i.test(cabinReason)) {
+      return terminate(cabinReason);
+    }
+    // Fallback for items with no or non-declarative reason field.
+    return `No — ${name} ${verb} NOT allowed in carry-on bags. Pack in checked luggage only.`;
+  }
+
+  // ── Branch 2: ALLOWED ──────────────────────────────────────────────────────
+  if (cabinStatus === "ALLOWED") {
+    const primary    = `Yes — ${name} ${verb} allowed in carry-on bags by TSA.`;
+    const cleanCabin = cap(filterAllowedRestatements(cabinReason));
+
+    const segments: string[] = [primary];
+    if (cleanCabin) segments.push(cleanCabin);
+
+    if (holdStatus === "ALLOWED") {
+      const cleanHold = cap(filterAllowedRestatements(holdReason));
+      if (cleanHold && cleanHold !== cleanCabin) {
+        // Hold reason adds genuinely new information — include it.
+        segments.push(cleanHold);
+      } else if (!cleanCabin) {
+        // No carry-on copy survived filtering — at minimum confirm hold is fine.
+        segments.push(`${name} ${verb} also permitted in checked luggage.`);
+      }
+    }
+    return buildOutput(segments);
+  }
+
+  // ── Branch 3: RESTRICTED ──────────────────────────────────────────────────
+  // Full cabin reason kept unfiltered. "Restricted by the 3-1-1 liquids rule"
+  // is regulation context — stripping it would remove important information.
+  const primary   = `${name} ${verb} allowed in carry-on with restrictions.`;
+  const segments: string[] = [primary];
+
+  if (cabinReason) segments.push(cap(cabinReason));
+
+  // Append a hold hint only if the cabin reason hasn't already addressed it.
+  if (holdStatus === "ALLOWED" && !cabinReason.toLowerCase().includes("checked")) {
+    segments.push(`Larger quantities may be stored in checked luggage without the size restriction.`);
+  }
+
+  return buildOutput(segments);
 }
+
+
 
 export function getExceptions(item: any): string {
   if (item.carryOn.status === 'ALLOWED' && item.checkedBag.status === 'ALLOWED') {
@@ -85,24 +248,137 @@ export function getAirlineDifferences(item: any): string {
 }
 
 export function getStepByStepPackingGuide(item: any): string[] {
-  const isCarryOnAllowed = item.carryOn.status === 'ALLOWED' || item.carryOn.status === 'RESTRICTED';
-  if (isCarryOnAllowed) {
-    return [
-      `Check container size or battery specifications to verify ${item.name.toLowerCase()} meets TSA carry-on limits.`,
-      `Place ${item.name.toLowerCase()} in a protective case or clear pouch near the top of your carry-on bag for quick access.`,
-      `If ${item.name.toLowerCase()} features a power switch or heating element, ensure it is completely powered off or safety-locked to prevent accidental activation during travel.`,
-      `At the security line, remove ${item.name.toLowerCase()} from your main bag only if requested by officers or if it contains large electronics/liquids.`,
-      `Store your bag in the overhead compartment or under the seat in front of you once boarded.`
-    ];
-  }
-  return [
-    `Verify that ${item.name.toLowerCase()} does not contain uninstalled lithium batteries or prohibited HAZMAT elements before placing in hold luggage.`,
-    `Wrap ${item.name.toLowerCase()} in bubble wrap, soft apparel, or a cushioned travel case to protect against rough mechanical baggage sorting systems.`,
-    `Pack the item deep in the center of your hardshell or soft checked suitcase away from outer zippers.`,
-    `Lock your suitcase using a TSA-approved combination lock so inspectors can re-seal your bag if selected for random audit.`,
-    `Confirm your checked bag weight stays under your airline's maximum limit (usually 50 lbs / 23 kg) at ticket check-in.`
+  const name   = item.name || "this item";
+  const lname  = name.toLowerCase();
+  const status = item.carryOn?.status || "ALLOWED";
+
+  // ── Category-aware carry-on blueprint matrix ───────────────────────────────
+  // Covers all 13 categories present in src/data/items/**/*.json.
+  // Matching is case-insensitive so "Personal Care" / "personal-care" both resolve.
+  const CARRY_ON_BLUEPRINTS: Record<string, string[]> = {
+    Liquids: [
+      `Verify your container holds 3.4 oz (100 ml) or less. Larger bottles of ${lname} must travel in checked luggage unless purchased airside at a duty-free outlet.`,
+      `Seal the ${lname} cap tightly to prevent leaks caused by cabin pressure changes, then place it inside a clear, resealable 1-quart plastic bag.`,
+      `Pack the sealed bag in an outer pocket of your carry-on for fast, one-hand retrieval at the TSA liquids checkpoint.`,
+      `At the security lane, remove the clear liquids bag from your carry-on and lay it flat in a screening tray on its own.`,
+      `If travelling internationally, check the destination country's import limits on volumetric liquids or spirits before boarding.`,
+    ],
+    Food: [
+      `Confirm whether ${lname} is classified as a solid or a liquid/gel — spreads, pastes, and purees fall under the TSA 3-1-1 rule and must fit in your liquids bag.`,
+      `Wrap individual pieces in food-grade plastic wrap, foil, or an airtight container to maintain freshness and prevent crushing in a packed bag.`,
+      `Place fresh produce or loose food items in an easily accessible top compartment for rapid declaration at customs checkpoints.`,
+      `Consume or properly dispose of fresh foods before crossing international borders — agricultural customs inspectors frequently confiscate fresh produce.`,
+      `Ensure all food items are fully sealed to prevent odours or liquid drips inside the aircraft cabin.`,
+    ],
+    Baby: [
+      `Baby food, formula, breast milk, and juice are exempt from the 3-1-1 liquids rule — you may carry reasonable quantities regardless of container size.`,
+      `Inform the TSA officer at the checkpoint that you are carrying baby items; they may test liquids separately but cannot require you to open sealed formula.`,
+      `Pack nappies, wipes, and a change of clothes near the top of your carry-on for quick in-flight access.`,
+      `Carry a small portable changing mat in your bag for use on the aircraft or in airport facilities.`,
+      `If travelling with sterilised equipment, keep items in sealed, sterile pouches until needed to maintain hygiene during transit.`,
+    ],
+    Electronics: [
+      `Verify battery specifications for ${lname}. Spare lithium-ion batteries and external power banks must stay in carry-on luggage — they are prohibited in checked bags.`,
+      `Ensure the ${lname} power switch or heating element is fully off and safety-locked before placing it in your bag.`,
+      `Protect exposed terminals on spare batteries by covering contacts with tape or storing them in individual plastic pouches.`,
+      `Be prepared to remove large electronics (larger than a mobile phone) from your bag to lay them flat in a TSA screening tray.`,
+      `Store delicate screens and components inside a padded sleeve to protect them from impact during boarding and overhead-bin loading.`,
+    ],
+    Tools: [
+      `Measure your ${lname} end-to-end. Hand tools under 7 inches may go in carry-on; anything longer must travel in checked luggage.`,
+      `If the tool exceeds the 7-inch limit, pack it deep in the centre of your checked suitcase to prevent movement.`,
+      `Wrap exposed points, sharp edges, or heavy metallic shafts in protective padding to avoid puncturing bag fabric or injuring handlers.`,
+      `Organise tools inside a dedicated zip pouch or tool roll to keep them contained and easy to display during inspection.`,
+      `Anchor heavy items against the main frame of your suitcase to prevent weight shifts from damaging other packed belongings.`,
+    ],
+    "Personal Care": [
+      `Any ${lname} in liquid, gel, cream, or aerosol form must comply with the 3-1-1 rule: containers of 3.4 oz (100 ml) or less, in one clear quart-sized bag.`,
+      `Aerosol personal-care products must have the safety cap on; TSA officers can refuse items with missing or broken caps.`,
+      `Pack solid versions of personal care items (solid shampoo bars, deodorant sticks) in carry-on without volume restrictions.`,
+      `Place the clear liquids bag at the top of your carry-on for fast retrieval at the security checkpoint.`,
+      `For international trips, research whether your destination has stricter cosmetics or aerosol import restrictions before departure.`,
+    ],
+    Beauty: [
+      `Liquid, gel, or cream beauty products — including ${lname} — must be in 3.4 oz (100 ml) or smaller containers and fit inside one quart-sized clear bag.`,
+      `Sharp beauty tools such as nail scissors under 4 inches are generally permitted; check TSA guidelines for any bladed accessories.`,
+      `Place fragile glass bottles inside bubble wrap or a padded cosmetics case to prevent breakage inside your bag.`,
+      `Keep high-value beauty items (serums, perfumes) in your carry-on rather than checked luggage to avoid loss or theft.`,
+      `Remove the liquids bag at the checkpoint; consolidate remaining beauty products in a separate organisational pouch inside your bag.`,
+    ],
+    Health: [
+      `Prescription medications including ${lname} are exempt from the 3-1-1 rule — carry them in their original labelled pharmacy container where possible.`,
+      `Carry a copy of your prescription or a doctor's letter, especially when travelling internationally, to prevent customs or security delays.`,
+      `Keep essential medications in your carry-on, never in checked luggage, to ensure access if bags are delayed or lost.`,
+      `Medical devices, sharps, and syringes require a medical certificate; notify the TSA officer before screening begins.`,
+      `Pack a sufficient supply for the entire trip plus extra days to cover potential travel disruptions or missed connections.`,
+    ],
+    Medicine: [
+      `Pack ${lname} in its original pharmacy container with the prescription label intact — this avoids security questions in any country.`,
+      `Liquid medicines over 3.4 oz are permitted if medically necessary; declare them separately to the TSA officer before screening.`,
+      `Keep a printed copy of your prescription or a physician's letter accessible at the checkpoint for international trips.`,
+      `Store temperature-sensitive medicines in an insulated pouch with an ice pack; inform the airline in advance if refrigeration is needed.`,
+      `Carry sufficient doses in your carry-on for the full journey in case your checked luggage is delayed or misrouted.`,
+    ],
+    Camping: [
+      `Sharp camping tools (knives, tent stakes, axes) must travel exclusively in checked luggage — they are prohibited in carry-on bags.`,
+      `Gas canisters, fuel cells, and liquid fuel are generally prohibited in both carry-on and checked luggage; switch to lightweight solid or electric alternatives for air travel.`,
+      `Pack ${lname} in a dedicated hard-shell case or heavy-duty stuff sack and anchor it in the centre of your checked bag to resist impact.`,
+      `Trekking poles and hiking poles must be checked — measure overall packed length and confirm your airline's oversized-bag policy.`,
+      `Camping stoves must be completely empty of fuel and free of residue before packing in checked luggage; TSA officers may inspect them.`,
+    ],
+    Sports: [
+      `Check your airline's oversized and sports-equipment policy — bulky gear like ${lname} often requires advance booking and additional fees.`,
+      `Protect equipment with purpose-built hard travel cases, foam padding, or custom bags rated for checked-luggage impact.`,
+      `Remove any loose or protruding parts and pack them separately to prevent damage to the main item or other luggage.`,
+      `Drain all inflatable equipment (balls, rafts) fully before packing to minimise volume and prevent pressure-related damage.`,
+      `Label your equipment case clearly with your name, phone number, and destination for fast identification at baggage claim.`,
+    ],
+    Jewelry: [
+      `Place high-value jewellery including ${lname} in your carry-on — never pack valuable pieces in checked luggage.`,
+      `Store individual pieces in a dedicated jewellery roll or compartmentalised box to prevent tangling or scratching.`,
+      `Wear bulky jewellery through security or place it in your personal item before the checkpoint to avoid triggering the metal detector.`,
+      `For very high-value items, consider using a TSA-approved locking jewellery pouch and photograph pieces before travel for insurance records.`,
+      `Keep certificates of authenticity or purchase receipts accessible when passing through international customs to avoid import duty disputes.`,
+    ],
+    Documents: [
+      `Keep ${lname} and all critical travel documents in a dedicated document organiser in your carry-on — never in checked luggage.`,
+      `Use a RFID-blocking passport holder to protect chip-enabled documents from electronic skimming at busy airports.`,
+      `Make digital copies of all important documents and store them securely in cloud storage accessible offline on your phone.`,
+      `Keep photocopies of key documents separate from the originals — store one set in your carry-on and one in your checked bag.`,
+      `At security, leave documents in your bag unless an officer specifically requests them; avoid placing passports loose in trays.`,
+    ],
+    General: [
+      `Verify the size and weight of ${lname} against your airline's carry-on dimensions and weight limits before heading to the airport.`,
+      `Place the item in an organised fashion inside your carry-on, grouping similar items in clear packing cubes for easy inspection.`,
+      `Keep fragile or high-value items near the centre of your bag, surrounded by soft clothing layers for cushioning.`,
+      `Be ready to remove ${lname} from your bag for secondary screening if requested by a TSA officer at the checkpoint.`,
+      `Secure all zip compartments and external straps on your luggage so contents stay stable during boarding and overhead-bin placement.`,
+    ],
+  };
+
+  // ── Checked-bag fallback (NOT_ALLOWED in cabin) ────────────────────────────
+  const CHECKED_STEPS: string[] = [
+    `Confirm that ${lname} is fully permitted in checked hold baggage and does not contain prohibited HAZMAT components.`,
+    `Wrap ${lname} in bubble wrap, soft clothing, or a cushioned travel case to protect it from rough mechanical baggage-sorting systems.`,
+    `Pack the item deep in the centre of your suitcase, away from outer zippers, and surrounded by padding on all sides.`,
+    `Lock your suitcase with a TSA-approved combination lock so inspectors can reseal it after any random audit.`,
+    `Confirm your checked bag's total weight stays within your airline's limit (usually 50 lbs / 23 kg) before dropping it at check-in.`,
   ];
+
+  // Carry-on allowed or restricted → serve category-specific carry-on guide.
+  if (status === "ALLOWED" || status === "RESTRICTED") {
+    const currentCategory = item.category?.trim() || "General";
+    const matchedKey = Object.keys(CARRY_ON_BLUEPRINTS).find(
+      key => key.toLowerCase() === currentCategory.toLowerCase()
+    ) ?? "General";
+    return CARRY_ON_BLUEPRINTS[matchedKey];
+  }
+
+  // NOT_ALLOWED in cabin → serve checked-bag instructions.
+  return CHECKED_STEPS;
 }
+
+
 
 export function getExpandedItemFAQs(item: any): Array<{ question: string; answer: string }> {
   const name = item.name.toLowerCase();

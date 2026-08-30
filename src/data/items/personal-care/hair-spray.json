@@ -6,7 +6,9 @@
   "subcategory": "General",
   "aliases": [
     "hairspray",
-    "aerosol hairspray"
+    "aerosol hairspray",
+    "is hairspray allowed in checked baggage",
+    "hairspray aerosol"
   ],
   "keywords": [
     "spray",
@@ -73,5 +75,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hair-spray"
     }
-  ]
+  ],
+  "restrictionType": "Liquid/Solid",
+  "customNote": ""
 }

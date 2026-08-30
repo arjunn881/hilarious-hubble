@@ -7,7 +7,37 @@
   "aliases": [
     "portable charger",
     "external battery",
-    "battery pack"
+    "battery pack",
+    "air france power bank rules",
+    "air france battery policy",
+    "air france powerbank",
+    "air france powerbank limit",
+    "air france power bank",
+    "air france powerbank rules",
+    "air france portable charger policy",
+    "power bank air france",
+    "powerbank air france",
+    "delta battery pack policy",
+    "delta portable battery",
+    "delta power bank rules",
+    "delta battery pack",
+    "delta airlines power bank rules",
+    "delta portable charger policy",
+    "united power bank rules",
+    "united airlines powerbank",
+    "united airlines powerbank rules",
+    "lufthansa portable charger rules",
+    "lufthansa lithium batteries",
+    "british airways battery policy",
+    "ba lithium batteries",
+    "ryanair lithium battery policy",
+    "ryanair camera batteries",
+    "tsa power bank rules",
+    "tsa rules for power banks",
+    "does tsa allow power banks",
+    "can you bring portable chargers on planes",
+    "are battery packs allowed on carry on",
+    "flying with lithium batteries"
   ],
   "keywords": [
     "battery",
@@ -51,7 +81,38 @@
       "priority": 1
     }
   ],
-  "airlines": [],
+  "airlines": [
+    {
+      "name": "Air France",
+      "status": "ALLOWED",
+      "notes": "Max 100Wh allowed in carry-on without approval (max 2 spare units between 100Wh-160Wh with airline permission). Prohibited in checked hold."
+    },
+    {
+      "name": "Delta Air Lines",
+      "status": "ALLOWED",
+      "notes": "Lithium power banks permitted in carry-on only (under 100Wh). Prohibited in checked luggage."
+    },
+    {
+      "name": "United Airlines",
+      "status": "ALLOWED",
+      "notes": "Power banks allowed in cabin bags only. Checked hold carriage strictly prohibited."
+    },
+    {
+      "name": "Lufthansa",
+      "status": "ALLOWED",
+      "notes": "Max 2 portable power banks (up to 100Wh each) in carry-on. Prohibited in checked hold."
+    },
+    {
+      "name": "Emirates",
+      "status": "ALLOWED",
+      "notes": "Lithium power banks must be carried in cabin baggage (under 100Wh). Checked luggage prohibited."
+    },
+    {
+      "name": "Singapore Airlines",
+      "status": "ALLOWED",
+      "notes": "Must be in carry-on baggage. Max 100Wh standard; 100Wh-160Wh requires airline approval."
+    }
+  ],
   "international": {},
   "travelTips": [
     "Limited to a capacity of 100 watt-hours (Wh) per battery without airline approval."
@@ -70,6 +131,10 @@
     {
       "question": "Can you pack power bank (lithium battery) in checked baggage?",
       "answer": "Yes, Power Bank (Lithium Battery) is not allowed in checked bags."
+    },
+    {
+      "question": "What are the power bank rules for Air France, Delta, and United?",
+      "answer": "Power banks and portable chargers must ALWAYS be packed in carry-on baggage and are strictly prohibited in checked luggage. Standard limit is 100Wh (approx. 27,000mAh) per power bank."
     }
   ],
   "metadata": {
@@ -90,5 +155,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

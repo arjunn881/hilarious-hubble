@@ -7,13 +7,29 @@
   "aliases": [
     "smart tracker",
     "tile tracker",
-    "gps tracker"
+    "gps tracker",
+    "apple airtag",
+    "airtags",
+    "air tags",
+    "air tag",
+    "apple airtag uk",
+    "air france airtag",
+    "emirates airtag",
+    "smart luggage tag",
+    "bluetooth tracker",
+    "cr2032 tracker",
+    "luggage tracker"
   ],
   "keywords": [
     "airtag",
     "tracker",
     "apple",
-    "gps"
+    "gps",
+    "airtags",
+    "checked baggage",
+    "cr2032",
+    "air france",
+    "emirates"
   ],
   "description": "Guidelines for traveling with airtag in your luggage.",
   "carryOn": {
@@ -45,7 +61,18 @@
       "priority": 1
     }
   ],
-  "airlines": [],
+  "airlines": [
+    {
+      "name": "Air France",
+      "status": "ALLOWED",
+      "notes": "AirTags and Bluetooth luggage trackers are fully permitted in checked and cabin baggage."
+    },
+    {
+      "name": "Emirates",
+      "status": "ALLOWED",
+      "notes": "AirTags permitted in all baggage for passenger tracking."
+    }
+  ],
   "international": {},
   "travelTips": [
     "Smart luggage trackers like AirTags are fully allowed in carry-on baggage."
@@ -59,6 +86,14 @@
     {
       "question": "Can you pack airtag in checked baggage?",
       "answer": "Yes, AirTag is allowed in checked bags. AirTags are allowed in checked baggage. They are commonly placed inside luggage to track bags during travel."
+    },
+    {
+      "question": "Can you put an Apple AirTag in checked luggage?",
+      "answer": "Yes! The FAA, TSA, EASA, Air France, Lufthansa, and Emirates all officially permit Apple AirTags and CR2032 button-cell trackers inside checked suitcases."
+    },
+    {
+      "question": "Do AirTags violate lithium battery checked bag rules?",
+      "answer": "No. FAA and ICAO regulations state that low-power tracking devices containing lithium coin cells with under 0.3g lithium metal (like CR2032) do not present a fire risk and are exempt from battery restrictions."
     }
   ],
   "metadata": {
@@ -74,5 +109,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/airtag"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

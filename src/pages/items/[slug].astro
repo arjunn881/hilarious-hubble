@@ -5,7 +5,7 @@ import Footer from "../../components/Footer.astro";
 import { getAllItems, getRelatedItems, getItemBySlug } from "../../lib/items";
 import { CheckCircle2, XCircle, AlertCircle, Calendar, ShieldAlert, ExternalLink, FileText, Globe, AlertTriangle, Check } from "@lucide/astro";
 import { 
-  getWhatIsThisItem, 
+  getWhatIsThisItem,
   getExceptions, 
   getInternationalConsiderations, 
   getAlternativeItems, 
@@ -16,6 +16,7 @@ import {
   getStepByStepPackingGuide,
   getExpandedItemFAQs
 } from "../../lib/contentGenerator";
+
 import EEATBanner from "../../components/seo/EEATBanner.astro";
 import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
 import RelatedLinksWidget from "../../components/seo/RelatedLinksWidget.astro";
@@ -36,7 +37,23 @@ if (!item) {
 
 const relatedItems = getRelatedItems(item);
 
-const whatIsThisItem = getWhatIsThisItem(item);
+// ── Grammar: plural/singular verb utility ────────────────────────────────────
+function getVerb(name: string): "is" | "are" {
+  const lower = name.trim().toLowerCase();
+  const pluralIrregular = ["feet", "teeth", "mice", "geese", "oxen", "children"];
+  if (pluralIrregular.includes(lower)) return "are";
+  if (
+    lower.endsWith("ies") ||
+    (lower.endsWith("s") &&
+      !lower.endsWith("ss") &&
+      !lower.endsWith("us") &&
+      !lower.endsWith("is"))
+  )
+    return "are";
+  return "is";
+}
+const verb = getVerb(item.name);
+
 const exceptions = getExceptions(item);
 const internationalConsiderations = getInternationalConsiderations(item);
 const alternativeItems = getAlternativeItems(item);
@@ -183,12 +200,12 @@ const checkedShort = item.checkedBag.status === 'ALLOWED' ? 'allowed in checked 
 const rawDesc = `${carryOnShort} & ${checkedShort}. Official TSA rules for ${item.name.toLowerCase()}: see exact limits & 1 critical packing catch before your flight.`;
 const seoDescription = rawDesc.length > 155 ? rawDesc.slice(0, 152) + '...' : rawDesc;
 
-// ── SEO: Featured Snippet answer (Feature 8) ─────────────────────────────────
-const featuredSnippetAnswer = item.carryOn.status === 'ALLOWED'
-  ? `Yes — ${item.name} is allowed in carry-on bags by TSA. ${item.carryOn.reason || ''}`
-  : item.carryOn.status === 'NOT_ALLOWED'
-  ? `No — ${item.name} is NOT allowed in carry-on bags. ${item.carryOn.reason || ''} Pack it in your checked bag instead.`
-  : `${item.name} is allowed in carry-on with restrictions. ${item.carryOn.reason || ''}`;
+
+// ── SEO: Featured Snippet / Quick Answer ─────────────────────────────────────
+// Compiler engine is self-contained: verb, hold status, and dedup are
+// resolved internally. No arguments beyond the item object are required.
+const featuredSnippetAnswer = getWhatIsThisItem(item);
+
 
 // ── Extra FAQ questions for JSON-LD (Feature 7) ───────────────────────────────
 const faq4Question = `What happens if I bring ${item.name.toLowerCase()} through TSA security?`;
@@ -290,8 +307,13 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
     <!-- Breadcrumbs complying with Web Interface Guidelines -->
     <Breadcrumbs items={breadcrumbItems} />
 
-    <!-- Item Metadata Header -->
+    <!-- Item Metadata Header — H1 is first for crawler priority (SEO B3) -->
     <header class="mb-10">
+      <!-- Primary H1: must be read by crawlers before badges or visual layout blocks -->
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.28px] text-ink text-pretty mb-4">
+        Can you bring {item.name.toLowerCase()} on a plane?
+      </h1>
+
       <div class="flex flex-wrap items-center gap-3 mb-3">
         <a 
           href={`/category/${item.category.toLowerCase().trim().replace(/\s+/g, "-")}/`}
@@ -313,7 +335,8 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
           Reviewed {item.metadata.lastReviewed}
         </span>
       </div>
-      <!-- Feature 10: Verdict Color Banner at top of item page -->
+
+      <!-- Feature 10: Verdict Color Banner — appears after H1 -->
       {item.carryOn.status === 'ALLOWED' && (
         <div class="mb-6 flex items-center gap-4 px-5 py-4 rounded-lg bg-emerald-50 border border-emerald-200 select-none">
           <span class="flex items-center justify-center w-9 h-9 rounded-full bg-emerald-100 border border-emerald-300 flex-shrink-0">
@@ -347,10 +370,6 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
           </div>
         </div>
       )}
-
-      <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.28px] text-ink text-pretty">
-        Can you bring {item.name.toLowerCase()} on a plane?
-      </h1>
 
       <!-- Feature 8: Featured Snippet Quick Answer box -->
       <div class="mt-5 mb-2 p-4 rounded-md bg-canvas-soft border-l-4 border-link">
@@ -412,15 +431,7 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
       </div>
     </header>
 
-    <!-- Semantic Introduction -->
-    <section class="mb-10">
-      <h2 class="text-lg font-semibold tracking-[-0.6px] text-ink mb-3">
-        What is {item.name.toLowerCase()}?
-      </h2>
-      <p class="text-base text-body leading-[1.75] text-pretty">
-        {whatIsThisItem}
-      </p>
-    </section>
+
 
     <!-- Side-by-Side Status Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
@@ -521,6 +532,14 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
             </li>
           ))}
         </ul>
+      </section>
+    )}
+
+    <!-- Conditional customNote warning block — renders only when field is populated (SEO B5) -->
+    {item.customNote && item.customNote.trim() !== "" && (
+      <section class="mb-10 p-4 rounded-md bg-amber-50 border border-amber-200 text-amber-900">
+        <h3 class="text-sm font-bold mb-1">⚠ Special Packing Note</h3>
+        <p class="text-sm leading-[1.65]">{item.customNote}</p>
       </section>
     )}
 

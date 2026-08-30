@@ -6,7 +6,23 @@
   "subcategory": "General",
   "aliases": [
     "sweets",
-    "gummies"
+    "gummies",
+    "can you bring candy on a plane international flight",
+    "can you bring lollipops on a plane",
+    "can you bring gummy candy on a plane",
+    "can i bring jolly ranchers on a plane",
+    "can you bring gummy bears through tsa",
+    "can you bring candy on a plane",
+    "can you take lollipops through airport security",
+    "can i bring m&ms on an a plane",
+    "can i take lollipops on a plane",
+    "can i bring gummy worms through tsa",
+    "how much candy can i bring on a plane",
+    "can you bring candy through tsa",
+    "can you take hard candy through tsa",
+    "lollipops",
+    "gummy bears",
+    "jolly ranchers"
   ],
   "keywords": [
     "candy",
@@ -73,5 +89,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/candy"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

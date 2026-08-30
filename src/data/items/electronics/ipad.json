@@ -7,7 +7,11 @@
   "aliases": [
     "apple ipad",
     "tablet",
-    "screen"
+    "screen",
+    "can i check in ipad",
+    "can i check in my ipad",
+    "can i bring ipad on plane",
+    "tablet in checked luggage"
   ],
   "keywords": [
     "ipad",
@@ -74,5 +78,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/ipad"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

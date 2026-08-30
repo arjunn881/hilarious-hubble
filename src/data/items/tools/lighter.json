@@ -6,7 +6,18 @@
   "subcategory": "General",
   "aliases": [
     "bic lighter",
-    "zippo lighter"
+    "zippo lighter",
+    "ryanair lighter",
+    "can i bring a lighter on a plane",
+    "can you bring a lighter in a checked bag",
+    "can you take a lighter on a plane",
+    "can you bring a lighter on a plane ryanair",
+    "are bic lighters allowed on planes",
+    "can you bring a torch lighter on a plane",
+    "is bic lighter allowed on plane",
+    "can i bring a lighter on a plane ryanair",
+    "disposable lighter",
+    "torch lighter"
   ],
   "keywords": [
     "lighter",
@@ -58,6 +69,14 @@
     {
       "question": "Can you pack lighter in checked baggage?",
       "answer": "No, Lighter is not allowed in checked bags. Lighters are prohibited in checked baggage unless empty of fuel or stored in a DOT-approved case."
+    },
+    {
+      "question": "Can I bring a Bic lighter on Ryanair and TSA flights?",
+      "answer": "Yes! One standard disposable or Bic lighter is allowed ON YOUR PERSON through security on TSA and European flights (like Ryanair). Lighters with fuel are strictly banned in checked bags."
+    },
+    {
+      "question": "Are torch lighters allowed on planes?",
+      "answer": "No. Torch lighters (blue flame / jet lighters) are strictly prohibited in both carry-on and checked luggage."
     }
   ],
   "metadata": {
@@ -73,5 +92,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lighter"
     }
-  ]
+  ],
+  "restrictionType": "Sharp Object",
+  "customNote": ""
 }

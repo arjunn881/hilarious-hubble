@@ -7,13 +7,37 @@
   "aliases": [
     "power adapter",
     "macbook charger",
-    "power brick"
+    "power brick",
+    "laptop charger can check in baggage",
+    "can you check in laptop charger",
+    "can i check in my laptop charger",
+    "can laptop charger be checked in",
+    "laptop charger in checked luggage",
+    "can i pack laptop charger in checked baggage",
+    "can check in laptop charger",
+    "laptop charger hand carry or check in",
+    "can we check in laptop charger",
+    "can laptop charger be put in checked luggage",
+    "can you put laptop charger in checked luggage",
+    "laptop charger check in",
+    "do laptop chargers have lithium batteries",
+    "can i put laptop charger in checked luggage",
+    "can we put laptop charger in check in baggage",
+    "is laptop charger allowed in check in baggage",
+    "laptop power adapter",
+    "charging brick",
+    "laptop cord",
+    "laptop power cable"
   ],
   "keywords": [
     "charger",
     "laptop",
     "cable",
-    "adapter"
+    "adapter",
+    "checked baggage",
+    "carry on",
+    "lithium",
+    "power brick"
   ],
   "description": "Guidelines for traveling with laptop charger in your luggage.",
   "carryOn": {
@@ -59,6 +83,14 @@
     {
       "question": "Can you pack laptop charger in checked baggage?",
       "answer": "Yes, Laptop Charger is allowed in checked bags. Laptop chargers are allowed in checked baggage."
+    },
+    {
+      "question": "Can I put my laptop charger in checked luggage?",
+      "answer": "Yes! Standard laptop chargers, cords, and power bricks contain no internal battery cells and are 100% allowed in checked baggage as well as carry-on luggage on all airlines."
+    },
+    {
+      "question": "Do laptop chargers have lithium batteries?",
+      "answer": "No. Wall chargers and power adapters do not store energy and contain zero lithium batteries. Only portable power banks / external battery packs contain lithium cells (which must stay in carry-on)."
     }
   ],
   "metadata": {
@@ -74,5 +106,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/laptop-charger"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

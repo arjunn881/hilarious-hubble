@@ -75,5 +75,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/propane-canister"
     }
-  ]
+  ],
+  "restrictionType": "Sharp Object",
+  "customNote": ""
 }

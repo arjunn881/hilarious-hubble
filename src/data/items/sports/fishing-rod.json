@@ -6,7 +6,10 @@
   "subcategory": "General",
   "aliases": [
     "fishing pole",
-    "fishing gear"
+    "fishing gear",
+    "united airlines fishing rod policy",
+    "fishing rod carry on",
+    "fishing gear plane"
   ],
   "keywords": [
     "fishing",
@@ -73,5 +76,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/fishing-rod"
     }
-  ]
+  ],
+  "restrictionType": "Blunt Object",
+  "customNote": ""
 }

@@ -6,7 +6,14 @@
   "subcategory": "General",
   "aliases": [
     "oral rinse",
-    "listerine"
+    "listerine",
+    "what size mouthwash can you take on a plane",
+    "can you bring mouthwash on a plane",
+    "can i take mouthwash on a plane",
+    "can you take mouthwash on a plane",
+    "can i bring mouthwash in my carry on",
+    "can you bring mouthwash on a plane checked baggage",
+    "travel mouthwash"
   ],
   "keywords": [
     "mouthwash",
@@ -73,5 +80,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mouthwash"
     }
-  ]
+  ],
+  "restrictionType": "Liquid/Solid",
+  "customNote": ""
 }

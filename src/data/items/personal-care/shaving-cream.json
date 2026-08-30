@@ -7,7 +7,23 @@
   "aliases": [
     "shaving gel",
     "shave foam",
-    "shaving foam"
+    "shaving foam",
+    "tsa shaving cream",
+    "tsa shaving cream size",
+    "can i take shaving foam on a plane",
+    "what size shaving cream can you take on a plane",
+    "can i bring shaving cream on a plane",
+    "can i put shaving foam in checked luggage",
+    "is shaving foam allowed on airplanes",
+    "how much shaving cream can i bring on a plane",
+    "is shaving cream allowed on planes",
+    "is shaving foam allowed in flight",
+    "can you bring barbasol on a plane",
+    "can you have shaving cream in checked bag",
+    "can you fly with shaving cream",
+    "can shaving foam go in hold luggage",
+    "barbasol",
+    "shave gel"
   ],
   "keywords": [
     "shaving cream",
@@ -15,7 +31,10 @@
     "shave foam",
     "grooming",
     "liquid",
-    "aerosol"
+    "aerosol",
+    "shaving foam",
+    "barbasol",
+    "3-1-1"
   ],
   "description": "TSA rules for shaving cream and shaving gel on planes.",
   "carryOn": {
@@ -71,6 +90,14 @@
     {
       "question": "Is shaving gel allowed on planes?",
       "answer": "Yes, same rules apply — 3.4 oz or less in carry-on. Full size is fine in checked baggage."
+    },
+    {
+      "question": "What size shaving cream can you take on a plane?",
+      "answer": "In carry-on bags, shaving cream or foam must be in travel-size containers of 3.4 oz (100 ml) or less inside your quart liquid bag. In checked luggage, full-size cans (up to 18 oz / 500 ml each, total 70 oz per passenger) are allowed under FAA rules."
+    },
+    {
+      "question": "Can I put shaving foam in checked luggage?",
+      "answer": "Yes! Full-size shaving foam and Barbasol cans are permitted in checked luggage with protective caps on the nozzles."
     }
   ],
   "metadata": {
@@ -86,5 +113,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shaving-cream"
     }
-  ]
+  ],
+  "restrictionType": "Liquid/Solid",
+  "customNote": ""
 }

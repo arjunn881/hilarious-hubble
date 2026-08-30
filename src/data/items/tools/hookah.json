@@ -6,7 +6,10 @@
   "subcategory": "General",
   "aliases": [
     "shisha pipe",
-    "water pipe"
+    "water pipe",
+    "can i take hookah in flight",
+    "hookah carry on",
+    "shisha pipe on plane"
   ],
   "keywords": [
     "hookah",
@@ -73,5 +76,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hookah"
     }
-  ]
+  ],
+  "restrictionType": "Sharp Object",
+  "customNote": ""
 }

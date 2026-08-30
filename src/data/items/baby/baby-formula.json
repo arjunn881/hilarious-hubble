@@ -7,7 +7,12 @@
   "aliases": [
     "infant formula",
     "formula powder",
-    "liquid formula"
+    "liquid formula",
+    "us customs baby formula",
+    "baby food hand luggage lufthansa",
+    "baby milk stansted",
+    "taking baby milk through airport security uk",
+    "can i bring milk powder to canada"
   ],
   "keywords": [
     "formula",
@@ -51,7 +56,13 @@
       "priority": 1
     }
   ],
-  "airlines": [],
+  "airlines": [
+    {
+      "name": "Lufthansa",
+      "status": "ALLOWED",
+      "notes": "Baby food and milk for infants permitted in reasonable quantities in hand luggage; exempt from 100ml rule."
+    }
+  ],
   "international": {},
   "travelTips": [
     "Tell the officer you have formula before screening begins."
@@ -70,6 +81,10 @@
     {
       "question": "Can you pack baby formula in checked baggage?",
       "answer": "Yes, Baby Formula is allowed in checked bags."
+    },
+    {
+      "question": "Can you bring baby food and formula on Lufthansa and UK flights?",
+      "answer": "Yes! Baby formula, breast milk, and baby food in reasonable quantities for the flight are medically exempt from standard 100ml liquid limits on all airlines and security checkpoints."
     }
   ],
   "metadata": {
@@ -90,5 +105,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Solid/Liquid",
+  "customNote": ""
 }

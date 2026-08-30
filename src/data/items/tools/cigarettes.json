@@ -6,7 +6,23 @@
   "subcategory": "General",
   "aliases": [
     "tobacco cigarettes",
-    "smokes"
+    "smokes",
+    "lufthansa cigarettes allowance",
+    "emirates cigarette electronique",
+    "emirates cigarettes",
+    "emirates cigarettes allowance",
+    "bring cigarettes to sg",
+    "can i bring cigarettes to singapore",
+    "can you bring cigarettes to singapore",
+    "can you bring cigarettes on a plane singapore",
+    "can you bring cigarettes to singapore airport",
+    "can i bring a pack of cigarettes in my carry on to singapore",
+    "can bring cigarettes on plane",
+    "can i bring cigarette on plane",
+    "can cigarettes be carried on a plane",
+    "can you bring raw cones on a plane",
+    "raw cones",
+    "tobacco"
   ],
   "keywords": [
     "cigarettes",
@@ -45,7 +61,16 @@
     }
   ],
   "airlines": [],
-  "international": {},
+  "international": {
+    "Singapore": {
+      "status": "RESTRICTED",
+      "reason": "Singapore has NO duty-free concession for cigarettes. You MUST declare even a single pack at customs and pay excise duties (SDPC mark required for local sale)."
+    },
+    "Germany": {
+      "status": "ALLOWED",
+      "reason": "200 cigarettes duty-free allowance for non-EU travelers over age 17."
+    }
+  },
   "travelTips": [
     "Cigarettes are allowed in carry-on baggage. Smoking is prohibited on board the aircraft."
   ],
@@ -58,6 +83,14 @@
     {
       "question": "Can you pack cigarettes in checked baggage?",
       "answer": "Yes, Cigarettes is allowed in checked bags. Cigarettes are allowed in checked baggage."
+    },
+    {
+      "question": "Can I bring cigarettes to Singapore?",
+      "answer": "Singapore allows you to bring duty-paid cigarettes, but there is ZERO duty-free allowance. You must declare every pack at the Red Channel at Changi Airport and pay tax. E-cigarettes are strictly banned."
+    },
+    {
+      "question": "What is Lufthansa cigarette allowance?",
+      "answer": "For travelers arriving in Germany from outside the EU on Lufthansa, the duty-free allowance is 200 cigarettes (or 50 cigars) for passengers aged 17 and older."
     }
   ],
   "metadata": {
@@ -73,5 +106,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cigarettes"
     }
-  ]
+  ],
+  "restrictionType": "Sharp Object",
+  "customNote": ""
 }

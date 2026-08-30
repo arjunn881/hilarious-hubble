@@ -7,7 +7,17 @@
   "aliases": [
     "seasoning",
     "salt",
-    "pepper"
+    "pepper",
+    "can you bring spices on a plane",
+    "can i bring spices on a plane",
+    "can you carry spices in carry on luggage",
+    "can you carry spices on a plane",
+    "can you take seasoning through tsa",
+    "are spices allowed in checked baggage",
+    "can i take spices on a plane",
+    "can you bring seasonings on a plane",
+    "dry spices",
+    "seasoning powders"
   ],
   "keywords": [
     "spices",
@@ -59,6 +69,10 @@
     {
       "question": "Can you pack spices in checked baggage?",
       "answer": "Yes, Spices is allowed in checked bags. Spices and seasonings are allowed in checked baggage."
+    },
+    {
+      "question": "Can you bring spices and seasonings on a plane?",
+      "answer": "Yes! Dry spices and seasonings are allowed in carry-on and checked bags. Powder containers over 12 oz (350 ml) in carry-on may undergo additional X-ray screening."
     }
   ],
   "metadata": {
@@ -74,5 +88,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/spices"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

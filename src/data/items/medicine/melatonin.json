@@ -7,14 +7,51 @@
   "aliases": [
     "sleep aid",
     "melatonin tablets",
-    "sleep supplement"
+    "sleep supplement",
+    "melatonin gummies",
+    "melatonin on a plane uk",
+    "melatonin singapore airport",
+    "is melatonin legal in france",
+    "uk caa melatonin",
+    "melatonin uk customs",
+    "is melatonin allowed through tsa",
+    "can i carry melatonin on a plane",
+    "can i put melatonin in my carry on",
+    "can i pack melatonin gummies in my carry on",
+    "can you bring melatonin gummies on a plane",
+    "can you take melatonin through tsa",
+    "can you bring melatonin into the uk",
+    "can you bring melatonin into singapore",
+    "can you bring melatonin on a plane",
+    "can u bring melatonin gummies on a plane",
+    "can i bring melatonin through tsa",
+    "can you bring melatonin on a plane in a ziploc bag",
+    "are you allowed to bring melatonin on a plane",
+    "can you take melatonin gummies on a plane",
+    "can you bring melatonin on a plane international",
+    "can i bring melatonin on a plane",
+    "can you take melatonin through airport security",
+    "can you carry melatonin on a plane",
+    "melatonin tsa",
+    "can you take a bottle of melatonin on a plane",
+    "can i bring melatonin in my carry on"
   ],
   "keywords": [
     "melatonin",
     "sleep aid",
     "supplement",
     "tablets",
-    "pills"
+    "pills",
+    "gummies",
+    "uk",
+    "france",
+    "singapore",
+    "international",
+    "ziploc",
+    "customs",
+    "tsa",
+    "caa",
+    "hsa"
   ],
   "description": "TSA rules for melatonin supplements on planes.",
   "carryOn": {
@@ -46,8 +83,41 @@
       "priority": 1
     }
   ],
-  "airlines": [],
-  "international": {},
+  "airlines": [
+    {
+      "name": "Singapore Airlines",
+      "status": "ALLOWED",
+      "notes": "Melatonin pills and gummies permitted in cabin and hold baggage for personal travel."
+    },
+    {
+      "name": "Air France",
+      "status": "ALLOWED",
+      "notes": "Permitted in cabin and checked luggage. Standard French OTC limit is 1.9mg per dose; higher doses require prescription."
+    },
+    {
+      "name": "British Airways",
+      "status": "ALLOWED",
+      "notes": "Permitted in hand luggage. Up to 3-month personal supply permitted into the UK."
+    }
+  ],
+  "international": {
+    "UK": {
+      "status": "ALLOWED",
+      "reason": "Melatonin is prescription-only to buy in the UK, but UK Border Force and MHRA permit incoming international travelers to bring up to a 3-month personal supply."
+    },
+    "France": {
+      "status": "ALLOWED",
+      "reason": "Melatonin supplements under 1.9mg are sold OTC in France. Personal supplies up to 3 months are permitted for travelers."
+    },
+    "Singapore": {
+      "status": "ALLOWED",
+      "reason": "Classified as a health supplement by the Singapore Health Sciences Authority (HSA). Permitted up to 3 months for personal use without a special permit."
+    },
+    "Australia": {
+      "status": "ALLOWED",
+      "reason": "Permitted for personal travel (up to 3 months supply). Declare if carrying commercial quantities."
+    }
+  },
   "travelTips": [
     "Keep melatonin in its original labeled bottle to avoid questions at security",
     "Great for adjusting to new time zones after long flights"
@@ -65,6 +135,26 @@
     {
       "question": "Do I need to declare melatonin at customs?",
       "answer": "Generally no, but check destination country rules — some countries restrict certain supplements."
+    },
+    {
+      "question": "Can I bring melatonin on a plane to the UK?",
+      "answer": "Yes. While melatonin requires a prescription to buy in UK pharmacies, UK Border Force and MHRA guidelines allow international passengers to bring up to a 3-month supply for personal use in carry-on or checked bags."
+    },
+    {
+      "question": "Can you bring melatonin gummies on a plane?",
+      "answer": "Yes! Melatonin gummies are solid supplements and are 100% permitted in carry-on and checked luggage with zero liquid restrictions."
+    },
+    {
+      "question": "Is melatonin legal in France?",
+      "answer": "Yes, melatonin supplements up to 1.9mg are sold over-the-counter in France. Travelers are allowed to bring their personal supply (up to 3 months) through customs."
+    },
+    {
+      "question": "Can you bring melatonin into Singapore through Changi Airport?",
+      "answer": "Yes. Melatonin is categorized as a health supplement by the Singapore HSA. Travelers can bring up to a 3-month personal supply without prior approval."
+    },
+    {
+      "question": "Can you bring melatonin on a plane in a Ziploc bag?",
+      "answer": "Yes, TSA does not require medication to be in original prescription containers for domestic flights. However, for international flights, keeping pills in labeled original bottles prevents customs delays."
     }
   ],
   "metadata": {
@@ -80,5 +170,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pills"
     }
-  ]
+  ],
+  "restrictionType": "Medical",
+  "customNote": ""
 }

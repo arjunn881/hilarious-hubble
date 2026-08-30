@@ -6,7 +6,11 @@
   "subcategory": "General",
   "aliases": [
     "flat iron",
-    "straightening iron"
+    "straightening iron",
+    "ryanair hair straightener",
+    "can you take hair straighteners in hand luggage ryanair",
+    "ryanair hair straighteners",
+    "hair straighteners"
   ],
   "keywords": [
     "straightener",
@@ -59,6 +63,10 @@
     {
       "question": "Can you pack hair straightener in checked baggage?",
       "answer": "No, Hair Straightener is not allowed in checked bags. Butane-powered straighteners are prohibited in checked baggage holds. Electric straighteners are allowed in checked bags."
+    },
+    {
+      "question": "Can you take hair straighteners in hand luggage on Ryanair?",
+      "answer": "Yes! Electric corded hair straighteners and flat irons are fully allowed in hand luggage and checked bags on Ryanair and TSA flights. Cordless gas/butane straighteners have special limits (max 1 unit with safety cover)."
     }
   ],
   "metadata": {
@@ -74,5 +82,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hair-straightener"
     }
-  ]
+  ],
+  "restrictionType": "Liquid",
+  "customNote": ""
 }

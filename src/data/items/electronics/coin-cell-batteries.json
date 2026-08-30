@@ -6,7 +6,12 @@
   "subcategory": "General",
   "aliases": [
     "button cell batteries",
-    "cr2032"
+    "cr2032",
+    "can you check a bag wiu button batteries",
+    "can you check a bag with button batteries",
+    "button batteries",
+    "coin cell",
+    "watch battery in checked luggage"
   ],
   "keywords": [
     "coin",
@@ -58,6 +63,10 @@
     {
       "question": "Can you pack coin cell batteries in checked baggage?",
       "answer": "Yes, Coin Cell Batteries is allowed in checked bags. Coin cell / button cell batteries are allowed in checked baggage."
+    },
+    {
+      "question": "Can you check a bag with button batteries?",
+      "answer": "Yes! Devices containing small lithium button cell batteries (like watches, key fobs, and Apple AirTags) are permitted in checked luggage under FAA/ICAO rules."
     }
   ],
   "metadata": {
@@ -73,5 +82,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/coin-cell-batteries"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

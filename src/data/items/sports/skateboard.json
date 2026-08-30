@@ -6,7 +6,10 @@
   "subcategory": "General",
   "aliases": [
     "longboard",
-    "penny board"
+    "penny board",
+    "ryanair skateboard",
+    "skateboard carry on",
+    "skateboard on plane"
   ],
   "keywords": [
     "skate",
@@ -87,5 +90,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Blunt Object",
+  "customNote": ""
 }

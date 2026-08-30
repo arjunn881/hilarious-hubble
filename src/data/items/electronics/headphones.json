@@ -9,7 +9,13 @@
     "noise cancelling headphones",
     "wireless headphones",
     "sony headphones",
-    "bose headphones"
+    "bose headphones",
+    "do you get headphones on emirates flights",
+    "are headphones considered electronics",
+    "headphones singapore airlines",
+    "are headphones considered electronics tsa",
+    "can you put headphones in checked luggage",
+    "over ear headphones"
   ],
   "keywords": [
     "headphones",
@@ -50,7 +56,18 @@
       "priority": 1
     }
   ],
-  "airlines": [],
+  "airlines": [
+    {
+      "name": "Emirates",
+      "status": "ALLOWED",
+      "notes": "Emirates provides complimentary headphones on all flights for the ice inflight entertainment system."
+    },
+    {
+      "name": "Singapore Airlines",
+      "status": "ALLOWED",
+      "notes": "Headphones provided on long-haul flights; personal headphones permitted in cabin."
+    }
+  ],
   "international": {},
   "travelTips": [
     "Carry headphones in your personal item or carry-on for easy in-flight access",
@@ -69,6 +86,10 @@
     {
       "question": "Do I need to remove headphones at TSA security?",
       "answer": "No, headphones do not need to be removed from your bag separately at TSA screening."
+    },
+    {
+      "question": "Do you get headphones on Emirates flights?",
+      "answer": "Yes! Emirates provides complimentary premium headphones in Economy and noise-cancelling headsets in Business and First Class for their ice entertainment system."
     }
   ],
   "metadata": {
@@ -84,5 +105,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

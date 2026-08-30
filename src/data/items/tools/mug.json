@@ -6,7 +6,15 @@
   "subcategory": "General",
   "aliases": [
     "coffee mug",
-    "ceramic cup"
+    "ceramic cup",
+    "can i bring a mug in my carry on",
+    "can you take mugs in carry on luggage",
+    "are mugs allowed in carry on",
+    "can i bring a mug on a plane",
+    "can you bring a mug in your carry on",
+    "ceramic mug",
+    "yeti tumbler",
+    "travel mug"
   ],
   "keywords": [
     "mug",
@@ -58,6 +66,10 @@
     {
       "question": "Can you pack mug in checked baggage?",
       "answer": "Yes, Mug is allowed in checked bags. Mugs are allowed in checked baggage. Wrap securely."
+    },
+    {
+      "question": "Can I bring a ceramic mug or travel tumbler in my carry-on?",
+      "answer": "Yes! Empty ceramic mugs, coffee cups, and travel tumblers are 100% allowed in carry-on and checked baggage. Just ensure it contains no liquids before security."
     }
   ],
   "metadata": {
@@ -73,5 +85,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mug"
     }
-  ]
+  ],
+  "restrictionType": "Sharp Object",
+  "customNote": ""
 }

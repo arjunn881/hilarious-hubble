@@ -7,7 +7,11 @@
   "aliases": [
     "stroller",
     "pram",
-    "buggy"
+    "buggy",
+    "singapore airlines stroller policy",
+    "air france car seat policy",
+    "baby stroller plane",
+    "gate check stroller"
   ],
   "keywords": [
     "travel",
@@ -51,7 +55,18 @@
       "priority": 1
     }
   ],
-  "airlines": [],
+  "airlines": [
+    {
+      "name": "Singapore Airlines",
+      "status": "ALLOWED",
+      "notes": "One fully collapsible stroller or pushchair checked free of charge for passengers traveling with infants."
+    },
+    {
+      "name": "Air France",
+      "status": "ALLOWED",
+      "notes": "Foldable stroller under 55 x 35 x 15 cm accepted in cabin; standard strollers checked free of charge at gate."
+    }
+  ],
   "international": {},
   "travelTips": [
     "Must be collapsed and placed on the X-ray belt for screening if it fits."
@@ -90,5 +105,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Solid/Liquid",
+  "customNote": ""
 }

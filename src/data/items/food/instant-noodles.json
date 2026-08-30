@@ -9,7 +9,18 @@
     "cup noodles",
     "instant ramen",
     "maggi",
-    "cup of noodles"
+    "cup of noodles",
+    "singapore airlines cup noodles",
+    "can i bring cup noodles into australia",
+    "can i bring cup noodles on plane",
+    "can you bring instant noodles on a plane",
+    "singapore airlines instant noodles",
+    "can you bring instant noodles on a plane carry-on international",
+    "can i bring instant noodles to uk",
+    "can you take instant noodles on a plane",
+    "can you bring instant noodles on a plane carry-on",
+    "pot noodle",
+    "dry noodles"
   ],
   "keywords": [
     "instant noodles",
@@ -17,7 +28,9 @@
     "cup noodles",
     "maggi",
     "packaged food",
-    "noodles"
+    "noodles",
+    "singapore airlines",
+    "australia biosecurity"
   ],
   "description": "TSA rules for instant noodles and packaged ramen on planes.",
   "carryOn": {
@@ -49,8 +62,19 @@
       "priority": 1
     }
   ],
-  "airlines": [],
-  "international": {},
+  "airlines": [
+    {
+      "name": "Singapore Airlines",
+      "status": "ALLOWED",
+      "notes": "Dry cup noodles permitted in cabin baggage. Cabin crew can provide hot water on request when cruising safely."
+    }
+  ],
+  "international": {
+    "Australia": {
+      "status": "RESTRICTED",
+      "reason": "Instant noodles MUST be declared on the Australian Incoming Passenger Card. Noodles containing visible dried meat, pork, egg, or poultry may be confiscated by biosecurity."
+    }
+  },
   "travelTips": [
     "Dry instant noodles pass through security without any issue",
     "Pre-made liquid cup noodles may trigger the 3-1-1 rule if containing liquid broth"
@@ -68,6 +92,14 @@
     {
       "question": "Can I bring cup noodles on a plane?",
       "answer": "Yes, sealed dry cup noodles are allowed in carry-on. Pre-made liquid noodles with broth may be subject to the 3-1-1 liquids rule."
+    },
+    {
+      "question": "Can I bring cup noodles on Singapore Airlines?",
+      "answer": "Yes! Dry cup noodles are allowed in your carry-on luggage. You can request hot water from flight attendants during flight."
+    },
+    {
+      "question": "Can I bring cup noodles into Australia?",
+      "answer": "Yes, provided you declare all food on arrival. Noodles containing real meat/egg ingredients may be seized, while vegetarian or seafood noodles usually pass."
     }
   ],
   "metadata": {
@@ -83,5 +115,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

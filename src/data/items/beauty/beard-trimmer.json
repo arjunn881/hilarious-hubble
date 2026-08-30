@@ -6,7 +6,18 @@
   "subcategory": "General",
   "aliases": [
     "clippers",
-    "hair trimmer"
+    "hair trimmer",
+    "are beard trimmers allowed on planes",
+    "beard trimmer on plane",
+    "can you bring a beard trimmer on a plane",
+    "can i put clippers in my carry on",
+    "can i take a beard trimmer in my carry on",
+    "can i bring a beard trimmer on a plane",
+    "is trimmer allowed in hand luggage emirates",
+    "can i bring my beard trimmer on a plane",
+    "beard trimmer airplane",
+    "can hair clippers go in checked luggage",
+    "electric beard trimmer"
   ],
   "keywords": [
     "trimmer",
@@ -44,7 +55,13 @@
       "priority": 1
     }
   ],
-  "airlines": [],
+  "airlines": [
+    {
+      "name": "Emirates",
+      "status": "ALLOWED",
+      "notes": "Personal electric beard trimmers allowed in cabin baggage and checked luggage."
+    }
+  ],
   "international": {},
   "travelTips": [
     "Electric beard trimmers, clippers, and shavers are fully allowed in carry-on baggage."
@@ -58,6 +75,10 @@
     {
       "question": "Can you pack beard trimmer in checked baggage?",
       "answer": "Yes, Beard Trimmer is allowed in checked bags. Beard trimmers are allowed in checked baggage."
+    },
+    {
+      "question": "Are beard trimmers allowed on planes in carry-on?",
+      "answer": "Yes! Electric beard trimmers, hair clippers, and personal groomers are 100% permitted in carry-on and checked bags across TSA, Emirates, British Airways, and European airlines."
     }
   ],
   "metadata": {
@@ -73,5 +94,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/beard-trimmer"
     }
-  ]
+  ],
+  "restrictionType": "Liquid",
+  "customNote": ""
 }

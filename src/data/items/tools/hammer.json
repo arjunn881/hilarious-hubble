@@ -87,5 +87,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Sharp Object",
+  "customNote": ""
 }

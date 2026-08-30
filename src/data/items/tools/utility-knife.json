@@ -7,7 +7,11 @@
   "aliases": [
     "box cutter",
     "razor blade tool",
-    "stanley knife"
+    "stanley knife",
+    "can you bring a box cutter on a plane",
+    "box cutter in checked luggage",
+    "can you bring razor blades in checked luggage",
+    "utility knife"
   ],
   "keywords": [
     "razor",
@@ -68,6 +72,10 @@
     {
       "question": "Can you pack utility knife / box cutter in checked baggage?",
       "answer": "Yes, Utility Knife / Box Cutter is allowed in checked bags."
+    },
+    {
+      "question": "Can you put a box cutter in checked luggage?",
+      "answer": "Yes! Box cutters, utility knives, and razor blades are allowed in checked luggage. They are strictly prohibited in carry-on bags."
     }
   ],
   "metadata": {
@@ -88,5 +96,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Sharp Object",
+  "customNote": ""
 }

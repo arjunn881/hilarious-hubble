@@ -8,7 +8,9 @@
     "earphones",
     "in-ear headphones",
     "wireless earbuds",
-    "airpods"
+    "airpods",
+    "can you bring earbuds on a plane",
+    "tsa earbuds"
   ],
   "keywords": [
     "earbuds",
@@ -83,5 +85,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

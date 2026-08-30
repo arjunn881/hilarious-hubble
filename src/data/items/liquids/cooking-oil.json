@@ -8,7 +8,11 @@
     "vegetable oil",
     "olive oil",
     "coconut oil",
-    "oil bottle"
+    "oil bottle",
+    "can i bring cooking oil from malaysia to singapore",
+    "cooking oil",
+    "palm oil",
+    "olive oil cooking"
   ],
   "keywords": [
     "cooking oil",
@@ -55,7 +59,12 @@
     }
   ],
   "airlines": [],
-  "international": {},
+  "international": {
+    "Singapore": {
+      "status": "ALLOWED",
+      "reason": "Singapore Food Agency (SFA) allows travelers from Malaysia to bring up to 5kg / 5L of cooking oil for personal consumption without an import permit."
+    }
+  },
   "travelTips": [
     "Pack larger oil bottles in checked baggage in sealed zip-lock bags to prevent leaks at altitude"
   ],
@@ -87,5 +96,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages"
     }
-  ]
+  ],
+  "restrictionType": "Liquid",
+  "customNote": ""
 }

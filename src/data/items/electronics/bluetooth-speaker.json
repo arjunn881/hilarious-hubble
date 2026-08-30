@@ -7,7 +7,11 @@
   "aliases": [
     "wireless speaker",
     "portable speaker",
-    "jbl speaker"
+    "jbl speaker",
+    "american airlines bluetooth speaker",
+    "can bluetooth speaker be checked in",
+    "can i bring bluetooth speaker in checked luggage",
+    "can i bring bluetooth speaker on plane"
   ],
   "keywords": [
     "speaker",
@@ -59,6 +63,10 @@
     {
       "question": "Can you pack bluetooth speaker in checked baggage?",
       "answer": "No, Bluetooth Speaker is not allowed in checked bags. Speakers with rechargeable lithium-ion batteries are prohibited in checked baggage holds to prevent fire risks."
+    },
+    {
+      "question": "Can a Bluetooth speaker be checked in luggage?",
+      "answer": "Because most portable Bluetooth speakers contain rechargeable lithium-ion batteries, airlines and FAA/TSA strongly require them to be carried in your CARRY-ON baggage. If checked, the speaker must be completely powered off."
     }
   ],
   "metadata": {
@@ -74,5 +82,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bluetooth-speaker"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

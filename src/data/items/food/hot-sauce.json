@@ -6,7 +6,11 @@
   "subcategory": "General",
   "aliases": [
     "chili sauce",
-    "sriracha"
+    "sriracha",
+    "can i bring hot sauce on a plane",
+    "can you bring hot sauce on a plane",
+    "can i bring a bottle of hot sauce on a plane",
+    "hot sauce bottle"
   ],
   "keywords": [
     "sauce",
@@ -58,6 +62,10 @@
     {
       "question": "Can you pack hot sauce in checked baggage?",
       "answer": "Yes, Hot Sauce is allowed in checked bags. Hot sauce is allowed in checked baggage in any size."
+    },
+    {
+      "question": "Can I bring hot sauce on a plane?",
+      "answer": "In carry-on bags, hot sauce bottles must be 3.4 oz (100 ml) or smaller. Full-size bottles must go in checked luggage."
     }
   ],
   "metadata": {
@@ -73,5 +81,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hot-sauce"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

@@ -5,7 +5,15 @@
   "category": "Personal Care",
   "subcategory": "General",
   "aliases": [
-    "pluckers"
+    "pluckers",
+    "tsa tweezers carry on",
+    "can you take tweezers in hand luggage ryanair",
+    "are you allowed to bring tweezers on a plane",
+    "can i bring tweezers on a plane",
+    "are tweezers allowed on planes",
+    "can you bring tweezers on a plane",
+    "can you take tweezers on a plane",
+    "eyebrow tweezers"
   ],
   "keywords": [
     "tweezers",
@@ -72,5 +80,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/tweezers"
     }
-  ]
+  ],
+  "restrictionType": "Liquid/Solid",
+  "customNote": ""
 }

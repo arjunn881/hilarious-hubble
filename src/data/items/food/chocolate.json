@@ -6,7 +6,11 @@
   "subcategory": "General",
   "aliases": [
     "candy bar",
-    "chocolate bar"
+    "chocolate bar",
+    "can i bring chocolate in my carry on",
+    "can you take chocolate on the plane",
+    "can i bring chocolate to the us",
+    "chocolate box"
   ],
   "keywords": [
     "chocolate",
@@ -73,5 +77,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/chocolate"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

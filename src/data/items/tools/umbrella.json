@@ -8,7 +8,16 @@
     "compact umbrella",
     "folding umbrella",
     "travel umbrella",
-    "rain umbrella"
+    "rain umbrella",
+    "tsa umbrella policy",
+    "british airways umbrella",
+    "ryanair umbrella",
+    "can i take an umbrella on a plane ryanair",
+    "emirates umbrella",
+    "can you bring an umbrella on a plane ryanair",
+    "can you take an umbrella on a plane ryanair",
+    "can i bring an umbrella on a plane",
+    "golf umbrella"
   ],
   "keywords": [
     "umbrella",
@@ -65,6 +74,10 @@
     {
       "question": "Do I need to remove my umbrella at TSA security?",
       "answer": "No, umbrellas can stay in your bag. TSA may ask you to remove it if the X-ray image is unclear."
+    },
+    {
+      "question": "Can I bring an umbrella on Ryanair, British Airways, and Emirates?",
+      "answer": "Yes! Small collapsible umbrellas are allowed in carry-on and personal item bags on all airlines. Large pointed golf umbrellas may need to be checked."
     }
   ],
   "metadata": {
@@ -80,5 +93,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/umbrella"
     }
-  ]
+  ],
+  "restrictionType": "Sharp Object",
+  "customNote": ""
 }

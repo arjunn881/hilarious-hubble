@@ -6,7 +6,16 @@
   "subcategory": "General",
   "aliases": [
     "hand weights",
-    "kettlebells"
+    "kettlebells",
+    "can you bring dumbbells on a plane",
+    "can you take dumbbells on a plane",
+    "can you bring weights on a plane",
+    "can you carry dumbbells on a plane",
+    "can i bring a dumbbell on a plane",
+    "can i bring dumbbells on a plane",
+    "can i carry dumbbells in flight",
+    "weights on plane",
+    "gym weights"
   ],
   "keywords": [
     "weights",
@@ -58,6 +67,10 @@
     {
       "question": "Can you pack dumbbells in checked baggage?",
       "answer": "Yes, Dumbbells is allowed in checked bags. Dumbbells and weights are allowed in checked baggage. Heavy bag charges may apply."
+    },
+    {
+      "question": "Can you bring dumbbells on a plane in carry-on?",
+      "answer": "While TSA does not explicitly prohibit small weights, security officers and airlines often restrict heavy metal dumbbells in cabin luggage due to bludgeon risks and overhead bin limits. It is recommended to pack weights in checked luggage."
     }
   ],
   "metadata": {
@@ -73,5 +86,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/dumbbells"
     }
-  ]
+  ],
+  "restrictionType": "Blunt Object",
+  "customNote": ""
 }

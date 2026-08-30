@@ -9,7 +9,11 @@
     "monster energy",
     "gatorade",
     "sports drink",
-    "energy can"
+    "energy can",
+    "can i bring monster energy on a plane",
+    "can i bring energy drinks on a plane",
+    "can i take monster energy on a plane",
+    "monster energy drink"
   ],
   "keywords": [
     "energy drink",
@@ -88,5 +92,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

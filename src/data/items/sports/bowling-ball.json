@@ -72,5 +72,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bowling-ball"
     }
-  ]
+  ],
+  "restrictionType": "Blunt Object",
+  "customNote": ""
 }

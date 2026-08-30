@@ -6,7 +6,13 @@
   "subcategory": "General",
   "aliases": [
     "epinephrine auto-injector",
-    "allergy shot"
+    "allergy shot",
+    "can i bring epipen to japan",
+    "bringing epipen to japan",
+    "can i bring my epipen to japan",
+    "traveling with injectable meds tsa rules",
+    "epipen international",
+    "auto injector"
   ],
   "keywords": [
     "allergy",
@@ -49,7 +55,12 @@
     }
   ],
   "airlines": [],
-  "international": {},
+  "international": {
+    "Japan": {
+      "status": "ALLOWED",
+      "reason": "One EpiPen auto-injector for emergency medical use is permitted without prior Yakkan Shoumei import certification. Carry doctor prescription."
+    }
+  },
   "travelTips": [
     "Must be declared to TSA officers if you choose to take them out of your bag for screening."
   ],
@@ -67,6 +78,14 @@
     {
       "question": "Can you pack epipen (epinephrine auto-injector) in checked baggage?",
       "answer": "Yes, EpiPen (Epinephrine Auto-Injector) is allowed in checked bags."
+    },
+    {
+      "question": "Can I bring an EpiPen to Japan?",
+      "answer": "Yes! Japan Customs and Health Ministry allow travelers to bring 1 personal EpiPen into Japan without prior approval. Keep it in original labeled packaging with your doctor prescription."
+    },
+    {
+      "question": "What are TSA rules for traveling with injectable medications?",
+      "answer": "Injectable medications (including EpiPens and insulin) are fully allowed through TSA checkpoints in carry-on baggage and are exempt from the 3.4 oz liquid limit."
     }
   ],
   "metadata": {
@@ -87,5 +106,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Medical",
+  "customNote": ""
 }

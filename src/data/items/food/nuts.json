@@ -11,7 +11,23 @@
     "mixed nuts",
     "trail mix",
     "walnuts",
-    "pistachios"
+    "pistachios",
+    "can i bring pistachios on a plane",
+    "can you bring almonds on a plane",
+    "can i bring almonds on a plane",
+    "can you take pistachios on a plane",
+    "can you bring nuts on a plane",
+    "can i carry cashew nuts in hand luggage",
+    "can i bring cashews on a plane",
+    "can i bring nuts in my carry on bag",
+    "can i bring cashew nuts to australia",
+    "can you bring cashews on a plane",
+    "can i carry almonds in cabin baggage",
+    "can i bring mixed nuts on a plane",
+    "can i take walnuts on the plane",
+    "can i bring walnuts on a plane",
+    "can you take almonds on a plane",
+    "roasted nuts"
   ],
   "keywords": [
     "nuts",
@@ -20,7 +36,10 @@
     "peanuts",
     "snacks",
     "trail mix",
-    "dry food"
+    "dry food",
+    "pistachios",
+    "walnuts",
+    "australia customs"
   ],
   "description": "TSA rules for nuts and trail mix on planes.",
   "carryOn": {
@@ -53,7 +72,12 @@
     }
   ],
   "airlines": [],
-  "international": {},
+  "international": {
+    "Australia": {
+      "status": "RESTRICTED",
+      "reason": "Nuts MUST be declared on your Incoming Passenger Card. Commercially roasted, packaged nuts without raw seeds or plant matter are permitted after biosecurity inspection."
+    }
+  },
   "travelTips": [
     "Nuts and trail mix are ideal travel snacks — lightweight and allowed without restriction",
     "Check airline policies if you have a severe nut allergy — some airlines may accommodate requests"
@@ -71,6 +95,14 @@
     {
       "question": "Can I bring peanut butter on a plane?",
       "answer": "Peanut butter is considered a paste/spread and is subject to the 3-1-1 rule in carry-on — containers must be 3.4 oz or less. Solid peanut butter bars are fine."
+    },
+    {
+      "question": "Can I bring pistachios, almonds, and cashews on a plane?",
+      "answer": "Yes! All nuts are solid foods and are allowed without limit in both carry-on and checked bags through TSA security."
+    },
+    {
+      "question": "Can I bring cashew nuts into Australia?",
+      "answer": "Yes, but you MUST declare them on your Incoming Passenger Card. Commercially packaged roasted nuts will clear Australian biosecurity inspection."
     }
   ],
   "metadata": {
@@ -86,5 +118,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/food-and-beverages"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

@@ -7,7 +7,19 @@
   "aliases": [
     "power strip",
     "surge protector",
-    "multi plug"
+    "multi plug",
+    "can i bring extension cord on plane",
+    "tsa extension cord",
+    "can you fly with an extension cord",
+    "are extension cords allowed on planes",
+    "can i put extension cord in checked luggage",
+    "can i bring extension wire on plane",
+    "is extension cord allowed in hand carry",
+    "can extension cord be checked in",
+    "can you take a surge protector on a plane",
+    "can i bring a surge protector on a plane",
+    "extension wire",
+    "power extension"
   ],
   "keywords": [
     "cord",
@@ -59,6 +71,10 @@
     {
       "question": "Can you pack extension cord in checked baggage?",
       "answer": "Yes, Extension Cord is allowed in checked bags. Extension cords are allowed in checked baggage."
+    },
+    {
+      "question": "Can I bring an extension cord or surge protector on a plane?",
+      "answer": "Yes! TSA and international airlines allow standard extension cords, surge protectors, and power strips in both carry-on and checked luggage."
     }
   ],
   "metadata": {
@@ -74,5 +90,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/extension-cord"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

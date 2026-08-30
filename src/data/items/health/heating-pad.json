@@ -7,7 +7,9 @@
   "aliases": [
     "hot pad",
     "electric blanket",
-    "warming pad"
+    "warming pad",
+    "can you bring heating pad on plane",
+    "electric heating pad"
   ],
   "keywords": [
     "heating",
@@ -92,5 +94,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Medical",
+  "customNote": ""
 }

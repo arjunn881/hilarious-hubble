@@ -6,7 +6,11 @@
   "subcategory": "General",
   "aliases": [
     "fruit juice",
-    "orange juice"
+    "orange juice",
+    "can.inshipped sealed.glass.kuice.in checked luggag",
+    "sealed glass juice in checked luggage",
+    "glass bottle juice checked baggage",
+    "bottled juice"
   ],
   "keywords": [
     "juice",
@@ -73,5 +77,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/juice"
     }
-  ]
+  ],
+  "restrictionType": "Liquid",
+  "customNote": ""
 }

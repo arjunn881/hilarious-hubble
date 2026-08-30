@@ -8,7 +8,9 @@
     "camp sleeping bag",
     "travel sleeping bag",
     "mummy bag",
-    "backpacking sleeping bag"
+    "backpacking sleeping bag",
+    "can you take a sleeping bag on a plane",
+    "sleeping bag carry on"
   ],
   "keywords": [
     "sleeping bag",
@@ -84,5 +86,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Sharp Object",
+  "customNote": ""
 }

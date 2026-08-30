@@ -6,7 +6,14 @@
   "subcategory": "General",
   "aliases": [
     "cat kibble",
-    "canned cat food"
+    "canned cat food",
+    "can you bring canned cat food on a plane",
+    "can you bring cat food on a plane",
+    "can you bring wet cat food on a plane",
+    "can i bring cat food on a plane international",
+    "can i bring wet cat food on a plane",
+    "wet cat food",
+    "cat treats"
   ],
   "keywords": [
     "cat",
@@ -58,6 +65,10 @@
     {
       "question": "Can you pack cat food in checked baggage?",
       "answer": "Yes, Cat Food is allowed in checked bags. Cat food is allowed in checked baggage."
+    },
+    {
+      "question": "Can you bring canned wet cat food in carry-on?",
+      "answer": "Canned wet cat food is classified as a liquid/gel: cans in carry-on must be 3.4 oz (100 ml) or less. Larger cans must be packed in checked baggage."
     }
   ],
   "metadata": {
@@ -73,5 +84,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cat-food"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

@@ -7,13 +7,28 @@
   "aliases": [
     "zyn",
     "snus",
-    "nicotine pouches"
+    "nicotine pouches",
+    "zyn pouches",
+    "nicotine pouches singapore airport",
+    "ryanair nicotine pouches",
+    "tobacco free pouches",
+    "nicotine oral pouches",
+    "can i bring nicotine pouches on a plane to singapore",
+    "bring nicotine pouches on plane",
+    "nicotine pouches carry on",
+    "bring cigarettes to sg",
+    "nicotine pouches uk"
   ],
   "keywords": [
     "zyn",
     "pouches",
     "nicotine",
-    "tobacco"
+    "tobacco",
+    "singapore",
+    "changi",
+    "ryanair",
+    "tsa",
+    "uk"
   ],
   "description": "Guidelines for traveling with nicotine pouches in your luggage.",
   "carryOn": {
@@ -45,8 +60,28 @@
       "priority": 1
     }
   ],
-  "airlines": [],
-  "international": {},
+  "airlines": [
+    {
+      "name": "Singapore Airlines",
+      "status": "NOT_ALLOWED",
+      "notes": "Strictly prohibited into Singapore under tobacco analogue laws."
+    },
+    {
+      "name": "Ryanair",
+      "status": "ALLOWED",
+      "notes": "Permitted in hand luggage and checked bags for personal use within EU nations."
+    }
+  ],
+  "international": {
+    "Singapore": {
+      "status": "NOT_ALLOWED",
+      "reason": "STRICTLY PROHIBITED. Singapore Customs and HSA ban all tobacco-free nicotine pouches (like ZYN), vaporizers, and chewing tobacco under the Tobacco Act. Fines up to SGD $2,000 apply at Changi Airport."
+    },
+    "UK": {
+      "status": "ALLOWED",
+      "reason": "Allowed in hand luggage and checked baggage for personal consumption."
+    }
+  },
   "travelTips": [
     "Nicotine pouches (like ZYN) are dry tobacco-free products and are fully allowed in carry-on and checked baggage."
   ],
@@ -59,6 +94,14 @@
     {
       "question": "Can you pack nicotine pouches in checked baggage?",
       "answer": "Yes, Nicotine Pouches is allowed in checked bags. Nicotine pouches are allowed in checked baggage."
+    },
+    {
+      "question": "Can I bring nicotine pouches to Singapore or Changi Airport?",
+      "answer": "No. Singapore enforces a strict zero-tolerance ban on nicotine pouches (such as ZYN), snus, and e-cigarettes. Possession or importation at Changi Airport carries heavy fines up to SGD $2,000."
+    },
+    {
+      "question": "Can you bring nicotine pouches on a plane in carry-on?",
+      "answer": "Yes, on US domestic flights and European flights (like Ryanair), nicotine pouches are solid items and are 100% permitted in carry-on and checked bags."
     }
   ],
   "metadata": {
@@ -74,5 +117,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/nicotine-pouches"
     }
-  ]
+  ],
+  "restrictionType": "Liquid/Solid",
+  "customNote": ""
 }

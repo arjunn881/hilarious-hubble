@@ -6,7 +6,31 @@
   "subcategory": "General",
   "aliases": [
     "sneakers",
-    "sandals"
+    "sandals",
+    "can i bring shoes in my carry on",
+    "can i put shoes in my carry on",
+    "can you put shoes in your carry on",
+    "can i bring shoes in my personal bag",
+    "can you put shoes in carry on bag",
+    "can you bring shoes in carry on",
+    "can i put shoes in my carry on bag",
+    "can i carry a pair of shoes on a plane",
+    "can you bring shoes on a plane",
+    "can i carry shoes in my carry on",
+    "can you carry shoes on a plane",
+    "can i put shoes in my personal bag",
+    "can you have shoes in your carry on",
+    "are shoes allowed in carry on",
+    "shoes allowed in hand luggage",
+    "can i bring shoes in my carry on bag",
+    "can shoes go in carry on luggage",
+    "can you put shoes in your personal item bag",
+    "can you bring an extra pair of shoes on a plane",
+    "can you bring shoes in your personal bag",
+    "how many pairs of shoes can you take on a plane",
+    "can shoes go in carry on",
+    "boots",
+    "extra pair of shoes"
   ],
   "keywords": [
     "shoes",
@@ -58,6 +82,14 @@
     {
       "question": "Can you pack shoes in checked baggage?",
       "answer": "Yes, Shoes is allowed in checked bags. Shoes are allowed in checked baggage."
+    },
+    {
+      "question": "How many pairs of shoes can you take on a plane?",
+      "answer": "There is no limit on how many pairs of shoes you can bring, as long as your bags fit within your airline size and weight limits. You can pack shoes in carry-on, personal bags, or checked luggage."
+    },
+    {
+      "question": "Can I put shoes in my personal item bag or carry-on?",
+      "answer": "Yes! Shoes are completely permitted in carry-on bags and personal item backpacks."
     }
   ],
   "metadata": {
@@ -73,5 +105,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shoes"
     }
-  ]
+  ],
+  "restrictionType": "Liquid/Solid",
+  "customNote": ""
 }

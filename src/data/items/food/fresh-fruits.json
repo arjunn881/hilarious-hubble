@@ -8,7 +8,11 @@
     "apple",
     "banana",
     "orange",
-    "berries"
+    "berries",
+    "cn i bring oassion fruits through securty",
+    "can i bring passion fruit through security",
+    "fresh fruits plane",
+    "passion fruit"
   ],
   "keywords": [
     "apples",
@@ -91,5 +95,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

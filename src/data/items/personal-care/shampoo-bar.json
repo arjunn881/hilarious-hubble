@@ -8,7 +8,11 @@
     "solid shampoo",
     "shampoo bar soap",
     "hair soap bar",
-    "solid conditioner"
+    "solid conditioner",
+    "do conditioner bars count as liquids for tsa, or are they solids?",
+    "are shampoo bars tsa-friendly for carry-on bags?",
+    "conditioner bar",
+    "shampoo soap bar"
   ],
   "keywords": [
     "shampoo bar",
@@ -68,6 +72,14 @@
     {
       "question": "Can you pack shampoo bars in checked baggage?",
       "answer": "Yes, solid shampoo bars are fully permitted in checked baggage without restrictions."
+    },
+    {
+      "question": "Do conditioner bars count as liquids for TSA, or are they solids?",
+      "answer": "Conditioner bars and shampoo bars are classified as SOLIDS by TSA and international aviation security. They are completely exempt from the 3.4 oz liquid limit and do NOT need to go in your liquids bag."
+    },
+    {
+      "question": "Is there a way to bring my full hair routine on a flight without checking a bag?",
+      "answer": "Yes! Use solid shampoo bars, solid conditioner bars, and decant remaining liquids into 3.4 oz (100 ml) travel containers inside a clear quart bag."
     }
   ],
   "metadata": {
@@ -83,5 +95,7 @@
       "change": "Initial solid toiletry allowance entry and baggage guidelines indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bar-soap"
     }
-  ]
+  ],
+  "restrictionType": "Liquid/Solid",
+  "customNote": ""
 }

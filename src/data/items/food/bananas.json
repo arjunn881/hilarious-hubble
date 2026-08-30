@@ -6,7 +6,19 @@
   "subcategory": "General",
   "aliases": [
     "banana",
-    "fresh banana"
+    "fresh banana",
+    "can i bring a banana through tsa",
+    "can you bring a banana through tsa",
+    "can i bring bananas on a plane",
+    "can you bring bananas on a plane",
+    "can i take a banana on a plane",
+    "tsa banana",
+    "can you bring bananas through tsa",
+    "can you carry bananas on a plane",
+    "can bananas go through tsa",
+    "banana through tsa",
+    "can you take bananas on a plane",
+    "fresh bananas"
   ],
   "keywords": [
     "bananas",
@@ -58,6 +70,10 @@
     {
       "question": "Can you pack bananas in checked baggage?",
       "answer": "Yes, Bananas is allowed in checked bags. Bananas are allowed in checked baggage, subject to agricultural controls."
+    },
+    {
+      "question": "Can I bring a banana through TSA airport security?",
+      "answer": "Yes! Fresh bananas and solid whole fruits are 100% allowed through TSA checkpoints in carry-on bags for domestic flights."
     }
   ],
   "metadata": {
@@ -73,5 +89,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/bananas"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

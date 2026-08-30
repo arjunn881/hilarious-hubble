@@ -7,7 +7,12 @@
   "aliases": [
     "bike",
     "road bike",
-    "mountain bike"
+    "mountain bike",
+    "singapore airlines bike policy",
+    "singapore airlines bicycle policy",
+    "singapore airlines bicycle",
+    "american airlines bicycle policy",
+    "bike on plane"
   ],
   "keywords": [
     "bike",
@@ -49,7 +54,18 @@
       "priority": 1
     }
   ],
-  "airlines": [],
+  "airlines": [
+    {
+      "name": "Singapore Airlines",
+      "status": "ALLOWED",
+      "notes": "Bicycles accepted as checked baggage within baggage allowance when properly packed in a bike box or protective case."
+    },
+    {
+      "name": "American Airlines",
+      "status": "ALLOWED",
+      "notes": "Bicycles accepted as standard checked luggage up to 50 lbs (23 kg) in hard/cardboard cases."
+    }
+  ],
   "international": {},
   "travelTips": [
     "Subject to oversized baggage fees on most commercial airlines."
@@ -88,5 +104,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Blunt Object",
+  "customNote": ""
 }

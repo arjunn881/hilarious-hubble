@@ -13,18 +13,14 @@ import { getRelatedCategories, POPULAR_AIRLINES, getPopularGuides } from "../../
 export async function getStaticPaths() {
   const items = getAllItems();
   
-  // Extract all unique categories and form slugs
+  // Build one canonical hyphenated slug per unique category.
+  // Registering raw-space or percent-encoded variants alongside the hyphenated slug
+  // causes Astro to attempt building duplicate static routes for the same page,
+  // which triggers the "higher priority route" WARN. Only the canonical slug is needed.
   const categoryMap = new Map<string, string>();
   items.forEach(item => {
     const canonicalSlug = item.category.toLowerCase().trim().replace(/\s+/g, "-");
     categoryMap.set(canonicalSlug, item.category);
-
-    // Support raw and space-encoded category variants so URLs like /category/personal%20care do not 404
-    const rawSlug = item.category.toLowerCase().trim();
-    if (rawSlug !== canonicalSlug) {
-      categoryMap.set(rawSlug, item.category);
-      categoryMap.set(encodeURIComponent(rawSlug), item.category);
-    }
   });
 
   return Array.from(categoryMap.entries()).map(([slug, name]) => {
@@ -57,9 +53,9 @@ const relatedGuides = Object.entries(posts)
 
 // Calculate stats for items in this category
 const total = categoryItems.length;
-const allowedCarryOn = categoryItems.filter(i => i.carryOn === 'ALLOWED').length;
-const restrictedCarryOn = categoryItems.filter(i => i.carryOn === 'RESTRICTED').length;
-const prohibitedCarryOn = categoryItems.filter(i => i.carryOn === 'NOT_ALLOWED').length;
+const allowedCarryOn    = categoryItems.filter(i => i.carryOn?.status === 'ALLOWED').length;
+const restrictedCarryOn = categoryItems.filter(i => i.carryOn?.status === 'RESTRICTED').length;
+const prohibitedCarryOn = categoryItems.filter(i => i.carryOn?.status === 'NOT_ALLOWED').length;
 
 function getStatusClass(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKNOWN') {
   if (status === 'ALLOWED') return "bg-link-bg-soft border-link/25 text-link-deep";

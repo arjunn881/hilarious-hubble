@@ -5,7 +5,18 @@
   "category": "Beauty",
   "subcategory": "General",
   "aliases": [
-    "electric shaver"
+    "electric shaver",
+    "can you bring an electric shaver on a plane",
+    "can you carry on an electric razor",
+    "electric shaver carry on",
+    "american airlines electric razor",
+    "can you bring a gillette razor on an airplane canada",
+    "electric toothbrush carry on",
+    "british airways electric toothbrush",
+    "air canada electric toothbrush",
+    "can you take electric toothbrush in hand luggage emirates",
+    "razor in carry on",
+    "can you bring a shaving razor on a plane"
   ],
   "keywords": [
     "razor",
@@ -43,7 +54,18 @@
       "priority": 1
     }
   ],
-  "airlines": [],
+  "airlines": [
+    {
+      "name": "American Airlines",
+      "status": "ALLOWED",
+      "notes": "Electric shavers permitted in carry-on and checked baggage."
+    },
+    {
+      "name": "British Airways",
+      "status": "ALLOWED",
+      "notes": "Electric toothbrushes and shavers permitted in cabin luggage."
+    }
+  ],
   "international": {},
   "travelTips": [
     "Electric razors and shavers are allowed in carry-on. They contain no exposed blades and are safe for cabin travel."
@@ -57,6 +79,10 @@
     {
       "question": "Can you pack electric razor in checked baggage?",
       "answer": "Yes, Electric Razor is allowed in checked bags. Electric razors are allowed in checked baggage."
+    },
+    {
+      "question": "Can you bring an electric shaver or electric toothbrush in carry-on?",
+      "answer": "Yes! Electric razors, rotary shavers, and rechargeable electric toothbrushes are allowed in carry-on bags and checked baggage on all airlines."
     }
   ],
   "metadata": {
@@ -72,5 +98,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/electric-razor"
     }
-  ]
+  ],
+  "restrictionType": "Liquid",
+  "customNote": ""
 }

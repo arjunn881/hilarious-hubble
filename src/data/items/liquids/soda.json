@@ -7,7 +7,10 @@
   "aliases": [
     "pop",
     "carbonated drink",
-    "coca cola"
+    "coca cola",
+    "can you take a can of soda on a plane",
+    "can of soda",
+    "carbonated drinks on plane"
   ],
   "keywords": [
     "soda",
@@ -74,5 +77,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/soda"
     }
-  ]
+  ],
+  "restrictionType": "Liquid",
+  "customNote": ""
 }

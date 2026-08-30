@@ -7,7 +7,12 @@
   "aliases": [
     "pumps",
     "stilettos",
-    "heels"
+    "heels",
+    "can i bring heels in my carry on",
+    "can i put heels in my carry on",
+    "can you bring heels on a plane",
+    "high heels",
+    "heels in carry on"
   ],
   "keywords": [
     "heels",
@@ -59,6 +64,10 @@
     {
       "question": "Can you pack high heels in checked baggage?",
       "answer": "Yes, High Heels is allowed in checked bags. High heels are allowed in checked baggage."
+    },
+    {
+      "question": "Can you bring high heels in your carry-on?",
+      "answer": "Yes! High heels and stilettos are 100% permitted in carry-on baggage. Metal heel tips do not violate TSA checkpoint rules."
     }
   ],
   "metadata": {
@@ -74,5 +83,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/high-heels"
     }
-  ]
+  ],
+  "restrictionType": "Liquid/Solid",
+  "customNote": ""
 }

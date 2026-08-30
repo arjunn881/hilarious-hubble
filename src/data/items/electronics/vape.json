@@ -8,7 +8,12 @@
     "vape pen",
     "e-cigarette",
     "disposable vape",
-    "vaporizer"
+    "vaporizer",
+    "can i take my vape to france",
+    "can i bring my vape to france",
+    "united vape policy",
+    "air france vape policy",
+    "e-cigarette carry on"
   ],
   "keywords": [
     "vape",
@@ -75,5 +80,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/vape"
     }
-  ]
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
 }

@@ -7,14 +7,31 @@
   "aliases": [
     "skipping rope",
     "speed rope",
-    "skipping cord"
+    "skipping cord",
+    "can i take a jump rope in my carry on",
+    "can you bring a jump rope on a plane",
+    "can i bring a jump rope on an airplane",
+    "can you take a jump rope on a plane",
+    "can i bring a jump rope on a plane",
+    "are jump ropes allowed on airplanes",
+    "can you take skipping rope on a plane",
+    "can you bring rope on a plane",
+    "can i bring rope on a plane",
+    "can you take rope on a plane",
+    "weighted jump rope",
+    "exercise rope",
+    "fitness rope"
   ],
   "keywords": [
     "jump rope",
     "skipping rope",
     "fitness",
     "exercise",
-    "workout"
+    "workout",
+    "rope",
+    "carry on",
+    "checked bag",
+    "tsa"
   ],
   "description": "TSA rules for jump ropes on planes.",
   "carryOn": {
@@ -64,6 +81,14 @@
     {
       "question": "Will TSA allow a jump rope in carry-on?",
       "answer": "Yes, TSA permits jump ropes in carry-on bags. They are not classified as weapons."
+    },
+    {
+      "question": "Can I take a jump rope in my carry-on bag?",
+      "answer": "Yes! TSA and international airport security allow jump ropes, speed ropes, and skipping ropes in both carry-on and checked luggage without restriction."
+    },
+    {
+      "question": "Can you bring rope on a plane?",
+      "answer": "Yes, standard jumping ropes, nylon cords, and workout ropes are permitted in carry-on and checked bags. Ensure heavy metal handles are packed neatly for clear X-ray screening."
     }
   ],
   "metadata": {
@@ -79,5 +104,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Blunt Object",
+  "customNote": ""
 }

@@ -6,7 +6,17 @@
   "subcategory": "General",
   "aliases": [
     "dog kibble",
-    "pet treats"
+    "pet treats",
+    "can you bring dog treats on a plane",
+    "how to travel with dog food",
+    "can you take dog treats on a plane",
+    "is dog food allowed on planes",
+    "can you bring dog food on a plane",
+    "can i bring dog food in my checked luggage international",
+    "can i bring dog treats on a plane",
+    "dog treats",
+    "dry dog food",
+    "kibble"
   ],
   "keywords": [
     "dog",
@@ -58,6 +68,10 @@
     {
       "question": "Can you pack dog food in checked baggage?",
       "answer": "Yes, Dog Food is allowed in checked bags. Dog food is allowed in checked baggage."
+    },
+    {
+      "question": "Can you bring dog treats and dog food on a plane?",
+      "answer": "Yes! Dry dog food, kibble, and solid dog treats are allowed in unlimited quantities in carry-on and checked bags. Canned wet dog food over 3.4 oz must go in checked luggage."
     }
   ],
   "metadata": {
@@ -73,5 +87,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/dog-food"
     }
-  ]
+  ],
+  "restrictionType": "Solid Food",
+  "customNote": ""
 }

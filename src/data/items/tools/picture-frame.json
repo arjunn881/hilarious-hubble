@@ -6,7 +6,10 @@
   "subcategory": "General",
   "aliases": [
     "photo frame",
-    "framed photo"
+    "framed photo",
+    "can i take wooden photo frames to australia",
+    "wooden photo frames",
+    "picture frame"
   ],
   "keywords": [
     "frame",
@@ -45,7 +48,12 @@
     }
   ],
   "airlines": [],
-  "international": {},
+  "international": {
+    "Australia": {
+      "status": "RESTRICTED",
+      "reason": "Wooden items and photo frames must be declared on arrival for Australian biosecurity inspection. Manufactured, finished wood without bark or insect damage passes inspection."
+    }
+  },
   "travelTips": [
     "Picture frames are allowed in carry-on. Frames with glass should be packed carefully to avoid injury or damage."
   ],
@@ -73,5 +81,7 @@
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/picture-frame"
     }
-  ]
+  ],
+  "restrictionType": "Sharp Object",
+  "customNote": ""
 }

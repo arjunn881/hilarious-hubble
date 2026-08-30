@@ -7,7 +7,10 @@
   "aliases": [
     "golf bag",
     "putter",
-    "irons"
+    "irons",
+    "lufthansa golf clubs",
+    "golf clubs on plane",
+    "golf bag checked"
   ],
   "keywords": [
     "golf",
@@ -49,7 +52,13 @@
       "priority": 1
     }
   ],
-  "airlines": [],
+  "airlines": [
+    {
+      "name": "Lufthansa",
+      "status": "ALLOWED",
+      "notes": "Golf bags accepted as checked baggage or sports luggage up to 23 kg."
+    }
+  ],
   "international": {},
   "travelTips": [
     "Most airlines charge standard checked bag fees or specific sporting equipment fees for golf bags."
@@ -88,5 +97,7 @@
       "change": "Initial carriage guidelines ingestion and regulatory database indexing.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/all"
     }
-  ]
+  ],
+  "restrictionType": "Blunt Object",
+  "customNote": ""
 }
