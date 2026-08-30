@@ -95,6 +95,9 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: 'hover'
   },
+  build: {
+    concurrency: 1,
+  },
   vite: {
     plugins: [tailwindcss()],
   },

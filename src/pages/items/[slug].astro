@@ -65,6 +65,10 @@ const airlineDifferences = getAirlineDifferences(item);
 const stepByStepPacking = getStepByStepPackingGuide(item);
 const itemFaqs = getExpandedItemFAQs(item);
 
+// ── YMYL flag — triggers medical disclaimer block ────────────────────────────
+const isMedicine = item.category === "Medicine";
+
+
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "Categories", href: "/#categories" },
@@ -561,7 +565,88 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
       </ol>
     </section>
 
-    <!-- Deep Security & Regulatory Breakdown -->
+    {/* ── YMYL Medicine Compliance Block ──────────────────────────────────── */}
+    {isMedicine && (
+      <section class="mb-10 rounded-xl bg-canvas border border-hairline shadow-sm overflow-hidden">
+        <div class="p-5 border-b border-hairline">
+          <h3 class="text-sm font-bold text-link-deep uppercase tracking-wider">
+            🔍 Airport Screening — Medical Items
+          </h3>
+        </div>
+
+        <div class="p-5 space-y-5">
+
+          {/* 1. Screening observation */}
+          <div>
+            <p class="text-sm text-body leading-relaxed">
+              Medical preparations are assessed individually at TSA checkpoints.
+              {item.name} may appear as tablets, capsules, liquids, or vials on X-ray.
+              Keeping it in its original labelled packaging significantly reduces
+              the likelihood of additional manual screening.
+            </p>
+          </div>
+
+          {/* 2. Label verification prompt */}
+          <div class="p-4 bg-warning-soft border border-warning/30 rounded-lg">
+            <p class="text-xs font-semibold text-warning-deep mb-1">📋 Label Verification Reminder</p>
+            <p class="text-xs text-body leading-relaxed">
+              Before packing, confirm the container label matches the exact product
+              name and strength you intend to travel with. Labels are the primary
+              reference used by customs and security officers in all jurisdictions.
+            </p>
+          </div>
+
+          {/* 3. Differential travel medicine categories */}
+          <div class="pt-4 border-t border-hairline">
+            <h4 class="text-xs font-bold uppercase text-mute tracking-wider mb-3">Common Travel Medicine Categories</h4>
+            <ul class="space-y-2 text-xs text-body">
+              <li class="flex items-start gap-2">
+                <span class="text-link font-bold mt-0.5">1.</span>
+                <span><strong class="text-ink">Over-the-Counter Essentials</strong> — Pain relievers, antihistamines, antacids, and motion-sickness tablets that require no prescription and are broadly allowed in carry-on bags.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-link font-bold mt-0.5">2.</span>
+                <span><strong class="text-ink">Prescription Medication</strong> — Physician-issued medicines (liquids, controlled substances, injectables) that may require a signed letter from your doctor and separate declaration at customs.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-link font-bold mt-0.5">3.</span>
+                <span><strong class="text-ink">Supplements &amp; Holistic Remedies</strong> — Vitamins, herbal capsules, and non-prescription wellness products. Broadly permitted, but large quantities may attract customs questions.</span>
+              </li>
+            </ul>
+
+            <h4 class="text-xs font-bold uppercase text-mute tracking-wider mt-4 mb-3">Packing Alternatives When Space Is Limited</h4>
+            <ul class="space-y-2 text-xs text-body">
+              <li class="flex items-start gap-2"><span class="text-link font-bold mt-0.5">→</span><span>Use a pill organiser to consolidate multiple tablets and reduce container bulk in your carry-on.</span></li>
+              <li class="flex items-start gap-2"><span class="text-link font-bold mt-0.5">→</span><span>Liquid medicines over 3.4 oz (100 ml) are permitted if medically necessary — declare them at the checkpoint before screening begins.</span></li>
+              <li class="flex items-start gap-2"><span class="text-link font-bold mt-0.5">→</span><span>Most aircraft carry a basic first-aid kit managed by cabin crew for minor in-flight medical situations.</span></li>
+            </ul>
+          </div>
+
+          {/* 4. General dosage note — generic, not item-specific */}
+          <div class="pt-4 border-t border-hairline text-xs text-body">
+            <p class="font-semibold text-ink mb-1">💡 General Dosage Guidance</p>
+            <p class="leading-relaxed">
+              Always follow the dosage instructions printed on the product label or as
+              directed by your prescribing physician. Dosage varies by product formulation,
+              age, and individual medical history. This site does not provide personalised
+              dosage calculations.
+            </p>
+          </div>
+
+          {/* 5. Medical disclaimer */}
+          <div class="pt-4 border-t border-hairline text-[11px] leading-relaxed text-mute italic bg-canvas-soft-2 -mx-5 -mb-5 px-5 py-4">
+            <strong class="not-italic text-ink">Medical Disclaimer:</strong> This page presents
+            general travel-compliance information only. It does not constitute medical advice,
+            a prescription, a diagnosis, or a clinical assessment of any kind. Always consult
+            a licensed healthcare professional or pharmacist before making decisions about
+            medication management during travel.
+          </div>
+
+        </div>
+      </section>
+    )}
+
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
       <section class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
         <h3 class="text-sm font-semibold tracking-[-0.3px] text-ink mb-3 flex items-center gap-2">
