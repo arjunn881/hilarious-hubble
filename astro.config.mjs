@@ -25,7 +25,7 @@ function getPriority(url) {
   if (path === '/' || path === '') return 1.0;
 
   // Core hub pages
-  if (['/faq', '/about', '/contact', '/checklist', '/compare', '/guides'].includes(path)) return 0.9;
+  if (['/faq', '/about', '/contact', '/checklist', '/compare', '/guides', '/tsa-rules'].includes(path)) return 0.9;
 
   // New legal/company pages
   if (['/privacy-policy', '/terms'].includes(path)) return 0.6;
@@ -56,7 +56,7 @@ function getChangefreq(url) {
 
   if (path === '/' || path === '') return 'daily';
   if (path.startsWith('/items/')) return 'weekly';
-  if (['/faq', '/guides', '/airlines', '/countries'].includes(path)) return 'weekly';
+  if (['/faq', '/guides', '/airlines', '/countries', '/tsa-rules'].includes(path)) return 'weekly';
   if (['/about', '/contact', '/privacy-policy', '/terms'].includes(path)) return 'monthly';
   if (path.startsWith('/guide/')) return 'monthly';
   if (path.startsWith('/packing-list/')) return 'weekly';

@@ -1,0 +1,403 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getAllItems } from "../lib/items";
+import { CheckCircle2, XCircle, AlertCircle, ArrowRight, ShieldCheck } from "@lucide/astro";
+
+const items = getAllItems();
+const currentYear = new Date().getFullYear();
+
+// Build a representative table: 30 most important items
+const tableItems = [
+  "power-bank", "laptop-charger", "airtag", "melatonin", "vape", "razor",
+  "sunscreen", "perfume", "toothpaste", "beard-trimmer", "shampoo", "deodorant",
+  "lighter", "scissors", "nicotine-pouches", "tent-stakes", "jump-rope",
+  "instant-noodles", "protein-bar", "shoes", "laptop", "ipad", "airpods",
+  "tweezers", "umbrella", "extension-cord", "mouthwash", "vitamins", "epipen",
+  "aerosol-insect-repellent"
+].map(slug => items.find(i => i.slug === slug)).filter(Boolean);
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "TSA Rules 2026" }
+];
+
+const seoTitle = `TSA Carry-On Rules ${currentYear}: Complete Guide — What Can I Bring on a Plane?`;
+const seoDescription = `Official TSA ${currentYear} carry-on and checked bag rules for 196+ items. Liquids 3-1-1 rule, prohibited items, battery rules, and airline-specific policies. Free instant checker.`;
+const seoKeywords = `tsa rules ${currentYear}, tsa carry on rules, what can i bring on a plane, tsa prohibited items, tsa liquids rule, 3-1-1 rule, airport security rules, what is allowed in carry on, tsa guidelines, carry on bag rules, checked bag rules, tsa approved items, what can i bring through tsa, items not allowed on planes, tsa packing guide, airport baggage rules, tsa checklist, can i bring this on a plane, tsa rules for carry on items, airline carry on rules, tsa 2026 rules, what is tsa, how does tsa work, tsa screening process, tsa precheck, tsa baggage rules, hand luggage rules, cabin baggage rules`;
+---
+
+<Layout 
+  title={seoTitle}
+  description={seoDescription}
+  canonicalURL="https://bringonplane.com/tsa-rules/"
+  keywords={seoKeywords}
+  speakableSummary={`TSA carry-on rules for ${currentYear}: the 3-1-1 liquids rule limits containers to 3.4 oz in carry-on bags. Power banks must be in carry-on only. Solid food, electronics, and most personal care items are allowed. Use BringOnPlane to check any specific item instantly.`}
+  breadcrumbItems={breadcrumbItems}
+  type="article"
+>
+  <!-- HowTo + Article + FAQPage schemas for this hub page -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": seoTitle,
+        "description": seoDescription,
+        "url": "https://bringonplane.com/tsa-rules/",
+        "datePublished": `${currentYear}-01-01`,
+        "dateModified": new Date().toISOString().split('T')[0],
+        "author": {
+          "@type": "Organization",
+          "name": "BringOnPlane Editorial Team",
+          "url": "https://bringonplane.com/about/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "BringOnPlane",
+          "url": "https://bringonplane.com",
+          "logo": { "@type": "ImageObject", "url": "https://bringonplane.com/logo.png" }
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://bringonplane.com/tsa-rules/" },
+        "isPartOf": { "@type": "WebSite", "name": "BringOnPlane", "url": "https://bringonplane.com" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bringonplane.com" },
+          { "@type": "ListItem", "position": 2, "name": `TSA Rules ${currentYear}`, "item": "https://bringonplane.com/tsa-rules/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the TSA 3-1-1 liquids rule?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The TSA 3-1-1 rule means: each liquid, gel, cream, paste, or aerosol container must be 3.4 oz (100ml) or less, packed inside 1 clear quart-sized zip-top bag, with 1 bag allowed per passenger through security. Full-size liquids can go in checked bags without restriction."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What items are completely prohibited in carry-on bags by TSA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TSA prohibits in carry-on bags: firearms and ammunition, explosives, flammable gases, power banks over 160Wh, self-defense sprays, knives with blades over 4 inches, martial arts weapons, and flammable liquids in containers over 3.4 oz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I bring a power bank or portable charger in my carry-on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, power banks must be in carry-on bags only — they are prohibited in checked baggage. Power banks up to 100Wh are unrestricted. Banks between 100-160Wh require airline approval. Banks over 160Wh are prohibited entirely on passenger aircraft."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does TSA screening work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "At TSA security: place bags on the belt, remove laptops and tablets to separate bins, remove your liquids bag, take off shoes and belts, and walk through the scanner. TSA PreCheck members can leave shoes on and laptops in bags. Items are X-rayed and flagged if restricted."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are medications and medical devices exempt from TSA rules?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Prescription medications (pills, liquids, injections), medical devices (CPAP machines, insulin pumps, epipens), baby formula, and breast milk are exempt from the 3-1-1 liquids rule. Declare these items at the security checkpoint for expedited screening."
+            }
+          }
+        ]
+      }
+    ]
+  })} />
+
+  <Header slot="header" />
+
+  <div class="max-w-[1100px] w-full mx-auto px-4 md:px-6 py-10 flex-1">
+    
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="mb-6 text-xs font-mono text-mute flex items-center gap-1.5">
+      <a href="/" class="hover:text-link transition-colors">Home</a>
+      <span aria-hidden="true">/</span>
+      <span class="text-ink font-semibold">TSA Rules {currentYear}</span>
+    </nav>
+
+    <!-- H1 + intro -->
+    <header class="mb-10 max-w-[760px]">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 rounded-full text-blue-700 dark:text-blue-300 text-[11px] font-mono font-bold uppercase tracking-wider mb-4">
+        <ShieldCheck class="w-3.5 h-3.5" />
+        Official TSA &amp; FAA Guidelines · Updated {currentYear}
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-4 text-pretty speakable-hero">
+        TSA Carry-On Rules {currentYear}: Complete Guide
+      </h1>
+      <p class="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6 speakable-answer">
+        Planning what to pack before a flight? These are the official TSA carry-on and checked baggage rules for {currentYear} — covering the 3-1-1 liquids rule, battery safety, food rules, prohibited items, and more. Use the <a href="/" class="text-blue-600 dark:text-blue-400 underline underline-offset-2 font-semibold">free TSA checker</a> to look up any specific item instantly.
+      </p>
+      <a href="/" class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold shadow-md transition-all">
+        Search Any Item Now <ArrowRight class="w-4 h-4" />
+      </a>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+      
+      <!-- Main Content Column -->
+      <div class="space-y-12">
+
+        <!-- Section 1: 3-1-1 Rule -->
+        <section id="311-rule" aria-labelledby="h2-311">
+          <h2 id="h2-311" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm font-mono font-bold flex-shrink-0">3</span>
+            The TSA 3-1-1 Liquids Rule Explained
+          </h2>
+          <div class="prose prose-sm max-w-none text-slate-600 dark:text-slate-300 space-y-4">
+            <p>The <strong class="text-slate-900 dark:text-white">TSA 3-1-1 rule</strong> governs all liquids, gels, creams, pastes, and aerosols in your carry-on bag:</p>
+            <div class="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 space-y-3">
+              <div class="flex items-start gap-3">
+                <span class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">3</span>
+                <div>
+                  <p class="font-bold text-slate-900 dark:text-white">3.4 oz (100ml) or less per container</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Each individual container of liquid, gel, or aerosol must hold no more than 3.4 fl oz (100ml).</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">1</span>
+                <div>
+                  <p class="font-bold text-slate-900 dark:text-white">1 clear, quart-sized zip-top bag</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">All liquid containers must fit inside a single transparent 1-quart (approx. 1L) resealable plastic bag.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">1</span>
+                <div>
+                  <p class="font-bold text-slate-900 dark:text-white">1 bag per passenger</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Each passenger may carry one quart-sized bag of liquids through the security checkpoint.</p>
+                </div>
+              </div>
+            </div>
+            <p><strong class="text-slate-900 dark:text-white">What counts as a liquid under TSA rules?</strong> Shampoo, conditioner, lotion, sunscreen, liquid soap, toothpaste, hair gel, deodorant gel, cologne, perfume, hairspray, dry shampoo spray, shaving cream, bug spray, and any pourable or spreadable substance.</p>
+            <p><strong class="text-slate-900 dark:text-white">What is NOT a liquid?</strong> Solid stick deodorant, bar soap, solid shampoo bars, dry powder, solid sunscreen sticks, and powder makeup are NOT classified as liquids and have no carry-on size restriction.</p>
+            <p><strong class="text-slate-900 dark:text-white">Checked baggage:</strong> There is no liquid limit in checked bags. You can bring full-size shampoo, conditioner, and all liquids in your checked suitcase.</p>
+          </div>
+        </section>
+
+        <!-- Section 2: Battery Rules -->
+        <section id="battery-rules" aria-labelledby="h2-battery">
+          <h2 id="h2-battery" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+            TSA Battery Rules: Power Banks, Lithium, and AA Batteries
+          </h2>
+          <div class="prose prose-sm max-w-none text-slate-600 dark:text-slate-300 space-y-4">
+            <p>Lithium batteries are one of the most confusing areas of TSA rules. Here's the complete breakdown:</p>
+            <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-slate-50 dark:bg-slate-800">
+                    <th class="px-4 py-3 text-left font-semibold text-slate-900 dark:text-white">Battery Type</th>
+                    <th class="px-4 py-3 text-left font-semibold text-slate-900 dark:text-white">Carry-On</th>
+                    <th class="px-4 py-3 text-left font-semibold text-slate-900 dark:text-white">Checked Bag</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                  <tr class="bg-white dark:bg-slate-900">
+                    <td class="px-4 py-3 text-slate-900 dark:text-white font-medium">Power bank / portable charger (≤100Wh)</td>
+                    <td class="px-4 py-3 text-emerald-700 dark:text-emerald-400 font-semibold">✓ Allowed</td>
+                    <td class="px-4 py-3 text-red-700 dark:text-red-400 font-semibold">✗ Prohibited</td>
+                  </tr>
+                  <tr class="bg-slate-50/50 dark:bg-slate-800/50">
+                    <td class="px-4 py-3 text-slate-900 dark:text-white font-medium">Power bank (100–160Wh)</td>
+                    <td class="px-4 py-3 text-amber-700 dark:text-amber-400 font-semibold">⚠ Airline approval required</td>
+                    <td class="px-4 py-3 text-red-700 dark:text-red-400 font-semibold">✗ Prohibited</td>
+                  </tr>
+                  <tr class="bg-white dark:bg-slate-900">
+                    <td class="px-4 py-3 text-slate-900 dark:text-white font-medium">Laptop charger / USB-C power brick</td>
+                    <td class="px-4 py-3 text-emerald-700 dark:text-emerald-400 font-semibold">✓ Allowed</td>
+                    <td class="px-4 py-3 text-emerald-700 dark:text-emerald-400 font-semibold">✓ Allowed</td>
+                  </tr>
+                  <tr class="bg-slate-50/50 dark:bg-slate-800/50">
+                    <td class="px-4 py-3 text-slate-900 dark:text-white font-medium">AA / AAA alkaline batteries</td>
+                    <td class="px-4 py-3 text-emerald-700 dark:text-emerald-400 font-semibold">✓ Allowed</td>
+                    <td class="px-4 py-3 text-emerald-700 dark:text-emerald-400 font-semibold">✓ Allowed</td>
+                  </tr>
+                  <tr class="bg-white dark:bg-slate-900">
+                    <td class="px-4 py-3 text-slate-900 dark:text-white font-medium">Spare lithium-ion batteries (laptop, camera)</td>
+                    <td class="px-4 py-3 text-emerald-700 dark:text-emerald-400 font-semibold">✓ Carry-on only</td>
+                    <td class="px-4 py-3 text-red-700 dark:text-red-400 font-semibold">✗ Prohibited</td>
+                  </tr>
+                  <tr class="bg-slate-50/50 dark:bg-slate-800/50">
+                    <td class="px-4 py-3 text-slate-900 dark:text-white font-medium">Vape / e-cigarette (lithium battery)</td>
+                    <td class="px-4 py-3 text-emerald-700 dark:text-emerald-400 font-semibold">✓ Carry-on only</td>
+                    <td class="px-4 py-3 text-red-700 dark:text-red-400 font-semibold">✗ Prohibited</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Quick Reference Table (Programmatic) -->
+        <section id="item-reference" aria-labelledby="h2-items">
+          <h2 id="h2-items" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">
+            TSA Item Quick Reference: 30 Most Searched Items ({currentYear})
+          </h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-5">Click any item for its full TSA guide with exact size limits, airline-specific rules, and packing tips.</p>
+          <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-800">
+                  <th class="px-4 py-3 text-left font-semibold text-slate-900 dark:text-white">Item</th>
+                  <th class="px-4 py-3 text-left font-semibold text-slate-900 dark:text-white">Category</th>
+                  <th class="px-4 py-3 text-center font-semibold text-slate-900 dark:text-white">Carry-On</th>
+                  <th class="px-4 py-3 text-center font-semibold text-slate-900 dark:text-white">Checked</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                {tableItems.map((item, i) => {
+                  if (!item) return null;
+                  const carryOk = item.carryOn.status === 'ALLOWED';
+                  const carryNo = item.carryOn.status === 'NOT_ALLOWED';
+                  const checkedOk = item.checkedBag.status === 'ALLOWED';
+                  const checkedNo = item.checkedBag.status === 'NOT_ALLOWED';
+                  return (
+                    <tr class:list={["hover:bg-blue-50/50 dark:hover:bg-blue-950/20 transition-colors", i % 2 === 0 ? "bg-white dark:bg-slate-900" : "bg-slate-50/50 dark:bg-slate-800/30"]}>
+                      <td class="px-4 py-3">
+                        <a href={`/items/${item.slug}/`} class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                          {item.name}
+                        </a>
+                      </td>
+                      <td class="px-4 py-3 text-slate-500 dark:text-slate-400 text-xs font-mono">{item.category}</td>
+                      <td class="px-4 py-3 text-center">
+                        {carryOk ? (
+                          <span class="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400 font-semibold text-xs"><CheckCircle2 class="w-3.5 h-3.5" /> Yes</span>
+                        ) : carryNo ? (
+                          <span class="inline-flex items-center gap-1 text-red-700 dark:text-red-400 font-semibold text-xs"><XCircle class="w-3.5 h-3.5" /> No</span>
+                        ) : (
+                          <span class="inline-flex items-center gap-1 text-amber-700 dark:text-amber-400 font-semibold text-xs"><AlertCircle class="w-3.5 h-3.5" /> Conditions</span>
+                        )}
+                      </td>
+                      <td class="px-4 py-3 text-center">
+                        {checkedOk ? (
+                          <span class="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400 font-semibold text-xs"><CheckCircle2 class="w-3.5 h-3.5" /> Yes</span>
+                        ) : checkedNo ? (
+                          <span class="inline-flex items-center gap-1 text-red-700 dark:text-red-400 font-semibold text-xs"><XCircle class="w-3.5 h-3.5" /> No</span>
+                        ) : (
+                          <span class="inline-flex items-center gap-1 text-amber-700 dark:text-amber-400 font-semibold text-xs"><AlertCircle class="w-3.5 h-3.5" /> Conditions</span>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-3 font-mono">
+            Showing 30 of 196+ items. <a href="/items/page/1/" class="text-blue-600 dark:text-blue-400 hover:underline">Browse the full directory →</a>
+          </p>
+        </section>
+
+        <!-- Section 4: Prohibited Items -->
+        <section id="prohibited-items" aria-labelledby="h2-prohibited">
+          <h2 id="h2-prohibited" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+            TSA Prohibited Items: What Is Never Allowed on a Plane
+          </h2>
+          <div class="prose prose-sm max-w-none text-slate-600 dark:text-slate-300 space-y-3">
+            <p>The following items are <strong class="text-red-700 dark:text-red-400">prohibited in both carry-on and checked baggage</strong> on all commercial flights:</p>
+            <ul class="space-y-1.5 list-none pl-0">
+              {[
+                "Firearms loaded with live ammunition (unloaded, declared firearms may be checked)",
+                "Explosive devices, fireworks, flares, blasting caps",
+                "Flammable liquids such as gasoline, paint, and turpentine",
+                "Compressed gases (flammable or toxic)",
+                "Power banks over 160Wh capacity",
+                "Samsung Galaxy Note 7 (permanently banned on all US flights)",
+                "Chlorine, bleach, and strong oxidizers",
+                "Radioactive materials (except approved medical devices)"
+              ].map(item => (
+                <li class="flex items-start gap-2 text-sm">
+                  <XCircle class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 5: How to Use the Tool -->
+        <section id="how-to-use" aria-labelledby="h2-tool">
+          <h2 id="h2-tool" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+            How to Check if Your Item Is Allowed (Free Tool)
+          </h2>
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/40 dark:to-indigo-950/40 border border-blue-200 dark:border-blue-800 rounded-2xl p-6">
+            <p class="text-sm text-slate-700 dark:text-slate-300 mb-4">BringOnPlane's free TSA checker covers 196+ items with instant verdicts. Here's how to use it:</p>
+            <ol class="space-y-3">
+              {[
+                { n: "1", text: "Go to the homepage and type any item into the search bar (e.g. 'razor', 'power bank', 'shampoo bar')" },
+                { n: "2", text: "Read the instant color-coded verdict: ✓ Green = Allowed, ⚠ Amber = Restricted/Conditions, ✗ Red = Prohibited" },
+                { n: "3", text: "Click 'Read Full TSA Rules' for exact size limits, airline variations, and international customs notes" }
+              ].map(step => (
+                <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                  <span class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">{step.n}</span>
+                  <span>{step.text}</span>
+                </li>
+              ))}
+            </ol>
+            <a href="/" class="mt-5 inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold shadow-md transition-all">
+              Open TSA Checker <ArrowRight class="w-4 h-4" />
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Sidebar Column -->
+      <aside class="space-y-6">
+
+        <!-- Quick Links Widget -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sticky top-24">
+          <p class="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">On This Page</p>
+          <nav class="space-y-2">
+            {[
+              { href: "#311-rule", label: "3-1-1 Liquids Rule" },
+              { href: "#battery-rules", label: "Battery Rules" },
+              { href: "#item-reference", label: "Item Quick Reference" },
+              { href: "#prohibited-items", label: "Prohibited Items" },
+              { href: "#how-to-use", label: "How to Use the Tool" }
+            ].map(link => (
+              <a href={link.href} class="block text-sm text-blue-600 dark:text-blue-400 hover:underline py-0.5">{link.label}</a>
+            ))}
+          </nav>
+
+          <hr class="my-4 border-slate-200 dark:border-slate-700" />
+
+          <p class="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">Related Pages</p>
+          <div class="space-y-2">
+            {[
+              { href: "/faq/", label: "Full TSA FAQ Guide" },
+              { href: "/airlines/", label: "Airline Rules Matrix" },
+              { href: "/countries/", label: "Country Customs Hub" },
+              { href: "/checklist/", label: "Packing Checklist Tool" },
+              { href: "/compare/", label: "Compare Items Side-by-Side" },
+              { href: "/category/electronics/", label: "Electronics Rules" },
+              { href: "/category/liquids/", label: "Liquids (3-1-1) Rules" },
+              { href: "/category/medicine/", label: "Medication Rules" },
+            ].map(link => (
+              <a href={link.href} class="flex items-center gap-1.5 text-sm text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <ArrowRight class="w-3 h-3 text-slate-400 flex-shrink-0" />
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Layout>

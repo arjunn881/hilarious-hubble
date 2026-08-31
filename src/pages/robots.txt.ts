@@ -114,6 +114,38 @@ User-agent: YouBot
 Allow: /
 
 # ─────────────────────────────────────────────────────────────────────────────
+# 10B. ADDITIONAL AI / GEO CRAWLERS (Generative Engine Optimization)
+# ─────────────────────────────────────────────────────────────────────────────
+# Meta AI (Llama, Meta AI assistant)
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# OpenAI web search (SearchGPT / search.chatgpt.com)
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic Claude web browsing
+User-agent: anthropic-ai
+Allow: /
+
+# Amazon Alexa / Rufus AI shopping assistant
+User-agent: Amazonbot
+Allow: /
+
+# ByteDance (TikTok AI, Doubao)
+User-agent: Bytespider
+Allow: /
+
+# Cohere AI (Command R models web access)
+User-agent: cohere-ai
+Allow: /
+
+# Diffbot (AI structured data extraction, feeds many LLMs)
+User-agent: Diffbot
+Allow: /
+Crawl-delay: 10
+
+# ─────────────────────────────────────────────────────────────────────────────
 # 11. SEO TOOL CRAWLERS (research / competitive analysis tools)
 # ─────────────────────────────────────────────────────────────────────────────
 User-agent: AhrefsBot

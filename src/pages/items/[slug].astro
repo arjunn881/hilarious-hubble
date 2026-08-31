@@ -237,17 +237,87 @@ const faq2Answer = `Yes, ${item.name.toLowerCase()} is ${item.carryOn.status ===
 const faq3Question = `Are there any special rules for packing ${item.name.toLowerCase()} in checked baggage?`;
 const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checkedBag.status === 'ALLOWED' ? 'allowed without restrictions' : item.checkedBag.status === 'RESTRICTED' ? 'restricted (subject to conditions)' : 'prohibited'}. ${item.checkedBag.conditions[0] || 'Ensure it is packed securely.'}`;
 
+// ── Item-specific keywords (passed to Layout for <meta name="keywords">) ────
+const itemKeywords = [
+  `can i bring ${item.name.toLowerCase()} on a plane`,
+  `can you bring ${item.name.toLowerCase()} on a plane`,
+  `${item.name.toLowerCase()} tsa rules`,
+  `${item.name.toLowerCase()} carry on`,
+  `${item.name.toLowerCase()} checked bag`,
+  `${item.name.toLowerCase()} airplane`,
+  `${item.name.toLowerCase()} flight rules`,
+  `is ${item.name.toLowerCase()} allowed on a plane`,
+  `tsa ${item.name.toLowerCase()}`,
+  `${item.name.toLowerCase()} on a plane`,
+  ...(item.aliases || []).map((a: string) => `can i bring ${a.toLowerCase()} on a plane`),
+  `${item.name.toLowerCase()} air france`,
+  `${item.name.toLowerCase()} emirates`,
+  `${item.name.toLowerCase()} ryanair`,
+  `${item.name.toLowerCase()} british airways`,
+  `${item.name.toLowerCase()} united airlines`,
+  `${item.name.toLowerCase()} delta`,
+  `${item.name.toLowerCase()} singapore airlines`,
+  `${item.name.toLowerCase()} lufthansa`,
+  ...(item.keywords || [])
+].join(', ');
+
 ---
 
 <Layout 
   title={seoTitle}
   description={seoDescription}
   canonicalURL={`https://bringonplane.com/items/${item.slug}/`}
+  keywords={itemKeywords}
+  speakableSummary={featuredSnippetAnswer}
+  breadcrumbItems={breadcrumbItems}
 >
   <!-- Inject JSON-LD structured data in the page body -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "Article",
+        "headline": seoTitle,
+        "description": seoDescription,
+        "url": `https://bringonplane.com/items/${item.slug}/`,
+        "datePublished": item.metadata?.lastReviewed || item.lastReviewed || new Date().toISOString().split('T')[0],
+        "dateModified": item.metadata?.lastReviewed || item.lastReviewed || new Date().toISOString().split('T')[0],
+        "author": {
+          "@type": "Organization",
+          "name": "BringOnPlane Editorial Team",
+          "url": "https://bringonplane.com/about/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "BringOnPlane",
+          "url": "https://bringonplane.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://bringonplane.com/logo.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://bringonplane.com/items/${item.slug}/`
+        },
+        "about": {
+          "@type": "Thing",
+          "name": item.name,
+          "description": item.description
+        },
+        "mentions": item.tsa?.officialUrl ? [
+          {
+            "@type": "WebPage",
+            "name": `Official TSA Rules for ${item.name}`,
+            "url": item.tsa.officialUrl
+          }
+        ] : undefined,
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "BringOnPlane",
+          "url": "https://bringonplane.com"
+        }
+      },
       {
         "@type": "Thing",
         "name": item.name,
@@ -375,10 +445,10 @@ const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checke
         </div>
       )}
 
-      <!-- Feature 8: Featured Snippet Quick Answer box -->
+      <!-- Feature 8: Featured Snippet Quick Answer box (speakable-answer targets this for voice/AI) -->
       <div class="mt-5 mb-2 p-4 rounded-md bg-canvas-soft border-l-4 border-link">
         <p class="text-xs font-mono text-link uppercase tracking-wider mb-1.5 font-semibold">Quick Answer</p>
-        <p class="text-sm text-body leading-[1.7] text-pretty">
+        <p class="speakable-answer text-sm text-body leading-[1.7] text-pretty">
           {featuredSnippetAnswer}
         </p>
       </div>

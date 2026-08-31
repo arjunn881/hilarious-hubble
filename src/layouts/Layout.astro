@@ -14,6 +14,10 @@ interface Props {
   type?: "website" | "article";
   keywords?: string;
   noIndex?: boolean | "noindex, follow" | "noindex, nofollow";
+  /** Pass a short plain-text summary for speakable / voice assistant extraction */
+  speakableSummary?: string;
+  /** JSON-LD breadcrumb items for BreadcrumbList schema in <head> */
+  breadcrumbItems?: Array<{ label: string; href?: string }>;
 }
 
 const {
@@ -27,6 +31,8 @@ const {
   type = "website",
   keywords = "can i bring food through tsa, can i bring food on a plane, can i bring a vape on a plane, what can i bring on a plane, tsa carry on rules, tsa baggage rules, airport security, what can i bring in carry on, packing list generator, travel checklist, can i bring snacks on a plane, can i bring a portable charger on a plane, can i bring toothpaste on a plane, can i bring scissors on a plane, can i bring a razor on a plane",
   noIndex = false,
+  speakableSummary,
+  breadcrumbItems,
 } = Astro.props;
 
 const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : "https://bringonplane.com";
@@ -69,7 +75,19 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+    <!-- Application identity for PWA / AI assistants -->
+    <meta name="application-name" content="BringOnPlane" />
+    <meta name="rating" content="General" />
+    <meta name="category" content="Travel, Tools" />
+    <!-- DNS prefetch for performance (Core Web Vitals signal) -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+    <!-- International: signals this is the canonical English version -->
+    <link rel="alternate" hreflang="en" href={finalCanonicalURL} />
+    <link rel="alternate" hreflang="x-default" href={finalCanonicalURL} />
     {prevURL && <link rel="prev" href={prevURL} />}
     {nextURL && <link rel="next" href={nextURL} />}
     
@@ -99,6 +117,8 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
     <meta name="copyright" content="BringOnPlane" />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
+    <meta name="subject" content="TSA carry-on and checked baggage rules for travel items" />
+    <meta name="classification" content="Travel, Aviation Security, Tools" />
     {keywords && <meta name="keywords" content={keywords} />}
 
     <!-- ═══════════════════════════════════════════════════════
@@ -159,11 +179,21 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "BringOnPlane",
+      "alternateName": ["Bring On Plane", "BringOnPlane.com"],
       "url": "https://bringonplane.com",
-      "logo": "https://bringonplane.com/logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bringonplane.com/logo.png",
+        "width": 200,
+        "height": 60
+      },
       "sameAs": [
         "https://www.instagram.com/bringonplane/"
-      ]
+      ],
+      "foundingDate": "2024",
+      "description": "Free TSA carry-on checker and airport security rules directory for travellers.",
+      "areaServed": "Worldwide",
+      "knowsAbout": ["TSA security rules", "Airport carry-on regulations", "Airline baggage policies", "FAA regulations", "IATA standards"]
     })} />
 
     <!-- SoftwareApplication schema: signals to Google this is an interactive tool -->
@@ -171,23 +201,86 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "BringOnPlane TSA Checker",
-      "description": "Instantly check TSA carry-on and checked bag rules for any item. Search 196+ items with instant color-coded verdicts.",
+      "alternateName": "Can I Bring This On A Plane? Checker",
+      "description": "Instantly check TSA carry-on and checked bag rules for any item. Search 196+ items with instant color-coded verdicts. Free airport security tool.",
       "url": "https://bringonplane.com",
       "applicationCategory": "TravelApplication",
-      "operatingSystem": "Web",
+      "applicationSubCategory": "Airport Security Tool",
+      "operatingSystem": "Web, iOS, Android",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
       },
       "featureList": [
         "Instant TSA carry-on checker",
         "Checked bag rules lookup",
         "196+ items database",
-        "Color-coded YES/NO verdicts",
-        "Free packing checklist builder"
-      ]
+        "Color-coded YES/NO/RESTRICTED verdicts",
+        "Free packing checklist builder",
+        "Side-by-side item comparison tool",
+        "Airline-specific rule variations",
+        "International customs guidance"
+      ],
+      "screenshot": {
+        "@type": "ImageObject",
+        "url": "https://bringonplane.com/og-image.png",
+        "caption": "BringOnPlane TSA Checker — search any item for instant carry-on verdict"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "BringOnPlane",
+        "url": "https://bringonplane.com"
+      }
     })} />
+
+    <!-- SiteLinksSearchBox: enables Google to show a search box directly in SERPs -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "BringOnPlane",
+      "url": "https://bringonplane.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://bringonplane.com/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    })} />
+
+    <!-- Speakable: marks content for Google Assistant / voice search extraction -->
+    {speakableSummary && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": title,
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".speakable-hero", ".speakable-answer", "h1"]
+        },
+        "url": finalCanonicalURL
+      })}  />
+    )}
+
+    <!-- BreadcrumbList in <head> for crawlers that don't parse body JSON-LD -->
+    {breadcrumbItems && breadcrumbItems.length > 1 && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbItems.map((crumb, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": crumb.label,
+          ...(crumb.href ? { "item": `https://bringonplane.com${crumb.href}` } : {})
+        }))
+      })} />
+    )}
 
     <slot name="head" />
   </head>
