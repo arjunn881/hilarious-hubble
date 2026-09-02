@@ -5,10 +5,10 @@ import Footer from "../components/Footer.astro";
 import { getAllItems } from "../lib/items";
 import { CheckCircle2, XCircle, AlertCircle, ArrowRight, ShieldCheck } from "@lucide/astro";
 
-const items = getAllItems();
 const currentYear = new Date().getFullYear();
 
-// Build a representative table: 30 most important items
+// Build a representative table: include only slugs that exist and have valid data
+const allKnownItems = getAllItems();
 const tableItems = [
   "power-bank", "laptop-charger", "airtag", "melatonin", "vape", "razor",
   "sunscreen", "perfume", "toothpaste", "beard-trimmer", "shampoo", "deodorant",
@@ -16,7 +16,13 @@ const tableItems = [
   "instant-noodles", "protein-bar", "shoes", "laptop", "ipad", "airpods",
   "tweezers", "umbrella", "extension-cord", "mouthwash", "vitamins", "epipen",
   "aerosol-insect-repellent"
-].map(slug => items.find(i => i.slug === slug)).filter(Boolean);
+].reduce<typeof allKnownItems>((acc, slug) => {
+  const found = allKnownItems.find(i => i.slug === slug);
+  if (found && found.carryOn && found.checkedBag && found.carryOn.status && found.checkedBag.status) {
+    acc.push(found);
+  }
+  return acc;
+}, []);
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
