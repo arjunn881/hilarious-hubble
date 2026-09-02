@@ -254,7 +254,11 @@ const faq1Question = `Is ${item.name.toLowerCase()} allowed on a plane?`;
 const faq1Answer = `According to the TSA, ${item.name.toLowerCase()} is ${item.carryOn.status.replace('_', ' ').toLowerCase()} in carry-on bags and ${item.checkedBag.status.replace('_', ' ').toLowerCase()} in checked baggage. ${item.carryOn.reason}`;
 
 const faq2Question = `Can I bring ${item.name.toLowerCase()} in carry-on luggage?`;
-const faq2Answer = `Yes, ${item.name.toLowerCase()} is ${item.carryOn.status === 'ALLOWED' ? 'fully allowed' : item.carryOn.status === 'RESTRICTED' ? 'restricted (subject to conditions)' : 'prohibited'} in carry-on bags. ${item.carryOn.conditions[0] || 'Make sure to consult airport guidelines.'}`;
+const faq2Answer = item.carryOn.status === 'ALLOWED'
+  ? `Yes, ${item.name.toLowerCase()} is fully allowed in carry-on bags. ${item.carryOn.conditions[0] || 'Check with your airline for any additional restrictions.'}`
+  : item.carryOn.status === 'NOT_ALLOWED'
+  ? `No, ${item.name.toLowerCase()} is prohibited in carry-on bags by TSA. ${item.carryOn.conditions[0] || 'You must place it in checked baggage or leave it at home before the checkpoint.'}`
+  : `${item.name} is restricted in carry-on bags and subject to conditions. ${item.carryOn.conditions[0] || 'Check with your airline and airport security for specific requirements.'}`;
 
 const faq3Question = `Are there any special rules for packing ${item.name.toLowerCase()} in checked baggage?`;
 const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checkedBag.status === 'ALLOWED' ? 'allowed without restrictions' : item.checkedBag.status === 'RESTRICTED' ? 'restricted (subject to conditions)' : 'prohibited'}. ${item.checkedBag.conditions[0] || 'Ensure it is packed securely.'}`;

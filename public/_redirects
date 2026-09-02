@@ -1,2 +1,238 @@
-# Redirect /items to the first paginated catalog page (301 Permanent Redirect)
-/items /items/page/1 301
+# www → non-www (301 Permanent) — fixes "Alternate page with proper canonical" in GSC
+https://www.bringonplane.com/* https://bringonplane.com/:splat 301
+
+# ── /en/ prefix → English default (no locale prefix) ─────────────────────────
+/en /  301
+/en/ / 301
+
+# ── /packing-assistant → /checklist/ ────────────────────────────────────────
+/packing-assistant /checklist/ 301
+
+# ── /guides/ (plural, wrong path) → correct singular /guide/ or list ─────────
+/guides/tsa-liquids-rule-311 /guide/tsa-311-liquids-rule/ 301
+/guides/tsa-prohibited-items-list /guides/ 301
+/guides/flying-with-electronics /guide/batteries-on-plane/ 301
+/guides/international-baggage-rules /guides/ 301
+/guides/:slug /guides/ 301
+
+# ── Non-existent guide slugs → closest real article ──────────────────────────
+/guide/can-you-bring-laptop-on-plane /guide/laptop-on-plane/ 301
+/guide/can-you-bring-laptop-on-plane/ /guide/laptop-on-plane/ 301
+/guide/can-you-bring-power-bank-on-plane /guide/power-bank-on-plane/ 301
+/guide/can-you-bring-power-bank-on-plane/ /guide/power-bank-on-plane/ 301
+/guide/lithium-battery-rules-planes /guide/lithium-battery-rules/ 301
+/guide/lithium-battery-rules-planes/ /guide/lithium-battery-rules/ 301
+/guide/carry-on-liquids-3-1-1-rule /guide/tsa-311-liquids-rule/ 301
+/guide/carry-on-liquids-3-1-1-rule/ /guide/tsa-311-liquids-rule/ 301
+/guide/tsa-liquids-rule-complete-guide /guide/tsa-liquids-rule-explained/ 301
+/guide/tsa-liquids-rule-complete-guide/ /guide/tsa-liquids-rule-explained/ 301
+/guide/medication-on-planes-guide /guide/flying-with-medication/ 301
+/guide/medication-on-planes-guide/ /guide/flying-with-medication/ 301
+/guide/can-you-bring-food-through-tsa /guide/tsa-food-rules/ 301
+/guide/can-you-bring-food-through-tsa/ /guide/tsa-food-rules/ 301
+/guide/traveling-with-baby-packing-guide /guide/traveling-with-baby-formula/ 301
+/guide/traveling-with-baby-packing-guide/ /guide/traveling-with-baby-formula/ 301
+
+# ── Non-existent guides with no close match → guide list ─────────────────────
+/guide/spirit-airlines-baggage-rules /guides/ 301
+/guide/spirit-airlines-baggage-rules/ /guides/ 301
+/guide/what-to-pack-for-long-flight /guides/ 301
+/guide/what-to-pack-for-long-flight/ /guides/ 301
+/guide/toiletries-carry-on-guide /guides/ 301
+/guide/toiletries-carry-on-guide/ /guides/ 301
+/guide/can-you-bring-razor-on-plane /guides/ 301
+/guide/can-you-bring-razor-on-plane/ /guides/ 301
+/guide/family-travel-packing-list /guides/ 301
+/guide/family-travel-packing-list/ /guides/ 301
+/guide/southwest-airlines-baggage-rules /guides/ 301
+/guide/southwest-airlines-baggage-rules/ /guides/ 301
+/guide/can-you-bring-scissors-on-plane /guides/ 301
+/guide/can-you-bring-scissors-on-plane/ /guides/ 301
+/guide/delta-airlines-baggage-rules /guides/ 301
+/guide/delta-airlines-baggage-rules/ /guides/ 301
+/guide/easyjet-baggage-rules /guides/ 301
+/guide/easyjet-baggage-rules/ /guides/ 301
+/guide/flying-to-uk-baggage-rules /guides/ 301
+/guide/flying-to-uk-baggage-rules/ /guides/ 301
+/guide/flying-to-australia-baggage-rules /guides/ 301
+/guide/flying-to-australia-baggage-rules/ /guides/ 301
+/guide/can-you-bring-vape-on-plane /guides/ 301
+/guide/can-you-bring-vape-on-plane/ /guides/ 301
+/guide/can-you-bring-toothpaste-on-plane /guides/ 301
+/guide/can-you-bring-toothpaste-on-plane/ /guides/ 301
+/guide/flying-to-europe-baggage-rules /guides/ 301
+/guide/flying-to-europe-baggage-rules/ /guides/ 301
+/guide/american-airlines-baggage-rules /guides/ 301
+/guide/american-airlines-baggage-rules/ /guides/ 301
+/guide/can-you-bring-deodorant-on-plane /guides/ 301
+/guide/can-you-bring-deodorant-on-plane/ /guides/ 301
+/guide/business-travel-packing-list /guides/ 301
+/guide/business-travel-packing-list/ /guides/ 301
+/guide/united-airlines-baggage-rules /guides/ 301
+/guide/united-airlines-baggage-rules/ /guides/ 301
+/guide/ryanair-baggage-rules /guides/ 301
+/guide/ryanair-baggage-rules/ /guides/ 301
+/guide/carry-on-only-packing-guide /guides/ 301
+/guide/carry-on-only-packing-guide/ /guides/ 301
+
+# ── Non-existent category pages → homepage categories section ────────────────
+/category/clothing-accessories /items/page/1/ 301
+/category/clothing-accessories/ /items/page/1/ 301
+/category/sports-outdoors /items/page/1/ 301
+/category/sports-outdoors/ /items/page/1/ 301
+/category/flammables /items/page/1/ 301
+/category/flammables/ /items/page/1/ 301
+/category/weapons /items/page/1/ 301
+/category/weapons/ /items/page/1/ 301
+/category/household /items/page/1/ 301
+/category/household/ /items/page/1/ 301
+
+# ── Trailing-slash enforcement for key URL patterns ───────────────────────────
+/items/:slug/airline/:airline /items/:slug/airline/:airline/ 301
+/items/:slug/country/:country /items/:slug/country/:country/ 301
+/guide/:slug /guide/:slug/ 301
+/category/:slug /category/:slug/ 301
+/items/:slug /items/:slug/ 301
+/checklist /checklist/ 301
+/faq /faq/ 301
+/tsa-rules /tsa-rules/ 301
+/airlines /airlines/ 301
+/countries /countries/ 301
+/about /about/ 301
+/contact /contact/ 301
+/guides /guides/ 301
+
+# ── Redirect /items to the first paginated catalog page ──────────────────────
+/items /items/page/1/ 301
+
+
+/guide/:slug https://bringonplane.com/guide/:slug/ 301
+/category/:slug https://bringonplane.com/category/:slug/ 301
+/items/:slug https://bringonplane.com/items/:slug/ 301
+/checklist https://bringonplane.com/checklist/ 301
+/faq https://bringonplane.com/faq/ 301
+/tsa-rules https://bringonplane.com/tsa-rules/ 301
+/airlines https://bringonplane.com/airlines/ 301
+/countries https://bringonplane.com/countries/ 301
+/about https://bringonplane.com/about/ 301
+/contact https://bringonplane.com/contact/ 301
+
+
+
+
+# ── HTTPS enforcement ─────────────────────────────────────────────────────────
+# http:// → https:// (301) — requires Cloudflare SSL/TLS setting or this rule
+http://bringonplane.com/* https://bringonplane.com/:splat 301
+http://www.bringonplane.com/* https://bringonplane.com/:splat 301
+
+# ── www → non-www (301 Permanent) ────────────────────────────────────────────
+https://www.bringonplane.com/* https://bringonplane.com/:splat 301
+
+# ── /en/ prefix → English default (no locale prefix) ─────────────────────────
+/en  /  301
+/en/ /  301
+
+# ── /packing-assistant → /checklist/ ─────────────────────────────────────────
+/packing-assistant /checklist/ 301
+
+# ── /guides/ (plural, wrong path) → correct singular /guide/ or list ──────────
+/guides/tsa-liquids-rule-311      /guide/tsa-311-liquids-rule/ 301
+/guides/tsa-prohibited-items-list /guides/ 301
+/guides/flying-with-electronics   /guide/batteries-on-plane/ 301
+/guides/international-baggage-rules /guides/ 301
+/guides/:slug /guides/ 301
+
+# ── Non-existent guide slugs → closest real article ───────────────────────────
+/guide/can-you-bring-laptop-on-plane        /guide/laptop-on-plane/ 301
+/guide/can-you-bring-laptop-on-plane/       /guide/laptop-on-plane/ 301
+/guide/can-you-bring-power-bank-on-plane    /guide/power-bank-on-plane/ 301
+/guide/can-you-bring-power-bank-on-plane/   /guide/power-bank-on-plane/ 301
+/guide/lithium-battery-rules-planes         /guide/lithium-battery-rules/ 301
+/guide/lithium-battery-rules-planes/        /guide/lithium-battery-rules/ 301
+/guide/carry-on-liquids-3-1-1-rule          /guide/tsa-311-liquids-rule/ 301
+/guide/carry-on-liquids-3-1-1-rule/         /guide/tsa-311-liquids-rule/ 301
+/guide/tsa-liquids-rule-complete-guide      /guide/tsa-liquids-rule-explained/ 301
+/guide/tsa-liquids-rule-complete-guide/     /guide/tsa-liquids-rule-explained/ 301
+/guide/medication-on-planes-guide           /guide/flying-with-medication/ 301
+/guide/medication-on-planes-guide/          /guide/flying-with-medication/ 301
+/guide/can-you-bring-food-through-tsa       /guide/tsa-food-rules/ 301
+/guide/can-you-bring-food-through-tsa/      /guide/tsa-food-rules/ 301
+/guide/traveling-with-baby-packing-guide    /guide/traveling-with-baby-formula/ 301
+/guide/traveling-with-baby-packing-guide/   /guide/traveling-with-baby-formula/ 301
+/guide/spirit-airlines-baggage-rules        /guides/ 301
+/guide/spirit-airlines-baggage-rules/       /guides/ 301
+/guide/what-to-pack-for-long-flight         /guides/ 301
+/guide/what-to-pack-for-long-flight/        /guides/ 301
+/guide/toiletries-carry-on-guide            /guides/ 301
+/guide/toiletries-carry-on-guide/           /guides/ 301
+/guide/can-you-bring-razor-on-plane         /guides/ 301
+/guide/can-you-bring-razor-on-plane/        /guides/ 301
+/guide/family-travel-packing-list           /guides/ 301
+/guide/family-travel-packing-list/          /guides/ 301
+/guide/southwest-airlines-baggage-rules     /guides/ 301
+/guide/southwest-airlines-baggage-rules/    /guides/ 301
+/guide/can-you-bring-scissors-on-plane      /guides/ 301
+/guide/can-you-bring-scissors-on-plane/     /guides/ 301
+/guide/delta-airlines-baggage-rules         /guides/ 301
+/guide/delta-airlines-baggage-rules/        /guides/ 301
+/guide/easyjet-baggage-rules                /guides/ 301
+/guide/easyjet-baggage-rules/               /guides/ 301
+/guide/flying-to-uk-baggage-rules           /guides/ 301
+/guide/flying-to-uk-baggage-rules/          /guides/ 301
+/guide/flying-to-australia-baggage-rules    /guides/ 301
+/guide/flying-to-australia-baggage-rules/   /guides/ 301
+/guide/can-you-bring-vape-on-plane          /guides/ 301
+/guide/can-you-bring-vape-on-plane/         /guides/ 301
+/guide/can-you-bring-toothpaste-on-plane    /guides/ 301
+/guide/can-you-bring-toothpaste-on-plane/   /guides/ 301
+/guide/flying-to-europe-baggage-rules       /guides/ 301
+/guide/flying-to-europe-baggage-rules/      /guides/ 301
+/guide/american-airlines-baggage-rules      /guides/ 301
+/guide/american-airlines-baggage-rules/     /guides/ 301
+/guide/can-you-bring-deodorant-on-plane     /guides/ 301
+/guide/can-you-bring-deodorant-on-plane/    /guides/ 301
+/guide/business-travel-packing-list         /guides/ 301
+/guide/business-travel-packing-list/        /guides/ 301
+/guide/united-airlines-baggage-rules        /guides/ 301
+/guide/united-airlines-baggage-rules/       /guides/ 301
+/guide/ryanair-baggage-rules                /guides/ 301
+/guide/ryanair-baggage-rules/               /guides/ 301
+/guide/carry-on-only-packing-guide          /guides/ 301
+/guide/carry-on-only-packing-guide/         /guides/ 301
+
+# ── Non-existent category pages → item catalog ────────────────────────────────
+/category/clothing-accessories  /items/page/1/ 301
+/category/clothing-accessories/ /items/page/1/ 301
+/category/sports-outdoors       /items/page/1/ 301
+/category/sports-outdoors/      /items/page/1/ 301
+/category/flammables            /items/page/1/ 301
+/category/flammables/           /items/page/1/ 301
+/category/weapons               /items/page/1/ 301
+/category/weapons/              /items/page/1/ 301
+/category/household             /items/page/1/ 301
+/category/household/            /items/page/1/ 301
+
+# ── Trailing-slash enforcement for specific pages ─────────────────────────────
+/compare          /compare/ 301
+/terms            /terms/ 301
+/privacy-policy   /privacy-policy/ 301
+/disclaimer       /disclaimer/ 301
+/checklist        /checklist/ 301
+/faq              /faq/ 301
+/tsa-rules        /tsa-rules/ 301
+/airlines         /airlines/ 301
+/countries        /countries/ 301
+/about            /about/ 301
+/contact          /contact/ 301
+/guides           /guides/ 301
+
+# ── Trailing-slash enforcement for parameterised routes ───────────────────────
+/items/:slug/airline/:airline    /items/:slug/airline/:airline/ 301
+/items/:slug/country/:country    /items/:slug/country/:country/ 301
+/guide/:slug      /guide/:slug/ 301
+/category/:slug   /category/:slug/ 301
+/items/:slug      /items/:slug/ 301
+
+# ── Redirect bare /items to first paginated catalog page ──────────────────────
+/items /items/page/1/ 301
+

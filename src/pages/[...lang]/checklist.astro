@@ -38,7 +38,9 @@ const breadcrumbSchema = {
     "@type": "ListItem",
     "position": idx + 1,
     "name": item.label,
-    "item": item.href ? getCanonicalUrl("/", lang) : currentUrl
+    "item": item.href
+      ? `https://bringonplane.com${item.href.endsWith('/') ? item.href : item.href + '/'}`
+      : currentUrl
   }))
 };
 

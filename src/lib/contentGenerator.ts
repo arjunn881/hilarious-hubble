@@ -196,10 +196,10 @@ export function getAlternativeItems(item: any): string {
 export function getRelatedGuides(item: any): any[] {
   // A simplistic mock for related guides based on category
   const guides = [
-    { title: "The Ultimate Guide to the TSA 3-1-1 Liquids Rule", url: "/guides/tsa-liquids-rule-311" },
-    { title: "How to Pack Electronics for Air Travel", url: "/guides/flying-with-electronics" },
-    { title: "TSA Prohibited Items List Explained", url: "/guides/tsa-prohibited-items-list" },
-    { title: "International Baggage Rules for 2026", url: "/guides/international-baggage-rules" }
+    { title: "The Complete TSA 3-1-1 Liquids Rule", url: "/guide/tsa-311-liquids-rule/" },
+    { title: "Flying With Electronics & Batteries", url: "/guide/batteries-on-plane/" },
+    { title: "TSA Prohibited Items Explained", url: "/guide/tsa-precheck-guide/" },
+    { title: "International Baggage Rules 2026", url: "/guide/traveling-with-lithium-batteries/" }
   ];
   
   if (item.category.toLowerCase().includes('liquid') || item.category.toLowerCase().includes('beauty')) {

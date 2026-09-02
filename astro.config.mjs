@@ -112,7 +112,7 @@ export default defineConfig({
     port: 3000,
   },
   site: SITE,
-  trailingSlash: 'ignore',
+  trailingSlash: 'always',
 
   integrations: [
     sitemap({

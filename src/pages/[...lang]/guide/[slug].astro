@@ -55,6 +55,8 @@ const i18n = lang === "en" ? {} : {
   favorited: t("btn.favorited"),
 };
 
+const currentYear = new Date().getFullYear();
+
 const breadcrumbItems = [
   { label: t("crumb.home"), href: translatePath("/") },
   { label: t("crumb.guides"), href: translatePath("/guides/") },
@@ -91,6 +93,7 @@ const relatedWidgetGroups = [
   title={`${title} | Bring On Plane`}
   description={description}
   type="article"
+  keywords={`${title.toLowerCase()}, ${category.toLowerCase()} tsa rules, ${category.toLowerCase()} carry on rules, tsa ${currentYear}, airport security ${category.toLowerCase()}, bringonplane guide`}
   lang={lang}
 >
   <!-- Inject JSON-LD structured data for Article EEAT -->
