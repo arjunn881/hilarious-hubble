@@ -1,0 +1,113 @@
+{
+  "id": "sneakers",
+  "slug": "sneakers",
+  "name": "Sneakers",
+  "category": "Personal Care",
+  "subcategory": "Footwear",
+  "aliases": [
+    "running shoes",
+    "tennis shoes",
+    "trainers",
+    "gym shoes",
+    "athletic shoes",
+    "jordans",
+    "nikes",
+    "sneaker collection",
+    "cleats"
+  ],
+  "keywords": [
+    "sneakers",
+    "running shoes",
+    "trainers",
+    "shoes",
+    "airport security shoes",
+    "tsa precheck shoes",
+    "carry on"
+  ],
+  "description": "TSA rules and airport screening guidelines for traveling with sneakers and athletic shoes in carry-on and checked luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Sneakers, running shoes, and athletic footwear are fully allowed in carry-on bags and on your feet through airport security.",
+    "conditions": [
+      "In standard TSA screening lanes, passengers must remove their shoes and place them directly on the conveyor belt or in a bin.",
+      "TSA PreCheck passengers and travelers under 12 or 75+ may leave their shoes on during checkpoint screening."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Sneakers and shoes can be packed in checked luggage without any restrictions or quantity limits.",
+    "conditions": [
+      "Use shoe bags to prevent dirt on soles from transferring to clean clothes."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shoes",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring sneakers on a plane?"
+  },
+  "faa": {
+    "officialUrl": "",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shoes",
+      "verified": "2026-08-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [
+    {
+      "name": "Delta Air Lines",
+      "status": "ALLOWED",
+      "notes": "Footwear permitted in all luggage types."
+    },
+    {
+      "name": "Ryanair",
+      "status": "ALLOWED",
+      "notes": "Sneakers permitted in cabin and checked luggage."
+    }
+  ],
+  "international": {
+    "note": "Many international airports outside the US (such as in Europe and Asia) only require shoe removal if they trigger metal detectors or have thick, elevated soles."
+  },
+  "travelTips": [
+    "Wear your bulkiest pair of sneakers on the plane to save valuable packing space and weight in your luggage.",
+    "Slip-on sneakers make passing through standard TSA security lines much faster.",
+    "Stuff socks and small chargers inside packed sneakers to maintain their shape and maximize suitcase space."
+  ],
+  "relatedItems": ["shoes", "boots", "high-heels"],
+  "faq": [
+    {
+      "question": "Do I have to take my sneakers off at airport security?",
+      "answer": "In standard TSA security lanes in the US, all passengers ages 13–74 must remove their sneakers and place them on the X-ray belt. If you have TSA PreCheck, you can leave your shoes on unless they contain metal that alarms the detector."
+    },
+    {
+      "question": "Can I bring multiple pairs of sneakers in my carry-on bag?",
+      "answer": "Yes! You can pack as many pairs of sneakers in your carry-on luggage as will physically fit inside your bag and meet your airline's cabin weight limits."
+    },
+    {
+      "question": "Are sneakers with metal eyelets or thick soles allowed through security?",
+      "answer": "Yes. Standard sneakers with metal eyelets or lace aglets are allowed. In PreCheck lanes, thick metal shanks in heavy boots might alarm the metal detector, but standard running sneakers generally pass without issue."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shoes"
+    }
+  ],
+  "restrictionType": "Footwear",
+  "customNote": ""
+}

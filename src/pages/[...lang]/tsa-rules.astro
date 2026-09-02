@@ -1,0 +1,654 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getAllItems } from "../../lib/items";
+import {
+  CheckCircle2,
+  XCircle,
+  AlertCircle,
+  ArrowRight,
+  ShieldCheck,
+} from "@lucide/astro";
+import { langParams, localeMeta, resolveLang } from "../../i18n/config";
+import {
+  getCanonicalUrl,
+  useTranslations,
+  useTranslatedPath,
+  type Lang,
+} from "../../i18n/utils";
+import { getItemName } from "../../i18n/items";
+import { getCategoryName } from "../../i18n/categories";
+
+export function getStaticPaths() {
+  return langParams.map((params) => ({ params }));
+}
+
+const lang: Lang = resolveLang(Astro.params.lang);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const currentYear = new Date().getFullYear();
+
+// Build a representative table: include only slugs that exist and have valid data
+const allKnownItems = getAllItems();
+const tableItems = [
+  "power-bank",
+  "laptop-charger",
+  "airtag",
+  "airpods",
+  "ipad",
+  "laptop",
+  "vape",
+  "melatonin",
+  "epipen",
+  "cbd-oil",
+  "contact-lenses",
+  "first-aid-kit",
+  "razor",
+  "sunscreen",
+  "perfume",
+  "toothpaste",
+  "mascara",
+  "shampoo",
+  "deodorant",
+  "bug-spray",
+  "aerosol-insect-repellent",
+  "creatine",
+  "protein-bar",
+  "beef-jerky",
+  "instant-noodles",
+  "shoes",
+  "sneakers",
+  "extension-cord",
+  "jump-rope",
+  "umbrella",
+  "tweezers",
+  "scissors",
+  "lighter",
+  "pepper-spray",
+  "knife",
+  "tent-stakes",
+  "nicotine-pouches",
+  "mouthwash",
+  "vitamins",
+  "ice-pack",
+].reduce<typeof allKnownItems>((acc, slug) => {
+  const found = allKnownItems.find((i) => i.slug === slug);
+  if (found && found.carryOn && found.checked) {
+    acc.push(found);
+  }
+  return acc;
+}, []);
+
+const breadcrumbItems = [
+  { label: t("crumb.home"), href: translatePath("/") },
+  { label: t("tsaRules.crumb", { year: currentYear }) },
+];
+
+const seoTitle = t("tsaRules.title", { year: currentYear });
+const seoDescription = t("tsaRules.description", { year: currentYear });
+const seoKeywords = `tsa rules ${currentYear}, tsa carry on rules, what can i bring on a plane, tsa prohibited items, tsa liquids rule, 3-1-1 rule, airport security rules, what is allowed in carry on, tsa guidelines, carry on bag rules, checked bag rules, tsa approved items, what can i bring through tsa, items not allowed on planes, tsa packing guide, airport baggage rules, tsa checklist, can i bring this on a plane, tsa rules for carry on items, airline carry on rules, tsa 2026 rules, what is tsa, how does tsa work, tsa screening process, tsa precheck, tsa baggage rules, hand luggage rules, cabin baggage rules`;
+
+/** Locale-aware absolute URLs for the JSON-LD graph. */
+const pageUrl = getCanonicalUrl("/tsa-rules/", lang);
+const homeUrl = getCanonicalUrl("/", lang);
+const aboutUrl = getCanonicalUrl("/about/", lang);
+
+/** Sidebar shortcuts to the three highest-traffic category hubs. */
+const categoryLinks = ["electronics", "liquids", "medicine"];
+
+/** The three 3-1-1 cards. The leading numeral is the rule name, not prose. */
+const rule311 = [
+  { n: "3", title: t("tsaRules.c1Title"), desc: t("tsaRules.c1Desc") },
+  { n: "1", title: t("tsaRules.c2Title"), desc: t("tsaRules.c2Desc") },
+  { n: "1", title: t("tsaRules.c3Title"), desc: t("tsaRules.c3Desc") },
+];
+
+/** Verdict chips for the battery table — mark and colour stay language-neutral. */
+const YES = { mark: "✓", label: t("status.allowed"), tone: "text-emerald-700 dark:text-emerald-400" };
+const NO = { mark: "✗", label: t("status.prohibited"), tone: "text-red-700 dark:text-red-400" };
+const CABIN_ONLY = { mark: "✓", label: t("tsaRules.carryOnOnly"), tone: "text-emerald-700 dark:text-emerald-400" };
+const ASK_AIRLINE = { mark: "⚠", label: t("tsaRules.airlineApproval"), tone: "text-amber-700 dark:text-amber-400" };
+
+/** Battery reference rows, in the order they are shown. */
+const batteryRows = [
+  { type: t("tsaRules.bat1"), carry: YES, checked: NO },
+  { type: t("tsaRules.bat2"), carry: ASK_AIRLINE, checked: NO },
+  { type: t("tsaRules.bat3"), carry: YES, checked: YES },
+  { type: t("tsaRules.bat4"), carry: YES, checked: YES },
+  { type: t("tsaRules.bat5"), carry: CABIN_ONLY, checked: NO },
+  { type: t("tsaRules.bat6"), carry: CABIN_ONLY, checked: NO },
+];
+
+/** Items banned from both cabin and hold on every commercial flight. */
+const prohibitedItems = [
+  t("tsaRules.prohib1"),
+  t("tsaRules.prohib2"),
+  t("tsaRules.prohib3"),
+  t("tsaRules.prohib4"),
+  t("tsaRules.prohib5"),
+  t("tsaRules.prohib6"),
+  t("tsaRules.prohib7"),
+  t("tsaRules.prohib8"),
+];
+
+/** How-to steps. Step 3 quotes the on-page CTA label so both stay in sync. */
+const toolSteps = [
+  t("tsaRules.step1"),
+  t("tsaRules.step2"),
+  t("tsaRules.step3", { label: t("home.readFullRules") }),
+];
+---
+
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  speakableSummary={t("tsaRules.speakable", { year: currentYear })}
+  breadcrumbItems={breadcrumbItems}
+  type="article"
+  lang={lang}
+>
+  <!-- HowTo + Article + FAQPage schemas for this hub page -->
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          headline: seoTitle,
+          description: seoDescription,
+          url: pageUrl,
+          inLanguage: localeMeta[lang].hreflang,
+          datePublished: `${currentYear}-01-01`,
+          dateModified: new Date().toISOString().split("T")[0],
+          author: {
+            "@type": "Organization",
+            name: "BringOnPlane Editorial Team",
+            url: aboutUrl,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "BringOnPlane",
+            url: "https://bringonplane.com",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://bringonplane.com/logo.png",
+            },
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": pageUrl,
+          },
+          isPartOf: {
+            "@type": "WebSite",
+            name: "BringOnPlane",
+            url: "https://bringonplane.com",
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: t("crumb.home"),
+              item: homeUrl,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: t("tsaRules.crumb", { year: currentYear }),
+              item: pageUrl,
+            },
+          ],
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "What is the TSA 3-1-1 liquids rule?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "The TSA 3-1-1 rule means: each liquid, gel, cream, paste, or aerosol container must be 3.4 oz (100ml) or less, packed inside 1 clear quart-sized zip-top bag, with 1 bag allowed per passenger through security. Full-size liquids can go in checked bags without restriction.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What items are completely prohibited in carry-on bags by TSA?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "TSA prohibits in carry-on bags: firearms and ammunition, explosives, flammable gases, power banks over 160Wh, self-defense sprays, knives with blades over 4 inches, martial arts weapons, and flammable liquids in containers over 3.4 oz.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Can I bring a power bank or portable charger in my carry-on?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes, power banks must be in carry-on bags only — they are prohibited in checked baggage. Power banks up to 100Wh are unrestricted. Banks between 100-160Wh require airline approval. Banks over 160Wh are prohibited entirely on passenger aircraft.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How does TSA screening work?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "At TSA security: place bags on the belt, remove laptops and tablets to separate bins, remove your liquids bag, take off shoes and belts, and walk through the scanner. TSA PreCheck members can leave shoes on and laptops in bags. Items are X-rayed and flagged if restricted.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Are medications and medical devices exempt from TSA rules?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Yes. Prescription medications (pills, liquids, injections), medical devices (CPAP machines, insulin pumps, epipens), baby formula, and breast milk are exempt from the 3-1-1 liquids rule. Declare these items at the security checkpoint for expedited screening.",
+              },
+            },
+          ],
+        },
+      ],
+    })}
+  />
+
+  <Header slot="header" lang={lang} />
+
+  <div class="max-w-[1100px] w-full mx-auto px-4 md:px-6 py-10 flex-1">
+    <!-- Breadcrumb -->
+    <nav
+      aria-label="Breadcrumb"
+      class="mb-6 text-xs font-mono text-mute flex items-center gap-1.5"
+    >
+      <a href={translatePath("/")} class="hover:text-link transition-colors">{t("crumb.home")}</a>
+      <span aria-hidden="true">/</span>
+      <span class="text-ink font-semibold">{t("tsaRules.crumb", { year: currentYear })}</span>
+    </nav>
+
+    <!-- H1 + intro -->
+    <header class="mb-10 max-w-[760px]">
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 rounded-full text-blue-700 dark:text-blue-300 text-[11px] font-mono font-bold uppercase tracking-wider mb-4"
+      >
+        <ShieldCheck class="w-3.5 h-3.5" />
+        {t("tsaRules.eyebrow", { year: currentYear })}
+      </div>
+      <h1
+        class="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-4 text-pretty speakable-hero"
+      >
+        {t("tsaRules.h1", { year: currentYear })}
+      </h1>
+      <p
+        class="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6 speakable-answer"
+      >
+        {t("tsaRules.intro")}
+      </p>
+      <a
+        href={translatePath("/")}
+        class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold shadow-md transition-all"
+      >
+        {t("tsaRules.searchCta")} <ArrowRight class="w-4 h-4" />
+      </a>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+      <!-- Main Content Column -->
+      <div class="space-y-12">
+        <!-- Section 1: 3-1-1 Rule -->
+        <section id="311-rule" aria-labelledby="h2-311">
+          <h2
+            id="h2-311"
+            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4 flex items-center gap-2"
+          >
+            <span
+              class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm font-mono font-bold flex-shrink-0"
+              >3</span
+            >
+            {t("tsaRules.h2Liquids")}
+          </h2>
+          <div
+            class="prose prose-sm max-w-none text-slate-600 dark:text-slate-300 space-y-4"
+          >
+            <p>
+              <strong class="text-slate-900 dark:text-white"
+                >{t("tsaRules.rule311Lead")}</strong
+              > {t("tsaRules.rule311Body")}
+            </p>
+            <div
+              class="bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 rounded-2xl p-6 space-y-3"
+            >
+              {rule311.map((c) => (
+                <div class="flex items-start gap-3">
+                  <span
+                    class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5"
+                    >{c.n}</span
+                  >
+                  <div>
+                    <p class="font-bold text-slate-900 dark:text-white">
+                      {c.title}
+                    </p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">
+                      {c.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p>
+              <strong class="text-slate-900 dark:text-white"
+                >{t("tsaRules.liquidQ")}</strong
+              > {t("tsaRules.liquidA")}
+            </p>
+            <p>
+              <strong class="text-slate-900 dark:text-white"
+                >{t("tsaRules.notLiquidQ")}</strong
+              > {t("tsaRules.notLiquidA")}
+            </p>
+            <p>
+              <strong class="text-slate-900 dark:text-white"
+                >{t("tsaRules.checkedLabel")}</strong
+              > {t("tsaRules.checkedBody")}
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 2: Battery Rules -->
+        <section id="battery-rules" aria-labelledby="h2-battery">
+          <h2
+            id="h2-battery"
+            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4"
+          >
+            {t("tsaRules.h2Battery")}
+          </h2>
+          <div
+            class="prose prose-sm max-w-none text-slate-600 dark:text-slate-300 space-y-4"
+          >
+            <p>
+              {t("tsaRules.batteryIntro")}
+            </p>
+            <div
+              class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700"
+            >
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-slate-50 dark:bg-slate-800">
+                    <th
+                      class="px-4 py-3 text-left font-semibold text-slate-900 dark:text-white"
+                      >{t("tsaRules.batteryType")}</th
+                    >
+                    <th
+                      class="px-4 py-3 text-left font-semibold text-slate-900 dark:text-white"
+                      >{t("item.carryAbbr")}</th
+                    >
+                    <th
+                      class="px-4 py-3 text-left font-semibold text-slate-900 dark:text-white"
+                      >{t("item.checkedAbbr")}</th
+                    >
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                  {batteryRows.map((row, i) => (
+                    <tr class={i % 2 === 0 ? "bg-white dark:bg-slate-900" : "bg-slate-50/50 dark:bg-slate-800/50"}>
+                      <td
+                        class="px-4 py-3 text-slate-900 dark:text-white font-medium"
+                        >{row.type}</td
+                      >
+                      <td class={`px-4 py-3 font-semibold ${row.carry.tone}`}
+                        >{row.carry.mark} {row.carry.label}</td
+                      >
+                      <td class={`px-4 py-3 font-semibold ${row.checked.tone}`}
+                        >{row.checked.mark} {row.checked.label}</td
+                      >
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Quick Reference Table (Programmatic) -->
+        <section id="item-reference" aria-labelledby="h2-items">
+          <h2
+            id="h2-items"
+            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-2"
+          >
+            {t("tsaRules.h2Reference", { year: currentYear })}
+          </h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-5">
+            {t("tsaRules.refIntro")}
+          </p>
+          <div
+            class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700"
+          >
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-800">
+                  <th
+                    class="px-4 py-3 text-left font-semibold text-slate-900 dark:text-white"
+                    >{t("tsaRules.colItem")}</th
+                  >
+                  <th
+                    class="px-4 py-3 text-left font-semibold text-slate-900 dark:text-white"
+                    >{t("tsaRules.colCategory")}</th
+                  >
+                  <th
+                    class="px-4 py-3 text-center font-semibold text-slate-900 dark:text-white"
+                    >{t("item.carryAbbr")}</th
+                  >
+                  <th
+                    class="px-4 py-3 text-center font-semibold text-slate-900 dark:text-white"
+                    >{t("item.checkedAbbr")}</th
+                  >
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                {
+                  tableItems.map((item, i) => {
+                    if (!item) return null;
+                    const carryOk = item.carryOn === "ALLOWED";
+                    const carryNo = item.carryOn === "NOT_ALLOWED";
+                    const checkedOk = item.checked === "ALLOWED";
+                    const checkedNo = item.checked === "NOT_ALLOWED";
+                    return (
+                      <tr
+                        class:list={[
+                          "hover:bg-blue-50/50 dark:hover:bg-blue-950/20 transition-colors",
+                          i % 2 === 0
+                            ? "bg-white dark:bg-slate-900"
+                            : "bg-slate-50/50 dark:bg-slate-800/30",
+                        ]}
+                      >
+                        <td class="px-4 py-3">
+                          <a
+                            href={translatePath(`/items/${item.slug}/`)}
+                            class="font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+                          >
+                            {getItemName(item.slug, item.name, lang)}
+                          </a>
+                        </td>
+                        <td class="px-4 py-3 text-slate-500 dark:text-slate-400 text-xs font-mono">
+                          {getCategoryName(item.category, lang)}
+                        </td>
+                        <td class="px-4 py-3 text-center">
+                          {carryOk ? (
+                            <span class="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400 font-semibold text-xs">
+                              <CheckCircle2 class="w-3.5 h-3.5" /> {t("status.allowed")}
+                            </span>
+                          ) : carryNo ? (
+                            <span class="inline-flex items-center gap-1 text-red-700 dark:text-red-400 font-semibold text-xs">
+                              <XCircle class="w-3.5 h-3.5" /> {t("status.prohibited")}
+                            </span>
+                          ) : (
+                            <span class="inline-flex items-center gap-1 text-amber-700 dark:text-amber-400 font-semibold text-xs">
+                              <AlertCircle class="w-3.5 h-3.5" /> {t("status.restricted")}
+                            </span>
+                          )}
+                        </td>
+                        <td class="px-4 py-3 text-center">
+                          {checkedOk ? (
+                            <span class="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-400 font-semibold text-xs">
+                              <CheckCircle2 class="w-3.5 h-3.5" /> {t("status.allowed")}
+                            </span>
+                          ) : checkedNo ? (
+                            <span class="inline-flex items-center gap-1 text-red-700 dark:text-red-400 font-semibold text-xs">
+                              <XCircle class="w-3.5 h-3.5" /> {t("status.prohibited")}
+                            </span>
+                          ) : (
+                            <span class="inline-flex items-center gap-1 text-amber-700 dark:text-amber-400 font-semibold text-xs">
+                              <AlertCircle class="w-3.5 h-3.5" /> {t("status.restricted")}
+                            </span>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })
+                }
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-3 font-mono">
+            {t("tsaRules.showingCount")} <a
+              href={translatePath("/items/page/1/")}
+              class="text-blue-600 dark:text-blue-400 hover:underline"
+              >{t("tsaRules.browseAll")} →</a
+            >
+          </p>
+        </section>
+
+        <!-- Section 4: Prohibited Items -->
+        <section id="prohibited-items" aria-labelledby="h2-prohibited">
+          <h2
+            id="h2-prohibited"
+            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4"
+          >
+            {t("tsaRules.h2Prohibited")}
+          </h2>
+          <div
+            class="prose prose-sm max-w-none text-slate-600 dark:text-slate-300 space-y-3"
+          >
+            <p>
+              {t("tsaRules.prohibLead")} <strong
+                class="text-red-700 dark:text-red-400"
+                >{t("tsaRules.prohibStrong")}</strong
+              >
+            </p>
+            <ul class="space-y-1.5 list-none pl-0">
+              {
+                prohibitedItems.map((item) => (
+                  <li class="flex items-start gap-2 text-sm">
+                    <XCircle class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 5: How to Use the Tool -->
+        <section id="how-to-use" aria-labelledby="h2-tool">
+          <h2
+            id="h2-tool"
+            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4"
+          >
+            {t("tsaRules.h2Tool")}
+          </h2>
+          <div
+            class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/40 dark:to-indigo-950/40 border border-blue-200 dark:border-blue-800 rounded-2xl p-6"
+          >
+            <p class="text-sm text-slate-700 dark:text-slate-300 mb-4">
+              {t("tsaRules.toolIntro")}
+            </p>
+            <ol class="space-y-3">
+              {
+                toolSteps.map((step, i) => (
+                  <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                    <span class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">
+                      {i + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))
+              }
+            </ol>
+            <a
+              href={translatePath("/")}
+              class="mt-5 inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold shadow-md transition-all"
+            >
+              {t("tsaRules.openChecker")} <ArrowRight class="w-4 h-4" />
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar Column -->
+      <aside class="space-y-6">
+        <!-- Quick Links Widget -->
+        <div
+          class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sticky top-24"
+        >
+          <p
+            class="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4"
+          >
+            {t("tsaRules.onThisPage")}
+          </p>
+          <nav class="space-y-2">
+            {
+              [
+                { href: "#311-rule", label: t("tsaRules.tocLiquids") },
+                { href: "#battery-rules", label: t("tsaRules.tocBattery") },
+                { href: "#item-reference", label: t("tsaRules.tocReference") },
+                { href: "#prohibited-items", label: t("tsaRules.tocProhibited") },
+                { href: "#how-to-use", label: t("tsaRules.tocTool") },
+              ].map((link) => (
+                <a
+                  href={link.href}
+                  class="block text-sm text-blue-600 dark:text-blue-400 hover:underline py-0.5"
+                >
+                  {link.label}
+                </a>
+              ))
+            }
+          </nav>
+
+          <hr class="my-4 border-slate-200 dark:border-slate-700" />
+
+          <p
+            class="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3"
+          >
+            {t("tsaRules.relatedPages")}
+          </p>
+          <div class="space-y-2">
+            {
+              [
+                { href: translatePath("/faq/"), label: t("tsaRules.linkFaq") },
+                { href: translatePath("/airlines/"), label: t("tsaRules.linkAirlines") },
+                { href: translatePath("/countries/"), label: t("tsaRules.linkCountries") },
+                { href: translatePath("/checklist/"), label: t("tsaRules.linkChecklist") },
+                { href: translatePath("/compare/"), label: t("tsaRules.linkCompare") },
+                ...categoryLinks.map((slug) => ({
+                  href: translatePath(`/category/${slug}/`),
+                  label: t("tsaRules.catRules", { category: getCategoryName(slug, lang) }),
+                })),
+              ].map((link) => (
+                <a
+                  href={link.href}
+                  class="flex items-center gap-1.5 text-sm text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  <ArrowRight class="w-3 h-3 text-slate-400 flex-shrink-0" />
+                  {link.label}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <Footer slot="footer" lang={lang} />
+</Layout>

@@ -41,21 +41,8 @@
   --color-gradient-ship-start: #ff4d4d;
   --color-gradient-ship-end: #f9cb28;
 
-  /* Custom Spacing from DESIGN.md */
-  --spacing-xxs: 4px;
-  --spacing-xs: 8px;
-  --spacing-sm: 12px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 40px;
-  --spacing-3xl: 48px;
-  --spacing-4xl: 64px;
-  --spacing-5xl: 96px;
-  --spacing-6xl: 128px;
-  --spacing-section: 192px;
-
   /* Font Families */
+
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 
@@ -77,6 +64,25 @@
 }
 
 /* Custom Base Layer Defaults conforming to Web Design Guidelines */
+
+/* Custom design-system spacing tokens — kept in :root (NOT @theme) so that
+   Tailwind v4 does NOT generate max-w-* utilities from these values.
+   In @theme, --spacing-4xl:64px would make max-w-4xl only 64px wide. */
+:root {
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 48px;
+  --spacing-4xl: 64px;
+  --spacing-5xl: 96px;
+  --spacing-6xl: 128px;
+  --spacing-section: 192px;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

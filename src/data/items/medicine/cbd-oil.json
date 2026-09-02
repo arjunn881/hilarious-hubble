@@ -1,0 +1,134 @@
+{
+  "id": "cbd-oil",
+  "slug": "cbd-oil",
+  "name": "CBD Oil",
+  "category": "Medicine",
+  "subcategory": "Supplements",
+  "aliases": [
+    "cannabidiol oil",
+    "hemp oil",
+    "cbd tincture",
+    "cbd drops",
+    "cbd capsules",
+    "cbd gummies",
+    "cbd cream",
+    "cbd lotion",
+    "hemp derived cbd",
+    "full spectrum cbd",
+    "broad spectrum cbd",
+    "cbd isolate",
+    "cbd vape",
+    "cbd products",
+    "hemp extract",
+    "cannabis oil",
+    "can i bring cbd on a plane"
+  ],
+  "keywords": [
+    "cbd oil",
+    "hemp oil",
+    "cannabidiol",
+    "cbd",
+    "carry on",
+    "tsa cbd rules",
+    "hemp",
+    "cannabis"
+  ],
+  "description": "TSA rules for flying with CBD oil, hemp-derived CBD products, and CBD gummies on domestic and international flights.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Hemp-derived CBD oil with less than 0.3% THC is federally legal in the US and TSA does not specifically prohibit it. However, TSA officers are required to report suspected violations of federal law. Liquid CBD oil is also subject to the 3-1-1 liquids rule in carry-on bags.",
+    "conditions": [
+      "CBD must be hemp-derived with less than 0.3% THC to comply with the 2018 Farm Bill.",
+      "Liquid CBD oil must be in containers of 3.4 oz (100ml) or less in carry-on bags.",
+      "TSA does not search for drugs, but if CBD is found and appears to violate federal law, TSA will refer to law enforcement.",
+      "CBD products approved by the FDA (e.g., Epidiolex) are explicitly permitted."
+    ],
+    "exceptions": [
+      "Marijuana-derived CBD and cannabis oil with more than 0.3% THC is a Schedule I controlled substance and strictly prohibited on all flights.",
+      "CBD vapes must follow the same carry-on only rule as all vape devices."
+    ]
+  },
+  "checkedBag": {
+    "status": "RESTRICTED",
+    "reason": "Hemp-derived CBD oil with less than 0.3% THC is not explicitly prohibited in checked baggage. However, the same legal caveats apply — marijuana-derived CBD is federally illegal and prohibited.",
+    "conditions": [
+      "Hemp-derived CBD (less than 0.3% THC) may be packed in checked baggage.",
+      "Marijuana-derived CBD is prohibited in both carry-on and checked bags."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/marijuana",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring CBD oil on a plane?"
+  },
+  "faa": {
+    "officialUrl": "",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/marijuana",
+      "verified": "2026-08-01",
+      "priority": 1
+    },
+    {
+      "name": "DEA",
+      "url": "https://www.dea.gov/drug-information/drug-scheduling",
+      "verified": "2026-08-01",
+      "priority": 2
+    }
+  ],
+  "airlines": [
+    {
+      "name": "All US Airlines",
+      "status": "RESTRICTED",
+      "notes": "Hemp-derived CBD with under 0.3% THC is not explicitly banned, but marijuana-derived CBD is prohibited. Airline policies vary — check directly with your carrier."
+    }
+  ],
+  "international": {
+    "note": "CBD oil is illegal in many countries. UK: legal if THC under 0.2%. Canada: federally legal but regulated. Most of Asia, Middle East, and some EU countries: illegal. Always research destination country laws before flying with CBD."
+  },
+  "travelTips": [
+    "Always carry proof that your CBD is hemp-derived with less than 0.3% THC (Certificate of Analysis from the manufacturer).",
+    "Do not travel internationally with CBD unless you have verified it is legal in your destination country.",
+    "CBD gummies and capsules are treated as food/supplements for TSA purposes — no liquids rule applies.",
+    "Liquid CBD oil must be in containers of 3.4 oz or less in carry-on bags."
+  ],
+  "relatedItems": ["vitamins", "prescription-medicine", "vape"],
+  "faq": [
+    {
+      "question": "Can I bring CBD oil on a plane in my carry-on?",
+      "answer": "Hemp-derived CBD oil with less than 0.3% THC is not explicitly prohibited by the TSA. However, liquid CBD oil must follow the 3-1-1 rule (3.4 oz or less). TSA does not search for CBD but will refer suspected drug violations to law enforcement. Marijuana-derived CBD is strictly prohibited on all flights."
+    },
+    {
+      "question": "Can I fly with CBD gummies?",
+      "answer": "Hemp-derived CBD gummies (less than 0.3% THC) may be allowed on US domestic flights. They are treated as food items, not subject to the liquids rule. However, TSA agents may flag them — carry the product label and Certificate of Analysis showing THC content."
+    },
+    {
+      "question": "Can I bring CBD on an international flight?",
+      "answer": "No — this is extremely risky. CBD and hemp products are illegal in many countries including Singapore, UAE, Thailand, Japan, and South Korea. Even hemp-derived CBD could result in arrest or confiscation. Always check destination country laws before flying internationally with any CBD product."
+    },
+    {
+      "question": "Is CBD oil considered a liquid by TSA?",
+      "answer": "Yes. Liquid CBD oil tinctures and drops are classified as liquids under the TSA 3-1-1 rule. Each container must be 3.4 oz (100ml) or less in carry-on bags. CBD capsules, gummies, and creams have different rules."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 6,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/marijuana"
+    }
+  ],
+  "restrictionType": "Controlled Substance",
+  "customNote": "TSA updated policy in 2019 to allow FDA-approved CBD products. Hemp-derived CBD is a gray area — proceed with caution."
+}

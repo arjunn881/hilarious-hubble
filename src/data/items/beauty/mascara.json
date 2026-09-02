@@ -1,0 +1,114 @@
+{
+  "id": "mascara",
+  "slug": "mascara",
+  "name": "Mascara",
+  "category": "Beauty",
+  "subcategory": "Cosmetics",
+  "aliases": [
+    "liquid mascara",
+    "waterproof mascara",
+    "lash primer",
+    "brow gel",
+    "clear mascara",
+    "lash serum",
+    "eyelash glue",
+    "liquid eyeliner",
+    "gel eyeliner",
+    "eye makeup"
+  ],
+  "keywords": [
+    "mascara",
+    "is mascara a liquid",
+    "tsa makeup rules",
+    "3-1-1 liquids rule",
+    "cosmetics",
+    "beauty",
+    "carry on"
+  ],
+  "description": "TSA rules for flying with mascara, liquid eyeliner, and cosmetic products in carry-on and checked luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Mascara is classified as a liquid/gel by the TSA and is subject to the 3-1-1 liquids rule in carry-on baggage. The tube must be 3.4 oz (100ml) or less and fit inside your quart-sized clear plastic liquids bag.",
+    "conditions": [
+      "Must be in a container of 3.4 oz (100ml) or less (almost all commercial mascara tubes are 0.2 to 0.4 oz, so standard tubes easily comply).",
+      "Must fit inside your single quart-sized clear zip-top liquids bag alongside other toiletries."
+    ],
+    "exceptions": [
+      "Solid powder eyeshadow, dry blushes, and pencil eyeliners are exempt from the liquids bag rule."
+    ]
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Mascara and all makeup cosmetics are fully allowed in checked baggage without size or quantity restrictions.",
+    "conditions": [
+      "Ensure caps are tightened to avoid leaks from aircraft cargo hold pressure changes."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mascara",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring mascara on a plane?"
+  },
+  "faa": {
+    "officialUrl": "",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mascara",
+      "verified": "2026-08-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [
+    {
+      "name": "Air France",
+      "status": "RESTRICTED",
+      "notes": "Mascara counts toward the 1-liter plastic bag of 100ml liquids for cabin luggage."
+    },
+    {
+      "name": "British Airways",
+      "status": "RESTRICTED",
+      "notes": "Liquid cosmetics including mascara must be in containers of 100ml or less."
+    }
+  ],
+  "international": {},
+  "travelTips": [
+    "Virtually every standard mascara tube is under 0.5 oz (15ml), so it complies with the 3.4 oz size limit — but remember it must go into your clear liquids bag.",
+    "Switching to waterproof pencil eyeliners and powder eye products frees up valuable space in your quart-sized liquids bag.",
+    "Pack a travel makeup bag in your carry-on for quick touch-ups after long-haul flights."
+  ],
+  "relatedItems": ["lipstick", "makeup-brushes", "perfume"],
+  "faq": [
+    {
+      "question": "Is mascara considered a liquid by TSA?",
+      "answer": "Yes! The TSA and international airport security authorities classify mascara, liquid eyeliner, lip gloss, and concealer as liquids/gels. They must be packed inside your quart-sized clear 3-1-1 liquids bag."
+    },
+    {
+      "question": "Do I have to take mascara out of my bag at TSA security?",
+      "answer": "Yes, if you are going through a standard TSA security lane, your quart-sized liquids bag (which includes your mascara) must be placed in a bin for X-ray screening. TSA PreCheck travelers may leave it inside their bag."
+    },
+    {
+      "question": "Can I pack full-size makeup in my checked bag?",
+      "answer": "Yes! All makeup, liquids, foundations, perfumes, and mascaras are 100% permitted in checked suitcases in any quantity or container size."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mascara"
+    }
+  ],
+  "restrictionType": "Liquids Rule (3-1-1)",
+  "customNote": ""
+}

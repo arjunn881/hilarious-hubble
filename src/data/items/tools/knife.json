@@ -1,0 +1,117 @@
+{
+  "id": "knife",
+  "slug": "knife",
+  "name": "Knife",
+  "category": "Tools",
+  "subcategory": "Cutting Tools",
+  "aliases": [
+    "knives",
+    "kitchen knife",
+    "chef knife",
+    "hunting knife",
+    "folding knife",
+    "blade",
+    "tactical knife",
+    "butcher knife",
+    "paring knife",
+    "steak knife",
+    "fixed blade knife",
+    "dagger"
+  ],
+  "keywords": [
+    "knife",
+    "knives",
+    "kitchen knife",
+    "hunting knife",
+    "blade",
+    "checked bag knife",
+    "prohibited weapons",
+    "carry on knife"
+  ],
+  "description": "TSA rules for traveling with knives, kitchen cutlery, hunting blades, and pocket knives in carry-on and checked luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "All cutting knives, pocket knives, folding knives, and kitchen blades are strictly prohibited in carry-on baggage. Only round-bladed butter knives or plastic cutlery are permitted in cabin bags.",
+    "conditions": [],
+    "exceptions": [
+      "Plastic cutlery and butter knives with dull, rounded blades are allowed in carry-on baggage."
+    ]
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Any sharp knife, kitchen knife, chef set, hunting knife, or folding blade is fully permitted in checked baggage provided it is securely sheathed or wrapped to prevent injury to baggage handlers.",
+    "conditions": [
+      "All sharp blades must be securely wrapped, sheathed, or packed in a knife guard/block to prevent baggage inspection injuries.",
+      "Pack knives securely near the center of the suitcase surrounded by soft clothing."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/knives",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring knives on a plane?"
+  },
+  "faa": {
+    "officialUrl": "",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/knives",
+      "verified": "2026-08-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [
+    {
+      "name": "Delta Air Lines",
+      "status": "ALLOWED",
+      "notes": "Knives permitted in checked baggage only when securely wrapped. Prohibited in cabin."
+    },
+    {
+      "name": "Emirates",
+      "status": "ALLOWED",
+      "notes": "Sharp items and knives must be placed in hold baggage securely packed."
+    }
+  ],
+  "international": {
+    "note": "Some countries (such as the UK, Japan, Australia, and Germany) have strict criminal laws regarding locking blades, flick knives, or blades exceeding specific lengths. Ensure your knife is legal to possess in your destination country."
+  },
+  "travelTips": [
+    "Never carry any knife into the airport terminal in your pocket or backpack — it will be permanently confiscated and may lead to questioning or fines.",
+    "Use blade guards, cardboard sleeves, or thick bubble wrap taped firmly around chef knives when packing them in checked luggage.",
+    "Double check all exterior backpack pockets before leaving for the airport to ensure no everyday carry (EDC) knives were left inside."
+  ],
+  "relatedItems": ["pocket-knife", "swiss-army-knife", "utility-knife"],
+  "faq": [
+    {
+      "question": "Can I bring a pocket knife or kitchen knife in my carry-on?",
+      "answer": "No. The TSA strictly prohibits all sharp knives, folding knives, pocket knives, and kitchen chef knives in carry-on bags. They must be packed in checked luggage."
+    },
+    {
+      "question": "How do you pack chef knives in checked luggage?",
+      "answer": "Place each knife in a secure blade guard or sheath, or wrap the blade in heavy cardboard and tape it securely. Pack them in the center of your suitcase cushioned by clothes so baggage handlers and TSA inspectors are protected from accidental cuts."
+    },
+    {
+      "question": "Are butter knives allowed in carry-on bags?",
+      "answer": "Yes. Round-bladed butter knives with dull edges and plastic picnic knives are permitted in carry-on baggage. However, serrated steak knives are prohibited."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/knives"
+    }
+  ],
+  "restrictionType": "Sharp Weapons / Tools",
+  "customNote": ""
+}

@@ -1,0 +1,39 @@
+---
+// Static redirection page from /items to /items/page/1 (per locale).
+import { langParams, localeMeta, resolveLang } from "../../../i18n/config";
+import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "../../../i18n/utils";
+
+export function getStaticPaths() {
+  return langParams.map((params) => ({ params }));
+}
+
+const lang: Lang = resolveLang(Astro.params.lang);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const target = translatePath("/items/page/1/");
+/** Point the canonical at the destination, not at this throwaway hop. */
+const canonical = getCanonicalUrl(target, lang);
+---
+<!DOCTYPE html>
+<html lang={localeMeta[lang].hreflang} dir={localeMeta[lang].dir}>
+  <head>
+    <meta charset="utf-8" />
+    <title>{t("items.h1")}</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={canonical} />
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script is:inline define:vars={{ target }}>
+      window.location.href = target;
+    </script>
+  </head>
+  <body>
+    <p><a href={target}>{t("items.h1")}</a></p>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+{
+  "id": "ice-pack",
+  "slug": "ice-pack",
+  "name": "Ice Pack",
+  "category": "Health",
+  "subcategory": "Cooling & Medical",
+  "aliases": [
+    "ice packs",
+    "gel pack",
+    "gel packs",
+    "freezer pack",
+    "cooler pack",
+    "frozen ice pack",
+    "dry ice pack",
+    "reusable ice pack",
+    "cooling pad",
+    "blue ice",
+    "cold pack"
+  ],
+  "keywords": [
+    "ice pack",
+    "gel pack",
+    "frozen",
+    "liquids rule",
+    "carry on",
+    "insulin cooling",
+    "breast milk ice pack",
+    "checked bag"
+  ],
+  "description": "TSA rules for flying with frozen ice packs, gel packs, and cooler packs in carry-on and checked baggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Ice packs and gel packs must be completely frozen solid when passing through security. If they are partially melted, slushy, or have liquid pooling, they are subject to the 3.4 oz liquids rule unless used for breast milk, baby formula, or medically necessary items.",
+    "conditions": [
+      "Must be 100% frozen solid at the security checkpoint with zero slush or liquid.",
+      "If melted or partially slushy, containers over 3.4 oz (100ml) will be confiscated.",
+      "Medically necessary ice packs (cooling insulin, biologics) and baby feeding ice packs are exempt from the frozen solid requirement, but must be declared to TSA officers."
+    ],
+    "exceptions": [
+      "Medically necessary ice packs and breast milk cooling packs are allowed even if melted."
+    ]
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Ice packs and gel packs are fully allowed in checked baggage regardless of whether they are frozen, liquid, or gel.",
+    "conditions": [
+      "Ensure packs are tightly sealed in zip-top bags to prevent leakage onto luggage during transit."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/gel-ice-packs",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring ice packs on a plane?"
+  },
+  "faa": {
+    "officialUrl": "",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/gel-ice-packs",
+      "verified": "2026-08-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [
+    {
+      "name": "United Airlines",
+      "status": "ALLOWED",
+      "notes": "Frozen ice packs permitted in carry-on. Standard gel packs allowed in checked luggage."
+    },
+    {
+      "name": "Delta Air Lines",
+      "status": "ALLOWED",
+      "notes": "Solid frozen gel packs allowed in cabin. Medical cooling packs permitted with declaration."
+    }
+  ],
+  "international": {},
+  "travelTips": [
+    "Freeze your ice pack in your hotel or home freezer right up until you leave for the airport so it stays rock solid through security.",
+    "If keeping medication or breast milk cold, declare the ice pack to the TSA officer before screening begins.",
+    "Pack a backup ziplock bag — if your ice pack is confiscated, you can ask for ice at an airport restaurant after passing security."
+  ],
+  "relatedItems": ["insulin", "breast-milk", "heating-pad"],
+  "faq": [
+    {
+      "question": "Can I take an ice pack through TSA security?",
+      "answer": "Yes, but it must be completely frozen solid when you reach the X-ray scanner. If it has melted even slightly and contains liquid or slush, TSA will treat it as a liquid and confiscate it if over 3.4 oz."
+    },
+    {
+      "question": "Are ice packs for medication allowed if melted?",
+      "answer": "Yes. Ice packs, gel packs, and freezer packs used to keep medically necessary items (such as insulin, biological drugs, or breast milk) cold are exempt from the frozen requirement. You must declare them to the TSA officer at the checkpoint."
+    },
+    {
+      "question": "Can you put gel ice packs in checked bags?",
+      "answer": "Yes! Reusable gel packs and ice packs are 100% permitted in checked baggage whether they are frozen, room temperature, or completely liquid."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/gel-ice-packs"
+    }
+  ],
+  "restrictionType": "Liquid / Medical Exemption",
+  "customNote": ""
+}

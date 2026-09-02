@@ -1,0 +1,128 @@
+{
+  "id": "protein-bar",
+  "slug": "protein-bar",
+  "name": "Protein Bar",
+  "category": "Food",
+  "subcategory": "Snacks",
+  "aliases": [
+    "protein bars",
+    "energy bar",
+    "energy bars",
+    "granola bar",
+    "granola bars",
+    "nutrition bar",
+    "cliff bar",
+    "clif bar",
+    "kind bar",
+    "rxbar",
+    "quest bar",
+    "protein snack",
+    "protein biscuit",
+    "protein brownie",
+    "nut bar",
+    "cereal bar",
+    "muesli bar",
+    "sports bar",
+    "meal replacement bar"
+  ],
+  "keywords": [
+    "protein bar",
+    "protein bars",
+    "energy bar",
+    "granola bar",
+    "snack",
+    "food",
+    "carry on",
+    "tsa food rules"
+  ],
+  "description": "TSA rules for bringing protein bars, granola bars, and energy bars on a plane in carry-on and checked bags.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Protein bars, energy bars, granola bars, and all solid food snacks are fully allowed in carry-on baggage by the TSA. They are not subject to the 3-1-1 liquids rule.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Protein bars and all packaged solid food snacks are fully allowed in checked baggage with no quantity restrictions.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/solid-food",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring protein bars on a plane?"
+  },
+  "faa": {
+    "officialUrl": "",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/solid-food",
+      "verified": "2026-08-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [
+    {
+      "name": "Air France",
+      "status": "ALLOWED",
+      "notes": "Solid food snacks including protein bars are permitted in cabin baggage."
+    },
+    {
+      "name": "Emirates",
+      "status": "ALLOWED",
+      "notes": "Protein bars and solid snacks allowed in hand luggage and checked baggage."
+    },
+    {
+      "name": "Ryanair",
+      "status": "ALLOWED",
+      "notes": "Solid food snacks allowed in hand luggage."
+    }
+  ],
+  "international": {
+    "note": "When entering countries like Australia or New Zealand, always declare packaged food items at customs. Most commercially sealed protein bars are permitted, but biosecurity rules apply."
+  },
+  "travelTips": [
+    "Protein bars are one of the best travel snacks — no liquid restrictions, no special handling needed.",
+    "Pack several bars in your carry-on to avoid paying airport food prices.",
+    "When entering Australia, declare all food items including protein bars at biosecurity — most commercially packaged bars are cleared."
+  ],
+  "relatedItems": ["beef-jerky", "nuts", "candy"],
+  "faq": [
+    {
+      "question": "Can I bring protein bars in my carry-on bag?",
+      "answer": "Yes! Protein bars, energy bars, granola bars, and all solid food snacks are fully allowed in carry-on bags. They are not liquids so they are not subject to the TSA 3-1-1 rule. You can bring as many as you like."
+    },
+    {
+      "question": "Can you pack protein bars in checked luggage?",
+      "answer": "Yes. Protein bars and all packaged solid food are fully allowed in checked bags with no quantity limit."
+    },
+    {
+      "question": "Can I take protein bars through airport security in the UK?",
+      "answer": "Yes. Protein bars and solid snacks are allowed through airport security in the UK (CAA rules), US (TSA), and throughout Europe (EASA). They are not subject to the 100ml liquids rule."
+    },
+    {
+      "question": "Can I bring protein bars to Australia?",
+      "answer": "You must declare all food items including protein bars when entering Australia. Most commercially sealed protein bars are cleared by Australian Border Force biosecurity, but they may be inspected. Declare — don't conceal."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/solid-food"
+    }
+  ],
+  "restrictionType": "Food",
+  "customNote": ""
+}

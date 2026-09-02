@@ -1,21 +1,68 @@
 ---
 import { Plane, Sun, Moon, Menu, X, Search, ChevronRight } from "@lucide/astro";
-import LanguageSelector from "./LanguageSelector.astro";
+import LanguagePicker from "./LanguagePicker.astro";
+import { getLangFromUrl, useTranslations, useTranslatedPath, type Lang } from "../i18n/utils";
+import { getCategoryName } from "../i18n/categories";
+import metadata from "../data/metadata-summary.json";
 
 interface Props {
   transparent?: boolean;
+  lang?: Lang;
 }
 
-const { transparent = false } = Astro.props;
+const { transparent = false, lang: langProp } = Astro.props;
+
+const lang: Lang = langProp ?? getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+/** Rounded down to the nearest ten so the copy survives new item additions. */
+const itemCount = Math.floor((metadata as unknown[]).length / 10) * 10;
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Search Items", href: "/items/page/1/" },
-  { label: "Packing Assistant", href: "/checklist/" },
-  { label: "Travel Guides", href: "/guides/" },
-  { label: "FAQ", href: "/faq/" },
-  { label: "About", href: "/about/" },
-  { label: "Contact", href: "/contact/" },
+  { label: t("nav.home"), href: translatePath("/") },
+  { label: t("nav.searchItems"), href: translatePath("/items/page/1/") },
+  { label: t("nav.packingAssistant"), href: translatePath("/checklist/") },
+  { label: t("nav.travelGuides"), href: translatePath("/guides/") },
+  { label: t("nav.faq"), href: translatePath("/faq/") },
+  { label: t("nav.about"), href: translatePath("/about/") },
+  { label: t("nav.contact"), href: translatePath("/contact/") },
+];
+
+/** Category slugs stay English — they are part of the canonical URL. */
+const barCategories = [
+  "electronics",
+  "liquids",
+  "medicine",
+  "tools",
+  "food",
+  "personal-care",
+  "sports",
+  "jewelry",
+].map((slug) => ({
+  name: getCategoryName(slug, lang),
+  href: translatePath(`/category/${slug}/`),
+}));
+
+const mobileCategories = [
+  "liquids",
+  "electronics",
+  "food",
+  "medicine",
+  "tools",
+  "personal-care",
+].map((slug) => ({
+  name: getCategoryName(slug, lang),
+  href: translatePath(`/category/${slug}/`),
+}));
+
+const policyLinks = [
+  { label: t("footer.aboutUs"), href: translatePath("/about/") },
+  { label: t("footer.contactUs"), href: translatePath("/contact/") },
+  { label: t("footer.faqGuide"), href: translatePath("/faq/") },
+  { label: t("footer.privacy"), href: translatePath("/privacy-policy/") },
+  { label: t("footer.terms"), href: translatePath("/terms/") },
+  { label: t("footer.disclaimer"), href: translatePath("/disclaimer/") },
 ];
 ---
 
@@ -28,9 +75,9 @@ const navLinks = [
   >
     <!-- Brand Logo -->
     <a
-      href="/"
+      href={translatePath("/")}
       class="flex items-center gap-2.5 hover:opacity-95 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl flex-shrink-0 min-w-0 group"
-      aria-label="Bring On Plane Home"
+      aria-label={t("a11y.homeLink")}
     >
       <div
         class="flex items-center justify-center w-9 h-9 rounded-xl bg-blue-600 group-hover:bg-blue-500 text-white shadow-sm shadow-blue-500/20 flex-shrink-0 transition-transform group-hover:scale-105"
@@ -49,7 +96,7 @@ const navLinks = [
         <span
           class={`font-mono text-[9px] uppercase tracking-wider font-semibold hidden sm:block ${transparent ? 'text-sky-300 font-bold drop-shadow-xs' : 'text-blue-600 dark:text-blue-400'}`}
         >
-          TSA Baggage Directory
+          {t("site.tagline")}
         </span>
       </div>
     </a>
@@ -57,7 +104,7 @@ const navLinks = [
     <!-- Nav Links (desktop only) -->
     <nav
       class="hidden lg:flex items-center gap-1 flex-1 justify-center"
-      aria-label="Main Navigation"
+      aria-label={t("a11y.mainNav")}
     >
       {
         navLinks.map((link) => (
@@ -78,27 +125,25 @@ const navLinks = [
         type="button"
         data-open-search
         class="inline-flex items-center justify-center gap-1.5 px-3 h-9 text-xs font-mono font-semibold text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 rounded-xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 cursor-pointer shadow-xs"
-        aria-label="Search TSA items"
+        aria-label={t("a11y.searchItems")}
       >
         <Search class="w-3.5 h-3.5" aria-hidden="true" />
-        <span class="hidden sm:inline">Search Items</span>
+        <span class="hidden sm:inline">{t("search.cta")}</span>
         <kbd
           class="hidden md:inline-block px-1.5 py-0.2 text-[9px] bg-blue-800/80 rounded border border-blue-400/40 text-blue-200 font-mono"
           >Ctrl K</kbd
         >
       </button>
 
-      <!-- Global Multi-Language Selector (Desktop & Tablet) -->
-      <div class="hidden sm:block">
-        <LanguageSelector />
-      </div>
+      <!-- Language switcher (desktop) -->
+      <LanguagePicker lang={lang} transparent={transparent} class="hidden md:block" />
 
       <!-- Dark mode toggle -->
       <button
         type="button"
         id="theme-toggle-btn"
         class={`inline-flex items-center justify-center w-9 h-9 rounded-xl transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 select-none flex-shrink-0 ${transparent ? 'text-white hover:bg-white/20 border border-white/20 dark:border-white/15' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-800'}`}
-        aria-label="Toggle dark mode"
+        aria-label={t("a11y.toggleDarkMode")}
       >
         <Sun class="w-4 h-4 hidden dark:block text-amber-400" />
         <Moon class={`w-4 h-4 block dark:hidden ${transparent ? 'text-white' : 'text-slate-600'}`} />
@@ -109,7 +154,7 @@ const navLinks = [
         type="button"
         id="mobile-menu-btn"
         class={`lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-xl transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 flex-shrink-0 ${transparent ? 'text-white hover:text-white bg-white/15 hover:bg-white/25 border border-white/20' : 'text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white bg-slate-100/90 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700'}`}
-        aria-label="Open navigation menu"
+        aria-label={t("a11y.openMenu")}
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
@@ -129,20 +174,11 @@ const navLinks = [
       <span
         class={`text-[10px] uppercase tracking-wider font-semibold whitespace-nowrap flex-shrink-0 ${transparent ? 'text-sky-200 font-bold drop-shadow-xs' : 'text-slate-500 dark:text-slate-400'}`}
       >
-        CATEGORIES:
+        {t("nav.categories")}:
       </span>
       <div class="flex items-center gap-3 overflow-x-auto whitespace-nowrap">
         {
-          [
-            { name: "Electronics", href: "/category/electronics/" },
-            { name: "Liquids", href: "/category/liquids/" },
-            { name: "Medicine", href: "/category/medicine/" },
-            { name: "Tools", href: "/category/tools/" },
-            { name: "Food", href: "/category/food/" },
-            { name: "Personal Care", href: "/category/personal-care/" },
-            { name: "Sports", href: "/category/sports/" },
-            { name: "Jewelry", href: "/category/jewelry/" },
-          ].map((cat) => (
+          barCategories.map((cat) => (
             <a
               href={cat.href}
               class={`transition-colors text-[11px] ${transparent ? 'text-white/85 hover:text-white font-medium drop-shadow-xs' : 'text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400'}`}
@@ -153,10 +189,10 @@ const navLinks = [
         }
       </div>
       <a
-        href="/items/page/1/"
+        href={translatePath("/items/page/1/")}
         class={`text-[10px] uppercase font-bold flex-shrink-0 ${transparent ? 'text-sky-300 hover:text-white drop-shadow-xs' : 'text-blue-600 dark:text-blue-400 hover:underline'}`}
       >
-        View All 196+ Items &rarr;
+        {t("nav.viewAllItems", { count: itemCount })} &rarr;
       </a>
     </div>
   </div>
@@ -174,7 +210,7 @@ const navLinks = [
     id="mobile-menu"
     class="lg:hidden hidden fixed inset-x-0 top-16 h-[calc(100dvh-4rem)] bg-white/98 dark:bg-slate-950/98 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white shadow-2xl z-50 overflow-y-auto transition-all"
     role="dialog"
-    aria-label="Mobile navigation"
+    aria-label={t("a11y.mobileNav")}
   >
     <div class="max-w-[600px] mx-auto px-4 py-6 flex flex-col gap-5">
       <!-- Quick Search Bar Trigger inside Mobile Menu -->
@@ -186,24 +222,23 @@ const navLinks = [
         <Search
           class="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0"
         />
-        <span class="flex-1 truncate"
-          >Search any item (e.g. razor, battery)...</span
-        >
+        <span class="flex-1 truncate">{t("search.mobilePlaceholder")}</span>
         <span
           class="text-xs font-mono bg-blue-600 text-white px-2.5 py-1 rounded-md font-semibold"
-          >Search</span
+          >{t("search.short")}</span
         >
       </button>
 
-      <!-- Global Multi-Language Selector (Mobile Drawer) -->
-      <div class="w-full py-1">
-        <p
-          class="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5 px-1 font-semibold"
+      <!-- Language switcher (mobile drawer) -->
+      <div class="flex items-center justify-between gap-3 md:hidden">
+        <span
+          class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold"
         >
-          Change Language
-        </p>
-        <LanguageSelector isMobileDrawer={true} />
+          {t("nav.language")}
+        </span>
+        <LanguagePicker lang={lang} variant="compact" />
       </div>
+
 
       <!-- Main Mobile Navigation Links -->
       <nav
@@ -227,18 +262,11 @@ const navLinks = [
         <p
           class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 px-1 font-semibold"
         >
-          Top Categories
+          {t("nav.topCategories")}
         </p>
         <div class="grid grid-cols-2 gap-2">
           {
-            [
-              { name: "Liquids (3-1-1 Rule)", href: "/category/liquids/" },
-              { name: "Electronics", href: "/category/electronics/" },
-              { name: "Food & Beverages", href: "/category/food/" },
-              { name: "Medicine & Health", href: "/category/medicine/" },
-              { name: "Tools & Razor Rules", href: "/category/tools/" },
-              { name: "Personal Care", href: "/category/personal-care/" },
-            ].map((cat) => (
+            mobileCategories.map((cat) => (
               <a
                 href={cat.href}
                 class="mobile-nav-link p-2.5 bg-slate-100/80 dark:bg-slate-900/60 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all text-center truncate"
@@ -255,39 +283,19 @@ const navLinks = [
         <p
           class="text-xs font-mono uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-3 px-1 font-semibold"
         >
-          Essential Policies &amp; Directives
+          {t("nav.essentialPolicies")}
         </p>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-          <a
-            href="/about/"
-            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
-            >About Us</a
-          >
-          <a
-            href="/contact/"
-            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
-            >Contact Us</a
-          >
-          <a
-            href="/faq/"
-            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
-            >FAQ Guide</a
-          >
-          <a
-            href="/privacy-policy/"
-            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
-            >Privacy Policy</a
-          >
-          <a
-            href="/terms/"
-            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
-            >Terms &amp; Conditions</a
-          >
-          <a
-            href="/disclaimer/"
-            class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
-            >Disclaimer</a
-          >
+          {
+            policyLinks.map((link) => (
+              <a
+                href={link.href}
+                class="mobile-nav-link p-2 bg-slate-100 dark:bg-slate-900/80 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 border border-slate-200 dark:border-slate-800 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-300 transition-all text-center"
+              >
+                {link.label}
+              </a>
+            ))
+          }
         </div>
       </div>
 
@@ -296,7 +304,7 @@ const navLinks = [
         class="pt-4 text-center border-t border-slate-200 dark:border-slate-800"
       >
         <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">
-          Official TSA, FAA &amp; IATA Rules Directory
+          {t("nav.rulesDirectory")}
         </p>
       </div>
     </div>

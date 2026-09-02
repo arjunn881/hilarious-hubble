@@ -1,0 +1,162 @@
+---
+/**
+ * Locale switcher.
+ *
+ * Every option points at the *same* page in the target locale, computed with
+ * `useTranslatedPath` from the current path with its locale prefix stripped —
+ * so `/es/items/laptop/` offers `/items/laptop/`, `/ja/items/laptop/`, and so
+ * on. Pages that exist in English only (item×airline and item×country
+ * combinations) render nothing, matching the hreflang set those pages emit.
+ *
+ * The links are real `<a href>`s, so the switcher works without JavaScript and
+ * search engines can follow it as an ordinary internal-link cluster.
+ */
+import { Globe, Check } from "@lucide/astro";
+import {
+  isEnglishOnlyPath,
+  langCodes,
+  languages,
+  localeMeta,
+  stripLangFromPath,
+  useTranslatedPath,
+  useTranslations,
+  type Lang,
+} from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+  /** `compact` for the footer strip, `full` for the header dropdown. */
+  variant?: "compact" | "full";
+  /** Set on the hero header, which lays a dark gradient behind the trigger. */
+  transparent?: boolean;
+  class?: string;
+}
+
+const { lang, variant = "full", transparent = false, class: className = "" } = Astro.props;
+
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const sharedPath = stripLangFromPath(Astro.url.pathname);
+const englishOnly = isEnglishOnlyPath(Astro.url.pathname);
+
+const options = langCodes.map((code) => ({
+  code,
+  label: languages[code],
+  hreflang: localeMeta[code].hreflang,
+  href: translatePath(sharedPath, code),
+  active: code === lang,
+}));
+
+const currentLabel = languages[lang];
+const menuId = `lang-menu-${variant}`;
+
+/** Height and radius of the sibling header controls, so this reads as one of them. */
+const shape =
+  variant === "full" ? "h-9 rounded-xl px-3" : "h-8 rounded-lg px-2.5";
+
+/**
+ * A filled trigger, because an outline-only button disappears next to the solid
+ * search button. On the transparent header the default `text-body` slate is
+ * invisible against the dark gradient, so that case mirrors the light-on-dark
+ * treatment the search and menu buttons already use.
+ */
+const tone = transparent
+  ? "text-white border border-white/25 bg-white/15 hover:bg-white/25 drop-shadow-xs focus-visible:ring-blue-400"
+  : "text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 bg-slate-100/90 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white focus-visible:ring-blue-500";
+---
+
+{!englishOnly && (
+  <div class:list={["relative", className]} data-language-picker>
+    <button
+      type="button"
+      id={`${menuId}-button`}
+      class:list={[
+        "inline-flex items-center gap-1.5 text-xs font-semibold whitespace-nowrap cursor-pointer transition-colors focus:outline-none focus-visible:ring-2",
+        shape,
+        tone,
+      ]}
+      aria-label={t("a11y.languagePicker")}
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls={menuId}
+      data-language-toggle
+    >
+      <Globe class="h-4 w-4 shrink-0" aria-hidden="true" />
+      <span class={variant === "compact" ? "sr-only sm:not-sr-only" : ""}>{currentLabel}</span>
+      <svg class="h-3 w-3 shrink-0 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <ul
+      id={menuId}
+      class="absolute right-0 z-50 mt-2 hidden max-h-80 w-44 overflow-y-auto rounded-lg border border-hairline bg-canvas py-1 shadow-lg"
+      role="menu"
+      aria-labelledby={`${menuId}-button`}
+      data-language-menu
+    >
+      {options.map((option) => (
+        <li role="none">
+          <a
+            href={option.href}
+            hreflang={option.hreflang}
+            lang={option.hreflang}
+            role="menuitem"
+            aria-current={option.active ? "true" : undefined}
+            title={option.active
+              ? t("lang.current", { language: option.label })
+              : t("lang.viewIn", { language: option.label })}
+            class:list={[
+              "flex items-center justify-between gap-2 px-3 py-2 text-sm transition-colors hover:bg-canvas-soft",
+              option.active ? "font-semibold text-link" : "text-body hover:text-ink",
+            ]}
+          >
+            <span>{option.label}</span>
+            {option.active && <Check class="h-3.5 w-3.5 shrink-0" aria-hidden="true" />}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
+<script>
+  function setupLanguagePickers() {
+    document.querySelectorAll<HTMLElement>("[data-language-picker]").forEach((root) => {
+      const toggle = root.querySelector<HTMLButtonElement>("[data-language-toggle]");
+      const menu = root.querySelector<HTMLElement>("[data-language-menu]");
+      if (!toggle || !menu || toggle.dataset.bound === "true") return;
+      toggle.dataset.bound = "true";
+
+      const close = () => {
+        menu.classList.add("hidden");
+        toggle.setAttribute("aria-expanded", "false");
+      };
+
+      toggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const isOpen = !menu.classList.contains("hidden");
+        // Only one picker open at a time.
+        document.querySelectorAll<HTMLElement>("[data-language-menu]").forEach((other) => {
+          other.classList.add("hidden");
+          other.previousElementSibling?.setAttribute("aria-expanded", "false");
+        });
+        if (!isOpen) {
+          menu.classList.remove("hidden");
+          toggle.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!root.contains(event.target as Node)) close();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") close();
+      });
+    });
+  }
+
+  setupLanguagePickers();
+  document.addEventListener("astro:after-swap", setupLanguagePickers);
+</script>

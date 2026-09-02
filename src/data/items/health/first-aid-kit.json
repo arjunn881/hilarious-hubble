@@ -1,0 +1,114 @@
+{
+  "id": "first-aid-kit",
+  "slug": "first-aid-kit",
+  "name": "First Aid Kit",
+  "category": "Health",
+  "subcategory": "Medical Supplies",
+  "aliases": [
+    "trauma kit",
+    "emergency medical kit",
+    "travel first aid kit",
+    "ifak",
+    "bandaids",
+    "medical kit",
+    "first aid box",
+    "first aid pouch"
+  ],
+  "keywords": [
+    "first aid kit",
+    "medical kit",
+    "bandages",
+    "emergency kit",
+    "first aid scissors",
+    "carry on",
+    "checked bag"
+  ],
+  "description": "TSA rules for flying with first aid kits, bandages, medical shears, and antiseptic liquids in carry-on and checked luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "First aid kits are allowed in carry-on bags. However, specific contents must comply with standard TSA regulations: liquid antiseptics must be 3.4 oz or less, and scissors/shears must have blades less than 4 inches from the pivot point.",
+    "conditions": [
+      "Bandages, gauze, medical tape, wraps, and solid pills are fully allowed with no restrictions.",
+      "Antiseptic ointments, hydrogen peroxide, and rubbing alcohol liquids must be in containers of 3.4 oz (100ml) or less.",
+      "Trauma shears and scissors must measure less than 4 inches (10 cm) from the pivot point.",
+      "Scalpels, surgical razor blades, and large shears are prohibited in carry-on bags."
+    ],
+    "exceptions": [
+      "Essential prescription medical items are exempt from 3-1-1 limits if declared."
+    ]
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Complete first aid kits, including larger scissors, surgical tools, and full-size antiseptic bottles, are fully permitted in checked baggage.",
+    "conditions": [
+      "Ensure any sharp instruments or shears are securely sheathed or wrapped."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/first-aid-kits",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring a first aid kit on a plane?"
+  },
+  "faa": {
+    "officialUrl": "",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/first-aid-kits",
+      "verified": "2026-08-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [
+    {
+      "name": "American Airlines",
+      "status": "ALLOWED",
+      "notes": "Standard first aid kits permitted in cabin and checked baggage."
+    },
+    {
+      "name": "British Airways",
+      "status": "ALLOWED",
+      "notes": "First aid kits allowed in cabin provided sharp objects meet blade length restrictions."
+    }
+  ],
+  "international": {},
+  "travelTips": [
+    "Before packing a pre-assembled commercial first aid kit into your carry-on, inspect it for sharp tweezers, scalpel blades, or liquid bottles over 3.4 oz.",
+    "Pack common travel essentials: blister bandages, ibuprofen, antidiarrheal tablets, and rehydration salts in your carry-on for easy access in-flight.",
+    "Medical shears under 4 inches from the fulcrum pass TSA, but pack them visibly near the top of your bag."
+  ],
+  "relatedItems": ["scissors", "ibuprofen", "thermometer"],
+  "faq": [
+    {
+      "question": "Can I bring a first aid kit in my carry-on bag?",
+      "answer": "Yes! You can bring a first aid kit in your carry-on bag. Just ensure that any antiseptic creams or liquid bottles inside are 3.4 oz (100ml) or less, and that any scissors have blades under 4 inches from the pivot point."
+    },
+    {
+      "question": "Are trauma shears allowed in carry-on luggage?",
+      "answer": "Yes, if the blades measure less than 4 inches from the pivot screw. Most standard 5.5-inch and 7.25-inch medical trauma shears have blade lengths under 3 inches from the fulcrum, making them TSA-compliant for cabin luggage."
+    },
+    {
+      "question": "Can I pack a full medical kit in checked baggage?",
+      "answer": "Yes! Full-size first aid and trauma kits, including larger shears, surgical tools, and larger bottles of antiseptic, are 100% permitted in checked baggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/first-aid-kits"
+    }
+  ],
+  "restrictionType": "Medical / Sharp / Liquid Rules",
+  "customNote": ""
+}

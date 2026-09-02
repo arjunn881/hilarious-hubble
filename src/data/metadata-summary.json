@@ -403,6 +403,36 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "mascara",
+    "slug": "mascara",
+    "name": "Mascara",
+    "category": "Beauty",
+    "aliases": [
+      "liquid mascara",
+      "waterproof mascara",
+      "lash primer",
+      "brow gel",
+      "clear mascara",
+      "lash serum",
+      "eyelash glue",
+      "liquid eyeliner",
+      "gel eyeliner",
+      "eye makeup"
+    ],
+    "keywords": [
+      "mascara",
+      "is mascara a liquid",
+      "tsa makeup rules",
+      "3-1-1 liquids rule",
+      "cosmetics",
+      "beauty",
+      "carry on"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-08-01"
+  },
+  {
     "id": "nail-clippers",
     "slug": "nail-clippers",
     "name": "Nail Clippers",
@@ -740,6 +770,40 @@
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "airpods",
+    "slug": "airpods",
+    "name": "AirPods",
+    "category": "Electronics",
+    "aliases": [
+      "apple airpods",
+      "airpods pro",
+      "airpods max",
+      "wireless earbuds",
+      "bluetooth earbuds",
+      "airpods case",
+      "airpods charging case",
+      "true wireless earphones",
+      "tws earbuds",
+      "apple earbuds",
+      "airpods 4",
+      "airpods 3",
+      "airpods 2"
+    ],
+    "keywords": [
+      "airpods",
+      "apple airpods",
+      "wireless earbuds",
+      "bluetooth",
+      "earphones",
+      "headphones",
+      "audio",
+      "carry on"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "RESTRICTED",
+    "lastReviewed": "2026-08-01"
   },
   {
     "id": "airtag",
@@ -1528,6 +1592,36 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "beef-jerky",
+    "slug": "beef-jerky",
+    "name": "Beef Jerky",
+    "category": "Food",
+    "aliases": [
+      "meat snacks",
+      "jerky",
+      "bilty",
+      "biltong",
+      "dried meat",
+      "turkey jerky",
+      "pork jerky",
+      "slim jim",
+      "meat sticks",
+      "jack links"
+    ],
+    "keywords": [
+      "beef jerky",
+      "jerky",
+      "meat snack",
+      "biltong",
+      "dried meat",
+      "food",
+      "carry on"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-08-01"
+  },
+  {
     "id": "candy",
     "slug": "candy",
     "name": "Candy",
@@ -1988,6 +2082,46 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "protein-bar",
+    "slug": "protein-bar",
+    "name": "Protein Bar",
+    "category": "Food",
+    "aliases": [
+      "protein bars",
+      "energy bar",
+      "energy bars",
+      "granola bar",
+      "granola bars",
+      "nutrition bar",
+      "cliff bar",
+      "clif bar",
+      "kind bar",
+      "rxbar",
+      "quest bar",
+      "protein snack",
+      "protein biscuit",
+      "protein brownie",
+      "nut bar",
+      "cereal bar",
+      "muesli bar",
+      "sports bar",
+      "meal replacement bar"
+    ],
+    "keywords": [
+      "protein bar",
+      "protein bars",
+      "energy bar",
+      "granola bar",
+      "snack",
+      "food",
+      "carry on",
+      "tsa food rules"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-08-01"
+  },
+  {
     "id": "protein-bars",
     "slug": "protein-bars",
     "name": "Protein Bars",
@@ -2105,6 +2239,98 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "bug-spray",
+    "slug": "bug-spray",
+    "name": "Bug Spray",
+    "category": "Health",
+    "aliases": [
+      "insect repellent",
+      "mosquito spray",
+      "deet spray",
+      "mosquito repellent",
+      "flying bug spray",
+      "aerosol bug spray",
+      "raid",
+      "off spray",
+      "repel",
+      "insect spray",
+      "tick repellent",
+      "picaridin spray",
+      "flying with bug spray",
+      "bug spray airplane"
+    ],
+    "keywords": [
+      "bug spray",
+      "insect repellent",
+      "mosquito spray",
+      "deet",
+      "aerosol",
+      "carry on",
+      "tsa liquids rule"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-08-01"
+  },
+  {
+    "id": "creatine",
+    "slug": "creatine",
+    "name": "Creatine",
+    "category": "Health",
+    "aliases": [
+      "creatine powder",
+      "creatine monohydrate",
+      "creatine gummies",
+      "creatine pills",
+      "pre workout",
+      "workout powder",
+      "fitness powder",
+      "bcaa powder",
+      "glutamine",
+      "gym supplements"
+    ],
+    "keywords": [
+      "creatine",
+      "creatine powder",
+      "creatine monohydrate",
+      "powder rule",
+      "supplements",
+      "gym",
+      "carry on"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-08-01"
+  },
+  {
+    "id": "first-aid-kit",
+    "slug": "first-aid-kit",
+    "name": "First Aid Kit",
+    "category": "Health",
+    "aliases": [
+      "trauma kit",
+      "emergency medical kit",
+      "travel first aid kit",
+      "ifak",
+      "bandaids",
+      "medical kit",
+      "first aid box",
+      "first aid pouch"
+    ],
+    "keywords": [
+      "first aid kit",
+      "medical kit",
+      "bandages",
+      "emergency kit",
+      "first aid scissors",
+      "carry on",
+      "checked bag"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-08-01"
+  },
+  {
     "id": "heating-pad",
     "slug": "heating-pad",
     "name": "Electric Heating Pad",
@@ -2127,6 +2353,38 @@
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "ice-pack",
+    "slug": "ice-pack",
+    "name": "Ice Pack",
+    "category": "Health",
+    "aliases": [
+      "ice packs",
+      "gel pack",
+      "gel packs",
+      "freezer pack",
+      "cooler pack",
+      "frozen ice pack",
+      "dry ice pack",
+      "reusable ice pack",
+      "cooling pad",
+      "blue ice",
+      "cold pack"
+    ],
+    "keywords": [
+      "ice pack",
+      "gel pack",
+      "frozen",
+      "liquids rule",
+      "carry on",
+      "insulin cooling",
+      "breast milk ice pack",
+      "checked bag"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-08-01"
   },
   {
     "id": "costume-jewelry",
@@ -2605,6 +2863,44 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "cbd-oil",
+    "slug": "cbd-oil",
+    "name": "CBD Oil",
+    "category": "Medicine",
+    "aliases": [
+      "cannabidiol oil",
+      "hemp oil",
+      "cbd tincture",
+      "cbd drops",
+      "cbd capsules",
+      "cbd gummies",
+      "cbd cream",
+      "cbd lotion",
+      "hemp derived cbd",
+      "full spectrum cbd",
+      "broad spectrum cbd",
+      "cbd isolate",
+      "cbd vape",
+      "cbd products",
+      "hemp extract",
+      "cannabis oil",
+      "can i bring cbd on a plane"
+    ],
+    "keywords": [
+      "cbd oil",
+      "hemp oil",
+      "cannabidiol",
+      "cbd",
+      "carry on",
+      "tsa cbd rules",
+      "hemp",
+      "cannabis"
+    ],
+    "carryOn": "RESTRICTED",
+    "checked": "RESTRICTED",
+    "lastReviewed": "2026-08-01"
+  },
+  {
     "id": "contact-lens-solution",
     "slug": "contact-lens-solution",
     "name": "Contact Lens Solution",
@@ -2622,6 +2918,36 @@
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "contact-lenses",
+    "slug": "contact-lenses",
+    "name": "Contact Lenses",
+    "category": "Medicine",
+    "aliases": [
+      "contacts",
+      "daily contact lenses",
+      "disposable contact lenses",
+      "contact lens packs",
+      "contact lens case",
+      "r漢 lenses",
+      "toric lenses",
+      "colored contacts",
+      "eye contacts",
+      "contact blisters"
+    ],
+    "keywords": [
+      "contact lenses",
+      "contacts",
+      "contact lens case",
+      "eye care",
+      "medical exemption",
+      "carry on",
+      "tsa liquids rule"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-08-01"
   },
   {
     "id": "cough-syrup",
@@ -3590,6 +3916,35 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "sneakers",
+    "slug": "sneakers",
+    "name": "Sneakers",
+    "category": "Personal Care",
+    "aliases": [
+      "running shoes",
+      "tennis shoes",
+      "trainers",
+      "gym shoes",
+      "athletic shoes",
+      "jordans",
+      "nikes",
+      "sneaker collection",
+      "cleats"
+    ],
+    "keywords": [
+      "sneakers",
+      "running shoes",
+      "trainers",
+      "shoes",
+      "airport security shoes",
+      "tsa precheck shoes",
+      "carry on"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-08-01"
+  },
+  {
     "id": "suit",
     "slug": "suit",
     "name": "Suit",
@@ -4137,6 +4492,39 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "knife",
+    "slug": "knife",
+    "name": "Knife",
+    "category": "Tools",
+    "aliases": [
+      "knives",
+      "kitchen knife",
+      "chef knife",
+      "hunting knife",
+      "folding knife",
+      "blade",
+      "tactical knife",
+      "butcher knife",
+      "paring knife",
+      "steak knife",
+      "fixed blade knife",
+      "dagger"
+    ],
+    "keywords": [
+      "knife",
+      "knives",
+      "kitchen knife",
+      "hunting knife",
+      "blade",
+      "checked bag knife",
+      "prohibited weapons",
+      "carry on knife"
+    ],
+    "carryOn": "NOT_ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-08-01"
+  },
+  {
     "id": "leash",
     "slug": "leash",
     "name": "Dog Leash",
@@ -4296,6 +4684,35 @@
     "carryOn": "NOT_ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "pepper-spray",
+    "slug": "pepper-spray",
+    "name": "Pepper Spray",
+    "category": "Tools",
+    "aliases": [
+      "mace",
+      "self defense spray",
+      "oc spray",
+      "tear gas",
+      "defense spray",
+      "sabre pepper spray",
+      "bear spray",
+      "dog spray",
+      "pepper gel"
+    ],
+    "keywords": [
+      "pepper spray",
+      "mace",
+      "self defense spray",
+      "checked bag",
+      "prohibited",
+      "tsa weapons rules",
+      "carry on"
+    ],
+    "carryOn": "NOT_ALLOWED",
+    "checked": "RESTRICTED",
+    "lastReviewed": "2026-08-01"
   },
   {
     "id": "picture-frame",

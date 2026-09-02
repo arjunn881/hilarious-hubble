@@ -1,0 +1,137 @@
+{
+  "id": "airpods",
+  "slug": "airpods",
+  "name": "AirPods",
+  "category": "Electronics",
+  "subcategory": "Audio",
+  "aliases": [
+    "apple airpods",
+    "airpods pro",
+    "airpods max",
+    "wireless earbuds",
+    "bluetooth earbuds",
+    "airpods case",
+    "airpods charging case",
+    "true wireless earphones",
+    "tws earbuds",
+    "apple earbuds",
+    "airpods 4",
+    "airpods 3",
+    "airpods 2"
+  ],
+  "keywords": [
+    "airpods",
+    "apple airpods",
+    "wireless earbuds",
+    "bluetooth",
+    "earphones",
+    "headphones",
+    "audio",
+    "carry on"
+  ],
+  "description": "Apple AirPods and wireless earbuds TSA carry-on and checked bag rules.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "AirPods, AirPods Pro, AirPods Max and all wireless earbuds are fully allowed in carry-on bags. The charging case contains a small lithium-ion battery which is permitted in cabin baggage.",
+    "conditions": [
+      "AirPods charging case contains a lithium battery — allowed in carry-on, not recommended for checked baggage.",
+      "AirPods Max headband case with larger battery is also carry-on approved."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "RESTRICTED",
+    "reason": "AirPods themselves are allowed in checked bags, but the charging case contains a lithium-ion battery. Lithium battery devices are best kept in carry-on baggage per FAA guidance to allow crew access in case of fire.",
+    "conditions": [
+      "AirPods charging case with lithium battery is technically allowed in checked bags but FAA strongly recommends carrying lithium battery devices in cabin baggage.",
+      "If checking, ensure AirPods are powered off and case is closed."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/earbuds",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring AirPods on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/earbuds",
+      "verified": "2026-08-01",
+      "priority": 1
+    },
+    {
+      "name": "FAA",
+      "url": "https://www.faa.gov/hazmat/packsafe",
+      "verified": "2026-08-01",
+      "priority": 2
+    }
+  ],
+  "airlines": [
+    {
+      "name": "Air France",
+      "status": "ALLOWED",
+      "notes": "Wireless earbuds and AirPods permitted in cabin baggage. Charging case with lithium battery should travel in carry-on."
+    },
+    {
+      "name": "Emirates",
+      "status": "ALLOWED",
+      "notes": "AirPods and wireless earbuds fully permitted in hand luggage and checked baggage."
+    },
+    {
+      "name": "Ryanair",
+      "status": "ALLOWED",
+      "notes": "AirPods allowed in hand luggage."
+    },
+    {
+      "name": "British Airways",
+      "status": "ALLOWED",
+      "notes": "AirPods permitted in hand luggage and hold baggage."
+    }
+  ],
+  "international": {},
+  "travelTips": [
+    "Always travel with AirPods in your carry-on bag — the charging case has a lithium battery.",
+    "AirPods Pro and AirPods Max are allowed on all major airlines in carry-on bags.",
+    "Remove AirPods from security bin and place in carry-on before X-ray screening."
+  ],
+  "relatedItems": ["earbuds", "headphones", "bluetooth-speaker"],
+  "faq": [
+    {
+      "question": "Can I bring AirPods on a plane in my carry-on?",
+      "answer": "Yes! AirPods, AirPods Pro, and AirPods Max are fully allowed in carry-on bags on all airlines. The TSA permits all consumer electronics including wireless earbuds in cabin baggage."
+    },
+    {
+      "question": "Can I put AirPods in my checked luggage?",
+      "answer": "AirPods are technically allowed in checked bags, but the charging case contains a lithium-ion battery. The FAA recommends keeping all lithium battery devices in carry-on bags so crew can access them if needed. Best practice: keep your AirPods in your carry-on."
+    },
+    {
+      "question": "Do AirPods need to come out at TSA security?",
+      "answer": "No. AirPods do not need to be removed from your bag at TSA security checkpoints. Only laptops and large electronics need to be removed for X-ray screening."
+    },
+    {
+      "question": "Are AirPods Max allowed on planes?",
+      "answer": "Yes. AirPods Max are fully allowed in carry-on bags. The smart case contains a small lithium battery — carry it in your hand luggage per FAA guidance."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/earbuds"
+    }
+  ],
+  "restrictionType": "Electronic",
+  "customNote": ""
+}

@@ -1,0 +1,176 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { Shield, ArrowLeft, ChevronDown } from "@lucide/astro";
+import { langParams, resolveLang } from "../../i18n/config";
+import { formatDate, useTranslations, useTranslatedPath, type Lang } from "../../i18n/utils";
+
+export function getStaticPaths() {
+  return langParams.map((params) => ({ params }));
+}
+
+const lang: Lang = resolveLang(Astro.params.lang);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const lastUpdated = "2026-06-30";
+const sections = [
+  {
+    id: "info-collection",
+    title: "1. Information We Collect",
+    content: `BringOnPlane is a privacy-first application. We do not require account registration, email sign-up, or any personal information to use the service. The following minimal data may be collected:
+    
+    <strong>Automatically Collected:</strong> Standard server logs (IP address, browser type, operating system, pages visited, referring URL, and timestamp) collected by our CDN and hosting provider for security and uptime monitoring. These logs are retained for 30 days and are never sold.
+    
+    <strong>Local Storage:</strong> Your packing lists, saved trips, and preferences are stored exclusively in your browser's localStorage. This data never leaves your device and is not transmitted to our servers.
+    
+    <strong>Analytics:</strong> We use privacy-respecting, cookieless analytics to understand aggregate traffic patterns (e.g., most searched items, most visited pages). No personal identifiers are included in analytics events.
+    
+    <strong>Contact Forms:</strong> If you submit a message through our contact page, we collect your name, email address, and message content solely for the purpose of responding to your inquiry.`
+  },
+  {
+    id: "cookies",
+    title: "2. Cookies & Advertising Technologies",
+    content: `BringOnPlane uses essential session data and third-party advertising cookies to support site operation and monetization:
+    
+    <strong>Essential Storage:</strong> Your theme preference and saved packing list items are stored exclusively in your browser's localStorage. No personal data is transmitted.
+    
+    <strong>Google AdSense & Third-Party Advertising Cookies:</strong> Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to BringOnPlane or other websites on the Internet.
+    
+    • Google's use of advertising cookies enables it and its partners to serve relevant advertisements to users based on their visit to our site and/or other sites on the Internet.
+    • Users may opt out of personalized advertising at any time by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" class="text-link hover:underline">Google Ads Settings</a> or by visiting <a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer" class="text-link hover:underline">aboutads.info</a>.
+    • Alternatively, you can opt out of third-party vendor's use of cookies for personalized advertising by visiting the Network Advertising Initiative opt-out page.`
+  },
+  {
+    id: "data-use",
+    title: "3. How We Use Your Information",
+    content: `Any information we collect is used exclusively to:
+    
+    • Operate and optimize the BringOnPlane service
+    • Display relevant non-intrusive advertisements via certified ad networks
+    • Respond to contact form inquiries and bug reports
+    • Monitor site security and prevent abuse
+    • Comply with legal obligations
+    
+    We do not sell, rent, or trade your personal data to data brokers or unverified third parties.`
+  },
+  {
+    id: "data-retention",
+    title: "4. Data Retention",
+    content: `Server log data is retained for a maximum of 30 days and then automatically purged. Contact form submissions are retained only as long as necessary to resolve your inquiry, typically 90 days. Local packing list data exists only on your device and can be deleted at any time by clearing your browser's localStorage.`
+  },
+  {
+    id: "third-parties",
+    title: "5. Third-Party Services & Ad Partners",
+    content: `BringOnPlane utilizes the following third-party service providers and ad networks:
+    
+    <strong>Google AdSense & DoubleClick:</strong> Serves contextual and personalized ad inventory. Google's privacy policy and ad settings apply (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-link hover:underline">Google Privacy Policy</a>). To learn how Google collects and processes data when you use partner sites, visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" class="text-link hover:underline">How Google uses data when you use our partners' sites or apps</a>.
+    
+    <strong>Google Analytics:</strong> Provides anonymous aggregate traffic metrics.
+    
+    <strong>Cloudflare CDN:</strong> Provides content delivery, SSL encryption, and DDoS protection.`
+  },
+  {
+    id: "your-rights",
+    title: "6. Your Rights (GDPR & CCPA)",
+    content: `If you are a resident of the European Economic Area (EEA) or California, you have the following rights:
+    
+    <strong>Right to Access:</strong> You may request a copy of any personal data we hold about you.
+    
+    <strong>Right to Erasure:</strong> You may request deletion of any personal data we hold. Because most data exists only on your device, you can delete packing list data yourself by clearing localStorage.
+    
+    <strong>Right to Portability:</strong> You may request your contact inquiry data in a portable format.
+    
+    <strong>Right to Object:</strong> You may object to our processing of your data at any time.
+    
+    To exercise any of these rights, email us at privacy@bringonplane.com. We will respond within 30 days.`
+  },
+  {
+    id: "children",
+    title: "7. Children's Privacy",
+    content: `BringOnPlane is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has submitted information through our site, please contact us at privacy@bringonplane.com and we will promptly delete such information.`
+  },
+  {
+    id: "changes",
+    title: "8. Changes to This Privacy Policy",
+    content: `We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. The "Last Updated" date at the top of this page will reflect the most recent revision. Continued use of BringOnPlane after changes constitutes acceptance of the revised policy. We encourage you to review this policy periodically.`
+  },
+  {
+    id: "contact-us",
+    title: "9. Contact & Data Controller",
+    content: `For privacy-related inquiries, data subject requests, or concerns about this policy, contact us at:
+    
+    <strong>Email:</strong> privacy@bringonplane.com
+    <strong>General Contact:</strong> <a href="/contact" class="text-link hover:underline">bringonplane.com/contact</a>
+    
+    We take privacy seriously and will respond to all inquiries within 30 days.`
+  }
+];
+---
+
+<Layout
+  title={t("privacy.title")}
+  description={t("privacy.description")}
+  keywords="bringonplane privacy policy, data privacy, GDPR, CCPA, cookies policy, tsa website privacy"
+  lang={lang}
+>
+  <Header slot="header" lang={lang} />
+
+  <main class="flex-1">
+
+    <!-- Hero -->
+    <div class="border-b border-hairline bg-canvas-soft">
+      <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 py-12">
+        <a href={translatePath("/")} class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors mb-6">
+          <ArrowLeft class="w-3.5 h-3.5" /> {t("guides.backToHome")}
+        </a>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-md bg-link-bg-soft text-link border border-link/20 flex items-center justify-center flex-shrink-0 mt-1">
+            <Shield class="w-5 h-5" />
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.5px] text-ink leading-tight mb-2">{t("privacy.h1")}</h1>
+            <p class="text-xs text-mute font-mono">{t("eeat.updated")} {formatDate(lastUpdated, lang)}</p>
+            <p class="text-sm text-body leading-[1.7] mt-3 max-w-[640px]">
+              <strong class="text-ink">{t("privacy.introBold")}</strong> {t("privacy.introBody")}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="border-b border-hairline bg-canvas">
+      <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 py-6">
+        <p class="text-xs font-mono text-mute uppercase tracking-wider mb-3">{t("legal.jumpTo")}</p>
+        <div class="flex flex-wrap gap-2">
+          {sections.map(s => (
+            <a href={`#${s.id}`} class="text-[11px] text-link hover:text-link-deep border border-link/20 hover:border-link bg-link-bg-soft rounded-md px-2.5 py-1 transition-all font-medium">
+              {s.title.split(". ")[1]}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 py-14 space-y-10">
+      {sections.map(s => (
+        <section id={s.id} class="scroll-mt-24 border-b border-hairline pb-10 last:border-0">
+          <h2 class="text-base font-semibold text-ink mb-4">{s.title}</h2>
+          <div class="text-sm text-body leading-[1.9] space-y-3" set:html={s.content.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('')} />
+        </section>
+      ))}
+
+      <div class="border border-hairline rounded-md bg-canvas-soft p-6 text-center">
+        <p class="text-sm text-body mb-4">{t("privacy.ctaTitle")}</p>
+        <a href={translatePath("/contact/")} class="inline-flex items-center gap-2 px-4 h-9 text-sm font-medium text-link border border-link/25 hover:border-link bg-link-bg-soft rounded-md transition-all">
+          {t("footer.contactUs")}
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer slot="footer" lang={lang} />
+</Layout>

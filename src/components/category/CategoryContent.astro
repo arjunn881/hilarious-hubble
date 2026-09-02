@@ -10,22 +10,35 @@ import {
   getCategoryFAQs 
 } from "../../lib/contentGenerator";
 import { AlertTriangle, Globe, Info, PackageCheck, ShieldAlert } from "@lucide/astro";
+import { getLangFromUrl, useTranslations, type Lang } from "../../i18n/utils";
+import { getCategoryName } from "../../i18n/categories";
+import { getCategoryProse } from "../../i18n/prose";
 
 interface Props {
+  /** English category name — the key the content generator is written against. */
   categoryName: string;
   itemsCount: number;
+  lang?: Lang;
 }
 
-const { categoryName, itemsCount } = Astro.props;
+const { categoryName, itemsCount, lang: langProp } = Astro.props;
 
-const introduction = getCategoryIntroduction(categoryName, itemsCount);
-const overview = getCategoryOverview(categoryName);
-const tsaRules = getCategoryTSARules(categoryName);
-const exceptions = getCategoryExceptions(categoryName);
-const international = getCategoryInternational(categoryName);
-const commonMistakes = getCategoryCommonMistakes(categoryName);
-const recommendations = getCategoryPackingRecommendations(categoryName);
-const faqs = getCategoryFAQs(categoryName);
+const lang: Lang = langProp ?? getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+/** Headings show the native label; the generator keeps receiving English. */
+const categoryLabel = getCategoryName(categoryName, lang);
+
+/** Translated body copy where it exists; English generator output otherwise. */
+const cp = getCategoryProse(categoryLabel, itemsCount, lang);
+
+const introduction = cp?.introduction ?? getCategoryIntroduction(categoryName, itemsCount);
+const overview = cp?.overview ?? getCategoryOverview(categoryName);
+const tsaRules = cp?.tsaRules ?? getCategoryTSARules(categoryName);
+const exceptions = cp?.exceptions ?? getCategoryExceptions(categoryName);
+const international = cp?.international ?? getCategoryInternational(categoryName);
+const commonMistakes = cp?.commonMistakes ?? getCategoryCommonMistakes(categoryName);
+const recommendations = cp?.recommendations ?? getCategoryPackingRecommendations(categoryName);
+const faqs = cp?.faqs ?? getCategoryFAQs(categoryName);
 ---
 
 <div class="category-content-container space-y-10">
@@ -40,7 +53,7 @@ const faqs = getCategoryFAQs(categoryName);
   <section class="bg-canvas-soft border border-hairline rounded-md p-6">
     <h2 class="text-lg font-semibold tracking-[-0.6px] text-ink mb-3 flex items-center gap-2">
       <Info class="w-5 h-5 text-link" />
-      {categoryName} Overview
+      {t("catContent.overview", { category: categoryLabel })}
     </h2>
     <p class="text-sm text-body leading-[1.7]">
       {overview}
@@ -52,7 +65,7 @@ const faqs = getCategoryFAQs(categoryName);
     <section class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
       <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3 flex items-center gap-2">
         <ShieldAlert class="w-4 h-4 text-mute" />
-        Important TSA Rules
+        {t("catContent.tsaRules")}
       </h3>
       <p class="text-sm text-body leading-[1.7]">
         {tsaRules}
@@ -62,7 +75,7 @@ const faqs = getCategoryFAQs(categoryName);
     <section class="bg-canvas border border-hairline rounded-md p-6 shadow-sm">
       <h3 class="text-base font-semibold tracking-[-0.4px] text-ink mb-3 flex items-center gap-2">
         <AlertTriangle class="w-4 h-4 text-mute" />
-        Exceptions & Medical
+        {t("catContent.exceptions")}
       </h3>
       <p class="text-sm text-body leading-[1.7]">
         {exceptions}
@@ -73,13 +86,13 @@ const faqs = getCategoryFAQs(categoryName);
   <!-- International & Mistakes -->
   <section>
     <h2 class="text-lg font-semibold tracking-[-0.6px] text-ink mb-4 border-b border-hairline pb-2">
-      International Travel & Common Mistakes
+      {t("catContent.internationalAndMistakes")}
     </h2>
     <div class="space-y-6">
       <div>
         <h3 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-2 flex items-center gap-2">
           <Globe class="w-4 h-4 text-mute" />
-          International Considerations
+          {t("catContent.international")}
         </h3>
         <p class="text-sm text-body leading-[1.7]">
           {international}
@@ -87,7 +100,7 @@ const faqs = getCategoryFAQs(categoryName);
       </div>
       <div>
         <h3 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-2">
-          Common Mistakes Passengers Make
+          {t("catContent.mistakes")}
         </h3>
         <p class="text-sm text-body leading-[1.7]">
           {commonMistakes}
@@ -104,7 +117,7 @@ const faqs = getCategoryFAQs(categoryName);
       </div>
       <div>
         <h3 class="text-sm font-semibold tracking-[-0.2px] text-ink mb-2">
-          Expert Packing Recommendations
+          {t("catContent.recommendations")}
         </h3>
         <p class="text-sm text-body leading-[1.6]">
           {recommendations}
@@ -116,7 +129,7 @@ const faqs = getCategoryFAQs(categoryName);
   <!-- FAQs -->
   <section>
     <h2 class="text-lg font-semibold tracking-[-0.6px] text-ink mb-6">
-      Frequently Asked Questions
+      {t("catContent.faq")}
     </h2>
     <div class="space-y-4">
       {faqs.map((faq, index) => (

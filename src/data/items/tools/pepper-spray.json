@@ -1,0 +1,125 @@
+{
+  "id": "pepper-spray",
+  "slug": "pepper-spray",
+  "name": "Pepper Spray",
+  "category": "Tools",
+  "subcategory": "Self Defense",
+  "aliases": [
+    "mace",
+    "self defense spray",
+    "oc spray",
+    "tear gas",
+    "defense spray",
+    "sabre pepper spray",
+    "bear spray",
+    "dog spray",
+    "pepper gel"
+  ],
+  "keywords": [
+    "pepper spray",
+    "mace",
+    "self defense spray",
+    "checked bag",
+    "prohibited",
+    "tsa weapons rules",
+    "carry on"
+  ],
+  "description": "TSA and airline rules for flying with pepper spray, mace, and self-defense sprays in carry-on and checked luggage.",
+  "carryOn": {
+    "status": "NOT_ALLOWED",
+    "reason": "Pepper spray, mace, and all self-defense chemical sprays are strictly prohibited in carry-on baggage and through TSA airport security checkpoints.",
+    "conditions": [],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "RESTRICTED",
+    "reason": "One 4 fl. oz. (118 ml) container of pepper spray or mace is allowed in checked baggage only, provided it has a safety mechanism to prevent accidental discharge.",
+    "conditions": [
+      "Limit of one container per passenger, maximum 4 fl. oz. (118 ml).",
+      "Must have a positive safety mechanism (e.g. twist-lock safety cap) to prevent accidental discharge in transit.",
+      "Must not contain more than 2 percent by mass of tear gas (CS or CN)."
+    ],
+    "exceptions": [
+      "Bear spray and animal repellent sprays with higher chemical concentrations are completely prohibited on passenger aircraft."
+    ]
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pepper-spray",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring pepper spray on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pepper-spray",
+      "verified": "2026-08-01",
+      "priority": 1
+    },
+    {
+      "name": "FAA PackSafe",
+      "url": "https://www.faa.gov/hazmat/packsafe",
+      "verified": "2026-08-01",
+      "priority": 2
+    }
+  ],
+  "airlines": [
+    {
+      "name": "Delta Air Lines",
+      "status": "RESTRICTED",
+      "notes": "One 4 oz container permitted in checked baggage only with safety lock. Prohibited in cabin."
+    },
+    {
+      "name": "United Airlines",
+      "status": "RESTRICTED",
+      "notes": "One 118ml container permitted in checked luggage with safety trigger lock."
+    },
+    {
+      "name": "Southwest Airlines",
+      "status": "RESTRICTED",
+      "notes": "One 4 oz container of self-defense spray permitted in checked baggage with safety cap."
+    }
+  ],
+  "international": {
+    "note": "Pepper spray is classified as a prohibited weapon in the UK, Germany, Singapore, Canada, Australia, and New Zealand. Carrying pepper spray into these countries can lead to immediate arrest and felony weapon charges."
+  },
+  "travelTips": [
+    "Never pack pepper spray in your purse, backpack, or carry-on — TSA will confiscate it immediately at the checkpoint.",
+    "Make sure your checked pepper spray has a physical twist lock to avoid accidental discharge inside your suitcase.",
+    "Do NOT travel internationally with pepper spray under any circumstances."
+  ],
+  "relatedItems": ["pocket-knife", "swiss-army-knife", "utility-knife"],
+  "faq": [
+    {
+      "question": "Can I bring pepper spray in my carry-on bag?",
+      "answer": "No. The TSA strictly prohibits pepper spray, mace, and all self-defense sprays in carry-on bags and on your person through airport security. If found in a carry-on, it will be confiscated."
+    },
+    {
+      "question": "How do you pack pepper spray in checked luggage?",
+      "answer": "You may pack one 4 fl. oz. (118 ml) container in checked baggage. It must have an active safety mechanism (twist lock or flip top) to prevent accidental discharge during flight."
+    },
+    {
+      "question": "Is bear spray allowed in checked luggage?",
+      "answer": "No. Bear spray contains higher concentrations of capsaicin and larger volume, and is completely prohibited on commercial passenger aircraft in both carry-on and checked luggage."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pepper-spray"
+    }
+  ],
+  "restrictionType": "Self Defense / Hazardous",
+  "customNote": ""
+}

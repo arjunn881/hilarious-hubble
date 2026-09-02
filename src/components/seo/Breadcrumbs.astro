@@ -1,5 +1,11 @@
 ---
 import { ChevronRight, Home } from "@lucide/astro";
+import {
+  getCanonicalUrl,
+  getLangFromUrl,
+  useTranslations,
+  type Lang,
+} from "../../i18n/utils";
 
 interface BreadcrumbItem {
   label: string;
@@ -8,14 +14,16 @@ interface BreadcrumbItem {
 
 interface Props {
   items: BreadcrumbItem[];
+  lang?: Lang;
 }
 
-const { items } = Astro.props;
+const { items, lang: langProp } = Astro.props;
+
+const lang: Lang = langProp ?? getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const siteUrl = "https://bringonplane.com";
-const rawPathname = Astro.url.pathname || "/";
-const formattedPathname = rawPathname.endsWith("/") ? rawPathname : `${rawPathname}/`;
-const currentFullUrl = `${siteUrl}${formattedPathname}`;
+const currentFullUrl = getCanonicalUrl(Astro.url.pathname, lang);
 
 function formatPath(pathOrUrl: string): string {
   const trimmed = pathOrUrl.trim();
@@ -51,7 +59,7 @@ const schema = {
 };
 ---
 
-<nav aria-label="Breadcrumb" class="flex items-center gap-1.5 text-[11px] sm:text-xs font-mono text-mute mb-8 select-none overflow-x-auto whitespace-nowrap pb-2 scrollbar-none">
+<nav aria-label={t("a11y.breadcrumb")} class="flex items-center gap-1.5 text-[11px] sm:text-xs font-mono text-mute mb-8 select-none overflow-x-auto whitespace-nowrap pb-2 scrollbar-none">
   <ol class="flex items-center gap-1.5 m-0 p-0 list-none" itemscope itemtype="https://schema.org/BreadcrumbList">
     {items.map((item, index) => {
       const isLast = index === items.length - 1;

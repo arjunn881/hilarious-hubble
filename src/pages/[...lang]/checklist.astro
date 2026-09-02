@@ -1,0 +1,1707 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
+import EEATBanner from "../../components/seo/EEATBanner.astro";
+import RelatedLinksWidget from "../../components/seo/RelatedLinksWidget.astro";
+import { 
+  ArrowLeft, Trash2, Plus, Printer, Download, Share2, 
+  Calendar, ClipboardList, AlertTriangle, ShieldCheck, 
+  CheckCircle2, Sparkles, Edit3, Save, X, AlertCircle, FileText,
+  ChevronDown, Plane, BadgeCheck, HelpCircle, Check, Luggage, Globe, Scale
+} from "@lucide/astro";
+import { langParams, resolveLang } from "../../i18n/config";
+import { getCanonicalUrl, localeMeta, useTranslations, useTranslatedPath, type Lang } from "../../i18n/utils";
+
+export function getStaticPaths() {
+  return langParams.map((params) => ({ params }));
+}
+
+const lang: Lang = resolveLang(Astro.params.lang);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const currentYear = new Date().getFullYear();
+/** Locale-aware absolute URLs so every translation gets its own canonical + graph. */
+const currentUrl = getCanonicalUrl("/checklist/", lang);
+
+const breadcrumbItems = [
+  { label: t("crumb.home"), href: translatePath("/") },
+  { label: t("chk.h1") }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": item.label,
+    "item": item.href ? getCanonicalUrl("/", lang) : currentUrl
+  }))
+};
+
+// Long-form Q&A and the HowTo steps stay English on every locale until the
+// translation overlay lands, matching the boundary drawn on /faq/.
+const checklistFaqs = [
+  { q: "How does the Smart Packing Assistant verify TSA baggage compliance?", a: "The Smart Packing Assistant queries our comprehensive database of over 196+ categorized travel items mapped directly against Transportation Security Administration (TSA), Federal Aviation Administration (FAA), and International Air Transport Association (IATA) regulations. Every item you add is evaluated for status (Allowed, Restricted, or Prohibited) in both carry-on cabin bags and checked hold baggage." },
+  { q: "Are my travel packing lists stored on external servers or private?", a: "Your packing lists and itinerary data are stored 100% locally inside your browser's private localStorage memory. No personal travel data is ever sent to external cloud servers, guaranteeing absolute privacy and full offline availability even without internet connectivity." },
+  { q: "How does the 3-1-1 liquids rule work when building a packing list?", a: "Under TSA's 3-1-1 liquids rule, any liquid, aerosol, gel, cream, or paste carried in hand luggage must be in containers of 3.4 ounces (100 milliliters) or smaller. All containers must fit comfortably inside one clear, quart-sized, resealable plastic bag. The assistant automatically flags liquid items and reminds you of 3-1-1 container restrictions." },
+  { q: "Where must portable power banks and lithium batteries be packed?", a: "Standalone lithium-ion battery power banks, cell phone battery cases, and spare laptop batteries MUST be carried in cabin hand luggage ONLY. FAA and aviation authorities strictly prohibit loose lithium batteries in checked hold baggage due to thermal runaway fire hazards." },
+  { q: "What items are strictly prohibited in carry-on cabin luggage?", a: "Strictly prohibited carry-on items include pocket knives, safety razor blades, scissors with blades over 4 inches, metal tent stakes, hiking poles, baseball bats, strike-anywhere matches, and liquid containers larger than 3.4 oz. These items must be packed in checked hold baggage or left at home." },
+  { q: "Can I print my packing list or export it as a PDF?", a: "Yes. The assistant includes built-in one-click 'Print' and 'Download PDF' features. The print layout formats your active trip into a clean, printer-friendly paper checklist grouped by bag type with physical checkboxes." },
+  { q: "What items are exempt from the 3.4 oz liquid rule?", a: "Medically necessary liquids (prescription cough syrups, eye drops, saline solutions), baby formula, breast milk, and toddler juice are fully exempt from the 3.4 oz container limit. However, you must declare these liquids to security officers for standalone X-ray screening." },
+  { q: "How do I pack liquid prescription medications for flights?", a: "Keep liquid medications in their original pharmacy-labeled containers inside carry-on baggage. Inform TSA officers before screening begins. A doctor's letter is recommended for international travel." },
+  { q: "Can I bring baby formula and breast milk on a plane without a baby present?", a: "Yes. TSA regulations permit parents to carry breast milk, baby formula, cooling gel ice packs, and breast pumps in hand luggage even when traveling without an infant." },
+  { q: "How do airline carry-on weight limits differ across carriers?", a: "While US domestic carriers (Delta, United, American) generally do not enforce weight limits on carry-on bags, major international and European budget airlines (Ryanair, Lufthansa, Emirates, Singapore Airlines) enforce strict cabin bag weight limits between 7 kg (15 lbs) and 12 kg (26 lbs)." },
+  { q: "What happens if airport security officers flag an item in my bag?", a: "If security screeners detect a prohibited or un-declared restricted item, they will pull your bag for secondary manual inspection. Prohibited carry-on items must be surrendered to screeners or placed into checked luggage." },
+  { q: "How do preset packing templates work in the assistant?", a: "Preset templates (Weekend Trip, Business Suit, International, Beach Vacation, Camping, Family Trip) pre-load expert-curated lists of essential gear, TSA status warnings, and category placements into your workspace with a single click." }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": checklistFaqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Use the Smart Packing Assistant",
+  "description": "Create a customized, TSA-compliant travel packing checklist in 5 easy steps.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Enter Trip Details", "text": "Input your trip name, destination, travel dates, airline carrier, and trip profile." },
+    { "@type": "HowToStep", "position": 2, "name": "Choose a Preset Template", "text": "Select a pre-configured template like Weekend Trip, Business Suit, International, or Beach Vacation." },
+    { "@type": "HowToStep", "position": 3, "name": "Review TSA Compliance Alerts", "text": "Check automatic warnings for liquids, lithium power banks, sharp tools, and restricted items." },
+    { "@type": "HowToStep", "position": 4, "name": "Add Custom Items", "text": "Use the real-time search bar to add specific gear and see instant cabin vs hold placement rules." },
+    { "@type": "HowToStep", "position": 5, "name": "Print or Export Your Checklist", "text": "Check off items as you pack, or export your list as a clean printable PDF." }
+  ]
+};
+
+const airlineLimits = [
+  { name: "Delta Air Lines", carryOn: "22 x 14 x 9 in (No weight limit)", checked: "50 lbs (23 kg)" },
+  { name: "United Airlines", carryOn: "22 x 14 x 9 in (17 lbs / 8 kg)", checked: "50 lbs (23 kg)" },
+  { name: "American Airlines", carryOn: "22 x 14 x 9 in (22 lbs / 10 kg)", checked: "50 lbs (23 kg)" },
+  { name: "Lufthansa", carryOn: "21.6 x 15.7 x 9 in (17 lbs / 8 kg)", checked: "50 lbs (23 kg)" },
+  { name: "Air France", carryOn: "21.7 x 13.8 x 9.9 in (26 lbs / 12 kg)", checked: "50 lbs (23 kg)" },
+  { name: "British Airways", carryOn: "22 x 18 x 10 in (50 lbs / 23 kg)", checked: "50 lbs (23 kg)" },
+  { name: "Ryanair", carryOn: "21.6 x 15.7 x 7.8 in (22 lbs / 10 kg)", checked: "44 lbs (20 kg)" },
+  { name: "Emirates", carryOn: "22 x 15 x 8 in (15 lbs / 7 kg)", checked: "66 lbs (30 kg)" },
+  { name: "Singapore Airlines", carryOn: "22 x 15 x 8 in (15 lbs / 7 kg)", checked: "66 lbs (30 kg)" }
+];
+
+const relatedWidgetGroups = [
+  { title: t("chk.groupPresets"), links: [
+    { title: t("packingList.crumb", { trip: t("trip.weekend-trip") }), url: translatePath("/packing-list/weekend-trip/") },
+    { title: t("packingList.crumb", { trip: t("trip.business-trip") }), url: translatePath("/packing-list/business-trip/") },
+    { title: t("packingList.crumb", { trip: t("trip.international-trip") }), url: translatePath("/packing-list/international-trip/") },
+    { title: t("packingList.crumb", { trip: t("trip.beach-vacation") }), url: translatePath("/packing-list/beach-vacation/") },
+    { title: t("packingList.crumb", { trip: t("trip.camping-trip") }), url: translatePath("/packing-list/camping-trip/") },
+    { title: t("packingList.crumb", { trip: t("trip.family-vacation") }), url: translatePath("/packing-list/family-vacation/") }
+  ]},
+  { title: t("chk.groupDirectories"), links: [
+    { title: t("nav.viewAllItems", { count: 196 }), url: `${translatePath("/")}#categories` },
+    { title: t("rel.airlineRules"), url: translatePath("/airlines/") },
+    { title: t("rel.countryRules"), url: translatePath("/countries/") },
+    { title: t("nav.faq"), url: translatePath("/faq/") }
+  ]}
+];
+
+/**
+ * Quick-add pills. The localized label is also what the client looks up in the
+ * search index, so `chk.qa.passport` carries the exact localized item name.
+ */
+const quickAddKeys = [
+  "chk.qa.passport",
+  "chk.qa.wallet",
+  "chk.qa.laptop",
+  "chk.qa.phone",
+  "chk.qa.charger",
+  "chk.qa.medicine",
+  "chk.qa.powerBank",
+  "chk.qa.toothbrush"
+] as const;
+
+/**
+ * Strings the client-side workspace renders at runtime. The script below is
+ * TypeScript, so it cannot take `define:vars` (that would force `is:inline`
+ * and skip transformation) — the payload travels as a JSON script tag instead.
+ * Templates keep their `{placeholder}` slots and are filled in the browser.
+ */
+const i18n = {
+  indexUrl: lang === "en" ? "/search-index.json" : `/search-index-${lang}.json`,
+  moveTo: t("chk.moveTo"),
+  packItem: t("chk.packItem"),
+  essentials: t("chk.list.essentials"),
+  defaultReason: t("chk.defaultReason"),
+  reasonIndexed: t("chk.reasonIndexed"),
+  reasonCustom: t("chk.reasonCustom"),
+  tipIndexed: t("chk.tipIndexed"),
+  tipCustom: t("chk.tipCustom"),
+  packedStats: t("chk.packedStats"),
+  allPacked: t("chk.allPacked"),
+  remaining: t("chk.remaining"),
+  /** Only shown for hand-typed items; database entries carry their own date. */
+  reviewedFallback: new Date().toLocaleDateString(localeMeta[lang].dateLocale, {
+    year: "numeric",
+    month: "long",
+    timeZone: "UTC"
+  }),
+  metaCarrier: t("chk.metaCarrier"),
+  metaProfile: t("chk.metaProfile"),
+  metaDestination: t("chk.metaDestination"),
+  metaDates: t("chk.metaDates"),
+  importedReason: t("chk.importedReason"),
+  importedTip: t("chk.importedTip"),
+  cabinAllowance: t("item.cabinBaggage"),
+  holdAllowance: t("item.holdBaggage"),
+  regulatoryReason: t("chk.regulatoryReason"),
+  checklistTip: t("chk.checklistTip"),
+  reviewed: t("item.reviewed"),
+  officialSource: t("item.officialSource"),
+  editorialVerified: t("chk.editorialVerified"),
+  suggestionDueTo: t("chk.suggestionDueTo"),
+  noRecentTrips: t("chk.noRecentTrips"),
+  showDetails: t("chk.showDetails"),
+  hideDetails: t("chk.hideDetails"),
+  deleteItem: t("chk.deleteItem"),
+  deleteTrip: t("chk.deleteTrip"),
+  promptNewList: t("chk.promptNewList"),
+  coreNoRename: t("chk.coreNoRename"),
+  promptRename: t("chk.promptRename"),
+  coreNoDelete: t("chk.coreNoDelete"),
+  confirmDeleteList: t("chk.confirmDeleteList"),
+  confirmDeleteTrip: t("chk.confirmDeleteTrip"),
+  sharedTrip: t("chk.sharedTrip"),
+  unknown: t("status.unknown"),
+  lists: {
+    "carry-on": t("chk.list.carry-on"),
+    "checked-bag": t("chk.list.checked-bag"),
+    "personal-item": t("chk.list.personal-item"),
+    "documents": t("chk.list.documents"),
+    "essentials": t("chk.list.essentials")
+  } as Record<string, string>,
+  types: {
+    vacation: t("chk.type.vacation"),
+    business: t("chk.type.business"),
+    international: t("chk.type.international"),
+    domestic: t("chk.type.domestic"),
+    weekend: t("chk.type.weekend")
+  } as Record<string, string>,
+  statuses: {
+    ALLOWED: t("status.allowed"),
+    PROHIBITED: t("status.prohibited"),
+    RESTRICTED: t("status.restricted"),
+    UNKNOWN: t("status.unknown")
+  } as Record<string, string>
+};
+---
+
+<Layout
+  title={t("chk.title", { year: currentYear })}
+  description={t("chk.description")}
+  lang={lang}
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(howToSchema)} />
+  <script type="application/json" id="chk-i18n" is:inline set:html={JSON.stringify(i18n).replace(/</g, "\\u003c")} />
+
+  <Header slot="header" lang={lang} />
+
+  <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 py-12 flex-1 flex flex-col lg:flex-row gap-8">
+    
+    <!-- Left Sidebar: Recent Trips (no-print) -->
+    <aside class="w-full lg:w-64 flex-shrink-0 no-print select-none">
+      <div class="bg-canvas border border-hairline rounded-md p-5 shadow-sm sticky top-24">
+        <div class="flex items-center justify-between mb-4 border-b border-hairline pb-2.5">
+          <h3 class="text-xs font-mono font-semibold tracking-wider text-mute">{t("chk.recentTrips")}</h3>
+          <button
+            type="button"
+            id="btn-sidebar-new-trip"
+            class="text-[10px] font-mono text-link hover:text-link-deep transition-colors cursor-pointer"
+          >
+            + {t("chk.new")}
+          </button>
+        </div>
+
+        <div id="recent-trips-list" class="flex flex-col gap-1 max-h-60 overflow-y-auto">
+          <!-- Populated by JS -->
+          <span class="text-xs text-mute font-mono py-2 text-center">{t("chk.noRecentTrips")}</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="flex-1 flex flex-col min-w-0">
+      
+      <!-- SECTION 1: TRIPSETUP WIZARD -->
+      <section id="trip-wizard-section" class="bg-canvas border border-hairline rounded-md p-8 shadow-level-3 select-none no-print">
+        <header class="mb-6 border-b border-hairline pb-4">
+          <div class="flex items-center gap-2.5 mb-1.5">
+            <div class="w-7 h-7 rounded-sm bg-primary text-on-primary flex items-center justify-center">
+              <ClipboardList class="w-4 h-4" />
+            </div>
+            <h1 class="text-2xl font-semibold tracking-[-0.8px] text-ink">{t("chk.h1")}</h1>
+          </div>
+          <p class="text-xs text-body leading-[1.6]">
+            {t("chk.intro")}
+          </p>
+        </header>
+
+        <form id="wizard-form" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label for="w-name" class="text-[10px] font-mono font-semibold tracking-wider text-mute">{t("chk.fieldTripName")}</label>
+              <input type="text" id="w-name" placeholder={t("chk.phTripName")} required class="h-10 px-3 bg-canvas border border-hairline rounded-sm text-sm text-ink outline-none focus:border-link transition-colors" />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="w-dest" class="text-[10px] font-mono font-semibold tracking-wider text-mute">{t("chk.fieldDestination")}</label>
+              <input type="text" id="w-dest" placeholder={t("chk.phDestination")} required class="h-10 px-3 bg-canvas border border-hairline rounded-sm text-sm text-ink outline-none focus:border-link transition-colors" />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="w-dep" class="text-[10px] font-mono font-semibold tracking-wider text-mute">{t("chk.fieldDeparture")}</label>
+              <input type="date" id="w-dep" required class="h-10 px-3 bg-canvas border border-hairline rounded-sm text-xs text-ink outline-none focus:border-link transition-colors" />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="w-ret" class="text-[10px] font-mono font-semibold tracking-wider text-mute">{t("chk.fieldReturn")}</label>
+              <input type="date" id="w-ret" required class="h-10 px-3 bg-canvas border border-hairline rounded-sm text-xs text-ink outline-none focus:border-link transition-colors" />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="w-airline" class="text-[10px] font-mono font-semibold tracking-wider text-mute">{t("chk.fieldAirline")}</label>
+              <select id="w-airline" required class="h-10 px-3 bg-canvas border border-hairline rounded-sm text-xs text-ink outline-none cursor-pointer focus:border-link notranslate">
+                <option value="Delta Air Lines">Delta Air Lines</option>
+                <option value="United Airlines">United Airlines</option>
+                <option value="American Airlines">American Airlines</option>
+                <option value="Lufthansa">Lufthansa</option>
+                <option value="Air France">Air France</option>
+                <option value="British Airways">British Airways</option>
+                <option value="Ryanair">Ryanair</option>
+                <option value="Emirates">Emirates</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="w-type" class="text-[10px] font-mono font-semibold tracking-wider text-mute">{t("chk.fieldTripType")}</label>
+              <select id="w-type" required class="h-10 px-3 bg-canvas border border-hairline rounded-sm text-xs text-ink outline-none cursor-pointer focus:border-link">
+                <option value="vacation">{t("chk.type.vacation")}</option>
+                <option value="business">{t("chk.type.business")}</option>
+                <option value="international">{t("chk.type.international")}</option>
+                <option value="domestic">{t("chk.type.domestic")}</option>
+                <option value="weekend">{t("chk.type.weekend")}</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Templates selection -->
+          <div>
+            <span class="text-[10px] font-mono font-semibold tracking-wider text-mute block mb-3">{t("chk.presets")}</span>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <label class="border border-hairline hover:border-hairline-strong rounded-sm p-3 flex items-start gap-2.5 cursor-pointer bg-canvas hover:bg-canvas-soft transition-all select-none">
+                <input type="radio" name="w-template" value="weekend" class="mt-1" checked />
+                <div>
+                  <span class="text-xs font-semibold text-ink block">{t("trip.weekend-trip")}</span>
+                  <span class="text-[9px] text-mute font-mono block mt-0.5">{t("chk.hint.weekend")}</span>
+                </div>
+              </label>
+              <label class="border border-hairline hover:border-hairline-strong rounded-sm p-3 flex items-start gap-2.5 cursor-pointer bg-canvas hover:bg-canvas-soft transition-all select-none">
+                <input type="radio" name="w-template" value="business" class="mt-1" />
+                <div>
+                  <span class="text-xs font-semibold text-ink block">{t("trip.business-trip")}</span>
+                  <span class="text-[9px] text-mute font-mono block mt-0.5">{t("chk.hint.business")}</span>
+                </div>
+              </label>
+              <label class="border border-hairline hover:border-hairline-strong rounded-sm p-3 flex items-start gap-2.5 cursor-pointer bg-canvas hover:bg-canvas-soft transition-all select-none">
+                <input type="radio" name="w-template" value="international" class="mt-1" />
+                <div>
+                  <span class="text-xs font-semibold text-ink block">{t("trip.international-trip")}</span>
+                  <span class="text-[9px] text-mute font-mono block mt-0.5">{t("chk.hint.international")}</span>
+                </div>
+              </label>
+              <label class="border border-hairline hover:border-hairline-strong rounded-sm p-3 flex items-start gap-2.5 cursor-pointer bg-canvas hover:bg-canvas-soft transition-all select-none">
+                <input type="radio" name="w-template" value="beach" class="mt-1" />
+                <div>
+                  <span class="text-xs font-semibold text-ink block">{t("trip.beach-vacation")}</span>
+                  <span class="text-[9px] text-mute font-mono block mt-0.5">{t("chk.hint.beach")}</span>
+                </div>
+              </label>
+              <label class="border border-hairline hover:border-hairline-strong rounded-sm p-3 flex items-start gap-2.5 cursor-pointer bg-canvas hover:bg-canvas-soft transition-all select-none">
+                <input type="radio" name="w-template" value="camping" class="mt-1" />
+                <div>
+                  <span class="text-xs font-semibold text-ink block">{t("trip.camping-trip")}</span>
+                  <span class="text-[9px] text-mute font-mono block mt-0.5">{t("chk.hint.camping")}</span>
+                </div>
+              </label>
+              <label class="border border-hairline hover:border-hairline-strong rounded-sm p-3 flex items-start gap-2.5 cursor-pointer bg-canvas hover:bg-canvas-soft transition-all select-none">
+                <input type="radio" name="w-template" value="family" class="mt-1" />
+                <div>
+                  <span class="text-xs font-semibold text-ink block">{t("trip.family-vacation")}</span>
+                  <span class="text-[9px] text-mute font-mono block mt-0.5">{t("chk.hint.family")}</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full h-11 bg-primary hover:bg-ink text-on-primary font-medium text-sm rounded-sm transition-all cursor-pointer shadow-sm">
+            {t("chk.launch")}
+          </button>
+        </form>
+      </section>
+
+      <!-- SECTION 2: ACTIVE WORKSPACE -->
+      <section id="trip-workspace-section" class="hidden flex flex-col gap-6">
+        
+        <!-- Print Header -->
+        <div id="checklist-print-header" class="hidden mb-6 border-b-2 border-black pb-4">
+          <h1 class="text-3xl font-bold tracking-tight" id="print-workspace-name">{t("chk.printTitle")}</h1>
+          <p class="text-sm font-mono text-mute mt-1" id="print-workspace-summary"></p>
+        </div>
+
+        <!-- 2A. Trip Summary bar (no-print) -->
+        <div class="bg-canvas border border-hairline rounded-md p-6 shadow-level-2 select-none no-print flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div class="min-w-0">
+            <span class="font-mono text-[9px] font-semibold text-link bg-link-bg-soft border border-link/15 px-2 py-0.5 rounded-xs tracking-wider block w-max mb-1.5">
+              {t("chk.dashboard")}
+            </span>
+            <h2 class="text-xl font-semibold tracking-[-0.8px] text-ink" id="ws-trip-name"></h2>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs font-mono text-mute">
+              <span id="ws-trip-meta"></span>
+              <span>&bull;</span>
+              <span id="ws-trip-dates"></span>
+            </div>
+          </div>
+          
+          <!-- Actions -->
+          <div class="flex items-center gap-2 self-start sm:self-center">
+            <button type="button" id="btn-print-list" class="h-8 px-3 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer flex items-center gap-1.5">
+              <Printer class="w-3.5 h-3.5" /> {t("chk.print")}
+            </button>
+            <button type="button" id="btn-pdf-list" class="h-8 px-3 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer flex items-center gap-1.5">
+              <Download class="w-3.5 h-3.5" /> <span class="notranslate">PDF</span>
+            </button>
+            <button type="button" id="btn-share-list" class="h-8 px-3 text-xs font-medium text-ink bg-canvas border border-hairline hover:border-hairline-strong rounded-sm shadow-sm transition-all cursor-pointer flex items-center gap-1.5 relative">
+              <Share2 class="w-3.5 h-3.5" /> {t("chk.share")}
+              <span id="ws-share-toast" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-[10px] font-mono font-medium text-on-primary bg-ink rounded shadow-level-3 opacity-0 transition-opacity pointer-events-none whitespace-nowrap">
+                {t("btn.copiedLink")}
+              </span>
+            </button>
+            <button type="button" id="btn-close-trip" class="h-8 px-3 text-xs font-medium text-error-deep bg-error-soft hover:bg-error-soft-2 border border-error/25 rounded-sm transition-colors cursor-pointer">
+              {t("chk.closeTrip")}
+            </button>
+          </div>
+        </div>
+
+        <!-- 2B. Trip Intelligence Suggestions (no-print) -->
+        <div id="trip-intelligence-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4 no-print select-none">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- 2C. Smart Auto-complete Item Add (no-print) -->
+        <div class="bg-canvas border border-hairline rounded-md p-5 shadow-sm no-print select-none">
+          <form id="item-add-form" class="flex flex-col sm:flex-row gap-3 relative">
+            <div class="flex-1 relative">
+              <input
+                type="text"
+                id="item-input-name"
+                placeholder={t("chk.phItemSearch")}
+                required
+                autocomplete="off"
+                class="w-full h-10 px-3 bg-canvas border border-hairline rounded-sm text-sm text-ink outline-none focus:border-link transition-colors"
+              />
+              <div id="item-autocomplete-dropdown" class="hidden absolute top-full left-0 right-0 bg-canvas border border-hairline rounded-sm shadow-level-3 z-30 max-h-48 overflow-y-auto"></div>
+            </div>
+            
+            <div class="flex gap-2">
+              <select id="item-select-list" class="h-10 px-2 bg-canvas border border-hairline rounded-sm text-xs text-mute outline-none cursor-pointer">
+                <!-- Populated dynamically to match lists -->
+              </select>
+              <button type="submit" class="px-4 h-10 bg-primary hover:bg-ink text-on-primary font-medium text-sm rounded-sm flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+                <Plus class="w-4 h-4" /> {t("chk.addItem")}
+              </button>
+            </div>
+          </form>
+
+          <!-- Quick add row -->
+          <div class="flex flex-wrap items-center gap-2 mt-3.5 border-t border-hairline pt-3.5">
+            <span class="text-[10px] font-mono text-mute mr-1">{t("chk.quickAdd")}</span>
+            {quickAddKeys.map(key => (
+              <button
+                type="button"
+                data-quick-add={t(key)}
+                class="text-[10px] font-mono px-2 py-0.5 border border-hairline rounded-pill hover:border-hairline-strong hover:bg-canvas-soft transition-colors cursor-pointer text-body hover:text-ink"
+              >
+                + {t(key)}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- 2D. Main Dashboard Area: Packing Lists (Tabs/Columns) + Suggs Panel -->
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+          
+          <!-- Packing lists lists panel (2 Cols) -->
+          <div class="xl:col-span-2 flex flex-col gap-6">
+            
+            <!-- List selector tab headers -->
+            <div class="flex flex-wrap border-b border-hairline gap-2 select-none no-print">
+              <div id="list-tabs-row" class="flex flex-wrap gap-1 -mb-px">
+                <!-- Tabs inserted dynamically -->
+              </div>
+              <button type="button" id="btn-add-custom-list" class="ml-auto text-xs font-mono text-link hover:text-link-deep transition-colors py-1 cursor-pointer">
+                + {t("chk.addCustomList")}
+              </button>
+            </div>
+
+            <!-- Active Packing List Container -->
+            <div id="active-list-content" class="bg-canvas border border-hairline rounded-md p-6 shadow-sm min-h-[300px]">
+              <!-- Populated dynamically -->
+            </div>
+            
+            <!-- List actions row -->
+            <div class="flex items-center gap-3 no-print select-none">
+              <button type="button" id="btn-rename-active-list" class="text-xs font-mono text-mute hover:text-ink transition-colors flex items-center gap-1 cursor-pointer">
+                <Edit3 class="w-3 h-3" /> {t("chk.renameList")}
+              </button>
+              <button type="button" id="btn-delete-active-list" class="text-xs font-mono text-error-deep hover:text-error hover:opacity-90 transition-colors flex items-center gap-1 cursor-pointer">
+                <Trash2 class="w-3 h-3" /> {t("chk.deleteList")}
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Sidebar widgets panel (1 Col) -->
+          <div class="flex flex-col gap-6 no-print select-none">
+            
+            <!-- Widget 1: Packing Progress Ring -->
+            <div class="bg-canvas border border-hairline rounded-md p-5 shadow-sm">
+              <div class="flex items-center justify-between mb-4 border-b border-hairline pb-2.5">
+                <h3 class="text-xs font-mono font-semibold tracking-wider text-mute">{t("chk.progress")}</h3>
+                <span class="text-[10px] font-mono font-semibold text-link" id="stats-percentage-text">0%</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="relative w-14 h-14 flex-shrink-0">
+                  <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-canvas-soft-2" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path id="circle-progress-meter" class="text-primary transition-all duration-300" stroke-dasharray="0, 100" stroke-width="3.5" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <div class="absolute inset-0 flex items-center justify-center font-mono text-[10px] font-bold text-ink" id="circle-percent-text">
+                    0%
+                  </div>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold text-ink" id="text-packed-stats">{t("chk.packedStats", { packed: 0, total: 0 })}</p>
+                  <p class="text-[9px] text-mute font-mono mt-0.5" id="text-remaining-stats">{t("chk.allPacked")}</p>
+                  <p class="text-[9px] text-error-deep font-mono font-semibold mt-0.5 hidden" id="text-missing-essentials">{t("chk.essentialsMissing")}</p>
+                </div>
+              </div>
+
+              <!-- Packing complete banner -->
+              <div id="packing-complete-banner" class="hidden mt-4 bg-link-bg-soft border border-link/20 rounded-sm p-3 flex items-center gap-2">
+                <CheckCircle2 class="w-4 h-4 text-link" />
+                <span class="text-[10px] font-mono font-semibold text-link-deep tracking-wider">{t("chk.complete")}</span>
+              </div>
+            </div>
+
+            <!-- Widget 2: Baggage Compliance Conflicts Alert Box -->
+            <div id="conflict-alerts-card" class="hidden bg-canvas border border-hairline rounded-md p-5 shadow-sm">
+              <div class="flex items-center gap-1.5 mb-3 border-b border-hairline pb-2.5">
+                <AlertTriangle class="w-4 h-4 text-error-deep" />
+                <h3 class="text-xs font-mono font-semibold tracking-wider text-error-deep">{t("chk.warnings")}</h3>
+              </div>
+              <div id="conflict-alerts-list" class="space-y-3 max-h-48 overflow-y-auto pr-1">
+                <!-- Conflicts inserted by JS -->
+              </div>
+            </div>
+
+            <!-- Widget 3: Contextual Smart Suggestions -->
+            <div id="smart-suggestions-card" class="hidden bg-canvas border border-hairline rounded-md p-5 shadow-sm">
+              <div class="flex items-center gap-1.5 mb-3 border-b border-hairline pb-2.5">
+                <Sparkles class="w-3.5 h-3.5 text-link" />
+                <h3 class="text-xs font-mono font-semibold tracking-wider text-ink">{t("chk.suggestions")}</h3>
+              </div>
+              <p class="text-[10px] text-mute mb-3">{t("chk.suggestionsIntro")}</p>
+              <div id="smart-suggestions-list" class="space-y-2">
+                <!-- Suggs by JS -->
+              </div>
+            </div>
+
+            <!-- Widget 4: Travel Notes -->
+            <div class="bg-canvas border border-hairline rounded-md p-5 shadow-sm">
+              <h3 class="text-xs font-mono font-semibold tracking-wider text-mute mb-3 border-b border-hairline pb-2.5">{t("chk.notes")}</h3>
+              <textarea
+                id="ws-notes-textarea"
+                placeholder={t("chk.phNotes")}
+                rows="8"
+                class="w-full p-2.5 bg-canvas-soft border border-hairline rounded-sm text-xs text-ink outline-none focus:border-link resize-none transition-all leading-[1.6]"
+              ></textarea>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Static Google-Indexable Below-Fold SEO Content Section -->
+      <section class="mt-16 border-t border-hairline pt-12 no-print">
+        
+        <!-- Intro Header -->
+        <div class="mb-10">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="font-mono text-[10px] font-semibold text-mute tracking-wider bg-canvas-soft-2 border border-hairline px-2 py-0.5 rounded-xs">
+              {t("chk.badge")}
+            </span>
+            <span class="inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-link bg-link-bg-soft border border-link/25 px-2 py-0.5 rounded-xs select-none">
+              <BadgeCheck class="w-3 h-3 text-link" />
+              {t("chk.badgeVerified")}
+            </span>
+          </div>
+          <h2 class="text-2xl font-semibold tracking-[-0.8px] text-ink">
+            {t("chk.h2What")}
+          </h2>
+          <p class="text-sm text-body leading-[1.7] mt-3 text-pretty">
+            {t("chk.about1")}
+          </p>
+          <p class="text-sm text-body leading-[1.7] mt-3 text-pretty">
+            {t("chk.about2")}
+          </p>
+        </div>
+
+        <!-- 6 Feature Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <ShieldCheck class="w-5 h-5 text-link mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">{t("chk.feat1")}</h3>
+            <p class="text-xs text-body leading-relaxed">{t("chk.feat1Body")}</p>
+          </div>
+
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <AlertTriangle class="w-5 h-5 text-amber-600 mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">{t("chk.feat2")}</h3>
+            <p class="text-xs text-body leading-relaxed">{t("chk.feat2Body")}</p>
+          </div>
+
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <Sparkles class="w-5 h-5 text-link mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">{t("chk.feat3")}</h3>
+            <p class="text-xs text-body leading-relaxed">{t("chk.feat3Body")}</p>
+          </div>
+
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <Globe class="w-5 h-5 text-link mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">{t("chk.feat4")}</h3>
+            <p class="text-xs text-body leading-relaxed">{t("chk.feat4Body")}</p>
+          </div>
+
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <Printer class="w-5 h-5 text-link mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">{t("chk.feat5")}</h3>
+            <p class="text-xs text-body leading-relaxed">{t("chk.feat5Body")}</p>
+          </div>
+
+          <div class="p-5 rounded-lg bg-canvas border border-hairline shadow-xs">
+            <ClipboardList class="w-5 h-5 text-link mb-3" />
+            <h3 class="text-sm font-semibold text-ink mb-1.5">{t("chk.feat6")}</h3>
+            <p class="text-xs text-body leading-relaxed">{t("chk.feat6Body")}</p>
+          </div>
+        </div>
+
+        <!-- TSA 3-1-1 Liquids Rule Reference Panel -->
+        <div class="my-10 p-6 rounded-lg bg-canvas-soft border border-hairline">
+          <div class="flex items-start gap-3">
+            <FileText class="w-5 h-5 text-link mt-0.5 flex-shrink-0" />
+            <div>
+              <h3 class="text-sm font-semibold text-ink">{t("chk.liquidsTitle")}</h3>
+              <p class="text-xs text-mute font-mono mt-0.5"><span class="notranslate">49 CFR § 1540.111</span> — {t("cfr.sourceTSA")}</p>
+              <p class="text-xs text-body leading-relaxed mt-2">
+                {t("chk.liquidsBody")}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Airline Baggage Weight Limits Reference Table -->
+        <div class="my-10">
+          <h3 class="text-lg font-semibold text-ink mb-4 tracking-tight flex items-center gap-2">
+            <Plane class="w-5 h-5 text-link" />
+            {t("chk.airlineTable")}
+          </h3>
+          <div class="overflow-x-auto border border-hairline rounded-lg bg-canvas shadow-xs">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-canvas-soft border-b border-hairline text-[10px] font-mono font-semibold text-mute tracking-wider">
+                  <th class="py-3 px-4">{t("chk.fieldAirline")}</th>
+                  <th class="py-3 px-4">{t("chk.thCabin")}</th>
+                  <th class="py-3 px-4">{t("chk.thHold")}</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-hairline/60 text-xs">
+                {airlineLimits.map(al => (
+                  <tr class="hover:bg-canvas-soft/50 transition-colors">
+                    <td class="py-3 px-4 font-semibold text-ink notranslate">{al.name}</td>
+                    <td class="py-3 px-4 font-mono text-body">{al.carryOn}</td>
+                    <td class="py-3 px-4 font-mono text-body">{al.checked}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 12 FAQ Accordions -->
+        <div class="my-10">
+          <h3 class="text-lg font-semibold text-ink mb-5 tracking-tight">{t("item.faqHeadingShort")}</h3>
+          <div class="space-y-3">
+            {checklistFaqs.map((faq, idx) => (
+              <div class="border border-hairline rounded-md bg-canvas shadow-xs">
+                <button 
+                  type="button" 
+                  class="faq-header-btn w-full text-left px-5 py-4 flex items-center justify-between text-sm font-semibold text-ink hover:bg-canvas-soft transition-colors cursor-pointer outline-none select-none"
+                  data-target={`faq-body-chk-${idx}`}
+                >
+                  <span>{faq.q}</span>
+                  <ChevronDown class="w-4 h-4 text-mute transition-transform duration-200" />
+                </button>
+                <div id={`faq-body-chk-${idx}`} class="hidden px-5 pb-4 text-xs text-body leading-[1.6] border-t border-hairline/40 pt-3">
+                  {faq.a}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- E-E-A-T Editorial Banner -->
+        <EEATBanner lastUpdated={String(currentYear)} lang={lang} />
+
+        <!-- Related Links Widget -->
+        <RelatedLinksWidget groups={relatedWidgetGroups} />
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <Footer slot="footer" lang={lang} />
+</Layout>
+
+
+<script>
+  import { 
+    TripEngine, RuleEngine, SuggestionEngine, TemplateEngine, StorageEngine,
+    type Trip, type PackingList, type PackedItem
+  } from "../../lib/packing-assistant";
+  
+  import type { TSAItem } from "../../types/item";
+
+  /**
+   * Locale payload emitted by this page's frontmatter. Flat entries are plain
+   * strings (some still carrying `{placeholder}` slots); `lists`, `types` and
+   * `statuses` are lookup tables keyed by the values we persist in storage.
+   */
+  const payload: Record<string, any> = (() => {
+    try {
+      return JSON.parse(document.getElementById("chk-i18n")?.textContent || "{}");
+    } catch {
+      return {};
+    }
+  })();
+  const S = payload as Record<string, string>;
+  const LIST_NAMES: Record<string, string> = payload.lists || {};
+  const TRIP_TYPES: Record<string, string> = payload.types || {};
+  const STATUSES: Record<string, string> = payload.statuses || {};
+
+  /** Fills `{name}`-style slots left in the dictionary templates. */
+  function fill(template: string, vars: Record<string, string | number>) {
+    return String(template ?? "").replace(/\{(\w+)\}/g, (whole, key) =>
+      key in vars ? String(vars[key]) : whole
+    );
+  }
+
+  /**
+   * Seed names `TripEngine.createTrip()` writes for the five core lists. They
+   * are the marker for "never renamed": while the stored name still matches its
+   * seed we show the localized label, and once a user renames `documents` or
+   * `essentials` their own wording wins on every locale.
+   */
+  const CORE_SEED_NAMES: Record<string, string> = {
+    "carry-on": "Carry-on Bag",
+    "checked-bag": "Checked Bag",
+    "personal-item": "Personal Item",
+    "documents": "Documents",
+    "essentials": "Essentials"
+  };
+
+  /** Core lists carry a stable id and a localized label; custom lists keep the user's own name. */
+  function listLabel(list: { id: string; name: string }) {
+    const seed = CORE_SEED_NAMES[list.id];
+    if (seed && list.name !== seed) return list.name;
+    return LIST_NAMES[list.id] || list.name;
+  }
+
+  function statusLabel(value: string | undefined) {
+    return STATUSES[value || "UNKNOWN"] || STATUSES.UNKNOWN || "UNKNOWN";
+  }
+
+  // State Management
+  let activeTrip: Trip | undefined = undefined;
+  let activeListId: string = "carry-on";
+  let searchIndex: any[] = [];
+  let isIndexLoaded = false;
+  let selectedAutoCompleteItem: any = null;
+
+  // DOM Elements
+  const tripWizardSection = document.getElementById("trip-wizard-section");
+  const tripWizardForm = document.getElementById("wizard-form") as HTMLFormElement;
+  const tripWorkspaceSection = document.getElementById("trip-workspace-section");
+
+  const recentTripsList = document.getElementById("recent-trips-list");
+  const btnSidebarNewTrip = document.getElementById("btn-sidebar-new-trip");
+
+  const wsTripName = document.getElementById("ws-trip-name");
+  const wsTripMeta = document.getElementById("ws-trip-meta");
+  const wsTripDates = document.getElementById("ws-trip-dates");
+  const btnCloseTrip = document.getElementById("btn-close-trip");
+
+  const itemInputName = document.getElementById("item-input-name") as HTMLInputElement;
+  const itemSelectList = document.getElementById("item-select-list") as HTMLSelectElement;
+  const itemAddForm = document.getElementById("item-add-form") as HTMLFormElement;
+  const autocompleteDropdown = document.getElementById("item-autocomplete-dropdown");
+
+  const listTabsRow = document.getElementById("list-tabs-row");
+  const activeListContent = document.getElementById("active-list-content");
+  const btnAddCustomList = document.getElementById("btn-add-custom-list");
+  const btnRenameActiveList = document.getElementById("btn-rename-active-list");
+  const btnDeleteActiveList = document.getElementById("btn-delete-active-list");
+
+  const statsPercentageText = document.getElementById("stats-percentage-text");
+  const circleProgressMeter = document.getElementById("circle-progress-meter");
+  const circlePercentText = document.getElementById("circle-percent-text");
+  const textPackedStats = document.getElementById("text-packed-stats");
+  const textRemainingStats = document.getElementById("text-remaining-stats");
+  const textMissingEssentials = document.getElementById("text-missing-essentials");
+  const packingCompleteBanner = document.getElementById("packing-complete-banner");
+
+  const conflictAlertsCard = document.getElementById("conflict-alerts-card");
+  const conflictAlertsList = document.getElementById("conflict-alerts-list");
+
+  const smartSuggestionsCard = document.getElementById("smart-suggestions-card");
+  const smartSuggestionsList = document.getElementById("smart-suggestions-list");
+
+  const wsNotesTextarea = document.getElementById("ws-notes-textarea") as HTMLTextAreaElement;
+
+  const btnPrintList = document.getElementById("btn-print-list");
+  const btnPdfList = document.getElementById("btn-pdf-list");
+  const btnShareList = document.getElementById("btn-share-list");
+  const wsShareToast = document.getElementById("ws-share-toast");
+
+  const printTripSummary = document.getElementById("print-workspace-summary");
+  const printTripName = document.getElementById("print-workspace-name");
+
+  // Load Search Index
+  async function loadSearchIndex() {
+    if (isIndexLoaded) return;
+    try {
+      const res = await fetch(S.indexUrl || "/search-index.json");
+      if (res.ok) {
+        searchIndex = await res.json();
+        isIndexLoaded = true;
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  // 1. Wizard Setup & Initialization
+  tripWizardForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = (document.getElementById("w-name") as HTMLInputElement).value.trim();
+    const destination = (document.getElementById("w-dest") as HTMLInputElement).value.trim();
+    const departureDate = (document.getElementById("w-dep") as HTMLInputElement).value;
+    const returnDate = (document.getElementById("w-ret") as HTMLInputElement).value;
+    const airline = (document.getElementById("w-airline") as HTMLSelectElement).value;
+    const tripType = (document.getElementById("w-type") as HTMLSelectElement).value as any;
+
+    const templateRadio = document.querySelector('input[name="w-template"]:checked') as HTMLInputElement;
+    const templateVal = templateRadio ? templateRadio.value : 'weekend';
+
+    // Create Base Trip
+    const newTrip = TripEngine.createTrip({
+      name,
+      destination,
+      departureDate,
+      returnDate,
+      airline,
+      tripType
+    });
+
+    // Populate default list preset items from Template
+    const templateItems = TemplateEngine.getTemplateItems(templateVal as any);
+    templateItems.forEach(item => {
+      const targetList = newTrip.lists.find(l => l.id === item.listId);
+      if (targetList) {
+        // Resolve allowances manually for template defaults
+        const match = searchIndex.find(x => x.name.toLowerCase() === item.name.toLowerCase());
+        const compliance = RuleEngine.evaluateCompliance(
+          item.name,
+          item.category,
+          match ? match.slug : item.name.toLowerCase().replace(/\s+/g, '-'),
+          item.listId
+        );
+
+        targetList.items.push({
+          id: match ? match.slug : `tpl-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`,
+          name: item.name,
+          category: item.category,
+          carryOnStatus: match ? match.carryOn : 'UNKNOWN',
+          checkedStatus: match ? match.checked : 'UNKNOWN',
+          reason: match ? S.reasonIndexed : S.reasonCustom,
+          travelTip: match ? S.tipIndexed : S.tipCustom,
+          packed: false,
+          compliance
+        });
+      }
+    });
+
+    // Inject Trip Destination Intelligence
+    const destIntel = TripEngine.getDestinationSuggestions(destination, tripType);
+    destIntel.forEach(item => {
+      const essentialsList = newTrip.lists.find(l => l.id === 'essentials');
+      if (essentialsList) {
+        const match = searchIndex.find(x => x.name.toLowerCase() === item.name.toLowerCase());
+        const compliance = RuleEngine.evaluateCompliance(
+          item.name,
+          item.category,
+          match ? match.slug : item.name.toLowerCase().replace(/\s+/g, '-'),
+          'essentials'
+        );
+
+        essentialsList.items.push({
+          id: match ? match.slug : `intel-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`,
+          name: item.name,
+          category: item.category,
+          carryOnStatus: match ? match.carryOn : 'UNKNOWN',
+          checkedStatus: match ? match.checked : 'UNKNOWN',
+          reason: item.reason,
+          travelTip: match ? S.tipIndexed : S.tipCustom,
+          packed: false,
+          compliance
+        });
+      }
+    });
+
+    StorageEngine.saveTrip(newTrip);
+    StorageEngine.setActiveTripId(newTrip.id);
+    
+    activeTrip = newTrip;
+    activeListId = "carry-on";
+    
+    renderWorkspace();
+    renderRecentTrips();
+  });
+
+  // 2. Render Workspace Controls
+  function renderWorkspace() {
+    if (!activeTrip) {
+      tripWizardSection?.classList.remove("hidden");
+      tripWorkspaceSection?.classList.add("hidden");
+      return;
+    }
+
+    tripWizardSection?.classList.add("hidden");
+    tripWorkspaceSection?.classList.remove("hidden");
+
+    // Headings
+    const tripTypeLabel = TRIP_TYPES[activeTrip.tripType] || activeTrip.tripType;
+    if (wsTripName) wsTripName.textContent = activeTrip.name;
+    if (wsTripMeta) wsTripMeta.textContent = `${S.metaCarrier}: ${activeTrip.airline} • ${S.metaProfile}: ${tripTypeLabel} • ${S.metaDestination}: ${activeTrip.destination}`;
+    if (wsTripDates) wsTripDates.textContent = `${S.metaDates}: ${activeTrip.departureDate} – ${activeTrip.returnDate}`;
+
+    if (printTripName) printTripName.textContent = activeTrip.name;
+    if (printTripSummary) printTripSummary.textContent = `${S.metaCarrier}: ${activeTrip.airline} | ${S.metaDestination}: ${activeTrip.destination} | ${S.metaDates}: ${activeTrip.departureDate} – ${activeTrip.returnDate}`;
+
+    if (wsNotesTextarea) wsNotesTextarea.value = activeTrip.notes;
+
+    // Populates Item Form Select Dropdown
+    if (itemSelectList) {
+      itemSelectList.innerHTML = activeTrip.lists.map(list => `
+        <option value="${list.id}" ${list.id === activeListId ? 'selected' : ''}>${listLabel(list)}</option>
+      `).join("");
+    }
+
+    renderTabs();
+    renderActiveListItems();
+    updateProgressAndWidgets();
+  }
+
+  // Render Tabs List
+  function renderTabs() {
+    if (!listTabsRow || !activeTrip) return;
+
+    listTabsRow.innerHTML = activeTrip.lists.map(list => {
+      const activeClass = list.id === activeListId 
+        ? "border-primary text-primary font-semibold" 
+        : "border-transparent text-mute hover:text-ink";
+      
+      const packedCount = list.items.filter(x => x.packed).length;
+      
+      return `
+        <button 
+          type="button" 
+          class="list-tab-btn px-4 py-2 border-b-2 text-xs font-mono transition-all cursor-pointer focus:outline-none ${activeClass}"
+          data-list-id="${list.id}"
+        >
+          ${listLabel(list)} (${packedCount}/${list.items.length})
+        </button>
+      `;
+    }).join("");
+
+    // Bind tab clicks
+    listTabsRow.querySelectorAll(".list-tab-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const id = (e.currentTarget as HTMLElement).getAttribute("data-list-id") || "carry-on";
+        activeListId = id;
+        renderWorkspace();
+      });
+    });
+  }
+
+  // Render Active List Items Grid
+  function renderActiveListItems() {
+    if (!activeListContent || !activeTrip) return;
+
+    const list = activeTrip.lists.find(l => l.id === activeListId);
+    if (!list) return;
+
+    if (list.items.length === 0) {
+      activeListContent.innerHTML = `
+        <div class="text-center py-12 text-mute text-xs font-mono">
+          No items packed in this list. Use search input above to pack items.
+        </div>
+      `;
+      return;
+    }
+
+    activeListContent.innerHTML = `
+      <div class="flex flex-col gap-4">
+        ${list.items.map((item, idx) => {
+          const borderClass = item.compliance.status === 'DANGER' 
+            ? 'border-l-2 border-l-error pl-3' 
+            : item.compliance.status === 'WARNING' 
+            ? 'border-l-2 border-l-warning pl-3' 
+            : '';
+
+          return `
+            <div class="flex flex-col gap-2 py-3 border-b border-hairline last:border-b-0 ${borderClass}">
+              <div class="flex items-start justify-between gap-4">
+                
+                <!-- Packed Checkbox & Labels -->
+                <div class="flex items-start gap-3 min-w-0">
+                  <input 
+                    type="checkbox" 
+                    ${item.packed ? 'checked' : ''} 
+                    class="item-pack-cb w-4.5 h-4.5 rounded-xs border-hairline text-primary focus:ring-link cursor-pointer mt-0.5 print-checkbox"
+                    data-item-idx="${idx}"
+                  />
+                  <div class="min-w-0">
+                    <span class="text-sm font-semibold text-ink ${item.packed ? 'line-through text-mute' : ''} truncate block">
+                      ${item.name}
+                    </span>
+                    <div class="flex items-center gap-2 mt-0.5">
+                      <span class="text-[9px] font-mono text-mute tracking-wide">
+                        ${item.category}
+                      </span>
+                      <span>&bull;</span>
+                      <button
+                        type="button"
+                        class="btn-toggle-details text-[9px] font-mono text-link hover:text-link-deep cursor-pointer focus:outline-none"
+                        data-toggle-idx="${idx}"
+                      >
+                        ${S.showDetails}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bag Placement Shift buttons (no-print) & Delete -->
+                <div class="flex items-center gap-3 no-print select-none">
+                  <!-- Bag Swapping Select Menu -->
+                  <select 
+                    class="item-move-select bg-canvas-soft border border-hairline rounded-xs text-[10px] font-mono px-2 py-0.5 cursor-pointer outline-none"
+                    data-item-idx="${idx}"
+                  >
+                    ${activeTrip?.lists.map(l => `
+                      <option value="${l.id}" ${l.id === list.id ? 'selected' : ''}>${fill(S.moveTo, { list: listLabel(l) })}</option>
+                    `).join("")}
+                  </select>
+
+                  <button
+                    type="button"
+                    class="btn-delete-item p-1 text-mute hover:text-error-deep rounded-sm transition-colors cursor-pointer"
+                    data-item-idx="${idx}"
+                    aria-label="${S.deleteItem}"
+                  >
+                    <svg width="14" height="14" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- Collapsible Details Box -->
+              <div 
+                id="item-details-drawer-${idx}" 
+                class="hidden mt-2 p-3 bg-canvas-soft border border-hairline rounded-sm space-y-2 text-[10px] font-mono text-body"
+              >
+                <div class="grid grid-cols-2 gap-2 pb-2 border-b border-hairline">
+                  <div>
+                    <span class="text-[8px] font-semibold text-mute block">${S.cabinAllowance}</span>
+                    <span class="font-medium text-ink">${statusLabel(item.carryOnStatus)}</span>
+                  </div>
+                  <div>
+                    <span class="text-[8px] font-semibold text-mute block">${S.holdAllowance}</span>
+                    <span class="font-medium text-ink">${statusLabel(item.checkedStatus)}</span>
+                  </div>
+                </div>
+                <div>
+                  <span class="text-[8px] font-semibold text-mute block">${S.regulatoryReason}</span>
+                  <p class="text-ink mt-0.5 leading-[1.5]">${item.reason || S.defaultReason}</p>
+                </div>
+                ${item.travelTip ? `
+                  <div>
+                    <span class="text-[8px] font-semibold text-mute block">${S.checklistTip}</span>
+                    <p class="text-link-deep mt-0.5 leading-[1.5]">${item.travelTip}</p>
+                  </div>
+                ` : ''}
+                <div class="flex items-center justify-between pt-1 text-[8px] text-mute border-t border-hairline/50">
+                  <span>${S.reviewed}: ${item.lastReviewed || S.reviewedFallback}</span>
+                  ${item.officialSource ? `
+                    <a href="${item.officialSource}" target="_blank" rel="noopener noreferrer" class="text-link hover:underline">${S.officialSource} &rarr;</a>
+                  ` : `<span>${S.editorialVerified}</span>`}
+                </div>
+              </div>
+
+              <!-- Rules Warnings banner -->
+              ${item.compliance.status !== 'SAFE' ? `
+                <div class="text-[10px] font-mono flex items-start gap-1.5 mt-1.5 leading-[1.4] ${item.compliance.status === 'DANGER' ? 'text-error-deep' : 'text-warning-deep'}">
+                  <AlertCircle class="w-3.5 h-3.5 flex-shrink-0" />
+                  <span>${item.compliance.message}</span>
+                </div>
+              ` : ''}
+            </div>
+          `;
+        }).join("")}
+      </div>
+    `;
+
+    bindListItemEvents(list);
+  }
+
+  function bindListItemEvents(list: PackingList) {
+    // Checkbox packs
+    activeListContent?.querySelectorAll(".item-pack-cb").forEach(cb => {
+      cb.addEventListener("change", (e) => {
+        const idx = parseInt((e.target as HTMLInputElement).getAttribute("data-item-idx") || "0");
+        list.items[idx].packed = (e.target as HTMLInputElement).checked;
+        saveActiveTripState();
+      });
+    });
+
+    // Toggle details drawer
+    activeListContent?.querySelectorAll(".btn-toggle-details").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const idx = (e.currentTarget as HTMLElement).getAttribute("data-toggle-idx");
+        const drawer = document.getElementById(`item-details-drawer-${idx}`);
+        if (drawer) {
+          const isHidden = drawer.classList.contains("hidden");
+          if (isHidden) {
+            drawer.classList.remove("hidden");
+            (e.currentTarget as HTMLElement).textContent = S.hideDetails;
+          } else {
+            drawer.classList.add("hidden");
+            (e.currentTarget as HTMLElement).textContent = S.showDetails;
+          }
+        }
+      });
+    });
+
+    // Delete item
+    activeListContent?.querySelectorAll(".btn-delete-item").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const idx = parseInt((e.currentTarget as HTMLElement).getAttribute("data-item-idx") || "0");
+        list.items.splice(idx, 1);
+        saveActiveTripState();
+      });
+    });
+
+    // Move to another list
+    activeListContent?.querySelectorAll(".item-move-select").forEach(sel => {
+      sel.addEventListener("change", (e) => {
+        const itemIdx = parseInt((e.target as HTMLSelectElement).getAttribute("data-item-idx") || "0");
+        const targetListId = (e.target as HTMLSelectElement).value;
+
+        if (!activeTrip) return;
+
+        const targetList = activeTrip.lists.find(l => l.id === targetListId);
+        if (targetList) {
+          const [movedItem] = list.items.splice(itemIdx, 1);
+          
+          // Re-evaluate compliance based on new target list rules!
+          movedItem.compliance = RuleEngine.evaluateCompliance(
+            movedItem.name,
+            movedItem.category,
+            movedItem.id,
+            targetListId
+          );
+
+          targetList.items.push(movedItem);
+          saveActiveTripState();
+        }
+      });
+    });
+  }
+
+  // 3. Progress, Warnings & Contextual Suggestion Widgets
+  function updateProgressAndWidgets() {
+    if (!activeTrip) return;
+
+    let totalItems = 0;
+    let packedItems = 0;
+    const packedSlugs: string[] = [];
+    const conflicts: { name: string; msg: string; status: string }[] = [];
+
+    activeTrip.lists.forEach(list => {
+      list.items.forEach(item => {
+        totalItems++;
+        if (item.packed) packedItems++;
+        packedSlugs.push(item.id || item.name);
+
+        if (item.compliance.status === 'DANGER' || item.compliance.status === 'WARNING') {
+          conflicts.push({
+            name: item.name,
+            msg: item.compliance.message,
+            status: item.compliance.status
+          });
+        }
+      });
+    });
+
+    // A. Progress Meter calculations
+    const percent = totalItems > 0 ? Math.round((packedItems / totalItems) * 100) : 0;
+    if (statsPercentageText) statsPercentageText.textContent = `${percent}%`;
+    if (circlePercentText) circlePercentText.textContent = `${percent}%`;
+    if (circleProgressMeter) circleProgressMeter.setAttribute("stroke-dasharray", `${percent}, 100`);
+    if (textPackedStats) textPackedStats.textContent = fill(S.packedStats, { packed: packedItems, total: totalItems });
+
+    if (textRemainingStats) {
+      const remaining = totalItems - packedItems;
+      textRemainingStats.textContent = remaining > 0 ? fill(S.remaining, { count: remaining }) : S.allPacked;
+    }
+
+    // B. Conflict Warning Cards
+    if (conflictAlertsCard && conflictAlertsList) {
+      if (conflicts.length > 0) {
+        conflictAlertsCard.classList.remove("hidden");
+        conflictAlertsList.innerHTML = conflicts.map(c => `
+          <div class="p-3 rounded-xs border text-[10px] font-mono leading-[1.5] ${c.status === 'DANGER' ? 'bg-error-soft border-error/25 text-error-deep' : 'bg-warning-soft border-warning/15 text-warning-deep'}">
+            <strong class="block mb-0.5">${c.name}</strong>
+            <span>${c.msg}</span>
+          </div>
+        `).join("");
+      } else {
+        conflictAlertsCard.classList.add("hidden");
+      }
+    }
+
+    // C. Dynamic Smart Suggestions
+    if (smartSuggestionsCard && smartSuggestionsList) {
+      const suggs = SuggestionEngine.getSmartSuggestions(packedSlugs);
+      if (suggs.length > 0) {
+        smartSuggestionsCard.classList.remove("hidden");
+        smartSuggestionsList.innerHTML = suggs.map(s => `
+          <button 
+            type="button" 
+            class="sugg-add-btn w-full text-left p-2.5 bg-canvas border border-hairline rounded-sm hover:border-link transition-colors cursor-pointer flex justify-between items-center text-[10px]"
+            data-sugg-name="${s.name}"
+            data-sugg-cat="${s.category}"
+          >
+            <div>
+              <span class="font-medium text-ink block">+ ${fill(S.packItem, { name: s.name })}</span>
+              <span class="text-[9px] text-mute font-mono block mt-0.5">${fill(S.suggestionDueTo, { trigger: s.trigger })}</span>
+            </div>
+            <span class="text-[8px] font-mono text-mute px-1 border border-hairline rounded-xs">${s.category}</span>
+          </button>
+        `).join("");
+
+        // Bind clicks
+        smartSuggestionsList.querySelectorAll(".sugg-add-btn").forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            const name = (e.currentTarget as HTMLElement).getAttribute("data-sugg-name") || "";
+            const category = (e.currentTarget as HTMLElement).getAttribute("data-sugg-cat") || S.essentials;
+            addAssistantItem(name, category);
+          });
+        });
+      } else {
+        smartSuggestionsCard.classList.add("hidden");
+      }
+    }
+
+    // D. Packing Complete Status banner
+    if (packingCompleteBanner) {
+      if (percent === 100 && conflicts.length === 0) {
+        packingCompleteBanner.classList.remove("hidden");
+      } else {
+        packingCompleteBanner.classList.add("hidden");
+      }
+    }
+  }
+
+  // 4. Adding Items & Autocompletion
+  async function addAssistantItem(name: string, category: string, targetListId?: string) {
+    if (!activeTrip) return;
+
+    // Check database match for auto-sorting
+    const match = searchIndex.find(x => x.name.toLowerCase() === name.toLowerCase());
+    
+    // Auto-decide target list
+    let listId = targetListId || (itemSelectList ? itemSelectList.value : activeListId);
+    
+    if (match) {
+      // The localized indexes ship a language-independent `categorySlug`; the
+      // English one predates it and only has the category label.
+      const isDocument = match.categorySlug
+        ? match.categorySlug === 'documents'
+        : match.category === 'Documents';
+      if (isDocument) {
+        listId = 'documents';
+      } else if (match.carryOn === 'NOT_ALLOWED') {
+        listId = 'checked-bag';
+      } else if (match.checked === 'NOT_ALLOWED') {
+        listId = 'carry-on';
+      }
+    }
+
+    const list = activeTrip.lists.find(l => l.id === listId);
+    if (!list) return;
+
+    const compliance = RuleEngine.evaluateCompliance(
+      name,
+      category,
+      match ? match.slug : name.toLowerCase().replace(/\s+/g, '-'),
+      listId
+    );
+
+    list.items.push({
+      id: match ? match.slug : `custom-${Date.now()}`,
+      name,
+      category,
+      carryOnStatus: match ? match.carryOn : 'UNKNOWN',
+      checkedStatus: match ? match.checked : 'UNKNOWN',
+      reason: match ? S.reasonIndexed : S.reasonCustom,
+      travelTip: match ? S.tipIndexed : S.tipCustom,
+      packed: false,
+      compliance
+    });
+
+    // Auto-switch to the target tab so the user sees their item land
+    activeListId = listId;
+
+    saveActiveTripState();
+  }
+
+  // Form submission for adding items
+  itemAddForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = itemInputName.value.trim();
+    if (!name) return;
+
+    // Determine category
+    let category = S.essentials;
+    if (selectedAutoCompleteItem) {
+      category = selectedAutoCompleteItem.category;
+    } else {
+      const match = searchIndex.find(x => x.name.toLowerCase() === name.toLowerCase());
+      if (match) {
+        category = match.category;
+      }
+    }
+
+    addAssistantItem(name, category, itemSelectList ? itemSelectList.value : undefined);
+    itemInputName.value = "";
+    itemInputName.focus();
+    selectedAutoCompleteItem = null;
+  });
+
+  // Autocomplete suggestions mapping
+  itemInputName?.addEventListener("input", () => {
+    const val = itemInputName.value.trim().toLowerCase();
+    if (!val || !autocompleteDropdown) {
+      if (autocompleteDropdown) autocompleteDropdown.classList.add("hidden");
+      selectedAutoCompleteItem = null;
+      return;
+    }
+
+    const matches = searchIndex.filter(item => 
+      item.name.toLowerCase().includes(val) || 
+      item.aliases.some((a: string) => a.toLowerCase().includes(val)) ||
+      item.keywords.some((k: string) => k.toLowerCase().includes(val))
+    ).slice(0, 5);
+
+    if (matches.length === 0) {
+      autocompleteDropdown.classList.add("hidden");
+      selectedAutoCompleteItem = null;
+      return;
+    }
+
+    autocompleteDropdown.innerHTML = matches.map((match) => `
+      <button 
+        type="button" 
+        class="autocomplete-ws-item w-full text-left px-3 py-2 text-xs text-ink hover:bg-canvas-soft-2 border-b border-hairline last:border-b-0 cursor-pointer flex justify-between"
+        data-slug="${match.slug}"
+      >
+        <span class="font-medium">${match.name}</span>
+        <span class="text-[9px] font-mono text-mute">${match.category}</span>
+      </button>
+    `).join("");
+
+    autocompleteDropdown.classList.remove("hidden");
+
+    autocompleteDropdown.querySelectorAll(".autocomplete-ws-item").forEach(el => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        const slug = (e.currentTarget as HTMLElement).getAttribute("data-slug");
+        const selected = matches.find(m => m.slug === slug);
+        if (selected) {
+          itemInputName.value = selected.name;
+          selectedAutoCompleteItem = selected;
+        }
+        autocompleteDropdown.classList.add("hidden");
+      });
+    });
+  });
+
+  // Quick Adds trigger
+  document.querySelectorAll("button[data-quick-add]").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const name = (e.currentTarget as HTMLElement).getAttribute("data-quick-add") || "";
+      
+      // Match category
+      const match = searchIndex.find(x => x.name.toLowerCase() === name.toLowerCase());
+      const category = match ? match.category : S.essentials;
+
+      addAssistantItem(name, category);
+    });
+  });
+
+  // 5. Custom lists management
+  btnAddCustomList?.addEventListener("click", () => {
+    if (!activeTrip) return;
+    const name = prompt(S.promptNewList);
+    if (name && name.trim()) {
+      const id = `custom-list-${Date.now()}`;
+      activeTrip.lists.push({
+        id,
+        name: name.trim(),
+        isCustom: true,
+        items: []
+      });
+      activeListId = id;
+      saveActiveTripState();
+    }
+  });
+
+  btnRenameActiveList?.addEventListener("click", () => {
+    if (!activeTrip) return;
+    const list = activeTrip.lists.find(l => l.id === activeListId);
+    if (!list) return;
+    
+    if (!list.isCustom && activeListId !== 'essentials' && activeListId !== 'documents') {
+      alert(S.coreNoRename);
+      return;
+    }
+
+    const name = prompt(fill(S.promptRename, { name: listLabel(list) }), listLabel(list));
+    if (name && name.trim()) {
+      list.name = name.trim();
+      saveActiveTripState();
+    }
+  });
+
+  btnDeleteActiveList?.addEventListener("click", () => {
+    if (!activeTrip) return;
+    const listIndex = activeTrip.lists.findIndex(l => l.id === activeListId);
+    if (listIndex < 0) return;
+
+    const list = activeTrip.lists[listIndex];
+    if (!list.isCustom) {
+      alert(S.coreNoDelete);
+      return;
+    }
+
+    if (confirm(fill(S.confirmDeleteList, { name: listLabel(list) }))) {
+      activeTrip.lists.splice(listIndex, 1);
+      activeListId = "carry-on";
+      saveActiveTripState();
+    }
+  });
+
+  // Notes Autosave
+  wsNotesTextarea?.addEventListener("input", () => {
+    if (activeTrip) {
+      activeTrip.notes = wsNotesTextarea.value;
+      saveActiveTripState();
+    }
+  });
+
+  // Recent trips sidebar loading
+  function renderRecentTrips() {
+    if (!recentTripsList) return;
+
+    const trips = StorageEngine.getTrips();
+    if (trips.length === 0) {
+      recentTripsList.innerHTML = `<span class="text-xs text-mute font-mono py-2 text-center">${S.noRecentTrips}</span>`;
+      return;
+    }
+
+    recentTripsList.innerHTML = trips.map(t => {
+      const activeClass = activeTrip && activeTrip.id === t.id 
+        ? "bg-canvas-soft-2 border-primary text-ink font-semibold" 
+        : "border-transparent text-body hover:bg-canvas-soft-2 hover:text-ink";
+      
+      return `
+        <div class="flex items-center justify-between group rounded-sm border px-2.5 py-1.5 transition-colors ${activeClass}">
+          <button 
+            type="button" 
+            class="trip-select-btn text-xs font-mono text-left truncate flex-1 focus:outline-none"
+            data-trip-id="${t.id}"
+          >
+            ${t.name}
+          </button>
+          <button 
+            type="button" 
+            class="trip-delete-btn opacity-0 group-hover:opacity-100 hover:text-error-deep transition-opacity p-0.5 cursor-pointer"
+            data-trip-id="${t.id}"
+            aria-label="${S.deleteTrip}"
+          >
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      `;
+    }).join("");
+
+    // Bind sidebar clicks
+    recentTripsList.querySelectorAll(".trip-select-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const id = (e.currentTarget as HTMLElement).getAttribute("data-trip-id") || "";
+        const trip = StorageEngine.getTrip(id);
+        if (trip) {
+          activeTrip = trip;
+          StorageEngine.setActiveTripId(id);
+          activeListId = trip.lists[0]?.id || "carry-on";
+          renderWorkspace();
+        }
+      });
+    });
+
+    recentTripsList.querySelectorAll(".trip-delete-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const id = (e.currentTarget as HTMLElement).getAttribute("data-trip-id") || "";
+        if (confirm(S.confirmDeleteTrip)) {
+          StorageEngine.deleteTrip(id);
+          if (activeTrip && activeTrip.id === id) {
+            activeTrip = undefined;
+          }
+          renderWorkspace();
+          renderRecentTrips();
+        }
+      });
+    });
+  }
+
+  // Sidebar new trip action
+  btnSidebarNewTrip?.addEventListener("click", () => {
+    activeTrip = undefined;
+    StorageEngine.setActiveTripId(null);
+    renderWorkspace();
+    renderRecentTrips();
+  });
+
+  btnCloseTrip?.addEventListener("click", () => {
+    activeTrip = undefined;
+    StorageEngine.setActiveTripId(null);
+    renderWorkspace();
+    renderRecentTrips();
+  });
+
+  // State saving helpers
+  function saveActiveTripState() {
+    if (activeTrip) {
+      StorageEngine.saveTrip(activeTrip);
+      renderWorkspace();
+    }
+  }
+
+  // Printing & Sharing
+  btnPrintList?.addEventListener("click", () => {
+    window.print();
+  });
+  btnPdfList?.addEventListener("click", () => {
+    window.print();
+  });
+
+  btnShareList?.addEventListener("click", () => {
+    if (!activeTrip) return;
+    
+    // Generate static share URL using base64 encoded payload of lists/items
+    const payload = {
+      n: activeTrip.name,
+      d: activeTrip.destination,
+      a: activeTrip.airline,
+      t: activeTrip.tripType,
+      l: activeTrip.lists.map(list => ({
+        k: list.id,
+        n: list.name,
+        i: list.items.map(it => `${it.name}:${it.category}:${it.id}`)
+      }))
+    };
+
+    try {
+      const base64 = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
+      const shareUrl = `${window.location.origin}${window.location.pathname}?import=${base64}`;
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(shareUrl).then(() => {
+          if (wsShareToast) {
+            wsShareToast.classList.remove("opacity-0");
+            wsShareToast.classList.add("opacity-100");
+            setTimeout(() => {
+              wsShareToast.classList.remove("opacity-100");
+              wsShareToast.classList.add("opacity-0");
+            }, 2000);
+          }
+        });
+      }
+    } catch (err) {
+      console.error("Failed to compile share URL:", err);
+    }
+  });
+
+  // URL Import Handler
+  function checkUrlImport() {
+    const params = new URLSearchParams(window.location.search);
+    const importPayload = params.get("import");
+    if (!importPayload) return;
+
+    try {
+      const raw = decodeURIComponent(escape(atob(importPayload)));
+      const data = JSON.parse(raw);
+
+      // Create new imported Trip structure
+      const importedTrip = TripEngine.createTrip({
+        name: data.n || S.sharedTrip,
+        destination: data.d || S.unknown,
+        departureDate: new Date().toISOString().split('T')[0],
+        returnDate: new Date(Date.now() + 259200000).toISOString().split('T')[0],
+        airline: data.a || "Delta Air Lines",
+        tripType: data.t || "vacation"
+      });
+
+      // Clear default lists and map imported lists
+      importedTrip.lists = [];
+      if (data.l && Array.isArray(data.l)) {
+        data.l.forEach((listVal: any) => {
+          // Links shared before the id was carried in the payload only have a
+          // name, so fall back to slugifying it the way the old build did.
+          const listId: string = listVal.k || listVal.n.toLowerCase().replace(/\s+/g, '-');
+          const items: PackedItem[] = [];
+          if (listVal.i && Array.isArray(listVal.i)) {
+            listVal.i.forEach((itVal: string) => {
+              const [name, category, id] = itVal.split(":");
+
+              // Evaluate compliance dynamically for incoming items!
+              const compliance = RuleEngine.evaluateCompliance(
+                name,
+                category,
+                id,
+                listId
+              );
+
+              items.push({
+                id,
+                name,
+                category,
+                carryOnStatus: 'UNKNOWN',
+                checkedStatus: 'UNKNOWN',
+                reason: S.importedReason,
+                travelTip: S.importedTip,
+                packed: false,
+                compliance
+              });
+            });
+          }
+
+          importedTrip.lists.push({
+            id: listId,
+            // Core lists are re-labelled for whoever opens the link, so a list
+            // shared from /es/ reads in the recipient's language.
+            name: CORE_SEED_NAMES[listId] || listVal.n,
+            isCustom: !(listId in CORE_SEED_NAMES),
+            items
+          });
+        });
+      }
+
+      StorageEngine.saveTrip(importedTrip);
+      StorageEngine.setActiveTripId(importedTrip.id);
+      activeTrip = importedTrip;
+      
+      // Clean query string
+      window.history.replaceState(null, "", window.location.pathname);
+    } catch (err) {
+      console.error("Failed to parse imported trip payload:", err);
+    }
+  }
+
+  // Page Load Inits
+  async function init() {
+    await loadSearchIndex();
+    checkUrlImport();
+
+    const activeId = StorageEngine.getActiveTripId();
+    if (activeId) {
+      activeTrip = StorageEngine.getTrip(activeId);
+    }
+
+    renderWorkspace();
+    renderRecentTrips();
+
+    // Accordion FAQ Event Listeners
+    document.querySelectorAll(".faq-header-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const targetId = (e.currentTarget as HTMLElement).getAttribute("data-target") || "";
+        const body = document.getElementById(targetId);
+        const icon = (e.currentTarget as HTMLElement).querySelector("svg");
+        
+        if (body) {
+          const isHidden = body.classList.contains("hidden");
+          if (isHidden) {
+            body.classList.remove("hidden");
+            if (icon) icon.classList.add("rotate-180");
+          } else {
+            body.classList.add("hidden");
+            if (icon) icon.classList.remove("rotate-180");
+          }
+        }
+      });
+    });
+  }
+
+  init();
+</script>

@@ -1,0 +1,112 @@
+{
+  "id": "contact-lenses",
+  "slug": "contact-lenses",
+  "name": "Contact Lenses",
+  "category": "Medicine",
+  "subcategory": "Eye Care",
+  "aliases": [
+    "contacts",
+    "daily contact lenses",
+    "disposable contact lenses",
+    "contact lens packs",
+    "contact lens case",
+    "r漢 lenses",
+    "toric lenses",
+    "colored contacts",
+    "eye contacts",
+    "contact blisters"
+  ],
+  "keywords": [
+    "contact lenses",
+    "contacts",
+    "contact lens case",
+    "eye care",
+    "medical exemption",
+    "carry on",
+    "tsa liquids rule"
+  ],
+  "description": "TSA rules for flying with contact lenses, blister packs, lens cases, and contact solution in carry-on and checked luggage.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Contact lenses in sealed blister packs and contact lens cases are fully allowed in carry-on baggage. Contact lens solution is classified as a medically necessary liquid and is exempt from the standard 3.4 oz liquids rule.",
+    "conditions": [
+      "Contact lens blister packs containing saline solution are permitted in carry-on bags without counting against your 3-1-1 liquids limit.",
+      "Large bottles of contact lens solution (> 3.4 oz / 100ml) are medically exempt, but must be declared to the TSA officer at the checkpoint for separate screening."
+    ],
+    "exceptions": []
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Contact lenses, extra cases, and bottles of lens solution are fully allowed in checked baggage with no restrictions.",
+    "conditions": [
+      "Keep valuable specialty lenses in your carry-on to avoid loss if checked bags are delayed."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/contact-lenses",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring contact lenses on a plane?"
+  },
+  "faa": {
+    "officialUrl": "",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/contact-lenses",
+      "verified": "2026-08-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [
+    {
+      "name": "Delta Air Lines",
+      "status": "ALLOWED",
+      "notes": "Contact lenses and eye care products permitted in cabin and checked luggage."
+    },
+    {
+      "name": "Emirates",
+      "status": "ALLOWED",
+      "notes": "Contact lenses and medically necessary eye solutions allowed in hand baggage."
+    }
+  ],
+  "international": {},
+  "travelTips": [
+    "Always pack several extra pairs of daily contact lenses and your eyeglasses in your carry-on in case of travel delays or dry cabin air.",
+    "Airplane cabin air is notoriously dry — bring travel-size rewetting drops (under 3.4 oz) or switch to glasses during long-haul flights.",
+    "Declare any large bottles of contact lens solution to the TSA agent before bag screening starts."
+  ],
+  "relatedItems": ["contact-lens-solution", "eye-drops", "prescription-medicine"],
+  "faq": [
+    {
+      "question": "Do contact lens blister packs count as liquids under TSA 3-1-1?",
+      "answer": "TSA treats sealed contact lens blister packs as personal medical supplies. While they contain a small amount of saline, TSA generally allows them in your carry-on without requiring you to fit them into your quart-sized liquids bag."
+    },
+    {
+      "question": "Can I bring a full-size bottle of contact solution in my carry-on?",
+      "answer": "Yes! Contact lens solution is officially classified by the TSA as an over-the-counter medically necessary liquid. You are allowed to bring bottles larger than 3.4 oz (100ml) in your carry-on, but you must remove the bottle and declare it to the officer for separate inspection."
+    },
+    {
+      "question": "Can I wear contact lenses during a flight?",
+      "answer": "Yes, but aircraft cabins have low humidity (often under 20%), which can cause severe dry eyes and lens discomfort. It is recommended to bring lubricating eye drops or wear glasses during flights over 4 hours."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/contact-lenses"
+    }
+  ],
+  "restrictionType": "Medical Exemption",
+  "customNote": ""
+}

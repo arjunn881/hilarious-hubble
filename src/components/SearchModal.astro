@@ -1,13 +1,64 @@
 ---
 import { Search, X, CornerDownLeft } from "@lucide/astro";
+import { defaultLang, useTranslations, useTranslatedPath, type Lang } from "../i18n/utils";
+import { getItemName } from "../i18n/items";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang as Lang } = Astro.props;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+/**
+ * The modal's behaviour lives in a plain `<script>`, which cannot read
+ * `Astro.props`. Everything locale-dependent is therefore serialised onto the
+ * root element as a single JSON payload the script reads once on boot: the
+ * index URL, the item-link prefix, and the strings it injects into result HTML.
+ */
+const popularSlugs = [
+  { slug: "power-bank", name: "Power Bank" },
+  { slug: "sunscreen", name: "Sunscreen Lotion" },
+  { slug: "laptop", name: "Laptop Computer" },
+  { slug: "baby-formula", name: "Baby Formula" },
+  { slug: "multi-tool", name: "Multi-tool" },
+];
+
+const searchConfig = {
+  lang,
+  indexUrl: lang === defaultLang ? "/search-index.json" : `/search-index-${lang}.json`,
+  itemBase: translatePath("/items"),
+  popular: popularSlugs.map((item) => ({
+    slug: item.slug,
+    name: getItemName(item.slug, item.name, lang),
+  })),
+  strings: {
+    loadFailed: t("search.loadFailed"),
+    recent: t("search.recent"),
+    clearAll: t("search.clearAll"),
+    recentBadge: t("search.recentBadge"),
+    popular: t("search.popular"),
+    popularBadge: t("search.popularBadge"),
+    noMatches: t("search.noMatches"),
+    itemsFound: t("search.itemsFound"),
+    carryAbbr: t("search.carryAbbr"),
+    holdAbbr: t("search.holdAbbr"),
+    statusAllowed: t("status.allowed"),
+    statusProhibited: t("status.prohibited"),
+    statusRestricted: t("status.restricted"),
+    statusUnknown: t("status.unknown"),
+  },
+};
 ---
 
-<div 
-  id="search-modal" 
+<div
+  id="search-modal"
   class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm transition-all duration-150 flex items-start justify-center pt-[10vh] px-4"
   role="dialog"
   aria-modal="true"
-  aria-label="Spotlight Search"
+  aria-label={t("a11y.spotlightSearch")}
+  data-search-config={JSON.stringify(searchConfig)}
 >
   <!-- Modal Content Box -->
   <div 
@@ -17,22 +68,22 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
     <!-- Input Header -->
     <div class="h-14 border-b border-slate-200 dark:border-slate-800 flex items-center px-4 gap-3 relative flex-shrink-0 bg-white dark:bg-slate-900 text-slate-900 dark:text-white">
       <Search class="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0" aria-hidden="true" />
-      <input 
-        type="text" 
-        id="search-modal-input" 
-        placeholder="Search travel items (e.g., sunscreen, battery, razor)…" 
-        autocomplete="off" 
-        spellcheck="false" 
+      <input
+        type="text"
+        id="search-modal-input"
+        placeholder={t("search.modalPlaceholder")}
+        autocomplete="off"
+        spellcheck="false"
         class="w-full h-full text-base font-sans text-slate-900 dark:text-white bg-transparent border-none outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 font-medium"
       />
       <div class="flex items-center gap-1.5 flex-shrink-0">
         <kbd class="hidden sm:inline-flex items-center justify-center h-5 px-1.5 text-[9px] font-mono font-medium border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded shadow-xs">
           ESC
         </kbd>
-        <button 
-          type="button" 
-          id="search-modal-close" 
-          aria-label="Close search" 
+        <button
+          type="button"
+          id="search-modal-close"
+          aria-label={t("a11y.closeSearch")}
           class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 cursor-pointer"
         >
           <X class="w-4 h-4" aria-hidden="true" />
@@ -44,7 +95,7 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
     <div id="search-modal-results" class="flex-1 overflow-y-auto min-h-[200px] max-h-[50vh] p-2 scroll-smooth bg-white dark:bg-slate-900">
       <!-- Content populated dynamically by JavaScript -->
       <div class="p-6 text-center text-sm text-slate-500 dark:text-slate-400">
-        Loading search index…
+        {t("search.loadingIndex")}
       </div>
     </div>
 
@@ -52,15 +103,15 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
     <div class="h-10 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-4 flex items-center justify-between text-[11px] text-slate-600 dark:text-slate-400 font-mono flex-shrink-0 select-none">
       <div class="flex items-center gap-4">
         <span class="flex items-center gap-1">
-          <kbd class="border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-1 rounded">↓↑</kbd> Navigate
+          <kbd class="border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-1 rounded">↓↑</kbd> {t("search.navigate")}
         </span>
         <span class="flex items-center gap-1">
-          <kbd class="border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-1 rounded flex items-center justify-center h-4 w-6"><CornerDownLeft class="w-2.5 h-2.5" /></kbd> Select
+          <kbd class="border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-1 rounded flex items-center justify-center h-4 w-6"><CornerDownLeft class="w-2.5 h-2.5" /></kbd> {t("search.select")}
         </span>
       </div>
       <div>
         <span class="flex items-center gap-1">
-          <kbd class="border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-1 rounded">ESC</kbd> Close
+          <kbd class="border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-1 rounded">ESC</kbd> {t("search.close")}
         </span>
       </div>
     </div>
@@ -76,21 +127,71 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
     keywords: string[];
     carryOn: string;
     checked: string;
+    /** Present on translated indexes; falls back to slugifying `category`. */
+    categorySlug?: string;
   }
 
+  interface SearchConfig {
+    lang: string;
+    indexUrl: string;
+    itemBase: string;
+    popular: { slug: string; name: string }[];
+    strings: Record<string, string>;
+  }
+
+  const FALLBACK_CONFIG: SearchConfig = {
+    lang: "en",
+    indexUrl: "/search-index.json",
+    itemBase: "/items",
+    popular: [],
+    strings: {},
+  };
+
+  let config: SearchConfig = FALLBACK_CONFIG;
   let searchIndex: SearchItem[] = [];
   let isIndexLoaded = false;
   let activeIndex = -1;
   let currentResults: SearchItem[] = [];
 
-  // Popular searches static list
-  const popularSearches = [
-    { slug: "power-bank", name: "Power Bank" },
-    { slug: "sunscreen", name: "Sunscreen Lotion" },
-    { slug: "laptop", name: "Laptop Computer" },
-    { slug: "baby-formula", name: "Baby Formula" },
-    { slug: "multi-tool", name: "Multi-tool" }
-  ];
+  /**
+   * Re-reads the locale payload off the modal root. Called on boot and after
+   * every `astro:after-swap`, because a view transition can carry the reader
+   * into a different locale and the cached index would then be stale.
+   */
+  function readConfig() {
+    const raw = document.getElementById("search-modal")?.getAttribute("data-search-config");
+    if (!raw) return;
+    try {
+      const next = JSON.parse(raw) as SearchConfig;
+      if (next.lang !== config.lang) {
+        searchIndex = [];
+        isIndexLoaded = false;
+      }
+      config = next;
+    } catch {
+      /* keep the previous config */
+    }
+  }
+
+  function itemUrl(slug: string): string {
+    return `${config.itemBase}/${slug}/`;
+  }
+
+  /** Localised label for a raw `carryOn` / `checked` status value. */
+  function statusLabel(status: string): string {
+    const s = config.strings;
+    switch (status) {
+      case "allowed":
+        return s.statusAllowed || "Allowed";
+      case "prohibited":
+      case "not_allowed":
+        return s.statusProhibited || "Prohibited";
+      case "restricted":
+        return s.statusRestricted || "Restricted";
+      default:
+        return s.statusUnknown || status.replace("_", " ");
+    }
+  }
 
   // SVG Icons for categories with explicit width and height
   const icons: Record<string, string> = {
@@ -132,7 +233,8 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
   async function openSearch() {
     const { modal, content, input, resultsContainer } = getModalElements();
     if (!modal || !content || !input) return;
-    
+
+    readConfig();
     modal.classList.remove("hidden");
     void modal.offsetWidth;
     content.classList.remove("scale-98", "opacity-0");
@@ -141,17 +243,17 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
     activeIndex = -1;
     document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
 
-    // Lazy load the search index
+    // Lazy load the search index for the active locale
     if (!isIndexLoaded) {
       try {
-        const res = await fetch("/search-index.json");
+        const res = await fetch(config.indexUrl);
         if (!res.ok) throw new Error("Failed to load search index");
         searchIndex = await res.json();
         isIndexLoaded = true;
       } catch (err) {
         console.error(err);
         if (resultsContainer) {
-          resultsContainer.innerHTML = `<div class="p-6 text-center text-sm text-rose-600 dark:text-rose-400">Failed to load search database.</div>`;
+          resultsContainer.innerHTML = `<div class="p-6 text-center text-sm text-rose-600 dark:text-rose-400">${config.strings.loadFailed || "Failed to load search database."}</div>`;
         }
         return;
       }
@@ -171,9 +273,14 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
   }
 
   // Fetch recent searches
+  function recentKey(): string {
+    // Scoped per locale — a name stored in Japanese is meaningless in French.
+    return config.lang === "en" ? "recent_searches" : `recent_searches_${config.lang}`;
+  }
+
   function getRecentSearches(): { slug: string; name: string }[] {
     try {
-      return JSON.parse(localStorage.getItem("recent_searches") || "[]");
+      return JSON.parse(localStorage.getItem(recentKey()) || "[]");
     } catch {
       return [];
     }
@@ -185,12 +292,12 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
     recent = recent.filter(item => item.slug !== slug);
     recent.unshift({ slug, name });
     recent = recent.slice(0, 5); // Limit to 5
-    localStorage.setItem("recent_searches", JSON.stringify(recent));
+    localStorage.setItem(recentKey(), JSON.stringify(recent));
   }
 
   // Clear recent searches
   function clearRecentSearches() {
-    localStorage.removeItem("recent_searches");
+    localStorage.removeItem(recentKey());
     renderResults();
   }
 
@@ -275,13 +382,13 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
         html += `
           <div class="mb-4">
             <div class="flex items-center justify-between px-3 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              <span>Recent Searches</span>
-              <button type="button" id="clear-recents-btn" class="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors">Clear All</button>
+              <span>${config.strings.recent || "Recent searches"}</span>
+              <button type="button" id="clear-recents-btn" class="hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors">${config.strings.clearAll || "Clear all"}</button>
             </div>
             <div class="flex flex-col gap-1">
               ${recent.map((item, idx) => `
-                <a 
-                  href="/items/${item.slug}/" 
+                <a
+                  href="${itemUrl(item.slug)}"
                   class="search-result-item flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 transition-colors"
                   data-slug="${item.slug}"
                   data-name="${item.name}"
@@ -291,7 +398,7 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
                     <svg class="w-4 h-4 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     <span class="truncate font-medium">${item.name}</span>
                   </div>
-                  <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase font-semibold">Recent</span>
+                  <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase font-semibold">${config.strings.recentBadge || "Recent"}</span>
                 </a>
               `).join("")}
             </div>
@@ -304,12 +411,12 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
       html += `
         <div>
           <div class="px-3 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-            Popular Searches
+            ${config.strings.popular || "Popular searches"}
           </div>
           <div class="flex flex-col gap-1">
-            ${popularSearches.map((item, idx) => `
-              <a 
-                href="/items/${item.slug}/" 
+            ${config.popular.map((item, idx) => `
+              <a
+                href="${itemUrl(item.slug)}"
                 class="search-result-item flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 transition-colors"
                 data-slug="${item.slug}"
                 data-name="${item.name}"
@@ -319,7 +426,7 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
                   <svg class="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                   <span class="truncate font-bold">${item.name}</span>
                 </div>
-                <span class="text-[10px] font-mono text-blue-600 dark:text-blue-400 uppercase font-semibold">Popular</span>
+                <span class="text-[10px] font-mono text-blue-600 dark:text-blue-400 uppercase font-semibold">${config.strings.popularBadge || "Popular"}</span>
               </a>
             `).join("")}
           </div>
@@ -349,7 +456,7 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
     if (currentResults.length === 0) {
       resultsContainer.innerHTML = `
         <div class="p-8 text-center text-sm text-slate-500 dark:text-slate-400">
-          No matches found for "<span class="font-bold text-slate-900 dark:text-white">${query}</span>"…
+          ${config.strings.noMatches || "No matches found for"} "<span class="font-bold text-slate-900 dark:text-white">${query}</span>"…
         </div>
       `;
       return;
@@ -357,18 +464,18 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
 
     resultsContainer.innerHTML = `
       <div class="px-3 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-        Items Found (${currentResults.length})
+        ${config.strings.itemsFound || "Items found"} (${currentResults.length})
       </div>
       <div class="flex flex-col gap-1">
         ${currentResults.map((item, idx) => {
-          const iconKey = item.category.toLowerCase().replace(/\s+/g, "");
+          const iconKey = (item.categorySlug || item.category).toLowerCase().replace(/[\s-]+/g, "");
           const svgIcon = icons[iconKey] || icons.default;
           const coStatus = (item.carryOn || '').toLowerCase();
           const ckStatus = (item.checked || '').toLowerCase();
-          
+
           return `
-            <a 
-              href="/items/${item.slug}/" 
+            <a
+              href="${itemUrl(item.slug)}"
               class="search-result-item flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 border-l-4 border-transparent transition-all"
               data-slug="${item.slug}"
               data-name="${item.name}"
@@ -385,10 +492,10 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
               </div>
               <div class="flex items-center gap-1.5 flex-shrink-0 ml-4">
                 <span class="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border uppercase tracking-wider ${statusColors[coStatus] || statusColors.unknown}">
-                  Carry: ${coStatus.replace('_', ' ')}
+                  ${config.strings.carryAbbr || "Carry"}: ${statusLabel(coStatus)}
                 </span>
                 <span class="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border uppercase tracking-wider ${statusColors[ckStatus] || statusColors.unknown}">
-                  Hold: ${ckStatus.replace('_', ' ')}
+                  ${config.strings.holdAbbr || "Hold"}: ${statusLabel(ckStatus)}
                 </span>
               </div>
             </a>
@@ -499,13 +606,13 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
         const name = activeElem.getAttribute("data-name") || "";
         if (slug) {
           saveRecentSearch(slug, name);
-          window.location.href = `/items/${slug}/`;
+          window.location.href = itemUrl(slug);
         }
-      } 
+      }
       else if (currentResults.length > 0) {
         const item = currentResults[0];
         saveRecentSearch(item.slug, item.name);
-        window.location.href = `/items/${item.slug}/`;
+        window.location.href = itemUrl(item.slug);
       }
     }
   });
@@ -559,4 +666,7 @@ import { Search, X, CornerDownLeft } from "@lucide/astro";
       closeSearch();
     }
   });
+
+  readConfig();
+  document.addEventListener("astro:after-swap", readConfig);
 </script>

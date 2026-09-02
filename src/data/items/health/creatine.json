@@ -1,0 +1,117 @@
+{
+  "id": "creatine",
+  "slug": "creatine",
+  "name": "Creatine",
+  "category": "Health",
+  "subcategory": "Supplements",
+  "aliases": [
+    "creatine powder",
+    "creatine monohydrate",
+    "creatine gummies",
+    "creatine pills",
+    "pre workout",
+    "workout powder",
+    "fitness powder",
+    "bcaa powder",
+    "glutamine",
+    "gym supplements"
+  ],
+  "keywords": [
+    "creatine",
+    "creatine powder",
+    "creatine monohydrate",
+    "powder rule",
+    "supplements",
+    "gym",
+    "carry on"
+  ],
+  "description": "TSA powder rules for flying with creatine, protein powder, and workout supplements in carry-on and checked luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Creatine powder is allowed in carry-on bags. However, under the TSA powder rule, powder containers exceeding 12 oz (350 ml) must be placed in a separate bin for X-ray screening and may be subject to additional inspection.",
+    "conditions": [
+      "Containers over 12 oz (350 ml / roughly the size of a standard soda can) must be removed from your bag and placed in a dedicated bin.",
+      "TSA officers may open the container to perform chemical residue or test swab screening.",
+      "Powders that cannot be resolved through secondary screening may be denied boarding."
+    ],
+    "exceptions": [
+      "Creatine pills, capsules, and gummies are treated as solid items and exempt from the powder bin rule."
+    ]
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Creatine powder and all fitness supplements are fully allowed in checked baggage without size limits or special checkpoint screening.",
+    "conditions": [
+      "Seal container securely to prevent powder spillage inside your luggage during pressure changes."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/powder",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring creatine on a plane?"
+  },
+  "faa": {
+    "officialUrl": "",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/powder",
+      "verified": "2026-08-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [
+    {
+      "name": "American Airlines",
+      "status": "ALLOWED",
+      "notes": "Powder supplements permitted in carry-on (subject to 12 oz screening) and checked bags."
+    },
+    {
+      "name": "Emirates",
+      "status": "ALLOWED",
+      "notes": "Creatine and nutritional powders allowed in cabin and checked luggage."
+    }
+  ],
+  "international": {
+    "note": "International flights departing to the US (and countries following ICAO guidelines like Australia and New Zealand) enforce the 350g powder limit strictly at boarding gates."
+  },
+  "travelTips": [
+    "Keep creatine in its original labeled container so TSA agents can quickly verify the supplement ingredients.",
+    "If traveling with a large tub (over 12 oz), pack it in your checked luggage to speed through security checkpoints.",
+    "Pre-portion daily servings in labeled ziplock bags or a pill organizer for short weekend trips."
+  ],
+  "relatedItems": ["protein-powder", "protein-bar", "vitamins"],
+  "faq": [
+    {
+      "question": "Can I bring creatine powder through TSA airport security?",
+      "answer": "Yes! Creatine powder is 100% permitted in carry-on bags. If your container is larger than 12 oz (350 ml), place it in a separate bin at the security checkpoint for X-ray and possible swab inspection."
+    },
+    {
+      "question": "Does creatine need to be in its original container?",
+      "answer": "While not strictly required by TSA law, keeping creatine in its original manufacturer-sealed container with nutrition label dramatically reduces the chance of secondary chemical testing or questioning."
+    },
+    {
+      "question": "Is creatine allowed in checked luggage?",
+      "answer": "Yes. There are no size limits or special screening procedures for creatine powder in checked baggage. You can pack full tubs without issue."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/powder"
+    }
+  ],
+  "restrictionType": "Powder Rule (12 oz limit)",
+  "customNote": ""
+}

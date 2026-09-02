@@ -1,0 +1,117 @@
+{
+  "id": "beef-jerky",
+  "slug": "beef-jerky",
+  "name": "Beef Jerky",
+  "category": "Food",
+  "subcategory": "Snacks",
+  "aliases": [
+    "meat snacks",
+    "jerky",
+    "bilty",
+    "biltong",
+    "dried meat",
+    "turkey jerky",
+    "pork jerky",
+    "slim jim",
+    "meat sticks",
+    "jack links"
+  ],
+  "keywords": [
+    "beef jerky",
+    "jerky",
+    "meat snack",
+    "biltong",
+    "dried meat",
+    "food",
+    "carry on"
+  ],
+  "description": "TSA rules for flying with beef jerky and dried meat snacks on domestic and international flights.",
+  "carryOn": {
+    "status": "ALLOWED",
+    "reason": "Beef jerky and commercially packaged dried meat snacks are fully allowed in carry-on baggage on domestic flights. They are solid food items and exempt from liquid rules.",
+    "conditions": [
+      "Must be solid and commercially packaged or securely wrapped.",
+      "Domestic flights within the US allow all beef jerky in carry-on bags."
+    ],
+    "exceptions": [
+      "International flights often prohibit meat products at customs upon arrival (e.g. into the EU, UK, Australia, or Japan)."
+    ]
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Beef jerky is fully allowed in checked baggage for domestic travel. For international flights, destination customs biosecurity regulations apply upon arrival.",
+    "conditions": [
+      "Pack in original sealed packaging to avoid odor or inspection flags."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/solid-food",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring beef jerky on a plane?"
+  },
+  "faa": {
+    "officialUrl": "",
+    "applicable": false
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/solid-food",
+      "verified": "2026-08-01",
+      "priority": 1
+    },
+    {
+      "name": "USDA APHIS",
+      "url": "https://www.aphis.usda.gov/traveling-with-ag-products",
+      "verified": "2026-08-01",
+      "priority": 2
+    }
+  ],
+  "airlines": [
+    {
+      "name": "Delta Air Lines",
+      "status": "ALLOWED",
+      "notes": "Commercially packaged solid food including beef jerky is permitted in carry-on and checked bags."
+    },
+    {
+      "name": "American Airlines",
+      "status": "ALLOWED",
+      "notes": "Packaged meat snacks and beef jerky are allowed in cabin baggage."
+    }
+  ],
+  "international": {
+    "note": "Most countries (including EU, UK, Australia, Japan, and New Zealand) strictly ban passengers from bringing foreign meat products including beef jerky through international customs due to animal disease prevention."
+  },
+  "travelTips": [
+    "Beef jerky is great for domestic US flights, but eat it before landing if traveling internationally to avoid heavy customs fines.",
+    "Always declare any meat products on customs declaration forms when arriving in countries with strict biosecurity like Australia or the UK."
+  ],
+  "relatedItems": ["protein-bar", "nuts", "candy"],
+  "faq": [
+    {
+      "question": "Can I take beef jerky through TSA airport security?",
+      "answer": "Yes! The TSA allows commercially packaged beef jerky, biltong, and dried meat sticks in your carry-on bags on all domestic flights. It is solid food, so it is not subject to the 3-1-1 liquids rule."
+    },
+    {
+      "question": "Can you bring beef jerky on international flights?",
+      "answer": "TSA will let you leave the US with beef jerky, but destination customs authorities in the UK, EU, Australia, and New Zealand strictly prohibit meat products from entering the country. Eat it before deplaning or declare it at customs."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/solid-food"
+    }
+  ],
+  "restrictionType": "Food",
+  "customNote": ""
+}

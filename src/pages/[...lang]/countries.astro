@@ -1,0 +1,280 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { ArrowLeft, Globe, ShieldCheck, AlertCircle, FileText, Landmark } from "@lucide/astro";
+import { langParams, resolveLang } from "../../i18n/config";
+import { useTranslations, useTranslatedPath, type Lang } from "../../i18n/utils";
+import { getCountryName } from "../../i18n/places";
+
+export function getStaticPaths() {
+  return langParams.map((params) => ({ params }));
+}
+
+const lang: Lang = resolveLang(Astro.params.lang);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const currentYear = new Date().getFullYear();
+
+const countries = [
+  { 
+    slug: "singapore", 
+    name: "Singapore", 
+    agency: "CAAS / ICA (Immigration & Checkpoints Authority) & HSA / SFA", 
+    liquidRule: "Standard 100ml cabin liquid rule for flights departing Changi Airport.", 
+    biosecurity: "Fresh produce and meat restricted. Packaged food for personal use permitted within SFA guidelines.", 
+    medicineRule: "Melatonin and standard vitamins are classified as health supplements and permitted for personal use (up to 3 months). Controlled narcotics/tranquilizers require prior HSA approval.", 
+    dutyFreeLimit: "SGD $500 for stays ≥ 48 hours; SGD $100 for shorter stays. Chewing gum is prohibited.",
+    specialRegulations: [
+      { item: "Nicotine Pouches & Vapes", rule: "STRICTLY BANNED. E-cigarettes, vaporizers, and tobacco-free nicotine pouches (like ZYN) are illegal to import, possess, or use under Singapore law. Fines up to SGD $2,000 apply at Changi Airport." },
+      { item: "Cigarettes & Tobacco", rule: "ZERO duty-free allowance. You MUST declare even a single pack of cigarettes at the Red Channel at Changi Airport and pay excise duty." },
+      { item: "Cooking Oil from Malaysia", rule: "Singapore Food Agency (SFA) permits travelers entering from Malaysia to bring up to 5 kg / 5 L of cooking oil for personal consumption without an import permit." },
+      { item: "Melatonin & Vitamins", rule: "Melatonin is OTC and legal to bring into Singapore for personal use (up to 3 months supply)." }
+    ]
+  },
+  { 
+    slug: "uk", 
+    name: "United Kingdom", 
+    agency: "DFT / UK Border Force & MHRA", 
+    liquidRule: "100ml container limits in 1-liter clear bag (Next-generation 3D CT scanners currently deploying across UK airports).", 
+    biosecurity: "Strict prohibitions on bringing meat, milk, and plant products from non-EU countries into the UK.", 
+    medicineRule: "Controlled medications require a personal doctor letter. Melatonin is prescription-only to purchase within the UK, but incoming travelers are permitted to bring up to 3 months personal supply.", 
+    dutyFreeLimit: "£390 general goods allowance per traveler (£270 if arriving by private boat/plane). Declare cash over £10,000.",
+    specialRegulations: [
+      { item: "Melatonin & Sleep Aids", rule: "Legal to bring up to a 3-month personal supply through UK customs. Keep in original packaging or with prescription." },
+      { item: "Baby Milk & Formula (Stansted/Heathrow)", rule: "Baby milk, sterilised water, breast milk, and baby food are exempt from the 100ml liquid rule when traveling with an infant." },
+      { item: "Perfume & Valuables", rule: "Duty-free perfume and engagement rings/jewelry are permitted within the £390 personal goods allowance." },
+      { item: "AA Batteries & Electronics", rule: "Standard dry batteries (AA/AAA) and low-power Apple AirTags are fully allowed in cabin and hold baggage." }
+    ]
+  },
+  { 
+    slug: "france", 
+    name: "France", 
+    agency: "DGAC / French Customs (Douane)", 
+    liquidRule: "EU liquid rules in effect (≤ 100ml in 1-liter clear bag). Duty-free liquids in STEB bags allowed.", 
+    biosecurity: "Imports of meat, dairy, and plant products from outside the EU are restricted to prevent agricultural pests.", 
+    medicineRule: "Personal medications for up to 3 months are permitted. Doctor letter required for narcotics or psychotropics.", 
+    dutyFreeLimit: "€430 duty-free allowance for air travelers over 15 years old.",
+    specialRegulations: [
+      { item: "Melatonin Supplements", rule: "Melatonin up to 1.9mg per dose is sold over-the-counter in French pharmacies. Travelers can bring up to a 3-month personal supply." },
+      { item: "Vaping & E-Cigarettes", rule: "Personal e-cigarettes and vape liquids (up to 20mg/ml nicotine) are legal in France. Must be carried in cabin baggage." }
+    ]
+  },
+  { 
+    slug: "australia", 
+    name: "Australia", 
+    agency: "Australian Border Force (ABF) & Department of Agriculture, Fisheries and Forestry", 
+    liquidRule: "International flights strictly enforce 100ml liquid container limits in cabin bags.", 
+    biosecurity: "EXTREME BIOSECURITY. You MUST declare ALL food, nuts, seeds, wooden items, and animal products on your Incoming Passenger Card. Failure to declare results in on-the-spot fines up to AUD $6,260.", 
+    medicineRule: "Prescription medicines must be declared; max 3-month supply permitted with doctor certificate.", 
+    dutyFreeLimit: "AUD $900 general goods allowance per adult ($450 per child).",
+    specialRegulations: [
+      { item: "Cup Noodles & Instant Ramen", rule: "MUST BE DECLARED. Noodles with real meat, egg, or poultry ingredients may be confiscated; vegetarian/seafood broths usually pass." },
+      { item: "Cashew Nuts & Almonds", rule: "MUST BE DECLARED. Commercially roasted, packaged nuts with shells removed will clear biosecurity inspection." },
+      { item: "Canned Tuna & Seafood", rule: "MUST BE DECLARED. Commercially canned, shelf-stable tuna in hermetically sealed cans is permitted." },
+      { item: "Wooden Photo Frames", rule: "MUST BE DECLARED. Manufactured and varnished wood photo frames free of bark and insect holes will clear inspection." },
+      { item: "Nail Machines & Tools", rule: "Electric nail drill machines and beauty tools for personal use are permitted without restriction." }
+    ]
+  },
+  { 
+    slug: "japan", 
+    name: "Japan", 
+    agency: "JCAB / Japan Customs & Ministry of Health, Labour and Welfare (MHLW)", 
+    liquidRule: "Standard 100ml liquid rule for international arrivals and departures.", 
+    biosecurity: "Fresh fruits (including bananas and citrus) and meat products strictly prohibited without inspection certificates.", 
+    medicineRule: "Strict bans on stimulants and pseudoephedrine (Sudafed, Vicks inhalers). Personal prescription supplies up to 1 month permitted with prescription.", 
+    dutyFreeLimit: "200,000 JPY exemption for personal purchases.",
+    specialRegulations: [
+      { item: "EpiPen Auto-Injectors", rule: "One EpiPen auto-injector for emergency personal allergy treatment is permitted into Japan without prior Yakkan Shoumei import certificate. Carry doctor prescription." }
+    ]
+  },
+  { 
+    slug: "usa", 
+    name: "United States", 
+    agency: "TSA / U.S. Customs and Border Protection (CBP)", 
+    liquidRule: "Standard 3-1-1 Rule (containers ≤ 3.4 oz / 100ml in 1 quart clear bag).", 
+    biosecurity: "All agricultural items, fresh meats, plants, seeds, and fresh fruits must be declared on arrival.", 
+    medicineRule: "Prescription medications in original containers recommended. Up to 90-day personal supply permitted.", 
+    dutyFreeLimit: "$800 exemption per returning resident; currency over $10,000 must be declared on Form FinCEN 105.",
+    specialRegulations: [
+      { item: "Baby Formula & Food", rule: "Baby formula, breast milk, and baby food in reasonable quantities are exempt from the 3-1-1 liquid rule." },
+      { item: "Chocolate & Packaged Snacks", rule: "Commercially packaged chocolates, cookies, and candy are permitted into the US through CBP." }
+    ]
+  },
+  { 
+    slug: "canada", 
+    name: "Canada", 
+    agency: "CATSA / Canada Border Services Agency (CBSA)", 
+    liquidRule: "3-1-1 liquids rule enforced at CATSA checkpoints.", 
+    biosecurity: "Strict biosecurity screening on incoming food, wood, and agricultural products.", 
+    medicineRule: "Prescription medications must be declared if carrying more than personal 90-day supply.", 
+    dutyFreeLimit: "CAN $800 exemption for stays over 48 hours. Cannabis is strictly illegal to transport across Canadian international borders.",
+    specialRegulations: [
+      { item: "Baby Formula Powder & Milk", rule: "Commercially packaged powdered infant formula up to 20 kg per person permitted for personal use." }
+    ]
+  },
+  { 
+    slug: "germany", 
+    name: "Germany", 
+    agency: "Federal Police (BPOL) / German Customs (Zoll)", 
+    liquidRule: "EU 100ml liquid rule strictly enforced.", 
+    biosecurity: "Food imports from non-EU nations restricted (meats, dairy banned).", 
+    medicineRule: "Medicines for personal travel permitted for up to 3 months' supply.", 
+    dutyFreeLimit: "€430 exemption for air travelers.",
+    specialRegulations: [
+      { item: "Cigarette Allowance", rule: "200 cigarettes duty-free allowance for non-EU arrivals over age 17." }
+    ]
+  }
+];
+
+const countryFaqs = [
+  {
+    q: "Can I bring melatonin on a plane into the UK?",
+    a: "Yes. Even though melatonin requires a prescription to buy in UK pharmacies, UK Border Force and MHRA guidelines legally allow international visitors to bring up to a 3-month personal supply in their carry-on or checked baggage."
+  },
+  {
+    q: "Can you bring nicotine pouches (ZYN) into Singapore through Changi Airport?",
+    a: "No. Nicotine pouches, snus, and e-cigarettes are strictly banned under Singapore tobacco analogue laws. Possession or importation at Singapore Changi Airport carries heavy fines up to SGD $2,000."
+  },
+  {
+    q: "Can I bring cup noodles and cashew nuts into Australia?",
+    a: "Yes, but you MUST declare all food items on the Australian Incoming Passenger Card. Commercially roasted nuts without shells and vegetarian/seafood instant noodles will clear biosecurity, while noodles containing pork or poultry broths may be seized."
+  },
+  {
+    q: "Can I bring an EpiPen to Japan?",
+    a: "Yes! Japan Customs permits travelers to bring 1 personal EpiPen auto-injector for emergency allergy management without requiring advance Yakkan Shoumei paperwork. Keep it with your doctor prescription."
+  },
+  {
+    q: "Is melatonin legal in France?",
+    a: "Yes! Melatonin supplements up to 1.9mg are sold over-the-counter in French pharmacies, and travelers can bring up to a 3-month personal supply through customs."
+  },
+  {
+    q: "Can I bring cooking oil from Malaysia to Singapore?",
+    a: "Yes. Under Singapore Food Agency (SFA) rules, individuals entering Singapore from Malaysia may bring up to 5 kg / 5 L of cooking oil for personal consumption without a commercial import permit."
+  }
+];
+---
+
+<Layout
+  title={t("countries.title", { year: currentYear })}
+  description={t("countries.description")}
+  keywords="can i bring melatonin on a plane uk, can you bring melatonin into the uk, is melatonin legal in france, can i take my vape to france, nicotine pouches singapore airport, can i bring cup noodles into australia, can i bring cashew nuts to australia, bringing epipen to japan, can i bring cooking oil from malaysia to singapore, bring cigarettes to sg, uk customs baby formula, engagement ring airport security uk"
+  lang={lang}
+>
+  <Header slot="header" lang={lang} />
+
+  <!-- FAQ Schema JSON-LD -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": countryFaqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  })} />
+
+  <div class="max-w-[1000px] w-full mx-auto px-4 md:px-6 py-12 flex-1">
+    
+    <div class="mb-8 select-none">
+      <a href={translatePath("/")} class="inline-flex items-center gap-1.5 text-xs font-mono text-mute hover:text-ink transition-colors">
+        <ArrowLeft class="w-3.5 h-3.5" />
+        {t("nav.backToChecker")}
+      </a>
+    </div>
+
+    <header class="mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-link-bg-soft text-link-deep border border-link/25 rounded-xs text-xs font-mono mb-3">
+        <Globe class="w-3.5 h-3.5" />
+        {t("countries.eyebrow", { year: currentYear })}
+      </div>
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-[-1.2px] text-ink mb-3 leading-tight">
+        {t("countries.h1")}
+      </h1>
+      <p class="text-sm text-body leading-[1.7] max-w-[760px]">
+        {t("countries.intro")}
+      </p>
+    </header>
+
+    <!-- Country Cards -->
+    <div class="space-y-6 mb-12">
+      {countries.map(country => (
+        <div id={country.slug} class="bg-canvas border border-hairline rounded-md p-6 shadow-xs scroll-mt-20">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-hairline gap-2">
+            <h2 class="text-xl font-semibold text-ink flex items-center gap-2">
+              <Landmark class="w-4.5 h-4.5 text-link" />
+              {getCountryName(country.slug, country.name, lang)}
+            </h2>
+            <span class="text-xs font-mono text-mute notranslate">{country.agency}</span>
+          </div>
+
+          <div class="space-y-3 my-5 text-xs text-body">
+            <div class="p-3 bg-canvas-soft rounded border border-hairline">
+              <strong class="text-ink block mb-0.5 font-semibold">{t("countries.liquidProtocol")}</strong>
+              <span>{country.liquidRule}</span>
+            </div>
+
+            <div class="p-3 bg-canvas-soft rounded border border-hairline">
+              <strong class="text-ink block mb-0.5 font-semibold">{t("countries.biosecurity")}</strong>
+              <span>{country.biosecurity}</span>
+            </div>
+
+            <div class="p-3 bg-canvas-soft rounded border border-hairline">
+              <strong class="text-ink block mb-0.5 font-semibold">{t("countries.medication")}</strong>
+              <span>{country.medicineRule}</span>
+            </div>
+          </div>
+
+          <div class="p-3 bg-canvas-soft rounded border border-hairline/80 text-xs text-body flex items-start gap-2.5 mb-4">
+            <AlertCircle class="w-4 h-4 text-warning-deep flex-shrink-0 mt-0.5" />
+            <div>
+              <strong class="text-ink block mb-0.5">{t("countries.dutyFree")}</strong>
+              <span>{country.dutyFreeLimit}</span>
+            </div>
+          </div>
+
+          {country.specialRegulations && country.specialRegulations.length > 0 && (
+            <div class="mt-4 pt-4 border-t border-hairline">
+              <h3 class="text-xs font-mono uppercase tracking-wider font-semibold text-mute mb-2.5">
+                {t("countries.keyItems", { country: getCountryName(country.slug, country.name, lang) })}
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {country.specialRegulations.map(reg => (
+                  <div class="p-2.5 bg-canvas-soft-2 rounded border border-hairline text-xs">
+                    <span class="font-semibold text-ink block mb-0.5">{reg.item}</span>
+                    <span class="text-body leading-relaxed">{reg.rule}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Country Customs FAQ Section -->
+    <section class="mt-12 bg-canvas border border-hairline rounded-md p-6 shadow-xs">
+      <h2 class="text-2xl font-semibold text-ink tracking-tight mb-4">
+        {t("countries.faqHeading")}
+      </h2>
+      <div class="divide-y divide-hairline">
+        {countryFaqs.map((faq) => (
+          <div class="py-4 first:pt-0 last:pb-0">
+            <h3 class="text-sm font-semibold text-ink mb-1.5">
+              {faq.q}
+            </h3>
+            <p class="text-xs text-body leading-relaxed">
+              {faq.a}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </div>
+
+  <Footer slot="footer" lang={lang} />
+</Layout>

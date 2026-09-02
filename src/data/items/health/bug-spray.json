@@ -1,0 +1,125 @@
+{
+  "id": "bug-spray",
+  "slug": "bug-spray",
+  "name": "Bug Spray",
+  "category": "Health",
+  "subcategory": "Insect Repellent",
+  "aliases": [
+    "insect repellent",
+    "mosquito spray",
+    "deet spray",
+    "mosquito repellent",
+    "flying bug spray",
+    "aerosol bug spray",
+    "raid",
+    "off spray",
+    "repel",
+    "insect spray",
+    "tick repellent",
+    "picaridin spray",
+    "flying with bug spray",
+    "bug spray airplane"
+  ],
+  "keywords": [
+    "bug spray",
+    "insect repellent",
+    "mosquito spray",
+    "deet",
+    "aerosol",
+    "carry on",
+    "tsa liquids rule"
+  ],
+  "description": "TSA rules for flying with bug spray, insect repellent, and mosquito spray in carry-on and checked luggage.",
+  "carryOn": {
+    "status": "RESTRICTED",
+    "reason": "Bug spray (aerosol insect repellent) is subject to the TSA 3-1-1 liquids rule in carry-on bags. Each container must be 3.4 oz (100ml) or less and fit in your quart-sized clear bag.",
+    "conditions": [
+      "Container must be 3.4 oz (100ml) or less per bottle.",
+      "Must fit in your single quart-sized clear zip-top bag with other liquids.",
+      "Aerosol sprays must have a cap or protection from accidental discharge.",
+      "DEET-based and picaridin sprays are treated as liquids/aerosols — same 3-1-1 rules apply."
+    ],
+    "exceptions": [
+      "Non-aerosol pump sprays are still subject to the 3.4 oz limit.",
+      "Travel-size bug spray sticks (solid) are NOT subject to the liquids rule."
+    ]
+  },
+  "checkedBag": {
+    "status": "ALLOWED",
+    "reason": "Full-size bug spray cans are allowed in checked baggage. Consumer-grade DEET and picaridin repellents are not classified as hazardous materials in checked bags when properly packaged.",
+    "conditions": [
+      "Cap must be on to prevent accidental discharge.",
+      "Maximum 18 oz (500ml) per container for aerosol sprays in checked bags.",
+      "Insecticide sprays (pest control grade) are NOT permitted — only personal insect repellents."
+    ],
+    "exceptions": []
+  },
+  "tsa": {
+    "officialUrl": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/insect-repellent",
+    "lastVerified": "2026-08-01",
+    "pageTitle": "Can I bring bug spray on a plane?"
+  },
+  "faa": {
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
+    "applicable": true
+  },
+  "sources": [
+    {
+      "name": "TSA",
+      "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/insect-repellent",
+      "verified": "2026-08-01",
+      "priority": 1
+    }
+  ],
+  "airlines": [
+    {
+      "name": "Air France",
+      "status": "RESTRICTED",
+      "notes": "Insect repellent aerosols allowed in checked baggage. Carry-on limited to 100ml containers."
+    },
+    {
+      "name": "Emirates",
+      "status": "RESTRICTED",
+      "notes": "Bug spray and insect repellents allowed in checked baggage. Carry-on subject to 100ml liquid rule."
+    }
+  ],
+  "international": {
+    "note": "Some countries prohibit certain aerosol sprays. Australia restricts bringing undeclared insect repellents with agricultural-grade DEET concentrations."
+  },
+  "travelTips": [
+    "Buy a travel-size bug spray (under 3.4 oz) for carry-on, and pack a full-size can in your checked bag.",
+    "Solid bug spray sticks and wrist bands are TSA-friendly and exempt from the liquids rule.",
+    "For tropical destinations, buy bug spray at your destination to avoid carry-on restrictions."
+  ],
+  "relatedItems": ["sunscreen", "aerosol-insect-repellent"],
+  "faq": [
+    {
+      "question": "Can I bring bug spray on a plane in my carry-on?",
+      "answer": "Yes, but only in containers of 3.4 oz (100ml) or less. Bug spray is an aerosol and subject to TSA 3-1-1 liquids rules in carry-on bags. Pack a travel-size bottle and put it in your quart-sized clear liquids bag."
+    },
+    {
+      "question": "Can I pack full-size bug spray in my checked bag?",
+      "answer": "Yes! Full-size insect repellent sprays are allowed in checked baggage. Ensure the cap is on securely to prevent accidental discharge."
+    },
+    {
+      "question": "Is DEET bug spray allowed on planes?",
+      "answer": "Yes. DEET-based insect repellents are allowed on planes — in carry-on bags (3.4 oz or less, in liquids bag) and in checked baggage (full size). Pest-control grade sprays (not personal care) are not permitted."
+    }
+  ],
+  "metadata": {
+    "lastReviewed": "2026-08-01",
+    "nextReviewDue": "2027-08-01",
+    "reviewIntervalMonths": 12,
+    "editor": "BringOnPlane Editorial Team",
+    "version": "1.0.0"
+  },
+  "ruleHistory": [
+    {
+      "effectiveDate": "2026-08-01",
+      "change": "Initial item database entry.",
+      "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/insect-repellent"
+    }
+  ],
+  "restrictionType": "Liquid/Aerosol",
+  "customNote": ""
+}

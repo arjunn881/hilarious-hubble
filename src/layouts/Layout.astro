@@ -2,6 +2,15 @@
 import "../styles/global.css";
 import SearchModal from "../components/SearchModal.astro";
 import { ClientRouter } from "astro:transitions";
+import {
+  getAlternateLinks,
+  getCanonicalUrl,
+  getLangFromUrl,
+  getOgLocaleAlternates,
+  localeMeta,
+  useTranslations,
+  type Lang,
+} from "../i18n/utils";
 
 interface Props {
   title?: string;
@@ -14,6 +23,7 @@ interface Props {
   type?: "website" | "article";
   keywords?: string;
   noIndex?: boolean | "noindex, follow" | "noindex, nofollow";
+  lang?: Lang;
   /** Pass a short plain-text summary for speakable / voice assistant extraction */
   speakableSummary?: string;
   /** JSON-LD breadcrumb items for BreadcrumbList schema in <head> */
@@ -21,19 +31,34 @@ interface Props {
 }
 
 const {
-  title = "TSA Carry-On Checker: Is It Allowed on a Plane?",
-  description = "Type any item to instantly see if it goes in your carry-on or checked bag. Free TSA tool — razors, liquids, power banks, food & more. Try it now.",
+  title: titleProp,
+  description: descriptionProp,
   image = "/og-image.png",
-  imageAlt = "BringOnPlane — TSA Baggage Rules & Smart Packing Assistant",
+  imageAlt: imageAltProp,
   canonicalURL,
   prevURL,
   nextURL,
   type = "website",
-  keywords = "can i bring food through tsa, can i bring food on a plane, can i bring a vape on a plane, what can i bring on a plane, tsa carry on rules, tsa baggage rules, airport security, what can i bring in carry on, packing list generator, travel checklist, can i bring snacks on a plane, can i bring a portable charger on a plane, can i bring toothpaste on a plane, can i bring scissors on a plane, can i bring a razor on a plane",
+  keywords: keywordsProp,
   noIndex = false,
+  lang: langProp,
   speakableSummary,
   breadcrumbItems,
 } = Astro.props;
+
+/**
+ * The URL is the source of truth for the active locale — every localised route
+ * lives under a `/{lang}/` prefix. The `lang` prop only overrides it for the
+ * handful of pages rendered outside the localised tree.
+ */
+const lang: Lang = langProp ?? getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const meta = localeMeta[lang];
+
+const title = titleProp ?? t("meta.home.title");
+const description = descriptionProp ?? t("meta.home.description");
+const imageAlt = imageAltProp ?? t("site.imageAlt");
+const keywords = keywordsProp ?? t("meta.home.keywords");
 
 const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : "https://bringonplane.com";
 
@@ -46,12 +71,20 @@ function normalizeCanonical(rawUrl?: string): string {
   return parsed.href;
 }
 
-const finalCanonicalURL = normalizeCanonical(canonicalURL);
+const finalCanonicalURL = canonicalURL
+  ? normalizeCanonical(canonicalURL)
+  : getCanonicalUrl(Astro.url.pathname, lang);
 const resolvedImage = new URL(image, `${siteUrl}/`).href;
+
+/** Reciprocal, self-referencing hreflang set + `x-default` → the English URL. */
+const alternateLinks = getAlternateLinks(Astro.url.pathname);
+const ogLocaleAlternates = getOgLocaleAlternates(lang);
+/** Locale home, used as the `url` for the site-wide JSON-LD entities. */
+const localeHomeUrl = getCanonicalUrl("/", lang);
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth overflow-x-hidden max-w-full">
+<html lang={meta.hreflang} dir={meta.dir} class="scroll-smooth overflow-x-hidden max-w-full">
   <head>
     <ClientRouter />
     <!-- Google AdSense -->
@@ -65,11 +98,6 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
           } else {
             document.documentElement.classList.remove('dark');
           }
-          const rtlLangs = ['ar', 'he', 'ur', 'fa', 'ps', 'yi', 'sd'];
-          const userLang = localStorage.getItem('user_lang');
-          if (userLang && rtlLangs.includes(userLang)) {
-            document.documentElement.setAttribute('dir', 'rtl');
-          }
         } catch(e) {}
       })();
     </script>
@@ -80,17 +108,22 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
     <!-- Application identity for PWA / AI assistants -->
     <meta name="application-name" content="BringOnPlane" />
     <meta name="rating" content="General" />
-    <meta name="category" content="Travel, Tools" />
+    <meta name="category" content={t("meta.category")} />
     <!-- DNS prefetch for performance (Core Web Vitals signal) -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-    <!-- International: signals this is the canonical English version -->
-    <link rel="alternate" hreflang="en" href={finalCanonicalURL} />
-    <link rel="alternate" hreflang="x-default" href={finalCanonicalURL} />
+
     {prevURL && <link rel="prev" href={prevURL} />}
     {nextURL && <link rel="next" href={nextURL} />}
-    
+
+    <!-- ═══════════════════════════════════════════════════════
+         HREFLANG — reciprocal, self-referencing, with x-default
+    ═══════════════════════════════════════════════════════ -->
+    {alternateLinks.map((alt) => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))}
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -115,18 +148,21 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
     <meta name="robots" content={typeof noIndex === 'string' ? noIndex : (noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1")} />
     <meta name="author" content="BringOnPlane" />
     <meta name="copyright" content="BringOnPlane" />
-    <meta name="language" content="English" />
+    <meta name="language" content={meta.metaLanguage} />
     <meta name="revisit-after" content="7 days" />
-    <meta name="subject" content="TSA carry-on and checked baggage rules for travel items" />
-    <meta name="classification" content="Travel, Aviation Security, Tools" />
+    <meta name="subject" content={t("meta.subject")} />
+    <meta name="classification" content={t("meta.classification")} />
     {keywords && <meta name="keywords" content={keywords} />}
-
+    
     <!-- ═══════════════════════════════════════════════════════
          OPEN GRAPH (Facebook, LinkedIn, Slack, Discord)
     ═══════════════════════════════════════════════════════ -->
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="BringOnPlane" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={meta.ogLocale} />
+    {ogLocaleAlternates.map((alt) => (
+      <meta property="og:locale:alternate" content={alt} />
+    ))}
     <meta property="og:url" content={finalCanonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -191,7 +227,7 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
         "https://www.instagram.com/bringonplane/"
       ],
       "foundingDate": "2024",
-      "description": "Free TSA carry-on checker and airport security rules directory for travellers.",
+      "description": t("site.blurb"),
       "areaServed": "Worldwide",
       "knowsAbout": ["TSA security rules", "Airport carry-on regulations", "Airline baggage policies", "FAA regulations", "IATA standards"]
     })} />
@@ -202,13 +238,13 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
       "@type": "SoftwareApplication",
       "name": "BringOnPlane TSA Checker",
       "alternateName": "Can I Bring This On A Plane? Checker",
-      "description": "Instantly check TSA carry-on and checked bag rules for any item. Search 196+ items with instant color-coded verdicts. Free airport security tool.",
-      "url": "https://bringonplane.com",
+      "description": t("meta.home.description"),
+      "url": localeHomeUrl,
       "applicationCategory": "TravelApplication",
       "applicationSubCategory": "Airport Security Tool",
       "operatingSystem": "Web, iOS, Android",
       "browserRequirements": "Requires JavaScript",
-      "inLanguage": "en",
+      "inLanguage": meta.hreflang,
       "isAccessibleForFree": true,
       "offers": {
         "@type": "Offer",
@@ -243,12 +279,13 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "BringOnPlane",
-      "url": "https://bringonplane.com",
+      "url": localeHomeUrl,
+      "inLanguage": meta.hreflang,
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://bringonplane.com/?q={search_term_string}"
+          "urlTemplate": `${localeHomeUrl}?q={search_term_string}`
         },
         "query-input": "required name=search_term_string"
       }
@@ -264,6 +301,7 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
           "@type": "SpeakableSpecification",
           "cssSelector": [".speakable-hero", ".speakable-answer", "h1"]
         },
+        "inLanguage": meta.hreflang,
         "url": finalCanonicalURL
       })}  />
     )}
@@ -277,7 +315,7 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
           "@type": "ListItem",
           "position": i + 1,
           "name": crumb.label,
-          ...(crumb.href ? { "item": `https://bringonplane.com${crumb.href}` } : {})
+          ...(crumb.href ? { "item": getCanonicalUrl(crumb.href, lang) } : {})
         }))
       })} />
     )}
@@ -287,33 +325,16 @@ const resolvedImage = new URL(image, `${siteUrl}/`).href;
   <body class="min-h-screen flex flex-col bg-canvas-soft text-ink font-sans selection:bg-primary selection:text-on-primary overflow-x-hidden max-w-full relative">
     <!-- Skip to content link for accessibility -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-on-primary focus:rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-link">
-      Skip to content
+      {t("a11y.skipToContent")}
     </a>
-    
+
     <slot name="header" />
-    
+
     <main id="main-content" class="flex-1 flex flex-col">
       <slot />
     </main>
-    
+
     <slot name="footer" />
-    <SearchModal />
-
-    <!-- Google Translate Mount Element (must NOT have notranslate class) -->
-    <div id="google_translate_element" style="position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; z-index: -9999;" aria-hidden="true"></div>
-
-    <!-- Google Translate Script Loader with Automatic Language & RTL Sync -->
-    <script is:inline>
-      window.googleTranslateElementInit = function() {
-        if (typeof google !== 'undefined' && google.translate) {
-          new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            autoDisplay: false,
-            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-          }, 'google_translate_element');
-        }
-      };
-    </script>
-    <script is:inline src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+    <SearchModal lang={lang} />
   </body>
 </html>
