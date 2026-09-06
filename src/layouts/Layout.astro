@@ -60,12 +60,19 @@ const description = descriptionProp ?? t("meta.home.description");
 const imageAlt = imageAltProp ?? t("site.imageAlt");
 const keywords = keywordsProp ?? t("meta.home.keywords");
 
-const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : "https://bringonplane.com";
+const siteUrl = Astro.site
+  ? Astro.site.toString().replace(/\/$/, "")
+  : "https://bringonplane.com";
 
 function normalizeCanonical(rawUrl?: string): string {
   const base = `${siteUrl}/`;
-  const parsed = rawUrl ? new URL(rawUrl, base) : new URL(Astro.url.pathname, base);
-  if (!parsed.pathname.endsWith('/') && !/\.[a-zA-Z0-9]+$/.test(parsed.pathname)) {
+  const parsed = rawUrl
+    ? new URL(rawUrl, base)
+    : new URL(Astro.url.pathname, base);
+  if (
+    !parsed.pathname.endsWith("/") &&
+    !/\.[a-zA-Z0-9]+$/.test(parsed.pathname)
+  ) {
     parsed.pathname = `${parsed.pathname}/`;
   }
   return parsed.href;
@@ -84,27 +91,43 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
 ---
 
 <!doctype html>
-<html lang={meta.hreflang} dir={meta.dir} class="scroll-smooth overflow-x-hidden max-w-full">
+<html
+  lang={meta.hreflang}
+  dir={meta.dir}
+  class="scroll-smooth overflow-x-hidden max-w-full"
+>
   <head>
     <ClientRouter />
     <!-- Google AdSense -->
-    <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422" crossorigin="anonymous"></script>
+    <script
+      is:inline
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422"
+      crossorigin="anonymous"></script>
     <script is:inline>
-      (function() {
+      (function () {
         try {
-          const theme = localStorage.getItem('theme') || 'light';
-          if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
+          const theme = localStorage.getItem("theme") || "light";
+          if (theme === "dark") {
+            document.documentElement.classList.add("dark");
           } else {
-            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.remove("dark");
           }
-        } catch(e) {}
+        } catch (e) {}
       })();
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0f172a"
+      media="(prefers-color-scheme: dark)"
+    />
     <!-- Application identity for PWA / AI assistants -->
     <meta name="application-name" content="BringOnPlane" />
     <meta name="rating" content="General" />
@@ -120,9 +143,11 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <!-- ═══════════════════════════════════════════════════════
          HREFLANG — reciprocal, self-referencing, with x-default
     ═══════════════════════════════════════════════════════ -->
-    {alternateLinks.map((alt) => (
-      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
-    ))}
+    {
+      alternateLinks.map((alt) => (
+        <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+      ))
+    }
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -131,13 +156,18 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="BringOnPlane" />
     <link rel="manifest" href="/site.webmanifest" />
-    
+
     <!-- Sitemaps — auto-discovered by Googlebot, Bingbot, and other crawlers -->
-    <link rel="sitemap" type="application/xml" title="Sitemap Index" href="/sitemap-index.xml" />
-    
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap Index"
+      href="/sitemap-index.xml"
+    />
+
     <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- ═══════════════════════════════════════════════════════
          PRIMARY META TAGS
     ═══════════════════════════════════════════════════════ -->
@@ -145,7 +175,14 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <link rel="canonical" href={finalCanonicalURL} />
-    <meta name="robots" content={typeof noIndex === 'string' ? noIndex : (noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1")} />
+    <meta
+      name="robots"
+      content={typeof noIndex === "string"
+        ? noIndex
+        : noIndex
+          ? "noindex, nofollow"
+          : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
+    />
     <meta name="author" content="BringOnPlane" />
     <meta name="copyright" content="BringOnPlane" />
     <meta name="language" content={meta.metaLanguage} />
@@ -153,16 +190,18 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <meta name="subject" content={t("meta.subject")} />
     <meta name="classification" content={t("meta.classification")} />
     {keywords && <meta name="keywords" content={keywords} />}
-    
+
     <!-- ═══════════════════════════════════════════════════════
          OPEN GRAPH (Facebook, LinkedIn, Slack, Discord)
     ═══════════════════════════════════════════════════════ -->
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="BringOnPlane" />
     <meta property="og:locale" content={meta.ogLocale} />
-    {ogLocaleAlternates.map((alt) => (
-      <meta property="og:locale:alternate" content={alt} />
-    ))}
+    {
+      ogLocaleAlternates.map((alt) => (
+        <meta property="og:locale:alternate" content={alt} />
+      ))
+    }
     <meta property="og:url" content={finalCanonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -194,143 +233,189 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <meta name="pinterest-rich-pin" content="true" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
     <!-- Google Search Console verification placeholder -->
-    <meta name="google-site-verification" content="Y8zqJ2fXh3XJJ2hQBEgtALV8pYWoBTacz6yMcpc2TAU" />
+    <meta
+      name="google-site-verification"
+      content="Y8zqJ2fXh3XJJ2hQBEgtALV8pYWoBTacz6yMcpc2TAU"
+    />
     <!-- Monetag site verification & ads -->
     <meta name="monetag" content="f553fed465bf3381b8114950e7960ac6" />
-    <script is:inline src="https://quge5.com/88/tag.min.js" data-zone="277092" async data-cfasync="false"></script>
-    <script is:inline>(function(s){s.dataset.zone='11738049',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    <script is:inline>(function(s){s.dataset.zone='11738037',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    <script is:inline>(function(s){s.dataset.zone='11738017',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
+    <script
+      is:inline
+      src="https://quge5.com/88/tag.min.js"
+      data-zone="277092"
+      async
+      data-cfasync="false"></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYTY68WGKQ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYTY68WGKQ"
+    ></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-PYTY68WGKQ');
+      gtag("config", "G-PYTY68WGKQ");
     </script>
 
     <!-- Organization schema with social profiles -->
-    <script type="application/ld+json" is:inline set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "BringOnPlane",
-      "alternateName": ["Bring On Plane", "BringOnPlane.com"],
-      "url": "https://bringonplane.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://bringonplane.com/logo.png",
-        "width": 200,
-        "height": 60
-      },
-      "sameAs": [
-        "https://www.instagram.com/bringonplane/"
-      ],
-      "foundingDate": "2024",
-      "description": t("site.blurb"),
-      "areaServed": "Worldwide",
-      "knowsAbout": ["TSA security rules", "Airport carry-on regulations", "Airline baggage policies", "FAA regulations", "IATA standards"]
-    })} />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "BringOnPlane",
+        alternateName: ["Bring On Plane", "BringOnPlane.com"],
+        url: "https://bringonplane.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://bringonplane.com/logo.png",
+          width: 200,
+          height: 60,
+        },
+        sameAs: ["https://www.instagram.com/bringonplane/"],
+        foundingDate: "2024",
+        description: t("site.blurb"),
+        areaServed: "Worldwide",
+        knowsAbout: [
+          "TSA security rules",
+          "Airport carry-on regulations",
+          "Airline baggage policies",
+          "FAA regulations",
+          "IATA standards",
+        ],
+      })}
+    />
 
     <!-- SoftwareApplication schema: signals to Google this is an interactive tool -->
-    <script type="application/ld+json" is:inline set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "BringOnPlane TSA Checker",
-      "alternateName": "Can I Bring This On A Plane? Checker",
-      "description": t("meta.home.description"),
-      "url": localeHomeUrl,
-      "applicationCategory": "TravelApplication",
-      "applicationSubCategory": "Airport Security Tool",
-      "operatingSystem": "Web, iOS, Android",
-      "browserRequirements": "Requires JavaScript",
-      "inLanguage": meta.hreflang,
-      "isAccessibleForFree": true,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      "featureList": [
-        "Instant TSA carry-on checker",
-        "Checked bag rules lookup",
-        "196+ items database",
-        "Color-coded YES/NO/RESTRICTED verdicts",
-        "Free packing checklist builder",
-        "Side-by-side item comparison tool",
-        "Airline-specific rule variations",
-        "International customs guidance"
-      ],
-      "screenshot": {
-        "@type": "ImageObject",
-        "url": "https://bringonplane.com/og-image.png",
-        "caption": "BringOnPlane TSA Checker — search any item for instant carry-on verdict"
-      },
-      "provider": {
-        "@type": "Organization",
-        "name": "BringOnPlane",
-        "url": "https://bringonplane.com"
-      }
-    })} />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "BringOnPlane TSA Checker",
+        alternateName: "Can I Bring This On A Plane? Checker",
+        description: t("meta.home.description"),
+        url: localeHomeUrl,
+        applicationCategory: "TravelApplication",
+        applicationSubCategory: "Airport Security Tool",
+        operatingSystem: "Web, iOS, Android",
+        browserRequirements: "Requires JavaScript",
+        inLanguage: meta.hreflang,
+        isAccessibleForFree: true,
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+        },
+        featureList: [
+          "Instant TSA carry-on checker",
+          "Checked bag rules lookup",
+          "196+ items database",
+          "Color-coded YES/NO/RESTRICTED verdicts",
+          "Free packing checklist builder",
+          "Side-by-side item comparison tool",
+          "Airline-specific rule variations",
+          "International customs guidance",
+        ],
+        screenshot: {
+          "@type": "ImageObject",
+          url: "https://bringonplane.com/og-image.png",
+          caption:
+            "BringOnPlane TSA Checker — search any item for instant carry-on verdict",
+        },
+        provider: {
+          "@type": "Organization",
+          name: "BringOnPlane",
+          url: "https://bringonplane.com",
+        },
+      })}
+    />
 
     <!-- SiteLinksSearchBox: enables Google to show a search box directly in SERPs -->
-    <script type="application/ld+json" is:inline set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "BringOnPlane",
-      "url": localeHomeUrl,
-      "inLanguage": meta.hreflang,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": `${localeHomeUrl}?q={search_term_string}`
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "BringOnPlane",
+        url: localeHomeUrl,
+        inLanguage: meta.hreflang,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${localeHomeUrl}?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
         },
-        "query-input": "required name=search_term_string"
-      }
-    })} />
+      })}
+    />
 
     <!-- Speakable: marks content for Google Assistant / voice search extraction -->
-    {speakableSummary && (
-      <script type="application/ld+json" is:inline set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": title,
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [".speakable-hero", ".speakable-answer", "h1"]
-        },
-        "inLanguage": meta.hreflang,
-        "url": finalCanonicalURL
-      })}  />
-    )}
+    {
+      speakableSummary && (
+        <script
+          type="application/ld+json"
+          is:inline
+          set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: title,
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: [".speakable-hero", ".speakable-answer", "h1"],
+            },
+            inLanguage: meta.hreflang,
+            url: finalCanonicalURL,
+          })}
+        />
+      )
+    }
 
     <!-- BreadcrumbList in <head> for crawlers that don't parse body JSON-LD -->
-    {breadcrumbItems && breadcrumbItems.length > 1 && (
-      <script type="application/ld+json" is:inline set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": breadcrumbItems.map((crumb, i) => ({
-          "@type": "ListItem",
-          "position": i + 1,
-          "name": crumb.label,
-          ...(crumb.href ? { "item": getCanonicalUrl(crumb.href, lang) } : {})
-        }))
-      })} />
-    )}
+    {
+      breadcrumbItems && breadcrumbItems.length > 1 && (
+        <script
+          type="application/ld+json"
+          is:inline
+          set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: breadcrumbItems.map((crumb, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name: crumb.label,
+              ...(crumb.href
+                ? { item: getCanonicalUrl(crumb.href, lang) }
+                : {}),
+            })),
+          })}
+        />
+      )
+    }
 
     <slot name="head" />
   </head>
-  <body class="min-h-screen flex flex-col bg-canvas-soft text-ink font-sans selection:bg-primary selection:text-on-primary overflow-x-hidden max-w-full relative">
+  <body
+    class="min-h-screen flex flex-col bg-canvas-soft text-ink font-sans selection:bg-primary selection:text-on-primary overflow-x-hidden max-w-full relative"
+  >
     <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-on-primary focus:rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-link">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-on-primary focus:rounded-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-link"
+    >
       {t("a11y.skipToContent")}
     </a>
 
