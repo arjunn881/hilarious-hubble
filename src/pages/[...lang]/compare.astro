@@ -70,11 +70,19 @@ const i18n = {
   itemNames,
   categoryNames,
 };
+
+/**
+ * Canonical must be the bare path with no query-string so Google doesn't index
+ * every ?a=laptop&b=camera variant as a separate URL. The Layout normalises
+ * trailing slashes automatically.
+ */
+const canonicalPath = translatePath("/compare/");
 ---
 
 <Layout 
   title={t("compare.title")}
   description={t("compare.description")}
+  canonicalURL={canonicalPath}
   lang={lang}
 >
   <Header slot="header" lang={lang} />

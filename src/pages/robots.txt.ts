@@ -19,7 +19,6 @@ Disallow: /404
 Disallow: /500
 Disallow: /api/
 Disallow: /*.json$
-Disallow: /items/page/
 Crawl-delay: 1
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -189,7 +188,6 @@ Disallow: /404
 Disallow: /500
 Disallow: /api/
 Disallow: /*.json$
-Disallow: /items/page/
 Crawl-delay: 5
 
 # =============================================================================
