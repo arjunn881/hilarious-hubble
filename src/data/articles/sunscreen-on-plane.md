@@ -1,4 +1,4 @@
----
+﻿---
 title: "Can You Bring Sunscreen on a Plane? TSA Liquid Rules for SPF (2026)"
 description: "Sunscreen is a liquid under TSA rules — 3.4 oz max in carry-on. Here are the exact size limits, which formats are exempt, and how to pack sunscreen for any trip."
 category: "Liquids"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Sunscreen is one of the most frequently confiscated toiletries at TSA checkpoints — not because it's prohibited, but because travelers don't realize it counts as a liquid. Here's exactly how the rules work and how to pack sunscreen without losing it at security.
+Sunscreen is a liquid. That's the thing people keep forgetting. The stick version, the spray version, the thick lotion version, most of them still count as liquids under TSA rules and the 3.4 oz carry-on limit applies. Here's how to travel with sunscreen without losing it at security.
 
 ---
 

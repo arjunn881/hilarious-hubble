@@ -1,4 +1,4 @@
----
+﻿---
 title: "Flying with Medication: TSA Checkpoint Guidelines"
 description: "How to pack prescription pills, medical liquids, syringes, and inhalers for security screenings."
 category: "Medicine"
@@ -7,7 +7,7 @@ lastUpdated: "2026-06-30"
 
 Traveling with prescription drugs or medical supplies can feel overwhelming, but TSA has clear accommodations for patients. Medical liquids, pills, syringes, and pumps are fully allowed, provided they undergo standard screening.
 
-Here is what you need to know to navigate the security lane with your medical necessities.
+Getting through security with your medications shouldn't be stressful. Most travelers over-prepare, worrying about documentation they don't actually need. Here's the straightforward version of what TSA requires.
 
 ---
 

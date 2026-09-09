@@ -7,7 +7,9 @@ isMedical: false
 isLegal: false
 ---
 
-Bananas are one of the most searched food items for TSA rules — and it makes sense. They're a perfect travel snack, but travelers aren't sure whether TSA will flag them at security or whether customs will confiscate them at international arrivals. Here's the definitive answer: **bananas are allowed through TSA on domestic US flights**, but international travel rules are more complicated. Read on for everything you need to know.
+Bananas make a lot of sense as a travel snack — they come in their own packaging, they're filling, and they hold up fine in a bag. But people keep wondering whether TSA will pull them at security or whether customs will confiscate them on the other side. So here's the clear answer: **TSA has no problem with bananas on domestic US flights**. Customs is a different story depending on where you're going.
+
+
 
 ---
 

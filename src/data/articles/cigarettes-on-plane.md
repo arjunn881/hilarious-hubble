@@ -1,4 +1,4 @@
----
+﻿---
 title: "Can You Bring Cigarettes on a Plane? TSA Rules for Tobacco & Vapes"
 description: "Can you bring cigarettes on a plane? Full TSA rules for cigarettes, tobacco, and e-cigarettes in carry-on and checked baggage, plus customs limits."
 category: "Tobacco & Smoking"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Traveling as a smoker raises several questions at once — can you pack cigarettes in your carry-on, can you vape on the plane, and what are the customs limits on tobacco at your destination? This guide answers all of it clearly, covering TSA security rules, airline policies, and international customs tobacco allowances.
+Flying as a smoker involves a few different questions at once. What can you pack, what can you do on the plane, and what will customs let through when you land? This guide covers all three: TSA rules at the checkpoint, airline cabin policies, and international tobacco allowances at your destination.
 
 ---
 

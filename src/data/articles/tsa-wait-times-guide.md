@@ -1,4 +1,4 @@
----
+﻿---
 title: "TSA Wait Times: How to Check Security Lines at IAH, LAX, JFK, DFW & More"
 description: "How to check TSA wait times at any airport. Live wait time tools for IAH, LAX, JFK, DFW and all major US airports. Tips to avoid the longest security lines."
 category: "Security"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-TSA wait times vary enormously depending on the airport, terminal, time of day, and day of the week. At major hub airports like LAX, JFK, DFW, and IAH, security lines during peak hours can stretch to 45–90 minutes without TSA PreCheck. Understanding how to check live wait times — and how to avoid the worst lines — can save your trip.
+TSA wait times can swing from 8 minutes to 90 minutes at the same airport depending on the time of day and day of the week. At major hubs like LAX, JFK, and DFW, bad timing during peak hours can make or break a connection. Here's how to check live wait times and how to avoid the worst lines.
 
 ---
 

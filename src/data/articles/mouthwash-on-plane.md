@@ -1,4 +1,4 @@
----
+﻿---
 title: "Can You Bring Mouthwash on a Plane? TSA Liquid Rules Explained"
 description: "Can you bring mouthwash on a plane? Learn the TSA liquid limits for mouthwash in carry-on bags and how to pack it in checked luggage for your trip."
 category: "Liquids"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Mouthwash is one of those bathroom staples that travelers always second-guess at the airport. Can you bring it in your carry-on? How big can the bottle be? The answer follows the standard TSA liquids rule — with a few practical tips to make sure you're never stuck at the checkpoint without your oral hygiene routine covered.
+Mouthwash in a carry-on is fine, as long as the bottle is 3.4 oz (100 ml) or smaller. That's the whole rule. The problem is that standard mouthwash bottles are usually 16 oz or 33 oz, so travelers who grab a bottle from home almost always have one that gets confiscated.
 
 ---
 

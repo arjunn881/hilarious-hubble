@@ -1,4 +1,4 @@
----
+﻿---
 title: "What Is TSA? TSA Shutdowns, Agent Pay & Everything You Need to Know"
 description: "What does TSA stand for? What happens during a TSA shutdown? How much do TSA agents make? Complete guide to the Transportation Security Administration."
 category: "Security"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-The **Transportation Security Administration (TSA)** is the U.S. federal agency most travelers interact with every time they fly. From the security checkpoint lanes to the blue-uniformed officers screening your bags, TSA is a constant presence in American airports. This guide covers everything about TSA — what it is, what happens during shutdowns, how much agents earn, and how the agency affects your travel.
+TSA is the federal agency responsible for security screening at US airports. Most travelers interact with it every time they fly. This guide covers what TSA actually does, how government shutdowns affect operations, staffing and pay, and what it means for your next trip.
 
 ---
 

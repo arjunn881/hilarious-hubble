@@ -1,4 +1,4 @@
----
+﻿---
 title: "Can You Bring Shoes in Your Carry-On? TSA Rules for Footwear"
 description: "Can you bring shoes in your carry-on? TSA rules for packing heels, sneakers, and boots in carry-on bags and personal items. How many pairs can you bring?"
 category: "Clothing & Accessories"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Shoes are a packing puzzle for most travelers — they're bulky, they're heavy, but sometimes you really need an extra pair. Whether you're wondering if your high heels can go in your carry-on or how to fit shoes into your personal item, TSA's position is straightforward. Here's everything you need to know.
+TSA has no restrictions on shoes in carry-on bags. None. You can pack as many pairs as fit, any style, any heel height. The challenge is purely about space, not security rules.
 
 ---
 

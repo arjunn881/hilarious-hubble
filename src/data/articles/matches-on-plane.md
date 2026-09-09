@@ -1,4 +1,4 @@
----
+﻿---
 title: "Can You Bring Matches on a Plane? TSA Rules for Safety Matches & Lighters"
 description: "Can you bring matches on a plane? TSA rules for safety matches, strike-anywhere matches, and matchbooks in carry-on and checked baggage explained."
 category: "Fire & Hazardous"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Matches seem simple enough — but they're one of the more nuanced items in TSA regulations. The rules depend entirely on the **type of match** you're trying to bring. Safety matches and strike-anywhere matches are treated very differently by the TSA and FAA, and the carry-on vs. checked baggage rules may surprise you. This guide breaks it all down clearly.
+Matches have oddly specific TSA rules. The type of match matters enormously, the carry-on vs. checked bag rules are counterintuitive, and the limits are stricter than most people expect. Here's exactly what's allowed.
 
 ---
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "TSA Confirm ID & Touchless ID: How TSA PreCheck Identity Verification Works"
 description: "What is TSA Confirm ID and TSA Touchless ID? Learn how identity verification works at airport security, how IDEMIA TSA PreCheck fits in, and what to expect."
 category: "Security"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Airport identity verification is evolving rapidly. TSA has introduced two closely related programs — **TSA Touchless ID** and **TSA Confirm ID** — as part of its broader modernization of security checkpoints. Both use biometric technology to speed up and improve the reliability of traveler identity checks.
+TSA's identity verification process is changing. Two programs are now part of the airport experience at a growing number of checkpoints: TSA Touchless ID and TSA Confirm ID. Both use biometric technology to match your face to your ID, and both are worth understanding before you fly.
 
 ---
 

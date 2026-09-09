@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lithium Battery Safety Rules on Planes: TSA & FAA Guidelines (2026)"
 description: "Complete guide to TSA and FAA lithium battery regulations: Watt-hour (Wh) capacity limits for power banks, laptops, vape batteries, and checked bag prohibitions."
 category: "Electronics"
@@ -8,6 +8,8 @@ isLegal: true
 ---
 
 # Lithium Battery Safety Rules for Air Travel
+
+Lithium batteries power almost everything we travel with today. The FAA has strict rules about them because damaged cells can cause fires that are hard to suppress in a cargo hold. These rules are straightforward once you understand the two categories: lithium-ion (rechargeable) and lithium metal (non-rechargeable), and where each can go.
 
 Lithium-ion and lithium-metal batteries power almost every portable electronic device we carry today—from smartphones and laptops to power banks and cameras. Because damaged or short-circuited lithium batteries pose a thermal runaway and fire risk in cargo holds, the **FAA (Federal Aviation Administration)** and **TSA** enforce strict rules on where and how they can be packed.
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Can You Bring a Power Bank on a Plane? TSA & Airline Rules"
 description: "Can you bring a power bank on a plane? TSA rules for portable chargers, watt-hour limits, and airline policies for power banks in carry-on and checked bags."
 category: "Electronics"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Power banks are essential travel accessories, but they're also one of the most misunderstood items when it comes to airline rules. The regulations are based on the **watt-hour (Wh) rating** of the battery inside — a number most travelers have never looked up. Get it wrong and your power bank gets confiscated at security or handed over by gate agents. This guide makes the rules crystal clear.
+Power banks have specific rules, and ignoring them can get your battery confiscated. The key number is your battery's watt-hour (Wh) rating. Most travelers don't know what that is. This guide tells you exactly how to find it and what the limits mean.
 
 ---
 

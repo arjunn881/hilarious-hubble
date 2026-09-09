@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Box cutters are one of the most strictly regulated items in aviation security — and for significant historical reasons. If you're a contractor, warehouse worker, or anyone who uses a box cutter regularly, understanding exactly where you can and cannot pack it before a flight is essential. This guide gives you the definitive TSA ruling on box cutters and utility knives.
+Box cutters are a hard no in carry-on bags — full stop. There's no exception, no workaround based on blade length, and no TSA officer discretion. If you're a contractor or warehouse worker who uses one every day, the rule is simple: it goes in your checked bag, or it doesn't fly with you at all.
 
 ---
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Flying with Medication: TSA Checkpoint & Airline Rules (2026)"
 description: "Official guide to traveling with medication: TSA exemptions for liquid medicine, pill organizers, injectable insulin, refrigeration ice packs, and international customs rules."
 category: "Medicine"
@@ -8,6 +8,8 @@ isLegal: false
 ---
 
 # Flying with Medication: Complete TSA Guide
+
+Getting through security with your medications is simpler than most people think. TSA has a dedicated medical exemption that covers prescription drugs, OTC medications, and most medical devices. The key is knowing what paperwork you actually need (hint: less than you'd expect) and what the liquid exemption covers.
 
 Navigating airport security with essential medications is simple when you know TSA's medical policies. The Transportation Security Administration classifies all prescription and over-the-counter medications as **medically necessary items**, granting them special exemptions at the security checkpoint.
 

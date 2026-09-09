@@ -1,4 +1,4 @@
----
+﻿---
 title: "What Is TSA PreCheck? How It Works, Benefits, and Setup (2026)"
 description: "Everything you need to know about TSA PreCheck: what it is, how it works at airport security checkpoints, eligibility, benefits, and how to use your KTN."
 category: "Security"
@@ -7,7 +7,9 @@ isMedical: false
 isLegal: false
 ---
 
-**TSA PreCheck** (often stylized as *TSA Pre✓®* or *TSA pre check*) is an expedited airport security screening program created by the U.S. Transportation Security Administration (TSA). It allows pre-screened, low-risk travelers to pass through designated security checkpoints at participating U.S. airports with significantly fewer restrictions and drastically shorter wait times.
+**TSA PreCheck** is the US government's expedited security screening program. Enrolled travelers use dedicated lanes at participating airports where they can keep their shoes, belt, and light jacket on, leave their laptop and 3-1-1 bag in their carry-on, and generally move through security in a fraction of the normal time.
+
+If you've ever watched someone sail through a security lane next to you while you're struggling to fit your laptop back in its case, you were watching TSA PreCheck in action.
 
 If you have ever stood in a grueling airport line watching passengers in an adjacent lane walk through security with their shoes and jackets on while keeping their laptops in their bags, you were watching TSA PreCheck in action.
 

@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Batteries are among the most regulated items in aviation — not because they're dangerous by default, but because certain types of batteries can cause fires in the cargo hold. Different battery chemistries have completely different rules. This guide covers every battery type: AA, AAA, lithium-ion, lithium metal, rechargeable, and button cells.
+Batteries are genuinely one of the more confusing things to pack for a flight — not because they're dangerous by default, but because the rules split completely based on battery chemistry. AA alkaline batteries and lithium-ion cells are treated as totally different items, and getting it wrong can mean a confiscated power bank or a delayed bag. This guide covers every type: AA, AAA, lithium-ion, lithium metal, rechargeable, and button cells.
 
 ---
 

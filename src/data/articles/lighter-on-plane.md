@@ -1,4 +1,4 @@
----
+﻿---
 title: "Can You Bring a Lighter on a Plane? TSA Rules Explained"
 description: "Can you bring a lighter on a plane? Learn exactly which lighters are allowed in carry-on vs. checked bags under TSA and FAA rules for 2026."
 category: "Fire & Hazardous"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Lighters are one of the most commonly confiscated items at airport security — not because all lighters are banned, but because most travelers don't know which type they have. The TSA rules for lighters depend entirely on the **type of lighter**, and getting it wrong means losing it at the checkpoint. Here's the complete breakdown.
+Most lighters are actually allowed on planes, which surprises a lot of people. But the rules split entirely based on lighter type, and getting it wrong means losing it at the checkpoint. Here's the full breakdown.
 
 ---
 

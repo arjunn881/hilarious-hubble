@@ -1,4 +1,4 @@
----
+﻿---
 title: "MIA TSA Wait Times: Miami Airport Security Lines & Concourse Guide (2026)"
 description: "Live Miami International Airport (MIA) TSA wait times. Concourse D, E, F, G, H & J checkpoint breakdown, international peak hours, PreCheck lines, and tips."
 category: "Security"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-**Miami International Airport (MIA)** is the premier gateway between the United States, Latin America, and the Caribbean, handling over 52 million passengers each year. As the primary international hub for **American Airlines**, MIA features a horseshoe-shaped layout with screening checkpoints distributed across North, Central, and South terminals.
+Miami International is the main gateway between the US, Latin America, and the Caribbean. American Airlines runs the hub, and the airport handles over 52 million passengers annually across a horseshoe-shaped terminal layout. TSA lines at MIA can stretch to 45 to 75 minutes during peak periods. Here's how to navigate them.
 
 Because of heavy international passenger volume, high baggage loads, and weekend cruise passenger surges, TSA lines at MIA can stretch past **45–75 minutes** during peak departure banks.
 

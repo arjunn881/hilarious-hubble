@@ -1,4 +1,4 @@
----
+﻿---
 title: "TSA PreCheck: Cost, Application, Renewal & Is It Worth It? (2026)"
 description: "Everything about TSA PreCheck — how much it costs, how to apply, how long it lasts, how to renew, and whether it's worth it. Includes global entry comparison."
 category: "Security"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-TSA PreCheck is the U.S. government's trusted traveler program that lets you move through airport security faster — without removing your shoes, laptops, liquids, belts, or light jackets. If you fly frequently within the United States, TSA PreCheck is one of the most consistently praised travel upgrades available.
+TSA PreCheck is the easiest security upgrade most US travelers aren't using. It lets you keep your shoes on, leave your laptop in your bag, skip the liquids tray, and use dedicated shorter lanes at over 200 airports. If you fly even a few times a year, the math on the enrollment fee is usually worth it.
 
 ---
 

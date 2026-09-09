@@ -1,4 +1,4 @@
----
+﻿---
 title: "TSA 3-1-1 Liquids Rule: The Ultimate Packing Guide"
 description: "Learn how to pack liquids, gels, and aerosols for your flight under the official TSA 3-1-1 guidelines."
 category: "Liquids"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: true
 ---
 
-The Transportation Security Administration (TSA) enforces strict limits on liquids, gels, and aerosols in carry-on baggage. This policy is commonly referred to as the **3-1-1 liquids rule**.
+The TSA's 3-1-1 rule is one of those policies that's simple once you understand it, but creates real confusion before you do. Here's the plain-English version: liquids in your carry-on must be in containers of 3.4 oz (100 ml) or less, all fitting in a single quart-sized clear bag. One bag per person.
 
 Understanding how to pack these items before you arrive at the airport checkpoint will save you time, prevent security officers from confiscating your personal care items, and ensure you remain compliant with federal aviation regulations. 
 

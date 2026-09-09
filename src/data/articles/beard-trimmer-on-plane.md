@@ -7,9 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Heading to the airport with a beard trimmer or electric shaver and wondering whether it goes in your carry-on or checked bag? You're not alone — this is one of the most Googled TSA questions for men's grooming items. The short answer is: **beard trimmers and electric shavers are allowed in both carry-on and checked baggage**, but there are important rules around the built-in battery that you need to know before you pack.
-
-This guide covers official TSA regulations for every type of trimmer — corded, cordless, and rechargeable — so you can breeze through security without losing your grooming kit.
+Beard trimmers and electric shavers are fine to fly with — both in carry-on and checked bags. But the rules are slightly different depending on whether your trimmer is corded, cordless, or has a built-in rechargeable battery. That last point is worth knowing before you pack, because the battery type changes what you can and can't do at check-in.
 
 ---
 

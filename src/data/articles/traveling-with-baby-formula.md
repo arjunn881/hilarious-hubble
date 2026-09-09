@@ -1,4 +1,4 @@
----
+﻿---
 title: "Traveling with Baby Formula & Breast Milk: TSA Rules (2026)"
 description: "Complete guide to TSA rules for flying with baby formula, pumped breast milk, juice, baby food purees, cooling gel packs, and checkpoint screening procedures."
 category: "Baby"
@@ -8,6 +8,8 @@ isLegal: false
 ---
 
 # Traveling with Baby Formula, Breast Milk & Baby Food
+
+Flying with an infant is already a lot. TSA at least makes the formula and breast milk part easy: both are classified as medically necessary liquids and explicitly exempt from the 3.4 oz (100 ml) liquid limit. Here's exactly how the exemption works and what to expect at the checkpoint.
 
 Flying with an infant or transporting nourishment for your baby can feel stressful, but TSA regulations explicitly recognize **baby formula, pumped breast milk, toddler drinks, and baby food as medically necessary liquids**. This classification exempts them from the standard 3.4 oz (100ml) liquid restriction.
 

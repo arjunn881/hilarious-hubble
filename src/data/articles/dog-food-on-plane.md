@@ -1,4 +1,4 @@
----
+﻿---
 title: "Can You Bring Dog Food on a Plane? TSA & Customs Rules for Pet Food"
 description: "Can you bring dog food, cat food, or dog treats on a plane? TSA rules for dry and wet pet food in carry-on and checked bags, plus international customs rules."
 category: "Food & Snacks"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Traveling with a pet or heading to visit a dog and want to bring along their favorite food or treats? Navigating TSA rules for pet food can be confusing — especially because wet food (canned or pouched) and dry food are treated differently. This guide covers everything for dog food, cat food, dog treats, and pet snacks on domestic and international flights.
+Bringing dog food or pet treats on a flight is totally doable, but wet and dry food are treated differently by TSA. That distinction matters when you're deciding what goes in your carry-on versus your checked bag.
 
 ---
 

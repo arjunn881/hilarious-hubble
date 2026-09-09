@@ -1,4 +1,4 @@
----
+﻿---
 title: "ORD TSA Wait Times: Chicago O'Hare Security Lines & Terminal Guide (2026)"
 description: "Live Chicago O'Hare (ORD) TSA wait times by terminal. Breakdown of Terminals 1, 2, 3 & 5 checkpoints, peak hours, PreCheck & CLEAR lines, and tips to skip lines."
 category: "Security"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-**Chicago O'Hare International Airport (ORD)** is one of the busiest aviation crossroads in the world, serving over 80 million passengers each year as a dual super-hub for both **United Airlines** and **American Airlines**. Because of its sheer passenger volume, TSA security lines at ORD can fluctuate wildly—from a swift 10-minute pass during midday to over **65–80 minutes** during Monday morning and holiday travel rushes.
+O'Hare is one of the most complex airports in the world to navigate, and security lines reflect that. As a dual hub for United and American, the airport handles over 80 million passengers a year across four terminals. Lines can swing from 10 minutes at midday to over 80 minutes on Monday mornings. Here's how to track wait times and which checkpoints to target.
 
 This complete guide details real-time wait time tracking tools, security checkpoint layouts across Terminals 1, 2, 3, and 5, peak congestion hours, and proven methods to breeze through O'Hare security.
 

@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Whether you're bringing candy as a travel snack, packing local sweets as a gift, or carrying chocolate for a long-haul flight, understanding what TSA allows is important. Most candy travels without any issue — but a few specific types can cause unexpected problems. Here's what you need to know.
+Candy travels great on planes. Most of it is solid, dry, and completely unrestricted — you can throw a bag of gummy bears in your carry-on with zero issues. A few specific types (gel candies, chocolate spreads, liquid-filled chocolates) technically fall under TSA's liquid rules, but in practice this almost never comes up. Here's what you actually need to know.
 
 ---
 

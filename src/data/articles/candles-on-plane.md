@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Candles are popular gifts and personal items that many travelers want to bring along — whether you're gifting a premium scented candle or traveling with your favorite home fragrance. The rules depend on the candle type, particularly whether it's solid wax or gel-based. Here's the complete TSA breakdown.
+Candles are one of those items where the type genuinely matters. A solid wax candle is no problem at security — TSA treats it like any other solid item. A gel candle, on the other hand, falls under liquid rules and needs to fit in your 3-1-1 bag if you're carrying it on. Here's the full breakdown.
 
 ---
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Can You Bring Perfume on a Plane? TSA Liquid Rules for Fragrances"
 description: "Can you bring perfume on a plane? TSA carry-on limits for perfume, cologne, and body spray. How to pack fragrances safely in carry-on and checked luggage."
 category: "Liquids"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Perfume is one of the most popular travel items — and one of the most confiscated at airport security checkpoints. Standard perfume bottles easily exceed the TSA liquid limit, and travelers often don't realize it until they're standing at the scanner. Here's exactly how to fly with your favorite fragrance without losing it.
+Perfume gets confiscated at airport security more than almost any other personal care item. Not because it's restricted, but because standard fragrance bottles are well over the 3.4 oz (100 ml) carry-on liquid limit. Here's exactly how to fly with your fragrance without losing it.
 
 ---
 

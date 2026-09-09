@@ -1,4 +1,4 @@
----
+﻿---
 title: "ATL TSA Wait Times: Atlanta Airport Security Lines & Checkpoints (2026)"
 description: "Live Atlanta Hartsfield-Jackson (ATL) TSA wait times. Main, North, South, and International checkpoint breakdown, peak travel hours, PreCheck lines, and tips."
 category: "Security"
@@ -7,7 +7,9 @@ isMedical: false
 isLegal: false
 ---
 
-**Hartsfield-Jackson Atlanta International Airport (ATL)** holds the title of the world's busiest airport by passenger traffic, processing over 104 million travelers annually. As the global fortress hub for **Delta Air Lines**, ATL handles immense connection and departure banks throughout every day.
+Atlanta Hartsfield-Jackson is the world's busiest airport by passenger count. As Delta's main hub, it processes over 100 million travelers a year, and TSA lines reflect that volume. During morning departure banks, standard security can hit 50 to 85 minutes. With PreCheck, most travelers are through in under 10.
+
+Here's how to track live wait times, which checkpoints to use, and when to arrive.
 
 Because domestic security screening is consolidated at the massive Domestic Atrium, lines at Atlanta can swell rapidly. Peak standard wait times frequently reach **50–85 minutes**, while travelers with expedited credentials navigate checkpoints in under 10 minutes.
 

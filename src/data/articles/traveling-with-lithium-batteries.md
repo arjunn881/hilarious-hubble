@@ -1,4 +1,4 @@
----
+﻿---
 title: "Traveling with Lithium Batteries: FAA & TSA Rules"
 description: "A comprehensive guide on carrying lithium batteries, power banks, and electronics safely in cabin or checked luggage."
 category: "Electronics"
@@ -7,7 +7,7 @@ lastUpdated: "2026-06-30"
 
 Lithium-ion and lithium-metal batteries are classified as hazardous materials by aviation safety regulators like the FAA and TSA. Because of their potential to overheat and cause cargo fires, strict packing regulations apply.
 
-Knowing where your batteries belong will prevent flight delays and keep everyone on board safe.
+The rule for lithium batteries comes down to one question: can your device go in checked luggage? Some lithium battery devices can, some can't, and loose batteries follow their own set of rules. Here's the clear breakdown so you know where to pack what.
 
 ---
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "TSA 3-1-1 Liquids Rule Explained: Complete Carry-On Limits (2026)"
 description: "Everything you need to know about the TSA 3-1-1 liquids rule: container size limits, quart-sized bags, medical exemptions, and checkpoint screening procedures."
 category: "Liquids"
@@ -8,6 +8,8 @@ isLegal: true
 ---
 
 # TSA 3-1-1 Liquids Rule Explained
+
+The 3-1-1 rule is TSA's shorthand for its carry-on liquid limits: containers must be 3.4 oz (100 ml) or smaller, all fitting in 1 quart-sized clear bag, and you get 1 bag per person. It applies to liquids, gels, aerosols, pastes, and creams. Here's what that actually means in practice.
 
 The Transportation Security Administration (TSA) enforces strict limits on liquids, gels, pastes, and aerosols in carry-on baggage. This policy is universally known as the **3-1-1 Liquids Rule**.
 

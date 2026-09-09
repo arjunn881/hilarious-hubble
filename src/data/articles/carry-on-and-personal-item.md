@@ -7,7 +7,9 @@ isMedical: false
 isLegal: false
 ---
 
-One of the most searched questions before any flight: **can you bring both a carry-on bag AND a personal item?** The short answer is yes — almost every airline allows one of each. But the size rules, what counts as a personal item, and how strictly they're enforced vary significantly by airline.
+Most airlines let you bring two bags: a carry-on that goes in the overhead bin and a personal item that goes under the seat. Simple enough in theory — but travelers constantly run into questions about what actually qualifies as each, how strictly the size limits are enforced, and what happens when your bag doesn't fit. Here's the honest breakdown.
+
+
 
 ---
 

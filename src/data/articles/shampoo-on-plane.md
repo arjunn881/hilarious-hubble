@@ -1,4 +1,4 @@
----
+﻿---
 title: "Can You Bring Shampoo and Conditioner on a Plane? TSA Rules"
 description: "Can you bring shampoo and conditioner on a plane? TSA carry-on liquid limits, travel-size rules, and how to pack full-size bottles in checked bags."
 category: "Liquids"
@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Shampoo and conditioner are among the most frequently confiscated items at TSA checkpoints — simply because travelers bring full-size bottles in their carry-on without realizing the liquid limits. The rules are straightforward once you know them. Here's everything you need to know about flying with your hair care routine.
+Standard shampoo bottles are one of the most confiscated items at airport security, and the reason is always the same: they're too big. The 3.4 oz carry-on limit applies to shampoo the same way it applies to everything else. Here's how to handle it.
 
 ---
 
