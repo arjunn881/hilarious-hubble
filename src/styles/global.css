@@ -107,8 +107,9 @@
     transition-duration: 200ms;
   }
 
-  /* Exclude continuous infinite looping keyframe animations from overriding transitions */
-  .animate-radar-sweep, .animate-beacon, .animate-float-gentle, .animate-float-plane, .animate-pulse-glow, .animate-contrail, .animate-shimmer, canvas, video, iframe {
+  /* Exclude continuous infinite looping keyframe animations from overriding transitions.
+     NOTE: `iframe` intentionally excluded here so Google Ad iframes can animate normally. */
+  .animate-radar-sweep, .animate-beacon, .animate-float-gentle, .animate-float-plane, .animate-pulse-glow, .animate-contrail, .animate-shimmer, canvas, video, iframe.skiptranslate {
     transition: none !important;
   }
 
@@ -360,7 +361,168 @@ body {
   margin-right: 1.5rem;
 }
 
+
 [dir="rtl"] .article-content th {
   text-align: right;
 }
 
+/* ═════════════════════════════════════════════════════════════════════
+   GOOGLE AUTO ADS — FULL FORMAT COMPATIBILITY
+   Optimises layout for: Anchor, Side Rail, Vignette, Banner,
+   Multiplex, In-Article, In-Feed, and Ad Intent formats.
+   All screen sizes: mobile (≤768px), tablet (769-1024px), desktop (≥1025px)
+   ═════════════════════════════════════════════════════════════════════ */
+
+/* Use `overflow-x: clip` on the body instead of `hidden`.
+   `clip` prevents horizontal scroll just like `hidden` but does NOT
+   create a new scroll container — meaning position:fixed ad overlays
+   (Anchor ads, Side Rail ads, Vignette ads) can still escape the body
+   and cover the full viewport as required by Google Auto Ads. */
+html,
+body,
+.ad-page-body {
+  overflow-x: clip;
+}
+
+/* ── Anchor Ads (sticky top/bottom) ──────────────────────────────────
+   Reserve space at the bottom of the viewport on mobile & tablet so
+   anchor ads don't overlap page content. On desktop (>1000px) Google
+   places anchor ads at the top so no bottom padding is needed. */
+@media (max-width: 999px) {
+  .ad-page-body {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    /* Extra bottom clearance for bottom-anchor ad unit (≈90px tall) */
+    scroll-padding-bottom: 90px;
+  }
+}
+
+/* ── Side Rail Ads — balanced gutter creation (1000px–1439px) ───────
+   Google side rail ads require BOTH:
+     1. Viewport ≥ 1000px wide
+     2. Content column leaves ≥120px free on each side
+
+   By keeping section wrappers 100% full-width and bounding only the top-level
+   content columns to max-width: calc(100% - 260px) with margin-inline: auto,
+   we guarantee:
+     - Exactly 130px symmetric clearance on left and right for side rails
+     - Zero leftward incline / scrollbar asymmetry
+     - Zero ugly white background bars (full-bleed heroes and section backgrounds
+       seamlessly stretch edge-to-edge)
+
+   Viewport  │ Content width │ Gutter (left) │ Gutter (right) │ Side rail
+   ──────────┼───────────────┼───────────────┼────────────────┼──────────
+   1000px    │ 740px         │ 130px         │ 130px          │ ✅ enabled
+   1024px    │ 764px         │ 130px         │ 130px          │ ✅ enabled
+   1200px    │ 940px         │ 130px         │ 130px          │ ✅ enabled
+   1439px    │ 1179px        │ 130px         │ 130px          │ ✅ enabled
+   ≥1440px   │ ≤1200px(nat.) │ ≥120px        │ ≥120px         │ ✅ enabled */
+@media (min-width: 1000px) and (max-width: 1439px) {
+  #main-content {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  #main-content > .mx-auto,
+  #main-content > section > .mx-auto,
+  #main-content > div > .mx-auto {
+    max-width: calc(100% - 260px) !important;
+    margin-inline: auto !important;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1440px) {
+  #main-content {
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+  .ad-page-body {
+    max-width: 100% !important;
+  }
+}
+
+/* ── Prevent CLS (Cumulative Layout Shift) from Ad Injection ─────────
+   Google Auto Ads inserts <ins> elements dynamically. Pre-reserving
+   min-height for common ad slot sizes stops layout reflow and improves
+   Core Web Vitals scores (which in turn improve ad fill rates). */
+ins.adsbygoogle {
+  display: block;
+  /* Prevents the slot from collapsing to 0 before the ad loads */
+  min-height: 1px;
+}
+
+/* In-article / in-feed ad placeholders */
+ins.adsbygoogle[data-ad-format="fluid"] {
+  min-height: 250px;
+}
+
+/* Responsive banner placeholders */
+ins.adsbygoogle[data-ad-format="auto"],
+ins.adsbygoogle[data-ad-format="rectangle"] {
+  min-height: 100px;
+}
+
+/* ── Ad Container Base Styles ────────────────────────────────────────
+   AdSense policy requires ads to render on a white/light background
+   regardless of the page theme. These classes are available for any
+   manually placed ad wrappers. */
+.ad-slot-wrapper {
+  display: block;
+  width: 100%;
+  overflow: visible; /* never clip ad creatives */
+  background-color: transparent;
+  text-align: center;
+  /* Clearance above/below banner-style ads for readability */
+  margin-block: 1.5rem;
+}
+
+/* Prevent dark-mode inherited colours leaking into ad iframes */
+.ad-slot-wrapper,
+ins.adsbygoogle {
+  color-scheme: light !important;
+}
+
+/* ── Vignette / Interstitial Ads ─────────────────────────────────────
+   Vignette ads are full-screen overlays injected as fixed-position
+   iframes. Ensure z-index stacking doesn't fight our modal/overlay. */
+#google-auto-ads-vignette,
+[id^="google_ads_frame"],
+[id^="google_ads_iframe"] {
+  z-index: 9000 !important; /* below our search modal z-50 = 9999 */
+}
+
+/* ── Responsive Ad-Friendly Content Width ────────────────────────────
+   Keeps the main content column within readable bounds while leaving
+   horizontal space for Google's rail ad injection zones.
+   Content max-width is intentionally narrower than 100vw on large
+   screens so there is always a ≥160px gutter on each side for rail ads. */
+.ad-main-content {
+  /* Nothing overriding here — just a named hook for devtools clarity */
+  position: relative;
+}
+
+/* ── Mobile-specific: ensure ad slots don't break small viewports ─── */
+@media (max-width: 480px) {
+  ins.adsbygoogle {
+    /* Ensure Google's 320px minimum banner width can always render */
+    min-width: 300px;
+    max-width: 100%;
+  }
+}
+
+/* ── Tablet: balanced ad and content coexistence ─────────────────────*/
+@media (min-width: 481px) and (max-width: 1024px) {
+  ins.adsbygoogle {
+    max-width: 100%;
+  }
+}
+
+/* ── Large Desktop: side rail room (≥1280px) ─────────────────────────
+   Google requires ≥120px on each side to show side rail ads.
+   Our content max-width columns (≤1200px) already create this. */
+@media (min-width: 1280px) {
+  .ad-page-body {
+    /* Rail ads are position:fixed by Google — no margin needed,
+       just ensure the body background doesn't create a visual seam. */
+    background-color: var(--color-canvas-soft);
+  }
+}

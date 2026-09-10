@@ -25,13 +25,16 @@
     "i18n:paths": "node scripts/i18n/pathcheck.mjs",
     "i18n:overlay": "node scripts/i18n/prosecheck.mjs",
     "i18n:compile": "node scripts/i18n/astrocheck.mjs",
-    "deploy": "npm run build && npx wrangler pages deploy dist"
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name bringonplane"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/sitemap": "^3.7.4",
     "@lucide/astro": "^1.22.0",
     "@tailwindcss/vite": "^4.3.2",
-    "astro": "^7.2.9",
+    "astro": "^7.3.2",
     "tailwindcss": "^4.3.2"
+  },
+  "devDependencies": {
+    "wrangler": "^4.130.0"
   }
 }

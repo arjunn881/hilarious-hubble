@@ -94,7 +94,7 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
 <html
   lang={meta.hreflang}
   dir={meta.dir}
-  class="scroll-smooth overflow-x-hidden max-w-full"
+  class="scroll-smooth max-w-full overflow-x-clip"
 >
   <head>
     <ClientRouter />
@@ -402,7 +402,7 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <slot name="head" />
   </head>
   <body
-    class="min-h-screen flex flex-col bg-canvas-soft text-ink font-sans selection:bg-primary selection:text-on-primary overflow-x-hidden max-w-full relative"
+    class="min-h-screen flex flex-col bg-canvas-soft text-ink font-sans selection:bg-primary selection:text-on-primary max-w-full relative ad-page-body"
   >
     <!-- Skip to content link for accessibility -->
     <a
@@ -414,7 +414,7 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
 
     <slot name="header" />
 
-    <main id="main-content" class="flex-1 flex flex-col">
+    <main id="main-content" class="flex-1 flex flex-col w-full">
       <slot />
     </main>
 
