@@ -440,6 +440,66 @@ body,
   }
 }
 
+/* ── Fixed Side Rail Ad Units (Desktop/Laptop >= 1000px) ───────────── */
+.ad-rail-unit {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .ad-rail-unit {
+    display: flex;
+    position: fixed;
+    top: 84px; /* clears sticky navbar (64px) + 20px breathing room */
+    width: 120px;
+    height: 600px;
+    z-index: 40; /* above page content, below sticky header & modal (z-50) */
+    pointer-events: auto;
+    overflow: visible;
+  }
+
+  .ad-rail-inner {
+    width: 120px;
+    height: 600px;
+    min-height: 600px;
+    overflow: visible;
+  }
+
+  .ad-rail-left {
+    left: 5px;
+  }
+
+  .ad-rail-right {
+    right: 5px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .ad-rail-left {
+    left: max(5px, calc(50vw - 600px - 125px));
+  }
+
+  .ad-rail-right {
+    right: max(5px, calc(50vw - 600px - 125px));
+  }
+}
+
+/* ── Responsive Mobile Banner (< 1000px) ───────────────────────────── */
+.ad-mobile-unit {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1000px) {
+  .ad-mobile-unit {
+    display: none !important;
+  }
+}
+
 /* ── Prevent CLS (Cumulative Layout Shift) from Ad Injection ─────────
    Google Auto Ads inserts <ins> elements dynamically. Pre-reserving
    min-height for common ad slot sizes stops layout reflow and improves

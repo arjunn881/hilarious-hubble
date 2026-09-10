@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 import SearchModal from "../components/SearchModal.astro";
+import AdSideRails from "../components/AdSideRails.astro";
+import AdMobileBanner from "../components/AdMobileBanner.astro";
 import { ClientRouter } from "astro:transitions";
 import {
   getAlternateLinks,
@@ -98,12 +100,50 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
 >
   <head>
     <ClientRouter />
-    <!-- Google AdSense -->
-    <script
-      is:inline
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422"
-      crossorigin="anonymous"></script>
+    <!-- Google AdSense (dynamically loaded to prevent Astro ClientRouter data-astro-exec warnings) -->
+    <script is:inline>
+      (function () {
+        // Suppress harmless Astro ClientRouter data-astro-exec warning from AdSense
+        var _warn = console.warn;
+        console.warn = function () {
+          if (arguments[0] && typeof arguments[0] === "string" && arguments[0].indexOf("data-astro-exec") !== -1) {
+            return;
+          }
+          _warn.apply(console, arguments);
+        };
+
+        // Suppress unhandled internal vendor errors from Google ad creatives (e.g. vignette / outstream)
+        window.addEventListener("error", function (e) {
+          if (
+            (e.message && (e.message.indexOf("vignette") !== -1 || e.message.indexOf("lima_error") !== -1)) ||
+            (e.filename && (e.filename.indexOf("doubleclick") !== -1 || e.filename.indexOf("googlesyndication") !== -1 || e.filename.indexOf("outstream") !== -1))
+          ) {
+            e.preventDefault();
+            return true;
+          }
+        });
+
+        if (!document.querySelector('script[src*="pagead2.googlesyndication.com"]')) {
+          var s = document.createElement("script");
+          s.async = true;
+          s.crossOrigin = "anonymous";
+          s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422";
+
+          try {
+            var observer = new MutationObserver(function (mutations) {
+              for (var i = 0; i < mutations.length; i++) {
+                if (mutations[i].attributeName === "data-astro-exec") {
+                  s.removeAttribute("data-astro-exec");
+                }
+              }
+            });
+            observer.observe(s, { attributes: true, attributeFilter: ["data-astro-exec"] });
+          } catch (e) {}
+
+          document.head.appendChild(s);
+        }
+      })();
+    </script>
     <script is:inline>
       (function () {
         try {
@@ -414,9 +454,13 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
 
     <slot name="header" />
 
+    <AdSideRails />
+
     <main id="main-content" class="flex-1 flex flex-col w-full">
       <slot />
     </main>
+
+    <AdMobileBanner />
 
     <slot name="footer" />
     <SearchModal lang={lang} />
