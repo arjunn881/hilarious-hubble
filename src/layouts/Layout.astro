@@ -103,20 +103,82 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <!-- Google AdSense (dynamically loaded to prevent Astro ClientRouter data-astro-exec warnings) -->
     <script is:inline>
       (function () {
-        // Suppress harmless Astro ClientRouter data-astro-exec warning from AdSense
+        // 1. Delete third-party vendor console.log spam (e.g. Travelpayouts [tp] telemetry)
+        var _log = console.log;
+        console.log = function () {
+          if (arguments[0] && typeof arguments[0] === "string" && arguments[0].indexOf("[tp]") !== -1) {
+            return;
+          }
+          _log.apply(console, arguments);
+        };
+
+        // 2. Suppress harmless vendor warnings (Astro ClientRouter, PerformanceObserver buffered flag)
         var _warn = console.warn;
         console.warn = function () {
-          if (arguments[0] && typeof arguments[0] === "string" && arguments[0].indexOf("data-astro-exec") !== -1) {
-            return;
+          if (arguments[0] && typeof arguments[0] === "string") {
+            if (
+              arguments[0].indexOf("data-astro-exec") !== -1 ||
+              arguments[0].indexOf("PerformanceObserver") !== -1 ||
+              arguments[0].indexOf("buffered flag") !== -1
+            ) {
+              return;
+            }
           }
           _warn.apply(console, arguments);
         };
 
-        // Suppress unhandled internal vendor errors from Google ad creatives (e.g. vignette / outstream)
+        // 3. Intercept Travelpayouts adblock probe to eliminate DoubleClick 400 Bad Request
+        if (typeof window.fetch === "function") {
+          var _fetch = window.fetch;
+          window.fetch = function (resource, init) {
+            try {
+              var url = typeof resource === "string" ? resource : (resource && resource.url) || "";
+              if (url.indexOf("securepubads.g.doubleclick.net/gampad/ads") !== -1) {
+                return Promise.resolve(new Response("", { status: 200, statusText: "OK" }));
+              }
+            } catch (e) {}
+            return _fetch.apply(this, arguments);
+          };
+        }
+
+        // 4. Suppress unhandled internal vendor errors from Google ad creatives and Travelpayouts
         window.addEventListener("error", function (e) {
           if (
-            (e.message && (e.message.indexOf("vignette") !== -1 || e.message.indexOf("lima_error") !== -1)) ||
-            (e.filename && (e.filename.indexOf("doubleclick") !== -1 || e.filename.indexOf("googlesyndication") !== -1 || e.filename.indexOf("outstream") !== -1))
+            (e.message && (
+              e.message.indexOf("vignette") !== -1 ||
+              e.message.indexOf("lima_error") !== -1 ||
+              e.message.indexOf("PerformanceObserver") !== -1 ||
+              e.message.indexOf("chunk.BkBAu") !== -1
+            )) ||
+            (e.filename && (
+              e.filename.indexOf("doubleclick") !== -1 ||
+              e.filename.indexOf("googlesyndication") !== -1 ||
+              e.filename.indexOf("outstream") !== -1 ||
+              e.filename.indexOf("emrldtp") !== -1 ||
+              e.filename.indexOf("chunk.BkBAu") !== -1 ||
+              e.filename.indexOf("NTc0NjE2") !== -1
+            ))
+          ) {
+            e.preventDefault();
+            return true;
+          }
+        });
+
+        // 5. Suppress unhandled promise rejections from third-party vendor scripts
+        window.addEventListener("unhandledrejection", function (e) {
+          if (
+            e.reason && (
+              (e.reason.message && (
+                e.reason.message.indexOf("securepubads") !== -1 ||
+                e.reason.message.indexOf("chunk.BkBAu") !== -1 ||
+                e.reason.message.indexOf("emrldtp") !== -1
+              )) ||
+              (e.reason.stack && (
+                e.reason.stack.indexOf("chunk.BkBAu") !== -1 ||
+                e.reason.stack.indexOf("NTc0NjE2") !== -1 ||
+                e.reason.stack.indexOf("emrldtp") !== -1
+              ))
+            )
           ) {
             e.preventDefault();
             return true;
