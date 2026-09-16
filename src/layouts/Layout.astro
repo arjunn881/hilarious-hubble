@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import SearchModal from "../components/SearchModal.astro";
-import AdSideRails from "../components/AdSideRails.astro";
 import AdMobileBanner from "../components/AdMobileBanner.astro";
 import TSAUpdatesBanner from "../components/TSAUpdatesBanner.astro";
 import { ClientRouter } from "astro:transitions";
@@ -470,7 +469,6 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <!-- Sitewide TSA 2026 Regulation Updates Strip -->
     <TSAUpdatesBanner />
 
-    <AdSideRails />
 
     <main id="main-content" class="flex-1 flex flex-col w-full">
       <slot />

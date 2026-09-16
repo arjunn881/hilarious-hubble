@@ -396,92 +396,14 @@ body,
   }
 }
 
-/* ── Side Rail Ads — balanced gutter creation (1000px–1439px) ───────
-   Google side rail ads require BOTH:
-     1. Viewport ≥ 1000px wide
-     2. Content column leaves ≥120px free on each side
-
-   By keeping section wrappers 100% full-width and bounding only the top-level
-   content columns to max-width: calc(100% - 260px) with margin-inline: auto,
-   we guarantee:
-     - Exactly 130px symmetric clearance on left and right for side rails
-     - Zero leftward incline / scrollbar asymmetry
-     - Zero ugly white background bars (full-bleed heroes and section backgrounds
-       seamlessly stretch edge-to-edge)
-
-   Viewport  │ Content width │ Gutter (left) │ Gutter (right) │ Side rail
-   ──────────┼───────────────┼───────────────┼────────────────┼──────────
-   1000px    │ 740px         │ 130px         │ 130px          │ ✅ enabled
-   1024px    │ 764px         │ 130px         │ 130px          │ ✅ enabled
-   1200px    │ 940px         │ 130px         │ 130px          │ ✅ enabled
-   1439px    │ 1179px        │ 130px         │ 130px          │ ✅ enabled
-   ≥1440px   │ ≤1200px(nat.) │ ≥120px        │ ≥120px         │ ✅ enabled */
-@media (min-width: 1000px) and (max-width: 1439px) {
-  #main-content {
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-  #main-content > .mx-auto,
-  #main-content > section > .mx-auto,
-  #main-content > div > .mx-auto {
-    max-width: calc(100% - 260px) !important;
-    margin-inline: auto !important;
-    box-sizing: border-box;
-  }
+/* ── Native Auto Ads Compatibility ─────────────────────────────────
+   Main content uses natural layout and centered columns so Google
+   Auto Ads Side Rails can automatically occupy viewport gutters on widescreen. */
+#main-content {
+  max-width: 100%;
+  width: 100%;
 }
 
-@media (min-width: 1440px) {
-  #main-content {
-    max-width: 100% !important;
-    margin-inline: auto !important;
-  }
-  .ad-page-body {
-    max-width: 100% !important;
-  }
-}
-
-/* ── Fixed Side Rail Ad Units (Desktop/Laptop >= 1000px) ───────────── */
-.ad-rail-unit {
-  display: none;
-}
-
-@media (min-width: 1000px) {
-  .ad-rail-unit {
-    display: flex;
-    position: fixed;
-    top: 84px; /* clears sticky navbar (64px) + 20px breathing room */
-    width: 120px;
-    height: 600px;
-    z-index: 40; /* above page content, below sticky header & modal (z-50) */
-    pointer-events: auto;
-    overflow: visible;
-  }
-
-  .ad-rail-inner {
-    width: 120px;
-    height: 600px;
-    min-height: 600px;
-    overflow: visible;
-  }
-
-  .ad-rail-left {
-    left: 5px;
-  }
-
-  .ad-rail-right {
-    right: 5px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .ad-rail-left {
-    left: max(5px, calc(50vw - 600px - 125px));
-  }
-
-  .ad-rail-right {
-    right: max(5px, calc(50vw - 600px - 125px));
-  }
-}
 
 /* ── Responsive Mobile Banner (< 1000px) ───────────────────────────── */
 .ad-mobile-unit {
