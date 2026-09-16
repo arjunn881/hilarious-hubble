@@ -1,0 +1,117 @@
+---
+/**
+ * TSAUpdatesBanner.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Sitewide regulatory update strip — shown globally via Layout.astro.
+ *
+ * Displays the latest confirmed TSA regulation changes so travellers never
+ * act on stale information.  Linked directly to official TSA.gov sources.
+ *
+ * INVARIANT:
+ *   • Zero client JavaScript — pure static HTML.
+ *   • Hidden on print (no-print class).
+ *   • Labelled with role="region" + aria-label for accessibility.
+ *   • All external links carry rel="noopener noreferrer".
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+---
+
+<div
+  class="no-print w-full bg-amber-50 dark:bg-amber-950/30 border-b border-amber-200 dark:border-amber-800/50"
+  role="region"
+  aria-label="TSA regulation updates 2026"
+>
+  <div class="max-w-[1200px] mx-auto px-4 md:px-6 py-2 flex items-start sm:items-center gap-3 flex-col sm:flex-row">
+
+    {/* Badge */}
+    <div class="flex items-center gap-2 flex-shrink-0">
+      <span class="flex items-center justify-center w-5 h-5 rounded-full bg-amber-500 flex-shrink-0">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+          <path d="M12 9v4M12 17h.01"/>
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+        </svg>
+      </span>
+      <span class="text-[10px] font-mono font-bold tracking-widest text-amber-800 dark:text-amber-300 uppercase whitespace-nowrap">
+        TSA 2026 Updates
+      </span>
+      <span class="hidden sm:block w-px h-3 bg-amber-300 dark:bg-amber-700"></span>
+    </div>
+
+    {/* Scrollable update pills */}
+    <div class="flex items-center gap-2 overflow-x-auto scrollbar-none pb-0.5 sm:pb-0 flex-1 min-w-0 w-full sm:w-auto">
+
+      {/* REAL ID */}
+      <a
+        href="https://www.tsa.gov/real-id"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white dark:bg-amber-900/40 border border-amber-200 dark:border-amber-700 hover:border-amber-400 dark:hover:border-amber-500 transition-colors text-[10.5px] font-medium text-amber-900 dark:text-amber-200 whitespace-nowrap group flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+        aria-label="REAL ID now required for US domestic flights — TSA.gov"
+      >
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 dark:text-amber-400 flex-shrink-0" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="16" rx="2"/>
+          <path d="M9 8h6M9 12h4"/>
+        </svg>
+        <span><strong class="font-semibold">REAL ID required</strong> for all US domestic flights</span>
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-amber-500 group-hover:text-amber-700 dark:group-hover:text-amber-300 transition-colors" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+
+      <span class="w-px h-3 bg-amber-200 dark:bg-amber-700 flex-shrink-0" aria-hidden="true"></span>
+
+      {/* TSA ConfirmID fee */}
+      <a
+        href="https://www.tsa.gov/travel/security-screening/identification"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white dark:bg-amber-900/40 border border-amber-200 dark:border-amber-700 hover:border-amber-400 dark:hover:border-amber-500 transition-colors text-[10.5px] font-medium text-amber-900 dark:text-amber-200 whitespace-nowrap group flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+        aria-label="TSA ConfirmID — $45 fee to verify identity without ID — TSA.gov"
+      >
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 dark:text-amber-400 flex-shrink-0" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 8v4M12 16h.01"/>
+        </svg>
+        <span>No ID? <strong class="font-semibold">TSA ConfirmID costs $45</strong> (since Feb 2026)</span>
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-amber-500 group-hover:text-amber-700 dark:group-hover:text-amber-300 transition-colors" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+
+      <span class="w-px h-3 bg-amber-200 dark:bg-amber-700 flex-shrink-0" aria-hidden="true"></span>
+
+      {/* Gateside PreCheck */}
+      <a
+        href="https://www.tsa.gov/precheck"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white dark:bg-amber-900/40 border border-amber-200 dark:border-amber-700 hover:border-amber-400 dark:hover:border-amber-500 transition-colors text-[10.5px] font-medium text-amber-900 dark:text-amber-200 whitespace-nowrap group flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+        aria-label="Gateside by TSA PreCheck — escort guests without boarding pass at 13 airports"
+      >
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 dark:text-amber-400 flex-shrink-0" aria-hidden="true">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <span><strong class="font-semibold">Gateside PreCheck</strong> — escort guests at 13 airports</span>
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-amber-500 group-hover:text-amber-700 dark:group-hover:text-amber-300 transition-colors" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+
+      <span class="w-px h-3 bg-amber-200 dark:bg-amber-700 flex-shrink-0" aria-hidden="true"></span>
+
+      {/* CT Scanners / Liquids */}
+      <a
+        href="https://www.tsa.gov/travel/security-screening/liquids-rule"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white dark:bg-amber-900/40 border border-amber-200 dark:border-amber-700 hover:border-amber-400 dark:hover:border-amber-500 transition-colors text-[10.5px] font-medium text-amber-900 dark:text-amber-200 whitespace-nowrap group flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+        aria-label="CT scanner airports may waive 3-1-1 liquid removal — TSA.gov"
+      >
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 dark:text-amber-400 flex-shrink-0" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        <span><strong class="font-semibold">CT scanner airports</strong> may skip 3-1-1 liquid removal</span>
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-amber-500 group-hover:text-amber-700 dark:group-hover:text-amber-300 transition-colors" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+
+    </div>
+
+  </div>
+</div>

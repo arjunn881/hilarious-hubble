@@ -191,6 +191,11 @@ export const LUGGAGE_FALLBACK: LuggageBrand = {
 // ─── § 4. eSIM & Insurance partners (Module C) ───────────────────────────────
 
 export const ESIM_PARTNERS = {
+  yesim: {
+    name: "Yesim",
+    url: "https://yesim.tpk.lu/nSZQQkYX",
+    pitch: "Instant eSIM mobile data in 160+ countries — activate before you fly.",
+  },
   airalo: {
     name: "Airalo",
     url: "https://www.airalo.com/",
@@ -204,6 +209,11 @@ export const ESIM_PARTNERS = {
 } as const;
 
 export const INSURANCE_PARTNERS = {
+  ekta: {
+    name: "EKTA Travel Insurance",
+    url: "https://ektatraveling.tpk.lu/iBSTDrvr",
+    pitch: "Fast worldwide medical & trip protection — accepted for visas, instant policy.",
+  },
   worldNomads: {
     name: "World Nomads",
     url: "https://www.worldnomads.com/",
@@ -215,3 +225,27 @@ export const INSURANCE_PARTNERS = {
     pitch: "Comprehensive trip cancellation, medical, and baggage protection.",
   },
 } as const;
+
+export const AIRPORT_PARTNERS = {
+  airhelp: {
+    name: "AirHelp",
+    url: "https://airhelp.tpk.lu/MotuJQgD",
+    pitch: "Check if the airline owes you up to $650 / €600 for delayed or cancelled flights.",
+  },
+  radicalStorage: {
+    name: "Radical Storage",
+    url: "https://radicalstorage.tpk.lu/7bh3hKRs",
+    pitch: "Secure luggage storage near airports and train stations in 500+ cities.",
+  },
+  kiwitaxi: {
+    name: "Kiwitaxi",
+    url: "https://kiwitaxi.tpk.lu/lTXByX4t",
+    pitch: "Pre-book a private airport taxi or shuttle with meet-and-greet in 100+ countries.",
+  },
+  klook: {
+    name: "Klook",
+    url: "https://klook.tpk.lu/sp5LYIRr",
+    pitch: "Discounted airport express train passes, tickets, and travel experiences worldwide.",
+  },
+} as const;
+

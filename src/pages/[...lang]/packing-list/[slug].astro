@@ -6,6 +6,7 @@ import Breadcrumbs from "../../../components/seo/Breadcrumbs.astro";
 import EEATBanner from "../../../components/seo/EEATBanner.astro";
 import RelatedLinksWidget from "../../../components/seo/RelatedLinksWidget.astro";
 import ChecklistAddon from "../../../components/monetization/ChecklistAddon.astro";
+import TravelServicesBar from "../../../components/monetization/TravelServicesBar.astro";
 import { 
   ArrowLeft, Sparkles, ClipboardCheck, AlertTriangle, ShieldCheck, 
   CheckCircle2, XCircle, AlertCircle, FileText, ChevronDown, Calendar, 
@@ -446,6 +447,9 @@ const relatedWidgetGroups = [
           {template.quickAnswer}
         </p>
       </div>
+
+      <!-- Above-the-fold sponsored travel services bar -->
+      <TravelServicesBar />
 
       <!-- CTA to Launch Interactive Assistant -->
       <div class="flex flex-wrap items-center gap-4 mt-6">

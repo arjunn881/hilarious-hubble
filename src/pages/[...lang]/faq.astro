@@ -4,6 +4,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { ArrowLeft, HelpCircle, ChevronDown, Package } from "@lucide/astro";
 import ChecklistAddon from "../../components/monetization/ChecklistAddon.astro";
+import TravelServicesBar from "../../components/monetization/TravelServicesBar.astro";
 import { langParams, resolveLang } from "../../i18n/config";
 import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "../../i18n/utils";
 import type { UIKey } from "../../i18n/ui";
@@ -325,6 +326,18 @@ const categories = [
       {
         q: "What are carry-on versus checked bag rules — what must go where?",
         a: "Carry-on only items: lithium battery power banks and portable chargers, vapes and e-cigarettes, spare lithium batteries, medications. Checked bag only items: firearms, ammunition, baseball bats, hiking poles, hockey sticks, large knives, safety razor blades, full-size tools over 7 inches. Either bag: most clothing, electronics (devices without spare batteries), solid food, books, documents, jewelry, toiletries (larger sizes in checked, 3.4 oz in carry-on)."
+      },
+      {
+        q: "Is a REAL ID required to fly domestically in the US?",
+        a: "Yes — as of May 7, 2025, TSA fully enforces REAL ID requirements for all domestic US flights. Adults 18 and older must present a REAL ID-compliant driver's license (marked with a gold or black star in the top corner) or another acceptable form of federal ID such as a U.S. passport, passport card, military ID, or DHS trusted traveler card (Global Entry, TSA PreCheck). Standard driver's licenses without the star are no longer accepted at TSA checkpoints for boarding domestic flights."
+      },
+      {
+        q: "What is TSA ConfirmID and how much does it cost?",
+        a: "TSA ConfirmID is a fee-based identity verification service for travelers who arrive at a TSA checkpoint without an acceptable ID (such as a REAL ID or passport). As of February 1, 2026, TSA charges a $45 non-refundable fee per person. The process takes 30 minutes or more and does not guarantee you will be cleared to board. The verification pass is valid for a 10-day window. TSA strongly recommends paying online in advance at tsa.gov/confirmid to avoid missing your flight. Using TSA ConfirmID is a last resort — always travel with a valid REAL ID or U.S. passport."
+      },
+      {
+        q: "What is Gateside by TSA PreCheck?",
+        a: "Gateside by TSA PreCheck is a new 2026 TSA program that allows enrolled TSA PreCheck members to pass through airport security without a boarding pass. This lets PreCheck members escort guests to departure gates or greet arriving passengers at the gate. The program is currently available at 13 U.S. airports including LAX, DFW, LAS, and SLC. Interested members must apply online one to three days in advance. If approved, they use standard PreCheck lanes with a valid government ID. The gateside pass is valid for one calendar day only."
       }
     ]
   },
@@ -802,6 +815,9 @@ const faqSchema = {
 
     <!-- Main content -->
     <div class="max-w-[860px] mx-auto px-4 md:px-6 py-14 space-y-16">
+
+      <!-- Above-the-fold sponsored travel services bar -->
+      <TravelServicesBar />
 
       {categories.map((cat, catIdx) => (
         <section id={`cat-${cat.id}`} class="scroll-mt-20">

@@ -24,6 +24,7 @@ import AirlineCountrySelector from "../../../components/AirlineCountrySelector.a
 import AmazonAffiliateBox from "../../../components/AmazonAffiliateBox.astro";
 import TsaGearSuggester from "../../../components/monetization/TsaGearSuggester.astro";
 import ChecklistAddon from "../../../components/monetization/ChecklistAddon.astro";
+import TravelServicesBar from "../../../components/monetization/TravelServicesBar.astro";
 import { getPopularGuides, getRelatedCategories, POPULAR_AIRLINES, POPULAR_COUNTRIES } from "../../../lib/relatedEngine";
 import { getCountryName } from "../../../i18n/places";
 import { langParams, localeMeta, resolveLang } from "../../../i18n/config";
@@ -508,6 +509,9 @@ const i18n = {
           <span class="text-mute">{t("item.alsoKnownAs")}</span> {item.aliases.join(", ")}
         </p>
       )}
+
+      <!-- Above-the-fold sponsored travel services bar -->
+      <TravelServicesBar />
 
       <!-- Action buttons for Traveler utilities -->
       <div class="flex flex-wrap items-center gap-3 mt-6 select-none">

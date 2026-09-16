@@ -3,6 +3,7 @@ import "../styles/global.css";
 import SearchModal from "../components/SearchModal.astro";
 import AdSideRails from "../components/AdSideRails.astro";
 import AdMobileBanner from "../components/AdMobileBanner.astro";
+import TSAUpdatesBanner from "../components/TSAUpdatesBanner.astro";
 import { ClientRouter } from "astro:transitions";
 import {
   getAlternateLinks,
@@ -465,6 +466,9 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     </a>
 
     <slot name="header" />
+
+    <!-- Sitewide TSA 2026 Regulation Updates Strip -->
+    <TSAUpdatesBanner />
 
     <AdSideRails />
 
