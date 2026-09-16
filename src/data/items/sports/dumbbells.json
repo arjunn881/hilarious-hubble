@@ -88,5 +88,19 @@
     }
   ],
   "restrictionType": "Blunt Object",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "Fit Simplify Resistance Loop Exercise Bands — Set of 5 (Travel Gym Alternative)",
+      "search": "resistance loop exercise bands set of 5 travel workout",
+      "why": "The perfect dumbbell replacement for travel — same muscle groups, weighs 100g, fits inside a shoe, and completely TSA-approved.",
+      "badge": "Best Seller"
+    },
+    {
+      "title": "TRX All-in-One Suspension Training System — Carry Bag Included",
+      "search": "trx suspension training system travel gym",
+      "why": "Hang from any hotel door or tree — full-body strength training that fits in a 2lb bag. The serious traveler's gym.",
+      "badge": "Travel Pick"
+    }
+  ]
 }

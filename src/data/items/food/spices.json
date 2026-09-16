@@ -90,5 +90,19 @@
     }
   ],
   "restrictionType": "Solid Food",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "Travel Spice Containers Set (Leak-proof, TSA-Friendly)",
+      "search": "travel spice containers set leak proof TSA carry on",
+      "why": "Compact spice jar set perfect for carry-on — keeps spices organized and well within the 12 oz powder screening threshold.",
+      "badge": "Travel Pick"
+    },
+    {
+      "title": "Silicone Seasoning Container Travel Set with Labels",
+      "search": "silicone seasoning container travel set labels refillable",
+      "why": "Reusable silicone spice bottles that seal tight and won't break in your bag — great for checked luggage too.",
+      "badge": null
+    }
+  ]
 }

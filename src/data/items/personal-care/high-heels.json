@@ -85,5 +85,19 @@
     }
   ],
   "restrictionType": "Liquid/Solid",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "YAMIU Travel Shoe Bags — Set of 4 Drawstring Waterproof Shoe Pouches",
+      "search": "travel shoe bags waterproof portable packing pouches",
+      "why": "Keep heel tips from snagging your clothes. These individual shoe bags protect high heels and keep your bag clean.",
+      "badge": "Travel Pick"
+    },
+    {
+      "title": "Heel Protectors for High Heels — Anti-Scratch Caps for Travel",
+      "search": "high heel protectors caps silicone stiletto stoppers travel",
+      "why": "Silicone heel caps prevent stiletto damage in transit. Transparent and fit most heel sizes.",
+      "badge": null
+    }
+  ]
 }

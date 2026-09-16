@@ -90,5 +90,25 @@
     }
   ],
   "restrictionType": "Solid Food",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "Fellow Atmos Vacuum Coffee Canister (500ml) — Airtight Travel Tin",
+      "search": "airtight coffee canister vacuum seal travel",
+      "why": "Vacuum-sealed canister keeps your freshly-bought beans fresh for weeks in checked luggage. Stops odours from spreading in your bag.",
+      "badge": "Editor's Choice"
+    },
+    {
+      "title": "Timemore Chestnut C2 Manual Coffee Grinder — Portable, Travel-Ready",
+      "search": "timemore chestnut manual coffee grinder portable travel",
+      "why": "Grind fresh beans anywhere — no electricity needed. Fits in a carry-on side pocket and doubles as a hotel-room coffee upgrade.",
+      "badge": "Travel Pick"
+    },
+    {
+      "title": "Lavazza Qualità Rossa Ground Coffee Vacuum Pack (250g)",
+      "search": "lavazza ground coffee vacuum pack 250g",
+      "why": "Vacuum-packed Italian ground coffee — airport security sees no powder issues and the freshness seal holds in luggage for weeks.",
+      "badge": null
+    }
+  ]
 }

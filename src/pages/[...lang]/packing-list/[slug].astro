@@ -5,6 +5,7 @@ import Footer from "../../../components/Footer.astro";
 import Breadcrumbs from "../../../components/seo/Breadcrumbs.astro";
 import EEATBanner from "../../../components/seo/EEATBanner.astro";
 import RelatedLinksWidget from "../../../components/seo/RelatedLinksWidget.astro";
+import ChecklistAddon from "../../../components/monetization/ChecklistAddon.astro";
 import { 
   ArrowLeft, Sparkles, ClipboardCheck, AlertTriangle, ShieldCheck, 
   CheckCircle2, XCircle, AlertCircle, FileText, ChevronDown, Calendar, 
@@ -604,6 +605,9 @@ const relatedWidgetGroups = [
 
     <!-- E-E-A-T Editorial Banner -->
     <EEATBanner lastUpdated={String(currentYear)} lang={lang} />
+
+    <!-- Monetization Layer: eSIM + Insurance (Module C) -->
+    <ChecklistAddon />
 
     <!-- Related Packing Lists Widget -->
     <RelatedLinksWidget groups={relatedWidgetGroups} />

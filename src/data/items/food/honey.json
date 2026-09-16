@@ -84,5 +84,19 @@
     }
   ],
   "restrictionType": "Solid Food",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "Honey Travel Squeeze Bottles — TSA-Compliant 3.4oz (100ml) Set of 4",
+      "search": "honey squeeze bottles leakproof TSA 3.4oz travel",
+      "why": "Carry your favourite honey in these leak-proof squeeze bottles — exactly 3.4 oz to pass TSA's 3-1-1 liquid rule without discussion.",
+      "badge": "TSA-Approved"
+    },
+    {
+      "title": "Manuka Health MGO 250+ Manuka Honey Travel Sachet Pack (12 x 5g)",
+      "search": "manuka honey travel packets individual sachets",
+      "why": "Individual portion sachets — each one is far under the 3.4 oz limit, so you can enjoy premium honey on every flight.",
+      "badge": "Travel Pick"
+    }
+  ]
 }

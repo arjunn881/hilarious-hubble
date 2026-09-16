@@ -97,5 +97,25 @@
     }
   ],
   "restrictionType": "Liquid/Solid",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "Ethique Eco-Friendly Solid Shampoo Bar — Travel-Friendly, Zero Liquid",
+      "search": "ethique shampoo bar solid zero waste travel",
+      "why": "A solid shampoo bar completely bypasses TSA's 3-1-1 liquids rule. Equivalent to 3 bottles of shampoo — perfect for long trips.",
+      "badge": "Best Seller"
+    },
+    {
+      "title": "Kitsch Castor Oil Solid Shampoo Bar for Hair Growth & Moisture",
+      "search": "kitsch shampoo bar castor oil solid travel",
+      "why": "Zero plastic, zero liquids worries. This bar lathers like liquid shampoo and is compact enough for any carry-on.",
+      "badge": "Travel Pick"
+    },
+    {
+      "title": "Silicone Travel Bottle Set TSA-Approved 3.4 oz (4 Pack, Leak-Proof)",
+      "search": "silicone travel bottles leak proof TSA approved 3.4oz toiletry set",
+      "why": "If you prefer liquid shampoo, these squeezable silicone bottles are exactly 3.4 oz — the TSA limit. Refill them before every trip.",
+      "badge": null
+    }
+  ]
 }

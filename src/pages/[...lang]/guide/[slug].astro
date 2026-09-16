@@ -6,6 +6,8 @@ import { ArrowLeft, Calendar, CheckCircle2, Bookmark, Share2, CheckSquare } from
 import Breadcrumbs from "../../../components/seo/Breadcrumbs.astro";
 import RelatedLinksWidget from "../../../components/seo/RelatedLinksWidget.astro";
 import EEATBanner from "../../../components/seo/EEATBanner.astro";
+import AmazonAffiliateBox from "../../../components/AmazonAffiliateBox.astro";
+import ChecklistAddon from "../../../components/monetization/ChecklistAddon.astro";
 import { getRelatedCategories, POPULAR_AIRLINES } from "../../../lib/relatedEngine";
 import { langParams, localeMeta, resolveLang } from "../../../i18n/config";
 import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "../../../i18n/utils";
@@ -41,7 +43,7 @@ const translatePath = useTranslatedPath(lang);
 
 const { post, slug } = Astro.props;
 const Content = post.default;
-const { title, description, category = "Travel Security", lastUpdated, isMedical = false, isLegal = false } = post.frontmatter;
+const { title, description, category = "Travel Security", lastUpdated, isMedical = false, isLegal = false, affiliateLinks } = post.frontmatter;
 
 const categoryPath = `/category/${categorySlug(category)}/`;
 const categoryLabel = getCategoryName(category, lang);
@@ -231,6 +233,12 @@ const relatedWidgetGroups = [
     <article class="article-content max-w-none">
       <Content />
     </article>
+
+    <!-- Amazon Affiliate Product Recommendations (Manual or Auto-Generated) -->
+    <AmazonAffiliateBox links={affiliateLinks} heading="What You'll Need for This Trip" title={title} category={category} />
+
+    <!-- Monetization Layer: eSIM + Insurance (Module C) -->
+    <ChecklistAddon />
 
     <!-- Advanced SEO Interlinking Clusters -->
     <div class="mt-12 pt-8 border-t border-hairline">

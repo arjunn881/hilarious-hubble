@@ -117,5 +117,25 @@
     }
   ],
   "restrictionType": "Solid Food",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "Samyang Buldak Hot Chicken Flavour Ramen — 5 Pack (Carry-On Approved)",
+      "search": "samyang buldak hot chicken ramen pack",
+      "why": "The internet-famous fire noodles in a flat travel pack. Solid food, TSA-approved, and packs flat into any carry-on pocket.",
+      "badge": "Viral Pick"
+    },
+    {
+      "title": "Nissin Cup Noodles Variety Pack (6 Count) — Classic Instant Noodles",
+      "search": "nissin cup noodles variety pack instant ramen",
+      "why": "Light, reliable airport and hotel-room meal. Just add hot water — most airport lounges and hotel rooms have a kettle.",
+      "badge": null
+    },
+    {
+      "title": "GSI Outdoors Folding Spork — Compact Travel Cutlery",
+      "search": "folding spork travel camping cutlery compact titanium",
+      "why": "Pack a reusable spork with your noodles so you're not dependent on airline plastic cutlery.",
+      "badge": "Eco Pick"
+    }
+  ]
 }

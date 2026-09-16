@@ -8,6 +8,7 @@ import { formatDate, localeMeta, useTranslations, useTranslatedPath, type Lang }
 import { getItemName } from "../../i18n/items";
 import { categorySlug, getCategoryName } from "../../i18n/categories";
 import { indexArticleOverlay, pickArticle } from "../../i18n/prose/articles";
+import ChecklistAddon from "../../components/monetization/ChecklistAddon.astro";
 import type { UIKey } from "../../i18n/ui";
 import type { RuleStatus } from "../../types/item";
 import {
@@ -1806,6 +1807,11 @@ const homeKeywords = [...new Set(_rawHomeKeywords.map(k => k.trim().toLowerCase(
       </div>
     </div>
   </section>
+
+  <!-- Monetization Layer: eSIM + Insurance (Module C) -->
+  <div class="max-w-[1000px] w-full mx-auto px-4 md:px-6 pb-12">
+    <ChecklistAddon />
+  </div>
 
   <!-- Footer Slot -->
   <Footer slot="footer" lang={lang} />

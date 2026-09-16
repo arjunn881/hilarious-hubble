@@ -172,5 +172,25 @@
     }
   ],
   "restrictionType": "Medical",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "Nature Made Melatonin 3mg Fast Dissolve Tablets (150 Count)",
+      "search": "nature made melatonin 3mg fast dissolve tablets",
+      "why": "Dissolves under the tongue instantly — no water needed mid-flight. Perfect for crossing multiple time zones.",
+      "badge": "Best Seller"
+    },
+    {
+      "title": "Natrol Melatonin Sleep Aid Advanced 10mg (60 Tablets)",
+      "search": "natrol melatonin 10mg sleep aid advanced",
+      "why": "Stronger dose for severe jet lag on ultra-long-haul routes. Bi-layer tablet releases slowly through the night.",
+      "badge": null
+    },
+    {
+      "title": "Pill Organizer Travel Case with 7 Compartments",
+      "search": "pill organizer travel case moisture proof compact",
+      "why": "Keep your melatonin, vitamins and prescriptions organized and TSA-checkpoint-ready in one compact case.",
+      "badge": "Travel Pick"
+    }
+  ]
 }

@@ -119,5 +119,19 @@
     }
   ],
   "restrictionType": "Liquid/Solid",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "Airtight Metal Pocket Pill & Pouch Container (Waterproof Travel Case)",
+      "search": "waterproof airtight metal pocket container pill canister travel",
+      "why": "Pocket-sized aluminum container keeps your pouches completely dry and odour-sealed during long international flights.",
+      "badge": "Travel Pick"
+    },
+    {
+      "title": "Compact Pocket Can Storage Dispenser with Snus / Pouch Disposal Lid",
+      "search": "metal snus can pocket storage dispenser disposal compartment",
+      "why": "Dual-compartment travel can allows discreet storage and clean disposal of used pouches while in flight.",
+      "badge": null
+    }
+  ]
 }

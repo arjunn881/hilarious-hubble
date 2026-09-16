@@ -1,11 +1,21 @@
-﻿---
+---
 title: "Can You Bring Honey on a Plane? TSA Rules & Canada Customs"
 description: "Can you bring honey on a plane? Learn TSA carry-on limits, international rules, and how to bring honey to Canada, Australia, and other countries."
 category: "Food & Snacks"
 lastUpdated: "2026-08-10"
 isMedical: false
 isLegal: false
+affiliateLinks:
+  - title: "Honey Travel Squeeze Bottles TSA-Compliant 3.4oz — Set of 4 (Leak-Proof)"
+    search: "honey squeeze bottles leak proof TSA 3.4oz travel set"
+    why: "Exactly 3.4 oz — the TSA liquid limit. Transfer your favourite artisan honey into these before flying carry-on."
+    badge: "TSA-Approved"
+  - title: "Pure Honey Individual Travel Sachets (Packets)"
+    search: "honey packets individual travel single serve sachets"
+    why: "Pre-portioned sachets are well within the 3.4 oz limit each. No fuss, no measuring, no spills in checked luggage."
+    badge: "Travel Pick"
 ---
+
 
 Honey is a liquid, which means it's subject to the 3.4 oz carry-on limit. That's the simple version. But honey also shows up frequently at customs as an agricultural product, which creates an entirely different set of issues depending on where you're landing. Here's everything you need to know.
 

@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import Breadcrumbs from "../../components/seo/Breadcrumbs.astro";
 import EEATBanner from "../../components/seo/EEATBanner.astro";
 import RelatedLinksWidget from "../../components/seo/RelatedLinksWidget.astro";
+import ChecklistAddon from "../../components/monetization/ChecklistAddon.astro";
 import { 
   ArrowLeft, Trash2, Plus, Printer, Download, Share2, 
   Calendar, ClipboardList, AlertTriangle, ShieldCheck, 
@@ -553,7 +554,10 @@ const i18n = {
 
       <!-- Static Google-Indexable Below-Fold SEO Content Section -->
       <section class="mt-16 border-t border-hairline pt-12 no-print">
-        
+
+        <!-- Monetization Layer: eSIM + Insurance recommendations (Module C) -->
+        <ChecklistAddon />
+
         <!-- Intro Header -->
         <div class="mb-10">
           <div class="flex items-center gap-2 mb-2">

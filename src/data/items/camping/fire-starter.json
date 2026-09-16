@@ -90,5 +90,25 @@
     }
   ],
   "restrictionType": "Sharp Object",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "UCO Stormproof Match Kit — Waterproof Matches for Travel",
+      "search": "UCO stormproof match kit waterproof camping",
+      "why": "Safety matches are the ONLY matches allowed in carry-on (1 book). UCO stormproof matches are checked-bag legal and waterproof — ideal for camping trips.",
+      "badge": "Top Pick"
+    },
+    {
+      "title": "All-Weather Emergency Fire Starter Flint Striker",
+      "search": "fire starter flint striker emergency survival camping",
+      "why": "A flint striker is TSA-allowed in checked luggage and produces sparks in any weather — an alternative to matches when you can't bring a lighter.",
+      "badge": null
+    },
+    {
+      "title": "Zippo Windproof Lighter — TSA: 1 Allowed in Pocket/Carry-On",
+      "search": "Zippo windproof lighter brushed chrome",
+      "why": "TSA allows 1 lighter on your person (not in bags). A quality Zippo is infinitely refillable — never buy disposable airport lighters again.",
+      "badge": "Classic Pick"
+    }
+  ]
 }

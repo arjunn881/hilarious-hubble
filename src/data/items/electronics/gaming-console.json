@@ -86,5 +86,25 @@
     }
   ],
   "restrictionType": "Electronic",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "Nintendo Switch Carrying Case — Hard Shell with 19 Game Cartridge Slots",
+      "search": "nintendo switch hard carrying case travel cartridge slots",
+      "why": "Hard-shell EVA case protects your Switch from luggage pressure. Fits games, cables and a charging brick in one zippered pack.",
+      "badge": "Best Seller"
+    },
+    {
+      "title": "Anker PowerCore 26800mAh Portable Charger — High-Capacity for Long Flights",
+      "search": "anker power bank 26800mah portable charger flight airline approved",
+      "why": "Charge your Switch 2–3 times from this power bank. Large enough for a 24-hour journey, compliant with airline lithium battery rules.",
+      "badge": "Travel Pick"
+    },
+    {
+      "title": "HORI Compact Playstand for Nintendo Switch",
+      "search": "hori compact playstand nintendo switch travel folding",
+      "why": "Foldable stand for tabletop mode on any tray table or hotel surface. Packs flat and weighs almost nothing.",
+      "badge": null
+    }
+  ]
 }

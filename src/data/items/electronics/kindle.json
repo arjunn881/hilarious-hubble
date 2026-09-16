@@ -79,5 +79,25 @@
     }
   ],
   "restrictionType": "Electronic",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "Kindle Paperwhite (16 GB) — 7\" display, adjustable warm light, waterproof",
+      "search": "kindle paperwhite 16gb waterproof glare free display",
+      "why": "The ultimate carry-on companion — 7\" glare-free display, weeks of battery life, and holds thousands of books without adding weight.",
+      "badge": "Best Seller"
+    },
+    {
+      "title": "Kindle (Lightest & Most Compact) — 6\" glare-free display",
+      "search": "kindle 6 inch glare free lightweight ereader",
+      "why": "Budget-friendly, feather-light e-reader. Perfect if you're new to Kindle or want a backup travel device.",
+      "badge": "Best Value"
+    },
+    {
+      "title": "Amazon Kindle Leather Cover with Auto Sleep/Wake",
+      "search": "kindle paperwhite leather cover protective slim case",
+      "why": "Slim protective cover with magnetic sleep/wake. Keeps your Kindle screen safe in a crowded bag.",
+      "badge": null
+    }
+  ]
 }

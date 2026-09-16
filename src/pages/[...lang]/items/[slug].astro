@@ -21,6 +21,9 @@ import EEATBanner from "../../../components/seo/EEATBanner.astro";
 import Breadcrumbs from "../../../components/seo/Breadcrumbs.astro";
 import RelatedLinksWidget from "../../../components/seo/RelatedLinksWidget.astro";
 import AirlineCountrySelector from "../../../components/AirlineCountrySelector.astro";
+import AmazonAffiliateBox from "../../../components/AmazonAffiliateBox.astro";
+import TsaGearSuggester from "../../../components/monetization/TsaGearSuggester.astro";
+import ChecklistAddon from "../../../components/monetization/ChecklistAddon.astro";
 import { getPopularGuides, getRelatedCategories, POPULAR_AIRLINES, POPULAR_COUNTRIES } from "../../../lib/relatedEngine";
 import { getCountryName } from "../../../i18n/places";
 import { langParams, localeMeta, resolveLang } from "../../../i18n/config";
@@ -596,6 +599,20 @@ const i18n = {
         </p>
       </div>
     </div>
+
+    <!-- Monetization Layer: Contextual gear CTAs (Module A) -->
+    <TsaGearSuggester
+      category={item.category}
+      itemName={itemName}
+      carryOnStatus={item.carryOn.status}
+      keywords={item.keywords}
+    />
+
+    <!-- Amazon Affiliate Product Recommendations (Manual or Auto-Generated) -->
+    <AmazonAffiliateBox links={item.affiliateLinks} item={item} />
+
+    <!-- Monetization Layer: eSIM + Insurance (Module C) -->
+    <ChecklistAddon />
 
     <!-- Official TSA Guidance -->
     <section class="bg-canvas border border-hairline rounded-md p-8 shadow-level-3 mb-10">

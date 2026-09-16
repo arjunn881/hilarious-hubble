@@ -12,8 +12,8 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 /**
- * The modal's behaviour lives in a plain `<script>`, which cannot read
- * `Astro.props`. Everything locale-dependent is therefore serialised onto the
+ * The modal's behaviour lives in an inline script block, which cannot read
+ * Astro.props. Everything locale-dependent is therefore serialised onto the
  * root element as a single JSON payload the script reads once on boot: the
  * index URL, the item-link prefix, and the strings it injects into result HTML.
  */

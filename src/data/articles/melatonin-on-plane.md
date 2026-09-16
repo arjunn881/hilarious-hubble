@@ -5,6 +5,19 @@ category: "Medicine & Health"
 lastUpdated: "2026-08-26"
 isMedical: true
 isLegal: false
+affiliateLinks:
+  - title: "Nature Made Melatonin 3mg Fast Dissolve (150 Count) — Instant Release"
+    search: "nature made melatonin fast dissolve tablets travel sleep"
+    why: "Dissolves without water — essential for mid-flight use. 3mg is the ideal starting dose for jet lag per sleep medicine guidelines."
+    badge: "Best Seller"
+  - title: "Natrol Melatonin Advanced Sleep 10mg (60 Bi-Layer Tabs)"
+    search: "natrol melatonin 10mg sleep aid advanced tablets"
+    why: "Bi-layer tablet: fast release to fall asleep + extended release to stay asleep. Great for ultra-long-haul routes."
+    badge: null
+  - title: "Sleep Mask + Ear Plugs Travel Set — Premium Memory Foam"
+    search: "contoured sleep mask ear plugs travel set blackout eye mask"
+    why: "Pair melatonin with a proper sleep mask for maximum effectiveness on overnight flights. Blocks all cabin light."
+    badge: "Travel Pick"
 ---
 
 Melatonin is probably the most underrated packing item for long-haul travel. A tiny tablet that costs almost nothing, takes up zero space, and genuinely helps your body adjust to a new timezone. But because rules around melatonin vary so dramatically by country, travelers often aren't sure if they'll have a problem at customs.
