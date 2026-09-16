@@ -25,6 +25,7 @@ import AmazonAffiliateBox from "../../../components/AmazonAffiliateBox.astro";
 import TsaGearSuggester from "../../../components/monetization/TsaGearSuggester.astro";
 import ChecklistAddon from "../../../components/monetization/ChecklistAddon.astro";
 import TravelServicesBar from "../../../components/monetization/TravelServicesBar.astro";
+import AdInArticle from "../../../components/AdInArticle.astro";
 import { getPopularGuides, getRelatedCategories, POPULAR_AIRLINES, POPULAR_COUNTRIES } from "../../../lib/relatedEngine";
 import { getCountryName } from "../../../i18n/places";
 import { langParams, localeMeta, resolveLang } from "../../../i18n/config";
@@ -657,6 +658,9 @@ const i18n = {
         </div>
       </div>
     </section>
+
+    <!-- Google AdSense In-Article Ad Unit (fluid, in-content) -->
+    <AdInArticle />
 
     <!-- Important Notes -->
     {item.carryOn.conditions && item.carryOn.conditions.length > 0 && (

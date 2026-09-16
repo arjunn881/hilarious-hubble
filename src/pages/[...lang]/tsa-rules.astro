@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import AdInArticle from "../../components/AdInArticle.astro";
 import { getAllItems } from "../../lib/items";
 import {
   CheckCircle2,
@@ -473,6 +474,9 @@ const toolSteps = [
             </p>
           </div>
         </section>
+
+        <!-- Google AdSense In-Article Ad (fluid, in-content) -->
+        <AdInArticle />
 
         <!-- Section 2: Battery Rules -->
         <section id="battery-rules" aria-labelledby="h2-battery">

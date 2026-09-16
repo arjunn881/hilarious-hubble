@@ -9,6 +9,7 @@ import EEATBanner from "../../../components/seo/EEATBanner.astro";
 import AmazonAffiliateBox from "../../../components/AmazonAffiliateBox.astro";
 import ChecklistAddon from "../../../components/monetization/ChecklistAddon.astro";
 import TravelServicesBar from "../../../components/monetization/TravelServicesBar.astro";
+import AdInArticle from "../../../components/AdInArticle.astro";
 import { getRelatedCategories, POPULAR_AIRLINES } from "../../../lib/relatedEngine";
 import { langParams, localeMeta, resolveLang } from "../../../i18n/config";
 import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "../../../i18n/utils";
@@ -238,6 +239,11 @@ const relatedWidgetGroups = [
       <Content />
     </article>
 
+    <!-- Google AdSense In-Article Ad (placed 2 paragraphs below the start of the article) -->
+    <div id="guide-in-article-ad-slot" class="hidden">
+      <AdInArticle />
+    </div>
+
     <!-- Amazon Affiliate Product Recommendations (Manual or Auto-Generated) -->
     <AmazonAffiliateBox links={affiliateLinks} heading="What You'll Need for This Trip" title={title} category={category} />
 
@@ -255,6 +261,23 @@ const relatedWidgetGroups = [
 
 <script define:vars={{ i18n }}>
   function setupGuideUtilities() {
+    // ── Insert In-Article Ad 2 paragraphs below the start of the article ──
+    const article = document.querySelector(".article-content");
+    const adSlot = document.getElementById("guide-in-article-ad-slot");
+    if (article && adSlot) {
+      const paragraphs = article.querySelectorAll("p");
+      if (paragraphs.length >= 2) {
+        paragraphs[1].after(adSlot);
+        adSlot.classList.remove("hidden");
+      } else if (paragraphs.length > 0) {
+        paragraphs[0].after(adSlot);
+        adSlot.classList.remove("hidden");
+      } else {
+        article.prepend(adSlot);
+        adSlot.classList.remove("hidden");
+      }
+    }
+
     // ── Share Link Copy Button ────────────────────────────────
     const shareBtn = document.getElementById("btn-share-link");
     const shareToast = document.getElementById("share-toast");
