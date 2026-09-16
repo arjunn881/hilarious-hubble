@@ -396,13 +396,38 @@ body,
   }
 }
 
-/* ── Native Auto Ads Compatibility ─────────────────────────────────
-   Main content uses natural layout and centered columns so Google
-   Auto Ads Side Rails can automatically occupy viewport gutters on widescreen. */
-#main-content {
-  max-width: 100%;
-  width: 100%;
+/* ── Side Rail Ads — balanced gutter creation for Google Auto Ads (1000px–1439px) ───
+   Google Auto Ads Side Rails require:
+     1. Viewport ≥ 1000px wide (such as 1024px iPad Pro / small laptop)
+     2. At least ≥120px of free gutter clearance on each side of the content
+
+   By setting top-level content columns to max-width: calc(100% - 260px) with margin-inline: auto,
+   we guarantee exactly 130px symmetric side gutters so Google Auto Ads detects available
+   rail space and shows native side rail ads on 1024px screens. */
+@media (min-width: 1000px) and (max-width: 1439px) {
+  #main-content {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  #main-content > .mx-auto,
+  #main-content > section > .mx-auto,
+  #main-content > div > .mx-auto {
+    max-width: calc(100% - 260px) !important;
+    margin-inline: auto !important;
+    box-sizing: border-box;
+  }
 }
+
+@media (min-width: 1440px) {
+  #main-content {
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+  .ad-page-body {
+    max-width: 100% !important;
+  }
+}
+
 
 
 /* ── Responsive Mobile Banner (< 1000px) ───────────────────────────── */
