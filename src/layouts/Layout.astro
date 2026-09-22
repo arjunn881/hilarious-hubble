@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import SearchModal from "../components/SearchModal.astro";
-import AdMobileBanner from "../components/AdMobileBanner.astro";
 import TSAUpdatesBanner from "../components/TSAUpdatesBanner.astro";
 import { ClientRouter } from "astro:transitions";
 import {
@@ -99,11 +98,134 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
   class="scroll-smooth max-w-full overflow-x-clip"
 >
   <head>
-    <ClientRouter />
-    <!-- Google AdSense (dynamically loaded to prevent Astro ClientRouter data-astro-exec warnings) -->
+    <!-- Vendor error/warning guards and Google AdSense initialization -->
     <script is:inline>
       (function () {
-        // 1. Delete third-party vendor console.log spam (e.g. Travelpayouts [tp] telemetry)
+        function patchPerformanceObserver(targetWin) {
+          try {
+            if (targetWin.PerformanceObserver && targetWin.PerformanceObserver.prototype) {
+              var origObserve = targetWin.PerformanceObserver.prototype.observe;
+              targetWin.PerformanceObserver.prototype.observe = function (options) {
+                if (options && options.entryTypes && options.buffered) {
+                  // W3C Performance Timeline spec prohibits 'buffered: true' when 'entryTypes' is used.
+                  // Split into individual type calls with buffered: true, or remove buffered flag.
+                  if (Array.isArray(options.entryTypes)) {
+                    var self = this;
+                    var allOk = true;
+                    options.entryTypes.forEach(function (type) {
+                      try {
+                        origObserve.call(self, { type: type, buffered: true });
+                      } catch (e) {
+                        allOk = false;
+                      }
+                    });
+                    if (allOk) return;
+                  }
+                  var safeOptions = Object.assign({}, options);
+                  delete safeOptions.buffered;
+                  return origObserve.call(this, safeOptions);
+                }
+                return origObserve.apply(this, arguments);
+              };
+            }
+          } catch (e) {}
+        }
+
+        function isVendorError(msg, src) {
+          var m = (msg || "").toLowerCase();
+          var s = (src || "").toLowerCase();
+          return (
+            m.indexOf("lima_error") !== -1 ||
+            m.indexOf("empty ad response") !== -1 ||
+            m.indexOf("performanceobserver") !== -1 ||
+            m.indexOf("buffered flag") !== -1 ||
+            m.indexOf("chunk.bkbau") !== -1 ||
+            m.indexOf("vignette") !== -1 ||
+            s.indexOf("outstream") !== -1 ||
+            s.indexOf("chunk.bkbau") !== -1 ||
+            s.indexOf("emrldtp") !== -1 ||
+            s.indexOf("ntc0nje2") !== -1 ||
+            s.indexOf("doubleclick") !== -1 ||
+            s.indexOf("googlesyndication") !== -1
+          );
+        }
+
+        function guardWindow(w) {
+          try {
+            if (!w || w.__guards_installed) return;
+            w.__guards_installed = true;
+
+            patchPerformanceObserver(w);
+
+            var prevOnError = w.onerror;
+            w.onerror = function (msg, src, line, col, err) {
+              var m = (msg || "") + " " + (err && err.message ? err.message : "");
+              var s = (src || "") + " " + (err && err.stack ? err.stack : "");
+              if (isVendorError(m, s)) {
+                return true; // Suppress console error in DevTools
+              }
+              if (prevOnError) return prevOnError.apply(this, arguments);
+              return false;
+            };
+
+            w.addEventListener(
+              "error",
+              function (e) {
+                var m = (e.message || "") + " " + (e.error && e.error.message ? e.error.message : "");
+                var s = (e.filename || "") + " " + (e.error && e.error.stack ? e.error.stack : "");
+                if (isVendorError(m, s)) {
+                  e.preventDefault();
+                  e.stopImmediatePropagation();
+                  return true;
+                }
+              },
+              true
+            );
+
+            if (w.console) {
+              var origErr = w.console.error;
+              w.console.error = function () {
+                try {
+                  var str = "";
+                  for (var i = 0; i < arguments.length; i++) {
+                    var arg = arguments[i];
+                    if (typeof arg === "string") {
+                      str += " " + arg;
+                    } else if (arg && typeof arg === "object") {
+                      str += " " + (arg.message || "") + " " + (arg.stack || "");
+                    }
+                  }
+                  if (isVendorError(str, str)) {
+                    return;
+                  }
+                } catch (e) {}
+                origErr.apply(w.console, arguments);
+              };
+            }
+          } catch (e) {}
+        }
+
+        // 1. Guard current top window
+        guardWindow(window);
+
+        // 2. Intercept dynamically created child iframes (used by AdSense / video ads like outstream.min.js)
+        try {
+          var desc = Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype, "contentWindow");
+          if (desc && desc.get) {
+            var origGet = desc.get;
+            Object.defineProperty(HTMLIFrameElement.prototype, "contentWindow", {
+              get: function () {
+                var win = origGet.call(this);
+                if (win) guardWindow(win);
+                return win;
+              },
+              configurable: true,
+              enumerable: true,
+            });
+          }
+        } catch (e) {}
+
+        // 3. Delete third-party vendor console.log spam (e.g. Travelpayouts [tp] telemetry)
         var _log = console.log;
         console.log = function () {
           if (arguments[0] && typeof arguments[0] === "string" && arguments[0].indexOf("[tp]") !== -1) {
@@ -112,7 +234,7 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
           _log.apply(console, arguments);
         };
 
-        // 2. Suppress harmless vendor warnings (Astro ClientRouter, PerformanceObserver buffered flag)
+        // 4. Suppress harmless vendor warnings (Astro ClientRouter, PerformanceObserver buffered flag)
         var _warn = console.warn;
         console.warn = function () {
           if (arguments[0] && typeof arguments[0] === "string") {
@@ -127,7 +249,7 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
           _warn.apply(console, arguments);
         };
 
-        // 3. Intercept Travelpayouts adblock probe to eliminate DoubleClick 400 Bad Request
+        // 5. Intercept Travelpayouts adblock probe to eliminate DoubleClick 400 Bad Request
         if (typeof window.fetch === "function") {
           var _fetch = window.fetch;
           window.fetch = function (resource, init) {
@@ -141,42 +263,21 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
           };
         }
 
-        // 4. Suppress unhandled internal vendor errors from Google ad creatives and Travelpayouts
-        window.addEventListener("error", function (e) {
-          if (
-            (e.message && (
-              e.message.indexOf("vignette") !== -1 ||
-              e.message.indexOf("lima_error") !== -1 ||
-              e.message.indexOf("PerformanceObserver") !== -1 ||
-              e.message.indexOf("chunk.BkBAu") !== -1
-            )) ||
-            (e.filename && (
-              e.filename.indexOf("doubleclick") !== -1 ||
-              e.filename.indexOf("googlesyndication") !== -1 ||
-              e.filename.indexOf("outstream") !== -1 ||
-              e.filename.indexOf("emrldtp") !== -1 ||
-              e.filename.indexOf("chunk.BkBAu") !== -1 ||
-              e.filename.indexOf("NTc0NjE2") !== -1
-            ))
-          ) {
-            e.preventDefault();
-            return true;
-          }
-        });
-
-        // 5. Suppress unhandled promise rejections from third-party vendor scripts
+        // 6. Suppress unhandled promise rejections from third-party vendor scripts
         window.addEventListener("unhandledrejection", function (e) {
           if (
             e.reason && (
               (e.reason.message && (
                 e.reason.message.indexOf("securepubads") !== -1 ||
                 e.reason.message.indexOf("chunk.BkBAu") !== -1 ||
-                e.reason.message.indexOf("emrldtp") !== -1
+                e.reason.message.indexOf("emrldtp") !== -1 ||
+                e.reason.message.indexOf("lima_error") !== -1
               )) ||
               (e.reason.stack && (
                 e.reason.stack.indexOf("chunk.BkBAu") !== -1 ||
                 e.reason.stack.indexOf("NTc0NjE2") !== -1 ||
-                e.reason.stack.indexOf("emrldtp") !== -1
+                e.reason.stack.indexOf("emrldtp") !== -1 ||
+                e.reason.stack.indexOf("outstream") !== -1
               ))
             )
           ) {
@@ -184,28 +285,9 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
             return true;
           }
         });
-
-        if (!document.querySelector('script[src*="pagead2.googlesyndication.com"]')) {
-          var s = document.createElement("script");
-          s.async = true;
-          s.crossOrigin = "anonymous";
-          s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422";
-
-          try {
-            var observer = new MutationObserver(function (mutations) {
-              for (var i = 0; i < mutations.length; i++) {
-                if (mutations[i].attributeName === "data-astro-exec") {
-                  s.removeAttribute("data-astro-exec");
-                }
-              }
-            });
-            observer.observe(s, { attributes: true, attributeFilter: ["data-astro-exec"] });
-          } catch (e) {}
-
-          document.head.appendChild(s);
-        }
       })();
     </script>
+    <ClientRouter />
     <script is:inline>
       (function () {
         try {
@@ -250,6 +332,8 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422" crossorigin="anonymous"></script>
 
     {prevURL && <link rel="prev" href={prevURL} />}
     {nextURL && <link rel="next" href={nextURL} />}
@@ -297,6 +381,13 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
           ? "noindex, nofollow"
           : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
     />
+    <!-- Enforce noindex on Cloudflare Pages (*.pages.dev) preview domains -->
+    <script is:inline>
+      if (typeof window !== "undefined" && window.location.hostname.endsWith(".pages.dev")) {
+        var el = document.querySelector('meta[name="robots"]');
+        if (el) el.setAttribute("content", "noindex, nofollow");
+      }
+    </script>
     <meta name="author" content="BringOnPlane" />
     <meta name="copyright" content="BringOnPlane" />
     <meta name="language" content={meta.metaLanguage} />
@@ -516,7 +607,7 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <slot name="head" />
   </head>
   <body
-    class="min-h-screen flex flex-col bg-canvas-soft text-ink font-sans selection:bg-primary selection:text-on-primary max-w-full relative ad-page-body"
+    class="min-h-screen flex flex-col bg-canvas-soft text-ink font-sans selection:bg-primary selection:text-on-primary max-w-full relative"
   >
     <!-- Skip to content link for accessibility -->
     <a
@@ -535,8 +626,6 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <main id="main-content" class="flex-1 flex flex-col w-full">
       <slot />
     </main>
-
-    <AdMobileBanner />
 
     <slot name="footer" />
     <SearchModal lang={lang} />

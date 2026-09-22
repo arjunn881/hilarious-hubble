@@ -1,8 +1,16 @@
+# Prevent search engine indexing on Cloudflare Pages domains (*.pages.dev)
 https://bringonplane.pages.dev/*
-  X-Robots-Tag: noindex
+  X-Robots-Tag: noindex, nofollow
 
 https://*.bringonplane.pages.dev/*
-  X-Robots-Tag: noindex
+  X-Robots-Tag: noindex, nofollow
+
+https://hilarious-hubble.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+
+https://*.hilarious-hubble.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+
 
 
 
