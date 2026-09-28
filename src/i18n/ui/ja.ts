@@ -559,6 +559,15 @@ export const ja = {
   'guide.verifiedHeading': 'TSA公式ガイドラインと照合済み',
   'guide.quickAnswer': '要点',
 
+  'guide.title': '{title} | BringOnPlane旅行ガイド',
+  'guide.description': '{description}',
+  'guide.keywords': '{title}, TSA {category}ルール, {category}機内持ち込み, TSA {year}年規則, 空港セキュリティ {category}, BringOnPlaneガイド',
+  'guide.faq.allowed': '{item}は機内持ち込み可能ですか？',
+  'guide.faq.rules': '{item}のTSAルールは何ですか？',
+  'guide.faq.international': '{item}を国際線に持ち込めますか？',
+  'guide.faq.allowedAnswer': 'TSAによると、{item}は機内持ち込みが許可されています。{reason}',
+  'guide.faq.notAllowedAnswer': 'TSAによると、{item}は機内持ち込みが禁止されています。{reason}',
+  'guide.faq.restrictedAnswer': 'TSAによると、{item}の機内持ち込みには制限があります。{reason}',
   // ── Packing lists ─────────────────────────────────────────────────────────
   'packing.title': '{list}の持ち物リストとTSAチェックリスト（{year}年） | BringOnPlane',
   'packing.description':

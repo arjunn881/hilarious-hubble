@@ -94,16 +94,62 @@ https://www.bringonplane.com/* https://bringonplane.com/:splat 301
 /guide/carry-on-only-packing-guide/         /guides/ 301
 
 # ── Non-existent category pages → item catalog ────────────────────────────────
-/category/clothing-accessories  /items/page/1/ 301
-/category/clothing-accessories/ /items/page/1/ 301
-/category/sports-outdoors       /items/page/1/ 301
-/category/sports-outdoors/      /items/page/1/ 301
-/category/flammables            /items/page/1/ 301
-/category/flammables/           /items/page/1/ 301
-/category/weapons               /items/page/1/ 301
-/category/weapons/              /items/page/1/ 301
-/category/household             /items/page/1/ 301
-/category/household/            /items/page/1/ 301
+/category/clothing-accessories         /items/page/1/ 301
+/category/clothing-accessories/        /items/page/1/ 301
+/category/clothing-and-accessories     /items/page/1/ 301
+/category/clothing-and-accessories/    /items/page/1/ 301
+/category/sports-outdoors              /items/page/1/ 301
+/category/sports-outdoors/             /items/page/1/ 301
+/category/sports-and-outdoors          /items/page/1/ 301
+/category/sports-and-outdoors/         /items/page/1/ 301
+/category/flammables                   /items/page/1/ 301
+/category/flammables/                  /items/page/1/ 301
+/category/fire-and-hazardous           /items/page/1/ 301
+/category/fire-and-hazardous/          /items/page/1/ 301
+/category/fire-hazardous               /items/page/1/ 301
+/category/fire-hazardous/              /items/page/1/ 301
+/category/weapons                      /items/page/1/ 301
+/category/weapons/                     /items/page/1/ 301
+/category/household                    /items/page/1/ 301
+/category/household/                   /items/page/1/ 301
+/category/household-items              /items/page/1/ 301
+/category/household-items/             /items/page/1/ 301
+/category/medicine-and-health          /category/medicine/ 301
+/category/medicine-and-health/         /category/medicine/ 301
+/category/food-and-snacks              /category/food/ 301
+/category/food-and-snacks/             /category/food/ 301
+/category/food-snacks                  /category/food/ 301
+/category/food-snacks/                 /category/food/ 301
+/category/tools-and-sharp-objects      /category/tools/ 301
+/category/tools-and-sharp-objects/     /category/tools/ 301
+/category/tools-sharp-objects          /category/tools/ 301
+/category/tools-sharp-objects/         /category/tools/ 301
+/category/security                     /category/documents/ 301
+/category/security/                    /category/documents/ 301
+/category/carry-on-rules               /guides/ 301
+/category/carry-on-rules/              /guides/ 301
+/category/tobacco-smoking              /items/page/1/ 301
+/category/tobacco-smoking/             /items/page/1/ 301
+
+# ── Localized bad category slugs → localized item catalog ─────────────────────
+# (catches /es/category/weapons/, /de/category/household/, etc.)
+/:lang/category/sports-and-outdoors/   /:lang/items/page/1/ 301
+/:lang/category/household/             /:lang/items/page/1/ 301
+/:lang/category/flammables/            /:lang/items/page/1/ 301
+/:lang/category/weapons/               /:lang/items/page/1/ 301
+/:lang/category/fire-and-hazardous/    /:lang/items/page/1/ 301
+/:lang/category/medicine-and-health/   /:lang/category/medicine/ 301
+/:lang/category/food-and-snacks/       /:lang/category/food/ 301
+/:lang/category/tools-and-sharp-objects/ /:lang/category/tools/ 301
+/:lang/category/clothing-and-accessories/ /:lang/items/page/1/ 301
+/:lang/category/security/              /:lang/category/documents/ 301
+/:lang/category/carry-on-rules/        /:lang/guides/ 301
+
+# ── Additional missing guide slugs from GSC 404 report ────────────────────────
+/guide/flying-to-canada-baggage-rules  /guides/ 301
+/guide/flying-to-canada-baggage-rules/ /guides/ 301
+/guide/can-you-bring-cologne-on-plane  /items/cologne/ 301
+/guide/can-you-bring-cologne-on-plane/ /items/cologne/ 301
 
 # ── Trailing-slash enforcement ────────────────────────────────────────────────
 /items/:slug/airline/:airline    /items/:slug/airline/:airline/ 301

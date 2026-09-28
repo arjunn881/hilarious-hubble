@@ -562,6 +562,15 @@ export const de = {
   'guide.verifiedHeading': 'Mit den offiziellen TSA-Richtlinien abgeglichen',
   'guide.quickAnswer': 'Kurze Antwort',
 
+  'guide.title': '{title} | BringOnPlane Reiseführer',
+  'guide.description': '{description}',
+  'guide.keywords': '{title}, TSA {category} regeln, {category} handgepäck, TSA {year} regeln, flughafen sicherheit {category}, bringonplane ratgeber',
+  'guide.faq.allowed': 'Ist {item} im Handgepäck erlaubt?',
+  'guide.faq.rules': 'Was sind die TSA-Regeln für {item}?',
+  'guide.faq.international': 'Kann ich {item} auf einem internationalen Flug mitnehmen?',
+  'guide.faq.allowedAnswer': 'Laut TSA ist {item} im Handgepäck erlaubt. {reason}',
+  'guide.faq.notAllowedAnswer': 'Laut TSA ist {item} im Handgepäck nicht erlaubt. {reason}',
+  'guide.faq.restrictedAnswer': 'Laut TSA gilt für {item} im Handgepäck eine Einschränkung. {reason}',
   // ── Packing lists ─────────────────────────────────────────────────────────
   'packing.title': 'Packliste {list} und TSA-Checkliste ({year}) | BringOnPlane',
   'packing.description':

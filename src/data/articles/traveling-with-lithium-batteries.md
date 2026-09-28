@@ -7,7 +7,7 @@ lastUpdated: "2026-06-30"
 
 Lithium-ion and lithium-metal batteries are classified as hazardous materials by aviation safety regulators like the FAA and TSA. Because of their potential to overheat and cause cargo fires, strict packing regulations apply.
 
-The rule for lithium batteries comes down to one question: can your device go in checked luggage? Some lithium battery devices can, some can't, and loose batteries follow their own set of rules. Here's the clear breakdown so you know where to pack what.
+The rule for [lithium batteries](/items/lithium-batteries/) comes down to one question: can your device go in checked luggage? Some [lithium battery](/items/camera-battery/) devices can, some can't, and loose batteries follow their own set of rules. Here's the clear breakdown so you know where to pack what.
 
 ---
 
@@ -15,11 +15,11 @@ The rule for lithium batteries comes down to one question: can your device go in
 
 The rules differ significantly depending on whether a battery is **loose (spare)** or **inside a device**:
 
-- **Spare Lithium Batteries**: Must go in **carry-on baggage only**. Spare battery terminals must be protected from short circuits (e.g. by taping terminals or packing in individual plastic pouches).
-- **Batteries Installed in Devices**: Laptops, phones, and tablets with built-in batteries are allowed in **both carry-on and checked luggage**. However, safety agencies strongly recommend carry-on packing.
+- **Spare Lithium Batteries**: Must go in **carry-on baggage only**. [Spare battery](/items/camera-battery/) terminals must be protected from short circuits (e.g. by taping terminals or packing in individual plastic pouches).
+- **Batteries Installed in Devices**: Laptops, phones, and [tablets](/items/ipad/) with built-in batteries are allowed in **both carry-on and checked luggage**. However, safety agencies strongly recommend carry-on packing.
 
 > [!WARNING]
-> Loose power banks, external battery chargers, and spare lithium cells are **strictly prohibited in checked baggage**. If checked at the ticket counter, security staff will remove them from your luggage.
+> Loose [power banks](/items/battery-pack/), [external battery](/items/battery-pack/) chargers, and spare lithium cells are **strictly prohibited in checked baggage**. If checked at the [ticket](/items/boarding-pass/) counter, security staff will remove them from your luggage.
 
 ---
 
@@ -35,16 +35,16 @@ FAA rules specify limits based on the battery capacity measured in **Watt-hours 
 
 ## Safety Tips for Packing Batteries
 
-1. **Keep Power Banks in Cabin**: Never pack portable power banks in luggage that you check at the ticket counter or gate.
-2. **Prevent Accidental Activation**: Turn devices containing batteries (like [electric toothbrushes](/guide/electric-toothbrush-on-plane) or laptops) completely off. Do not leave them in sleep or standby mode.
+1. **Keep [Power Banks](/items/portable-charger/) in Cabin**: Never pack portable power banks in luggage that you check at the ticket counter or gate.
+2. **Prevent Accidental Activation**: Turn devices containing batteries (like [electric toothbrushes](/guide/electric-toothbrush-on-plane/) or laptops) completely off. Do not leave them in sleep or standby mode.
 3. **Tape Terminals**: Protect spare battery connection terminals with electrical tape or place them in individual zip baggies.
 
 ---
 
 ## See Also
 
-- [Can You Bring an Electric Toothbrush on a Plane?](/guide/electric-toothbrush-on-plane)
-- [Can You Bring a Laptop on a Plane?](/guide/laptop-on-plane)
-- [Can You Bring a Power Bank on a Plane?](/guide/power-bank-on-plane)
-- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item)
-- [What Is TSA PreCheck? Laptops Stay in Your Bag](/guide/what-is-tsa-precheck)
+- [Can You Bring an Electric Toothbrush on a Plane?](/guide/electric-toothbrush-on-plane/)
+- [Can You Bring a Laptop on a Plane?](/guide/laptop-on-plane/)
+- [Can You Bring a Power Bank on a Plane?](/guide/power-bank-on-plane/)
+- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item/)
+- [What Is TSA PreCheck? Laptops Stay in Your Bag](/guide/what-is-tsa-precheck/)

@@ -7,9 +7,9 @@ isMedical: false
 isLegal: true
 ---
 
-ZYN, Velo, On!, Rogue — nicotine pouches have become the go-to travel companion for anyone trying to stay nicotine-satisfied on a long flight without dealing with cravings at 35,000 feet. No smoke, no vapor, no smell. They're discreet, they're solid, and for most of the world, they're completely unrestricted.
+ZYN, Velo, On!, Rogue — [nicotine pouches](/items/nicotine-pouches/) have become the go-to travel companion for anyone trying to stay nicotine-satisfied on a long flight without dealing with cravings at 35,000 feet. No smoke, no vapor, no smell. They're discreet, they're solid, and for most of the world, they're completely unrestricted.
 
-**In the US and across most of Europe, nicotine pouches are fully allowed in both carry-on and checked bags.** No TSA declaration, no quantity limit, no issues.
+**In the US and across most of Europe, [nicotine pouches](/items/nicotine-pouches/) are fully allowed in both carry-on and checked bags.** No TSA declaration, no quantity limit, no issues.
 
 But there's a short list of countries where "mostly fine" becomes "serious legal problem" — and Singapore is at the top of it. If your route touches Singapore Changi, you need to read this carefully.
 
@@ -30,7 +30,7 @@ But there's a short list of countries where "mostly fine" becomes "serious legal
 
 Here's a scenario worth understanding: you're connecting through Amsterdam Schiphol on your way from New York to Sydney. Three tins of ZYN 6mg are in your carry-on. The Dutch security officer doesn't look twice — they're a solid consumer product, no different than a tin of mints on the scanner. You board, fly for 12 hours, and land in Singapore for your connection.
 
-That's where things can go badly wrong. Singapore Changi isn't a simple transit point. If you need to clear immigration or if your bags get re-checked to a new flight, Singapore Customs can — and does — screen for nicotine pouches. The fine is up to SGD $2,000. They don't negotiate.
+That's where things can go badly wrong. Singapore Changi isn't a simple transit point. If you need to clear immigration or if your bags get re-checked to a new flight, Singapore Customs can — and does — [screen](/items/ipad/) for nicotine [pouches](/items/baby-food/). The fine is up to SGD $2,000. They don't negotiate.
 
 Knowing which countries are totally fine with pouches and which ones will seize them is genuinely important if you travel internationally.
 
@@ -42,15 +42,15 @@ In the US, nicotine pouches couldn't be simpler to travel with. They're solid �
 
 They don't count toward your 3-1-1 liquid bag. You don't need to declare them. You don't need to take them out of your bag at the security checkpoint. Pack as many as you want for a personal trip.
 
-Using them on the plane is also fine on most airlines. Unlike smoking or vaping, oral nicotine pouches produce zero smoke, zero vapor, and no smell. Most flight attendants don't even know you're using one. Just be discreet and dispose of used pouches hygienically in a tissue — not in the seat pocket.
+Using them on the plane is also fine on most airlines. Unlike smoking or vaping, oral nicotine pouches [produce](/items/fruit/) zero smoke, zero vapor, and no smell. Most flight attendants don't even know you're using one. Just be discreet and dispose of used pouches hygienically in a tissue — not in the seat pocket.
 
 ---
 
 ## Critical International Regulations: Singapore Changi Airport Ban
 
 > [!WARNING]
-> **Singapore Ban on Nicotine Pouches & Vapes**  
-> Under Singapore's *Tobacco (Control of Advertisements and Sale) Act*, all tobacco-free nicotine pouches, oral snus, and e-cigarettes are **completely illegal to import, possess, or purchase in Singapore**.
+> **Singapore Ban on Nicotine Pouches & [Vapes](/items/vape/)**  
+> Under Singapore's *[Tobacco](/items/cigarettes/) (Control of Advertisements and Sale) Act*, all tobacco-free nicotine pouches, oral [snus](/items/nicotine-pouches/), and [e-cigarettes](/items/e-cigarette/) are **completely illegal to import, possess, or purchase in Singapore**.
 > 
 > - **Fine:** Up to SGD $2,000 for possession or import at Singapore Changi Airport.
 > - **Transit Passengers:** If you have to clear immigration or change terminals with baggage re-check, your bags are subject to Singapore Customs scanning. Do not bring nicotine pouches into Singapore.
@@ -73,7 +73,7 @@ Canada sells nicotine pouches in convenience stores. Health Canada regulates the
 The UAE is the one destination where we'd say: just don't risk it. Enforcement is inconsistent, the rules keep shifting, and "some travelers are fine" is not the same as "it's legal." The UAE's Ministry of Health bans products it hasn't approved, and nicotine pouches are in an unclear position. Leave them at home if you're going to Dubai or Abu Dhabi.
 
 ### Thailand — Don't Bring Them
-Thailand classifies nicotine pouches under its e-cigarette analogue restrictions. Possession at Bangkok Suvarnabhumi can result in fines or confiscation. It's not worth the hassle.
+Thailand classifies nicotine pouches under its [e-cigarette](/items/vape/) analogue restrictions. Possession at Bangkok Suvarnabhumi can result in fines or confiscation. It's not worth the hassle.
 
 ---
 
@@ -125,7 +125,7 @@ Thailand classifies nicotine pouches under its e-cigarette analogue restrictions
 Yes! ZYN and all solid nicotine pouches are allowed in carry-on and personal item bags without quantity restrictions on US domestic and European flights.
 
 ### Can you pack nicotine pouches in checked luggage?
-Yes, nicotine pouches contain no lithium batteries or fire hazards, so they can be safely packed in checked suitcases.
+Yes, nicotine pouches contain no [lithium batteries](/items/lithium-batteries/) or fire hazards, so they can be safely packed in checked suitcases.
 
 ### What happens if you bring nicotine pouches to Singapore airport?
 Singapore Customs and airport security at Changi Airport will confiscate the pouches and issue on-the-spot fines up to SGD $2,000 for possession of banned tobacco analogues.

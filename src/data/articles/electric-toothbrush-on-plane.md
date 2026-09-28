@@ -11,12 +11,12 @@ Electric toothbrushes are genuinely easy to travel with. TSA has no restrictions
 
 ---
 
-## TSA Electric Toothbrush Rules Summary
+## TSA [Electric Toothbrush](/items/electric-toothbrush/) Rules Summary
 
 - **Carry-On (Cabin):** ✅ Allowed — no restrictions
-- **Checked Baggage:** ✅ Allowed — with one important note about lithium batteries
+- **Checked Baggage:** ✅ Allowed — with one important note about [lithium batteries](/items/lithium-batteries/)
 - **TSA Declaration Required:** No
-- **Battery rule:** Built-in rechargeable lithium batteries → carry-on preferred; AA/AAA batteries → either bag fine
+- **Battery rule:** Built-in [rechargeable lithium](/items/lithium-batteries/) batteries → carry-on preferred; AA/[AAA batteries](/items/aaa-batteries/) → either bag fine
 
 ---
 
@@ -28,11 +28,11 @@ Electric toothbrushes are genuinely easy to travel with. TSA has no restrictions
 
 ## Battery Type Matters: Carry-On vs Checked Bag
 
-The key variable is your toothbrush's battery type:
+The key variable is your [toothbrush](/items/electric-toothbrush/)'s battery type:
 
 | Battery Type | Carry-On | Checked Bag |
 |---|---|---|
-| **Built-in rechargeable lithium battery** (Oral-B, Philips Sonicare) | ✅ Recommended | ⚠️ Allowed, but carry-on preferred |
+| **Built-in rechargeable [lithium battery](/items/camera-battery/)** (Oral-B, Philips Sonicare) | ✅ Recommended | ⚠️ Allowed, but carry-on preferred |
 | **Removable AA or AAA batteries** | ✅ Allowed | ✅ Allowed |
 | **No battery (plug-in only)** | ✅ Allowed | ✅ Allowed |
 
@@ -40,7 +40,7 @@ The key variable is your toothbrush's battery type:
 
 TSA and FAA recommend that **devices with non-removable lithium batteries be carried in your carry-on** rather than checked baggage. This is because lithium batteries can be a fire risk if damaged, and cabin crew can respond to issues during flight — checked bag fires are much harder to address.
 
-For premium electric toothbrushes like Oral-B iO, Philips Sonicare DiamondClean, and Waterpik Sonic Fusion — all of which have built-in lithium batteries — **carry-on is the safest and TSA-preferred option**.
+For premium electric toothbrushes like [Oral-B](/items/electric-toothbrush/) iO, Philips [Sonicare](/items/electric-toothbrush/) DiamondClean, and Waterpik Sonic Fusion — all of which have built-in lithium batteries — **carry-on is the safest and TSA-preferred option**.
 
 > [!NOTE]
 > While checked baggage is technically allowed for most consumer lithium battery devices, you protect yourself by keeping your electric toothbrush in your carry-on. It also prevents potential damage from checked bag handling.
@@ -55,7 +55,7 @@ For premium electric toothbrushes like Oral-B iO, Philips Sonicare DiamondClean,
 | Oral-B Genius X | Built-in lithium | ✅ Recommended | ⚠️ Technically allowed |
 | Philips Sonicare DiamondClean | Built-in lithium | ✅ Recommended | ⚠️ Technically allowed |
 | Philips Sonicare ProtectiveClean | Built-in lithium | ✅ Recommended | ⚠️ Technically allowed |
-| Colgate Hum | Built-in lithium | ✅ Recommended | ⚠️ Technically allowed |
+| [Colgate](/items/toothpaste/) Hum | Built-in lithium | ✅ Recommended | ⚠️ Technically allowed |
 | Quip Electric Toothbrush | AAA battery | ✅ Allowed | ✅ Allowed |
 | Basic AA-battery toothbrush | AA battery | ✅ Allowed | ✅ Allowed |
 | Waterpik Sonic Fusion | Built-in lithium | ✅ Recommended | ⚠️ Technically allowed |
@@ -70,7 +70,7 @@ Ryanair, easyJet, and other European low-cost carriers follow EASA (European Uni
 - **easyJet:** Electric toothbrushes are allowed in both bags
 - **Wizz Air:** Electric toothbrushes are allowed in both bags
 
-The same lithium battery guidance applies on European flights — carry-on is preferred for rechargeable battery devices.
+The same lithium battery guidance applies on European flights — carry-on is preferred for [rechargeable battery](/items/camera-battery/) devices.
 
 ---
 
@@ -137,11 +137,11 @@ Electric toothbrushes are among the most hassle-free devices to bring on a plane
 
 ## See Also
 
-- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item)
-- [What Is TSA PreCheck? Electronics Stay in Your Bag](/guide/what-is-tsa-precheck)
-- [TSA PreCheck Complete Guide](/guide/tsa-precheck-guide)
-- [Can You Bring a Beard Trimmer on a Plane?](/guide/beard-trimmer-on-plane)
-- [Can You Bring Toothpaste on a Plane? Is It a Liquid?](/guide/tsa-311-liquids-rule)
+- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item/)
+- [What Is TSA PreCheck? Electronics Stay in Your Bag](/guide/what-is-tsa-precheck/)
+- [TSA PreCheck Complete Guide](/guide/tsa-precheck-guide/)
+- [Can You Bring a Beard Trimmer on a Plane?](/guide/beard-trimmer-on-plane/)
+- [Can You Bring Toothpaste on a Plane? Is It a Liquid?](/guide/tsa-311-liquids-rule/)
 
 ---
 

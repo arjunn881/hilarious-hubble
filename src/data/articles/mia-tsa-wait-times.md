@@ -38,7 +38,7 @@ Visit the official MIA security tracker at [miami-airport.com](https://www.miami
 The **MyTSA app** (iOS/Android) gives travelers up-to-the-minute crowd estimates and historical wait trends for Miami International Airport.
 
 ### 3. MIA Airport Mobile App (MIA Airport Official)
-Available on iOS and Android, the official MIA app features interactive maps and live wait time displays for each concourse checkpoint.
+Available on iOS and [Android](/items/smartphone/), the official MIA app features interactive maps and live wait time displays for each concourse checkpoint.
 
 ---
 
@@ -100,16 +100,16 @@ Time Window (Fri – Mon)          Standard Line Wait    PreCheck Line Wait
 ## Practical Tips to Breeze Through Miami Airport Security
 
 ### 1. Enroll in TSA PreCheck or Global Entry
-[TSA PreCheck](/guide/tsa-precheck-guide) and [Global Entry](/guide/global-entry-vs-tsa-precheck) provide massive time savings at MIA. Enrolled travelers bypass long lines at Concourse D and Concourse J checkpoints, leaving shoes on and [3-1-1 liquids](/guide/tsa-311-liquids-rule) packed inside their [carry-on luggage](/guide/carry-on-and-personal-item). For a complete program breakdown, see [What Is TSA PreCheck?](/guide/what-is-tsa-precheck).
+[TSA PreCheck](/guide/tsa-precheck-guide/) and [Global Entry](/guide/global-entry-vs-tsa-precheck/) provide massive time savings at MIA. Enrolled travelers bypass long lines at Concourse D and Concourse J checkpoints, leaving [shoes](/items/shoes/) on and [3-1-1 liquids](/guide/tsa-311-liquids-rule/) packed inside their [carry-on luggage](/guide/carry-on-and-personal-item/). For a complete program breakdown, see [What Is TSA PreCheck?](/guide/what-is-tsa-precheck/).
 
-### 2. Use the Metrorail Orange Line to Avoid Traffic
+### 2. Use the Metrorail [Orange](/items/fresh-fruits/) Line to Avoid Traffic
 The Dolphin Expressway and LeJeune Road frequently suffer gridlock during rush hours. The **Miami Metrorail Orange Line** runs directly to the MIA Central Station, connected via the free automated MIA Mover train to the terminal.
 
 ### 3. Check Bag Rules for International Return Trips
 If you are connecting through MIA from an international destination, remember that all duty-free liquids and souvenirs over 3.4 oz must be re-packed into checked baggage before re-clearing TSA security for your domestic connecting flight.
 
 ### 4. Pack Toiletries and Electronics Smartly
-Review packing guidelines for common items like [sunscreen](/guide/sunscreen-on-plane), [shampoo bars](/guide/shampoo-bars-on-plane), [protein powder](/guide/protein-powder-on-plane), and [electric toothbrushes](/guide/electric-toothbrush-on-plane) to prevent manual inspection delays.
+Review packing guidelines for common items like [sunscreen](/guide/sunscreen-on-plane/), [shampoo bars](/guide/shampoo-bars-on-plane/), [protein powder](/guide/protein-powder-on-plane/), and [electric toothbrushes](/guide/electric-toothbrush-on-plane/) to prevent manual inspection delays.
 
 ---
 
@@ -126,17 +126,17 @@ TSA PreCheck lanes are operational at **Concourse D (Checkpoints 1 and 2)**, **C
 Yes. CLEAR Plus lanes are available at Concourse D (Checkpoint 2) and Concourse J.
 
 ### How do MIA security wait times compare to Chicago ORD or Atlanta ATL?
-MIA security wait times are similar to [ORD](/guide/ord-tsa-wait-times) and [ATL](/guide/atl-tsa-wait-times), but with higher baggage counts and unique weekend cruise passenger peaks. See comparisons in our [TSA Wait Times Master Guide](/guide/tsa-wait-times-guide).
+MIA security wait times are similar to [ORD](/guide/ord-tsa-wait-times/) and [ATL](/guide/atl-tsa-wait-times/), but with higher baggage counts and unique weekend cruise passenger peaks. See comparisons in our [TSA Wait Times Master Guide](/guide/tsa-wait-times-guide/).
 
 ---
 
 ## Related Travel & Security Guides
 
-- [TSA Wait Times at Major US Airports: Master Guide](/guide/tsa-wait-times-guide)
-- [ORD TSA Wait Times: Chicago O'Hare Guide](/guide/ord-tsa-wait-times)
-- [ATL TSA Wait Times: Atlanta Airport Guide](/guide/atl-tsa-wait-times)
-- [What Is TSA PreCheck? Full Overview](/guide/what-is-tsa-precheck)
-- [TSA PreCheck Cost, Application & Renewal](/guide/tsa-precheck-guide)
-- [Global Entry vs TSA PreCheck: Complete Comparison](/guide/global-entry-vs-tsa-precheck)
-- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item)
+- [TSA Wait Times at Major US Airports: Master Guide](/guide/tsa-wait-times-guide/)
+- [ORD TSA Wait Times: Chicago O'Hare Guide](/guide/ord-tsa-wait-times/)
+- [ATL TSA Wait Times: Atlanta Airport Guide](/guide/atl-tsa-wait-times/)
+- [What Is TSA PreCheck? Full Overview](/guide/what-is-tsa-precheck/)
+- [TSA PreCheck Cost, Application & Renewal](/guide/tsa-precheck-guide/)
+- [Global Entry vs TSA PreCheck: Complete Comparison](/guide/global-entry-vs-tsa-precheck/)
+- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item/)
 - [Miami International Airport Official Website](https://www.miami-airport.com)

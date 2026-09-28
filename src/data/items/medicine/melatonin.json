@@ -34,7 +34,16 @@
     "can you carry melatonin on a plane",
     "melatonin tsa",
     "can you take a bottle of melatonin on a plane",
-    "can i bring melatonin in my carry on"
+    "can i bring melatonin in my carry on",
+    "melatonin japan",
+    "melatonin japan customs",
+    "can i bring melatonin to japan",
+    "melatonin narita airport",
+    "melatonin haneda airport",
+    "melatonin korea",
+    "can i bring melatonin to korea",
+    "melatonin incheon airport",
+    "melatonin seoul"
   ],
   "keywords": [
     "melatonin",
@@ -46,6 +55,8 @@
     "uk",
     "france",
     "singapore",
+    "japan",
+    "korea",
     "international",
     "ziploc",
     "customs",
@@ -98,9 +109,32 @@
       "name": "British Airways",
       "status": "ALLOWED",
       "notes": "Permitted in hand luggage. Up to 3-month personal supply permitted into the UK."
+    },
+    {
+      "name": "Japan Airlines (JAL)",
+      "status": "ALLOWED",
+      "notes": "Melatonin is permitted in cabin baggage on JAL flights. Japan classifies melatonin as a health supplement, not a controlled drug, so no import permit is required for personal quantities."
+    },
+    {
+      "name": "Korean Air",
+      "status": "ALLOWED",
+      "notes": "Melatonin sleep supplements are permitted in carry-on and checked baggage on Korean Air flights. South Korea does not restrict melatonin for personal use."
+    },
+    {
+      "name": "ANA (All Nippon Airways)",
+      "status": "ALLOWED",
+      "notes": "Melatonin supplements permitted in carry-on and checked bags. No declaration required for personal quantities at Japanese customs."
     }
   ],
   "international": {
+    "Japan": {
+      "status": "ALLOWED",
+      "reason": "Melatonin is not classified as a controlled substance or designated pharmaceutical in Japan. It is sold as a health food supplement domestically and travelers may bring a personal supply for their stay. Japan Customs does not require a yakkan shoumei import certificate for melatonin. Recommended limit: up to a 1-month supply for personal use. Note: melatonin is not widely sold in Japanese pharmacies, so bring your supply from home."
+    },
+    "South Korea": {
+      "status": "ALLOWED",
+      "reason": "Melatonin is permitted into South Korea for personal use. It is not classified as a narcotic or psychotropic substance under Korean pharmaceutical law. Travelers may bring a reasonable personal supply (up to 6 weeks) without a permit. Incheon Airport customs does not typically restrict melatonin."
+    },
     "UK": {
       "status": "ALLOWED",
       "reason": "Melatonin is prescription-only to buy in the UK, but UK Border Force and MHRA permit incoming international travelers to bring up to a 3-month personal supply."
@@ -120,7 +154,9 @@
   },
   "travelTips": [
     "Keep melatonin in its original labeled bottle to avoid questions at security",
-    "Great for adjusting to new time zones after long flights"
+    "Great for adjusting to new time zones after long flights",
+    "For Japan: melatonin is not commonly sold in Japanese pharmacies — bring your supply from home",
+    "For South Korea: available in some health food stores but bring your preferred brand to be safe"
   ],
   "relatedItems": [
     "vitamins",
@@ -135,6 +171,14 @@
     {
       "question": "Do I need to declare melatonin at customs?",
       "answer": "Generally no, but check destination country rules — some countries restrict certain supplements."
+    },
+    {
+      "question": "Can I bring melatonin to Japan?",
+      "answer": "Yes. Melatonin is not a controlled substance in Japan and does not require a yakkan shoumei import certificate. You can bring a personal supply (up to about 1 month) in your carry-on or checked bag through Narita or Haneda Airport without special permits. Note: melatonin is not commonly sold in Japanese pharmacies, so bring your supply from home."
+    },
+    {
+      "question": "Can I bring melatonin to South Korea?",
+      "answer": "Yes. Melatonin is permitted into South Korea for personal use and is not classified as a narcotic under Korean law. You can carry it in your carry-on through Incheon Airport without a prescription or import declaration for personal quantities (up to approximately 6 weeks supply)."
     },
     {
       "question": "Can I bring melatonin on a plane to the UK?",
@@ -158,17 +202,22 @@
     }
   ],
   "metadata": {
-    "lastReviewed": "2026-07-01",
+    "lastReviewed": "2026-09-28",
     "nextReviewDue": "2027-07-01",
     "reviewIntervalMonths": 12,
     "editor": "BringOnPlane Editorial Team",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "ruleHistory": [
     {
       "effectiveDate": "2026-07-01",
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/pills"
+    },
+    {
+      "effectiveDate": "2026-09-28",
+      "change": "Added Japan and South Korea international rules, JAL/ANA/Korean Air airline entries, and Japan/Korea FAQ entries targeting ranking GSC queries.",
+      "source": "https://www.customs.go.jp/english/c-answer_e/keitai/7106_e.htm"
     }
   ],
   "restrictionType": "Medical",

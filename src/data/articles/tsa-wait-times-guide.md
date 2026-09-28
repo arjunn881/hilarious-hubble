@@ -156,7 +156,7 @@ Several variables consistently drive longer or shorter security lines:
 3. **Check wait times before you leave** — Use the MyTSA app or airport website.
 4. **Travel during off-peak hours** — Midday Tuesday/Wednesday flights see the shortest security lines.
 5. **Pre-pack your liquids bag** — Having it ready to pull out instantly speeds up your lane.
-6. **Wear easy shoes** — Slip-on shoes eliminate fumbling if you're in a standard lane.
+6. **Wear easy [shoes](/items/shoes/)** — Slip-on shoes eliminate fumbling if you're in a standard lane.
 7. **Use Clear (biometric screening)** — CLEAR uses fingerprint/iris scanning to confirm identity quickly, then routes you to a TSA officer (not the same as PreCheck, but can help at busy airports).
 
 ---
@@ -216,7 +216,7 @@ A: Use the free MyTSA app, visit tsa.gov/what-to-expect/wait-times, or check you
 | Terminal 5 | International carriers | 30–75 min |
 
 ### ORD Tips
-- For a complete terminal checkpoint layout and flight bank strategy, read our dedicated [ORD TSA Wait Times Guide](/guide/ord-tsa-wait-times)
+- For a complete terminal checkpoint layout and flight bank strategy, read our dedicated [ORD TSA Wait Times Guide](/guide/ord-tsa-wait-times/)
 - Terminal 1 (United Hub) has excellent TSA PreCheck coverage
 - Terminal 5 international departures can have the longest waits — arrive 3 hours early
 - Check [flychicago.com](https://www.flychicago.com/) for live ORD wait times
@@ -239,7 +239,7 @@ ATL has two main security checkpoints that feed into the same underground concou
 | **International Terminal (F)** | Separate building | 30–60 min |
 
 ### ATL Tips
-- Read our full checkpoint breakdown in the [ATL TSA Wait Times Guide](/guide/atl-tsa-wait-times)
+- Read our full checkpoint breakdown in the [ATL TSA Wait Times Guide](/guide/atl-tsa-wait-times/)
 - N and S checkpoints process the same concourses — use whichever has a shorter line
 - International Terminal F has its own security and is entirely separate from the domestic terminal
 - ATL is one of the best airports for TSA PreCheck — the dedicated South Checkpoint serves PreCheck and Digital ID
@@ -263,7 +263,7 @@ ATL has two main security checkpoints that feed into the same underground concou
 | J (South Terminal) | International, Latin America | 30–65 min |
 
 ### MIA Tips
-- Explore our dedicated concourse navigation in the [MIA TSA Wait Times Guide](/guide/mia-tsa-wait-times)
+- Explore our dedicated concourse navigation in the [MIA TSA Wait Times Guide](/guide/mia-tsa-wait-times/)
 - Concourse J handles most international Latin American departures and tends to be busiest
 - MIA's layout means security checkpoints are spread across a large building — budget extra walking time
 - Use the [Miami-Dade Aviation Department website](https://www.miami-airport.com/) for live MIA wait data
@@ -273,18 +273,18 @@ ATL has two main security checkpoints that feed into the same underground concou
 
 ## Conclusion
 
-TSA wait times at major U.S. airports — LAX, JFK, DFW, IAH, ORD, ATL, and MIA — fluctuate dramatically based on time, day, terminal, and season. The single most reliable way to cut your security wait is [TSA PreCheck](/guide/tsa-precheck-guide) (see [what TSA PreCheck is](/guide/what-is-tsa-precheck)), which keeps 99% of members under 10 minutes. Use live tools like the MyTSA app and airport dashboards to check conditions before you leave, and plan to arrive early at high-volume airports.
+TSA wait times at major U.S. airports — LAX, JFK, DFW, IAH, ORD, ATL, and MIA — fluctuate dramatically based on time, day, terminal, and season. The single most reliable way to cut your security wait is [TSA PreCheck](/guide/tsa-precheck-guide/) (see [what TSA PreCheck is](/guide/what-is-tsa-precheck/)), which keeps 99% of members under 10 minutes. Use live tools like the MyTSA app and airport dashboards to check conditions before you leave, and plan to arrive early at high-volume airports.
 
 ---
 
 ## See Also
 
-- [ORD TSA Wait Times: Chicago O'Hare Security Guide](/guide/ord-tsa-wait-times)
-- [ATL TSA Wait Times: Atlanta Airport Guide](/guide/atl-tsa-wait-times)
-- [MIA TSA Wait Times: Miami Airport Guide](/guide/mia-tsa-wait-times)
-- [What Is TSA PreCheck? Full Overview & Rules](/guide/what-is-tsa-precheck)
-- [TSA PreCheck Complete Guide — Cost, Application & Benefits](/guide/tsa-precheck-guide)
-- [Global Entry vs TSA PreCheck — Which Is Better?](/guide/global-entry-vs-tsa-precheck)
+- [ORD TSA Wait Times: Chicago O'Hare Security Guide](/guide/ord-tsa-wait-times/)
+- [ATL TSA Wait Times: Atlanta Airport Guide](/guide/atl-tsa-wait-times/)
+- [MIA TSA Wait Times: Miami Airport Guide](/guide/mia-tsa-wait-times/)
+- [What Is TSA PreCheck? Full Overview & Rules](/guide/what-is-tsa-precheck/)
+- [TSA PreCheck Complete Guide — Cost, Application & Benefits](/guide/tsa-precheck-guide/)
+- [Global Entry vs TSA PreCheck — Which Is Better?](/guide/global-entry-vs-tsa-precheck/)
 
 ---
 

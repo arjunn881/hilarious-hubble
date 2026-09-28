@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-TSA has no restrictions on shoes in carry-on bags. None. You can pack as many pairs as fit, any style, any heel height. The challenge is purely about space, not security rules.
+TSA has no restrictions on [shoes](/items/shoes/) in carry-on bags. None. You can pack as many pairs as fit, any style, any heel height. The challenge is purely about space, not security rules.
 
 ---
 
@@ -43,16 +43,16 @@ All types of shoes are permitted in carry-on bags:
 
 | Shoe Type | Carry-On | Notes |
 |---|---|---|
-| Sneakers / trainers | ✅ Allowed | |
-| High heels | ✅ Allowed | |
-| Sandals | ✅ Allowed | |
-| Boots | ✅ Allowed | May take significant space |
+| [Sneakers](/items/shoes/) / [trainers](/items/sneakers/) | ✅ Allowed | |
+| [High heels](/items/high-heels/) | ✅ Allowed | |
+| [Sandals](/items/shoes/) | ✅ Allowed | |
+| [Boots](/items/boots/) | ✅ Allowed | May take significant space |
 | Flip flops | ✅ Allowed | |
-| Athletic shoes | ✅ Allowed | |
+| [Athletic shoes](/items/sneakers/) | ✅ Allowed | |
 | Dress shoes | ✅ Allowed | |
-| Work boots | ✅ Allowed | Heavy — consider checking |
+| Work [boots](/items/shoes/) | ✅ Allowed | Heavy — consider checking |
 | Steel-toed boots | ✅ Allowed | May trigger metal detector at security |
-| Cleats (soccer/baseball) | ⚠️ Carry-on at officer discretion | Long metal cleats may be flagged as spikes |
+| [Cleats](/items/sneakers/) (soccer/baseball) | ⚠️ Carry-on at officer discretion | Long metal cleats may be flagged as spikes |
 
 ### Cleats and Spiked Shoes
 
@@ -88,14 +88,14 @@ If you're flying with a personal item only (budget airlines, trying to avoid fee
 
 - Standard personal item dimensions are approximately 18 x 14 x 8 inches
 - One pair of regular shoes can typically fit alongside a few other items
-- High heels or bulky shoes may struggle in small personal items
+- [High heels](/items/high-heels/) or bulky shoes may struggle in small personal items
 - Roll-top shoes like sandals and flip flops pack much more efficiently
 
 ---
 
-## High Heels in Carry-On
+## High [Heels](/items/high-heels/) in Carry-On
 
-High heels are specifically allowed in carry-on bags. TSA does not restrict heels based on heel height, material, or style. Whether you have 2-inch block heels or 5-inch stilettos — both are permitted in your carry-on.
+High heels are specifically allowed in carry-on bags. TSA does not restrict heels based on heel height, material, or style. Whether you have 2-inch block heels or 5-inch [stilettos](/items/high-heels/) — both are permitted in your carry-on.
 
 Practical tips for heels in carry-on:
 - Pack heels heel-to-toe to save space
@@ -133,7 +133,7 @@ Shoes are not subject to customs restrictions in any major destination country f
 A: Yes. TSA has no restrictions on shoes in carry-on bags. You can bring as many pairs as fit.
 
 **Q: Are shoes allowed in carry-on luggage?**
-A: Yes. All types of shoes — sneakers, heels, boots, sandals — are permitted in carry-on bags.
+A: Yes. All types of shoes — [sneakers](/items/sneakers/), heels, boots, sandals — are permitted in carry-on bags.
 
 **Q: Can I put heels in my carry-on?**
 A: Yes. High heels are fully permitted in carry-on luggage. There is no TSA restriction on heel height or type.

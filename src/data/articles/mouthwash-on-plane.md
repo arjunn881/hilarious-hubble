@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Mouthwash in a carry-on is fine, as long as the bottle is 3.4 oz (100 ml) or smaller. That's the whole rule. The problem is that standard mouthwash bottles are usually 16 oz or 33 oz, so travelers who grab a bottle from home almost always have one that gets confiscated.
+[Mouthwash](/items/mouthwash/) in a carry-on is fine, as long as the bottle is 3.4 oz (100 ml) or smaller. That's the whole rule. The problem is that standard mouthwash bottles are usually 16 oz or 33 oz, so travelers who grab a bottle from home almost always have one that gets confiscated.
 
 ---
 
@@ -24,7 +24,7 @@ Mouthwash in a carry-on is fine, as long as the bottle is 3.4 oz (100 ml) or sma
 
 ### Mouthwash is a Liquid Under TSA Rules
 
-Mouthwash — including antiseptic rinses like Listerine, Colgate Peroxyl, ACT fluoride rinse, and every other brand — is classified as a liquid by the TSA. This means it falls under the **3-1-1 carry-on liquids rule**:
+Mouthwash — including antiseptic rinses like [Listerine](/items/mouthwash/), [Colgate](/items/toothpaste/) Peroxyl, ACT fluoride rinse, and every other brand — is classified as a liquid by the TSA. This means it falls under the **3-1-1 carry-on liquids rule**:
 
 - Each container must be **3.4 oz (100ml) or less**
 - All liquid containers must fit in **one quart-sized (approximately 1 liter) clear zip-top plastic bag**
@@ -75,7 +75,7 @@ If you use a prescription mouthwash (such as chlorhexidine gluconate, prescribed
 ## Best Mouthwash Options for Travel
 
 1. **Listerine Travel Size (1 oz / 31ml)** — Widely available at airports, pharmacies, and grocery stores. Fits easily in your quart bag.
-2. **Listerine Ready! Tabs** — Chewable tablets that convert to mouthwash when chewed. Not a liquid — not subject to the 3-1-1 rule at all.
+2. **Listerine Ready! Tabs** — Chewable [tablets](/items/ipad/) that convert to mouthwash when chewed. Not a liquid — not subject to the 3-1-1 rule at all.
 3. **Mouthwash concentrate** — Some brands sell concentrated drops you add to water. A 1 oz bottle makes dozens of rinses. Perfect for long trips.
 4. **Empty silicone travel bottles** — Fill 2 oz squeeze bottles from your home supply. Cost-effective and reusable.
 
@@ -84,9 +84,9 @@ If you use a prescription mouthwash (such as chlorhexidine gluconate, prescribed
 ## Essential Traveler Tips
 
 1. **Buy travel-sized at the airport** — If you forgot, most major airport shops stock travel-sized mouthwash post-security.
-2. **Use your quart bag wisely** — Mouthwash competes with shampoo, conditioner, toothpaste, and other toiletries for space in your one quart bag. Consider mouthwash tablets to free up liquid space.
+2. **Use your quart bag wisely** — Mouthwash competes with shampoo, [conditioner](/items/shampoo/), [toothpaste](/items/toothpaste/), and other toiletries for space in your one quart bag. Consider mouthwash [tablets](/items/tablet/) to free up liquid space.
 3. **Check your mouthwash size before packing** — Run your fingers across the bottle's label and check the oz/ml measurement before heading to the airport.
-4. **TSA Pre-Check travelers** — TSA Pre-Check still requires compliance with the 3-1-1 rule for liquids. Pre-Check only exempts you from removing shoes and electronics.
+4. **TSA Pre-Check travelers** — TSA Pre-Check still requires compliance with the 3-1-1 rule for liquids. Pre-Check only exempts you from removing [shoes](/items/shoes/) and electronics.
 
 ---
 
@@ -100,10 +100,10 @@ If you use a prescription mouthwash (such as chlorhexidine gluconate, prescribed
 
 ## Frequently Asked Questions
 
-**Q: Can you bring mouthwash on a plane?**
+**Q: [Can you bring mouthwash on a plane](/items/mouthwash/)?**
 A: Yes, in a container of 3.4 oz (100ml) or less in your carry-on. Full-size bottles go in checked baggage.
 
-**Q: Can you take mouthwash on a plane in carry-on luggage?**
+**Q: [Can you take mouthwash on a plane](/items/mouthwash/) in carry-on luggage?**
 A: Only in containers 3.4 oz or smaller, placed in your quart-sized liquids bag.
 
 **Q: Can I pack mouthwash in my checked luggage?**

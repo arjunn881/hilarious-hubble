@@ -7,9 +7,9 @@ isMedical: false
 isLegal: false
 ---
 
-AirTags changed the game for anxious travelers. There's something genuinely reassuring about watching your suitcase move through baggage sorting on your phone, especially when you're on a tight connection and can't get to the baggage claim to check yourself.
+[AirTags](/items/airtag/) changed the game for anxious travelers. There's something genuinely reassuring about watching your suitcase move through baggage sorting on your phone, especially when you're on a tight connection and can't get to the baggage claim to check yourself.
 
-But a lot of people hesitate, because AirTags contain a lithium battery — and they've read enough warnings about lithium batteries on planes to be nervous. Here's the thing: **the battery in an AirTag is a CR2032 coin cell, which is a completely different category from the lithium-ion batteries that actually cause problems.** AirTags are fully permitted in checked luggage, carry-on bags, and personal items on every major airline worldwide.
+But a lot of people hesitate, because [AirTags](/items/airtag/) contain a [lithium battery](/items/camera-battery/) — and they've read enough warnings about [lithium batteries](/items/lithium-batteries/) on planes to be nervous. Here's the thing: **the battery in an AirTag is a [CR2032](/items/coin-cell-batteries/) [coin cell](/items/coin-cell-batteries/), which is a completely different category from the lithium-ion batteries that actually cause problems.** AirTags are fully permitted in checked luggage, carry-on bags, and personal items on every major airline worldwide.
 
 ---
 
@@ -26,7 +26,7 @@ But a lot of people hesitate, because AirTags contain a lithium battery — and 
 
 It's 6 AM at JFK International. A traveler checking a large suitcase is flagged by a Delta ground agent who notices the AirTag on the bag's handle during the check-in bag drop. "Sorry, are these allowed in checked bags?" the passenger asks. The agent smiles: "Yes, completely fine — we actually recommend them."
 
-This scenario plays out daily at airports worldwide, and the answer is always the same. AirTags, Tile trackers, and Samsung SmartTags are not only permitted — they're actively encouraged by airlines and ground crews who field fewer lost luggage calls when passengers can locate their bags independently.
+This scenario plays out daily at airports worldwide, and the answer is always the same. AirTags, [Tile trackers](/items/airtag/), and Samsung SmartTags are not only permitted — they're actively encouraged by airlines and ground crews who field fewer lost luggage calls when passengers can locate their bags independently.
 
 What occasionally causes confusion is the word "lithium" on the CR2032 battery package. Aviation rules contain extensive regulations on lithium batteries because of thermal runaway risk in lithium-ion cells. But the CR2032 button cell in an AirTag is a **lithium metal coin cell** — a completely different chemistry class with negligible energy density and essentially zero thermal runaway risk. Understanding this distinction is key to understanding why AirTags are universally permitted.
 
@@ -36,15 +36,15 @@ What occasionally causes confusion is the word "lithium" on the CR2032 battery p
 
 This is worth understanding, because it's the reason AirTags are so effective in airports specifically — not in spite of air travel, but almost because of it.
 
-AirTags don't use GPS on their own. They broadcast a low-power Bluetooth signal that's picked up by any nearby iPhone, iPad, or Mac. That Apple device silently relays the AirTag's location to Apple's servers — encrypted, anonymously, without the relay device's owner knowing anything happened. Your Find My app then shows you where the tag is.
+AirTags don't use GPS on their own. They broadcast a low-power Bluetooth signal that's picked up by any nearby [iPhone](/items/smartphone/), [iPad](/items/ipad/), or Mac. That [Apple](/items/apples/) device silently relays the AirTag's location to [Apple](/items/fresh-fruits/)'s servers — encrypted, anonymously, without the relay device's owner knowing anything happened. Your Find My app then shows you where the tag is.
 
 Now think about what that means in an airport. Ground crew, baggage handlers, gate agents, other passengers — airports are filled with iPhone users. As your checked bag moves through sorting areas, loading zones, and baggage claim carousels, it's passing within Bluetooth range of dozens of Apple devices. Location updates can happen every few minutes at a busy hub like JFK, Heathrow, or Dubai.
 
-On an iPhone 11 or newer with Ultra Wideband (UWB), Precision Finding kicks in when you're within about 30 feet — an on-screen arrow points you toward the exact bag.
+On an iPhone 11 or newer with Ultra Wideband (UWB), Precision Finding kicks in when you're within about 30 feet — an on-[screen](/items/ipad/) arrow points you toward the exact bag.
 
 ---
 
-## The Official FAA & ICAO Ruling on Luggage Trackers
+## The Official FAA & ICAO Ruling on [Luggage Trackers](/items/airtag/)
 
 When smart luggage trackers first became mainstream, confusion arose because airlines generally prohibit loose lithium-ion batteries in checked baggage due to thermal runaway fire risks.
 
@@ -54,7 +54,7 @@ However, the **FAA (Federal Aviation Administration)** and **ICAO (International
 > **FAA Official Guidance on Luggage Trackers:**  
 > Baggage tracking devices powered by small lithium metal coin cells containing **0.3 grams or less of lithium** (or lithium-ion cells under 2.7 watt-hours) are completely safe and permitted in checked baggage.
 > 
-> A standard Apple AirTag uses a single **CR2032 button cell**, which contains approximately **0.1 grams of lithium** — far below the FAA safety threshold.
+> A standard [Apple AirTag](/items/airtag/) uses a single **CR2032 button cell**, which contains approximately **0.1 grams of lithium** — far below the FAA safety threshold.
 
 **ICAO Annex 18 Classification:** Under the ICAO Technical Instructions for the Safe Transport of Dangerous Goods by Air (ICAO Annex 18), lithium button cells under 0.3g are explicitly excluded from Special Provision A67's prohibition on lithium batteries in checked baggage. The CR2032's 0.1g lithium content places it firmly in the permitted category.
 
@@ -85,7 +85,7 @@ However, the **FAA (Federal Aviation Administration)** and **ICAO (International
 | **Checked Bag Allowed** | ✅ Yes | ✅ Yes | ✅ Yes |
 | **Range** | Unlimited (via Find My) | Unlimited (via Tile network) | Unlimited (via SmartThings) |
 | **Precision Finding** | ✅ UWB (iPhone 11+) | ❌ No | ✅ UWB (Galaxy S21+) |
-| **Best For** | iPhone users | Android + iPhone users | Samsung Galaxy users |
+| **Best For** | iPhone users | [Android](/items/smartphone/) + iPhone users | Samsung Galaxy users |
 
 All three trackers use the same CR2032 button cell chemistry and have identical airline compliance status.
 
@@ -105,7 +105,7 @@ The scale of airline baggage mishandling makes tracking technology genuinely val
 
 1. **Place Inside the Suitcase Lining:** Rather than attaching an AirTag solely to the exterior handle (where it can be torn off by baggage conveyor belts), slip an AirTag into an interior zipped pocket of your suitcase.
 2. **Check Battery Health Before Long Trips:** A standard CR2032 battery lasts about 1 year. Replace it before embarking on extended international travel. Battery indicator is visible in the Find My app.
-3. **Use Multiple AirTags for Multi-Bag Travel:** If checking two bags, place a separate AirTag in each. If checking a bag and carrying a camera case, covering both with trackers gives you maximum visibility.
+3. **Use Multiple AirTags for Multi-Bag Travel:** If checking two bags, place a separate AirTag in each. If checking a bag and carrying a [camera](/items/camera/) case, covering both with trackers gives you maximum visibility.
 4. **Enable Lost Mode Before Departure:** Lost Mode sends you a notification the moment your AirTag is detected by any Apple device — useful if your bag is separated in a baggage sorting area before you land.
 5. **Share Location with Travel Companions:** AirTag location can be shared with family members traveling separately via the Find My app — if one person collects bags and another is still in customs, both can see if the bag arrived.
 
@@ -114,7 +114,7 @@ The scale of airline baggage mishandling makes tracking technology genuinely val
 ## Frequently Asked Questions
 
 ### Do AirTags interfere with airplane navigation systems?
-No. AirTags emit low-power Bluetooth Low Energy (BLE) signals, similar to wireless headphones and heart rate monitors, and do not cause electromagnetic interference with aircraft systems.
+No. AirTags emit low-power Bluetooth Low Energy (BLE) signals, similar to [wireless headphones](/items/headphones/) and heart rate monitors, and do not cause electromagnetic interference with aircraft systems.
 
 ### Can you put multiple AirTags in one bag?
 Yes, you can place multiple trackers (e.g., in your backpack, camera case, and suitcase) without any restriction.

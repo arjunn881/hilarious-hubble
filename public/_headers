@@ -11,6 +11,11 @@ https://hilarious-hubble.pages.dev/*
 https://*.hilarious-hubble.pages.dev/*
   X-Robots-Tag: noindex, nofollow
 
+# www → non-www canonical redirect signals
+# Cloudflare handles the actual 301, but ensure www never serves indexable content.
+https://www.bringonplane.com/*
+  X-Robots-Tag: noindex, nofollow
+
 
 
 

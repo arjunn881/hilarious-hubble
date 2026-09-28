@@ -560,6 +560,15 @@ export const en = {
   'guide.verifiedHeading': 'Checked against official TSA guidance',
   'guide.quickAnswer': 'Quick answer',
 
+  'guide.title': '{title} | BringOnPlane Travel Guide',
+  'guide.description': '{description}',
+  'guide.keywords': '{title}, {category} tsa rules, {category} carry on rules, tsa {year}, airport security {category}, bringonplane guide',
+  'guide.faq.allowed': 'Is {item} allowed in carry-on?',
+  'guide.faq.rules': 'What are the TSA rules for {item}?',
+  'guide.faq.international': 'Can I bring {item} on an international flight?',
+  'guide.faq.allowedAnswer': 'According to TSA, {item} is allowed in carry-on bags. {reason}',
+  'guide.faq.notAllowedAnswer': 'According to TSA, {item} is not allowed in carry-on bags. {reason}',
+  'guide.faq.restrictedAnswer': 'According to TSA, {item} has restrictions for carry-on. {reason}',
   // ── Packing lists ─────────────────────────────────────────────────────────
   'packing.title': '{list} packing list & TSA checklist ({year}) | BringOnPlane',
   'packing.description':

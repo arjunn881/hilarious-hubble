@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Shampoo bars are probably the best TSA-friendly swap for your hair routine. Because they're solid, they completely bypass the 3-1-1 liquids rule. Any size, any quantity, no liquid bag required.
+[Shampoo bars](/items/shampoo-bar/) are probably the best TSA-friendly swap for your hair routine. Because they're solid, they completely bypass the 3-1-1 liquids rule. Any size, any quantity, no liquid bag required.
 
 ---
 
@@ -24,15 +24,15 @@ Shampoo bars are probably the best TSA-friendly swap for your hair routine. Beca
 
 **No. Shampoo bars are solid and are NOT subject to the TSA 3-1-1 liquids rule.**
 
-TSA classifies items as liquids based on whether they can flow, pour, spread, or spray. A solid shampoo bar does none of these — it is physically a solid and is treated the same as bar soap.
+TSA classifies items as liquids based on whether they can flow, pour, spread, or spray. A [solid shampoo](/items/shampoo-bar/) bar does none of these — it is physically a solid and is treated the same as bar soap.
 
 | Product Format | TSA Liquid Rule? | Carry-On Size Limit |
 |---|---|---|
 | **Shampoo bar (solid)** | ❌ No | ✅ Any size |
-| **Conditioner bar (solid)** | ❌ No | ✅ Any size |
+| **[Conditioner bar](/items/shampoo-bar/) (solid)** | ❌ No | ✅ Any size |
 | **Liquid shampoo (bottle)** | ✅ Yes | ⚠️ 3.4 oz max |
-| **Liquid conditioner (bottle)** | ✅ Yes | ⚠️ 3.4 oz max |
-| **Dry shampoo (aerosol spray)** | ✅ Yes | ⚠️ 3.4 oz max |
+| **Liquid [conditioner](/items/shampoo/) (bottle)** | ✅ Yes | ⚠️ 3.4 oz max |
+| **[Dry shampoo](/items/dry-shampoo/) (aerosol spray)** | ✅ Yes | ⚠️ 3.4 oz max |
 | **Dry shampoo (powder)** | ❌ No (powder) | ✅ Any size (over 12 oz may be screened) |
 
 ---
@@ -60,10 +60,10 @@ All of the following are solid bars and fully carry-on compliant in any size:
 | Brand | Product | Notes |
 |---|---|---|
 | **Lush** | Shampoo Bars | Wide range, solid, highly popular for travel |
-| **HiBar** | Shampoo + Conditioner Bars | Specifically designed for travel |
+| **HiBar** | Shampoo + [Conditioner](/items/conditioner/) Bars | Specifically designed for travel |
 | **Ethique** | Shampoo + Conditioner Bars | Zero-waste, compostable packaging |
 | **Kitsch** | Shampoo Bar | Color-safe, sulfate-free |
-| **Briogeo** | Don't Despair, Repair Shampoo Bar | Damage repair formula |
+| **Briogeo** | Don't Despair, Repair Shampoo Bar | Damage repair [formula](/items/formula/) |
 | **Unwrapped Life** | Various shampoo bars | Canadian brand, travel-friendly sizes |
 | **Beauty Kubes** | Shampoo Cubes | Cubed format, completely solid |
 
@@ -74,18 +74,18 @@ All of the following are solid bars and fully carry-on compliant in any size:
 ### 1. Use a Soap Case or Tin
 Shampoo bars need somewhere to dry and stay contained. Options:
 - Metal tins with drainage holes
-- Silicone soap pouches
+- Silicone soap [pouches](/items/baby-food/)
 - Bamboo soap dishes
 - Reusable soap bags (felt or linen)
 
 ### 2. Let It Dry Before Packing
 If you use the shampoo bar before packing, let it air dry for at least 30 minutes. A wet bar in a sealed case can get mushy over time.
 
-### 3. Wrap in a Washcloth
+### 3. [Wrap](/items/sandwich/) in a Washcloth
 A simple, compact option for travel — wrap the bar in a small washcloth to absorb any moisture and protect your bag.
 
 ### 4. Don't Put It in Your Liquids Bag
-There's no need. Your shampoo bar does **not** belong in your quart-sized bag — it's not a liquid. Use that precious liquids bag space for sunscreen, lotion, or liquid makeup.
+There's no need. Your shampoo bar does **not** belong in your quart-sized bag — it's not a liquid. Use that precious liquids bag space for sunscreen, [lotion](/items/lotion/), or liquid [makeup](/items/makeup/).
 
 ---
 
@@ -142,11 +142,11 @@ Shampoo bars are the ultimate carry-on travel hack. As solid products, they bypa
 
 ## See Also
 
-- [TSA 3-1-1 Liquids Rule — Complete Guide](/guide/tsa-311-liquids-rule)
-- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item)
-- [What Is TSA PreCheck? Fast Checkpoint Screening](/guide/what-is-tsa-precheck)
-- [Can You Bring Sunscreen on a Plane?](/guide/sunscreen-on-plane)
-- [Can You Bring Shampoo (Liquid) on a Plane?](/guide/shampoo-on-plane)
+- [TSA 3-1-1 Liquids Rule — Complete Guide](/guide/tsa-311-liquids-rule/)
+- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item/)
+- [What Is TSA PreCheck? Fast Checkpoint Screening](/guide/what-is-tsa-precheck/)
+- [Can You Bring Sunscreen on a Plane?](/guide/sunscreen-on-plane/)
+- [Can You Bring Shampoo (Liquid) on a Plane?](/guide/shampoo-on-plane/)
 
 ---
 

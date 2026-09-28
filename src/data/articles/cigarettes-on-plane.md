@@ -7,16 +7,16 @@ isMedical: false
 isLegal: false
 ---
 
-Flying as a smoker involves a few different questions at once. What can you pack, what can you do on the plane, and what will customs let through when you land? This guide covers all three: TSA rules at the checkpoint, airline cabin policies, and international tobacco allowances at your destination.
+Flying as a smoker involves a few different questions at once. What can you pack, what can you do on the plane, and what will customs let through when you land? This guide covers all three: TSA rules at the checkpoint, airline cabin policies, and international [tobacco](/items/cigarettes/) allowances at your destination.
 
 ---
 
 ## TSA Rules Summary
 
-- **Cigarettes in Carry-On:** ✅ Allowed (no quantity limit from TSA)
+- **[Cigarettes](/items/cigarettes/) in Carry-On:** ✅ Allowed (no quantity limit from TSA)
 - **Cigarettes in Checked Baggage:** ✅ Allowed
-- **E-cigarettes / Vapes in Carry-On:** ✅ Allowed (required in carry-on)
-- **E-cigarettes in Checked Baggage:** ❌ Prohibited
+- **[E-cigarettes](/items/e-cigarette/) / [Vapes](/items/vape/) in Carry-On:** ✅ Allowed (required in carry-on)
+- **[E-cigarettes](/items/vape/) in Checked Baggage:** ❌ Prohibited
 - **Smoking on the Plane:** ❌ Absolutely Prohibited
 - **Vaping on the Plane:** ❌ Absolutely Prohibited
 - **International Customs Limits:** ⚠️ Varies by country
@@ -36,7 +36,7 @@ However, customs authorities at international destinations **do** set limits on 
 This is where the rules are strict and important:
 
 - **E-cigarettes and vaping devices MUST be in carry-on baggage** — they are prohibited in checked bags
-- This is an FAA regulation: vaping devices contain lithium batteries, which cannot be in the cargo hold
+- This is an FAA regulation: vaping devices contain [lithium batteries](/items/lithium-batteries/), which cannot be in the cargo hold
 - E-liquid (vape juice) follows the 3-1-1 liquids rule in carry-on (3.4 oz or less per container)
 - Extra vape pods and cartridges can be in carry-on
 
@@ -74,7 +74,7 @@ This is critical: while you can bring unlimited cigarettes through TSA security,
 
 | Destination | Duty-Free Allowance |
 |---|---|
-| **USA (arriving)** | 200 cigarettes (1 carton) or 50 cigars |
+| **USA (arriving)** | 200 cigarettes (1 carton) or 50 [cigars](/items/cigars/) |
 | **Canada** | 200 cigarettes + 50 cigars (if 18/19+) |
 | **UK** | 200 cigarettes or 250g tobacco |
 | **EU countries** | 200 cigarettes or 250g tobacco |
@@ -109,7 +109,7 @@ Always research vaping laws at your specific destination before you travel.
 2. **Always pack your vape in carry-on** — Not optional. FAA regulations prohibit vaping devices in checked bags.
 3. **Declare everything at customs** — Even if you're within the duty-free limit, some customs forms require declaration of tobacco. When in doubt, declare.
 4. **Research vaping laws before international travel** — In some countries, bringing a vape is a criminal offense. Singapore and Thailand are the most commonly cited danger zones for travelers.
-5. **Nicotine pouches as an alternative** — For destinations where vaping is restricted, nicotine pouches (like Zyn or ON!) may be a viable alternative. Check local laws.
+5. **[Nicotine pouches](/items/nicotine-pouches/) as an alternative** — For destinations where vaping is restricted, [nicotine pouches](/items/nicotine-pouches/) (like Zyn or ON!) may be a viable alternative. Check local laws.
 
 ---
 

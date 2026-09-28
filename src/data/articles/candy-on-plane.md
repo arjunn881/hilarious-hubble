@@ -7,14 +7,14 @@ isMedical: false
 isLegal: false
 ---
 
-Candy travels great on planes. Most of it is solid, dry, and completely unrestricted — you can throw a bag of gummy bears in your carry-on with zero issues. A few specific types (gel candies, chocolate spreads, liquid-filled chocolates) technically fall under TSA's liquid rules, but in practice this almost never comes up. Here's what you actually need to know.
+[Candy](/items/candy/) travels great on planes. Most of it is solid, dry, and completely unrestricted — you can throw a bag of [gummy bears](/items/candy/) in your carry-on with zero issues. A few specific types (gel candies, chocolate spreads, liquid-filled chocolates) technically fall under TSA's liquid rules, but in practice this almost never comes up. Here's what you actually need to know.
 
 ---
 
 ## TSA Rules Summary
 
 - **Solid Candy in Carry-On:** ✅ Allowed — No restrictions
-- **Chocolate in Carry-On:** ✅ Allowed — Solid chocolate unrestricted
+- **[Chocolate](/items/chocolate-bar/) in Carry-On:** ✅ Allowed — Solid [chocolate](/items/chocolate/) unrestricted
 - **Liquid-Filled Candy/Chocolate:** ⚠️ May be subject to liquid rules
 - **All Candy in Checked Baggage:** ✅ Allowed
 - **International Customs:** ⚠️ Declare — rules vary by destination
@@ -30,10 +30,10 @@ The TSA classifies **solid candy as a solid food item** — meaning it is not su
 This includes:
 - Hard candy (jolly ranchers, lollipops, candy canes)
 - Gummy candy (gummy bears, gummies, gummy worms)
-- Chocolate bars (Snickers, KitKat, Toblerone, etc.)
+- [Chocolate bars](/items/chocolate-bar/) (Snickers, KitKat, Toblerone, etc.)
 - Wrapped chocolates and truffles
 - Candy coated items (M&Ms, Skittles)
-- Lollipops and suckers
+- [Lollipops](/items/candy/) and suckers
 - Candy canes
 - Licorice
 - Caramels
@@ -46,7 +46,7 @@ This includes:
 Some candy types have a liquid or gel center that can complicate TSA's liquid rules:
 
 - **Liquid-filled chocolates** (like Cadbury Creme Eggs or liquid-filled bonbons) — May be flagged by TSA officers. Keep in original packaging; most pass without issue.
-- **Honey candy or candy with honey filling** — The honey component classifies as a liquid, though in small quantities within candy, these typically pass.
+- **[Honey](/items/honey/) candy or candy with honey filling** — The honey component classifies as a liquid, though in small quantities within candy, these typically pass.
 - **Caramel sauce or liquid caramel** — If it's liquid enough to pour, it's subject to the 3.4 oz limit.
 
 ### Chocolate-Specific Rules
@@ -96,8 +96,8 @@ This is where candy gets more complicated. Many countries restrict the import of
 |---|---|---|
 | Hard candy (wrapped) | ✅ Unlimited | Solid food — no restrictions |
 | Gummy candy | ✅ Unlimited | Solid food |
-| Chocolate bars | ✅ Unlimited | Solid food |
-| Box of chocolates | ✅ Allowed | May get secondary screen |
+| [Chocolate bars](/items/chocolate/) | ✅ Unlimited | Solid food |
+| Box of chocolates | ✅ Allowed | May get secondary [screen](/items/ipad/) |
 | Lollipops | ✅ Unlimited | Solid food |
 | Candy canes | ✅ Unlimited | Solid food |
 | Caramel (solid) | ✅ Allowed | |
@@ -120,13 +120,13 @@ This is where candy gets more complicated. Many countries restrict the import of
 
 - **Mistake 1: Not declaring candy at international customs.** Australian customs in particular is known for imposing fines on travelers who fail to declare food items, including candy.
 - **Mistake 2: Bringing large quantities as gifts without declaration.** Large quantities of any food item may be flagged as commercial quantities at customs. Declare and explain it's personal/gifts.
-- **Mistake 3: Assuming gummy candy is liquid.** Gummy bears, gummy worms, and similar gummies are solid food — they are not subject to the TSA liquid rule.
+- **Mistake 3: Assuming gummy candy is liquid.** Gummy bears, gummy worms, and similar [gummies](/items/candy/) are solid food — they are not subject to the TSA liquid rule.
 
 ---
 
 ## Frequently Asked Questions
 
-**Q: Can you bring candy on a plane?**
+**Q: [Can you bring candy on a plane](/items/candy/)?**
 A: Yes. Solid candy is fully permitted in carry-on and checked bags with no TSA quantity restrictions.
 
 **Q: Can you bring candy in your carry-on?**
@@ -144,14 +144,14 @@ A: Commercially packaged candy must be declared on your incoming passenger card.
 **Q: Can you bring chocolate to Japan?**
 A: Yes, commercially packaged chocolate is generally permitted for personal use and as gifts. Declare on your customs form.
 
-**Q: Can you bring lollipops on a plane?**
+**Q: [Can you bring lollipops on a plane](/items/candy/)?**
 A: Yes. Lollipops are solid food and are fully permitted in carry-on bags.
 
 ---
 
 ## Conclusion
 
-Candy is one of the most carry-on-friendly items you can pack. Solid candy of any type — chocolate, gummies, hard candy, lollipops — is completely unrestricted by TSA on domestic US flights. The only complexity comes with international customs, where food items need to be declared and some countries may inspect or restrict certain products. Keep candy in original sealed packaging, declare it on customs forms, and enjoy your sweets at 35,000 feet.
+Candy is one of the most carry-on-friendly items you can pack. Solid candy of any type — chocolate, gummies, hard candy, lollipops — is completely unrestricted by TSA on domestic US flights. The only complexity comes with international customs, where food items need to be declared and some countries may inspect or restrict certain products. Keep candy in original sealed packaging, declare it on customs forms, and enjoy your [sweets](/items/candy/) at 35,000 feet.
 
 ---
 

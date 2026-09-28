@@ -107,7 +107,7 @@ export const ko = {
   'item.title': '{item} 비행기 반입 가능? [기내 {verdict}] {year}년 TSA 규정',
   'item.description':
     '{carryOn}, {checked}. {item}에 대한 TSA 공식 규정: 정확한 제한과 탑승 전에 확인해야 할 주의사항.',
-  'item.h1': '{item}을 비행기에 가져갈 수 있나요?',
+  'item.h1': '{item}, 비행기에 가져갈 수 있나요?',
   'item.quickAnswer': '한눈에 보는 답',
   'item.alsoKnownAs': '다른 이름:',
   'item.tsaVerified': 'TSA 확인 완료 • 신뢰도 높음',
@@ -559,6 +559,15 @@ export const ko = {
   'guide.verifiedHeading': 'TSA 공식 지침과 대조 확인',
   'guide.quickAnswer': '요약 답변',
 
+  'guide.title': '{title} | BringOnPlane 여행 가이드',
+  'guide.description': '{description}',
+  'guide.keywords': '{title}, TSA {category} 규정, {category} 기내 반입, TSA {year} 규칙, 공항 보안 {category}, BringOnPlane 가이드',
+  'guide.faq.allowed': '{item}을(를) 기내에 반입할 수 있나요?',
+  'guide.faq.rules': '{item}에 대한 TSA 규정은 무엇인가요?',
+  'guide.faq.international': '{item}을(를) 국제선에 가지고 탈 수 있나요?',
+  'guide.faq.allowedAnswer': 'TSA에 따르면 {item}은(는) 기내 반입이 허용됩니다. {reason}',
+  'guide.faq.notAllowedAnswer': 'TSA에 따르면 {item}은(는) 기내 반입이 금지됩니다. {reason}',
+  'guide.faq.restrictedAnswer': 'TSA에 따르면 {item}은(는) 기내 반입에 제한이 있습니다. {reason}',
   // ── Packing lists ─────────────────────────────────────────────────────────
   'packing.title': '{list} 짐 목록과 TSA 체크리스트 ({year}년) | BringOnPlane',
   'packing.description':

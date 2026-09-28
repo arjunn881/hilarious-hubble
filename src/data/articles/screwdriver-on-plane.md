@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Screwdrivers have one clear TSA rule: 7 inches or shorter from tip to handle, and they're allowed in your carry-on. Longer than 7 inches, they have to go in checked luggage. Simple once you know it.
+[Screwdrivers](/items/screwdriver/) have one clear TSA rule: 7 inches or shorter from tip to handle, and they're allowed in your carry-on. Longer than 7 inches, they have to go in checked luggage. Simple once you know it.
 
 ---
 
@@ -27,7 +27,7 @@ Screwdrivers have one clear TSA rule: 7 inches or shorter from tip to handle, an
 
 The TSA has a specific rule for screwdrivers: screwdrivers **7 inches or shorter in total length** are permitted in carry-on baggage. Screwdrivers longer than 7 inches must go in checked luggage.
 
-This 7-inch measurement is the total length of the tool — handle plus shaft — not just the blade length.
+This 7-inch measurement is the total length of the tool — handle plus shaft — not just the [blade](/items/knife/) length.
 
 > [!IMPORTANT]
 > Measure your screwdriver before packing. A standard household Phillips-head screwdriver is typically 8–10 inches total — longer than the 7-inch carry-on limit. Most pocket/precision screwdrivers (like Wiha, Klein, or iFixit precision sets) fall under 7 inches.
@@ -58,7 +58,7 @@ Multi-tools without blades (screwdriver-only multi-tools) may be allowed if the 
 
 All screwdrivers — regardless of length, type, or size — are permitted in checked baggage. There are no restrictions on tools in checked luggage as long as they are not flammable or otherwise hazardous.
 
-For safety, wrap sharp screwdriver tips in tape or a protective cap to prevent injury to baggage handlers.
+For safety, [wrap](/items/sandwich/) sharp screwdriver tips in tape or a protective cap to prevent injury to baggage handlers.
 
 ---
 
@@ -68,12 +68,12 @@ For safety, wrap sharp screwdriver tips in tape or a protective cap to prevent i
 |---|---|---|
 | Screwdriver (≤7 inches) | ✅ Allowed | ✅ Allowed |
 | Screwdriver (>7 inches) | ❌ Not allowed | ✅ Allowed |
-| Hammer | ❌ Not allowed | ✅ Allowed |
+| [Hammer](/items/hammer/) | ❌ Not allowed | ✅ Allowed |
 | Wrench/pliers (≤7 inches) | ✅ Allowed | ✅ Allowed |
 | Wrench/pliers (>7 inches) | ❌ Not allowed | ✅ Allowed |
 | Drill | ❌ Not allowed | ✅ Allowed |
 | Saw (any) | ❌ Not allowed | ✅ Allowed |
-| Box cutter / utility knife | ❌ Not allowed | ✅ Allowed |
+| [Box cutter](/items/utility-knife/) / [utility knife](/items/utility-knife/) | ❌ Not allowed | ✅ Allowed |
 | Multi-tool (with blade) | ❌ Not allowed | ✅ Allowed |
 
 ---

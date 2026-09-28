@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Tent stakes: checked bag yes, carry-on no. TSA considers them potential piercing or bludgeoning items in the cabin. Check them and you're fine. Try to carry them on and they'll be confiscated.
+[Tent stakes](/items/tent-pegs/): checked bag yes, carry-on no. TSA considers them potential piercing or bludgeoning items in the cabin. Check them and you're fine. Try to carry them on and they'll be confiscated.
 
 ---
 
@@ -21,17 +21,17 @@ Tent stakes: checked bag yes, carry-on no. TSA considers them potential piercing
 
 ## Official Regulations
 
-The TSA does not have a single blanket rule that says "tent stakes are banned." Instead, tent stakes fall under the broader category of **sharp or pointed objects** and **potential weapons**, which gives TSA officers discretionary authority to confiscate them from carry-on bags.
+The TSA does not have a single blanket rule that says "[tent stakes](/items/tent-stakes/) are banned." Instead, tent stakes fall under the broader category of **sharp or pointed objects** and **potential weapons**, which gives TSA officers discretionary authority to confiscate them from carry-on bags.
 
 ### Why Tent Stakes Are Rejected from Carry-On
 
-According to TSA policy, sharp objects with pointed tips — including tent stakes and tent pegs — **are not permitted in carry-on baggage** if a TSA officer determines they could be used as a weapon. This is the same category as:
+According to TSA policy, sharp objects with pointed tips — including tent stakes and [tent pegs](/items/tent-stakes/) — **are not permitted in carry-on baggage** if a TSA officer determines they could be used as a weapon. This is the same category as:
 
 - Ice picks
 - Metal skewers
-- Sharp knitting needles
+- Sharp knitting [needles](/items/insulin-syringes/)
 
-Metal tent stakes, especially steel or titanium ground anchors, are typically **pointed at one end and heavy at the other** — exactly the profile TSA officers are trained to flag.
+[Metal tent stakes](/items/tent-stakes/), especially steel or titanium ground anchors, are typically **pointed at one end and heavy at the other** — exactly the profile TSA officers are trained to flag.
 
 > [!IMPORTANT]
 > TSA's official guidance states that any sharp object in carry-on bags must be sheathed or securely wrapped. For tent stakes, this is rarely sufficient to satisfy an officer's judgment call. Your safest bet is always **checked baggage**.
@@ -79,7 +79,7 @@ Individual airlines do not typically set separate rules for tent stakes beyond T
 
 ## Frequently Asked Questions
 
-**Q: Can you bring tent stakes on a plane as carry-on?**
+**Q: [Can you bring tent stakes on a plane](/items/tent-stakes/) as carry-on?**
 A: It is not recommended. Tent stakes fall under the sharp/pointed object category, and TSA officers have discretionary authority to confiscate them from carry-on bags. Always pack tent stakes in your checked baggage.
 
 **Q: Can tent stakes go in carry-on luggage?**
@@ -94,7 +94,7 @@ A: Only in checked hold luggage. Ryanair follows EASA and airport authority rule
 **Q: What about plastic tent stakes?**
 A: Plastic or non-metallic tent stakes are less likely to be flagged than metal ones, but they're still not officially cleared for carry-on. Checked baggage remains the safe choice.
 
-**Q: Can you fly with tent stakes on domestic US flights?**
+**Q: [Can you fly with tent stakes](/items/tent-stakes/) on domestic US flights?**
 A: Same rules apply on all US domestic flights — carry-on is risky, checked baggage is safe.
 
 ---

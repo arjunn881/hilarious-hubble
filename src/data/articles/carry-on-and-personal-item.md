@@ -34,7 +34,7 @@ A **personal item** is a smaller bag that must fit under the seat in front of yo
 | Purse or handbag | ✅ Yes |
 | Tote bag | ✅ Yes |
 | Briefcase | ✅ Yes |
-| Camera bag | ✅ Yes |
+| [Camera](/items/camera/) bag | ✅ Yes |
 | Diaper bag | ✅ Yes (usually free even on Basic Economy) |
 | Duffel bag (small) | ✅ Yes (if it fits under seat) |
 | Rolling carry-on suitcase | ❌ No — that's a carry-on, not a personal item |
@@ -115,10 +115,10 @@ Yes — **international flights follow the same one carry-on + one personal item
 
 1. **Pack your personal item last** — fill your carry-on first, then use the personal item for overflow, valuables, and in-flight essentials
 2. **Use a structured personal item** — a laptop backpack or organized tote holds far more than a slouchy bag
-3. **Know your fare class** — always check if your ticket includes overhead bin access before packing
-4. **Wear your heavy items** — jacket, boots, and heavy sweaters don't count toward bag limits when worn
+3. **Know your fare class** — always check if your [ticket](/items/boarding-pass/) includes overhead bin access before packing
+4. **Wear your heavy items** — jacket, [boots](/items/boots/), and heavy sweaters don't count toward bag limits when worn
 5. **Use packing cubes** — compress clothing in your carry-on to maximize space for your personal item to hold overflow
-6. **Pack compliance-sensitive items securely** — pack your [electric toothbrush](/guide/electric-toothbrush-on-plane), [protein powder](/guide/protein-powder-on-plane), and [quart-sized liquids bag](/guide/tsa-311-liquids-rule) at the top of your bag for fast checkpoint access (or get [TSA PreCheck](/guide/tsa-precheck-guide) to avoid unpacking altogether).
+6. **Pack compliance-sensitive items securely** — pack your [electric toothbrush](/guide/electric-toothbrush-on-plane/), [protein powder](/guide/protein-powder-on-plane/), and [quart-sized liquids bag](/guide/tsa-311-liquids-rule/) at the top of your bag for fast checkpoint access (or get [TSA PreCheck](/guide/tsa-precheck-guide/) to avoid unpacking altogether).
 
 ---
 
@@ -161,12 +161,12 @@ The standard rule across virtually every airline is **one carry-on bag + one per
 
 ## See Also
 
-- [What Is TSA PreCheck? Full Benefits & Rules Overview](/guide/what-is-tsa-precheck)
-- [TSA PreCheck Guide — Skip the Shoe Removal Line](/guide/tsa-precheck-guide)
-- [TSA 3-1-1 Liquids Rule for Carry-On Bags](/guide/tsa-311-liquids-rule)
-- [Can You Bring an Electric Toothbrush on a Plane?](/guide/electric-toothbrush-on-plane)
-- [Can You Bring Protein Powder on a Plane?](/guide/protein-powder-on-plane)
-- [TSA Wait Times at Major Airports](/guide/tsa-wait-times-guide)
+- [What Is TSA PreCheck? Full Benefits & Rules Overview](/guide/what-is-tsa-precheck/)
+- [TSA PreCheck Guide — Skip the Shoe Removal Line](/guide/tsa-precheck-guide/)
+- [TSA 3-1-1 Liquids Rule for Carry-On Bags](/guide/tsa-311-liquids-rule/)
+- [Can You Bring an Electric Toothbrush on a Plane?](/guide/electric-toothbrush-on-plane/)
+- [Can You Bring Protein Powder on a Plane?](/guide/protein-powder-on-plane/)
+- [TSA Wait Times at Major Airports](/guide/tsa-wait-times-guide/)
 
 ---
 

@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Tweezers are allowed in carry-on bags without restriction. Pack them, don't think twice. The only unlikely exception is extremely long, pointed tweezers, where an officer might use discretion, but that's genuinely rare with standard cosmetic tweezers.
+[Tweezers](/items/tweezers/) are allowed in carry-on bags without restriction. Pack them, don't think twice. The only unlikely exception is extremely long, pointed tweezers, where an officer might use discretion, but that's genuinely rare with standard cosmetic tweezers.
 
 ---
 
@@ -39,8 +39,8 @@ The TSA's position is that standard tweezers do not pose a meaningful security t
 | Slant-tip tweezers | ✅ Allowed | |
 | Pointed-tip tweezers | ✅ Allowed | May get a closer look, but generally allowed |
 | Ingrown hair tweezers | ✅ Allowed | |
-| Eyebrow tweezers | ✅ Allowed | |
-| Medical/surgical tweezers | ✅ Allowed | May require declaration if part of medical kit |
+| [Eyebrow tweezers](/items/tweezers/) | ✅ Allowed | |
+| Medical/surgical tweezers | ✅ Allowed | May require declaration if part of [medical kit](/items/first-aid-kit/) |
 | Large industrial tweezers | ⚠️ Officer discretion | Unusually large tools may be flagged |
 
 ---
@@ -52,16 +52,16 @@ Since you're packing tweezers, here's a quick reference for other common groomin
 | Item | Carry-On | Checked |
 |---|---|---|
 | Tweezers | ✅ Allowed | ✅ Allowed |
-| Nail clippers | ✅ Allowed | ✅ Allowed |
+| [Nail clippers](/items/nail-clippers/) | ✅ Allowed | ✅ Allowed |
 | Nail file (metal) | ✅ Allowed | ✅ Allowed |
 | Scissors (blades under 4 inches) | ✅ Allowed | ✅ Allowed |
 | Scissors (blades 4 inches+) | ❌ Not allowed | ✅ Allowed |
-| Razors (disposable cartridge) | ✅ Allowed | ✅ Allowed |
+| [Razors](/items/razor/) (disposable cartridge) | ✅ Allowed | ✅ Allowed |
 | Safety razor (with blade) | ❌ Not allowed | ✅ Allowed |
-| Straight razor | ❌ Not allowed | ✅ Allowed |
-| Beard trimmer | ✅ Allowed | ✅ Allowed |
-| Electric shaver | ✅ Allowed | ✅ Allowed |
-| Curling iron | ✅ Allowed | ✅ Allowed |
+| [Straight razor](/items/safety-razor/) | ❌ Not allowed | ✅ Allowed |
+| [Beard trimmer](/items/beard-trimmer/) | ✅ Allowed | ✅ Allowed |
+| [Electric shaver](/items/electric-razor/) | ✅ Allowed | ✅ Allowed |
+| [Curling iron](/items/curling-iron/) | ✅ Allowed | ✅ Allowed |
 | Hairdryer | ✅ Allowed | ✅ Allowed |
 
 ---
@@ -97,7 +97,7 @@ In general, cosmetic tweezers are universally accepted. If you're ever uncertain
 
 ## Frequently Asked Questions
 
-**Q: Can you bring tweezers on a plane?**
+**Q: [Can you bring tweezers on a plane](/items/tweezers/)?**
 A: Yes. Tweezers are explicitly permitted by TSA in carry-on and checked baggage.
 
 **Q: Are tweezers allowed in carry-on luggage?**

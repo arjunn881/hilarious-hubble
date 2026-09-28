@@ -7,18 +7,18 @@ isMedical: false
 isLegal: true
 ---
 
-# Lithium Battery Safety Rules for Air Travel
+# [Lithium Battery](/items/camera-battery/) Safety Rules for Air Travel
 
-Lithium batteries power almost everything we travel with today. The FAA has strict rules about them because damaged cells can cause fires that are hard to suppress in a cargo hold. These rules are straightforward once you understand the two categories: lithium-ion (rechargeable) and lithium metal (non-rechargeable), and where each can go.
+[Lithium batteries](/items/lithium-batteries/) power almost everything we travel with today. The FAA has strict rules about them because damaged cells can cause fires that are hard to suppress in a cargo hold. These rules are straightforward once you understand the two categories: lithium-ion (rechargeable) and lithium metal (non-rechargeable), and where each can go.
 
-Lithium-ion and lithium-metal batteries power almost every portable electronic device we carry today—from smartphones and laptops to power banks and cameras. Because damaged or short-circuited lithium batteries pose a thermal runaway and fire risk in cargo holds, the **FAA (Federal Aviation Administration)** and **TSA** enforce strict rules on where and how they can be packed.
+Lithium-ion and lithium-metal batteries power almost every portable electronic device we carry today—from smartphones and laptops to [power banks](/items/battery-pack/) and [cameras](/items/camera/). Because damaged or short-circuited lithium batteries pose a thermal runaway and fire risk in cargo holds, the **FAA (Federal Aviation Administration)** and **TSA** enforce strict rules on where and how they can be packed.
 
 ---
 
-## The Golden Rule: Carry-On Only for Spare Batteries & Power Banks
+## The Golden Rule: Carry-On Only for Spare Batteries & [Power Banks](/items/portable-charger/)
 
 * **Spare Lithium Batteries (Loose Batteries):** Must be packed in **CARRY-ON BAGGAGE ONLY**. They are strictly **prohibited in checked luggage**.
-* **Power Banks & Portable Chargers:** Power banks are classified as spare lithium-ion batteries and **must always travel in your carry-on or personal item**. Never place a portable charger in a checked bag.
+* **Power Banks & [Portable Chargers](/items/battery-pack/):** Power banks are classified as spare lithium-ion batteries and **must always travel in your carry-on or personal item**. Never place a [portable charger](/items/portable-charger/) in a checked bag.
 * **Batteries Installed in Devices:** Devices with securely installed batteries (e.g. laptops, tablets, electric toothbrushes, cameras) are permitted in both carry-on and checked bags, though carry-on is strongly encouraged.
 
 ---
@@ -38,7 +38,7 @@ TSA and FAA regulations categorize lithium-ion batteries according to their **Wa
 
 ## How to Calculate Watt-Hours (Wh) from Milliamps (mAh)
 
-If your power bank lists its capacity in milliamp-hours (mAh) rather than Watt-hours (Wh), use this simple formula:
+If your power bank lists its capacity in milliamp-hours (mAh) rather than Watt-hours (Wh), use this simple [formula](/items/formula/):
 
 $$\text{Wh} = \frac{\text{mAh} \times \text{Voltage (V)}}{1000}$$
 
@@ -56,11 +56,11 @@ $$\text{Wh} = \frac{\text{mAh} \times \text{Voltage (V)}}{1000}$$
 
 ---
 
-## Vapes, E-Cigarettes & Electronic Nicotine Devices
+## [Vapes](/items/vape/), [E-Cigarettes](/items/e-cigarette/) & Electronic Nicotine Devices
 
-Vaping devices, e-cigarettes, personal vaporizers, and heat-not-burn tobacco products contain lithium batteries and are subject to the same regulations as other electronic devices — but with additional rules:
+Vaping devices, [e-cigarettes](/items/vape/), personal [vaporizers](/items/vape/), and heat-not-burn [tobacco](/items/cigarettes/) products contain lithium batteries and are subject to the same regulations as other electronic devices — but with additional rules:
 
-* **Carry-On Only:** All vaping devices, e-cigarettes, and personal vaporizers must be transported in your **carry-on bag or personal item only**. They are strictly prohibited in checked baggage.
+* **Carry-On Only:** All vaping devices, e-[cigarettes](/items/cigarettes/), and personal vaporizers must be transported in your **carry-on bag or personal item only**. They are strictly prohibited in checked baggage.
 * **No Vaping or Charging on the Plane:** Using, charging, or activating any vaping device is prohibited on all commercial aircraft. Airlines have zero tolerance for this rule, and violations can result in Federal Aviation Act penalties.
 * **E-Liquid Cartridges:** Prefilled e-liquid pods and cartridges containing nicotine liquid must comply with the standard TSA 3-1-1 liquids rule (3.4 oz / 100ml per container in a quart bag) when in your carry-on. There is no volume restriction in checked baggage, but the devices themselves must remain in carry-on.
 * **International Destination Laws:** Many countries have banned the import or use of vaping devices entirely, including Thailand, Singapore, Brazil, India, and the UAE. Research your destination's laws before travel, as confiscation at customs and heavy fines are common.
@@ -69,7 +69,7 @@ Vaping devices, e-cigarettes, personal vaporizers, and heat-not-burn tobacco pro
 
 ## Drone Batteries & Camera Rig Batteries
 
-Photography and videography travelers frequently fly with dedicated lithium polymer (LiPo) batteries for drones, mirrorless cameras, and professional cinema rigs. These batteries often fall in the medium-capacity range (100–160 Wh) and require careful handling:
+Photography and videography travelers frequently fly with dedicated lithium polymer (LiPo) batteries for drones, [mirrorless cameras](/items/camera/), and professional cinema rigs. These batteries often fall in the medium-capacity range (100–160 Wh) and require careful handling:
 
 * **Pre-Approval Required:** Batteries between 101 Wh and 160 Wh require **prior airline approval** before departure. Contact your airline's cargo or special items desk at least 48 hours in advance.
 * **Limit of 2 Spare Batteries:** Only two batteries in the 101–160 Wh range are permitted per passenger, even with airline approval.
@@ -80,7 +80,7 @@ Photography and videography travelers frequently fly with dedicated lithium poly
 
 ## Smart Luggage & Built-In Battery Regulations
 
-"Smart suitcases" with integrated lithium battery systems for USB charging, GPS tracking, digital locks, and motorized self-following capabilities have become increasingly popular — but airlines have strict rules:
+"Smart suitcases" with integrated lithium battery systems for USB charging, GPS tracking, digital [locks](/items/lock/), and motorized self-following capabilities have become increasingly popular — but airlines have strict rules:
 
 * **Removable Batteries Required:** Most major airlines (American, United, Delta, Emirates, etc.) only permit smart luggage in the passenger cabin or checked hold **if the built-in battery is fully removable**. If the battery cannot be removed, the bag is prohibited from check-in entirely at most carriers.
 * **Battery Size:** Smart luggage batteries that are removed and carried separately must comply with the standard 100 Wh carry-on battery limit.
@@ -115,8 +115,8 @@ High-capacity portable power stations (e.g., Jackery Explorer 300, Anker PowerHo
 **Can I bring a 30,000 mAh power bank on a plane?**
 A 30,000 mAh power bank at 3.7V nominal voltage equals approximately 111 Wh — this exceeds the standard 100 Wh limit and requires prior airline approval. Maximum 2 units of 101–160 Wh batteries are permitted with approval.
 
-**Are AA and AAA alkaline batteries allowed on planes?**
-Yes. Standard alkaline, NiMH, and NiCd rechargeable batteries (AA, AAA, 9V, D, C) are permitted in both carry-on and checked baggage without quantity or Wh restrictions. Only lithium-based chemistries have the strict regulations described above.
+**Are AA and AAA [alkaline batteries](/items/aa-batteries/) allowed on planes?**
+Yes. Standard alkaline, NiMH, and NiCd [rechargeable batteries](/items/rechargeable-batteries/) (AA, AAA, 9V, D, C) are permitted in both carry-on and checked baggage without quantity or Wh restrictions. Only lithium-based chemistries have the strict regulations described above.
 
 **Do I need to remove my laptop battery before checking the bag?**
 If your laptop battery is non-removable (most modern laptops), the device can travel in checked bags. However, carry-on is strongly recommended to prevent theft and exposure to cargo hold temperature extremes.

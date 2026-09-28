@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Bananas make a lot of sense as a travel snack — they come in their own packaging, they're filling, and they hold up fine in a bag. But people keep wondering whether TSA will pull them at security or whether customs will confiscate them on the other side. So here's the clear answer: **TSA has no problem with bananas on domestic US flights**. Customs is a different story depending on where you're going.
+[Bananas](/items/bananas/) make a lot of sense as a travel snack — they come in their own packaging, they're filling, and they hold up fine in a bag. But people keep wondering whether TSA will pull them at security or whether customs will confiscate them on the other side. So here's the clear answer: **TSA has no problem with [bananas](/items/fruit/) on domestic US flights**. Customs is a different story depending on where you're going.
 
 
 
@@ -24,11 +24,11 @@ Bananas make a lot of sense as a travel snack — they come in their own packagi
 
 ## Official Regulations
 
-### Domestic US Flights: Bananas Are Fine
+### Domestic US Flights: [Bananas](/items/bananas/) Are Fine
 
-The TSA's job is security screening — not food inspection. Bananas pose zero security threat, so TSA officers will not stop you or confiscate your banana. You can bring bananas in your carry-on bag, your personal item, or your checked luggage on any domestic US flight without restriction.
+The TSA's job is security screening — not food inspection. [Bananas](/items/fresh-fruits/) pose zero security threat, so TSA officers will not stop you or confiscate your banana. You can bring bananas in your carry-on bag, your personal item, or your checked luggage on any domestic US flight without restriction.
 
-The TSA explicitly states that **solid food items are generally permitted** in carry-on and checked baggage. Bananas, being solid fruit, are treated exactly like any other solid snack.
+The TSA explicitly states that **solid food items are generally permitted** in carry-on and checked baggage. Bananas, being solid [fruit](/items/fruit/), are treated exactly like any other solid snack.
 
 > [!IMPORTANT]
 > Bananas are NOT classified as a liquid by the TSA. The 3-1-1 liquids rule does not apply to whole bananas. You do not need to put a banana in your quart-sized liquid bag.
@@ -37,7 +37,7 @@ The TSA explicitly states that **solid food items are generally permitted** in c
 
 This is where bananas get complicated. While TSA won't stop you from packing a banana for your flight, **customs authorities at your destination** may confiscate it upon arrival. This is a biosecurity issue, not a security issue.
 
-**Why?** Fresh fruit can carry agricultural pests, insects, and plant diseases that don't exist in the destination country. Many countries have strict biosecurity laws to protect their agricultural industries.
+**Why?** [Fresh fruit](/items/fruit/) can carry agricultural pests, insects, and plant diseases that don't exist in the destination country. Many countries have strict biosecurity laws to protect their agricultural industries.
 
 #### Countries with Strict Fresh Fruit Rules
 
@@ -68,16 +68,16 @@ The TSA has no banana ban. The question is only relevant at international custom
 
 ## Essential Traveler Tips
 
-1. **Domestic flights** — Bring as many bananas as you want. They're perfect travel snacks and TSA will not stop you.
+1. **Domestic flights** — Bring as many bananas as you want. They're perfect travel [snacks](/items/chips/) and TSA will not stop you.
 2. **Eating before you land** — If you're on an international flight with fresh fruit, eat it before the plane lands. Many airlines even announce this before arrival into strict biosecurity countries like Australia.
 3. **Always declare** — On international flights, always declare any fresh food on your customs card. Failing to declare carries heavy fines (up to AUD $600 in Australia for first-time offenses).
-4. **Packaged banana products** — Commercially packaged dried bananas, banana chips, and banana candy are generally fine through most customs checkpoints worldwide.
+4. **Packaged banana products** — Commercially packaged dried bananas, banana [chips](/items/chips/), and banana [candy](/items/candy/) are generally fine through most customs checkpoints worldwide.
 
 ---
 
 ## Common Mistakes to Avoid
 
-- **Mistake 1: Forgetting to eat your banana before landing internationally.** If you land in Australia or New Zealand with a fresh banana, it will be confiscated and you may face a fine. Eat it during the flight.
+- **Mistake 1: Forgetting to eat your banana before landing internationally.** If you land in Australia or New Zealand with a [fresh banana](/items/bananas/), it will be confiscated and you may face a fine. Eat it during the flight.
 - **Mistake 2: Not declaring food items on customs forms.** Even if you think the item will be allowed, always declare it. Customs officers appreciate honesty and may wave you through. Non-declaration is always riskier.
 - **Mistake 3: Assuming the same rules apply everywhere.** Each country has its own biosecurity laws. What's fine entering Canada may be restricted entering Japan.
 
@@ -85,17 +85,17 @@ The TSA has no banana ban. The question is only relevant at international custom
 
 ## Frequently Asked Questions
 
-**Q: Can you bring bananas through TSA?**
+**Q: [Can you bring bananas through TSA](/items/bananas/)?**
 A: Yes. TSA does not restrict bananas or any whole fresh fruit at US airport security checkpoints.
 
 **Q: Can you bring a banana through airport security?**
 A: Yes. Bananas go through the X-ray scanner without issue. They are solid food items with no security concerns.
 
-**Q: Can you bring bananas on a plane internationally?**
+**Q: [Can you bring bananas on a plane](/items/bananas/) internationally?**
 A: You can bring them on the plane, but you may not be allowed to bring them into the destination country. Check the customs rules for your destination before packing.
 
 **Q: Are bananas allowed through Australian customs?**
-A: No. Fresh bananas are prohibited from entering Australia due to biosecurity rules. Eat them during the flight or dispose of them before going through customs.
+A: No. [Fresh bananas](/items/bananas/) are prohibited from entering Australia due to biosecurity rules. Eat them during the flight or dispose of them before going through customs.
 
 **Q: Why are bananas not allowed on planes?**
 A: This is a myth — TSA allows bananas on domestic flights. The confusion stems from international customs restrictions at certain destinations, not airport security rules.

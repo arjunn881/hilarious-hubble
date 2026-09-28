@@ -43,14 +43,14 @@ The 3-1-1 rule was established following the 2006 transatlantic aircraft plot, w
 
 To ensure a smooth security check, optimize how you pack your liquids:
 
-1. **Keep it Accessible**: Place your quart-sized liquid bag in an outer pocket of your carry-on so you can quickly remove it at the conveyor belt.
-2. **Opt for Solids**: Whenever possible, swap liquid toiletries for solid alternatives. Bar soap, [solid shampoo bars](/guide/shampoo-bars-on-plane), solid stick deodorant, and toothpaste tablets do not count toward your liquid limits.
-3. **Save Money**: Do not buy travel-sized items at the airport. Purchase empty 3 oz silicone travel bottles and fill them from your bulk bottles at home.
-4. **Bypass the Liquids Removal Step**: If you have [TSA PreCheck](/guide/tsa-precheck-guide) (learn [what TSA PreCheck is and how it works](/guide/what-is-tsa-precheck)), you do not need to take your 3-1-1 liquids bag out of your [carry-on luggage](/guide/carry-on-and-personal-item) at the security checkpoint.
+1. **Keep it Accessible**: Place your quart-sized liquid bag in an outer pocket of your carry-on so you can quickly remove it at the conveyor [belt](/items/belt/).
+2. **Opt for Solids**: Whenever possible, swap liquid toiletries for solid alternatives. Bar soap, [solid shampoo bars](/guide/shampoo-bars-on-plane/), solid [stick deodorant](/items/deodorant/), and [toothpaste](/items/toothpaste/) [tablets](/items/ipad/) do not count toward your liquid limits.
+3. **Save [Money](/items/cash/)**: Do not buy travel-sized items at the airport. Purchase empty 3 oz silicone travel bottles and fill them from your bulk bottles at home.
+4. **Bypass the Liquids Removal Step**: If you have [TSA PreCheck](/guide/tsa-precheck-guide/) (learn [what TSA PreCheck is and how it works](/guide/what-is-tsa-precheck/)), you do not need to take your 3-1-1 liquids bag out of your [carry-on luggage](/guide/carry-on-and-personal-item/) at the security checkpoint.
 
 ---
 
-## Is Deodorant a Liquid Under TSA Rules?
+## Is [Deodorant](/items/deodorant/) a Liquid Under TSA Rules?
 
 This is one of the most common questions at airport security. The answer depends entirely on the **type** of deodorant:
 
@@ -58,7 +58,7 @@ This is one of the most common questions at airport security. The answer depends
 |---|---|---|
 | **Solid stick deodorant** | ❌ No — it is a solid | ✅ Unlimited size allowed |
 | **Gel or roll-on deodorant** | ✅ Yes — classified as a gel | ⚠️ 3.4 oz (100ml) max |
-| **Aerosol spray deodorant** | ✅ Yes — classified as aerosol | ⚠️ 3.4 oz (100ml) max |
+| **Aerosol [spray deodorant](/items/deodorant/)** | ✅ Yes — classified as aerosol | ⚠️ 3.4 oz (100ml) max |
 | **Cream deodorant** | ✅ Yes — classified as a cream | ⚠️ 3.4 oz (100ml) max |
 
 **Solid stick deodorant** (the most common type — like Degree, Old Spice, or Secret solid sticks) is **not a liquid** and can be any size in your carry-on. It does **not** need to go in your quart-sized liquids bag.
@@ -80,7 +80,7 @@ Yes — **toothpaste is classified as a gel/paste by TSA** and is subject to the
 | Toothpaste Format | TSA Liquid Rule? | Carry-On |
 |---|---|---|
 | Paste tube (any brand) | ✅ Yes — gel/paste | ⚠️ 3.4 oz max |
-| Toothpaste tablets (solid) | ❌ No — solid | ✅ Unlimited |
+| Toothpaste [tablets](/items/tablet/) (solid) | ❌ No — solid | ✅ Unlimited |
 | Whitening strips (solid) | ❌ No — solid | ✅ Unlimited |
 | Whitening gel | ✅ Yes — gel | ⚠️ 3.4 oz max |
 
@@ -100,8 +100,8 @@ Yes — **toothpaste is classified as a gel/paste by TSA** and is subject to the
 
 Travelers consistently lose valuable items due to these frequent misunderstandings:
 
-- **Mistake 1: Misjudging Aerosols.** Shaving cream, hairspray, and aerosol deodorants fall under the liquids rule. Many travelers assume "sprays" are different than "liquids," leading to confiscation.
-- **Mistake 2: Spreads and Pastes.** Peanut butter, honey, jam, and cheese spreads are legally considered liquids by the TSA. If it can be spread, smeared, or poured, it goes in the bag.
+- **Mistake 1: Misjudging Aerosols.** [Shaving cream](/items/shaving-cream/), [hairspray](/items/hair-spray/), and aerosol deodorants fall under the liquids rule. Many travelers assume "sprays" are different than "liquids," leading to confiscation.
+- **Mistake 2: Spreads and Pastes.** [Peanut butter](/items/peanut-butter/), [honey](/items/honey/), jam, and cheese spreads are legally considered liquids by the TSA. If it can be spread, smeared, or poured, it goes in the bag.
 - **Mistake 3: Oversized Toothpaste.** Standard full-size toothpaste tubes are 4–6 oz — too large for carry-on. Always buy travel-size or decant into a 3 oz travel tube.
 - **Mistake 4: Gel Deodorant in Full Size.** Many gel/roll-on deodorants come in sizes over 3.4 oz. The full-size version must be checked or swapped for a solid stick.
 
@@ -125,7 +125,7 @@ A: Yes. Toothpaste is classified as a gel/paste and is subject to the TSA 3-1-1 
 A: You cannot bring a filled water bottle through security. However, you can bring an empty reusable water bottle and fill it at a hydration station after passing the checkpoint.
 
 **Q: What are the exemptions to the 3-1-1 rule?**
-A: TSA allows certain liquid exemptions that do not need to fit inside the quart-sized bag. This includes baby formula, breast milk, baby food puree, and prescription liquid medications. You must declare these items to the security officer for manual screening.
+A: TSA allows certain liquid exemptions that do not need to fit inside the quart-sized bag. This includes [baby formula](/items/baby-formula/), [breast milk](/items/baby-milk/), baby food puree, and prescription liquid medications. You must declare these items to the security officer for manual screening.
 
 **Q: Can I share a liquid bag with my partner?**
 A: No. The rule strictly states *one bag per passenger*. Each person must carry their own quart-sized bag containing their personal liquids.
@@ -140,11 +140,11 @@ The TSA 3-1-1 rule remains one of the most strictly enforced security protocols 
 
 ## See Also
 
-- [Can You Bring Sunscreen on a Plane? (Liquid Rules for SPF)](/guide/sunscreen-on-plane)
-- [Shampoo Bars on a Plane — Completely Exempt from Liquid Rules](/guide/shampoo-bars-on-plane)
-- [What Is TSA PreCheck? Benefits & Checkpoint Rules](/guide/what-is-tsa-precheck)
-- [TSA PreCheck Guide — Skip the Liquids Bag Fumble at Security](/guide/tsa-precheck-guide)
-- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item)
+- [Can You Bring Sunscreen on a Plane? (Liquid Rules for SPF)](/guide/sunscreen-on-plane/)
+- [Shampoo Bars on a Plane — Completely Exempt from Liquid Rules](/guide/shampoo-bars-on-plane/)
+- [What Is TSA PreCheck? Benefits & Checkpoint Rules](/guide/what-is-tsa-precheck/)
+- [TSA PreCheck Guide — Skip the Liquids Bag Fumble at Security](/guide/tsa-precheck-guide/)
+- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item/)
 
 ---
 

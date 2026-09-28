@@ -90,13 +90,27 @@ const relatedWidgetGroups = [
     ],
   },
 ];
+
+// For non-English locales, wrap the English article title in a localized
+// template so the <title> tag and meta description land in the target
+// language. This avoids 7 identical English title strings across all
+// locale variants of each guide, which Google treats as duplicate content.
+const localizedTitle = lang === 'en'
+  ? `${title} | Bring On Plane`
+  : t('guide.title', { title });
+
+const localizedKeywords = t('guide.keywords', {
+  title: title.toLowerCase(),
+  category: categoryLabel.toLowerCase(),
+  year: String(currentYear),
+});
 ---
 
 <Layout
-  title={`${title} | Bring On Plane`}
+  title={localizedTitle}
   description={description}
   type="article"
-  keywords={`${title.toLowerCase()}, ${category.toLowerCase()} tsa rules, ${category.toLowerCase()} carry on rules, tsa ${currentYear}, airport security ${category.toLowerCase()}, bringonplane guide`}
+  keywords={localizedKeywords}
   lang={lang}
 >
   <!-- Inject JSON-LD structured data for Article EEAT -->

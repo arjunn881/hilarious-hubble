@@ -563,6 +563,15 @@ export const fr = {
   'guide.verifiedHeading': 'Vérifié auprès des directives officielles de la TSA',
   'guide.quickAnswer': 'Réponse rapide',
 
+  'guide.title': '{title} | Guide de voyage BringOnPlane',
+  'guide.description': '{description}',
+  'guide.keywords': '{title}, règles TSA {category}, {category} bagage cabine, règles TSA {year}, sécurité aéroport {category}, guide bringonplane',
+  'guide.faq.allowed': '{item} est-il autorisé en bagage cabine ?',
+  'guide.faq.rules': 'Quelles sont les règles TSA pour {item} ?',
+  'guide.faq.international': 'Puis-je emporter {item} sur un vol international ?',
+  'guide.faq.allowedAnswer': 'Selon la TSA, {item} est autorisé en bagage cabine. {reason}',
+  'guide.faq.notAllowedAnswer': "Selon la TSA, {item} n'est pas autorisé en bagage cabine. {reason}",
+  'guide.faq.restrictedAnswer': 'Selon la TSA, {item} est soumis à des restrictions en bagage cabine. {reason}',
   // ── Packing lists ─────────────────────────────────────────────────────────
   'packing.title': 'Liste de bagages {list} et checklist TSA ({year}) | BringOnPlane',
   'packing.description':

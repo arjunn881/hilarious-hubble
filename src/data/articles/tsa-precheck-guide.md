@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-TSA PreCheck is the easiest security upgrade most US travelers aren't using. It lets you keep your shoes on, leave your laptop in your bag, skip the liquids tray, and use dedicated shorter lanes at over 200 airports. If you fly even a few times a year, the math on the enrollment fee is usually worth it.
+TSA PreCheck is the easiest security upgrade most US travelers aren't using. It lets you keep your [shoes](/items/shoes/) on, leave your laptop in your bag, skip the liquids tray, and use dedicated shorter lanes at over 200 airports. If you fly even a few times a year, the math on the enrollment fee is usually worth it.
 
 ---
 
@@ -25,15 +25,15 @@ TSA PreCheck is the easiest security upgrade most US travelers aren't using. It 
 
 ## What Is TSA PreCheck?
 
-TSA PreCheck (also spelled "TSA Pre✓®" or "TSA pre check") is a **trusted traveler program** operated by the Transportation Security Administration. For an in-depth standalone breakdown of the program's rules and checkpoint mechanics, see our full guide on [What Is TSA PreCheck?](/guide/what-is-tsa-precheck). Enrolled members receive a Known Traveler Number (KTN) that links to their flight bookings. When you check in with your KTN, the airline notifies TSA, and you are routed to a dedicated PreCheck lane at the security checkpoint.
+TSA PreCheck (also spelled "TSA Pre✓®" or "TSA pre check") is a **trusted traveler program** operated by the Transportation Security Administration. For an in-depth standalone breakdown of the program's rules and checkpoint mechanics, see our full guide on [What Is TSA PreCheck?](/guide/what-is-tsa-precheck/). Enrolled members receive a Known Traveler Number (KTN) that links to their flight bookings. When you check in with your KTN, the airline notifies TSA, and you are routed to a dedicated PreCheck lane at the security checkpoint.
 
 In the PreCheck lane, you do **not** need to:
 - Remove shoes
 - Remove laptops from bags
-- Remove your quart-sized [3-1-1 liquids bag](/guide/tsa-311-liquids-rule)
-- Remove light jackets or belts
+- Remove your quart-sized [3-1-1 liquids bag](/guide/tsa-311-liquids-rule/)
+- Remove light jackets or [belts](/items/belt/)
 
-This dramatically reduces checkpoint time. TSA reports that **99% of PreCheck passengers wait less than 10 minutes** in security lines at major hubs like [ORD](/guide/ord-tsa-wait-times), [ATL](/guide/atl-tsa-wait-times), and [MIA](/guide/mia-tsa-wait-times) (see our [TSA Wait Times Guide](/guide/tsa-wait-times-guide)).
+This dramatically reduces checkpoint time. TSA reports that **99% of PreCheck passengers wait less than 10 minutes** in security lines at major hubs like [ORD](/guide/ord-tsa-wait-times/), [ATL](/guide/atl-tsa-wait-times/), and [MIA](/guide/mia-tsa-wait-times/) (see our [TSA Wait Times Guide](/guide/tsa-wait-times-guide/)).
 
 ---
 
@@ -80,7 +80,7 @@ The appointment typically takes **10–15 minutes**.
 TSA will process your application and background check. Most applicants receive their **Known Traveler Number (KTN)** within **3–5 business days**, though processing can occasionally take up to 3 weeks.
 
 ### Step 5: Add Your KTN to Flight Bookings
-Enter your KTN in your airline profile (frequent flyer account) and when booking tickets. The airline will print "TSA PRE✓" on your boarding pass, directing you to the PreCheck lane.
+Enter your KTN in your airline profile (frequent flyer account) and when booking [tickets](/items/boarding-pass/). The airline will print "TSA PRE✓" on your [boarding pass](/items/boarding-pass/), directing you to the PreCheck lane.
 
 ---
 
@@ -214,11 +214,11 @@ TSA PreCheck is one of the most practical travel investments for U.S. domestic f
 
 ## See Also
 
-- [What Is TSA PreCheck? Standalone Overview & Rules](/guide/what-is-tsa-precheck)
-- [Global Entry vs TSA PreCheck: Complete Comparison](/guide/global-entry-vs-tsa-precheck)
-- [TSA Wait Times at Major Airports (ORD, ATL, MIA, LAX, JFK)](/guide/tsa-wait-times-guide)
-- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item)
-- [TSA 3-1-1 Liquids Rule Explained](/guide/tsa-311-liquids-rule)
+- [What Is TSA PreCheck? Standalone Overview & Rules](/guide/what-is-tsa-precheck/)
+- [Global Entry vs TSA PreCheck: Complete Comparison](/guide/global-entry-vs-tsa-precheck/)
+- [TSA Wait Times at Major Airports (ORD, ATL, MIA, LAX, JFK)](/guide/tsa-wait-times-guide/)
+- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item/)
+- [TSA 3-1-1 Liquids Rule Explained](/guide/tsa-311-liquids-rule/)
 
 ---
 

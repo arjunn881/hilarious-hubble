@@ -18,7 +18,6 @@ Allow: /
 Disallow: /404
 Disallow: /500
 Disallow: /api/
-Disallow: /*.json$
 Crawl-delay: 1
 
 # ─────────────────────────────────────────────────────────────────────────────

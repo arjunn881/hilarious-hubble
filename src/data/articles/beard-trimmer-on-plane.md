@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Beard trimmers and electric shavers are fine to fly with — both in carry-on and checked bags. But the rules are slightly different depending on whether your trimmer is corded, cordless, or has a built-in rechargeable battery. That last point is worth knowing before you pack, because the battery type changes what you can and can't do at check-in.
+[Beard trimmers](/items/beard-trimmer/) and [electric shavers](/items/electric-razor/) are fine to fly with — both in carry-on and checked bags. But the rules are slightly different depending on whether your trimmer is corded, cordless, or has a built-in [rechargeable battery](/items/camera-battery/). That last point is worth knowing before you pack, because the battery type changes what you can and can't do at check-in.
 
 ---
 
@@ -21,16 +21,16 @@ Beard trimmers and electric shavers are fine to fly with — both in carry-on an
 
 ## Official Regulations
 
-The TSA permits electric razors, shavers, and beard trimmers in both carry-on and checked luggage. However, the **battery type** determines where it must be packed.
+The TSA permits [electric razors](/items/electric-razor/), [shavers](/items/razor/), and beard trimmers in both carry-on and checked luggage. However, the **battery type** determines where it must be packed.
 
 ### Corded Trimmers (No Battery)
 Corded electric trimmers with no built-in battery are the simplest case — they are fully allowed in both carry-on and checked bags with zero restrictions.
 
 ### Cordless Trimmers with Removable Batteries
-If your trimmer uses **AA or AAA alkaline batteries**, you can pack it in either carry-on or checked luggage freely. Loose spare batteries should go in your carry-on in a protective case to prevent short-circuiting.
+If your trimmer uses **AA or AAA [alkaline batteries](/items/aa-batteries/)**, you can pack it in either carry-on or checked luggage freely. Loose spare batteries should go in your carry-on in a protective case to prevent short-circuiting.
 
-### Cordless Trimmers with Built-In Lithium Batteries
-This is where most travelers get confused. Trimmers with built-in rechargeable lithium-ion batteries (the most common modern type) fall under **FAA lithium battery regulations**:
+### Cordless Trimmers with Built-In [Lithium Batteries](/items/lithium-batteries/)
+This is where most travelers get confused. Trimmers with built-in [rechargeable lithium](/items/lithium-batteries/)-ion batteries (the most common modern type) fall under **FAA [lithium battery](/items/camera-battery/) regulations**:
 
 - **Carry-on (cabin): Always allowed** — lithium battery devices are always permitted in the cabin
 - **Checked baggage: Allowed**, but the FAA and most airlines strongly recommend packing them in your carry-on instead
@@ -53,7 +53,7 @@ Electric shavers (rotary or foil type) follow the identical rules as beard trimm
 | Short trip, lithium trimmer | ✅ Carry-on |
 | Long trip, checking a bag | ✅ Carry-on still preferred |
 | Corded trimmer only | Either is fine |
-| Trimmer with removable battery | Either — put spare battery in carry-on |
+| Trimmer with removable battery | Either — put [spare battery](/items/camera-battery/) in carry-on |
 
 **Recommendation: Always carry your trimmer in your carry-on.** It's allowed, there's no security issue, and you eliminate any risk of it being flagged in checked luggage due to battery regulations.
 
@@ -75,16 +75,16 @@ Electric shavers (rotary or foil type) follow the identical rules as beard trimm
 ## Essential Traveler Tips
 
 1. **Carry it on** — Even if you're checking a bag, toss your trimmer in your carry-on. No questions, no issues.
-2. **Turn it off completely** — Security officers sometimes flag items that accidentally activate on the conveyor belt. Lock your trimmer's power switch or place it in a case.
-3. **Bring your charging cable** — If you pack the trimmer in carry-on, pack the cable too so you can charge on arrival.
-4. **For international travel** — Bring a universal power adapter if your trimmer doesn't support dual voltage (100–240V). Check the label on the device.
+2. **Turn it off completely** — Security officers sometimes flag items that accidentally activate on the conveyor [belt](/items/belt/). [Lock](/items/lock/) your trimmer's power switch or place it in a case.
+3. **Bring your [charging cable](/items/phone-charger/)** — If you pack the trimmer in carry-on, pack the cable too so you can charge on arrival.
+4. **For international travel** — Bring a universal [power adapter](/items/laptop-charger/) if your trimmer doesn't support dual voltage (100–240V). Check the label on the device.
 
 ---
 
 ## Common Mistakes to Avoid
 
 - **Mistake 1: Putting a lithium trimmer in checked baggage and not powering it off.** Some airlines have specific rules that battery devices must be fully powered off (not sleep mode) in checked bags. Always switch it completely off.
-- **Mistake 2: Thinking the blade is the issue.** Trimmer blades are not treated like knives by TSA. The device as a whole is evaluated, not the individual cutting attachment. Standard grooming trimmers pass without issue.
+- **Mistake 2: Thinking the [blade](/items/knife/) is the issue.** Trimmer blades are not treated like [knives](/items/knife/) by TSA. The device as a whole is evaluated, not the individual cutting attachment. Standard grooming trimmers pass without issue.
 - **Mistake 3: Packing spare lithium cells loose in checked bags.** Loose lithium batteries (without a device) are prohibited in checked baggage by FAA regulations. Always put spare batteries in your carry-on in a battery case.
 
 ---
@@ -98,7 +98,7 @@ A: Yes. Beard trimmers and electric shavers are fully allowed in carry-on bags. 
 A: It can go in either. However, if it has a lithium battery, carry-on is strongly recommended per FAA guidelines.
 
 **Q: Can I bring a cordless electric shaver on a plane?**
-A: Yes. Cordless electric shavers with rechargeable batteries are allowed in carry-on and checked baggage. Pack them in carry-on for best practice.
+A: Yes. Cordless electric shavers with [rechargeable batteries](/items/rechargeable-batteries/) are allowed in carry-on and checked baggage. Pack them in carry-on for best practice.
 
 **Q: Is a beard trimmer allowed in cabin baggage on Ryanair?**
 A: Yes, Ryanair permits electric trimmers in cabin baggage. Ensure it fits within Ryanair's cabin bag size requirements.

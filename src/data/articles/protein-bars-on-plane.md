@@ -7,14 +7,14 @@ isMedical: false
 isLegal: false
 ---
 
-Protein bars, energy bars, and granola bars are basically the easiest items in the world to travel with. They're solid, they're dry, and TSA has zero restrictions on them. Pack as many as you want.
+[Protein bars](/items/protein-bar/), [energy bars](/items/protein-bar/), and [granola bars](/items/protein-bar/) are basically the easiest items in the world to travel with. They're solid, they're dry, and TSA has zero restrictions on them. Pack as many as you want.
 
 ---
 
 ## TSA Rules Summary
 
-- **Protein Bars in Carry-On:** ✅ Allowed — No restrictions
-- **Protein Bars in Checked Baggage:** ✅ Allowed
+- **[Protein Bars](/items/protein-bars/) in Carry-On:** ✅ Allowed — No restrictions
+- **[Protein Bars](/items/protein-bars/) in Checked Baggage:** ✅ Allowed
 - **Quantity Limits:** None (domestic US)
 - **International Customs:** ⚠️ Commercially packaged bars generally fine — check destination rules
 - **TSA Declaration Required:** No
@@ -23,22 +23,22 @@ Protein bars, energy bars, and granola bars are basically the easiest items in t
 
 ## Official Regulations
 
-### Protein Bars Are Solid Food — No Liquid Rules Apply
+### [Protein Bars](/items/protein-bar/) Are Solid Food — No Liquid Rules Apply
 
-Protein bars, energy bars, granola bars, and similar packaged snacks are **solid food items**. The TSA's 3-1-1 liquids rule does not apply to solid foods. You can bring protein bars in your carry-on without any restriction on quantity.
+Protein bars, [energy bars](/items/protein-bars/), [granola bars](/items/protein-bars/), and similar packaged [snacks](/items/chips/) are **solid food items**. The TSA's 3-1-1 liquids rule does not apply to solid foods. You can bring protein bars in your carry-on without any restriction on quantity.
 
 Whether you're packing 2 bars for a short flight or 20 bars for a week-long trip — TSA has no issue with the quantity of solid snacks in your carry-on or checked bags.
 
 > [!IMPORTANT]
 > Some protein bars contain gels, caramel, or liquid-filled components. If the bar is clearly solid in its wrapper, it's fine. Bars with very soft gel filling *may* occasionally be flagged by particularly cautious officers, but this is extremely rare.
 
-### What About Protein Powders?
+### What About [Protein Powders](/items/protein-powder/)?
 
 Protein powder is a different matter:
 
 - **Carry-on:** ✅ Allowed, but containers over 12 oz (350ml) may trigger additional screening (TSA updated guidance)
 - **Checked baggage:** ✅ Allowed in any quantity
-- Protein powder looks dense and uniform on X-ray, which can cause machines to flag it for secondary inspection. TSA may ask you to open and screen it separately.
+- Protein powder looks dense and uniform on X-ray, which can cause machines to flag it for secondary inspection. TSA may ask you to open and [screen](/items/ipad/) it separately.
 
 ---
 
@@ -47,19 +47,19 @@ Protein powder is a different matter:
 | Snack | Carry-On | Notes |
 |---|---|---|
 | Protein bars | ✅ Allowed | Solid food — no restrictions |
-| Granola bars | ✅ Allowed | |
-| Energy bars | ✅ Allowed | |
-| Nuts (bagged) | ✅ Allowed | |
-| Candy | ✅ Allowed | |
-| Chocolate | ✅ Allowed | |
-| Chips/crackers | ✅ Allowed | |
-| Fresh fruit | ✅ Allowed (domestic) | International customs rules apply |
+| [Granola bars](/items/protein-bar/) | ✅ Allowed | |
+| [Energy bars](/items/protein-bar/) | ✅ Allowed | |
+| [Nuts](/items/nuts/) (bagged) | ✅ Allowed | |
+| [Candy](/items/candy/) | ✅ Allowed | |
+| [Chocolate](/items/chocolate-bar/) | ✅ Allowed | |
+| [Chips](/items/chips/)/crackers | ✅ Allowed | |
+| [Fresh fruit](/items/fruit/) | ✅ Allowed (domestic) | International customs rules apply |
 | Sandwiches | ✅ Allowed | |
-| Pizza | ✅ Allowed | |
-| Peanut butter | ⚠️ Liquid rule applies | 3.4 oz or less in carry-on |
+| [Pizza](/items/pizza/) | ✅ Allowed | |
+| [Peanut butter](/items/peanut-butter/) | ⚠️ Liquid rule applies | 3.4 oz or less in carry-on |
 | Hummus | ⚠️ Liquid rule applies | 3.4 oz or less in carry-on |
 | Yogurt | ⚠️ Liquid rule applies | 3.4 oz or less in carry-on |
-| Honey | ⚠️ Liquid rule applies | 3.4 oz or less in carry-on |
+| [Honey](/items/honey/) | ⚠️ Liquid rule applies | 3.4 oz or less in carry-on |
 | Jam/jelly | ⚠️ Liquid rule applies | 3.4 oz or less in carry-on |
 
 ---
@@ -100,14 +100,14 @@ For domestic US flights, protein bars are completely unrestricted. For internati
 ## Common Mistakes to Avoid
 
 - **Mistake 1: Confusing protein powder with protein bars.** Bars are completely unrestricted. Protein powder in large containers may cause additional X-ray screening.
-- **Mistake 2: Not declaring bars at international customs.** Even a standard Kind bar or Quest bar should be declared on your incoming customs form for international arrivals. Most are allowed; the failure to declare is the issue.
+- **Mistake 2: Not declaring bars at international customs.** Even a standard [Kind bar](/items/protein-bar/) or [Quest bar](/items/protein-bar/) should be declared on your incoming customs form for international arrivals. Most are allowed; the failure to declare is the issue.
 - **Mistake 3: Bringing homemade bars internationally.** Homemade energy balls or bars without commercial packaging and ingredient labels may be confiscated at customs more easily than sealed commercial bars.
 
 ---
 
 ## Frequently Asked Questions
 
-**Q: Can you bring protein bars on a plane?**
+**Q: [Can you bring protein bars on a plane](/items/protein-bars/)?**
 A: Yes. Protein bars are solid food items and are completely unrestricted in carry-on and checked baggage on US domestic flights.
 
 **Q: Are protein bars allowed in carry-on luggage?**

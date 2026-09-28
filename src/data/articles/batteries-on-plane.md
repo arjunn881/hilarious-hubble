@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Batteries are genuinely one of the more confusing things to pack for a flight — not because they're dangerous by default, but because the rules split completely based on battery chemistry. AA alkaline batteries and lithium-ion cells are treated as totally different items, and getting it wrong can mean a confiscated power bank or a delayed bag. This guide covers every type: AA, AAA, lithium-ion, lithium metal, rechargeable, and button cells.
+Batteries are genuinely one of the more confusing things to pack for a flight — not because they're dangerous by default, but because the rules split completely based on battery chemistry. AA [alkaline batteries](/items/aa-batteries/) and lithium-ion cells are treated as totally different items, and getting it wrong can mean a confiscated [power bank](/items/battery-pack/) or a delayed bag. This guide covers every type: AA, AAA, lithium-ion, lithium metal, rechargeable, and button cells.
 
 ---
 
@@ -23,8 +23,8 @@ Batteries are genuinely one of the more confusing things to pack for a flight �
 | Lithium-ion (rechargeable, under 100Wh) | ✅ Allowed | ⚠️ In device only |
 | Lithium-ion (spare, under 100Wh) | ✅ Carry-on only | ❌ Prohibited |
 | Lithium-ion (100–160Wh) | ✅ With airline approval | ❌ Prohibited |
-| Button/coin cell batteries | ✅ Allowed | ✅ Allowed |
-| CR2032 batteries | ✅ Allowed | ✅ Allowed |
+| Button/[coin cell batteries](/items/coin-cell-batteries/) | ✅ Allowed | ✅ Allowed |
+| [CR2032](/items/coin-cell-batteries/) batteries | ✅ Allowed | ✅ Allowed |
 | Car batteries (lead-acid) | ❌ Prohibited | ❌ Prohibited |
 
 ---
@@ -33,12 +33,12 @@ Batteries are genuinely one of the more confusing things to pack for a flight �
 
 ### Alkaline Batteries (AA, AAA, C, D, 9V) — Easiest Case
 
-Standard alkaline batteries — the kind you buy for remotes, flashlights, and toys — are **allowed in both carry-on and checked baggage** with no quantity restrictions. AA batteries, AAA batteries, C batteries, D batteries, and 9V batteries are all fully permitted anywhere in your luggage.
+Standard alkaline batteries — the kind you buy for remotes, flashlights, and toys — are **allowed in both carry-on and checked baggage** with no quantity restrictions. [AA batteries](/items/aa-batteries/), [AAA batteries](/items/aaa-batteries/), C batteries, D batteries, and 9V batteries are all fully permitted anywhere in your luggage.
 
 > [!IMPORTANT]
 > Even though alkaline batteries are unrestricted, loose batteries in checked luggage can short-circuit if they contact metal objects. For safety, keep batteries in their original packaging or in a battery case, and tape the terminals of any batteries not in their original packaging.
 
-### Lithium Batteries — The Complex Case
+### [Lithium Batteries](/items/lithium-batteries/) — The Complex Case
 
 Lithium batteries are where aviation rules get specific. There are two types:
 
@@ -48,7 +48,7 @@ Lithium batteries are where aviation rules get specific. There are two types:
 - Checked bags: Allowed **if installed in a device**; spare lithium metal batteries limited to 2g lithium content per battery
 
 **Lithium-Ion (Rechargeable)**
-- Common in: smartphones, laptops, power banks, cameras
+- Common in: smartphones, laptops, [power banks](/items/portable-charger/), [cameras](/items/camera/)
 - The regulations are based on **watt-hour (Wh) capacity:**
 
 | Lithium-Ion Wh Rating | Carry-On | Checked Bag |
@@ -59,16 +59,16 @@ Lithium batteries are where aviation rules get specific. There are two types:
 
 **Key rule:** Spare lithium-ion batteries (not installed in a device) are **never** allowed in checked bags. They must always be in your carry-on, in their original packaging or with terminals protected.
 
-### Button / Coin Cell Batteries (CR2032, CR2025, etc.)
+### Button / [Coin Cell](/items/coin-cell-batteries/) Batteries (CR2032, CR2025, etc.)
 
-Button cell batteries (watch batteries, hearing aid batteries, key fob batteries, CR2032) follow alkaline battery rules:
+[Button cell batteries](/items/coin-cell-batteries/) (watch batteries, hearing aid batteries, key fob batteries, CR2032) follow alkaline battery rules:
 - **Carry-on:** ✅ Allowed
 - **Checked bags:** ✅ Allowed
 - No quantity restrictions for personal use
 
 ### Rechargeable AA/AAA Batteries (NiMH)
 
-Nickel-metal hydride (NiMH) rechargeable batteries like Eneloop AA/AAA follow the same rules as standard alkaline batteries — permitted in carry-on and checked bags without restriction.
+Nickel-metal hydride (NiMH) [rechargeable batteries](/items/rechargeable-batteries/) like Eneloop AA/AAA follow the same rules as standard alkaline batteries — permitted in carry-on and checked bags without restriction.
 
 ---
 
@@ -79,7 +79,7 @@ TSA recommends protecting battery terminals to prevent accidental short circuits
 1. **Keep in original retail packaging** — Most packaging isolates the battery terminals
 2. **Use battery cases** — Plastic battery storage cases are inexpensive and available everywhere
 3. **Tape the terminals** — Apply a strip of electrical tape or masking tape over the positive (+) terminal of loose batteries
-4. **Separate from metal objects** — Don't store loose batteries with keys, coins, or other metal items
+4. **Separate from metal objects** — Don't store loose batteries with keys, [coins](/items/cash/), or other metal items
 
 ---
 
@@ -100,9 +100,9 @@ Most airlines follow FAA regulations, but some have additional rules:
 ## Essential Traveler Tips
 
 1. **Spare lithium batteries always in carry-on** — Never put loose rechargeable batteries in a checked bag. This is the single most important battery rule.
-2. **Protect terminals on loose batteries** — A short-circuited lithium battery can cause a fire. Keep batteries in cases or original packaging.
+2. **Protect terminals on loose batteries** — A short-circuited [lithium battery](/items/camera-battery/) can cause a fire. Keep batteries in cases or original packaging.
 3. **Bring enough for the trip** — Many international destinations have limited stocks of specific battery types (like CR123A for camera equipment). Bring spares in your carry-on.
-4. **Know your device's Wh** — If you're traveling with large battery packs, check the Wh rating before you fly. Over 100Wh requires airline approval.
+4. **Know your device's Wh** — If you're traveling with large [battery packs](/items/battery-pack/), check the Wh rating before you fly. Over 100Wh requires airline approval.
 
 ---
 
@@ -125,7 +125,7 @@ A: Yes. AA alkaline batteries are permitted in carry-on and checked baggage with
 **Q: Are AAA batteries allowed on planes?**
 A: Yes. AAA alkaline batteries are fully permitted in both carry-on and checked luggage.
 
-**Q: Can you bring triple A batteries on a plane?**
+**Q: Can you bring [triple A batteries](/items/aa-batteries/) on a plane?**
 A: Yes. Triple-A (AAA) batteries are allowed in carry-on and checked bags without restriction.
 
 **Q: Can CR2032 batteries go in checked luggage?**

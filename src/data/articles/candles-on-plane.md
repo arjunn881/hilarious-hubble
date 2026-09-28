@@ -7,16 +7,16 @@ isMedical: false
 isLegal: false
 ---
 
-Candles are one of those items where the type genuinely matters. A solid wax candle is no problem at security — TSA treats it like any other solid item. A gel candle, on the other hand, falls under liquid rules and needs to fit in your 3-1-1 bag if you're carrying it on. Here's the full breakdown.
+[Candles](/items/candles/) are one of those items where the type genuinely matters. A solid wax candle is no problem at security — TSA treats it like any other solid item. A gel candle, on the other hand, falls under liquid rules and needs to fit in your 3-1-1 bag if you're carrying it on. Here's the full breakdown.
 
 ---
 
 ## TSA Rules Summary
 
-- **Solid Wax Candles in Carry-On:** ✅ Allowed
+- **Solid [Wax Candles](/items/candles/) in Carry-On:** ✅ Allowed
 - **Gel Candles in Carry-On:** ❌ Not Allowed (classified as gel/liquid)
 - **All Candles in Checked Baggage:** ✅ Allowed
-- **Candle Wicks / Matches / Lighter:** Separate rules apply
+- **Candle Wicks / [Matches](/items/matches/) / [Lighter](/items/lighter/):** Separate rules apply
 - **TSA Declaration Required:** No
 
 ---
@@ -51,9 +51,9 @@ A large decorative gel candle (typically 8–16 oz) cannot go in your carry-on.
 
 | Item | Carry-On | Checked |
 |---|---|---|
-| Wick trimmer (scissors-like) | ✅ If blades under 4 inches | ✅ Allowed |
+| Wick trimmer (scissors-like) | ✅ If [blades](/items/knife/) under 4 inches | ✅ Allowed |
 | Matches | ✅ One book, on person only | ❌ Prohibited |
-| Lighter | ✅ One disposable lighter | ✅ With restrictions |
+| Lighter | ✅ One [disposable lighter](/items/lighter/) | ✅ With restrictions |
 | Candle snuffer | ✅ Allowed | ✅ Allowed |
 | Candle wax melts (solid) | ✅ Allowed | ✅ Allowed |
 | Liquid wax/lamp oil | ❌ Flammable — prohibited | ❌ Prohibited |
@@ -65,7 +65,7 @@ A large decorative gel candle (typically 8–16 oz) cannot go in your carry-on.
 Candles — especially glass-jarred premium candles — are fragile. Here's how to pack them safely:
 
 **For carry-on:**
-- Wrap in bubble wrap or clothing
+- [Wrap](/items/sandwich/) in bubble wrap or clothing
 - Place in the center of your bag away from hard edges
 - Keep away from sharp objects that could crack the jar
 
@@ -117,7 +117,7 @@ A: Yes. All types of candles (solid wax, gel, soy) are allowed in checked baggag
 A: Yes. Diptyque candles are solid wax — they're carry-on approved.
 
 **Q: Can I bring a scented candle in my carry-on?**
-A: Yes, if it's solid wax. Scented candles are not prohibited by TSA.
+A: Yes, if it's solid wax. [Scented candles](/items/candles/) are not prohibited by TSA.
 
 ---
 

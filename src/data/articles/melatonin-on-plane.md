@@ -20,9 +20,9 @@ affiliateLinks:
     badge: "Travel Pick"
 ---
 
-Melatonin is probably the most underrated packing item for long-haul travel. A tiny tablet that costs almost nothing, takes up zero space, and genuinely helps your body adjust to a new timezone. But because rules around melatonin vary so dramatically by country, travelers often aren't sure if they'll have a problem at customs.
+[Melatonin](/items/melatonin/) is probably the most underrated packing item for long-haul travel. A tiny [tablet](/items/ipad/) that costs almost nothing, takes up zero space, and genuinely helps your body adjust to a new timezone. But because rules around melatonin vary so dramatically by country, travelers often aren't sure if they'll have a problem at customs.
 
-Here's the bottom line: **melatonin tablets and gummies are completely fine in your carry-on or checked bag on any US flight and virtually all international departures.** Customs is where things get more nuanced — a few countries technically classify it as prescription-only to purchase locally, but personal imports for travel are almost universally permitted.
+Here's the bottom line: **[melatonin tablets](/items/melatonin/) and [gummies](/items/candy/) are completely fine in your carry-on or checked bag on any US flight and virtually all international departures.** Customs is where things get more nuanced — a few countries technically classify it as prescription-only to purchase locally, but personal imports for travel are almost universally permitted.
 
 ---
 
@@ -30,7 +30,7 @@ Here's the bottom line: **melatonin tablets and gummies are completely fine in y
 
 - **Carry-On Baggage:** ✅ **ALLOWED** (Tablets, capsules, and solid gummies)
 - **Checked Baggage:** ✅ **ALLOWED**
-- **TSA Screening:** No declaration required for solid pills/gummies
+- **TSA Screening:** No declaration required for solid [pills](/items/prescription-medicine/)/gummies
 - **Liquid Melatonin Drops:** ⚠️ Allowed in carry-on if ≤ 3.4 oz (100 ml) or declared as medically necessary liquid
 - **UK Rules (MHRA / CAA):** ✅ Up to 3-month personal supply allowed
 - **France Rules:** ✅ OTC up to 1.9mg allowed; 3-month personal supply permitted
@@ -40,7 +40,7 @@ Here's the bottom line: **melatonin tablets and gummies are completely fine in y
 
 ## The Real Airport Checkpoint Experience
 
-You've just landed at London Heathrow after a 10-hour transatlantic flight. Inside your carry-on is a bottle of Nature Made Melatonin 5mg tablets you bought at your local pharmacy. UK Border Force officers are scanning bags post-customs — not because melatonin triggers any alerts, but as part of routine screening. The officer glances at your bottle, notes the familiar supplement packaging, and waves you through in seconds.
+You've just landed at London Heathrow after a 10-hour transatlantic flight. Inside your carry-on is a bottle of Nature Made Melatonin 5mg [tablets](/items/tablet/) you bought at your local pharmacy. UK Border Force officers are scanning bags post-customs — not because melatonin triggers any alerts, but as part of routine screening. The officer glances at your bottle, notes the familiar supplement packaging, and waves you through in seconds.
 
 This is the reality for melatonin travelers entering the UK: despite melatonin being prescription-only to purchase locally, UK law explicitly carves out an exemption for international visitors carrying personal supplies. The same logic — personal use, reasonable quantity, legitimate health purpose — applies in most countries worldwide.
 
@@ -79,7 +79,7 @@ Liquid melatonin drops are the only form that requires any thought at security. 
 | 10–12 hours (e.g., US → Southeast Asia) | Either | Begin melatonin 2 nights before departure; 1–5mg at destination time |
 | 12+ hours (transcontinental) | Westbound | 0.5–1mg at destination midnight; taper after 3 days |
 
-*Always consult a physician before adjusting medication schedules for time zone changes, particularly for high-dose melatonin or combination with other sleep aids.*
+*Always consult a physician before adjusting medication schedules for time zone changes, particularly for high-dose melatonin or combination with other [sleep aids](/items/melatonin/).*
 
 ---
 
@@ -94,7 +94,7 @@ International travelers must understand how foreign customs treat melatonin upon
 
 ### France (DGAC & French Customs)
 - **Status:** **Legal over-the-counter under 1.9mg.**
-- **The Rule:** France allows non-prescription sales of melatonin food supplements containing up to 1.9mg per daily dose. Higher therapeutic doses (over 2mg) are treated as pharmaceutical products. Incoming travelers can bring standard personal supplies (up to 3 months).
+- **The Rule:** France allows non-prescription sales of melatonin food [supplements](/items/vitamins/) containing up to 1.9mg per daily dose. Higher therapeutic doses (over 2mg) are treated as pharmaceutical products. Incoming travelers can bring standard personal supplies (up to 3 months).
 
 ### Singapore (Health Sciences Authority - HSA)
 - **Status:** **Legal as a Health Supplement.**
@@ -125,7 +125,7 @@ Liquid melatonin drops, sublingual sprays, and tinctures require more careful ha
 - **Container limit:** Must be in individual containers of **3.4 oz (100 ml) or less**
 - **Aggregate limit:** All liquids must fit in a single, clear, quart-sized (approximately 1 liter) resealable bag
 - **Medical exemption:** If your physician has prescribed liquid melatonin or your sleep specialist recommends it in quantities exceeding 100 ml, declare it separately at the checkpoint as a medically necessary liquid. TSA officers may inspect it, but they cannot confiscate a medically necessary liquid that is screened and cleared.
-- **Tip:** Carry a short note from your doctor (even a printed email) for liquid sleep supplements in larger quantities — this expedites the medical exemption process significantly.
+- **Tip:** Carry a short note from your doctor (even a printed email) for liquid [sleep supplements](/items/melatonin/) in larger quantities — this expedites the medical exemption process significantly.
 
 ---
 
@@ -143,8 +143,8 @@ Liquid melatonin drops, sublingual sprays, and tinctures require more careful ha
 
 ## Frequently Asked Questions
 
-### Can you bring melatonin gummies on a plane?
-Yes! Melatonin gummies are classified as solid food/supplements. They are allowed in unlimited reasonable quantities in both carry-on bags and checked suitcases with zero liquid restrictions.
+### [Can you bring melatonin gummies on a plane](/items/melatonin/)?
+Yes! [Melatonin gummies](/items/melatonin/) are classified as solid food/supplements. They are allowed in unlimited reasonable quantities in both carry-on bags and checked suitcases with zero liquid restrictions.
 
 ### Do I need a prescription to bring melatonin into the UK?
 No. International visitors bringing their own personal melatonin supply (up to 3 months) into the UK for personal travel do not need a UK doctor's prescription.
@@ -162,5 +162,5 @@ Yes, and many travel medicine doctors recommend it. Take 0.5–3mg approximately
 Yes. TSA has no restriction on melatonin dose or quantity. The dosage distinction matters for local sales law in some countries, not for airport security screening.
 
 ### What is the best melatonin for long-haul flights?
-Travel medicine specialists generally recommend fast-release melatonin at 0.5–1mg for flight-day use and extended-release 1–3mg formulas for in-destination nighttime use. Avoid high-dose (5–10mg) products, as they can cause next-day grogginess.
+Travel medicine specialists generally recommend fast-release melatonin at 0.5–1mg for flight-day use and extended-release 1–3mg [formulas](/items/formula/) for in-destination nighttime use. Avoid high-dose (5–10mg) products, as they can cause next-day grogginess.
 

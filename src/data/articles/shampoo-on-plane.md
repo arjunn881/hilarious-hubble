@@ -14,18 +14,18 @@ Standard shampoo bottles are one of the most confiscated items at airport securi
 ## TSA Rules Summary
 
 - **Shampoo in Carry-On:** ⚠️ Restricted — 3.4 oz (100ml) per container
-- **Conditioner in Carry-On:** ⚠️ Restricted — 3.4 oz (100ml) per container
+- **[Conditioner](/items/shampoo/) in Carry-On:** ⚠️ Restricted — 3.4 oz (100ml) per container
 - **Full-Size Bottles in Checked Baggage:** ✅ Allowed — Any size
-- **Dry Shampoo in Carry-On:** ✅ Allowed (solid/powder) or ⚠️ Restricted (aerosol)
+- **[Dry Shampoo](/items/dry-shampoo/) in Carry-On:** ✅ Allowed (solid/powder) or ⚠️ Restricted (aerosol)
 - **TSA Declaration Required:** No
 
 ---
 
 ## Official Regulations
 
-### Shampoo and Conditioner Are Liquids
+### [Shampoo and Conditioner](/items/shampoo/) Are Liquids
 
-Both shampoo and conditioner are classified as **liquids** under TSA's 3-1-1 rule. This means:
+Both shampoo and [conditioner](/items/conditioner/) are classified as **liquids** under TSA's 3-1-1 rule. This means:
 
 - Each container must be **3.4 oz (100ml) or less**
 - All liquid containers must fit inside **one quart-sized (approximately 1 liter) clear zip-top plastic bag**
@@ -40,14 +40,14 @@ A standard full-size bottle of shampoo is typically 12–33 oz (350–1000ml). T
 
 You can pack any size bottle of shampoo or conditioner in your checked luggage. There are no TSA restrictions on hair care liquids in checked bags.
 
-Practical tip: Place large liquid bottles in a sealed zip-lock bag inside your checked luggage. Pressure changes during flight can cause bottles to leak, and a zip-lock bag prevents your clothes from being soaked in shampoo.
+Practical tip: Place large liquid bottles in a sealed zip-[lock](/items/lock/) bag inside your checked luggage. Pressure changes during flight can cause bottles to leak, and a zip-lock bag prevents your clothes from being soaked in shampoo.
 
 ### Dry Shampoo
 
 Dry shampoo has different rules depending on its format:
 
 - **Powder dry shampoo** (loose powder) — ✅ Solid, not subject to liquid limits, allowed in carry-on
-- **Aerosol dry shampoo** (spray can) — ⚠️ Treated as aerosol liquid; 3.4 oz or less in carry-on
+- **[Aerosol dry shampoo](/items/dry-shampoo/)** (spray can) — ⚠️ Treated as aerosol liquid; 3.4 oz or less in carry-on
 - **Dry shampoo foam** — ⚠️ Treated as liquid/gel; 3.4 oz or less in carry-on
 
 ---
@@ -74,8 +74,8 @@ Buy shampoo and conditioner in travel sizes (typically 1–3 oz). Available at p
 ### Option 2: Refillable Silicone Travel Bottles (Most Cost-Effective)
 Buy reusable 2 oz or 3 oz silicone squeeze bottles and fill them from your full-size products at home. A full set costs $10–15 and pays for itself on the first trip.
 
-### Option 3: Solid Shampoo Bars (Carry-On Friendly)
-Shampoo bars are solid (not liquid) and completely exempt from the 3-1-1 rule. Brands like Lush, Ethique, and numerous others make solid shampoo and conditioner bars that last as long as multiple liquid bottles.
+### Option 3: [Solid Shampoo](/items/shampoo-bar/) Bars (Carry-On Friendly)
+[Shampoo bars](/items/shampoo-bar/) are solid (not liquid) and completely exempt from the 3-1-1 rule. Brands like Lush, Ethique, and numerous others make solid shampoo and [conditioner bars](/items/shampoo-bar/) that last as long as multiple liquid bottles.
 
 ### Option 4: Check a Bag (Best for Longer Trips)
 If you're checking a bag anyway, pack full-size shampoo and conditioner in it without restriction. Use a toiletry bag with a sealed inner lining for protection.
@@ -84,11 +84,11 @@ If you're checking a bag anyway, pack full-size shampoo and conditioner in it wi
 
 ## How to Maximize Your Quart Bag Space
 
-Your quart bag has to hold all your liquids — shampoo, conditioner, toothpaste, face wash, sunscreen, and more. Tips to fit everything:
+Your quart bag has to hold all your liquids — shampoo, conditioner, [toothpaste](/items/toothpaste/), [face wash](/items/face-wash/), sunscreen, and more. Tips to fit everything:
 
 1. **Use flat, flexible bottles** — Traditional round bottles waste space. Flat travel bottles pack more efficiently.
 2. **Buy 2-in-1 shampoo/conditioner** — One bottle instead of two frees significant space.
-3. **Switch to solids where possible** — Shampoo bar + conditioner bar + toothpaste tablets = zero liquid bag space used.
+3. **Switch to solids where possible** — Shampoo bar + conditioner bar + toothpaste [tablets](/items/ipad/) = zero liquid bag space used.
 4. **Decant, don't buy travel sizes** — Refillable bottles are environmentally friendly and cheaper than buying travel-sized products repeatedly.
 
 ---
@@ -113,7 +113,7 @@ A: Maximum 3.4 oz (100ml) per container in your carry-on bag.
 **Q: Can I bring full-size shampoo in my checked bag?**
 A: Yes. Any size bottle of shampoo or conditioner is allowed in checked luggage.
 
-**Q: Can I bring dry shampoo on a plane?**
+**Q: [Can I bring dry shampoo on a plane](/items/dry-shampoo/)?**
 A: Powder dry shampoo (no liquid) is unrestricted. Aerosol dry shampoo cans must be 3.4 oz or less in carry-on.
 
 **Q: Can I bring my shampoo and conditioner in my carry-on?**

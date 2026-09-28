@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Hot sauce is one of those things that should be easy to travel with, but consistently trips people up. The problem isn't that TSA has anything against hot sauce. The problem is that it's a liquid, and the 3.4 oz limit applies the same way it applies to shampoo and mouthwash. Here's how to handle it.
+[Hot sauce](/items/hot-sauce/) is one of those things that should be easy to travel with, but consistently trips people up. The problem isn't that TSA has anything against hot sauce. The problem is that it's a liquid, and the 3.4 oz limit applies the same way it applies to shampoo and [mouthwash](/items/mouthwash/). Here's how to handle it.
 
 ---
 
@@ -26,7 +26,7 @@ Hot sauce is one of those things that should be easy to travel with, but consist
 
 Hot sauce — whether it's a thin vinegar-based sauce or a thick chunky salsa-style condiment — is classified as a **liquid or gel** by the TSA. The 3-1-1 carry-on liquids rule applies:
 
-- Each hot sauce bottle must be **3.4 oz (100ml) or less**
+- Each [hot sauce bottle](/items/hot-sauce/) must be **3.4 oz (100ml) or less**
 - Must fit in your **one quart-sized clear zip-top plastic bag**
 - Only **one bag per passenger**
 
@@ -45,7 +45,7 @@ A standard Tabasco bottle is 2 oz (60ml) — actually within the carry-on limit.
 | Cholula (large) | 12 oz (355ml) | ❌ Too large |
 | Frank's RedHot | 12 oz (355ml) | ❌ Too large |
 | Valentina | 12.5 oz (370ml) | ❌ Too large |
-| Sriracha | 17 oz (500ml) | ❌ Too large |
+| [Sriracha](/items/hot-sauce/) | 17 oz (500ml) | ❌ Too large |
 | Travel-sized bottles | Under 3.4 oz | ✅ Allowed |
 
 ### Checked Baggage: No Restrictions
@@ -53,8 +53,8 @@ A standard Tabasco bottle is 2 oz (60ml) — actually within the carry-on limit.
 Hot sauce in any quantity can go in your checked luggage. A 12-bottle case of your favorite artisan hot sauce? Fine in checked bags.
 
 Packing tips for checked luggage:
-- Place hot sauce bottles in a sealed zip-lock bag — liquid pressure changes during flight can cause leaks
-- Wrap bottle tops with tape or use rubber bands around the cap
+- Place hot sauce bottles in a sealed zip-[lock](/items/lock/) bag — liquid pressure changes during flight can cause leaks
+- [Wrap](/items/sandwich/) bottle tops with tape or use rubber [bands](/items/gold-ring/) around the cap
 - Pack upright when possible
 
 ---
@@ -99,20 +99,20 @@ Hot sauce is generally considered a commercially processed food product and is a
 ## Common Mistakes to Avoid
 
 - **Mistake 1: Bringing a full-size Sriracha bottle in carry-on.** The standard 17 oz Sriracha bottle is one of the most confiscated condiments at TSA. It's nearly 5x over the carry-on limit.
-- **Mistake 2: Thinking a half-empty bottle is under the limit.** TSA measures the container, not remaining contents. A half-empty 12 oz bottle is still 12 oz.
+- **Mistake 2: Thinking a half-[empty bottle](/items/glass-bottle/) is under the limit.** TSA measures the container, not remaining contents. A half-empty 12 oz bottle is still 12 oz.
 - **Mistake 3: Not packing checked hot sauce in a zip-lock.** Altitude and pressure changes cause liquid bottles to expand and sometimes leak. A zip-lock bag prevents a mess.
 
 ---
 
 ## Frequently Asked Questions
 
-**Q: Can you bring hot sauce on a plane?**
+**Q: [Can you bring hot sauce on a plane](/items/hot-sauce/)?**
 A: In carry-on, only if the bottle is 3.4 oz (100ml) or less. Full-size bottles go in checked baggage.
 
 **Q: Can I bring hot sauce in my checked bag on international flights?**
 A: Yes. Commercially packaged hot sauce is generally allowed in checked bags internationally. Declare it at customs.
 
-**Q: Can I bring a bottle of hot sauce on a plane in carry-on?**
+**Q: [Can I bring a bottle of hot sauce on a plane](/items/hot-sauce/) in carry-on?**
 A: Only if it's 3.4 oz or less. Most standard hot sauce bottles are over this limit.
 
 **Q: Is Tabasco allowed in carry-on?**

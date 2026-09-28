@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-**TSA PreCheck** is the US government's expedited security screening program. Enrolled travelers use dedicated lanes at participating airports where they can keep their shoes, belt, and light jacket on, leave their laptop and 3-1-1 bag in their carry-on, and generally move through security in a fraction of the normal time.
+**TSA PreCheck** is the US government's expedited security screening program. Enrolled travelers use dedicated lanes at participating airports where they can keep their [shoes](/items/shoes/), [belt](/items/belt/), and light jacket on, leave their laptop and 3-1-1 bag in their carry-on, and generally move through security in a fraction of the normal time.
 
 If you've ever watched someone sail through a security lane next to you while you're struggling to fit your laptop back in its case, you were watching TSA PreCheck in action.
 
@@ -39,8 +39,8 @@ The primary benefit of TSA PreCheck is an effortless, uninterrupted screening pr
 ```
 Standard Security Lane                 TSA PreCheck Lane
 ──────────────────────                 ──────────────────
-• Remove shoes & boots                 • Keep shoes on
-• Pull out laptops/tablets             • Leave electronics in carry-on
+• Remove shoes & [boots](/items/boots/)                 • Keep shoes on
+• Pull out laptops/[tablets](/items/ipad/)             • Leave electronics in carry-on
 • Extract 3-1-1 liquids bag            • Leave liquids packed inside
 • Remove belt and outerwear jacket     • Keep light jacket & belt on
 • Full-body millimeter-wave scanner    • Walk-through metal detector
@@ -51,10 +51,10 @@ Standard Security Lane                 TSA PreCheck Lane
 Instead of stepping into a cylindrical millimeter-wave imaging machine with your hands in the air, PreCheck passengers typically walk straight through a standard **walk-through metal detector**. This drastically speeds up passenger throughput from 150 passengers/hour to over 300 passengers/hour per lane.
 
 ### 2. No Liquids or Electronics Fumbling
-Under standard [TSA 3-1-1 liquids rules](/guide/tsa-311-liquids-rule), all gels, liquids, and aerosols must be pulled out and placed in a bin, and all laptops or large tablets must be unpacked. In the TSA PreCheck lane, you simply place your roller bag and personal item directly onto the conveyor belt without unzipping anything.
+Under standard [TSA 3-1-1 liquids rules](/guide/tsa-311-liquids-rule/), all gels, liquids, and aerosols must be pulled out and placed in a bin, and all laptops or large [tablets](/items/tablet/) must be unpacked. In the TSA PreCheck lane, you simply place your roller bag and personal item directly onto the conveyor belt without unzipping anything.
 
 ### 3. Footwear and Outerwear Stay On
-You do not have to walk barefoot or in socks across the airport floor. Tennis shoes, dress shoes, loafers, and sneakers stay on your feet. (Heavy steel-toe work boots or knee-high combat boots with excessive metal may still need to be screened if they trigger the detector).
+You do not have to walk barefoot or in socks across the airport floor. [Tennis shoes](/items/sneakers/), dress shoes, loafers, and [sneakers](/items/shoes/) stay on your feet. (Heavy steel-toe work boots or knee-high combat boots with excessive metal may still need to be screened if they trigger the detector).
 
 ---
 
@@ -82,8 +82,8 @@ graph TD
     D --> E["Enter Dedicated TSA PreCheck Security Checkpoint"]
 ```
 
-1. **Add Your KTN to Your Airline Profile:** When booking tickets on Delta, United, American, Southwest, Alaska, JetBlue, or 80+ other carriers, enter your KTN in the "Known Traveler Number" field.
-2. **Verify Your Boarding Pass:** When you check in 24 hours prior to departure, check your digital or printed boarding pass. It **must display the "TSA PRE✓" emblem** or text indicator.
+1. **Add Your KTN to Your Airline Profile:** When booking [tickets](/items/boarding-pass/) on Delta, United, American, Southwest, Alaska, JetBlue, or 80+ other carriers, enter your KTN in the "Known Traveler Number" field.
+2. **Verify Your [Boarding Pass](/items/boarding-pass/):** When you check in 24 hours prior to departure, check your digital or printed boarding pass. It **must display the "TSA PRE✓" emblem** or text indicator.
 3. **Head to the Dedicated Lane:** Follow airport overhead signage for *TSA Pre✓*. Present your boarding pass and government ID at the podium, and proceed through the expedited line.
 
 > [!IMPORTANT]
@@ -106,14 +106,14 @@ Travelers often confuse these three expedited airport security programs:
 | Program | Best For | What It Expedites | Cost |
 |---|---|---|---|
 | **TSA PreCheck** | Domestic flights | Physical screening (shoes, laptops, bags) | $78 / 5 yrs |
-| **[Global Entry](/guide/global-entry-vs-tsa-precheck)** | International & domestic flyers | U.S. Customs upon arrival + **Includes full TSA PreCheck** | $120 / 5 yrs |
+| **[Global Entry](/guide/global-entry-vs-tsa-precheck/)** | International & domestic flyers | U.S. Customs upon arrival + **Includes full TSA PreCheck** | $120 / 5 yrs |
 | **CLEAR Plus** | High-volume business travelers | ID verification podium (skips the boarding pass queue) | $189 / 1 yr |
 
 - **TSA PreCheck** speeds up the *physical X-ray and baggage screening*.
 - **CLEAR Plus** is a private biometric service that speeds up the *identity verification line* before you reach the TSA screening area.
-- **Global Entry** includes TSA PreCheck automatically and gives you automated passport control kiosks when entering the United States from abroad.
+- **Global Entry** includes TSA PreCheck automatically and gives you automated [passport](/items/passport/) control kiosks when entering the United States from abroad.
 
-If you travel internationally even once a year, see our in-depth [Global Entry vs TSA PreCheck Comparison Guide](/guide/global-entry-vs-tsa-precheck) to see why Global Entry is usually the higher-value option.
+If you travel internationally even once a year, see our in-depth [Global Entry vs TSA PreCheck Comparison Guide](/guide/global-entry-vs-tsa-precheck/) to see why Global Entry is usually the higher-value option.
 
 ---
 
@@ -126,7 +126,7 @@ Applying is straightforward and takes less than 20 minutes:
 3. **Attend the 10-Minute Enrollment:** Bring your passport or government photo ID with a birth certificate, provide digital fingerprints, and pay the $78 fee.
 4. **Receive Your KTN:** Most travelers receive their Known Traveler Number within **3 to 5 business days**.
 
-For full instructions, fee reimbursement credit cards, and renewal procedures, read our complete [TSA PreCheck Application and Renewal Guide](/guide/tsa-precheck-guide).
+For full instructions, fee reimbursement credit cards, and renewal procedures, read our complete [TSA PreCheck Application and Renewal Guide](/guide/tsa-precheck-guide/).
 
 ---
 
@@ -139,10 +139,10 @@ TSA PreCheck stands for Transportation Security Administration Pre-Screened Chec
 While enrolled members receive PreCheck on over 95% of flights, TSA incorporates random, unannounced security measures. TSA reserves the right to randomly route any passenger to standard screening for security integrity.
 
 ### Does TSA PreCheck let you bring more liquids?
-No. TSA PreCheck members are still bound by the [3-1-1 liquids rule](/guide/tsa-311-liquids-rule) (containers must be 3.4 oz / 100ml or smaller). The key difference is that PreCheck members **do not need to unpack the liquids bag from their luggage** at the checkpoint.
+No. TSA PreCheck members are still bound by the [3-1-1 liquids rule](/guide/tsa-311-liquids-rule/) (containers must be 3.4 oz / 100ml or smaller). The key difference is that PreCheck members **do not need to unpack the liquids bag from their luggage** at the checkpoint.
 
 ### How much time does TSA PreCheck save?
-At major hub airports like Chicago O'Hare ([ORD](/guide/ord-tsa-wait-times)), Atlanta ([ATL](/guide/atl-tsa-wait-times)), and Miami ([MIA](/guide/mia-tsa-wait-times)), standard lines during peak morning hours can exceed 45 to 75 minutes. TSA PreCheck lanes average **under 10 minutes**, saving between 30 to 60 minutes per trip. Check current trends in our [TSA Wait Times Guide](/guide/tsa-wait-times-guide).
+At major hub airports like Chicago O'Hare ([ORD](/guide/ord-tsa-wait-times/)), Atlanta ([ATL](/guide/atl-tsa-wait-times/)), and Miami ([MIA](/guide/mia-tsa-wait-times/)), standard lines during peak morning hours can exceed 45 to 75 minutes. TSA PreCheck lanes average **under 10 minutes**, saving between 30 to 60 minutes per trip. Check current trends in our [TSA Wait Times Guide](/guide/tsa-wait-times-guide/).
 
 ---
 
@@ -154,9 +154,9 @@ TSA PreCheck is the single highest-return travel investment for domestic flyers 
 
 ## Related Guides & Official Resources
 
-- [TSA PreCheck: Complete Cost, Application & Renewal Guide](/guide/tsa-precheck-guide)
-- [Global Entry vs TSA PreCheck: Side-by-Side Comparison](/guide/global-entry-vs-tsa-precheck)
-- [TSA Wait Times at Major US Airports](/guide/tsa-wait-times-guide)
-- [TSA 3-1-1 Liquids Rule Explained](/guide/tsa-311-liquids-rule)
-- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item)
+- [TSA PreCheck: Complete Cost, Application & Renewal Guide](/guide/tsa-precheck-guide/)
+- [Global Entry vs TSA PreCheck: Side-by-Side Comparison](/guide/global-entry-vs-tsa-precheck/)
+- [TSA Wait Times at Major US Airports](/guide/tsa-wait-times-guide/)
+- [TSA 3-1-1 Liquids Rule Explained](/guide/tsa-311-liquids-rule/)
+- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item/)
 - [Official TSA PreCheck Portal](https://www.tsa.gov/precheck)

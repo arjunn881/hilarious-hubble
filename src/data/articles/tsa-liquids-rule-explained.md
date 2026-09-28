@@ -19,7 +19,7 @@ Understanding exactly how the 3-1-1 rule works before arriving at airport securi
 
 ## The 3-1-1 Rule Breakdown
 
-The formula **3-1-1** is an easy way to remember the three key requirements for carry-on liquids:
+The [formula](/items/formula/) **3-1-1** is an easy way to remember the three key requirements for carry-on liquids:
 
 * **3.4 Ounces (100ml) or Less per Container:** All liquids, gels, creams, pastes, and aerosols must be in containers of **3.4 fluid ounces (100 milliliters)** or smaller. The container size itself matters—a 6 oz bottle that only contains 2 oz of liquid is still prohibited.
 * **1 Quart-Sized Clear Bag:** All 3.4 oz containers must fit comfortably inside **one clear, quart-sized, resealable plastic bag** (approx. 7" x 8" or standard Ziploc quart bag).
@@ -31,10 +31,10 @@ The formula **3-1-1** is an easy way to remember the three key requirements for 
 
 TSA considers anything that can be spilled, poured, sprayed, smeared, or squeezed as a liquid or gel. Common items subject to the 3.4 oz limit include:
 
-* **Toiletries:** Shampoo, conditioner, liquid body wash, perfume, cologne, lotion, sunscreen, liquid foundation, and hair spray.
-* **Toothpaste & Gels:** Toothpaste, styling gel, hair wax, lip gloss, and liquid mascara.
-* **Food & Drinks:** Bottled water, juice, soda, soups, salad dressings, yogurt, salsa, hummus, peanut butter, honey, jams, and Nutella.
-* **Aerosols:** Spray deodorant, hair spray, dry shampoo, and shaving cream.
+* **Toiletries:** Shampoo, [conditioner](/items/shampoo/), liquid [body wash](/items/shampoo/), [perfume](/items/cologne/), [cologne](/items/cologne/), [lotion](/items/lotion/), sunscreen, liquid [foundation](/items/makeup/), and [hair spray](/items/hair-spray/).
+* **[Toothpaste](/items/toothpaste/) & Gels:** Toothpaste, [styling gel](/items/hair-gel/), [hair wax](/items/hair-gel/), [lip gloss](/items/lipstick/), and [liquid mascara](/items/mascara/).
+* **Food & Drinks:** Bottled water, [juice](/items/juice/), [soda](/items/soda/), soups, salad dressings, yogurt, salsa, hummus, [peanut butter](/items/peanut-butter/), [honey](/items/honey/), jams, and Nutella.
+* **Aerosols:** [Spray deodorant](/items/deodorant/), hair spray, [dry shampoo](/items/dry-shampoo/), and [shaving cream](/items/shaving-cream/).
 
 ---
 
@@ -44,14 +44,14 @@ TSA grants specific exemptions that allow passengers to bring **medically necess
 
 ### 1. Medically Necessary Liquids
 * Prescription liquid medications and non-prescription liquid medicines (e.g., cough syrups, contact lens solution, saline solution).
-* Insulin, EpiPens, and blood/plasma products.
-* Frozen ice packs or gel packs used to keep medications cool.
-* *Procedure:* Inform the TSA officer at the beginning of the screening line and place medical liquids in a separate bin.
+* [Insulin](/items/insulin/), EpiPens, and blood/plasma products.
+* [Frozen ice packs](/items/ice-pack/) or [gel packs](/items/ice-pack/) used to keep medications cool.
+* *Procedure:* Inform the TSA officer at the beginning of the screening line and place [medical liquids](/items/liquid-medicine/) in a separate bin.
 
-### 2. Baby Formula, Breast Milk & Juice
-* Infant formula, pumped breast milk, toddler drinks, and baby food pouches are exempt from the 3.4 oz limit.
-* You do not need to be traveling with your infant to carry breast milk or baby formula.
-* Ice packs, freezer packs, and frozen gel packs used to cool baby food/milk are also permitted regardless of size.
+### 2. [Baby Formula](/items/baby-formula/), [Breast Milk](/items/baby-milk/) & Juice
+* [Infant formula](/items/baby-formula/), pumped [breast milk](/items/breast-milk/), toddler drinks, and baby food [pouches](/items/baby-food/) are exempt from the 3.4 oz limit.
+* You do not need to be traveling with your infant to carry breast milk or [baby formula](/items/formula/).
+* [Ice packs](/items/ice-pack/), [freezer packs](/items/ice-pack/), and frozen [gel packs](/items/ice-pack/) used to cool baby food/milk are also permitted regardless of size.
 
 ---
 
@@ -105,11 +105,11 @@ If you are connecting through multiple countries on a single itinerary, remember
 
 Year after year, TSA publishes data on the most frequently confiscated carry-on items. Understanding this list helps you avoid losing your favorite products at the checkpoint:
 
-1. **Full-Sized Shampoo & Conditioner Bottles:** Travelers habitually reach for their regular 12 oz or 16 oz bathroom bottles without transferring them into travel-sized containers.
-2. **Peanut Butter, Nutella & Nut Butters:** Despite feeling solid, these spreadable foods are classified as gels under TSA rules and must comply with the 3.4 oz limit.
+1. **Full-Sized Shampoo & [Conditioner](/items/conditioner/) Bottles:** Travelers habitually reach for their regular 12 oz or 16 oz bathroom bottles without transferring them into travel-sized containers.
+2. **Peanut Butter, Nutella & [Nut Butters](/items/peanut-butter/):** Despite feeling solid, these spreadable foods are classified as gels under TSA rules and must comply with the 3.4 oz limit.
 3. **Water Bottles Filled Before Security:** Reusable water bottles are completely allowed — but only if empty when passing through the checkpoint. Fill them at water refill stations located past security.
-4. **Duty-Free Purchases in Non-Compliant Packaging:** Perfume or wine purchased duty-free that is not in a sealed, tamper-evident bag from the retailer.
-5. **Snow Globes:** Snow globes contain liquid and are only permitted if the liquid portion is estimated to be 3.4 oz or less. Large decorative globes are regularly confiscated.
+4. **Duty-Free Purchases in Non-Compliant Packaging:** Perfume or [wine](/items/wine/) purchased duty-free that is not in a sealed, tamper-evident bag from the retailer.
+5. **[Snow Globes](/items/snow-globe/):** Snow globes contain liquid and are only permitted if the liquid portion is estimated to be 3.4 oz or less. Large decorative globes are regularly confiscated.
 6. **Yogurt, Applesauce & Pudding:** These common snack items are considered gels and must adhere to the 3.4 oz rule in carry-on baggage.
 
 ---
@@ -118,14 +118,14 @@ Year after year, TSA publishes data on the most frequently confiscated carry-on 
 
 Many experienced travelers have shifted entirely to solid or solid-format alternatives to avoid the 3-1-1 rule on carry-on-only trips:
 
-* **Shampoo Bars & Conditioner Bars:** Solid shampoo bars produce the same lather as liquid shampoo with zero liquid volume. They are allowed in carry-on bags in any quantity and never counted toward your quart bag allowance.
-* **Solid Cologne & Perfume Sticks:** Wax-based or solid balm colognes and perfumes are classified as solids and completely exempt from the liquid rule.
-* **Toothpaste Tablets:** Chewable toothpaste tablets — compressed powder tablets you chew and brush with — are TSA-friendly alternatives to toothpaste tubes.
-* **Solid Deodorant Sticks:** Traditional stick deodorant is not subject to the 3-1-1 rule. Switch from spray or gel deodorant to a stick format for carry-on travel.
+* **[Shampoo Bars](/items/shampoo-bar/) & [Conditioner Bars](/items/shampoo-bar/):** [Solid shampoo](/items/shampoo-bar/) bars [produce](/items/fruit/) the same lather as liquid shampoo with zero liquid volume. They are allowed in carry-on bags in any quantity and never counted toward your quart bag allowance.
+* **Solid [Cologne](/items/perfume/) & Perfume Sticks:** Wax-based or solid balm colognes and perfumes are classified as solids and completely exempt from the liquid rule.
+* **Toothpaste [Tablets](/items/ipad/):** Chewable toothpaste [tablets](/items/tablet/) — compressed powder tablets you chew and brush with — are TSA-friendly alternatives to toothpaste tubes.
+* **[Solid Deodorant](/items/deodorant/) Sticks:** Traditional [stick deodorant](/items/deodorant/) is not subject to the 3-1-1 rule. Switch from spray or gel [deodorant](/items/deodorant/) to a stick format for carry-on travel.
 * **Powder Sunscreen:** Mineral powder sunscreen provides UV protection without occupying precious liquid bag space.
 * **Dry Shampoo Powder:** Powder dry shampoo (not aerosol spray cans) bypasses the 3-1-1 rule entirely.
 
-Switching just your shampoo and conditioner to bar format can free up significant room in your quart bag for other essentials like toothpaste, sunscreen, and prescription liquids.
+Switching just your [shampoo and conditioner](/items/shampoo/) to bar format can free up significant room in your quart bag for other essentials like toothpaste, sunscreen, and prescription liquids.
 
 ---
 
@@ -135,7 +135,7 @@ Enrollment in expedited screening programs like **TSA PreCheck**, **Global Entry
 
 * You still must comply with the **3.4 oz per container** limit in carry-on bags.
 * You are still limited to **one quart-sized bag** of liquids per person.
-* The primary benefit of PreCheck in relation to liquids is that at **traditional X-ray lanes**, TSA PreCheck members typically do not have to remove their liquids bag or shoes, making the screening line faster — but the underlying liquid volume rules remain identical.
+* The primary benefit of PreCheck in relation to liquids is that at **traditional X-ray lanes**, TSA PreCheck members typically do not have to remove their liquids bag or [shoes](/items/shoes/), making the screening line faster — but the underlying liquid volume rules remain identical.
 * If you enroll in Global Entry (which includes TSA PreCheck), your expedited re-entry processing through U.S. Customs does not affect TSA's liquids rules for departing flights.
 
 ---
@@ -146,13 +146,13 @@ Enrollment in expedited screening programs like **TSA PreCheck**, **Global Entry
 No. Even sunscreen must be in a container of 3.4 oz (100ml) or less to go in your carry-on quart bag. Purchase a travel-size sunscreen or decant a portion into a reusable travel bottle before departing.
 
 **Does perfume count as a liquid?**
-Yes. Perfume, cologne, and all fragrance sprays are liquids and must follow the 3.4 oz rule in carry-on bags. Larger bottles should be placed in your checked luggage.
+Yes. Perfume, cologne, and all [fragrance sprays](/items/perfume/) are liquids and must follow the 3.4 oz rule in carry-on bags. Larger bottles should be placed in your checked luggage.
 
 **Can I bring multiple quart bags of liquids?**
 No. TSA permits only one quart-sized clear bag per passenger, regardless of how many carry-on bags you bring. Items in a second bag will be confiscated.
 
-**Do dry shampoo aerosol cans count as liquids?**
-Yes. Aerosol cans — including aerosol dry shampoo — are subject to the 3.4 oz rule in carry-on bags. Non-aerosol powder dry shampoo is not classified as a liquid and has no volume restriction.
+**Do [dry shampoo aerosol](/items/dry-shampoo/) cans count as liquids?**
+Yes. Aerosol cans — including [aerosol dry shampoo](/items/dry-shampoo/) — are subject to the 3.4 oz rule in carry-on bags. Non-aerosol powder dry shampoo is not classified as a liquid and has no volume restriction.
 
 **What happens if I accidentally bring an oversized bottle through security?**
 A TSA officer will ask you to either surrender the item, transfer it to checked baggage (if there is time before departure), or return to the ticketing area. Items are never returned once surrendered at the checkpoint.

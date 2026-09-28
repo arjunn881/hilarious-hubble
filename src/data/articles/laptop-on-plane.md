@@ -16,7 +16,7 @@ Laptops are one of the few items at security where there's an actual procedure t
 - **Laptop in Carry-On:** ✅ Allowed — must be removed at standard screening
 - **Laptop in Checked Baggage:** ⚠️ Technically allowed but strongly discouraged
 - **TSA PreCheck:** ✅ Laptop stays in bag — no removal needed
-- **Laptop Charger in Carry-On:** ✅ Allowed — no removal required
+- **[Laptop Charger](/items/laptop-charger/) in Carry-On:** ✅ Allowed — no removal required
 - **TSA Declaration Required:** No
 
 ---
@@ -31,26 +31,26 @@ The reason: laptops are dense enough to obscure other items in an X-ray image. R
 
 **What counts as a "laptop" for removal purposes:**
 - Standard laptops (15", 13", etc.) — Yes, remove
-- MacBooks — Yes, remove
+- [MacBooks](/items/laptop/) — Yes, remove
 - Chromebooks — Yes, remove
 - Gaming laptops — Yes, remove
-- 2-in-1 tablet/laptops — TSA guidance says tablets generally don't need removal, but larger 2-in-1s (like Surface Pro) may be requested to be removed
+- 2-in-1 [tablet](/items/ipad/)/laptops — TSA guidance says [tablets](/items/tablet/) generally don't need removal, but larger 2-in-1s (like Surface Pro) may be requested to be removed
 
 **Items you do NOT need to remove:**
 - Tablets (iPad, Android tablets)
 - Phones
-- E-readers (Kindle)
+- [E-readers](/items/e-reader/) (Kindle)
 - Laptop chargers
 - Cables and accessories
 
 > [!IMPORTANT]
-> TSA PreCheck members do not need to remove laptops, shoes, or liquids at the checkpoint. If you travel frequently with a laptop, TSA PreCheck (currently $85 for 5 years) pays for itself in convenience within a few trips.
+> TSA PreCheck members do not need to remove laptops, [shoes](/items/shoes/), or liquids at the checkpoint. If you travel frequently with a laptop, TSA PreCheck (currently $85 for 5 years) pays for itself in convenience within a few trips.
 
 ### Laptops in Checked Baggage
 
 Laptops can technically go in checked luggage, but it is **strongly discouraged** for multiple reasons:
 
-1. **Lithium battery risk:** Laptop batteries are lithium-ion. The FAA recommends lithium battery devices be in carry-on where crew can respond to any battery fire immediately.
+1. **[Lithium battery](/items/camera-battery/) risk:** Laptop batteries are lithium-ion. The FAA recommends lithium battery devices be in carry-on where crew can respond to any battery fire immediately.
 2. **Theft risk:** Checked bags are not secure. Valuable electronics in checked luggage are at significant risk of theft by baggage handlers.
 3. **Damage risk:** Checked bags experience significant impact, compression, and rough handling. Laptops are fragile electronics.
 4. **Most airlines recommend against it:** Delta, United, American, and virtually every major carrier advises keeping electronics in carry-on.
@@ -86,7 +86,7 @@ Some airlines explicitly state in their conditions of carriage that they are not
 
 - Laptop stays in your bag
 - No removal, no separate bin
-- Same for shoes, liquids, and belts
+- Same for shoes, liquids, and [belts](/items/belt/)
 - Significantly faster process
 
 ---
@@ -102,7 +102,7 @@ Some airlines explicitly state in their conditions of carriage that they are not
 ### For Checked Luggage (Last Resort)
 
 - Use a hard-shell laptop case
-- Wrap in bubble wrap as additional protection
+- [Wrap](/items/sandwich/) in bubble wrap as additional protection
 - Place in the center of your luggage
 - Consider travel insurance that covers electronics
 

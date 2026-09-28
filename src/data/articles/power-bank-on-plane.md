@@ -7,13 +7,13 @@ isMedical: false
 isLegal: false
 ---
 
-Power banks have specific rules, and ignoring them can get your battery confiscated. The key number is your battery's watt-hour (Wh) rating. Most travelers don't know what that is. This guide tells you exactly how to find it and what the limits mean.
+[Power banks](/items/battery-pack/) have specific rules, and ignoring them can get your battery confiscated. The key number is your battery's watt-hour (Wh) rating. Most travelers don't know what that is. This guide tells you exactly how to find it and what the limits mean.
 
 ---
 
 ## TSA Rules Summary
 
-- **Power Banks in Carry-On:** ✅ Allowed (with watt-hour limits)
+- **[Power Banks](/items/portable-charger/) in Carry-On:** ✅ Allowed (with watt-hour limits)
 - **Power Banks in Checked Baggage:** ❌ Prohibited — all sizes
 - **Under 100Wh:** ✅ No approval needed — carry-on only
 - **100–160Wh:** ⚠️ Airline approval required — carry-on only
@@ -26,7 +26,7 @@ Power banks have specific rules, and ignoring them can get your battery confisca
 
 ### Why Power Banks Must Be in Carry-On
 
-Power banks contain lithium-ion batteries. The FAA prohibits lithium battery devices in checked baggage because if a battery malfunctions and catches fire in the cargo hold, it cannot be quickly detected or suppressed by crew. In the cabin, a fire can be spotted and extinguished immediately.
+Power banks contain lithium-ion batteries. The FAA prohibits [lithium battery](/items/camera-battery/) devices in checked baggage because if a battery malfunctions and catches fire in the cargo hold, it cannot be quickly detected or suppressed by crew. In the cabin, a fire can be spotted and extinguished immediately.
 
 > [!IMPORTANT]
 > **Power banks are never allowed in checked baggage** — regardless of their size or capacity. This is a strict FAA rule with no exceptions. If a gate agent asks you to check your bag at the last minute, remove your power bank first.
@@ -99,7 +99,7 @@ Most consumer power banks (Anker, Xiaomi, Aukey, RAVPower) are under 100Wh and a
 **Q: Can you bring a power bank on a plane?**
 A: Yes, in carry-on baggage only. Power banks are prohibited in checked bags.
 
-**Q: Does TSA allow power banks?**
+**Q: [Does TSA allow power banks](/items/power-bank/)?**
 A: Yes. Power banks under 100Wh are permitted in carry-on with no restrictions. 100–160Wh requires airline approval.
 
 **Q: Can I put a power bank in checked luggage?**
@@ -111,7 +111,7 @@ A: Under 100Wh: freely allowed. 100–160Wh: allowed with airline approval. Over
 **Q: Can I bring a 20,000mAh power bank on a plane?**
 A: Yes. A 20,000mAh power bank at 3.7V is approximately 74Wh — well within the 100Wh limit.
 
-**Q: What is the United Airlines powerbank limit?**
+**Q: What is the [United Airlines powerbank](/items/power-bank/) limit?**
 A: United allows power banks under 100Wh freely. Banks between 100–160Wh require prior airline approval. Over 160Wh is prohibited.
 
 ---

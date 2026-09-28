@@ -17,7 +17,7 @@ affiliateLinks:
 ---
 
 
-Honey is a liquid, which means it's subject to the 3.4 oz carry-on limit. That's the simple version. But honey also shows up frequently at customs as an agricultural product, which creates an entirely different set of issues depending on where you're landing. Here's everything you need to know.
+[Honey](/items/honey/) is a liquid, which means it's subject to the 3.4 oz carry-on limit. That's the simple version. But honey also shows up frequently at customs as an agricultural product, which creates an entirely different set of issues depending on where you're landing. Here's everything you need to know.
 
 ---
 
@@ -42,7 +42,7 @@ This means honey is subject to the **3-1-1 liquids rule** in carry-on baggage:
 - All honey containers must fit in your **one quart-sized clear plastic bag**
 - Only **one bag per passenger** is allowed
 
-In practical terms, this means a standard full-size jar of honey (typically 12–16 oz) **cannot go in your carry-on bag**. TSA will confiscate it at the security checkpoint.
+In practical terms, this means a standard full-size [jar of honey](/items/honey/) (typically 12–16 oz) **cannot go in your carry-on bag**. TSA will confiscate it at the security checkpoint.
 
 > [!IMPORTANT]
 > Small honey packets (like the single-serve packets you get from restaurants) and honey sticks are typically well under 3.4 oz and are fine in carry-on bags. Bring those instead of jars if you're not checking a bag.
@@ -122,7 +122,7 @@ Japan permits honey imports for personal use, but:
 
 ## Common Mistakes to Avoid
 
-- **Mistake 1: Bringing a full jar in carry-on.** A standard 340g honey jar is 10+ times the 3.4 oz TSA limit. It will be confiscated at the security checkpoint.
+- **Mistake 1: Bringing a full jar in carry-on.** A standard 340g [honey jar](/items/honey/) is 10+ times the 3.4 oz TSA limit. It will be confiscated at the security checkpoint.
 - **Mistake 2: Assuming checked baggage clears international customs.** TSA rules and customs rules are separate. A jar that's fine in your checked bag on a domestic flight may still be confiscated by Australian or Canadian customs on arrival.
 - **Mistake 3: Not declaring honey.** Failing to declare food items at customs carries significant fines. In Australia, first-time non-declaration fines start at AUD $600.
 
@@ -143,7 +143,7 @@ A: Yes. Any quantity of honey is allowed in checked baggage for domestic US flig
 A: Generally yes. Declare it on your CBSA customs form. Commercially packaged honey is usually permitted.
 
 **Q: Can I bring honey to Australia?**
-A: You must declare it. Australian biosecurity officers will screen it. Commercially sealed honey from certain origins may be allowed; some will be confiscated.
+A: You must declare it. Australian biosecurity officers will [screen](/items/ipad/) it. Commercially sealed honey from certain origins may be allowed; some will be confiscated.
 
 **Q: How much honey can I bring on a plane in carry-on?**
 A: A maximum of 3.4 oz (100ml) per container, all fitting in one quart-sized bag, for US domestic carry-on.

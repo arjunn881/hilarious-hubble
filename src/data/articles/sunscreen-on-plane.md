@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Sunscreen is a liquid. That's the thing people keep forgetting. The stick version, the spray version, the thick lotion version, most of them still count as liquids under TSA rules and the 3.4 oz carry-on limit applies. Here's how to travel with sunscreen without losing it at security.
+Sunscreen is a liquid. That's the thing people keep forgetting. The stick version, the spray version, the thick [lotion](/items/lotion/) version, most of them still count as liquids under TSA rules and the 3.4 oz carry-on limit applies. Here's how to travel with sunscreen without losing it at security.
 
 ---
 
@@ -31,7 +31,7 @@ Sunscreen is a liquid. That's the thing people keep forgetting. The stick versio
 | **Gel sunscreen** | ✅ Yes — gel | ⚠️ 3.4 oz (100ml) max |
 | **Sunscreen stick (solid)** | ❌ No — solid | ✅ Any size |
 | **Mineral powder sunscreen** | ❌ No — powder/solid | ✅ Any size |
-| **Tinted SPF moisturizer** | ✅ Yes — liquid | ⚠️ 3.4 oz (100ml) max |
+| **Tinted SPF [moisturizer](/items/lotion/)** | ✅ Yes — liquid | ⚠️ 3.4 oz (100ml) max |
 
 > [!IMPORTANT]
 > A standard full-size sunscreen bottle is 6–8 oz — too large for carry-on. Either buy a travel-size 3 oz version or decant into a reusable travel bottle before the airport.
@@ -60,12 +60,12 @@ Most major brands sell 1–3 oz travel sizes:
 - **Neutrogena Ultra Sheer** — available in 3 oz
 - **Coppertone Sport** — available in 2 oz
 - **EltaMD UV Clear** — available in 1.7 oz
-- **Banana Boat Sport** — available in 2.5 oz
+- **[Banana](/items/bananas/) Boat Sport** — available in 2.5 oz
 
 ### Option 2: Use Sunscreen Sticks
 **Sunscreen sticks** are solid format and are **completely exempt from the TSA liquid rule**. You can bring any size in carry-on. Popular options:
 - Sun Bum SPF 50 Stick
-- Banana Boat Clearly Sheer Stick
+- [Banana](/items/fresh-fruits/) Boat Clearly Sheer Stick
 - Neutrogena Sheer Zinc Stick
 
 ### Option 3: Decant Into a Reusable Travel Bottle
@@ -107,12 +107,12 @@ For **international flights**, sunscreen follows the same carry-on liquid rule �
 ## Frequently Asked Questions
 
 **Q: Is sunscreen a liquid for TSA?**
-A: Yes. Sunscreen lotion, cream, gel, and spray are all classified as liquids/aerosols and must follow the 3.4 oz carry-on limit. Sunscreen sticks are solid and exempt.
+A: Yes. [Sunscreen lotion](/items/sunscreen/), cream, gel, and spray are all classified as liquids/aerosols and must follow the 3.4 oz carry-on limit. Sunscreen sticks are solid and exempt.
 
 **Q: Can I bring a full-size sunscreen on a plane?**
 A: Not in carry-on. Standard 6–8 oz bottles exceed the 3.4 oz limit. Pack full-size sunscreen in checked bags, or buy travel-size versions for carry-on.
 
-**Q: What about SPF moisturizer or tinted SPF foundation?**
+**Q: What about SPF moisturizer or tinted SPF [foundation](/items/makeup/)?**
 A: Yes — tinted SPF moisturizer, BB cream with SPF, and CC cream are all liquids and subject to the 3.4 oz carry-on limit.
 
 **Q: Can you bring sunscreen through TSA in a checked bag?**
@@ -131,11 +131,11 @@ Bring sunscreen — but pack it smart. For carry-on travel, use a 3.4 oz or smal
 
 ## See Also
 
-- [TSA 3-1-1 Liquids Rule: The Complete Guide](/guide/tsa-311-liquids-rule)
-- [Shampoo Bars on a Plane — 3-1-1 Exempt Alternative](/guide/shampoo-bars-on-plane)
-- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item)
-- [What Is TSA PreCheck? Leave Liquids Packed](/guide/what-is-tsa-precheck)
-- [Can You Bring Shampoo on a Plane?](/guide/shampoo-on-plane)
+- [TSA 3-1-1 Liquids Rule: The Complete Guide](/guide/tsa-311-liquids-rule/)
+- [Shampoo Bars on a Plane — 3-1-1 Exempt Alternative](/guide/shampoo-bars-on-plane/)
+- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item/)
+- [What Is TSA PreCheck? Leave Liquids Packed](/guide/what-is-tsa-precheck/)
+- [Can You Bring Shampoo on a Plane?](/guide/shampoo-on-plane/)
 
 ---
 

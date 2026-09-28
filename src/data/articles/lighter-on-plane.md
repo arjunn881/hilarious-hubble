@@ -7,15 +7,15 @@ isMedical: false
 isLegal: false
 ---
 
-Most lighters are actually allowed on planes, which surprises a lot of people. But the rules split entirely based on lighter type, and getting it wrong means losing it at the checkpoint. Here's the full breakdown.
+Most [lighters](/items/lighter/) are actually allowed on planes, which surprises a lot of people. But the rules split entirely based on lighter type, and getting it wrong means losing it at the checkpoint. Here's the full breakdown.
 
 ---
 
 ## TSA Rules Summary
 
-- **Disposable Lighters (Bic-style) in Carry-On:** ✅ One allowed
+- **[Disposable Lighters](/items/lighter/) (Bic-style) in Carry-On:** ✅ One allowed
 - **Disposable Lighters in Checked Baggage:** ✅ One allowed (in DOT-approved case)
-- **Torch / Jet Lighters in Carry-On:** ❌ Prohibited
+- **Torch / [Jet Lighters](/items/torch-lighter/) in Carry-On:** ❌ Prohibited
 - **Torch / Jet Lighters in Checked Baggage:** ❌ Prohibited
 - **Lighter Fluid in Any Baggage:** ❌ Prohibited
 - **TSA Declaration Required:** No
@@ -33,8 +33,8 @@ These are standard lighters like Bic, Clipper, or generic disposable lighters wi
 - **Checked baggage:** ✅ One lighter allowed, but only when placed in a DOT-approved (Department of Transportation) lighter case
 - No fuel leaks, no open flames
 
-**Type 2: Torch Lighters / Jet Flame Lighters**
-Torch lighters produce a hot, concentrated blue flame used for cigars, pipes, or cooking. Brands like Xikar, Colibri, and generic torch lighters fall into this category.
+**Type 2: [Torch Lighters](/items/lighter/) / Jet Flame Lighters**
+[Torch lighters](/items/torch-lighter/) [produce](/items/fruit/) a hot, concentrated blue flame used for [cigars](/items/cigars/), pipes, or cooking. Brands like Xikar, Colibri, and generic torch lighters fall into this category.
 
 - **Carry-on:** ❌ Prohibited — no exceptions
 - **Checked baggage:** ❌ Also prohibited — no exceptions
@@ -44,7 +44,7 @@ Torch lighters produce a hot, concentrated blue flame used for cigars, pipes, or
 
 ### What Is a DOT-Approved Lighter Case?
 
-For checked baggage, the FAA requires disposable lighters to be stored in a special case that prevents the lighter from accidentally activating and leaking fuel. These cases are inexpensive (around $5–15) and available at tobacco shops and online.
+For checked baggage, the FAA requires disposable lighters to be stored in a special case that prevents the lighter from accidentally activating and leaking fuel. These cases are inexpensive (around $5–15) and available at [tobacco](/items/cigarettes/) shops and online.
 
 Without a DOT case, a disposable lighter in your checked bag technically violates FAA regulations — though enforcement varies.
 
@@ -102,7 +102,7 @@ A: Yes — one disposable or common lighter is permitted in carry-on. Torch ligh
 **Q: Can I bring a lighter in my carry-on bag?**
 A: Yes. One standard disposable lighter (Bic-style) is allowed in carry-on or on your person.
 
-**Q: Can you bring a torch lighter on a plane?**
+**Q: [Can you bring a torch lighter on a plane](/items/lighter/)?**
 A: No. Torch/jet flame lighters are banned from both carry-on and checked baggage.
 
 **Q: Can I bring a lighter to Singapore?**

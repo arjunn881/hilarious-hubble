@@ -104,18 +104,18 @@ Hour of Day (Mon/Fri)    Typical Standard Wait    Typical PreCheck Wait
 ## Top Strategies to Beat O'Hare Security Lines
 
 ### 1. Enroll in TSA PreCheck or Global Entry
-The single most impactful upgrade you can make for flying out of ORD is [TSA PreCheck](/guide/tsa-precheck-guide). Even when Terminal 1 or Terminal 3 standard lines wind through the ticketing lobby, TSA PreCheck lanes average **under 8 minutes**. PreCheck members keep their shoes on and leave their [3-1-1 liquids](/guide/tsa-311-liquids-rule) and laptops in their [carry-on baggage](/guide/carry-on-and-personal-item).
+The single most impactful upgrade you can make for flying out of ORD is [TSA PreCheck](/guide/tsa-precheck-guide/). Even when Terminal 1 or Terminal 3 standard lines wind through the ticketing lobby, TSA PreCheck lanes average **under 8 minutes**. PreCheck members keep their [shoes](/items/shoes/) on and leave their [3-1-1 liquids](/guide/tsa-311-liquids-rule/) and laptops in their [carry-on baggage](/guide/carry-on-and-personal-item/).
 
-If you also take international trips, [Global Entry](/guide/global-entry-vs-tsa-precheck) includes TSA PreCheck and gives you expedited re-entry upon landing at Terminal 5.
+If you also take international trips, [Global Entry](/guide/global-entry-vs-tsa-precheck/) includes TSA PreCheck and gives you expedited re-entry upon landing at Terminal 5.
 
 ### 2. Leverage Airside Connectivity in Terminals 1, 2, and 3
-If your ticket is on American in Terminal 3 or United in Terminal 1, remember that Terminals 1, 2, and 3 are physically linked behind security. If Checkpoint 7 in Terminal 3 is slammed, you can walk down to Checkpoint 5 or Checkpoint 2, clear security, and walk back airside to your departure gate.
+If your [ticket](/items/boarding-pass/) is on American in Terminal 3 or United in Terminal 1, remember that Terminals 1, 2, and 3 are physically linked behind security. If Checkpoint 7 in Terminal 3 is slammed, you can walk down to Checkpoint 5 or Checkpoint 2, clear security, and walk back airside to your departure gate.
 
 ### 3. Take the CTA Blue Line Early During Highway Rush Hours
 Traffic on the Kennedy Expressway (I-90) between downtown Chicago and O'Hare often adds 45–75 minutes of transit delay. The **CTA Blue Line train** runs 24/7 directly into the lower level of O'Hare (between Terminals 1, 2, and 3), providing a reliable 45-minute trip from downtown Loop regardless of surface road congestion.
 
 ### 4. Pack Compliantly to Avoid Bag Checks
-A single bag pull for manual inspection adds 5–15 minutes per passenger. Ensure your [electric toothbrush](/guide/electric-toothbrush-on-plane), [protein powder](/guide/protein-powder-on-plane), and [sunscreen bottles](/guide/sunscreen-on-plane) are packed in exact compliance with TSA regulations.
+A single bag pull for manual inspection adds 5–15 minutes per passenger. Ensure your [electric toothbrush](/guide/electric-toothbrush-on-plane/), [protein powder](/guide/protein-powder-on-plane/), and [sunscreen bottles](/guide/sunscreen-on-plane/) are packed in exact compliance with TSA regulations.
 
 ---
 
@@ -126,23 +126,23 @@ A single bag pull for manual inspection adds 5–15 minutes per passenger. Ensur
 - **International Flights (Terminal 5):** Arrive **3 hours** prior to scheduled departure.
 
 ### Does Chicago O'Hare have TSA PreCheck in every terminal?
-Yes. Dedicated TSA PreCheck lanes are operational across all active passenger terminals at ORD (Terminal 1 Checkpoint 2, Terminal 2 Checkpoint 5, Terminal 3 Checkpoint 8, and Terminal 5 Main Checkpoint). Learn all the perks in our guide on [What Is TSA PreCheck](/guide/what-is-tsa-precheck).
+Yes. Dedicated TSA PreCheck lanes are operational across all active passenger terminals at ORD (Terminal 1 Checkpoint 2, Terminal 2 Checkpoint 5, Terminal 3 Checkpoint 8, and Terminal 5 Main Checkpoint). Learn all the perks in our guide on [What Is TSA PreCheck](/guide/what-is-tsa-precheck/).
 
 ### Can I walk between Terminals 1, 2, and 3 without exiting security?
 Yes. Terminals 1, 2, and 3 are connected via indoor secure pedestrian walkways behind security. Terminal 5, however, is a separate building; moving between Terminal 5 and the domestic terminals requires riding the ATS train and clearing TSA security.
 
 ### How does ORD wait time compare to other major airports?
-ORD wait times are comparable to other giant hub airports like [ATL](/guide/atl-tsa-wait-times), [MIA](/guide/mia-tsa-wait-times), LAX, and JFK. Compare nationwide airport patterns in our master [TSA Wait Times Guide](/guide/tsa-wait-times-guide).
+ORD wait times are comparable to other giant hub airports like [ATL](/guide/atl-tsa-wait-times/), [MIA](/guide/mia-tsa-wait-times/), LAX, and JFK. Compare nationwide airport patterns in our master [TSA Wait Times Guide](/guide/tsa-wait-times-guide/).
 
 ---
 
 ## Related Travel & Security Guides
 
-- [TSA Wait Times at Major US Airports: Master Guide](/guide/tsa-wait-times-guide)
-- [ATL TSA Wait Times: Atlanta Airport Guide](/guide/atl-tsa-wait-times)
-- [MIA TSA Wait Times: Miami Airport Guide](/guide/mia-tsa-wait-times)
-- [What Is TSA PreCheck? Full Overview](/guide/what-is-tsa-precheck)
-- [TSA PreCheck Cost, Application & Renewal](/guide/tsa-precheck-guide)
-- [Global Entry vs TSA PreCheck: Which Is Better?](/guide/global-entry-vs-tsa-precheck)
-- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item)
+- [TSA Wait Times at Major US Airports: Master Guide](/guide/tsa-wait-times-guide/)
+- [ATL TSA Wait Times: Atlanta Airport Guide](/guide/atl-tsa-wait-times/)
+- [MIA TSA Wait Times: Miami Airport Guide](/guide/mia-tsa-wait-times/)
+- [What Is TSA PreCheck? Full Overview](/guide/what-is-tsa-precheck/)
+- [TSA PreCheck Cost, Application & Renewal](/guide/tsa-precheck-guide/)
+- [Global Entry vs TSA PreCheck: Which Is Better?](/guide/global-entry-vs-tsa-precheck/)
+- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item/)
 - [FlyChicago Official O'Hare Website](https://www.flychicago.com/ohare)

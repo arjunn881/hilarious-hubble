@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Can you bring dumbbells on a plane? Technically yes. TSA doesn't outright prohibit them. But airline weight limits are what make it complicated, and most travelers find it's only worth the effort for small, light sets. Here's the honest rundown on flying with dumbbells and weight plates.
+[Can you bring dumbbells on a plane](/items/dumbbells/)? Technically yes. TSA doesn't outright prohibit them. But airline weight limits are what make it complicated, and most travelers find it's only worth the effort for small, light sets. Here's the honest rundown on flying with [dumbbells](/items/dumbbells/) and weight plates.
 
 ---
 
@@ -15,7 +15,7 @@ Can you bring dumbbells on a plane? Technically yes. TSA doesn't outright prohib
 
 - **Dumbbells in Carry-On:** ❌ Not Recommended — TSA may prohibit as potential weapons
 - **Dumbbells in Checked Baggage:** ✅ Allowed (subject to airline weight limits)
-- **Resistance Bands in Carry-On:** ✅ Allowed
+- **Resistance [Bands](/items/gold-ring/) in Carry-On:** ✅ Allowed
 - **TSA Declaration Required:** No
 
 ---
@@ -74,7 +74,7 @@ Given the weight and size challenges, most fitness-conscious travelers choose al
 ### 2. Adjustable Travel Dumbbells
 Some brands make compact travel dumbbells with adjustable weight plates:
 - Still subject to airline weight limits
-- Lighter overall than traditional dumbbells
+- [Lighter](/items/lighter/) overall than traditional dumbbells
 - Better for checked bags than standard cast-iron
 
 ### 3. Hotel Gym
@@ -91,7 +91,7 @@ Push-ups, pull-ups, lunges, planks, and HIIT workouts require no equipment and c
 ## Essential Traveler Tips
 
 1. **Use resistance bands instead** — They're TSA-friendly, carry-on approved, weigh almost nothing, and can provide a full workout.
-2. **If you must check dumbbells** — Use a dedicated hard-shell or reinforced bag. Dumbbells can puncture soft luggage. Wrap each dumbbell individually.
+2. **If you must check dumbbells** — Use a dedicated hard-shell or reinforced bag. Dumbbells can puncture soft luggage. [Wrap](/items/sandwich/) each dumbbell individually.
 3. **Calculate the weight first** — Know exactly how much your dumbbells weigh before packing. Account for the bag itself (typically 5–10 lbs).
 4. **Consider shipping** — For extended stays, shipping dumbbells via UPS or FedEx ground may be cheaper than overweight baggage fees.
 
@@ -120,7 +120,7 @@ A: Generally no — most TSA officers will not allow dumbbells through security 
 A: Yes, but airline weight limits apply. Standard checked bags are limited to 50 lbs, and overweight fees apply beyond that.
 
 **Q: What gym equipment is allowed in carry-on?**
-A: Resistance bands, jump ropes, and most non-metallic fitness accessories are allowed in carry-on. Heavy metal weights are not.
+A: Resistance bands, [jump ropes](/items/jump-rope/), and most non-metallic fitness accessories are allowed in carry-on. Heavy metal weights are not.
 
 **Q: Can you bring dumbbells on an international flight?**
 A: Same rules apply — checked baggage is the only viable option. International airlines generally have the same 20–23 kg checked bag limits.
@@ -129,7 +129,7 @@ A: Same rules apply — checked baggage is the only viable option. International
 
 ## Conclusion
 
-The simplest advice for traveling fitness enthusiasts: leave your dumbbells at home and pack resistance bands instead. Bands are carry-on approved, weigh almost nothing, and can provide a surprisingly effective workout. If you absolutely need weights, pack them in a checked bag and watch the total bag weight carefully to avoid expensive overweight fees. For most travelers, the combination of resistance bands and hotel gym access is the most practical solution for maintaining fitness while flying.
+The simplest advice for traveling fitness enthusiasts: leave your dumbbells at home and pack resistance bands instead. Bands are carry-on approved, weigh almost nothing, and can provide a surprisingly effective workout. If you absolutely need weights, pack them in a checked bag and [watch](/items/watch/) the total bag weight carefully to avoid expensive overweight fees. For most travelers, the combination of resistance bands and hotel gym access is the most practical solution for maintaining fitness while flying.
 
 ---
 

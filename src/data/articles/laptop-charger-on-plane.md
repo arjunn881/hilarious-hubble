@@ -7,11 +7,11 @@ isMedical: false
 isLegal: false
 ---
 
-Your laptop charger can go in checked luggage. That's it — that's the answer most people need. But because "lithium battery" appears on so many travel warnings and there's genuine confusion about what counts as one, a lot of travelers unnecessarily cram their charger into an already-packed carry-on.
+Your [laptop charger](/items/laptop-charger/) can go in checked luggage. That's it — that's the answer most people need. But because "[lithium battery](/items/camera-battery/)" appears on so many travel warnings and there's genuine confusion about what counts as one, a lot of travelers unnecessarily cram their charger into an already-packed carry-on.
 
-**Laptop chargers, charging bricks, and power cables are allowed in both carry-on and checked bags.** Every airline, everywhere. No restrictions, no watt-hour limits, no declaration.
+**Laptop chargers, [charging bricks](/items/laptop-charger/), and power cables are allowed in both carry-on and checked bags.** Every airline, everywhere. No restrictions, no watt-hour limits, no declaration.
 
-The nuance worth knowing is the difference between a *charger* and a *power bank* — because one has a lithium battery and one absolutely doesn't.
+The nuance worth knowing is the difference between a *charger* and a *[power bank](/items/battery-pack/)* — because one has a lithium battery and one absolutely doesn't.
 
 ---
 
@@ -20,19 +20,19 @@ The nuance worth knowing is the difference between a *charger* and a *power bank
 - **Carry-On Baggage:** ✅ **ALLOWED**
 - **Checked Baggage:** ✅ **ALLOWED**
 - **Lithium Battery Inside?** ❌ **No** — standard wall chargers contain no battery cells
-- **Power Banks (Portable Chargers):** ⚠️ **CARRY-ON ONLY** — those do have lithium batteries
+- **[Power Banks](/items/portable-charger/) (Portable Chargers):** ⚠️ **CARRY-ON ONLY** — those do have [lithium batteries](/items/lithium-batteries/)
 
 ---
 
 ## The Charger vs. Power Bank Confusion (This Is Why People Get It Wrong)
 
-People conflate two very different things: the brick that plugs into the wall, and the portable battery pack that charges your phone in your pocket. They're both involved in "charging," but they work completely differently — and TSA treats them completely differently.
+People conflate two very different things: the brick that plugs into the wall, and the portable [battery pack](/items/battery-pack/) that charges your phone in your pocket. They're both involved in "charging," but they work completely differently — and TSA treats them completely differently.
 
 | Device | What It Does | Has Lithium Battery? | Carry-On | Checked |
 |---|---|---|---|---|
-| **Laptop Charger / Power Brick** | Draws from wall outlet to power your laptop | ❌ No | ✅ Yes | ✅ Yes |
+| **Laptop Charger / [Power Brick](/items/laptop-charger/)** | Draws from wall outlet to power your laptop | ❌ No | ✅ Yes | ✅ Yes |
 | **Power Bank / Portable Battery** | Stores charge to power devices on the go | ✅ Yes | ✅ Yes (< 100Wh) | ❌ Prohibited |
-| **Laptop Itself** | Computer with an internal battery | ✅ Yes | ✅ Recommended | ⚠️ Technically ok, not advised |
+| **Laptop Itself** | [Computer](/items/laptop/) with an internal battery | ✅ Yes | ✅ Recommended | ⚠️ Technically ok, not advised |
 
 > [!IMPORTANT]
 > The simple way to remember it: if a device **plugs into the wall to draw power**, it has no battery and can go anywhere. If a device **stores energy on its own**, it's subject to lithium battery rules and must stay in your carry-on.
@@ -43,7 +43,7 @@ People conflate two very different things: the brick that plugs into the wall, a
 
 Aviation's battery restrictions exist because lithium-ion cells can, under rare conditions, enter thermal runaway — an uncontrolled chemical reaction that causes fires. It's the reason Samsung Galaxy Note 7s got banned from flights back in 2016, and why loose lithium batteries can't go in checked luggage.
 
-A laptop charger doesn't have any of that. Open one up and you'll find a transformer, a rectifier circuit, some capacitors, and a bunch of circuitry. There's no lithium, no cobalt, no stored charge. It converts power from the wall — it doesn't hold any. That's why there's no watt-hour rating on your MacBook charger. There's nothing to rate.
+A laptop charger doesn't have any of that. Open one up and you'll find a transformer, a rectifier circuit, some capacitors, and a bunch of circuitry. There's no lithium, no cobalt, no stored charge. It converts power from the wall — it doesn't hold any. That's why there's no watt-hour rating on your [MacBook charger](/items/laptop-charger/). There's nothing to rate.
 
 This is true whether it's an older barrel-plug brick, a USB-C PD adapter, or a modern GaN charger. All of them: wall-powered transformers. None of them: batteries.
 
@@ -53,7 +53,7 @@ This is true whether it's an older barrel-plug brick, a USB-C PD adapter, or a m
 
 Good news here too. Laptop chargers don't need to come out of your bag at security. Unlike laptops themselves (which go in a bin in standard lanes), chargers stay in your bag. If you're running cables through a dense cable organizer, you might occasionally get a secondary check just because the tangled mass looks odd on X-ray — but it's quick and it's not a problem.
 
-The thing that actually helps is packing your cables and charger in a way that looks organized on-screen. A mesh electronics pouch works well. Individual velcro cable ties are even better — a neatly wrapped cable reads completely differently on X-ray than a bird's nest of wires.
+The thing that actually helps is packing your cables and charger in a way that looks organized on-[screen](/items/ipad/). A mesh electronics pouch works well. Individual velcro cable ties are even better — a neatly wrapped cable reads completely differently on X-ray than a bird's nest of wires.
 
 ---
 
@@ -78,9 +78,9 @@ Flip your charger over and check the small print near the input specs. If you se
 
 ## GaN Chargers: Worth Knowing About for Travel
 
-If you haven't switched to a GaN (Gallium Nitride) charger yet, they're worth considering for travel. The short version: GaN chargers are significantly smaller and lighter than traditional silicon-based adapters while delivering the same or more power.
+If you haven't switched to a GaN (Gallium Nitride) charger yet, they're worth considering for travel. The short version: GaN chargers are significantly smaller and [lighter](/items/lighter/) than traditional silicon-based adapters while delivering the same or more power.
 
-A 100W GaN charger can be 60% smaller than an old-school equivalent. Some models (like the Anker 736 or Baseus 100W) can charge a laptop, phone, and tablet simultaneously from a single outlet — one item through security instead of three.
+A 100W GaN charger can be 60% smaller than an old-school equivalent. Some models (like the Anker 736 or Baseus 100W) can charge a laptop, phone, and [tablet](/items/ipad/) simultaneously from a single outlet — one item through security instead of three.
 
 Security treats them exactly the same as any other charger. They're wall-powered transformers. They can go in your carry-on or your checked bag without any fuss.
 
@@ -88,11 +88,11 @@ Security treats them exactly the same as any other charger. They're wall-powered
 
 ## Practical Packing Tips
 
-**Use a dedicated electronics pouch.** A clear or mesh organizer keeps your charger, cables, and adapters together and visible on the X-ray belt. Officers can see exactly what's there without needing to pull anything out.
+**Use a dedicated electronics pouch.** A clear or mesh organizer keeps your charger, cables, and adapters together and visible on the X-ray [belt](/items/belt/). Officers can see exactly what's there without needing to pull anything out.
 
-**Velcro-tie your cables.** Loose, tangled cables create an irregular mass on X-ray that's much more likely to prompt a manual check than a neatly tied coil. A three-second velcro wrap saves you 90 seconds at security.
+**Velcro-tie your cables.** Loose, tangled cables create an irregular mass on X-ray that's much more likely to prompt a manual check than a neatly tied coil. A three-second velcro [wrap](/items/sandwich/) saves you 90 seconds at security.
 
-**Consider one good universal adapter.** Instead of carrying a laptop charger plus a separate phone charger plus multiple plug adapters for different countries, a quality all-in-one universal adapter (like the BESTEK 220W) consolidates everything. One thing to pack, one thing through security.
+**Consider one good universal adapter.** Instead of carrying a laptop charger plus a separate [phone charger](/items/phone-charger/) plus multiple plug adapters for different countries, a quality all-in-one universal adapter (like the BESTEK 220W) consolidates everything. One thing to pack, one thing through security.
 
 **If you're flying long-haul, keep the charger in your carry-on.** Many international flights have seat-mounted AC outlets. If yours does, you can work the entire flight without draining your laptop battery.
 
@@ -107,10 +107,10 @@ Yes, fully. Laptop chargers, power bricks, and cables have zero lithium battery 
 Because people confuse laptop chargers with power banks. Power banks (portable battery packs) contain lithium-ion batteries and must stay in carry-on bags. Regular chargers don't have batteries at all.
 
 ### Do I need to take my charger out of my bag at TSA?
-No. Chargers stay in your bag. Only laptops and tablets need to come out in standard screening lanes (not needed with TSA PreCheck).
+No. Chargers stay in your bag. Only laptops and [tablets](/items/tablet/) need to come out in standard screening lanes (not needed with TSA PreCheck).
 
 ### Can I bring more than one charger?
-Yes. There's no quantity limit on chargers or charging cables. Pack as many as you need.
+Yes. There's no quantity limit on chargers or [charging cables](/items/phone-charger/). Pack as many as you need.
 
 ### What about USB-C chargers — are they treated the same as older chargers?
 Identical treatment. Whether it's a USB-C PD adapter, a MagSafe 3 brick, or a 15-year-old barrel-plug adapter, they're all wall-powered transformers with no lithium cells. All fully allowed everywhere.
@@ -119,7 +119,7 @@ Identical treatment. Whether it's a USB-C PD adapter, a MagSafe 3 brick, or a 15
 If your seat has an AC outlet — common on international flights and a lot of domestic US aircraft — yes, just plug in as normal. Some seats only have USB-A/C ports, which means you'd use a direct cable rather than your charger. Worth checking your airline's aircraft specs before you fly.
 
 ### My charger and power bank look similar. How do I tell them apart?
-A charger has no battery and a power cord that plugs into the wall. A power bank has its own battery, a capacity rating in mAh or Wh printed on it, and no wall plug (it charges via a cable from another source). If it has a wall plug and no mAh rating, it's a charger. If it has a battery rating and you can charge your phone from it without plugging into anything, it's a power bank.
+A charger has no battery and a power cord that plugs into the wall. A power bank has its own battery, a capacity rating in mAh or Wh printed on it, and no [wall plug](/items/phone-charger/) (it charges via a cable from another source). If it has a wall plug and no mAh rating, it's a charger. If it has a battery rating and you can charge your phone from it without plugging into anything, it's a power bank.
 
 
 ---
@@ -135,9 +135,9 @@ A charger has no battery and a power cord that plugs into the wall. A power bank
 
 ## The Real Airport Checkpoint Experience
 
-Imagine you're at LAX, clearing security for an early international flight. You've packed your MacBook Pro charger in your checked suitcase to save space in your carry-on. The bag sails through check-in with no issues. On arrival, your charger is intact and your carry-on isn't crowded. That's the reality for the vast majority of travelers — laptop chargers in checked luggage generate zero security friction.
+Imagine you're at LAX, clearing security for an early international flight. You've packed your [MacBook](/items/laptop/) Pro charger in your checked suitcase to save space in your carry-on. The bag sails through check-in with no issues. On arrival, your charger is intact and your carry-on isn't crowded. That's the reality for the vast majority of travelers — laptop chargers in checked luggage generate zero security friction.
 
-The confusion arises because passengers lump "laptop charger" and "power bank" into the same mental category. They are fundamentally different devices. A standard wall charger is a **passive transformer with no energy storage**. A power bank is a **lithium-ion battery pack** — and that distinction changes everything at security.
+The confusion arises because passengers lump "laptop charger" and "power bank" into the same mental category. They are fundamentally different devices. A standard wall charger is a **passive transformer with no energy storage**. A power bank is a **lithium-ion [battery pack](/items/portable-charger/)** — and that distinction changes everything at security.
 
 Where travelers do run into problems is at the carry-on scanner when a large GaN adapter, bundled with several USB-C cables and a cable organizer, creates a dense mass on the X-ray screen. Organized packing (placing chargers in the top layer of your bag, cables coiled in a clear pouch) eliminates the delay.
 
@@ -155,7 +155,7 @@ Travelers often confuse **laptop chargers** (wall adapters) with **power banks**
 
 > [!IMPORTANT]
 > **The Golden Rule of Packing Electronics:**  
-> If an electronic device or accessory **plugs into a wall outlet to draw electricity and has no internal rechargeable battery**, it is safe and allowed in checked luggage. Only devices that **store energy in loose or standalone lithium-ion batteries** must stay in your cabin baggage.
+> If an electronic device or accessory **plugs into a wall outlet to draw electricity and has no internal [rechargeable battery](/items/camera-battery/)**, it is safe and allowed in checked luggage. Only devices that **store energy in loose or standalone lithium-ion batteries** must stay in your cabin baggage.
 
 ---
 
@@ -170,7 +170,7 @@ A laptop charger (power brick) contains none of these hazardous components:
 - **Capacitors:** Hold charge for microseconds during current smoothing — not comparable to battery cells
 - **No lithium, no cobalt, no thermal runaway risk**
 
-This is why chargers — including MacBook MagSafe adapters, Dell barrel-plug bricks, HP power adapters, and USB-C PD chargers — have **no watt-hour rating, no lithium battery declaration, and no IATA Class 9 designation**.
+This is why chargers — including MacBook MagSafe adapters, Dell barrel-plug bricks, HP [power adapters](/items/laptop-charger/), and USB-C PD chargers — have **no watt-hour rating, no lithium battery declaration, and no IATA Class 9 designation**.
 
 ---
 
@@ -228,11 +228,11 @@ Gallium Nitride (GaN) chargers represent the current state-of-the-art in compact
 ### Can I pack my laptop charger in my checked suitcase?
 Yes. Laptop chargers, power cords, and wall plugs can be packed inside checked suitcases without any airline restriction or declaration.
 
-### Do laptop chargers have lithium batteries?
+### [Do laptop chargers have lithium batteries](/items/laptop-charger/)?
 No. Standard laptop chargers (such as MacBook chargers, Dell power bricks, and Lenovo chargers) contain transformers, capacitors, and circuitry to convert AC wall power to DC power, but they contain zero battery cells.
 
-### Can I check in my iPad or tablet?
-While you can technically check tablets if they are completely powered off, the FAA and airlines strongly advise keeping all iPads, tablets, and laptops in your carry-on luggage to prevent transit damage, theft, and battery safety risks.
+### [Can I check in my iPad](/items/ipad/) or tablet?
+While you can technically check tablets if they are completely powered off, the FAA and airlines strongly advise keeping all [iPads](/items/ipad/), tablets, and laptops in your carry-on luggage to prevent transit damage, theft, and battery safety risks.
 
 ### Do I need to remove my laptop charger at TSA security?
 No. Unlike laptops themselves (which must come out of your bag in standard lanes), laptop chargers do not need to be removed separately. TSA officers can identify chargers easily through the X-ray screen.

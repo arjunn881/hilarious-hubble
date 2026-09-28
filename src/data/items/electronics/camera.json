@@ -8,25 +8,61 @@
     "dslr",
     "digital camera",
     "mirrorless camera",
-    "gopro"
+    "gopro",
+    "action camera",
+    "camera on a plane",
+    "can i bring camera on plane",
+    "camera in carry on",
+    "dslr on plane",
+    "mirrorless on plane",
+    "camera airplane",
+    "camera flight rules",
+    "camera carry on rules",
+    "camera lithium battery airplane",
+    "camera tripod carry on",
+    "camera film airport x ray",
+    "camera on korean air",
+    "camera on asiana",
+    "camera on jal",
+    "비행기 카메라",
+    "카메라 비행기",
+    "카메라 기내반입",
+    "카메라 배터리 비행기",
+    "カメラ 飛行機",
+    "カメラ 機内持ち込み"
   ],
   "keywords": [
     "camera",
     "photo",
     "gopro",
-    "dslr"
+    "dslr",
+    "mirrorless",
+    "photography",
+    "lens",
+    "carry-on",
+    "electronics",
+    "battery",
+    "film",
+    "tripod",
+    "korean-air",
+    "asiana",
+    "jal"
   ],
-  "description": "Guidelines for traveling with camera in your luggage.",
+  "description": "Guidelines for traveling with cameras, lenses, and batteries in your luggage.",
   "carryOn": {
     "status": "ALLOWED",
-    "reason": "Cameras are fully allowed in carry-on bags. Keep fragile lenses and camera bodies in your cabin baggage to prevent damage or theft.",
-    "conditions": [],
+    "reason": "Cameras, lenses, and camera bodies are 100% permitted in carry-on baggage. Carrying fragile optics and expensive electronics in the cabin is strongly recommended to prevent damage, theft, and baggage handler impact.",
+    "conditions": [
+      "Spare lithium-ion camera batteries must remain in carry-on baggage only."
+    ],
     "exceptions": []
   },
   "checkedBag": {
     "status": "ALLOWED",
-    "reason": "Cameras are allowed in checked baggage, but carrying them in the cabin is strongly recommended to protect delicate electronics.",
-    "conditions": [],
+    "reason": "Cameras are technically allowed in checked luggage, but airlines and security agencies strongly recommend keeping valuable cameras and delicate lenses in carry-on baggage. Any spare lithium-ion batteries are strictly forbidden in checked bags.",
+    "conditions": [
+      "Spare lithium-ion camera batteries are prohibited in checked luggage."
+    ],
     "exceptions": []
   },
   "tsa": {
@@ -35,8 +71,8 @@
     "pageTitle": "Can I bring camera on a plane?"
   },
   "faa": {
-    "officialUrl": "https://www.faa.gov/hazmat/packsafe",
-    "applicable": false
+    "officialUrl": "https://www.faa.gov/hazmat/packsafe/cameras-and-camera-equipment",
+    "applicable": true
   },
   "sources": [
     {
@@ -44,38 +80,134 @@
       "url": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camera",
       "verified": "2026-06-30",
       "priority": 1
-    }
-  ],
-  "airlines": [],
-  "international": {},
-  "travelTips": [
-    "Cameras are fully allowed in carry-on bags. Keep fragile lenses and camera bodies in your cabin baggage to prevent damage or theft."
-  ],
-  "relatedItems": [],
-  "faq": [
-    {
-      "question": "Is camera allowed in carry-on bags?",
-      "answer": "Camera is allowed in carry-on luggage. Cameras are fully allowed in carry-on bags. Keep fragile lenses and camera bodies in your cabin baggage to prevent damage or theft."
     },
     {
-      "question": "Can you pack camera in checked baggage?",
-      "answer": "Yes, Camera is allowed in checked bags. Cameras are allowed in checked baggage, but carrying them in the cabin is strongly recommended to protect delicate electronics."
+      "name": "FAA PackSafe",
+      "url": "https://www.faa.gov/hazmat/packsafe/cameras-and-camera-equipment",
+      "verified": "2026-09-28",
+      "priority": 2
+    }
+  ],
+  "airlines": [
+    {
+      "name": "Korean Air",
+      "status": "ALLOWED",
+      "notes": "Digital cameras permitted in carry-on and checked luggage. Korean aviation safety regulations strictly prohibit spare lithium camera batteries in checked luggage — all spare batteries must be carried in cabin baggage."
+    },
+    {
+      "name": "Asiana Airlines",
+      "status": "ALLOWED",
+      "notes": "Cameras and optical lenses permitted in carry-on baggage. Spare camera batteries must be carried in hand luggage with terminals protected from short circuit."
+    },
+    {
+      "name": "Japan Airlines (JAL)",
+      "status": "ALLOWED",
+      "notes": "Cameras permitted in cabin baggage. Cabin carriage recommended for high-value equipment. Lithium-ion batteries must meet IATA safety limits (under 100Wh)."
+    },
+    {
+      "name": "ANA (All Nippon Airways)",
+      "status": "ALLOWED",
+      "notes": "Cameras permitted in carry-on and checked bags. Passengers are advised to carry delicate cameras and lenses as carry-on baggage."
+    },
+    {
+      "name": "Delta Air Lines",
+      "status": "ALLOWED",
+      "notes": "Cameras, lenses, and camcorders permitted in carry-on and checked bags. Cabin baggage recommended for fragile optical gear."
+    }
+  ],
+  "international": {
+    "South Korea": {
+      "status": "ALLOWED",
+      "reason": "South Korea's Ministry of Land, Infrastructure and Transport (MOLIT) allows cameras in both carry-on and checked bags. MOLIT aviation safety rules strictly mandate that spare lithium-ion batteries must be in carry-on luggage only. Hand inspection is available for analog film at Incheon and Gimpo security checkpoints."
+    },
+    "Japan": {
+      "status": "ALLOWED",
+      "reason": "Japan Civil Aviation Bureau (JCAB) and Japan Customs permit cameras in carry-on and checked luggage. Cabin carriage recommended for expensive cameras. Photographers traveling with analog film can request manual hand inspection at security to avoid CT scan fogging."
+    },
+    "UK": {
+      "status": "ALLOWED",
+      "reason": "UK Civil Aviation Authority (CAA) permits cameras in carry-on and checked bags. Spare batteries must be kept in cabin baggage."
+    },
+    "Australia": {
+      "status": "ALLOWED",
+      "reason": "CASA allows cameras in carry-on and checked baggage. Spare lithium batteries must be packed in carry-on luggage."
+    }
+  },
+  "travelTips": [
+    "Always keep your camera body, high-end lenses, and memory cards in your carry-on luggage or personal item to avoid theft or rough baggage handling.",
+    "Spare lithium-ion camera batteries MUST be packed in your carry-on luggage — never pack loose spare batteries in checked luggage.",
+    "Request a manual hand-check for analog photographic film at airport security to avoid exposure to high-intensity CT scanners.",
+    "Remove heavy telephoto lenses from camera bodies before stowing your bag in overhead compartments to prevent lens mount strain.",
+    "Travel tripods and monopods under 60 cm (24 inches) folded are generally permitted in carry-on bags; check your airline's maximum dimensions."
+  ],
+  "relatedItems": [
+    "laptop",
+    "power-bank",
+    "drone",
+    "aa-batteries",
+    "airtag"
+  ],
+  "faq": [
+    {
+      "question": "Can I bring a camera in my carry-on bag?",
+      "answer": "Yes, cameras (DSLR, mirrorless, compact, and action cameras) are 100% allowed in carry-on bags. Because cameras and lenses are fragile and high-value, keeping them in your cabin baggage or personal item is the safest choice."
+    },
+    {
+      "question": "Can camera batteries go in checked luggage?",
+      "answer": "A camera with its lithium-ion battery installed is technically permitted in checked luggage, but spare lithium-ion camera batteries are strictly prohibited in checked bags. Airlines and the FAA require all spare lithium batteries to be kept in carry-on baggage due to fire risk."
+    },
+    {
+      "question": "Can I bring a camera on Korean Air or Asiana flights?",
+      "answer": "Yes, both Korean Air and Asiana Airlines allow cameras in carry-on and checked luggage. Under South Korea MOLIT regulations, spare batteries must be packed in carry-on luggage with battery terminals protected."
+    },
+    {
+      "question": "Will airport security X-ray scanners damage my camera or memory cards?",
+      "answer": "No. Digital cameras, SD cards, and CFexpress memory cards are completely immune to airport X-ray and CT scanners. However, unprocessed analog photographic film (especially ISO 800 or higher) can be damaged by newer CT baggage scanners; request a physical hand check from security screeners for unprocessed film."
+    },
+    {
+      "question": "Can I bring a camera tripod on a plane?",
+      "answer": "Yes, tripods and monopods are generally allowed on planes. Compact travel tripods folded under 60 cm (24 inches) usually fit within carry-on size limits. Heavy-duty or oversized studio tripods should be packed in checked luggage."
     }
   ],
   "metadata": {
-    "lastReviewed": "2026-06-30",
-    "nextReviewDue": "2027-06-30",
+    "lastReviewed": "2026-09-28",
+    "nextReviewDue": "2027-09-28",
     "reviewIntervalMonths": 12,
     "editor": "BringOnPlane Editorial Team",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "ruleHistory": [
     {
       "effectiveDate": "2026-06-30",
       "change": "Initial item database entry.",
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/camera"
+    },
+    {
+      "effectiveDate": "2026-09-28",
+      "change": "Added Korean Air, Asiana, JAL airline rules, spare battery safety rules, and film scanner guidance.",
+      "source": "https://www.faa.gov/hazmat/packsafe/cameras-and-camera-equipment"
     }
   ],
   "restrictionType": "Electronic",
-  "customNote": ""
+  "customNote": "",
+  "affiliateLinks": [
+    {
+      "title": "CADeN Protective Camera Insert Bag Padded Partition Case",
+      "search": "caden protective camera insert bag padded partition case",
+      "why": "Turns any regular travel backpack or carry-on into a shockproof camera bag for your DSLR/mirrorless body and lenses.",
+      "badge": "Travel Pick"
+    },
+    {
+      "title": "SanDisk 128GB Extreme PRO SDXC UHS-I Memory Card",
+      "search": "sandisk 128gb extreme pro sdxc card 200mbs",
+      "why": "High-speed, temperature-proof and X-ray-proof memory card ideal for travel 4K video and RAW photography.",
+      "badge": "Best Seller"
+    },
+    {
+      "title": "K&F Concept Ultra Lightweight Compact Carbon Fiber Travel Tripod",
+      "search": "kf concept compact carbon fiber travel tripod lightweight",
+      "why": "Folds down to under 15 inches — compact enough to fit inside carry-on luggage without exceeding airline limits.",
+      "badge": "Editor's Choice"
+    }
+  ]
 }

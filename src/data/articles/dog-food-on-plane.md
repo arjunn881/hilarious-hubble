@@ -7,26 +7,26 @@ isMedical: false
 isLegal: false
 ---
 
-Bringing dog food or pet treats on a flight is totally doable, but wet and dry food are treated differently by TSA. That distinction matters when you're deciding what goes in your carry-on versus your checked bag.
+Bringing [dog food](/items/dog-food/) or [pet treats](/items/dog-food/) on a flight is totally doable, but wet and dry food are treated differently by TSA. That distinction matters when you're deciding what goes in your carry-on versus your checked bag.
 
 ---
 
 ## TSA Rules Summary
 
-- **Dry Dog/Cat Food in Carry-On:** ✅ Allowed
+- **Dry Dog/[Cat Food](/items/cat-food/) in Carry-On:** ✅ Allowed
 - **Wet/Canned Pet Food in Carry-On:** ⚠️ Restricted — 3.4 oz (100ml) or less per container
 - **Dry Pet Food in Checked Baggage:** ✅ Allowed
 - **Wet/Canned Pet Food in Checked Baggage:** ✅ Allowed
-- **Dog Treats in Carry-On:** ✅ Generally Allowed (solid treats)
+- **[Dog Treats](/items/dog-food/) in Carry-On:** ✅ Generally Allowed (solid treats)
 - **International Customs:** ⚠️ Significant restrictions apply
 
 ---
 
 ## Official Regulations
 
-### Dry Dog Food and Cat Food
+### [Dry Dog Food](/items/dog-food/) and Cat Food
 
-**Dry pet food is treated the same as dry human food by TSA** — it is a solid item and not subject to the 3-1-1 liquids rule. You can pack dry kibble in carry-on or checked baggage without quantity restrictions on domestic US flights.
+**Dry pet food is treated the same as dry human food by TSA** — it is a solid item and not subject to the 3-1-1 liquids rule. You can pack dry [kibble](/items/dog-food/) in carry-on or checked baggage without quantity restrictions on domestic US flights.
 
 Keep in mind:
 - Dry food goes through the X-ray scanner without issue
@@ -35,7 +35,7 @@ Keep in mind:
 
 ### Wet/Canned Pet Food
 
-Wet dog food, wet cat food, and food in pouches are **classified as liquids or gels** by the TSA — the same category as peanut butter or soup. This means:
+Wet dog food, [wet cat food](/items/cat-food/), and food in [pouches](/items/baby-food/) are **classified as liquids or gels** by the TSA — the same category as [peanut butter](/items/peanut-butter/) or soup. This means:
 
 - In **carry-on bags**: Maximum 3.4 oz (100ml) per container, must fit in your quart-sized liquid bag
 - In **checked baggage**: No quantity limit
@@ -43,11 +43,11 @@ Wet dog food, wet cat food, and food in pouches are **classified as liquids or g
 A standard can of wet dog food (5.5 oz to 13 oz) **cannot go in your carry-on bag** — it exceeds the liquid limit. Small travel-sized pouches under 3.4 oz are the only wet food option for carry-on.
 
 > [!IMPORTANT]
-> The same rule applies to canned cat food, wet puppy food, and pet food pouches. If it's liquid, gel, or paste — it falls under the 3-1-1 rule.
+> The same rule applies to [canned cat food](/items/cat-food/), wet puppy food, and pet food pouches. If it's liquid, gel, or paste — it falls under the 3-1-1 rule.
 
 ### Dog Treats
 
-Solid dog treats — biscuits, jerky sticks, chews, and similar — are solid food items and **allowed in carry-on and checked baggage** with no quantity restrictions on domestic flights. There is no TSA restriction on hard, solid pet treats.
+Solid dog treats — [biscuits](/items/cookies/), [jerky](/items/beef-jerky/) sticks, chews, and similar — are solid food items and **allowed in carry-on and checked baggage** with no quantity restrictions on domestic flights. There is no TSA restriction on hard, solid pet treats.
 
 Soft, moist dog treats (like soft training treats) may be scrutinized by TSA as they have a consistency closer to a gel. In practice they are usually waved through, but carry them in their original sealed packaging to make screening faster.
 
@@ -130,16 +130,16 @@ Pet food — especially meat-based products — can carry:
 
 ## Frequently Asked Questions
 
-**Q: Can you bring dog food on a plane?**
+**Q: [Can you bring dog food on a plane](/items/dog-food/)?**
 A: Yes for domestic US flights — dry dog food in carry-on or checked bags, wet food in checked bags (or under 3.4 oz in carry-on).
 
-**Q: Can you bring dog treats on a plane?**
+**Q: [Can you bring dog treats on a plane](/items/dog-food/)?**
 A: Yes. Solid dog treats are allowed in carry-on and checked baggage on domestic US flights.
 
 **Q: Can you bring dog treats through TSA?**
 A: Yes. Hard, solid dog treats are not restricted by TSA at security checkpoints.
 
-**Q: Can I bring wet cat food on a plane?**
+**Q: [Can I bring wet cat food on a plane](/items/cat-food/)?**
 A: In checked baggage, yes. In carry-on, only if each container is 3.4 oz (100ml) or less.
 
 **Q: Can I bring dog food on an international flight?**
@@ -152,7 +152,7 @@ A: Yes. Canned pet food has no restrictions in checked luggage for US domestic f
 
 ## Conclusion
 
-For domestic US travel, the rules are simple: dry pet food and solid treats are unrestricted in carry-on and checked baggage; wet or canned food must follow the 3-1-1 liquids rule in carry-on, but is unlimited in checked bags. For international travel, customs rules dominate — declare everything, avoid meat-based products where possible, and consider buying pet food at your destination to avoid complications. Your pet's food safety matters, but so does making it through customs without fines.
+For domestic US travel, the rules are simple: dry pet food and solid treats are unrestricted in carry-on and checked baggage; wet or [canned food](/items/canned-food/) must follow the 3-1-1 liquids rule in carry-on, but is unlimited in checked bags. For international travel, customs rules dominate — declare everything, avoid meat-based products where possible, and consider buying pet food at your destination to avoid complications. Your pet's food safety matters, but so does making it through customs without fines.
 
 ---
 

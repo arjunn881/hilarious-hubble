@@ -933,17 +933,49 @@
       "dslr",
       "digital camera",
       "mirrorless camera",
-      "gopro"
+      "gopro",
+      "action camera",
+      "camera on a plane",
+      "can i bring camera on plane",
+      "camera in carry on",
+      "dslr on plane",
+      "mirrorless on plane",
+      "camera airplane",
+      "camera flight rules",
+      "camera carry on rules",
+      "camera lithium battery airplane",
+      "camera tripod carry on",
+      "camera film airport x ray",
+      "camera on korean air",
+      "camera on asiana",
+      "camera on jal",
+      "비행기 카메라",
+      "카메라 비행기",
+      "카메라 기내반입",
+      "카메라 배터리 비행기",
+      "カメラ 飛行機",
+      "カメラ 機内持ち込み"
     ],
     "keywords": [
       "camera",
       "photo",
       "gopro",
-      "dslr"
+      "dslr",
+      "mirrorless",
+      "photography",
+      "lens",
+      "carry-on",
+      "electronics",
+      "battery",
+      "film",
+      "tripod",
+      "korean-air",
+      "asiana",
+      "jal"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
-    "lastReviewed": "2026-06-30"
+    "lastReviewed": "2026-09-28"
   },
   {
     "id": "coin-cell-batteries",
@@ -3188,7 +3220,16 @@
       "can you carry melatonin on a plane",
       "melatonin tsa",
       "can you take a bottle of melatonin on a plane",
-      "can i bring melatonin in my carry on"
+      "can i bring melatonin in my carry on",
+      "melatonin japan",
+      "melatonin japan customs",
+      "can i bring melatonin to japan",
+      "melatonin narita airport",
+      "melatonin haneda airport",
+      "melatonin korea",
+      "can i bring melatonin to korea",
+      "melatonin incheon airport",
+      "melatonin seoul"
     ],
     "keywords": [
       "melatonin",
@@ -3200,6 +3241,8 @@
       "uk",
       "france",
       "singapore",
+      "japan",
+      "korea",
       "international",
       "ziploc",
       "customs",
@@ -3209,7 +3252,7 @@
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
-    "lastReviewed": "2026-07-01"
+    "lastReviewed": "2026-09-28"
   },
   {
     "id": "pet-medication",

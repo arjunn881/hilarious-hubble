@@ -30,12 +30,12 @@ If you're trying to decide between **Global Entry and TSA PreCheck**, the quick 
 
 ## What Is TSA PreCheck?
 
-**TSA PreCheck** is a U.S. government trusted traveler program that gives approved members access to expedited security lanes at 200+ U.S. airports (learn more in our standalone guide on [What Is TSA PreCheck?](/guide/what-is-tsa-precheck)). In the PreCheck lane, you do **not** need to:
+**TSA PreCheck** is a U.S. government trusted traveler program that gives approved members access to expedited security lanes at 200+ U.S. airports (learn more in our standalone guide on [What Is TSA PreCheck?](/guide/what-is-tsa-precheck/)). In the PreCheck lane, you do **not** need to:
 
-- Remove shoes
+- Remove [shoes](/items/shoes/)
 - Remove laptops from bags
-- Remove your quart-sized [3-1-1 liquids bag](/guide/tsa-311-liquids-rule)
-- Remove belts or light jackets
+- Remove your quart-sized [3-1-1 liquids bag](/guide/tsa-311-liquids-rule/)
+- Remove [belts](/items/belt/) or light jackets
 
 **Cost:** $78 for 5 years ($15.60/year)
 
@@ -121,7 +121,7 @@ Both programs run criminal background checks, but Global Entry's is more thoroug
 
 ## Does Global Entry Include TSA PreCheck?
 
-**Yes — Global Entry automatically includes TSA PreCheck.** When you are approved for Global Entry, CBP issues you a PASSID number. This same number functions as your TSA Known Traveler Number (KTN). You add it to your airline profile and bookings, and you'll see "TSA PRE✓" on your boarding pass — exactly like a standalone TSA PreCheck member.
+**Yes — Global Entry automatically includes TSA PreCheck.** When you are approved for Global Entry, CBP issues you a PASSID number. This same number functions as your TSA Known Traveler Number (KTN). You add it to your airline profile and bookings, and you'll see "TSA PRE✓" on your [boarding pass](/items/boarding-pass/) — exactly like a standalone TSA PreCheck member.
 
 There is **no extra step** to activate TSA PreCheck with Global Entry. It's automatic.
 
@@ -164,7 +164,7 @@ Many premium travel credit cards reimburse the full application fee:
 3. **Pay the $120 fee** (non-refundable even if denied)
 4. **Wait for conditional approval** — CBP reviews your background (days to weeks)
 5. **Schedule your interview** at a Global Entry Enrollment Center (locations at major airports and CBP offices)
-6. **Attend your interview** — bring passport + one more government ID
+6. **Attend your interview** — bring [passport](/items/passport/) + one more government ID
 7. **Receive approval** — your PASSID is emailed; use it as your TSA KTN
 
 ---
@@ -187,7 +187,7 @@ A: You don't need both — Global Entry includes TSA PreCheck. Having both separ
 A: NEXUS ($50/5 years) includes TSA PreCheck and fast U.S.-Canada border crossing. If you travel to Canada frequently, NEXUS is the best value. It doesn't cover other international customs entries the way Global Entry does.
 
 **Q: How do I use Global Entry when I return from an international flight?**
-A: When you land at a U.S. airport with Global Entry kiosks, follow signs for "Global Entry / Automated Passport Control." Scan your passport, complete the customs declaration on the kiosk screen, and proceed through without waiting in the standard customs line.
+A: When you land at a U.S. airport with Global Entry kiosks, follow signs for "Global Entry / Automated Passport Control." Scan your passport, complete the customs declaration on the kiosk [screen](/items/ipad/), and proceed through without waiting in the standard customs line.
 
 ---
 
@@ -199,11 +199,11 @@ For purely domestic travelers: **TSA PreCheck ($78)** is sufficient and fast to 
 
 ## See Also
 
-- [What Is TSA PreCheck? Standalone Overview & Rules](/guide/what-is-tsa-precheck)
-- [TSA PreCheck Complete Guide — Cost, Application & Renewal](/guide/tsa-precheck-guide)
-- [TSA Wait Times at Major Airports (ORD, ATL, MIA, LAX, JFK)](/guide/tsa-wait-times-guide)
-- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item)
-- [TSA Touchless ID & Confirm ID Explained](/guide/tsa-touchless-id-guide)
+- [What Is TSA PreCheck? Standalone Overview & Rules](/guide/what-is-tsa-precheck/)
+- [TSA PreCheck Complete Guide — Cost, Application & Renewal](/guide/tsa-precheck-guide/)
+- [TSA Wait Times at Major Airports (ORD, ATL, MIA, LAX, JFK)](/guide/tsa-wait-times-guide/)
+- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item/)
+- [TSA Touchless ID & Confirm ID Explained](/guide/tsa-touchless-id-guide/)
 
 ---
 

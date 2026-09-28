@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Box cutters are a hard no in carry-on bags — full stop. There's no exception, no workaround based on blade length, and no TSA officer discretion. If you're a contractor or warehouse worker who uses one every day, the rule is simple: it goes in your checked bag, or it doesn't fly with you at all.
+[Box cutters](/items/utility-knife/) are a hard no in carry-on bags — full stop. There's no exception, no workaround based on [blade](/items/knife/) length, and no TSA officer discretion. If you're a contractor or warehouse worker who uses one every day, the rule is simple: it goes in your checked bag, or it doesn't fly with you at all.
 
 ---
 
@@ -23,14 +23,14 @@ Box cutters are a hard no in carry-on bags — full stop. There's no exception, 
 
 ### Box Cutters in Carry-On: Absolutely Prohibited
 
-Box cutters, utility knives, and razor blade-style cutting tools are **explicitly banned from carry-on baggage** by the TSA. This is one of the most firm, non-discretionary rules in airport security — there are no exceptions, no exemptions, and no workarounds.
+Box cutters, utility [knives](/items/knife/), and [razor](/items/razor/) blade-style cutting tools are **explicitly banned from carry-on baggage** by the TSA. This is one of the most firm, non-discretionary rules in airport security — there are no exceptions, no exemptions, and no workarounds.
 
 The TSA's prohibited items list explicitly names:
 
 - Box cutters
 - Utility knives (e.g., Stanley knife, X-Acto knife)
-- Razor blades (not in a cartridge)
-- Any knife with a retractable blade
+- [Razor blades](/items/razor-blades/) (not in a cartridge)
+- Any [knife](/items/knife/) with a retractable blade
 
 > [!IMPORTANT]
 > Box cutters were used as weapons in the September 11, 2001 terrorist attacks. As a result, they became one of the first items to be permanently and unconditionally banned from aircraft cabins. This rule will not change, and there are zero exceptions regardless of profession, employer, or intended use.
@@ -43,7 +43,7 @@ You **can** pack a box cutter in your checked luggage. The TSA permits sharp and
 
 Practical packing tips for checked bags:
 - Put the box cutter in its original plastic housing with the blade retracted
-- Wrap it in a sock, towel, or bubble wrap
+- [Wrap](/items/sandwich/) it in a sock, towel, or bubble wrap
 - Place it toward the center of your luggage (not near the zipper)
 
 ---
@@ -52,11 +52,11 @@ Practical packing tips for checked bags:
 
 | Item | Carry-On | Checked |
 |---|---|---|
-| Box cutter / utility knife | ❌ Prohibited | ✅ Allowed |
-| Pocket knife (blade under 2.36 in) | ❌ Prohibited (US domestic) | ✅ Allowed |
-| Swiss army knife | ❌ Prohibited | ✅ Allowed |
+| Box cutter / [utility knife](/items/utility-knife/) | ❌ Prohibited | ✅ Allowed |
+| [Pocket knife](/items/pocket-knife/) (blade under 2.36 in) | ❌ Prohibited (US domestic) | ✅ Allowed |
+| [Swiss army knife](/items/multi-tool/) | ❌ Prohibited | ✅ Allowed |
 | Scissors (blades under 4 inches) | ✅ Allowed | ✅ Allowed |
-| Disposable razor (cartridge) | ✅ Allowed | ✅ Allowed |
+| [Disposable razor](/items/disposable-razor/) (cartridge) | ✅ Allowed | ✅ Allowed |
 | Razor blade (loose) | ❌ Prohibited | ✅ Allowed (sheathed) |
 
 ---
@@ -86,17 +86,17 @@ The global consensus is clear: no aviation authority on Earth allows box cutters
 ## Common Mistakes to Avoid
 
 - **Mistake 1: Thinking a retracted blade makes it okay in carry-on.** Whether the blade is retracted or extended makes no difference to TSA. Box cutters are banned in carry-on under all circumstances.
-- **Mistake 2: Hiding it in a toiletry bag.** TSA X-ray machines are specifically calibrated to detect metal cutting tools. A box cutter hidden among cosmetics is still immediately visible on the scanner.
+- **Mistake 2: Hiding it in a toiletry bag.** TSA X-ray machines are specifically calibrated to detect metal cutting tools. A box cutter hidden among [cosmetics](/items/makeup/) is still immediately visible on the scanner.
 - **Mistake 3: Attempting to argue or negotiate at the checkpoint.** TSA officers have zero discretion on this item. Arguing will not help and may result in additional screening.
 
 ---
 
 ## Frequently Asked Questions
 
-**Q: Can you bring a box cutter on a plane?**
+**Q: [Can you bring a box cutter on a plane](/items/utility-knife/)?**
 A: Only in checked baggage. Box cutters are strictly prohibited in carry-on bags on all US flights.
 
-**Q: Can you put a box cutter in checked luggage?**
+**Q: Can you put a [box cutter in checked luggage](/items/utility-knife/)?**
 A: Yes. Box cutters are allowed in checked baggage when properly sheathed or wrapped.
 
 **Q: Can I bring a utility knife on a plane?**

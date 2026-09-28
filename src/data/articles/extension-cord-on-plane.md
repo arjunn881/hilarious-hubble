@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Extension cords get more scrutiny at security checkpoints than you might expect. Not because they're dangerous, but because power-related items attract attention. Whether you're packing a power strip for a hotel conference setup or a simple extension for a rental, here's what TSA actually allows.
+[Extension cords](/items/extension-cord/) get more scrutiny at security checkpoints than you might expect. Not because they're dangerous, but because power-related items attract attention. Whether you're packing a [power strip](/items/extension-cord/) for a hotel conference setup or a simple extension for a rental, here's what TSA actually allows.
 
 ---
 
@@ -16,7 +16,7 @@ Extension cords get more scrutiny at security checkpoints than you might expect.
 - **Extension Cords in Carry-On:** ✅ Allowed
 - **Extension Cords in Checked Baggage:** ✅ Allowed
 - **Power Strips in Carry-On:** ✅ Generally Allowed (without surge protection chemicals)
-- **Surge Protectors in Carry-On:** ✅ Allowed
+- **[Surge Protectors](/items/extension-cord/) in Carry-On:** ✅ Allowed
 - **TSA Declaration Required:** No
 
 ---
@@ -91,7 +91,7 @@ A: Generally yes in carry-on. Some airlines restrict surge protectors in checked
 **Q: Can I pack an extension cord in my checked luggage?**
 A: Yes. Extension cords are permitted in checked baggage.
 
-**Q: Can you fly with an extension cord internationally?**
+**Q: [Can you fly with an extension cord](/items/extension-cord/) internationally?**
 A: Yes, but bring a voltage adapter if traveling between 120V (US) and 240V (most of the world) countries.
 
 ---

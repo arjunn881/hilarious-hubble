@@ -7,13 +7,13 @@ isMedical: false
 isLegal: false
 ---
 
-Matches have oddly specific TSA rules. The type of match matters enormously, the carry-on vs. checked bag rules are counterintuitive, and the limits are stricter than most people expect. Here's exactly what's allowed.
+[Matches](/items/matches/) have oddly specific TSA rules. The type of match matters enormously, the carry-on vs. checked bag rules are counterintuitive, and the limits are stricter than most people expect. Here's exactly what's allowed.
 
 ---
 
 ## TSA Rules Summary
 
-- **Safety Matches in Carry-On:** ✅ One book of safety matches allowed (on your person)
+- **[Safety Matches](/items/matches/) in Carry-On:** ✅ One book of safety matches allowed (on your person)
 - **Safety Matches in Checked Baggage:** ❌ Not Allowed
 - **Strike-Anywhere Matches in Carry-On:** ❌ Never allowed
 - **Strike-Anywhere Matches in Checked Baggage:** ❌ Never allowed
@@ -25,7 +25,7 @@ Matches have oddly specific TSA rules. The type of match matters enormously, the
 
 ### The Key Difference: Safety Matches vs. Strike-Anywhere Matches
 
-**Safety matches** (also called "book matches" or "safety strike matches") can only ignite when struck against the special phosphorus strip on the match packaging. They are the standard matches found in matchbooks, hotel matchboxes, and restaurant matches.
+**Safety matches** (also called "book matches" or "safety strike matches") can only ignite when struck against the special phosphorus strip on the match packaging. They are the standard matches found in [matchbooks](/items/matches/), hotel matchboxes, and restaurant matches.
 
 **Strike-anywhere matches** can ignite on any rough surface — the side of your shoe, a wall, sandpaper, etc. These are the classic "kitchen matches" or "farmer matches" — typically wooden with a red and white tip. They are significantly more dangerous for air travel.
 
@@ -54,19 +54,19 @@ This comes down to FAA fire safety regulations. In the cargo hold, a fire from a
 | Match Type | Carry-On (on person) | Checked Baggage |
 |---|---|---|
 | Safety matchbook (paper) | ✅ One book only | ❌ Prohibited |
-| Safety matchbox (wooden stick) | ✅ One box only | ❌ Prohibited |
+| [Safety matchbox](/items/matchbox/) (wooden stick) | ✅ One box only | ❌ Prohibited |
 | Strike-anywhere matches (any) | ❌ Prohibited | ❌ Prohibited |
 | Waterproof matches | ❌ Treat as strike-anywhere — prohibited | ❌ Prohibited |
 | Storm/survival matches | ❌ Prohibited | ❌ Prohibited |
 
 ---
 
-## Lighters vs. Matches: What's Easier to Fly With?
+## [Lighters](/items/lighter/) vs. Matches: What's Easier to Fly With?
 
 Many travelers don't realize that **lighters are actually easier to bring on a plane** than matches:
 
-- **Disposable lighters (Bic-style):** ✅ One lighter permitted in carry-on OR on your person
-- **Torch lighters / jet lighters:** ❌ Not allowed
+- **[Disposable lighters](/items/lighter/) (Bic-style):** ✅ One lighter permitted in carry-on OR on your person
+- **[Torch lighters](/items/lighter/) / [jet lighters](/items/torch-lighter/):** ❌ Not allowed
 - **Lighter fluid:** ❌ Not allowed in any baggage
 
 If you smoke or need fire for camping purposes, a standard disposable lighter is the most travel-friendly option.

@@ -540,7 +540,10 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
       })}
     />
 
-    <!-- SiteLinksSearchBox: enables Google to show a search box directly in SERPs -->
+    <!-- SiteLinksSearchBox: one canonical English-root entry only.
+         Do NOT use localeHomeUrl here — emitting one per locale causes Google
+         to crawl /<lang>/?q={search_term_string} as indexable pages. -->
+    {lang === "en" && (
     <script
       type="application/ld+json"
       is:inline
@@ -548,18 +551,18 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: "BringOnPlane",
-        url: localeHomeUrl,
-        inLanguage: meta.hreflang,
+        url: "https://bringonplane.com/",
         potentialAction: {
           "@type": "SearchAction",
           target: {
             "@type": "EntryPoint",
-            urlTemplate: `${localeHomeUrl}?q={search_term_string}`,
+            urlTemplate: "https://bringonplane.com/?q={search_term_string}",
           },
           "query-input": "required name=search_term_string",
         },
       })}
     />
+    )}
 
     <!-- Speakable: marks content for Google Assistant / voice search extraction -->
     {

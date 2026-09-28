@@ -7,14 +7,14 @@ isMedical: false
 isLegal: false
 ---
 
-Perfume gets confiscated at airport security more than almost any other personal care item. Not because it's restricted, but because standard fragrance bottles are well over the 3.4 oz (100 ml) carry-on liquid limit. Here's exactly how to fly with your fragrance without losing it.
+[Perfume](/items/cologne/) gets confiscated at airport security more than almost any other personal care item. Not because it's restricted, but because standard [fragrance](/items/cologne/) bottles are well over the 3.4 oz (100 ml) carry-on liquid limit. Here's exactly how to fly with your fragrance without losing it.
 
 ---
 
 ## TSA Rules Summary
 
 - **Perfume in Carry-On:** ⚠️ Restricted — 3.4 oz (100ml) per bottle maximum
-- **Cologne in Carry-On:** ⚠️ Restricted — 3.4 oz (100ml) per bottle maximum
+- **[Cologne](/items/cologne/) in Carry-On:** ⚠️ Restricted — 3.4 oz (100ml) per bottle maximum
 - **Perfume in Checked Baggage:** ✅ Allowed — with quantity limits for alcohol content
 - **Body Spray (Aerosol) in Carry-On:** ⚠️ 3.4 oz or less
 - **TSA Declaration Required:** No
@@ -25,7 +25,7 @@ Perfume gets confiscated at airport security more than almost any other personal
 
 ### Perfume Is a Liquid Under TSA Rules
 
-Perfume, cologne, eau de toilette, eau de parfum, and body spray are all classified as **liquids** by the TSA. Every bottle of fragrance must comply with the 3-1-1 carry-on liquids rule:
+Perfume, [cologne](/items/perfume/), eau de toilette, eau de parfum, and body spray are all classified as **liquids** by the TSA. Every bottle of fragrance must comply with the 3-1-1 carry-on liquids rule:
 
 - Each perfume bottle must be **3.4 oz (100ml) or less**
 - All perfume bottles must fit in **one quart-sized clear zip-top plastic bag**
@@ -63,13 +63,13 @@ FAA rules for alcohol-based products in checked baggage:
 ## How to Travel With Perfume
 
 ### Option 1: Travel Atomizer (Best for Carry-On)
-Decant your perfume into a refillable travel atomizer. These small spray bottles (typically 5–15ml) allow you to bring your favorite scent in carry-on without carrying the full bottle. Available on Amazon for $5–15.
+Decant your perfume into a refillable travel atomizer. These small spray bottles (typically 5–15ml) allow you to bring your favorite [scent](/items/perfume/) in carry-on without carrying the full bottle. Available on Amazon for $5–15.
 
 ### Option 2: Travel-Sized Perfume (Pre-packaged)
 Many luxury fragrance houses (Chanel, Dior, Jo Malone, YSL) sell their fragrances in 10–30ml travel sizes. These fit easily in your carry-on liquid bag and are within TSA limits.
 
 ### Option 3: Pack in Checked Luggage (Full Bottle)
-If you're checking a bag, put your full-size perfume bottles in checked luggage. Wrap them carefully in clothing or bubble wrap — glass perfume bottles are fragile and can break under luggage handling.
+If you're checking a bag, put your full-size perfume bottles in checked luggage. [Wrap](/items/sandwich/) them carefully in clothing or bubble wrap — glass perfume bottles are fragile and can break under luggage handling.
 
 ### Option 4: Buy at Duty-Free (Post-Security)
 Duty-free shops after the security checkpoint sell perfumes in standard sizes. Purchases are handed to you in a sealed security bag with your receipt. On direct flights, you can bring full-size duty-free perfume into the cabin. **On connecting flights**, the sealed duty-free bag may be scrutinized at the connecting security checkpoint — check with your airline.
@@ -83,7 +83,7 @@ Perfume bottles are glass and can break. Protect your investment:
 1. **Wrap in a sock or clothing** — Cushions the bottle from impact
 2. **Use bubble wrap** — For very expensive fragrances, double-wrap
 3. **Place in center of luggage** — Away from edges and zipper areas
-4. **Seal in a zip-lock bag** — In case the bottle leaks or breaks, contains the spillage
+4. **Seal in a zip-[lock](/items/lock/) bag** — In case the bottle leaks or breaks, contains the spillage
 5. **Consider hardshell cases** — Specialized perfume travel cases are available for frequent travelers
 
 ---

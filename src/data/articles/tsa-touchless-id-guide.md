@@ -17,7 +17,7 @@ TSA's identity verification process is changing. Two programs are now part of th
 |---|---|---|
 | **What it does** | Biometric facial recognition at checkpoint | Identity verification for TSA PreCheck enrollment |
 | **Who uses it** | TSA PreCheck members at participating airports | Travelers enrolling in or renewing TSA PreCheck |
-| **Technology** | Facial recognition cameras at TSA lanes | Secure online identity proofing |
+| **Technology** | Facial recognition [cameras](/items/camera/) at TSA lanes | Secure online identity proofing |
 | **Required?** | Optional (you can opt out) | Required for PreCheck enrollment |
 | **Run by** | TSA | IDEMIA (TSA-authorized vendor) |
 
@@ -25,7 +25,7 @@ TSA's identity verification process is changing. Two programs are now part of th
 
 ## What Is TSA Touchless ID?
 
-**TSA Touchless ID** is a biometric facial recognition system deployed at select airport security checkpoints. Instead of manually handing your ID to a TSA officer for visual inspection, a camera captures your face and matches it against your passport or driver's license photo stored in government databases.
+**TSA Touchless ID** is a biometric facial recognition system deployed at select airport security checkpoints. Instead of manually handing your ID to a TSA officer for visual inspection, a camera captures your face and [matches](/items/matches/) it against your [passport](/items/passport/) or [driver's license](/items/drivers-license/) photo stored in government databases.
 
 ### How TSA Touchless ID Works
 
@@ -140,7 +140,7 @@ A: IDEMIA is a company authorized by TSA to process PreCheck enrollments. They h
 A: Yes. Facial recognition at TSA checkpoints is voluntary. Tell the TSA officer you prefer manual ID verification and they will check your ID manually. Your PreCheck status is not affected.
 
 **Q: Do I need a REAL ID to use TSA PreCheck?**
-A: TSA PreCheck members use their Known Traveler Number (KTN) on their boarding pass to access PreCheck lanes. You still need a valid, accepted ID (REAL ID or passport) to board your flight.
+A: TSA PreCheck members use their Known Traveler Number (KTN) on their [boarding pass](/items/boarding-pass/) to access PreCheck lanes. You still need a valid, accepted ID (REAL ID or passport) to board your flight.
 
 ---
 

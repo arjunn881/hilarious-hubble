@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-Protein powder is allowed on planes, but it reliably gets flagged at security checkpoints. Not because it's prohibited, but because loose powder triggers additional screening almost by default. Here's what to expect and how to minimize the friction.
+[Protein powder](/items/protein-powder/) is allowed on planes, but it reliably gets flagged at security checkpoints. Not because it's prohibited, but because loose powder triggers additional screening almost by default. Here's what to expect and how to minimize the friction.
 
 ---
 
@@ -49,13 +49,13 @@ This means your protein powder **will not be confiscated**, but large containers
 In 2018, TSA began enhanced screening of **powder substances over 12 oz (350ml) in carry-on bags**. This applies to:
 
 - Protein powder
-- Pre-workout powder
-- Creatine
+- Pre-[workout powder](/items/creatine/)
+- [Creatine](/items/creatine/)
 - Flour, powdered sugar
 - Powdered coffee creamer
-- Dry shampoo (powder form)
+- [Dry shampoo](/items/dry-shampoo/) (powder form)
 - Baby powder
-- Baking soda
+- Baking [soda](/items/soda/)
 - Powdered milk
 
 The rule does not prohibit bringing these items — it requires **placing containers over 12 oz separately in a bin** for X-ray screening, similar to how you remove laptops and liquids.
@@ -77,7 +77,7 @@ Pre-mixed liquid protein shakes and ready-to-drink (RTD) protein drinks are clas
 | Dry protein powder | Allowed (over 12 oz may be screened) |
 | RTD protein shake bottle (sealed) | 3.4 oz limit — typical 11–14 oz cans NOT allowed |
 | Protein shake you mixed yourself | 3.4 oz limit in carry-on |
-| Protein bar (solid) | ✅ No restrictions — fully allowed |
+| [Protein bar](/items/protein-bar/) (solid) | ✅ No restrictions — fully allowed |
 
 ---
 
@@ -91,7 +91,7 @@ Protein powder is generally allowed on international flights as well, but custom
 - **UAE/Saudi Arabia:** Allowed for personal use; be cautious with pre-workout containing stimulants
 
 > [!WARNING]
-> Some pre-workout supplements contain ingredients (like certain stimulants or nootropics) that are regulated or controlled in specific countries. Research your destination country's rules for specific supplement ingredients, especially if traveling to the Middle East or Southeast Asia.
+> Some pre-workout [supplements](/items/vitamins/) contain ingredients (like certain stimulants or nootropics) that are regulated or controlled in specific countries. Research your destination country's rules for specific supplement ingredients, especially if traveling to the Middle East or Southeast Asia.
 
 ---
 
@@ -132,10 +132,10 @@ Protein powder is fully allowed on planes — it is not prohibited by TSA. For c
 
 ## See Also
 
-- [Can You Bring Protein Bars on a Plane?](/guide/protein-bars-on-plane)
-- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item)
-- [What Is TSA PreCheck? Avoid Powder Delays](/guide/what-is-tsa-precheck)
-- [TSA 3-1-1 Liquids Rule for Carry-On Bags](/guide/tsa-311-liquids-rule)
+- [Can You Bring Protein Bars on a Plane?](/guide/protein-bars-on-plane/)
+- [Can You Bring a Carry-On AND a Personal Item?](/guide/carry-on-and-personal-item/)
+- [What Is TSA PreCheck? Avoid Powder Delays](/guide/what-is-tsa-precheck/)
+- [TSA 3-1-1 Liquids Rule for Carry-On Bags](/guide/tsa-311-liquids-rule/)
 - [Can You Bring Food Through TSA?](/faq#food)
 
 ---

@@ -93,7 +93,7 @@ After the shutdown ends, Congress typically passes back pay for all federal work
 
 TSA Transportation Security Officers (TSOs) receive federal government salaries. Pay has increased significantly in recent years following TSA's 2023 pay overhaul, which brought TSA officer salaries up to match comparable federal positions.
 
-### TSA Agent Salary by Pay Band (2026)
+### TSA Agent Salary by Pay [Band](/items/gold-ring/) (2026)
 
 | Pay Band | Annual Salary Range | Role |
 |---|---|---|
@@ -146,7 +146,7 @@ Travelers sometimes confuse TSA with **CBP (U.S. Customs and Border Protection)*
 A: TSA stands for Transportation Security Administration, a federal agency within the U.S. Department of Homeland Security responsible for airport security screening.
 
 **Q: What is TSA?**
-A: TSA is the U.S. government agency that screens passengers and baggage at airports, sets carry-on and checked bag rules, operates TSA PreCheck, and ensures aviation security.
+A: TSA is the U.S. government agency that [screens](/items/ipad/) passengers and baggage at airports, sets carry-on and checked bag rules, operates TSA PreCheck, and ensures aviation security.
 
 **Q: What happens during a TSA shutdown?**
 A: TSA agents are classified as essential workers and must continue screening passengers even during a federal government shutdown. However, they work without pay until the shutdown ends. Airports and flights remain operational throughout.

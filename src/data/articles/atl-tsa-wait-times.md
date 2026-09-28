@@ -63,8 +63,8 @@ Understanding ATL's unique Domestic Terminal layout is essential for choosing th
 
 ### 1. The South Security Checkpoint: Dedicated TSA PreCheck
 - **Access:** Located on the south side of the Domestic Atrium (closest to Delta check-in).
-- **Rules:** The South Checkpoint is exclusively dedicated to [TSA PreCheck](/guide/tsa-precheck-guide) members and Delta Digital ID biometric participants.
-- **Why It's Fast:** Because every traveler in this line keeps their shoes, belts, and light jackets on and leaves their laptops and [3-1-1 liquids](/guide/tsa-311-liquids-rule) inside their [carry-on bag](/guide/carry-on-and-personal-item), this checkpoint processes passengers at world-class speeds (consistently under 7–10 minutes).
+- **Rules:** The South Checkpoint is exclusively dedicated to [TSA PreCheck](/guide/tsa-precheck-guide/) members and Delta Digital ID biometric participants.
+- **Why It's Fast:** Because every traveler in this line keeps their [shoes](/items/shoes/), [belts](/items/belt/), and light jackets on and leaves their laptops and [3-1-1 liquids](/guide/tsa-311-liquids-rule/) inside their [carry-on bag](/guide/carry-on-and-personal-item/), this checkpoint processes passengers at world-class speeds (consistently under 7–10 minutes).
 
 ### 2. The Main Security Checkpoint
 - **Access:** Center of the Domestic Atrium.
@@ -107,10 +107,10 @@ Time Window (Mon / Thu / Fri)    Standard Line Wait    PreCheck (South) Wait
 ## Proven Tips to Cut Your ATL Security Wait Time
 
 ### 1. Get TSA PreCheck or Global Entry
-With Atlanta's dedicated South Checkpoint, having [TSA PreCheck](/guide/tsa-precheck-guide) or [Global Entry](/guide/global-entry-vs-tsa-precheck) is essentially an express pass through the world's busiest airport. Learn the full eligibility requirements in our guide: [What Is TSA PreCheck?](/guide/what-is-tsa-precheck).
+With Atlanta's dedicated South Checkpoint, having [TSA PreCheck](/guide/tsa-precheck-guide/) or [Global Entry](/guide/global-entry-vs-tsa-precheck/) is essentially an express pass through the world's busiest airport. Learn the full eligibility requirements in our guide: [What Is TSA PreCheck?](/guide/what-is-tsa-precheck/).
 
 ### 2. Enroll in Delta Digital ID / Touchless ID
-If you have TSA PreCheck and fly Delta, opt into **Delta Digital ID** in the Fly Delta app. Delta Digital ID uses facial recognition matching against CBP/TSA databases, allowing you to walk straight up to dedicated biometric lanes at ATL South Checkpoint without pulling out your physical driver's license.
+If you have TSA PreCheck and fly Delta, opt into **Delta Digital ID** in the Fly Delta app. Delta Digital ID uses facial recognition matching against CBP/TSA databases, allowing you to walk straight up to dedicated biometric lanes at ATL South Checkpoint without pulling out your physical [driver's license](/items/drivers-license/).
 
 ### 3. Take MARTA to the Airport During Highway Congestion
 Interstate 85 and I-285 south toward the airport frequently experience severe traffic delays. The **MARTA Red and Gold rail lines** terminate directly inside the ATL Domestic Terminal (between North and South baggage claims).
@@ -134,17 +134,17 @@ The primary TSA PreCheck lane is located at the **South Security Checkpoint** in
 Yes—provided you do not need to check luggage with a domestic carrier at the domestic terminal, or you are flying Delta. You can clear security at Concourse F and ride the Plane Train to your domestic departure concourse.
 
 ### How does ATL compare with Chicago ORD and Miami MIA wait times?
-ATL handles higher peak passenger volumes than Chicago ([ORD](/guide/ord-tsa-wait-times)) or Miami ([MIA](/guide/mia-tsa-wait-times)), but its dedicated South PreCheck checkpoint operates with remarkable efficiency. See full comparative data in our [TSA Wait Times Master Guide](/guide/tsa-wait-times-guide).
+ATL handles higher peak passenger volumes than Chicago ([ORD](/guide/ord-tsa-wait-times/)) or Miami ([MIA](/guide/mia-tsa-wait-times/)), but its dedicated South PreCheck checkpoint operates with remarkable efficiency. See full comparative data in our [TSA Wait Times Master Guide](/guide/tsa-wait-times-guide/).
 
 ---
 
 ## Related Travel & Security Guides
 
-- [TSA Wait Times at Major US Airports: Master Guide](/guide/tsa-wait-times-guide)
-- [ORD TSA Wait Times: Chicago O'Hare Guide](/guide/ord-tsa-wait-times)
-- [MIA TSA Wait Times: Miami Airport Guide](/guide/mia-tsa-wait-times)
-- [What Is TSA PreCheck? Full Overview](/guide/what-is-tsa-precheck)
-- [TSA PreCheck Cost, Application & Renewal](/guide/tsa-precheck-guide)
-- [Global Entry vs TSA PreCheck: Complete Comparison](/guide/global-entry-vs-tsa-precheck)
-- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item)
+- [TSA Wait Times at Major US Airports: Master Guide](/guide/tsa-wait-times-guide/)
+- [ORD TSA Wait Times: Chicago O'Hare Guide](/guide/ord-tsa-wait-times/)
+- [MIA TSA Wait Times: Miami Airport Guide](/guide/mia-tsa-wait-times/)
+- [What Is TSA PreCheck? Full Overview](/guide/what-is-tsa-precheck/)
+- [TSA PreCheck Cost, Application & Renewal](/guide/tsa-precheck-guide/)
+- [Global Entry vs TSA PreCheck: Complete Comparison](/guide/global-entry-vs-tsa-precheck/)
+- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item/)
 - [Official Hartsfield-Jackson Atlanta Website](https://www.atl.com)

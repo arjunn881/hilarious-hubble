@@ -131,14 +131,34 @@ export default defineConfig({
           && path !== '/items'
           && path !== '/items/';
       },
-      // Customize each URL entry: set priority + changefreq & force trailing slash alignment matching Cloudflare Pages 200 OK endpoints
-      serialize: (item) => ({
-        ...item,
-        url: withTrailingSlash(item.url),
-        links: item.links?.map((link) => ({ ...link, url: withTrailingSlash(link.url) })),
-        priority: getPriority(item.url),
-        changefreq: getChangefreq(item.url),
-      }),
+      // Customize each URL entry: set priority + changefreq, force trailing slashes,
+      // and inject x-default into every hreflang cluster (required by Google for
+      // proper international ranking; @astrojs/sitemap i18n doesn't add it automatically).
+      serialize: (item) => {
+        const normalizedUrl = withTrailingSlash(item.url);
+        let links = item.links?.map((link) => ({ ...link, url: withTrailingSlash(link.url) }));
+
+        // Add x-default pointing at the English (un-prefixed) URL whenever
+        // the page has a full hreflang cluster (i.e. is a multilingual page).
+        if (links && links.length > 1) {
+          // Find the English URL in the cluster (no locale prefix after SITE).
+          const englishLink = links.find((l) => {
+            const path = l.url.replace(SITE, '');
+            return !prefixedLangs.some((lang) => path === `/${lang}/` || path.startsWith(`/${lang}/`));
+          });
+          if (englishLink && !links.some((l) => l.lang === 'x-default')) {
+            links = [...links, { lang: 'x-default', url: englishLink.url }];
+          }
+        }
+
+        return {
+          ...item,
+          url: normalizedUrl,
+          links,
+          priority: getPriority(item.url),
+          changefreq: getChangefreq(item.url),
+        };
+      },
     }),
   ],
   prefetch: {

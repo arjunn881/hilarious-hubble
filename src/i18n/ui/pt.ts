@@ -563,6 +563,15 @@ export const pt = {
   'guide.verifiedHeading': 'Verificado com as diretrizes oficiais da TSA',
   'guide.quickAnswer': 'Resposta rápida',
 
+  'guide.title': '{title} | Guia de viagem BringOnPlane',
+  'guide.description': '{description}',
+  'guide.keywords': '{title}, regras TSA {category}, {category} bagagem de mão, regras TSA {year}, segurança aeroporto {category}, guia bringonplane',
+  'guide.faq.allowed': '{item} é permitido na bagagem de mão?',
+  'guide.faq.rules': 'Quais são as regras da TSA para {item}?',
+  'guide.faq.international': 'Posso levar {item} num voo internacional?',
+  'guide.faq.allowedAnswer': 'Segundo a TSA, {item} é permitido na bagagem de mão. {reason}',
+  'guide.faq.notAllowedAnswer': 'Segundo a TSA, {item} não é permitido na bagagem de mão. {reason}',
+  'guide.faq.restrictedAnswer': 'Segundo a TSA, {item} tem restrições na bagagem de mão. {reason}',
   // ── Packing lists ─────────────────────────────────────────────────────────
   'packing.title': 'Lista de bagagem {list} e checklist da TSA ({year}) | BringOnPlane',
   'packing.description':

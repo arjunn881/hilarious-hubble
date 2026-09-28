@@ -238,37 +238,65 @@ const featuredSnippetAnswer = prose?.whatIsThis ?? getWhatIsThisItem(item);
 
 
 // ── Extra FAQ questions for JSON-LD (Feature 7) ───────────────────────────────
-const faq4Question = `What happens if I bring ${item.name.toLowerCase()} through TSA security?`;
+// Uses itemName (already localized) for non-English locales.
+// Question text stays in target language to maximize non-English rich snippet eligibility.
+const faq4Question = lang === 'en'
+  ? `What happens if I bring ${itemName.toLowerCase()} through TSA security?`
+  : t('guide.faq.rules', { item: itemName });
 const faq4Answer = item.carryOn.status === 'ALLOWED'
-  ? `If you bring ${item.name.toLowerCase()} through TSA security in your carry-on, it should pass through the X-ray screening without issue. ${item.carryOn.reason || ''}`
+  ? (lang === 'en' ? `If you bring ${itemName.toLowerCase()} through TSA security in your carry-on, it should pass through the X-ray screening without issue. ${item.carryOn.reason || ''}` : t('guide.faq.allowedAnswer', { item: itemName, reason: item.carryOn.reason || '' }))
   : item.carryOn.status === 'NOT_ALLOWED'
-  ? `If you attempt to bring ${item.name.toLowerCase()} through TSA in a carry-on bag, the TSA officer will confiscate it at the security checkpoint. You must place it in your checked bag or surrender it before security.`
-  : `TSA officers may pull your ${item.name.toLowerCase()} for secondary screening. You may be asked to declare it or meet specific conditions. ${item.carryOn.reason || ''}`;
+  ? (lang === 'en' ? `If you attempt to bring ${itemName.toLowerCase()} through TSA in a carry-on bag, the TSA officer will confiscate it at the security checkpoint. You must place it in your checked bag or surrender it before security.` : t('guide.faq.notAllowedAnswer', { item: itemName, reason: item.carryOn.reason || '' }))
+  : (lang === 'en' ? `TSA officers may pull your ${itemName.toLowerCase()} for secondary screening. You may be asked to declare it or meet specific conditions. ${item.carryOn.reason || ''}` : t('guide.faq.restrictedAnswer', { item: itemName, reason: item.carryOn.reason || '' }));
 
-const faq5Question = `Can I bring ${item.name.toLowerCase()} on an international flight?`;
-const faq5Answer = `TSA rules govern US departure security checkpoints. ${item.name} is ${carryOnShort} at US airports. For international destinations, each country has its own customs and aviation security rules. Check your destination country's customs authority rules in addition to the TSA.`;
+const faq5Question = lang === 'en'
+  ? `Can I bring ${itemName.toLowerCase()} on an international flight?`
+  : t('guide.faq.international', { item: itemName });
+const faq5Answer = lang === 'en'
+  ? `TSA rules govern US departure security checkpoints. ${item.name} is ${carryOnShort} at US airports. For international destinations, each country has its own customs and aviation security rules. Check your destination country's customs authority rules in addition to the TSA.`
+  : t('guide.faq.allowedAnswer', { item: itemName, reason: item.carryOn.reason || '' });
 
-const faq6Question = `Is there a size or quantity limit for ${item.name.toLowerCase()} in carry-on?`;
+const faq6Question = lang === 'en'
+  ? `Is there a size or quantity limit for ${itemName.toLowerCase()} in carry-on?`
+  : t('guide.faq.allowed', { item: itemName });
 const faq6Answer = item.carryOn.conditions && item.carryOn.conditions.length > 0
-  ? `Yes, there are specific conditions: ${item.carryOn.conditions.join('. ')}`
-  : `Standard TSA rules apply to ${item.name.toLowerCase()}. Always check with your specific airline for additional restrictions as airline policies may vary.`;
+  ? `${item.carryOn.conditions.join('. ')}`
+  : lang === 'en' ? `Standard TSA rules apply to ${itemName.toLowerCase()}. Always check with your specific airline for additional restrictions as airline policies may vary.` : item.carryOn.reason || '';
 
 // Dynamically generate FAQs for SEO schemas
-const faq1Question = `Is ${item.name.toLowerCase()} allowed on a plane?`;
-const faq1Answer = `According to the TSA, ${item.name.toLowerCase()} is ${item.carryOn.status.replace('_', ' ').toLowerCase()} in carry-on bags and ${item.checkedBag.status.replace('_', ' ').toLowerCase()} in checked baggage. ${item.carryOn.reason}`;
+const faq1Question = lang === 'en'
+  ? `Is ${itemName.toLowerCase()} allowed on a plane?`
+  : t('guide.faq.allowed', { item: itemName });
+const faq1Answer = lang === 'en'
+  ? `According to the TSA, ${item.name.toLowerCase()} is ${item.carryOn.status.replace('_', ' ').toLowerCase()} in carry-on bags and ${item.checkedBag.status.replace('_', ' ').toLowerCase()} in checked baggage. ${item.carryOn.reason}`
+  : item.carryOn.status === 'ALLOWED'
+    ? t('guide.faq.allowedAnswer', { item: itemName, reason: item.carryOn.reason || '' })
+    : item.carryOn.status === 'NOT_ALLOWED'
+    ? t('guide.faq.notAllowedAnswer', { item: itemName, reason: item.carryOn.reason || '' })
+    : t('guide.faq.restrictedAnswer', { item: itemName, reason: item.carryOn.reason || '' });
 
-const faq2Question = `Can I bring ${item.name.toLowerCase()} in carry-on luggage?`;
+const faq2Question = lang === 'en'
+  ? `Can I bring ${itemName.toLowerCase()} in carry-on luggage?`
+  : t('guide.faq.allowed', { item: itemName });
 const faq2Answer = item.carryOn.status === 'ALLOWED'
-  ? `Yes, ${item.name.toLowerCase()} is fully allowed in carry-on bags. ${item.carryOn.conditions[0] || 'Check with your airline for any additional restrictions.'}`
+  ? (lang === 'en' ? `Yes, ${item.name.toLowerCase()} is fully allowed in carry-on bags. ${item.carryOn.conditions[0] || 'Check with your airline for any additional restrictions.'}` : t('guide.faq.allowedAnswer', { item: itemName, reason: item.carryOn.conditions[0] || item.carryOn.reason || '' }))
   : item.carryOn.status === 'NOT_ALLOWED'
-  ? `No, ${item.name.toLowerCase()} is prohibited in carry-on bags by TSA. ${item.carryOn.conditions[0] || 'You must place it in checked baggage or leave it at home before the checkpoint.'}`
-  : `${item.name} is restricted in carry-on bags and subject to conditions. ${item.carryOn.conditions[0] || 'Check with your airline and airport security for specific requirements.'}`;
+  ? (lang === 'en' ? `No, ${item.name.toLowerCase()} is prohibited in carry-on bags by TSA. ${item.carryOn.conditions[0] || 'You must place it in checked baggage or leave it at home before the checkpoint.'}` : t('guide.faq.notAllowedAnswer', { item: itemName, reason: item.carryOn.conditions[0] || item.carryOn.reason || '' }))
+  : (lang === 'en' ? `${item.name} is restricted in carry-on bags and subject to conditions. ${item.carryOn.conditions[0] || 'Check with your airline and airport security for specific requirements.'}` : t('guide.faq.restrictedAnswer', { item: itemName, reason: item.carryOn.conditions[0] || item.carryOn.reason || '' }));
 
-const faq3Question = `Are there any special rules for packing ${item.name.toLowerCase()} in checked baggage?`;
-const faq3Answer = `In checked bags, ${item.name.toLowerCase()} is ${item.checkedBag.status === 'ALLOWED' ? 'allowed without restrictions' : item.checkedBag.status === 'RESTRICTED' ? 'restricted (subject to conditions)' : 'prohibited'}. ${item.checkedBag.conditions[0] || 'Ensure it is packed securely.'}`;
+const faq3Question = lang === 'en'
+  ? `Are there any special rules for packing ${itemName.toLowerCase()} in checked baggage?`
+  : t('guide.faq.rules', { item: itemName });
+const faq3Answer = lang === 'en'
+  ? `In checked bags, ${item.name.toLowerCase()} is ${item.checkedBag.status === 'ALLOWED' ? 'allowed without restrictions' : item.checkedBag.status === 'RESTRICTED' ? 'restricted (subject to conditions)' : 'prohibited'}. ${item.checkedBag.conditions[0] || 'Ensure it is packed securely.'}`
+  : item.checkedBag.status === 'ALLOWED'
+    ? t('guide.faq.allowedAnswer', { item: itemName, reason: item.checkedBag.conditions[0] || item.checkedBag.reason || '' })
+    : item.checkedBag.status === 'NOT_ALLOWED'
+    ? t('guide.faq.notAllowedAnswer', { item: itemName, reason: item.checkedBag.conditions[0] || item.checkedBag.reason || '' })
+    : t('guide.faq.restrictedAnswer', { item: itemName, reason: item.checkedBag.conditions[0] || item.checkedBag.reason || '' });
 
-// ── Item-specific keywords (passed to Layout for <meta name="keywords">) ────
-const itemKeywords = [
+// ── Item-specific keywords (localized for non-English pages) ────────────────
+const itemKeywords = lang === 'en' ? [
   `can i bring ${item.name.toLowerCase()} on a plane`,
   `can you bring ${item.name.toLowerCase()} on a plane`,
   `${item.name.toLowerCase()} tsa rules`,
@@ -289,6 +317,11 @@ const itemKeywords = [
   `${item.name.toLowerCase()} singapore airlines`,
   `${item.name.toLowerCase()} lufthansa`,
   ...(item.keywords || [])
+].join(', ') : [
+  t('guide.keywords', { title: itemName.toLowerCase(), category: categoryLabel.toLowerCase(), year: String(currentYear) }),
+  itemName.toLowerCase(),
+  `${itemName.toLowerCase()} ${t('item.cabinBaggage').toLowerCase()}`,
+  ...(item.aliases || []).map((a: string) => a.toLowerCase()),
 ].join(', ');
 
 /**
