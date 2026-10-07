@@ -4,8 +4,8 @@ import Header from "../../../../components/Header.astro";
 import Footer from "../../../../components/Footer.astro";
 import { getAllItems } from "../../../../lib/items";
 import type { GetStaticPathsOptions } from "astro";
-import { langParams, resolveLang } from "../../../../i18n/config";
-import { useTranslations, useTranslatedPath, type Lang } from "../../../../i18n/utils";
+import { langParams, localeMeta, resolveLang } from "../../../../i18n/config";
+import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "../../../../i18n/utils";
 import { getItemName } from "../../../../i18n/items";
 import { getCategoryName } from "../../../../i18n/categories";
 
@@ -13,7 +13,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   /**
    * One paginated set per locale. Names are localized *before* sorting so each
    * language reads alphabetically in its own collation, which means page N
-   * holds different items per locale — harmless, these pages are noindex.
+   * holds different items per locale — harmless, these pages are indexed.
    */
   return langParams.flatMap((params) => {
     const lang = resolveLang(params.lang);
@@ -33,6 +33,7 @@ const { page } = Astro.props;
 /** `page.url.*` already carries the locale prefix, so these need no rewriting. */
 const prevURL = page.url.prev ? `https://bringonplane.com${page.url.prev.endsWith('/') ? page.url.prev : page.url.prev + '/'}` : undefined;
 const nextURL = page.url.next ? `https://bringonplane.com${page.url.next.endsWith('/') ? page.url.next : page.url.next + '/'}` : undefined;
+const pageCanonicalUrl = getCanonicalUrl(translatePath(`/items/page/${page.currentPage}/`), lang);
 
 function getStatusClass(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKNOWN') {
   if (status === 'ALLOWED') return "bg-link-bg-soft border-link/25 text-link-deep";
@@ -55,9 +56,38 @@ function statusLabel(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKNOWN
   description={t("items.description", { page: page.currentPage })}
   prevURL={prevURL}
   nextURL={nextURL}
-  noIndex="noindex, follow"
+  canonicalURL={pageCanonicalUrl}
   lang={lang}
 >
+  <!-- CollectionPage & ItemList JSON-LD schema for catalog indexing -->
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": t("items.title", { page: page.currentPage }),
+      "description": t("items.description", { page: page.currentPage }),
+      "url": pageCanonicalUrl,
+      "inLanguage": localeMeta[lang].hreflang,
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "BringOnPlane",
+        "url": "https://bringonplane.com"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": page.data.length,
+        "itemListElement": page.data.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": item.name,
+          "url": getCanonicalUrl(translatePath(`/items/${item.slug}/`), lang)
+        }))
+      }
+    })}
+  />
+
   <Header slot="header" lang={lang} />
 
   <div class="max-w-[1000px] w-full mx-auto px-4 md:px-6 py-12 flex-1">

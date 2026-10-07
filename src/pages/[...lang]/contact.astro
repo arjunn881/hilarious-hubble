@@ -51,7 +51,7 @@ const formStrings = {
 <Layout
   title={t("contact.title")}
   description={t("contact.description")}
-  keywords="contact bringonplane, report tsa rule error, travel packing help, baggage rules question"
+  keywords={lang === 'en' ? "contact bringonplane, report tsa rule error, travel packing help, baggage rules question" : `${t("contact.h1")}, ${t("contact.title")}, ${t("meta.home.keywords")}`}
   lang={lang}
 >
   <Header slot="header" lang={lang} />

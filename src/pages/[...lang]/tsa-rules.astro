@@ -88,7 +88,102 @@ const breadcrumbItems = [
 
 const seoTitle = t("tsaRules.title", { year: currentYear });
 const seoDescription = t("tsaRules.description", { year: currentYear });
-const seoKeywords = `tsa rules ${currentYear}, tsa carry on rules, what can i bring on a plane, tsa prohibited items, tsa liquids rule, 3-1-1 rule, airport security rules, what is allowed in carry on, tsa guidelines, carry on bag rules, checked bag rules, tsa approved items, what can i bring through tsa, items not allowed on planes, tsa packing guide, airport baggage rules, tsa checklist, can i bring this on a plane, tsa rules for carry on items, airline carry on rules, tsa 2026 rules, what is tsa, how does tsa work, tsa screening process, tsa precheck, tsa baggage rules, hand luggage rules, cabin baggage rules`;
+const seoKeywords = lang === 'en'
+  ? `tsa rules ${currentYear}, tsa carry on rules, what can i bring on a plane, tsa prohibited items, tsa liquids rule, 3-1-1 rule, airport security rules, what is allowed in carry on, tsa guidelines, carry on bag rules, checked bag rules, tsa approved items, what can i bring through tsa, items not allowed on planes, tsa packing guide, airport baggage rules, tsa checklist, can i bring this on a plane, tsa rules for carry on items, airline carry on rules, tsa 2026 rules, what is tsa, how does tsa work, tsa screening process, tsa precheck, tsa baggage rules, hand luggage rules, cabin baggage rules`
+  : `${seoTitle}, ${t("tsaRules.eyebrow", { year: currentYear })}, ${t("meta.home.keywords")}`;
+
+const tsaFaqs = [
+  {
+    q: lang === 'en' ? "What is the TSA 3-1-1 liquids rule?" :
+       lang === 'de' ? "Was besagt die 3-1-1-Flüssigkeitenregel der TSA?" :
+       lang === 'es' ? "¿Qué es la regla de líquidos 3-1-1 de la TSA?" :
+       lang === 'fr' ? "Qu'est-ce que la règle des liquides 3-1-1 de la TSA ?" :
+       lang === 'it' ? "Cos'è la regola dei liquidi 3-1-1 della TSA?" :
+       lang === 'ja' ? "TSAの3-1-1液体ルールとは何ですか？" :
+       lang === 'ko' ? "TSA 3-1-1 액체 규정이란 무엇인가요?" :
+       "O que é a regra de líquidos 3-1-1 da TSA?",
+    a: lang === 'en' ? "The TSA 3-1-1 rule means: each liquid, gel, cream, paste, or aerosol container must be 3.4 oz (100ml) or less, packed inside 1 clear quart-sized zip-top bag, with 1 bag allowed per passenger through security. Full-size liquids can go in checked bags without restriction." :
+       lang === 'de' ? "Die 3-1-1-Regel besagt: Jeder Behälter mit Flüssigkeiten, Gels oder Aerosolen darf maximal 100 ml (3,4 oz) fassen und muss in einem transparenten, wiederverschließbaren 1-Liter-Beutel verpackt sein (1 Beutel pro Passagier im Handgepäck). Im aufgegebenen Gepäck gibt es keine Mengenbeschränkung." :
+       lang === 'es' ? "La regla 3-1-1 significa: cada contenedor de líquido, gel o aerosol debe tener 100 ml (3.4 oz) o menos, empacado en 1 bolsa transparente de 1 litro con cierre hermético, con 1 bolsa por pasajero en el equipaje de mano. En el equipaje facturado no hay restricciones de tamaño." :
+       lang === 'fr' ? "La règle 3-1-1 signifie que chaque récipient de liquide, gel ou aérosol doit être de 100 ml (3,4 oz) ou moins, placé dans un sac transparent refermable de 1 litre, à raison d'un sac par passager en cabine. Les grands formats sont autorisés sans limite en soute." :
+       lang === 'it' ? "La regola 3-1-1 stabilisce che ogni contenitore di liquidi o gel deve contenere al massimo 100 ml (3,4 oz), racchiuso in una busta trasparente richiudibile da 1 litro (una per passeggero nel bagaglio a mano). Nel bagaglio da stiva non vi sono limiti analoghi." :
+       lang === 'ja' ? "TSAの3-1-1ルールとは、機内持ち込み手荷物内のすべての液体・ジェル・エアゾールは100ml（3.4オンス）以下の容器に入れ、容量1リットル以下の透明なジッパー付き袋（1人1枚）に収納する必要がある規則です。受託手荷物（預け荷物）なら大容量でも制限なく持ち込めます。" :
+       lang === 'ko' ? "TSA 3-1-1 규정은 기내 반입 시 모든 액체, 젤류가 개당 100ml(3.4oz) 이하 용기에 담겨 투명한 1리터 지퍼백 1개에 들어가야 한다는 규칙입니다(승객 1인당 1개). 위탁 수하물에는 대용량 액체도 제한 없이 넣을 수 있습니다." :
+       "A regra 3-1-1 significa: cada recipiente de líquido, gel ou aerossol deve ter até 100 ml (3,4 oz), guardado em um saco transparente vedável de 1 litro (1 saco por passageiro na bagagem de mão). Na bagagem despachada não há limites de volume."
+  },
+  {
+    q: lang === 'en' ? "What items are completely prohibited in carry-on bags by TSA?" :
+       lang === 'de' ? "Welche Gegenstände sind im Handgepäck laut TSA vollständig verboten?" :
+       lang === 'es' ? "¿Qué artículos están totalmente prohibidos en el equipaje de mano por la TSA?" :
+       lang === 'fr' ? "Quels articles sont totalement interdits en bagage cabine par la TSA ?" :
+       lang === 'it' ? "Quali articoli sono totalmente vietati nel bagaglio a mano dalla TSA?" :
+       lang === 'ja' ? "TSAの機内持ち込み手荷物で完全に禁止されている物品は何ですか？" :
+       lang === 'ko' ? "TSA 규정상 기내 반입이 완전히 금지된 물품은 무엇인가요?" :
+       "Quais itens são totalmente proibidos na bagagem de mão pela TSA?",
+    a: lang === 'en' ? "TSA prohibits in carry-on bags: firearms and ammunition, explosives, flammable gases, power banks over 160Wh, self-defense sprays, knives with blades over 4 inches, martial arts weapons, and flammable liquids in containers over 3.4 oz." :
+       lang === 'de' ? "Die TSA verbietet im Handgepäck: Schusswaffen und Munition, Sprengstoffe, brennbare Gase, Powerbanks über 160 Wh, Pfeffersprays, Messer mit Klingen über 6 cm, Kampfsportwaffen sowie brennbare Flüssigkeiten über 100 ml." :
+       lang === 'es' ? "La TSA prohíbe en el equipaje de mano: armas de fuego y municiones, explosivos, gases inflamables, baterías externas de más de 160 Wh, aerosoles de defensa personal, cuchillos con hojas de más de 6 cm (o 4 pulgadas), armas de artes marciales y líquidos inflamables de más de 100 ml." :
+       lang === 'fr' ? "La TSA interdit en bagage cabine : les armes à feu et munitions, explosifs, gaz inflammables, batteries externes de plus de 160 Wh, bombes lacrymogènes, couteaux avec lame de plus de 6 cm, armes d'arts martiaux et liquides inflammables de plus de 100 ml." :
+       lang === 'it' ? "La TSA vieta nel bagaglio a mano: armi da fuoco e munizioni, esplosivi, gas infiammabili, power bank superiori a 160 Wh, spray al peperoncino, coltelli con lama superiore a 6 cm, armi da arti marziali e liquidi infiammabili oltre 100 ml." :
+       lang === 'ja' ? "TSAが機内持ち込みを禁止している物品：銃器・弾薬、爆発物、引火性ガス、160Wh超のモバイルバッテリー、防犯スプレー（催涙スプレー）、刃渡り6cm超の刃物・ナイフ、武道用武器、100ml超の引火性液体など。" :
+       lang === 'ko' ? "TSA가 기내 반입을 엄격히 금지하는 품목: 총기 및 탄약, 폭발물, 인화성 가스, 160Wh 초과 보조배터리, 호신용 스프레이, 날 길이 6cm 초과 도검류/칼, 무술용 무기류, 100ml 초과 가연성 액체 등." :
+       "A TSA proíbe na bagagem de mão: armas de fogo e munições, explosivos, gases inflamáveis, power banks acima de 160 Wh, sprays de defesa pessoal, facas com lâmina superior a 6 cm, armas de artes marciais e líquidos inflamáveis acima de 100 ml."
+  },
+  {
+    q: lang === 'en' ? "Can I bring a power bank or portable charger in my carry-on?" :
+       lang === 'de' ? "Darf ich eine Powerbank oder ein tragbares Ladegerät im Handgepäck mitnehmen?" :
+       lang === 'es' ? "¿Puedo llevar una batería externa o cargador portátil en mi equipaje de mano?" :
+       lang === 'fr' ? "Puis-je emporter une batterie externe ou un chargeur portable en bagage cabine ?" :
+       lang === 'it' ? "Posso portare un power bank o un caricatore portatile nel bagaglio a mano?" :
+       lang === 'ja' ? "機内持ち込み手荷物にモバイルバッテリーを持っていけますか？" :
+       lang === 'ko' ? "기내 수하물에 보조배터리나 휴대용 충전기를 가져갈 수 있나요?" :
+       "Posso levar um power bank ou carregador portátil na bagagem de mão?",
+    a: lang === 'en' ? "Yes, power banks must be in carry-on bags only — they are prohibited in checked baggage. Power banks up to 100Wh are unrestricted. Banks between 100-160Wh require airline approval. Banks over 160Wh are prohibited entirely on passenger aircraft." :
+       lang === 'de' ? "Ja, Powerbanks müssen zwingend ins Handgepäck — im Aufgabegepäck sind sie wegen Brandgefahr streng verboten. Powerbanks bis 100 Wh sind uneingeschränkt erlaubt. Zwischen 100 und 160 Wh ist eine Genehmigung der Fluggesellschaft erforderlich. Über 160 Wh sind auf Passagierflügen komplett untersagt." :
+       lang === 'es' ? "Sí, las baterías externas (power banks) deben ir únicamente en el equipaje de mano; están prohibidas en el equipaje facturado. Hasta 100 Wh están permitidas sin restricciones. Entre 100 y 160 Wh requieren aprobación de la aerolínea. Superiores a 160 Wh están prohibidas en vuelos de pasajeros." :
+       lang === 'fr' ? "Oui, les batteries externes doivent obligatoirement voyager en bagage cabine — elles sont strictement interdites en soute. Jusqu'à 100 Wh, elles sont autorisées sans restriction. Entre 100 et 160 Wh, l'accord de la compagnie est requis. Au-delà de 160 Wh, elles sont totalement interdites." :
+       lang === 'it' ? "Sì, i power bank devono viaggiare esclusivamente nel bagaglio a mano; sono severamente vietati nel bagaglio da stiva per motivi di sicurezza antincendio. Fino a 100 Wh sono consentiti liberamente. Tra 100 e 160 Wh richiedono l'approvazione della compagnia aerea. Oltre 160 Wh sono vietati." :
+       lang === 'ja' ? "はい、モバイルバッテリーは必ず機内持ち込み手荷物に入れる必要があります（発火の危険があるため預け荷物・受託手荷物は厳禁）。100Wh以下なら個数制限の範囲で自由に持ち込めます。100Wh〜160Whは航空会社の承認が必要で、160Wh超は持ち込み禁止です。" :
+       lang === 'ko' ? "네, 보조배터리는 반드시 기내 수하물로만 반입해야 합니다(화재 위험으로 위탁 수하물 반입은 절대 금지). 100Wh 이하는 자유롭게 반입 가능하며, 100~160Wh는 항공사 승인이 필요하고, 160Wh 초과는 탑승이 불가합니다." :
+       "Sim, os carregadores portáteis (power banks) devem ir exclusivamente na bagagem de mão — são estritamente proibidos na bagagem despachada pelo risco de incêndio. Até 100 Wh são permitidos livremente. Entre 100 e 160 Wh requerem aprovação da companhia aérea. Acima de 160 Wh são proibidos."
+  },
+  {
+    q: lang === 'en' ? "How does TSA screening work?" :
+       lang === 'de' ? "Wie läuft die Sicherheitskontrolle der TSA am Flughafen ab?" :
+       lang === 'es' ? "¿Cómo funciona el control de seguridad de la TSA?" :
+       lang === 'fr' ? "Comment se déroule le contrôle de sécurité de la TSA ?" :
+       lang === 'it' ? "Come funziona il controllo di sicurezza TSA?" :
+       lang === 'ja' ? "TSAの空港保安検査はどのように行われますか？" :
+       lang === 'ko' ? "TSA 공항 보안검색은 어떻게 진행되나요?" :
+       "Como funciona o controle de segurança da TSA?",
+    a: lang === 'en' ? "At TSA security: place bags on the belt, remove laptops and tablets to separate bins, remove your liquids bag, take off shoes and belts, and walk through the scanner. TSA PreCheck members can leave shoes on and laptops in bags. Items are X-rayed and flagged if restricted." :
+       lang === 'de' ? "An der Sicherheitskontrolle: Gepäck auf das Band legen, Laptops und Tablets in separate Wannen legen, den Flüssigkeitenbeutel herausnehmen, Schuhe und Gürtel ablegen und durch den Körperscanner gehen. Bei TSA PreCheck können Schuhe und Laptops in der Tasche bleiben." :
+       lang === 'es' ? "En el control de seguridad de la TSA: coloque las maletas en la cinta, saque portátiles y tabletas en bandejas separadas, extraiga la bolsa de líquidos, quítese zapatos y cinturón, y pase por el escáner corporal. Con TSA PreCheck puede mantener zapatos y portátiles dentro." :
+       lang === 'fr' ? "Au contrôle de sécurité TSA : déposez vos bagages sur le tapis, sortez ordinateurs et tablettes dans des bacs séparés, présentez votre sac de liquides, retirez chaussures et ceinture, puis traversez le scanner corporel. Les membres TSA PreCheck gardent chaussures et ordinateurs." :
+       lang === 'it' ? "Ai controlli di sicurezza TSA: posiziona i bagagli sul nastro, estrai laptop e tablet in vaschette separate, estrai la busta dei liquidi, togli scarpe e cintura e attraversa lo scanner. Con TSA PreCheck è possibile tenere scarpe e dispositivi elettronici in borsa." :
+       lang === 'ja' ? "TSA保安検査場での手順：手荷物をトレイに載せ、ノートPCやタブレットを別トレイに取り出し、液体物パウチを提示し、靴とベルトを脱いでスキャナーを通過します。TSA PreCheck利用者は靴を脱がず、ノートPCもバッグに入れたままで通過可能です。" :
+       lang === 'ko' ? "TSA 보안검색 절차: 가방을 컨베이어 벨트에 올리고, 노트북 및 태블릿을 별도 바구니에 꺼내며, 3-1-1 액체류 지퍼백을 꺼내고, 신발과 벨트를 벗은 후 전신 스캐너를 통과합니다. TSA PreCheck 회원은 신발을 벗지 않고 전자기기도 가방에 둔 채 통과할 수 있습니다." :
+       "No controle de segurança da TSA: coloque as malas na esteira, retire notebooks e tablets em bandejas separadas, apresente o saco de líquidos, tire sapatos e cintos e passe pelo scanner corporal. Membros do TSA PreCheck podem manter sapatos e eletrônicos na bagagem."
+  },
+  {
+    q: lang === 'en' ? "Are medications and medical devices exempt from TSA rules?" :
+       lang === 'de' ? "Sind Medikamente und medizinische Geräte von den TSA-Regeln ausgenommen?" :
+       lang === 'es' ? "¿Están los medicamentos y dispositivos médicos exentos de las reglas de la TSA?" :
+       lang === 'fr' ? "Les médicaments et dispositifs médicaux sont-ils exemptés des règles TSA ?" :
+       lang === 'it' ? "I medicinali e i dispositivi medici sono esenti dalle regole TSA?" :
+       lang === 'ja' ? "医薬品や医療器具はTSAルールの免除対象ですか？" :
+       lang === 'ko' ? "의약품 및 의료 기기는 TSA 규정에서 면제되나요?" :
+       "Medicamentos e dispositivos médicos são isentos das regras da TSA?",
+    a: lang === 'en' ? "Yes. Prescription medications (pills, liquids, injections), medical devices (CPAP machines, insulin pumps, epipens), baby formula, and breast milk are exempt from the 3-1-1 liquids rule. Declare these items at the security checkpoint for expedited screening." :
+       lang === 'de' ? "Ja. Verschreibungspflichtige Medikamente (Tabletten, Flüssigkeiten, Spritzen), medizinische Geräte (CPAP-Geräte, Insulinpumpen, EpiPens), Babynahrung und Muttermilch sind von der 3-1-1-Flüssigkeitenregel ausgenommen. Melden Sie diese bei der Kontrolle vorab an." :
+       lang === 'es' ? "Sí. Los medicamentos con receta (pastillas, líquidos, inyecciones), dispositivos médicos (máquinas CPAP, bombas de insulina, autoinyectores EpiPen), fórmula para bebés y leche materna están exentos de la regla 3-1-1. Declárelos en el control de seguridad para una revisión ágil." :
+       lang === 'fr' ? "Oui. Les médicaments sur ordonnance (comprimés, liquides, seringues), dispositifs médicaux (appareils CPAP, pompes à insuline, EpiPen), laits infantiles et lait maternel sont exemptés de la règle 3-1-1. Déclarez-les à l'agent de contrôle lors de votre passage." :
+       lang === 'it' ? "Sì. I medicinali con prescrizione medica (compresse, liquidi, siringhe), dispositivi medici (macchine CPAP, microinfusori di insulina, EpiPen), latte artificiale e latte materno sono esenti dalla regola 3-1-1 dei liquidi. È sufficiente dichiararli al punto di controllo." :
+       lang === 'ja' ? "はい。処方薬（錠剤・液体・注射薬）、医療機器（CPAP呼吸器、インスリンポンプ、エピペン）、乳幼児用粉ミルク・母乳は、TSA 3-1-1液体ルールの免除対象です。検査員に申告することでスムーズに検査を受けられます。" :
+       lang === 'ko' ? "네. 처방 의약품(알약, 물약, 주사제), 의료 기기(CPAP 수면무호흡기, 인슐린 펌프, 에피펜), 유아용 분유 및 모유는 3-1-1 액체류 제한에서 면제됩니다. 보안검색대에서 검사관에게 미리 구두로 신고하시면 됩니다." :
+       "Sim. Medicamentos prescritos (comprimidos, líquidos, injeções), dispositivos médicos (aparelhos CPAP, bombas de insulina, canetas EpiPen), fórmula infantil e leite materno são isentos da regra de líquidos 3-1-1. Declare-os no posto de controle para inspeção."
+  }
+];
 
 /** Locale-aware absolute URLs for the JSON-LD graph. */
 const pageUrl = getCanonicalUrl("/tsa-rules/", lang);
@@ -208,48 +303,15 @@ const toolSteps = [
         },
         {
           "@type": "FAQPage",
-          mainEntity: [
-            {
-              "@type": "Question",
-              name: "What is the TSA 3-1-1 liquids rule?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "The TSA 3-1-1 rule means: each liquid, gel, cream, paste, or aerosol container must be 3.4 oz (100ml) or less, packed inside 1 clear quart-sized zip-top bag, with 1 bag allowed per passenger through security. Full-size liquids can go in checked bags without restriction.",
-              },
+          inLanguage: localeMeta[lang].hreflang,
+          mainEntity: tsaFaqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.a,
             },
-            {
-              "@type": "Question",
-              name: "What items are completely prohibited in carry-on bags by TSA?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "TSA prohibits in carry-on bags: firearms and ammunition, explosives, flammable gases, power banks over 160Wh, self-defense sprays, knives with blades over 4 inches, martial arts weapons, and flammable liquids in containers over 3.4 oz.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "Can I bring a power bank or portable charger in my carry-on?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Yes, power banks must be in carry-on bags only — they are prohibited in checked baggage. Power banks up to 100Wh are unrestricted. Banks between 100-160Wh require airline approval. Banks over 160Wh are prohibited entirely on passenger aircraft.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "How does TSA screening work?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "At TSA security: place bags on the belt, remove laptops and tablets to separate bins, remove your liquids bag, take off shoes and belts, and walk through the scanner. TSA PreCheck members can leave shoes on and laptops in bags. Items are X-rayed and flagged if restricted.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "Are medications and medical devices exempt from TSA rules?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Yes. Prescription medications (pills, liquids, injections), medical devices (CPAP machines, insulin pumps, epipens), baby formula, and breast milk are exempt from the 3-1-1 liquids rule. Declare these items at the security checkpoint for expedited screening.",
-              },
-            },
-          ],
+          })),
         },
       ],
     })}
@@ -702,6 +764,31 @@ const toolSteps = [
             </a>
           </div>
         </section>
+
+        <!-- Section 6: Frequently Asked Questions -->
+        <section id="faq" aria-labelledby="h2-faq" class="mt-10">
+          <h2
+            id="h2-faq"
+            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white mb-4"
+          >
+            {t("faq.h1")}
+          </h2>
+          <div class="space-y-3">
+            {
+              tsaFaqs.map((faq) => (
+                <details class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 transition-colors">
+                  <summary class="flex items-center justify-between cursor-pointer font-semibold text-sm text-slate-900 dark:text-white list-none select-none">
+                    <span>{faq.q}</span>
+                    <span class="text-slate-400 group-open:rotate-180 transition-transform ml-2">▼</span>
+                  </summary>
+                  <p class="mt-3 text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 pt-3">
+                    {faq.a}
+                  </p>
+                </details>
+              ))
+            }
+          </div>
+        </section>
       </div>
 
       <!-- Sidebar Column -->
@@ -723,6 +810,7 @@ const toolSteps = [
                 { href: "#item-reference", label: t("tsaRules.tocReference") },
                 { href: "#prohibited-items", label: t("tsaRules.tocProhibited") },
                 { href: "#how-to-use", label: t("tsaRules.tocTool") },
+                { href: "#faq", label: t("faq.h1") },
               ].map((link) => (
                 <a
                   href={link.href}

@@ -12,7 +12,7 @@ import {
   CheckCircle2, XCircle, AlertCircle, FileText, ChevronDown, Calendar, 
   Luggage, Info, BadgeCheck, Scale, Plane
 } from "@lucide/astro";
-import { langParams, resolveLang } from "../../../i18n/config";
+import { langParams, localeMeta, resolveLang } from "../../../i18n/config";
 import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "../../../i18n/utils";
 import type { UIKey } from "../../../i18n/ui";
 
@@ -332,6 +332,7 @@ const breadcrumbItems = [
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "inLanguage": localeMeta[lang].hreflang,
   "itemListElement": breadcrumbItems.map((item, idx) => ({
     "@type": "ListItem",
     "position": idx + 1,
@@ -344,6 +345,7 @@ const breadcrumbSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": localeMeta[lang].hreflang,
   "mainEntity": template.faqs.map(faq => ({
     "@type": "Question",
     "name": faq.q,
@@ -357,6 +359,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "inLanguage": localeMeta[lang].hreflang,
   "name": t("packingList.howTo", { trip: tripLabel }),
   "description": template.desc,
   "step": template.steps.map((step, idx) => ({
@@ -392,9 +395,18 @@ const relatedWidgetGroups = [
     { title: t("rel.countryRules"), url: translatePath("/countries/") }
   ]}
 ];
+
+const seoKeywords = lang === 'en'
+  ? `${template.name} packing list, packing list for ${template.name}, airline baggage checklist, tsa travel packing, carry on essentials`
+  : `${seoTitle}, ${t("packingList.eyebrow")}, ${t("meta.home.keywords")}`;
 ---
 
-<Layout title={seoTitle} description={seoDescription} lang={lang}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  lang={lang}
+>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(howToSchema)} />

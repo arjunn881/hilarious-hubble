@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { ArrowLeft, Globe, ShieldCheck, AlertCircle, FileText, Landmark } from "@lucide/astro";
-import { langParams, resolveLang } from "../../i18n/config";
+import { langParams, localeMeta, resolveLang } from "../../i18n/config";
 import { useTranslations, useTranslatedPath, type Lang } from "../../i18n/utils";
 import { getCountryName } from "../../i18n/places";
 
@@ -158,7 +158,9 @@ const countryFaqs = [
 <Layout
   title={t("countries.title", { year: currentYear })}
   description={t("countries.description")}
-  keywords="can i bring melatonin on a plane uk, can you bring melatonin into the uk, is melatonin legal in france, can i take my vape to france, nicotine pouches singapore airport, can i bring cup noodles into australia, can i bring cashew nuts to australia, bringing epipen to japan, can i bring cooking oil from malaysia to singapore, bring cigarettes to sg, uk customs baby formula, engagement ring airport security uk"
+  keywords={lang === 'en'
+    ? "can i bring melatonin on a plane uk, can you bring melatonin into the uk, is melatonin legal in france, can i take my vape to france, nicotine pouches singapore airport, can i bring cup noodles into australia, can i bring cashew nuts to australia, bringing epipen to japan, can i bring cooking oil from malaysia to singapore, bring cigarettes to sg, uk customs baby formula, engagement ring airport security uk"
+    : `${t("countries.h1")}, ${t("countries.title", { year: currentYear })}, ${t("meta.home.keywords")}`}
   lang={lang}
 >
   <Header slot="header" lang={lang} />
@@ -167,6 +169,7 @@ const countryFaqs = [
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": localeMeta[lang].hreflang,
     "mainEntity": countryFaqs.map(f => ({
       "@type": "Question",
       "name": f.q,

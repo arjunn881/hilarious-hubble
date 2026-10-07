@@ -122,6 +122,11 @@ const relatedWidgetGroups = [
     links: getPopularGuides(4).map(g => ({ ...g, url: translatePath(g.url) })),
   },
 ];
+import { getCategoryFAQs } from "../../../lib/contentGenerator";
+import { getCategoryProse } from "../../../i18n/prose/categories";
+
+const cp = getCategoryProse(categoryLabel, total, lang);
+const categoryFaqs = cp?.faqs ?? getCategoryFAQs(categoryName);
 ---
 
 <Layout
@@ -132,23 +137,49 @@ const relatedWidgetGroups = [
   <!-- Inject JSON-LD structured data in the page body -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": t("category.h1", { category: categoryLabel }),
-    "description": t("category.description", { category: categoryLabel }),
-    "url": pageUrl,
-    "inLanguage": localeMeta[lang].hreflang,
-    "author": {
-      "@type": "Organization",
-      "name": "BringOnPlane Editorial Team"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "BringOnPlane",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://bringonplane.com/logo.png"
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": t("category.h1", { category: categoryLabel }),
+        "description": t("category.description", { category: categoryLabel }),
+        "url": pageUrl,
+        "inLanguage": localeMeta[lang].hreflang,
+        "author": {
+          "@type": "Organization",
+          "name": "BringOnPlane Editorial Team"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "BringOnPlane",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://bringonplane.com/logo.png"
+          }
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "numberOfItems": categoryItems.length,
+          "itemListElement": categoryItems.map((item, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "name": item.name,
+            "url": getCanonicalUrl(translatePath(`/items/${item.slug}/`), lang)
+          }))
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "inLanguage": localeMeta[lang].hreflang,
+        "mainEntity": categoryFaqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
       }
-    }
+    ]
   })} />
 
   <Header slot="header" lang={lang} />

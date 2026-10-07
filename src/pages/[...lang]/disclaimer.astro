@@ -127,7 +127,7 @@ Your continued use of BringOnPlane after any changes constitutes your acceptance
 <Layout
   title={t("disclaimer.title")}
   description={t("disclaimer.description")}
-  keywords="bringonplane disclaimer, tsa rules disclaimer, not official tsa, informational only, baggage rules disclaimer"
+  keywords={lang === 'en' ? "bringonplane disclaimer, tsa rules disclaimer, not official tsa, informational only, baggage rules disclaimer" : `${t("disclaimer.h1")}, ${t("disclaimer.title")}, ${t("meta.home.keywords")}`}
   lang={lang}
 >
   <Header slot="header" lang={lang} />

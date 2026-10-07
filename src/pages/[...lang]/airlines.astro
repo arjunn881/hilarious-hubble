@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { ArrowLeft, Plane, ShieldCheck, Info, Scale, Box, BatteryCharging } from "@lucide/astro";
-import { langParams, resolveLang } from "../../i18n/config";
+import { langParams, localeMeta, resolveLang } from "../../i18n/config";
 import { useTranslations, useTranslatedPath, type Lang } from "../../i18n/utils";
 import { getItemName } from "../../i18n/items";
 import BagPromoBanner from "../../components/monetization/BagPromoBanner.astro";
@@ -223,7 +223,9 @@ const airlineFaqs = [
 <Layout
   title={t("airlines.title", { year: currentYear })}
   description={t("airlines.description")}
-  keywords="singapore airlines cup noodles, singapore airlines bike policy, singapore airlines stroller policy, air france power bank rules, what is the 3-1-1 rule on air france, air france cookies, emirates cigarette electronique, do you get headphones on emirates flights, lufthansa cigarettes allowance, baby food hand luggage lufthansa, lufthansa portable charger rules, lufthansa golf clubs, ryanair lighter, ryanair camera batteries, ryanair hair straighteners, ryanair skateboard, american airlines bluetooth speaker, american airlines perfume policy, delta battery pack policy, united airlines deodorant size, united airlines fishing rod policy, british airways electric toothbrush, air canada electric toothbrush"
+  keywords={lang === 'en'
+    ? "singapore airlines cup noodles, singapore airlines bike policy, singapore airlines stroller policy, air france power bank rules, what is the 3-1-1 rule on air france, air france cookies, emirates cigarette electronique, do you get headphones on emirates flights, lufthansa cigarettes allowance, baby food hand luggage lufthansa, lufthansa portable charger rules, lufthansa golf clubs, ryanair lighter, ryanair camera batteries, ryanair hair straighteners, ryanair skateboard, american airlines bluetooth speaker, american airlines perfume policy, delta battery pack policy, united airlines deodorant size, united airlines fishing rod policy, british airways electric toothbrush, air canada electric toothbrush"
+    : `${t("airlines.h1")}, ${t("airlines.title", { year: currentYear })}, ${t("meta.home.keywords")}`}
   lang={lang}
 >
   <Header slot="header" lang={lang} />
@@ -232,6 +234,7 @@ const airlineFaqs = [
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": localeMeta[lang].hreflang,
     "mainEntity": airlineFaqs.map(f => ({
       "@type": "Question",
       "name": f.q,

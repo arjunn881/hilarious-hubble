@@ -4,7 +4,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getAllItems, getItemBySlug } from "../../lib/items";
 import { defaultLang, langParams, resolveLang } from "../../i18n/config";
-import { formatDate, localeMeta, useTranslations, useTranslatedPath, type Lang } from "../../i18n/utils";
+import { formatDate, getCanonicalUrl, localeMeta, useTranslations, useTranslatedPath, type Lang } from "../../i18n/utils";
 import { getItemName } from "../../i18n/items";
 import { categorySlug, getCategoryName } from "../../i18n/categories";
 import { indexArticleOverlay, pickArticle } from "../../i18n/prose/articles";
@@ -524,7 +524,7 @@ const homeKeywords = [...new Set(_rawHomeKeywords.map(k => k.trim().toLowerCase(
   imageAlt="BringOnPlane — Search TSA Rules for Any Item You Want to Pack"
   lang={lang}
   speakableSummary="BringOnPlane is a free TSA carry-on checker. Search any travel item to instantly see if it is allowed in carry-on or checked luggage."
-  keywords={homeKeywords}
+  keywords={lang === 'en' ? homeKeywords : `${t("meta.home.keywords")}, ${t("meta.home.title")}`}
 >
 
 
@@ -533,6 +533,7 @@ const homeKeywords = [...new Set(_rawHomeKeywords.map(k => k.trim().toLowerCase(
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": localeMeta[lang].hreflang,
     "mainEntity": [
       {
         "@type": "Question",
@@ -669,8 +670,9 @@ const homeKeywords = [...new Set(_rawHomeKeywords.map(k => k.trim().toLowerCase(
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Check if an Item Is Allowed on a Plane",
-    "description": "Use BringOnPlane's free TSA checker to verify carry-on and checked bag rules for any travel item in seconds.",
+    "inLanguage": localeMeta[lang].hreflang,
+    "name": lang === 'en' ? "How to Check if an Item Is Allowed on a Plane" : t("home.howItWorks"),
+    "description": lang === 'en' ? "Use BringOnPlane's free TSA checker to verify carry-on and checked bag rules for any travel item in seconds." : t("home.howIntro"),
     "totalTime": "PT10S",
     "tool": {
       "@type": "HowToTool",
@@ -681,23 +683,23 @@ const homeKeywords = [...new Set(_rawHomeKeywords.map(k => k.trim().toLowerCase(
       {
         "@type": "HowToStep",
         "position": 1,
-        "name": "Search your item",
-        "text": "Type any travel item into the search bar (e.g. 'razor', 'power bank', 'shampoo'). The typo-tolerant search matches 196+ items instantly.",
-        "url": "https://bringonplane.com/#hero"
+        "name": lang === 'en' ? "Search your item" : t("home.step1Title"),
+        "text": lang === 'en' ? "Type any travel item into the search bar (e.g. 'razor', 'power bank', 'shampoo'). The typo-tolerant search matches 196+ items instantly." : t("home.step1Body"),
+        "url": `${getCanonicalUrl("/", lang)}#hero`
       },
       {
         "@type": "HowToStep",
         "position": 2,
-        "name": "Read the instant verdict",
-        "text": "See a color-coded verdict: green (Allowed), amber (Restricted), or red (Prohibited) for both carry-on and checked baggage based on official TSA and FAA rules.",
-        "url": "https://bringonplane.com/#hero"
+        "name": lang === 'en' ? "Read the instant verdict" : t("home.step2Title"),
+        "text": lang === 'en' ? "See a color-coded verdict: green (Allowed), amber (Restricted), or red (Prohibited) for both carry-on and checked baggage based on official TSA and FAA rules." : t("home.step2Body"),
+        "url": `${getCanonicalUrl("/", lang)}#hero`
       },
       {
         "@type": "HowToStep",
         "position": 3,
-        "name": "Read the full guide",
-        "text": "Click 'Read Full TSA Rules' for exact size limits, conditions, airline-specific policies, and international customs notes for your destination.",
-        "url": "https://bringonplane.com/items/"
+        "name": lang === 'en' ? "Read the full guide" : t("home.step3Title"),
+        "text": lang === 'en' ? "Click 'Read Full TSA Rules' for exact size limits, conditions, airline-specific policies, and international customs notes for your destination." : t("home.step3Body"),
+        "url": getCanonicalUrl("/items/page/1/", lang)
       }
     ]
   })} />
@@ -706,24 +708,30 @@ const homeKeywords = [...new Set(_rawHomeKeywords.map(k => k.trim().toLowerCase(
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Most Searched TSA Items — Carry-On & Checked Bag Rules",
+    "inLanguage": localeMeta[lang].hreflang,
+    "name": lang === 'en' ? "Most Searched TSA Items — Carry-On & Checked Bag Rules" : t("home.popularNow"),
     "description": "The most frequently searched items for TSA carry-on and checked baggage rules on BringOnPlane.",
-    "url": "https://bringonplane.com",
+    "url": getCanonicalUrl("/", lang),
     "numberOfItems": 12,
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Power Bank", "url": "https://bringonplane.com/items/power-bank/" },
-      { "@type": "ListItem", "position": 2, "name": "Laptop Charger", "url": "https://bringonplane.com/items/laptop-charger/" },
-      { "@type": "ListItem", "position": 3, "name": "Apple AirTag", "url": "https://bringonplane.com/items/airtag/" },
-      { "@type": "ListItem", "position": 4, "name": "Melatonin", "url": "https://bringonplane.com/items/melatonin/" },
-      { "@type": "ListItem", "position": 5, "name": "Vape", "url": "https://bringonplane.com/items/vape/" },
-      { "@type": "ListItem", "position": 6, "name": "Sunscreen", "url": "https://bringonplane.com/items/sunscreen/" },
-      { "@type": "ListItem", "position": 7, "name": "Razor", "url": "https://bringonplane.com/items/razor/" },
-      { "@type": "ListItem", "position": 8, "name": "Perfume", "url": "https://bringonplane.com/items/perfume/" },
-      { "@type": "ListItem", "position": 9, "name": "Beard Trimmer", "url": "https://bringonplane.com/items/beard-trimmer/" },
-      { "@type": "ListItem", "position": 10, "name": "Toothpaste", "url": "https://bringonplane.com/items/toothpaste/" },
-      { "@type": "ListItem", "position": 11, "name": "Nicotine Pouches", "url": "https://bringonplane.com/items/nicotine-pouches/" },
-      { "@type": "ListItem", "position": 12, "name": "Tent Stakes", "url": "https://bringonplane.com/items/tent-stakes/" }
-    ]
+      { slug: "power-bank", en: "Power Bank" },
+      { slug: "laptop-charger", en: "Laptop Charger" },
+      { slug: "airtag", en: "Apple AirTag" },
+      { slug: "melatonin", en: "Melatonin" },
+      { slug: "vape", en: "Vape" },
+      { slug: "sunscreen", en: "Sunscreen" },
+      { slug: "razor", en: "Razor" },
+      { slug: "perfume", en: "Perfume" },
+      { slug: "beard-trimmer", en: "Beard Trimmer" },
+      { slug: "toothpaste", en: "Toothpaste" },
+      { slug: "nicotine-pouches", en: "Nicotine Pouches" },
+      { slug: "tent-stakes", en: "Tent Stakes" }
+    ].map((item, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "name": getItemName(item.slug, item.en, lang),
+      "url": getCanonicalUrl(`/items/${item.slug}/`, lang)
+    }))
   })} />
 
   <!-- Header Slot (Transparent on Landing Page) -->

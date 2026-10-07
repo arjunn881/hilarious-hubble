@@ -18,6 +18,18 @@ https://www.bringonplane.com/* https://bringonplane.com/:splat 301
 # ── /packing-assistant → /checklist/ ─────────────────────────────────────────
 /packing-assistant /checklist/ 301
 
+# ── Bare /category/ (no slug) → item catalog ─────────────────────────────────
+/category /items/page/1/ 301
+/category/ /items/page/1/ 301
+
+# ── /category/security → /category/documents/ ────────────────────────────────
+/category/security  /category/documents/ 301
+/category/security/ /category/documents/ 301
+
+# ── /category/carry-on-rules → /guides/ ─────────────────────────────────────
+/category/carry-on-rules  /guides/ 301
+/category/carry-on-rules/ /guides/ 301
+
 # ── Non-existent items → item catalog ─────────────────────────────────────────
 /items/beef-jerky         /items/page/1/ 301
 /items/beef-jerky/        /items/page/1/ 301
@@ -133,23 +145,52 @@ https://www.bringonplane.com/* https://bringonplane.com/:splat 301
 
 # ── Localized bad category slugs → localized item catalog ─────────────────────
 # (catches /es/category/weapons/, /de/category/household/, etc.)
-/:lang/category/sports-and-outdoors/   /:lang/items/page/1/ 301
-/:lang/category/household/             /:lang/items/page/1/ 301
-/:lang/category/flammables/            /:lang/items/page/1/ 301
-/:lang/category/weapons/               /:lang/items/page/1/ 301
-/:lang/category/fire-and-hazardous/    /:lang/items/page/1/ 301
-/:lang/category/medicine-and-health/   /:lang/category/medicine/ 301
-/:lang/category/food-and-snacks/       /:lang/category/food/ 301
-/:lang/category/tools-and-sharp-objects/ /:lang/category/tools/ 301
-/:lang/category/clothing-and-accessories/ /:lang/items/page/1/ 301
-/:lang/category/security/              /:lang/category/documents/ 301
-/:lang/category/carry-on-rules/        /:lang/guides/ 301
+# With trailing slash
+/:lang/category/sports-and-outdoors/       /:lang/items/page/1/ 301
+/:lang/category/sports-outdoors/           /:lang/items/page/1/ 301
+/:lang/category/household/                 /:lang/items/page/1/ 301
+/:lang/category/household-items/           /:lang/items/page/1/ 301
+/:lang/category/flammables/                /:lang/items/page/1/ 301
+/:lang/category/fire-hazardous/            /:lang/items/page/1/ 301
+/:lang/category/weapons/                   /:lang/items/page/1/ 301
+/:lang/category/fire-and-hazardous/        /:lang/items/page/1/ 301
+/:lang/category/tobacco-smoking/           /:lang/items/page/1/ 301
+/:lang/category/medicine-and-health/       /:lang/category/medicine/ 301
+/:lang/category/food-and-snacks/           /:lang/category/food/ 301
+/:lang/category/food-snacks/               /:lang/category/food/ 301
+/:lang/category/tools-and-sharp-objects/   /:lang/category/tools/ 301
+/:lang/category/tools-sharp-objects/       /:lang/category/tools/ 301
+/:lang/category/clothing-and-accessories/  /:lang/items/page/1/ 301
+/:lang/category/clothing-accessories/      /:lang/items/page/1/ 301
+/:lang/category/security/                  /:lang/category/documents/ 301
+/:lang/category/carry-on-rules/            /:lang/guides/ 301
+# Without trailing slash (Cloudflare first-match wins, so slash variants above fire first)
+/:lang/category/sports-and-outdoors        /:lang/items/page/1/ 301
+/:lang/category/household                  /:lang/items/page/1/ 301
+/:lang/category/flammables                 /:lang/items/page/1/ 301
+/:lang/category/weapons                    /:lang/items/page/1/ 301
+/:lang/category/fire-and-hazardous         /:lang/items/page/1/ 301
+/:lang/category/tobacco-smoking            /:lang/items/page/1/ 301
+/:lang/category/medicine-and-health        /:lang/category/medicine/ 301
+/:lang/category/food-and-snacks            /:lang/category/food/ 301
+/:lang/category/tools-and-sharp-objects    /:lang/category/tools/ 301
+/:lang/category/clothing-and-accessories   /:lang/items/page/1/ 301
+/:lang/category/security                   /:lang/category/documents/ 301
+/:lang/category/carry-on-rules             /:lang/guides/ 301
 
 # ── Additional missing guide slugs from GSC 404 report ────────────────────────
 /guide/flying-to-canada-baggage-rules  /guides/ 301
 /guide/flying-to-canada-baggage-rules/ /guides/ 301
 /guide/can-you-bring-cologne-on-plane  /items/cologne/ 301
 /guide/can-you-bring-cologne-on-plane/ /items/cologne/ 301
+
+# ── Guide redirect-errors from GSC (no page + no redirect rule) ───────────────
+/guide/ord-tsa-wait-times              /guide/tsa-wait-times-guide/ 301
+/guide/ord-tsa-wait-times/             /guide/tsa-wait-times-guide/ 301
+/guide/what-is-tsa-precheck            /guide/tsa-precheck-guide/ 301
+/guide/what-is-tsa-precheck/           /guide/tsa-precheck-guide/ 301
+/guide/tsa-touchless-id-guide          /guide/tsa-precheck-guide/ 301
+/guide/tsa-touchless-id-guide/         /guide/tsa-precheck-guide/ 301
 
 # ── Trailing-slash enforcement ────────────────────────────────────────────────
 /items/:slug/airline/:airline    /items/:slug/airline/:airline/ 301
@@ -170,5 +211,8 @@ https://www.bringonplane.com/* https://bringonplane.com/:splat 301
 /contact          /contact/ 301
 /guides           /guides/ 301
 
-# ── Redirect bare /items to first paginated catalog page ──────────────────────
-/items /items/page/1/ 301
+# ── Redirect bare /items and localized /:lang/items to first paginated catalog page ──
+/items         /items/page/1/ 301
+/items/        /items/page/1/ 301
+/:lang/items   /:lang/items/page/1/ 301
+/:lang/items/  /:lang/items/page/1/ 301

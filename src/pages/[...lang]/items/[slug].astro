@@ -32,6 +32,19 @@ import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "
 import { getItemName } from "../../../i18n/items";
 import { getItemProse, localizeItemProse } from "../../../i18n/prose";
 import { categorySlug, getCategoryName } from "../../../i18n/categories";
+import {
+  getLocalizedWhatIsThis,
+  getLocalizedItemFAQs,
+  getLocalizedScreeningProcedure,
+  getLocalizedRegulatoryDetails,
+  getLocalizedAirlineDifferences,
+  getLocalizedStepByStepPackingGuide,
+  getLocalizedExceptions,
+  getLocalizedInternational,
+  getLocalizedAlternatives,
+  getLocalizedCarryOnReason,
+  getLocalizedCheckedReason,
+} from "../../../lib/i18nContentGenerator";
 
 export async function getStaticPaths() {
   const items = getAllItems();
@@ -83,16 +96,19 @@ function getVerb(name: string): "is" | "are" {
 }
 const verb = getVerb(item.name);
 
-const exceptions = prose?.exceptions ?? getExceptions(item);
-const internationalConsiderations = prose?.international ?? getInternationalConsiderations(item);
-const alternativeItems = prose?.alternatives ?? getAlternativeItems(item);
+const exceptions = prose?.exceptions ?? (lang === 'en' ? getExceptions(item) : getLocalizedExceptions(item, itemName, lang));
+const internationalConsiderations = prose?.international ?? (lang === 'en' ? getInternationalConsiderations(item) : getLocalizedInternational(item, itemName, lang));
+const alternativeItems = prose?.alternatives ?? (lang === 'en' ? getAlternativeItems(item) : getLocalizedAlternatives(item, itemName, lang));
 const itemRelatedGuides = getRelatedGuides(item);
 
-const screeningProcedure = prose?.screening ?? getScreeningProcedure(item);
-const regulatoryDetails = prose?.regulatory ?? getRegulatoryDetails(item);
-const airlineDifferences = prose?.airlineDifferences ?? getAirlineDifferences(item);
-const stepByStepPacking = prose?.packingGuide ?? getStepByStepPackingGuide(item);
-const itemFaqs = prose?.faq ?? getExpandedItemFAQs(item);
+const screeningProcedure = prose?.screening ?? (lang === 'en' ? getScreeningProcedure(item) : getLocalizedScreeningProcedure(item, itemName, lang));
+const regulatoryDetails = prose?.regulatory ?? (lang === 'en' ? getRegulatoryDetails(item) : getLocalizedRegulatoryDetails(item, itemName, lang));
+const airlineDifferences = prose?.airlineDifferences ?? (lang === 'en' ? getAirlineDifferences(item) : getLocalizedAirlineDifferences(item, itemName, categoryLabel, lang));
+const stepByStepPacking = prose?.packingGuide ?? (lang === 'en' ? getStepByStepPackingGuide(item) : getLocalizedStepByStepPackingGuide(item, itemName, lang));
+const itemFaqs = prose?.faq ?? (lang === 'en' ? getExpandedItemFAQs(item) : getLocalizedItemFAQs(item, itemName, categoryLabel, lang));
+
+const carryOnDisplayReason = prose?.carryOnReason ?? (lang === 'en' ? item.carryOn.reason : getLocalizedCarryOnReason(item, itemName, lang));
+const checkedDisplayReason = prose?.checkedReason ?? (lang === 'en' ? item.checkedBag.reason : getLocalizedCheckedReason(item, itemName, lang));
 
 // ── YMYL flag — triggers medical disclaimer block ────────────────────────────
 const isMedicine = item.category === "Medicine";
@@ -234,7 +250,7 @@ const seoDescription = rawDesc.length > 155 ? rawDesc.slice(0, 152) + '...' : ra
 // ── SEO: Featured Snippet / Quick Answer ─────────────────────────────────────
 // Compiler engine is self-contained: verb, hold status, and dedup are
 // resolved internally. No arguments beyond the item object are required.
-const featuredSnippetAnswer = prose?.whatIsThis ?? getWhatIsThisItem(item);
+const featuredSnippetAnswer = prose?.whatIsThis ?? (lang === 'en' ? getWhatIsThisItem(item) : getLocalizedWhatIsThis(item, itemName, lang));
 
 
 // ── Extra FAQ questions for JSON-LD (Feature 7) ───────────────────────────────
@@ -364,6 +380,10 @@ const i18n = {
         "description": seoDescription,
         "url": pageUrl,
         "inLanguage": localeMeta[lang].hreflang,
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"]
+        },
         "datePublished": item.metadata?.lastReviewed || item.lastReviewed || new Date().toISOString().split('T')[0],
         "dateModified": item.metadata?.lastReviewed || item.lastReviewed || new Date().toISOString().split('T')[0],
         "author": {
@@ -439,21 +459,23 @@ const i18n = {
               "text": faq.answer
             }
           })),
-          {
-            "@type": "Question",
-            "name": faq4Question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq4Answer }
-          },
-          {
-            "@type": "Question",
-            "name": faq5Question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq5Answer }
-          },
-          {
-            "@type": "Question",
-            "name": faq6Question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq6Answer }
-          }
+          ...(lang === 'en' ? [
+            {
+              "@type": "Question",
+              "name": faq4Question,
+              "acceptedAnswer": { "@type": "Answer", "text": faq4Answer }
+            },
+            {
+              "@type": "Question",
+              "name": faq5Question,
+              "acceptedAnswer": { "@type": "Answer", "text": faq5Answer }
+            },
+            {
+              "@type": "Question",
+              "name": faq6Question,
+              "acceptedAnswer": { "@type": "Answer", "text": faq6Answer }
+            }
+          ] : [])
         ]
       }
     ]
@@ -612,7 +634,7 @@ const i18n = {
           {item.carryOn.status === "UNKNOWN" && t("status.statusUnknown")}
         </p>
         <p class="text-xs text-body leading-relaxed">
-          {item.carryOn.reason}
+          {carryOnDisplayReason}
         </p>
       </div>
 
@@ -632,7 +654,7 @@ const i18n = {
           {item.checkedBag.status === "UNKNOWN" && t("status.statusUnknown")}
         </p>
         <p class="text-xs text-body leading-relaxed">
-          {item.checkedBag.reason}
+          {checkedDisplayReason}
         </p>
       </div>
     </div>
@@ -656,8 +678,8 @@ const i18n = {
       <h2 class="text-lg font-semibold tracking-[-0.6px] text-ink mb-4">
         {t("item.officialRules")}
       </h2>
-      <p class="text-body leading-[1.6] text-pretty mb-6">
-        {item.carryOn.reason}
+      <p class="text-body leading-[1.6] text-pretty mb-6 speakable-summary">
+        {carryOnDisplayReason}
       </p>
       {item.tsa && item.tsa.officialUrl && (
         <a

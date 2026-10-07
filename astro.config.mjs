@@ -14,7 +14,6 @@ const EXCLUDED_PATTERNS = [
   '/api/',
   '/robots.txt',
   '/search-index',
-  '/items/page/',
 ];
 
 /**
@@ -61,7 +60,10 @@ function getPriority(url) {
   if (['/airlines', '/countries'].includes(path)) return 0.85;
 
   // Item detail pages — highest-traffic long-tail targets
-  if (path.startsWith('/items/')) return 0.8;
+  if (path.startsWith('/items/') && !path.includes('/page/')) return 0.8;
+
+  // Paginated catalog pages — now indexed, valuable for i18n discovery
+  if (path.startsWith('/items/page/') || path.includes('/items/page/')) return 0.6;
 
   // Category pages
   if (path.startsWith('/category/')) return 0.75;
@@ -87,7 +89,8 @@ function getChangefreq(url) {
   const path = normalizePath(url);
 
   if (path === '/' || path === '') return ChangeFreqEnum.DAILY;
-  if (path.startsWith('/items/')) return ChangeFreqEnum.WEEKLY;
+  if (path.startsWith('/items/') && !path.includes('/page/')) return ChangeFreqEnum.WEEKLY;
+  if (path.includes('/items/page/')) return ChangeFreqEnum.WEEKLY;
   if (['/faq', '/guides', '/airlines', '/countries', '/tsa-rules'].includes(path)) return ChangeFreqEnum.WEEKLY;
   if (['/about', '/contact', '/privacy-policy', '/terms', '/disclaimer'].includes(path)) return ChangeFreqEnum.MONTHLY;
   if (path.startsWith('/guide/')) return ChangeFreqEnum.MONTHLY;

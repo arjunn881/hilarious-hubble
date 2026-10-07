@@ -66,6 +66,7 @@ const checklistFaqs = [
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": localeMeta[lang].hreflang,
   "mainEntity": checklistFaqs.map(faq => ({
     "@type": "Question",
     "name": faq.q,
@@ -79,6 +80,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
+  "inLanguage": localeMeta[lang].hreflang,
   "name": "How to Use the Smart Packing Assistant",
   "description": "Create a customized, TSA-compliant travel packing checklist in 5 easy steps.",
   "step": [

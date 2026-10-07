@@ -128,7 +128,7 @@ Your continued use of BringOnPlane after changes are posted constitutes your acc
 <Layout
   title={t("terms.title")}
   description={t("terms.description")}
-  keywords="bringonplane terms of service, terms and conditions, tsa rules website terms, disclaimer"
+  keywords={lang === 'en' ? "bringonplane terms of service, terms and conditions, tsa rules website terms, disclaimer" : `${t("terms.h1")}, ${t("terms.title")}, ${t("meta.home.keywords")}`}
   lang={lang}
 >
   <Header slot="header" lang={lang} />

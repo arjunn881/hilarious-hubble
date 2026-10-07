@@ -49,7 +49,7 @@ const editorialPolicies = [
 <Layout
   title={t("about.title")}
   description={t("about.description")}
-  keywords="about bringonplane, tsa rules checker, free packing list generator, travel tool, airport baggage rules"
+  keywords={lang === 'en' ? "about bringonplane, tsa rules checker, free packing list generator, travel tool, airport baggage rules" : `${t("about.h1")}, ${t("about.title")}, ${t("meta.home.keywords")}`}
   lang={lang}
 >
   <Header slot="header" lang={lang} />

@@ -5,7 +5,7 @@ import Footer from "../../components/Footer.astro";
 import { ArrowLeft, HelpCircle, ChevronDown, Package } from "@lucide/astro";
 import ChecklistAddon from "../../components/monetization/ChecklistAddon.astro";
 import TravelServicesBar from "../../components/monetization/TravelServicesBar.astro";
-import { langParams, resolveLang } from "../../i18n/config";
+import { langParams, localeMeta, resolveLang } from "../../i18n/config";
 import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "../../i18n/utils";
 import type { UIKey } from "../../i18n/ui";
 
@@ -740,6 +740,7 @@ const homeUrl = getCanonicalUrl("/", lang);
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "inLanguage": localeMeta[lang].hreflang,
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": t("crumb.home"), "item": homeUrl },
     { "@type": "ListItem", "position": 2, "name": t("nav.faq"), "item": currentUrl }
@@ -749,6 +750,7 @@ const breadcrumbSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": localeMeta[lang].hreflang,
   "mainEntity": allFaqs.map(faq => ({
     "@type": "Question",
     "name": faq.q,
@@ -763,7 +765,9 @@ const faqSchema = {
 <Layout
   title={t("faq.title", { year: currentYear })}
   description={t("faq.description", { year: currentYear })}
-  keywords={`tsa faq ${currentYear}, tsa carry on questions, what can i bring on a plane, tsa liquids rule questions, tsa 3-1-1 rule explained, tsa prohibited items list, tsa checked baggage faq, airport security questions, can i bring food on a plane, carry on bag rules, what is not allowed on planes, tsa rules explained, flying with medicine faq, flying with electronics tsa, tsa baby formula rules, tsa powder rules, tsa precheck faq, carry on vs checked bag, what counts as a liquid tsa, tsa knife rules, tsa battery rules, can i bring a lighter on a plane, tsa common questions`}
+  keywords={lang === 'en'
+    ? `tsa faq ${currentYear}, tsa carry on questions, what can i bring on a plane, tsa liquids rule questions, tsa 3-1-1 rule explained, tsa prohibited items list, tsa checked baggage faq, airport security questions, can i bring food on a plane, carry on bag rules, what is not allowed on planes, tsa rules explained, flying with medicine faq, flying with electronics tsa, tsa baby formula rules, tsa powder rules, tsa precheck faq, carry on vs checked bag, what counts as a liquid tsa, tsa knife rules, tsa battery rules, can i bring a lighter on a plane, tsa common questions`
+    : `${t("faq.h1")}, ${t("faq.title", { year: currentYear })}, ${t("meta.home.keywords")}`}
   lang={lang}
 >
   <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} slot="head" />

@@ -473,6 +473,7 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
         name: "BringOnPlane",
         alternateName: ["Bring On Plane", "BringOnPlane.com"],
         url: "https://bringonplane.com",
+        inLanguage: meta.hreflang,
         logo: {
           "@type": "ImageObject",
           url: "https://bringonplane.com/logo.png",
@@ -484,11 +485,9 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
         description: t("site.blurb"),
         areaServed: "Worldwide",
         knowsAbout: [
-          "TSA security rules",
-          "Airport carry-on regulations",
-          "Airline baggage policies",
-          "FAA regulations",
-          "IATA standards",
+          t("cfr.sourceTSA") + " security rules",
+          t("meta.subject"),
+          t("meta.classification"),
         ],
       })}
     />
@@ -501,14 +500,14 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         name: "BringOnPlane TSA Checker",
-        alternateName: "Can I Bring This On A Plane? Checker",
+        alternateName: t("home.h1a") + " " + t("home.h1b"),
         description: t("meta.home.description"),
         url: localeHomeUrl,
+        inLanguage: meta.hreflang,
         applicationCategory: "TravelApplication",
-        applicationSubCategory: "Airport Security Tool",
+        applicationSubCategory: t("meta.classification"),
         operatingSystem: "Web, iOS, Android",
         browserRequirements: "Requires JavaScript",
-        inLanguage: meta.hreflang,
         isAccessibleForFree: true,
         offers: {
           "@type": "Offer",
@@ -517,20 +516,17 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
           availability: "https://schema.org/InStock",
         },
         featureList: [
-          "Instant TSA carry-on checker",
-          "Checked bag rules lookup",
-          "196+ items database",
-          "Color-coded YES/NO/RESTRICTED verdicts",
-          "Free packing checklist builder",
-          "Side-by-side item comparison tool",
-          "Airline-specific rule variations",
-          "International customs guidance",
+          t("home.step1Title"),
+          t("home.step2Title"),
+          t("home.compareTitle"),
+          t("home.checklistTitle"),
+          t("guides.h1", { year: new Date().getFullYear() }),
+          t("selector.heading"),
         ],
         screenshot: {
           "@type": "ImageObject",
           url: "https://bringonplane.com/og-image.png",
-          caption:
-            "BringOnPlane TSA Checker — search any item for instant carry-on verdict",
+          caption: t("site.imageAlt"),
         },
         provider: {
           "@type": "Organization",
@@ -602,6 +598,45 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
                 ? { item: getCanonicalUrl(crumb.href, lang) }
                 : {}),
             })),
+          })}
+        />
+      )
+    }
+
+    <!-- WebPage JSON-LD: locale-aware page entity for non-English pages.
+         Gives Google a structured signal linking page URL → language → name.
+         Boosts i18n ranking for /de/, /es/, /fr/, /it/, /ja/, /ko/, /pt/. -->
+    {
+      lang !== "en" && (
+        <script
+          type="application/ld+json"
+          is:inline
+          set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: title,
+            description: description,
+            url: finalCanonicalURL,
+            inLanguage: meta.hreflang,
+            isPartOf: {
+              "@type": "WebSite",
+              name: "BringOnPlane",
+              url: "https://bringonplane.com",
+              description: t("site.blurb"),
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "BringOnPlane",
+              url: "https://bringonplane.com",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://bringonplane.com/logo.png",
+              },
+            },
+            potentialAction: {
+              "@type": "ReadAction",
+              target: finalCanonicalURL,
+            },
           })}
         />
       )
