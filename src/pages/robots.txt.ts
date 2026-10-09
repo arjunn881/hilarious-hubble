@@ -26,6 +26,13 @@ Crawl-delay: 1
 User-agent: Mediapartners-Google
 Allow: /
 
+# ─────────────────────────────────────────────────────────────────────────────
+# 1C. GOOGLE-PRODUCER — Google Discover & News feed crawler
+# ─────────────────────────────────────────────────────────────────────────────
+User-agent: Google-Producer
+Allow: /
+Allow: /rss.xml
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 2. GOOGLEBOT-IMAGE — Google Images crawler
@@ -193,6 +200,7 @@ Crawl-delay: 5
 # SITEMAP DECLARATIONS
 # =============================================================================
 Sitemap: ${SITE}/sitemap-index.xml
+Sitemap: ${SITE}/rss.xml
 `;
 
 export const GET: APIRoute = () => {

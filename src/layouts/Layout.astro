@@ -363,6 +363,27 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
       href="/sitemap-index.xml"
     />
 
+    <!-- RSS 2.0 Feed with Media RSS enclosures for Google Discover & Google News -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="BringOnPlane — Aviation & Baggage Safety News"
+      href="/rss.xml"
+    />
+
+    <!-- Google News / Subscribe with Google (SwG Basic) CMS Sync -->
+    <script async type="application/javascript" src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
+    <script is:inline>
+      (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+        basicSubscriptions.init({
+          type: "NewsArticle",
+          isPartOfType: ["Product"],
+          isPartOfProductId: "CAow1IHIDA:openaccess",
+          clientOptions: { theme: "light", lang: "en" },
+        });
+      });
+    </script>
+
     <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
 

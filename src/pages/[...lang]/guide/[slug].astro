@@ -109,6 +109,8 @@ const localizedKeywords = t('guide.keywords', {
 <Layout
   title={localizedTitle}
   description={description}
+  image={post.frontmatter.image || "/og-image.png"}
+  imageAlt={post.frontmatter.imageAlt || title}
   type="article"
   keywords={localizedKeywords}
   lang={lang}
@@ -119,6 +121,7 @@ const localizedKeywords = t('guide.keywords', {
     "@type": "Article",
     "headline": title,
     "description": description,
+    ...(post.frontmatter.image ? { "image": [new URL(post.frontmatter.image, "https://bringonplane.com/").href] } : {}),
     "datePublished": lastUpdated,
     "dateModified": lastUpdated,
     "url": pageUrl,
@@ -246,6 +249,21 @@ const localizedKeywords = t('guide.keywords', {
 
     <!-- Above-the-fold sponsored travel services bar -->
     <TravelServicesBar />
+
+    <!-- Featured Hero Image (Google Discover / High-Res Visual Hook) -->
+    {post.frontmatter.image && (
+      <div class="mb-8 rounded-xl overflow-hidden border border-hairline shadow-level-1 bg-canvas-soft-2 aspect-[16/9] max-h-[520px]">
+        <img
+          src={post.frontmatter.image}
+          alt={post.frontmatter.imageAlt || title}
+          width="1200"
+          height="675"
+          class="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    )}
 
     <!-- Compiled HTML content from Markdown -->
     <article class="article-content max-w-none">
