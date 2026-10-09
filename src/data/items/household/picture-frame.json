@@ -2,7 +2,7 @@
   "id": "picture-frame",
   "slug": "picture-frame",
   "name": "Picture Frame",
-  "category": "Tools",
+  "category": "Household",
   "subcategory": "General",
   "aliases": [
     "photo frame",
@@ -82,6 +82,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/picture-frame"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Home Decor / Fragile",
   "customNote": ""
 }

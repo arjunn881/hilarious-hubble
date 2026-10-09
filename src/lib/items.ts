@@ -20,15 +20,31 @@ export function getItemBySlug(slug: string): TSAItem | undefined {
   
   // Find category from the pre-compiled metadata summary
   const summaryItem = metadataSummary.find(item => item.slug === slug);
-  if (!summaryItem) return undefined;
-
-  const categorySlug = summaryItem.category.toLowerCase().trim().replace(/\s+/g, '-');
+  const categorySlug = summaryItem ? summaryItem.category.toLowerCase().trim().replace(/\s+/g, '-') : '';
   
   try {
-    const filePath = path.resolve(process.cwd(), `src/data/items/${categorySlug}/${slug}.json`);
-    if (fs.existsSync(filePath)) {
-      const raw = fs.readFileSync(filePath, 'utf8');
-      return JSON.parse(raw) as TSAItem;
+    if (categorySlug) {
+      const filePath = path.resolve(process.cwd(), `src/data/items/${categorySlug}/${slug}.json`);
+      if (fs.existsSync(filePath)) {
+        const raw = fs.readFileSync(filePath, 'utf8');
+        return JSON.parse(raw) as TSAItem;
+      }
+    }
+
+    // Fallback: search across all subdirectories of src/data/items
+    const baseDir = path.resolve(process.cwd(), 'src/data/items');
+    if (fs.existsSync(baseDir)) {
+      const subdirs = fs.readdirSync(baseDir, { withFileTypes: true })
+        .filter(d => d.isDirectory())
+        .map(d => d.name);
+
+      for (const dir of subdirs) {
+        const candidate = path.join(baseDir, dir, `${slug}.json`);
+        if (fs.existsSync(candidate)) {
+          const raw = fs.readFileSync(candidate, 'utf8');
+          return JSON.parse(raw) as TSAItem;
+        }
+      }
     }
   } catch (err) {
     console.error(`[items-pipeline] Error loading item slug "${slug}":`, err);

@@ -2,7 +2,7 @@
   "id": "cigars",
   "slug": "cigars",
   "name": "Cigars",
-  "category": "Tools",
+  "category": "Flammables",
   "subcategory": "General",
   "aliases": [
     "cigarillos",
@@ -73,6 +73,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cigars"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Tobacco / Smoking",
   "customNote": ""
 }

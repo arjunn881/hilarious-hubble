@@ -66,7 +66,11 @@ export function useTranslations(lang: Lang) {
 export function useTranslatedPath(lang: Lang) {
   return function translatePath(path: string, target: Lang = lang): string {
     if (!path || /^([a-z]+:|\/\/|#)/i.test(path)) return path;
-    const normalized = path.startsWith('/') ? path : `/${path}`;
+    let normalized = path.startsWith('/') ? path : `/${path}`;
+    // Ensure trailing slash for internal directory paths (not file assets like .xml, .json, .png, etc.)
+    if (!normalized.endsWith('/') && !/\.[a-zA-Z0-9]+$/.test(normalized)) {
+      normalized = `${normalized}/`;
+    }
     if (target === defaultLang && !showDefaultLang) return normalized;
     return `/${target}${normalized === '/' ? '/' : normalized}`;
   };

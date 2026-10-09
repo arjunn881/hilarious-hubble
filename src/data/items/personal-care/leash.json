@@ -2,7 +2,7 @@
   "id": "leash",
   "slug": "leash",
   "name": "Dog Leash",
-  "category": "Tools",
+  "category": "Personal Care",
   "subcategory": "General",
   "aliases": [
     "dog lead",
@@ -74,6 +74,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/leash"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Pet Accessory",
   "customNote": ""
 }

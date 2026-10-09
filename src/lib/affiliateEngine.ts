@@ -102,6 +102,31 @@ export function getItemAffiliateLinks(context?: AffiliateContext): AffiliateLink
     ];
   }
 
+  // 2B. Footwear & Shoes
+  if (
+    lowerName.includes('shoe') ||
+    lowerName.includes('sneaker') ||
+    lowerName.includes('boot') ||
+    lowerName.includes('heel') ||
+    lowerName.includes('sandal') ||
+    lowerName.includes('slipper')
+  ) {
+    return [
+      {
+        title: 'Waterproof Travel Shoe Bags with Clear Window (Set of 4)',
+        search: 'waterproof travel shoe bags for luggage transparent window packing',
+        why: `Keep dirty soles from touching your clean packed clothes, and organize your ${name} neatly in carry-on or checked baggage.`,
+        badge: 'Travel Must-Have'
+      },
+      {
+        title: 'Travel Compression Packing Cubes for Luggage',
+        search: 'travel compression packing cubes set for carry on luggage',
+        why: 'Compresses clothing and footwear accessories to maximize cabin bag and suitcase space.',
+        badge: 'Best Seller'
+      }
+    ];
+  }
+
   // 3. Prohibited in carry-on: travelers must check it in or find compliant alternatives
   if (isProhibited) {
     return [
@@ -120,15 +145,14 @@ export function getItemAffiliateLinks(context?: AffiliateContext): AffiliateLink
     ];
   }
 
-  // 4. Category: Liquids / Toiletries / Beauty / Personal Care
-  if (
+  // 4. Category: Liquids / Toiletries / Beauty / Personal Care (Liquids & Gels only)
+  const isLiquidRestriction =
     restriction.includes('liquid') ||
     restriction.includes('gel') ||
     restriction.includes('aerosol') ||
-    cat.includes('liquid') ||
-    cat.includes('beauty') ||
-    cat.includes('personal')
-  ) {
+    cat.includes('liquid');
+
+  if (isLiquidRestriction) {
     return [
       {
         title: 'TSA-Approved Leakproof Travel Bottles Set (3.4 oz / 100ml)',

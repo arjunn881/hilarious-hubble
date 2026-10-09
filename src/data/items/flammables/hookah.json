@@ -2,7 +2,7 @@
   "id": "hookah",
   "slug": "hookah",
   "name": "Hookah",
-  "category": "Tools",
+  "category": "Flammables",
   "subcategory": "General",
   "aliases": [
     "shisha pipe",
@@ -77,6 +77,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/hookah"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Smoking Accessory",
   "customNote": ""
 }

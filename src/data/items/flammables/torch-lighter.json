@@ -2,7 +2,7 @@
   "id": "torch-lighter",
   "slug": "torch-lighter",
   "name": "Torch Lighter",
-  "category": "Tools",
+  "category": "Flammables",
   "subcategory": "General",
   "aliases": [
     "jet lighter",
@@ -81,6 +81,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/torch-lighters"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Lighters / Matches",
   "customNote": ""
 }

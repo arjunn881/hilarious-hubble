@@ -2,7 +2,7 @@
   "id": "umbrella",
   "slug": "umbrella",
   "name": "Umbrella",
-  "category": "Tools",
+  "category": "Personal Care",
   "subcategory": "General",
   "aliases": [
     "compact umbrella",
@@ -94,6 +94,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/umbrella"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Personal Accessory",
   "customNote": ""
 }

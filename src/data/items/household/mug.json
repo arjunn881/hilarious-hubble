@@ -2,7 +2,7 @@
   "id": "mug",
   "slug": "mug",
   "name": "Mug",
-  "category": "Tools",
+  "category": "Household",
   "subcategory": "General",
   "aliases": [
     "coffee mug",
@@ -86,6 +86,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/mug"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Dishware / Fragile",
   "customNote": ""
 }

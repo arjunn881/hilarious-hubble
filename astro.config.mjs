@@ -160,6 +160,7 @@ export default defineConfig({
           links,
           priority: getPriority(item.url),
           changefreq: getChangefreq(item.url),
+          lastmod: item.lastmod || new Date().toISOString(),
         };
       },
     }),

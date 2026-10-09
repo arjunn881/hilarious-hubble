@@ -250,11 +250,78 @@ export function getAirlineDifferences(item: any): string {
 export function getStepByStepPackingGuide(item: any): string[] {
   const name   = item.name || "this item";
   const lname  = name.toLowerCase();
+  const slug   = item.slug || "";
   const status = item.carryOn?.status || "ALLOWED";
 
-  // ── Category-aware carry-on blueprint matrix ───────────────────────────────
-  // Covers all 13 categories present in src/data/items/**/*.json.
-  // Matching is case-insensitive so "Personal Care" / "personal-care" both resolve.
+  // ── 1. Checked-bag fallback (NOT_ALLOWED in cabin) ──────────────────────────
+  if (status === "NOT_ALLOWED") {
+    return [
+      `Confirm that ${lname} is fully permitted in checked hold baggage and does not contain prohibited HAZMAT components or uninstalled lithium batteries.`,
+      `Wrap ${lname} in bubble wrap, heavy clothing, or a padded protective pouch to shield it from baggage handling turbulence.`,
+      `Pack the item deep inside the center of your suitcase, buffered by clothing on all sides rather than pressed against outer luggage walls.`,
+      `Secure your suitcase with a TSA-approved combination lock so airport screening agents can inspect and relock the bag without damage.`,
+      `Verify your packed bag does not exceed your airline's checked weight threshold (typically 50 lbs / 23 kg) to prevent excess fees at check-in.`,
+    ];
+  }
+
+  // ── 2. High-Specificity Item Type Blueprints (Apparel, Footwear, Styling) ───
+  const isFootwear = [
+    'shoes', 'sneakers', 'boots', 'high-heels', 'sandals', 'slippers', 'footwear', 'cleats', 'flip-flops'
+  ].some(term => lname.includes(term) || slug.includes(term));
+
+  if (isFootwear) {
+    return [
+      `Pack ${lname} near the bottom of your suitcase (closest to the wheels) to maintain luggage balance and prevent crushing softer garments.`,
+      `Stuff the inside of ${lname} with clean socks, rolled belts, or small accessories to maximize packing density and preserve shoe shape.`,
+      `Place ${lname} inside a dedicated shoe bag, travel dust pouch, or plastic bag to prevent street dirt on the soles from transferring to clean clothes.`,
+      `Wear your heaviest or bulkiest pair of shoes during transit to reduce suitcase weight and preserve valuable cabin bag volume.`,
+      `At TSA airport security checkpoints, standard screening passengers must remove shoes and place them directly in a bin or on the belt (TSA PreCheck travelers may leave shoes on).`,
+    ];
+  }
+
+  const isGarment = [
+    'suit', 'wedding-dress', 'dress', 'garment', 'tuxedo', 'coat', 'jacket', 'belt'
+  ].some(term => lname.includes(term) || slug.includes(term));
+
+  if (isGarment) {
+    return [
+      `Transport high-value or delicate garments like ${lname} inside a breathable folding travel garment bag; many airlines accept garment bags as a carry-on or personal item.`,
+      `Politely check with flight attendants upon boarding to see if forward cabin hanging closet space is available for ${lname}.`,
+      `If packing ${lname} inside a suitcase, place dry-cleaner plastic bags between folds to minimize friction and prevent travel wrinkles.`,
+      `Keep formal wear and suits with you in cabin baggage whenever possible to safeguard against checked luggage delays or loss before special events.`,
+      `Hang ${lname} in the hotel bathroom immediately after arrival so shower steam naturally releases any minor packing creases.`,
+    ];
+  }
+
+  const isAppliance = [
+    'hair-dryer', 'straightener', 'curling-iron', 'shaver', 'trimmer'
+  ].some(term => lname.includes(term) || slug.includes(term));
+
+  if (isAppliance) {
+    return [
+      `Ensure ${lname} is completely turned off, unplugged, and cooled to room temperature before packing inside luggage.`,
+      `Wrap the electrical cord loosely around the unit or secure it with a velcro tie; avoid tightly wrapping cords to protect internal wiring.`,
+      `Check the voltage rating on ${lname} (110V vs 220V–240V); traveling overseas with single-voltage high-wattage styling tools requires a heavy-duty voltage converter, not just a plug adapter.`,
+      `Cushion heating elements and motors by surrounding ${lname} with soft clothing inside your carry-on or checked luggage.`,
+      `Any cordless styling device powered by butane cartridges or lithium-ion batteries must remain in carry-on baggage with its safety cap locked.`,
+    ];
+  }
+
+  const isSolidToiletries = [
+    'shampoo-bar', 'soap-bar', 'tweezers', 'nail-clippers'
+  ].some(term => lname.includes(term) || slug.includes(term));
+
+  if (isSolidToiletries) {
+    return [
+      `Confirm that ${lname} is completely solid — solid bars and personal grooming tools are 100% exempt from the TSA 3-1-1 liquids rule.`,
+      `Store ${lname} in a breathable mesh pouch, aluminum travel tin, or compact toiletry organizer to keep it dry and intact.`,
+      `Pack anywhere in your carry-on luggage without needing to place it inside your clear liquids quart bag.`,
+      `Ensure sharp grooming tools (like tweezers or nail scissors) have blades under 4 inches from the pivot point to pass cabin security.`,
+      `Keep within easy reach in an exterior luggage pocket for convenient freshening up during layovers.`,
+    ];
+  }
+
+  // ── 3. Category-Aware Carry-On Blueprints ──────────────────────────────────
   const CARRY_ON_BLUEPRINTS: Record<string, string[]> = {
     Liquids: [
       `Verify your container holds 3.4 oz (100 ml) or less. Larger bottles of ${lname} must travel in checked luggage unless purchased airside at a duty-free outlet.`,
@@ -285,18 +352,32 @@ export function getStepByStepPackingGuide(item: any): string[] {
       `Store delicate screens and components inside a padded sleeve to protect them from impact during boarding and overhead-bin loading.`,
     ],
     Tools: [
-      `Measure your ${lname} end-to-end. Hand tools under 7 inches may go in carry-on; anything longer must travel in checked luggage.`,
-      `If the tool exceeds the 7-inch limit, pack it deep in the centre of your checked suitcase to prevent movement.`,
-      `Wrap exposed points, sharp edges, or heavy metallic shafts in protective padding to avoid puncturing bag fabric or injuring handlers.`,
-      `Organise tools inside a dedicated zip pouch or tool roll to keep them contained and easy to display during inspection.`,
-      `Anchor heavy items against the main frame of your suitcase to prevent weight shifts from damaging other packed belongings.`,
+      `Measure your ${lname} end-to-end. Hand tools 7 inches or shorter may go in carry-on; anything longer must travel in checked luggage.`,
+      `Ensure ${lname} does not feature cutting blades, knives, or sharp points, which are strictly prohibited in the passenger cabin.`,
+      `Wrap exposed metallic points or heavy handles in protective padding to avoid puncturing luggage fabric or damaging other items.`,
+      `Organise tools inside a dedicated zip pouch or tool roll to keep them contained and simple to present during inspection.`,
+      `If packing tools in checked luggage, anchor heavy items against the main suitcase frame to keep baggage weight balanced.`,
+    ],
+    Flammables: [
+      `Verify TSA limits: one common disposable lighter or one box of safety matches is permitted on your person or in cabin baggage.`,
+      `Torch lighters (blue flame jet lighters), strike-anywhere matches, and lighter fluid refills are completely prohibited in all baggage.`,
+      `Electronic lighters and e-cigarettes containing lithium batteries must be kept in carry-on bags only — never pack them in checked luggage.`,
+      `Check destination rules: countries like Singapore, India, and Thailand enforce complete bans and severe penalties for electronic smoking devices.`,
+      `Keep ${lname} separate from aerosol toiletries and flammable liquids inside your travel bag.`,
+    ],
+    Household: [
+      `Wrap fragile household items like ${lname} in bubble wrap or thick soft clothing to cushion against baggage movement.`,
+      `If carrying solid wax candles, pack them accessibly; dense wax blocks can appear opaque on X-rays and may prompt a brief hand search.`,
+      `Do not pre-wrap holiday gifts or boxed items; TSA officers must be able to open packages if an item triggers a screening alarm.`,
+      `Pack delicate ceramic mugs, glassware, or picture frames in your cabin bag rather than risking cargo hold handling shock.`,
+      `Verify whether your household item contains liquid or gel elements (like snow globes or gel candles), which fall under the 3-1-1 liquids rule.`,
     ],
     "Personal Care": [
-      `Any ${lname} in liquid, gel, cream, or aerosol form must comply with the 3-1-1 rule: containers of 3.4 oz (100 ml) or less, in one clear quart-sized bag.`,
-      `Aerosol personal-care products must have the safety cap on; TSA officers can refuse items with missing or broken caps.`,
-      `Pack solid versions of personal care items (solid shampoo bars, deodorant sticks) in carry-on without volume restrictions.`,
-      `Place the clear liquids bag at the top of your carry-on for fast retrieval at the security checkpoint.`,
-      `For international trips, research whether your destination has stricter cosmetics or aerosol import restrictions before departure.`,
+      `Any liquid, gel, cream, or aerosol personal care product must comply with the 3-1-1 rule: containers of 3.4 oz (100 ml) or less inside one clear quart bag.`,
+      `Aerosol personal-care products must have safety caps attached; TSA officers can refuse items with missing or broken caps.`,
+      `Pack solid versions of personal care items (solid shampoo, deodorant sticks, styling accessories) in carry-on without volume restrictions.`,
+      `Place your liquids toiletry bag at the top of your carry-on for fast retrieval at the security checkpoint.`,
+      `For international journeys, verify destination regulations regarding restricted medicated cosmetics or pressurized aerosol sizes.`,
     ],
     Beauty: [
       `Liquid, gel, or cream beauty products — including ${lname} — must be in 3.4 oz (100 ml) or smaller containers and fit inside one quart-sized clear bag.`,
@@ -356,29 +437,12 @@ export function getStepByStepPackingGuide(item: any): string[] {
     ],
   };
 
-  // ── Checked-bag fallback (NOT_ALLOWED in cabin) ────────────────────────────
-  const CHECKED_STEPS: string[] = [
-    `Confirm that ${lname} is fully permitted in checked hold baggage and does not contain prohibited HAZMAT components.`,
-    `Wrap ${lname} in bubble wrap, soft clothing, or a cushioned travel case to protect it from rough mechanical baggage-sorting systems.`,
-    `Pack the item deep in the centre of your suitcase, away from outer zippers, and surrounded by padding on all sides.`,
-    `Lock your suitcase with a TSA-approved combination lock so inspectors can reseal it after any random audit.`,
-    `Confirm your checked bag's total weight stays within your airline's limit (usually 50 lbs / 23 kg) before dropping it at check-in.`,
-  ];
-
-  // Carry-on allowed or restricted → serve category-specific carry-on guide.
-  if (status === "ALLOWED" || status === "RESTRICTED") {
-    const currentCategory = item.category?.trim() || "General";
-    const matchedKey = Object.keys(CARRY_ON_BLUEPRINTS).find(
-      key => key.toLowerCase() === currentCategory.toLowerCase()
-    ) ?? "General";
-    return CARRY_ON_BLUEPRINTS[matchedKey];
-  }
-
-  // NOT_ALLOWED in cabin → serve checked-bag instructions.
-  return CHECKED_STEPS;
+  const currentCategory = item.category?.trim() || "General";
+  const matchedKey = Object.keys(CARRY_ON_BLUEPRINTS).find(
+    key => key.toLowerCase() === currentCategory.toLowerCase()
+  ) ?? "General";
+  return CARRY_ON_BLUEPRINTS[matchedKey];
 }
-
-
 
 export function getExpandedItemFAQs(item: any): Array<{ question: string; answer: string }> {
   const name = item.name.toLowerCase();
@@ -409,64 +473,259 @@ export function getExpandedItemFAQs(item: any): Array<{ question: string; answer
 }
 
 // ==========================================
-// Category Page Generators
+// Category Page Dedicated Profiles
 // ==========================================
 
+interface CategoryProfile {
+  introduction: (count: number) => string;
+  overview: string;
+  tsaRules: string;
+  exceptions: string;
+  international: string;
+  commonMistakes: string;
+  recommendations: string;
+  faqs: Array<{ question: string; answer: string }>;
+}
+
+const CATEGORY_PROFILES: Record<string, CategoryProfile> = {
+  tools: {
+    introduction: (count) => `Navigating airport security with tools requires strict attention to TSA dimension and sharp-edge rules. While many standard hand tools are permitted in the cabin, strict limits govern blade lengths, heavy blunt instruments, and power tools. This comprehensive guide details the carry-on and checked baggage rules for over ${count} items in the Tools category.\n\nWhether you are a traveling technician, a tradesperson with essential equipment, or an everyday traveler packing a multi-tool, understanding checkpoint limits prevents expensive confiscations. Aviation security distinguishes strictly between accessible cabin tools and secure cargo hold luggage.\n\nFamiliarize yourself with the TSA 7-inch length standard, power tool battery regulations, and checked bag requirements below to clear security without hassle.`,
+    overview: `The Tools category encompasses manual hand tools, power equipment, hardware, and multi-tools. Transportation security officers evaluate tools primarily on whether they could be wielded as striking weapons, cutting instruments, or mechanical hazards in the passenger cabin.`,
+    tsaRules: `Under Title 49 CFR and TSA checkpoint directives, non-bladed hand tools measuring 7 inches (approx. 18 cm) or less from end to end are permitted in carry-on bags. Any tool exceeding 7 inches—such as hammers, crowbars, large wrenches, and long screwdrivers—must travel in checked baggage. Power tools (drills, circular saws) are strictly prohibited in the cabin.`,
+    exceptions: `Small scissors with blades under 4 inches from the pivot point and round-bladed butter knives are permitted in carry-on bags. Cordless power tools must be checked, but their rechargeable lithium-ion battery packs must be detached and carried in the passenger cabin.`,
+    international: `International aviation authorities (including EASA across Europe and the UK CAA) enforce stricter tool guidelines than the TSA. In several European and Asian airports, screwdrivers or pliers of any length may be confiscated at the screener's discretion. Check specific overseas carrier guidelines before international flights.`,
+    commonMistakes: `The most common mistake is failing to measure a tool including its handle; TSA measures total length from tip to butt. Another frequent error is bringing multi-tools with integrated knife blades into the cabin—even microscopic non-locking blades lead to immediate checkpoint surrender.`,
+    recommendations: `Wrap sharp edges and heavy tool heads securely in protective sheaths or thick work towels. When checking tools, pack them in the center of your suitcase surrounded by durable workwear to prevent metal edges from puncturing luggage fabric.`,
+    faqs: [
+      {
+        question: `Can I bring tools in my carry-on bag?`,
+        answer: `Non-bladed hand tools 7 inches or shorter (such as small screwdrivers, pliers, and wrenches) are allowed in carry-on bags. Any tool longer than 7 inches must be placed in checked luggage.`
+      },
+      {
+        question: `Are power tools allowed on airplanes?`,
+        answer: `Power tools like drills and saws must be packed in checked luggage. However, their rechargeable lithium-ion battery packs must be removed and kept with you in your carry-on luggage.`
+      },
+      {
+        question: `Can I bring a multi-tool through airport security?`,
+        answer: `Multi-tools without knives or blades are permitted in carry-on bags. If your multi-tool includes any knife blade, it is strictly prohibited in cabin luggage and must go in checked baggage.`
+      },
+      {
+        question: `What is the TSA 7-inch rule for tools?`,
+        answer: `TSA permits hand tools in the aircraft cabin only if their total assembled length is 7 inches or less from end to end. Wrenches, screwdrivers, and pliers exceeding 7 inches must be checked.`
+      },
+      {
+        question: `Do international airlines have different rules for tools?`,
+        answer: `Yes. Many international airports (such as in the UK and EU) do not honor the 7-inch exemption and prohibit all manual screwdrivers, pliers, and wrenches in carry-on baggage.`
+      }
+    ]
+  },
+
+  flammables: {
+    introduction: (count) => `Carrying flammable items and smoking accessories on commercial aircraft involves stringent safety regulations enforced by the FAA and TSA. This directory covers the exact carry-on and checked luggage guidelines for over ${count} items classified under Flammables.\n\nFrom common disposable lighters and safety matches to e-cigarettes and travel torches, fire safety rules are designed to prevent accidental combustion in the passenger cabin and pressurized cargo hold.\n\nReview the exact carriage limits, lithium-battery restrictions, and prohibited flame items below to ensure full compliance before heading to the terminal.`,
+    overview: `The Flammables category includes lighters, matches, tobacco accessories, and combustion materials. Aviation regulations focus primarily on fire prevention, thermal runaway risks, and open-flame hazards aboard commercial aircraft.`,
+    tsaRules: `TSA permits passengers to carry one common disposable lighter or one box of safety matches on their person or in carry-on baggage. Torch lighters (jet flame/blue flame), strike-anywhere matches, lighter fluid refills, and flammable gases are strictly prohibited in both carry-on and checked baggage.`,
+    exceptions: `Electronic lighters and vape devices containing lithium batteries are permitted only in carry-on luggage with safety covers installed; they are strictly banned from checked baggage to prevent undetected cargo hold fires.`,
+    international: `Many international carriers (including Chinese and Japanese airlines) strictly ban all lighters and matches from both carry-on and checked baggage. Furthermore, countries like Singapore, India, and Thailand enforce severe bans and criminal fines for carrying e-cigarettes or vaping devices.`,
+    commonMistakes: `Accidentally leaving a vape or electronic lighter in checked baggage is one of the most common airport violations. Another frequent mistake is attempting to pack high-powered torch lighters for cigars, which are confiscated at security checkpoints worldwide.`,
+    recommendations: `Keep your allowed single lighter or box of safety matches on your person or in an easily accessible pocket of your personal item. Never pack flammable liquid refills, and always confirm destination smoking device laws before international departures.`,
+    faqs: [
+      {
+        question: `How many lighters can I bring on a plane?`,
+        answer: `TSA allows one standard disposable lighter (or one box of safety matches) per passenger in carry-on baggage or on your person. Torch lighters and blue-flame jet lighters are strictly prohibited.`
+      },
+      {
+        question: `Can I pack lighters in checked luggage?`,
+        answer: `Standard disposable lighters without fuel absorption cases are prohibited in checked luggage. Electronic and lithium-battery lighters are strictly banned from checked bags under FAA fire-safety regulations.`
+      },
+      {
+        question: `Are e-cigarettes and vapes allowed on airplanes?`,
+        answer: `Yes, but only in carry-on luggage or on your person. E-cigarettes and vape devices are strictly prohibited in checked baggage due to lithium battery fire risks. Using them on board is a federal offense.`
+      },
+      {
+        question: `Are strike-anywhere matches allowed?`,
+        answer: `No. Strike-anywhere matches are completely banned on aircraft in both carry-on and checked luggage. Only standard safety matches (which ignite exclusively on their striking strip) are permitted.`
+      },
+      {
+        question: `Can I bring cigar torches on a plane?`,
+        answer: `No. Torch lighters that create a thin, needle-like blue flame produce temperatures exceeding standard lighters and are prohibited by the TSA and FAA anywhere on the aircraft.`
+      }
+    ]
+  },
+
+  household: {
+    introduction: (count) => `Traveling with home goods, gifts, candles, and delicate keepsakes requires careful planning to prevent damage and checkpoint delays. This guide provides official carry-on and checked baggage directives for over ${count} items in the Household category.\n\nFrom solid wax candles and holiday presents to glassware, framed photos, and ceramics, understanding security screening and packing methods ensures your belongings arrive intact.\n\nExplore the rules on solid versus gel items, gift wrapping procedures, and fragile item transport below.`,
+    overview: `The Household category covers non-perishable home items, decorative pieces, gifts, and kitchenware. Security screeners focus on material density, fragile glass components, and whether any contents resemble restricted liquids or gels.`,
+    tsaRules: `Solid household goods—such as ceramic mugs, picture frames, and solid wax candles—are permitted in both carry-on and checked baggage. However, gel candles and liquid-filled snow globes must adhere to the 3-1-1 liquids rule (3.4 oz or less in carry-on).`,
+    exceptions: `Non-liquid household goods carry no volume or dimensional restrictions from the TSA, subject only to your specific airline's carry-on size and checked bag weight allowances.`,
+    international: `When traveling internationally, declare high-value decorative pieces, antiques, or cultural artifacts at customs checkpoints to prevent import duty disputes or quarantine delays.`,
+    commonMistakes: `Pre-wrapping holiday gifts is the number-one mistake: if an item alarms the X-ray scanner, TSA officers will unwrap and inspect it. Another common error is assuming gel candles are solid wax; gel is classified as a liquid.`,
+    recommendations: `Leave gifts unwrapped until reaching your destination, or use gift bags with tissue paper for easy inspection. Cushion fragile household items with heavy bubble wrap and pack them in your cabin bag rather than risk rough checked-luggage handling.`,
+    faqs: [
+      {
+        question: `Can I bring candles on a plane?`,
+        answer: `Solid wax candles are fully permitted in both carry-on and checked bags. Gel candles, however, are treated as liquids and must comply with the 3.4 oz limit in carry-on luggage.`
+      },
+      {
+        question: `Can I bring wrapped presents through airport security?`,
+        answer: `While wrapped gifts are technically allowed, TSA strongly recommends leaving them unwrapped. If an item triggers an alarm during X-ray screening, officers must unwrap it to inspect the contents.`
+      },
+      {
+        question: `Are fragile picture frames and glass mugs allowed in carry-on?`,
+        answer: `Yes. Fragile glass frames and mugs are permitted in carry-on bags. In fact, TSA and airlines recommend keeping fragile valuables in the cabin to avoid damage in cargo handling.`
+      },
+      {
+        question: `Are snow globes allowed on airplanes?`,
+        answer: `Snow globes containing liquid that appear smaller than a tennis ball (approx. 3.4 oz / 100 ml) are allowed in carry-on if they fit in your quart liquids bag. Larger snow globes must be checked.`
+      },
+      {
+        question: `Can I pack kitchen appliances in checked luggage?`,
+        answer: `Yes, most standard household kitchen appliances without hazardous chemicals or sharp exposed blades can travel safely in checked baggage.`
+      }
+    ]
+  },
+
+  electronics: {
+    introduction: (count) => `Modern air travel revolves around electronics, but strict FAA and TSA battery limits dictate where and how gadgets can fly. This comprehensive guide covers baggage rules for over ${count} items in the Electronics category.\n\nFrom laptops, tablets, and cameras to power banks and lithium-ion batteries, knowing the exact carriage requirements keeps your equipment safe and prevents checkpoint delays.\n\nReview lithium-ion watt-hour (Wh) thresholds, screening tray procedures, and checked bag prohibitions below.`,
+    overview: `The Electronics category encompasses consumer computing, imaging gear, audio devices, and power banks. Aviation regulators strictly scrutinize electronic items due to lithium-ion battery fire hazards and screen visibility during X-ray inspection.`,
+    tsaRules: `Laptops, tablets, cameras, and portable electronics are permitted in carry-on and checked baggage. However, spare lithium-ion batteries and external power banks must travel in carry-on baggage only—they are strictly prohibited in checked hold luggage under FAA safety mandates.`,
+    exceptions: `Lithium-ion batteries rated up to 100 watt-hours (Wh) are permitted without airline approval in carry-on bags. Batteries between 101Wh and 160Wh require airline permission, while batteries exceeding 160Wh are strictly forbidden on passenger aircraft.`,
+    international: `Many overseas airports (notably throughout China, Europe, and Asia) require every portable charger and power bank to display clear, factory-printed capacity markings in mAh or Wh. Unmarked chargers are confiscated at international checkpoints.`,
+    commonMistakes: `Checking a smart bag without removing the internal lithium battery power bank is a frequent violation that leads to offloaded bags. Another common error is packing delicate laptops into checked luggage where they face impact and theft risks.`,
+    recommendations: `Keep all high-value electronics and external power banks in your carry-on luggage. At standard security checkpoints, be ready to place laptops and tablets in dedicated screening bins unless using modern CT computed tomography lanes or TSA PreCheck.`,
+    faqs: [
+      {
+        question: `Can I put a power bank in my checked luggage?`,
+        answer: `No. External power banks and spare lithium-ion batteries are strictly prohibited in checked baggage by the FAA and international aviation bodies due to fire hazards. They must stay in your carry-on.`
+      },
+      {
+        question: `What is the maximum battery capacity allowed on flights?`,
+        answer: `Passengers can bring lithium batteries up to 100 watt-hours (Wh) in carry-on bags without prior airline approval. Batteries between 101Wh and 160Wh require airline consent.`
+      },
+      {
+        question: `Do I need to take my laptop out at airport security?`,
+        answer: `In standard TSA screening lanes, laptops and large electronics must be removed from bags and placed flat in a separate bin. In lanes with newer 3D CT scanners or TSA PreCheck, electronics can usually remain inside.`
+      },
+      {
+        question: `Can I bring gaming consoles on a plane?`,
+        answer: `Yes. Gaming consoles like the PlayStation, Xbox, or Nintendo Switch are fully allowed in carry-on and checked baggage. Screeners may request full-sized consoles be screened in separate bins.`
+      },
+      {
+        question: `Are smart luggage bags allowed on flights?`,
+        answer: `Smart bags with built-in chargers are allowed only if the battery can be removed. If the battery cannot be detached, the luggage cannot travel on the aircraft.`
+      }
+    ]
+  },
+
+  liquids: {
+    introduction: (count) => `The TSA 3-1-1 liquids rule remains one of the most frequently enforced regulations at airport security worldwide. This comprehensive guide covers carry-on and checked luggage limits for over ${count} items in the Liquids category.\n\nFrom travel toiletries and beverages to duty-free perfumes and cooking ingredients, understanding volume limits ensures a smooth journey.\n\nReview container rules, duty-free exemptions, and checkpoint screening procedures below.`,
+    overview: `The Liquids category covers liquids, aerosols, gels, creams, pastes, and viscous liquids. Transportation security agencies restrict cabin liquids to prevent liquid explosives and hazardous chemicals from boarding the passenger cabin.`,
+    tsaRules: `Under the TSA 3-1-1 rule, every liquid, gel, cream, or aerosol carried into the aircraft cabin must be in a container holding 3.4 ounces (100 milliliters) or less. All containers must fit comfortably inside one transparent, quart-sized resealable bag per traveler.`,
+    exceptions: `Medically necessary liquids, prescription treatments, and infant feeding essentials (baby formula, breast milk, and baby food) are completely exempt from the 3-1-1 volume limits in reasonable quantities.`,
+    international: `International airports strictly enforce the 100 ml limit. If purchasing duty-free liquids during an overseas connection, ensure they are sealed in an official tamper-evident bag (STEB) with your receipt visible.`,
+    commonMistakes: `Packing containers larger than 3.4 oz that are only partially full is a major mistake; TSA enforces the labeled capacity of the container, not the remaining liquid inside. Another error is assuming pastes (like peanut butter or toothpaste) are solids.`,
+    recommendations: `Transfer essential liquids into travel-sized 3.4 oz silicone bottles and place your quart bag at the top of your carry-on for fast removal. Pack larger liquid bottles in checked luggage, sealed inside zip bags to guard against pressure leaks.`,
+    faqs: [
+      {
+        question: `What is the TSA 3-1-1 liquids rule?`,
+        answer: `Each passenger may bring liquids, gels, and aerosols in containers of 3.4 oz (100 ml) or less, all fitted inside one 1-quart transparent, resealable bag. One bag is permitted per traveler.`
+      },
+      {
+        question: `Can I bring a full water bottle through security?`,
+        answer: `No. Full water bottles exceed the 3.4 oz limit and will be confiscated. You can bring an empty reusable bottle through security and refill it at water stations once past the checkpoint.`
+      },
+      {
+        question: `Are pastes, creams, and spreads considered liquids?`,
+        answer: `Yes. TSA classifies anything you can pour, pump, squeeze, spread, smear, spray, or spill as a liquid or gel. Toothpaste, sunscreen, peanut butter, and lip gloss all fall under the 3-1-1 rule.`
+      },
+      {
+        question: `Can I bring duty-free liquids on connecting flights?`,
+        answer: `Yes, provided they were purchased airside and remain sealed in a secure, tamper-evident bag (STEB) with the original receipt clearly visible inside.`
+      },
+      {
+        question: `Is there a limit on liquids in checked luggage?`,
+        answer: `Most non-hazardous liquids have no volume limit in checked bags, as long as baggage weight limits are respected. Alcoholic beverages between 24% and 70% ABV are limited to 5 liters per passenger.`
+      }
+    ]
+  }
+};
+
 export function getCategoryIntroduction(categoryName: string, itemsCount: number): string {
-  return `Navigating the complexities of airport security can be a daunting task for even the most experienced travelers, especially when it comes to packing items in the ${categoryName} category. With ever-evolving regulations mandated by the Transportation Security Administration (TSA), it is crucial to understand exactly what you can and cannot bring on a plane. This comprehensive guide covers the specific carry-on and checked baggage rules for over ${itemsCount} items classified under ${categoryName}. \n\nWhether you are packing for a quick weekend domestic flight or embarking on a long-haul international journey, knowing the exact security posture for these items prevents delays at the checkpoint, avoids the frustration of having valuable belongings confiscated, and ensures you remain fully compliant with federal aviation safety standards. \n\nMany passengers assume that because an item is allowed in a checked bag, it is also permitted in the cabin—or vice versa. However, aviation security treats accessible cabin baggage and inaccessible cargo hold luggage very differently. By familiarizing yourself with the nuances of the ${categoryName} guidelines, you can pack your bags with confidence and breeze through the X-ray screening process.`;
+  const key = categoryName.toLowerCase().trim().replace(/\s+/g, '-');
+  const profile = CATEGORY_PROFILES[key];
+  if (profile) return profile.introduction(itemsCount);
+
+  return `Navigating the complexities of airport security is straightforward when you know the rules for the ${categoryName} category. Mandated by the Transportation Security Administration (TSA) and international civil aviation bodies, these guidelines outline carry-on and checked luggage limits for over ${itemsCount} items.\n\nWhether preparing for a domestic flight or an international journey, knowing the exact security posture for ${categoryName} items prevents delays at the checkpoint and ensures full compliance with aviation safety standards.\n\nReview the detailed baggage allowances, exceptions, and packing recommendations below to pack your bags with confidence.`;
 }
 
 export function getCategoryOverview(categoryName: string): string {
-  return `The ${categoryName} category encompasses a wide range of personal, professional, and recreational items that travelers frequently bring to the airport. The primary concern for security officials regarding these items is whether they could be used to compromise the safety of the aircraft, the crew, or other passengers. Therefore, items in this classification are rigorously scrutinized under TSA's standard operating procedures.`;
+  const key = categoryName.toLowerCase().trim().replace(/\s+/g, '-');
+  const profile = CATEGORY_PROFILES[key];
+  if (profile) return profile.overview;
+
+  return `The ${categoryName} category encompasses essential personal, professional, and travel goods. Airport security screeners evaluate items in this classification to ensure they pose no threat to the aircraft, crew, or fellow passengers during transit.`;
 }
 
 export function getCategoryTSARules(categoryName: string): string {
-  return `Under standard TSA regulations (Title 49 of the Code of Federal Regulations), the carriage of ${categoryName} items is strictly monitored. If an item presents a fire hazard, is classified as a hazardous material (HAZMAT), or features characteristics that could be weaponized (such as sharp edges, heavy blunt weight, or volatile chemical compositions), it will be restricted or outright banned from the passenger cabin. Conversely, if it poses no tangible threat, it is generally permitted in both carry-on and checked luggage, subject to standard size and weight limitations imposed by your specific airline.`;
+  const key = categoryName.toLowerCase().trim().replace(/\s+/g, '-');
+  const profile = CATEGORY_PROFILES[key];
+  if (profile) return profile.tsaRules;
+
+  return `Under Title 49 CFR and TSA standard operating procedures, items classified under ${categoryName} are evaluated for cabin and checked hold suitability. Non-hazardous items complying with dimensional and weight rules are generally permitted across both baggage types.`;
 }
 
 export function getCategoryExceptions(categoryName: string): string {
-  return `While the general rules for ${categoryName} are firm, the TSA does provide specific exceptions. The most common exemptions apply to medically necessary devices, prescription medications, and essential childcare items like baby formula and breast milk. If you believe an item in this category qualifies for a medical or essential needs exemption, you must declare it to the Transportation Security Officer (TSO) immediately upon arriving at the screening belt. The item will undergo additional testing, such as explosive trace detection or manual physical inspection.`;
+  const key = categoryName.toLowerCase().trim().replace(/\s+/g, '-');
+  const profile = CATEGORY_PROFILES[key];
+  if (profile) return profile.exceptions;
+
+  return `While standard regulations for ${categoryName} apply to the general public, specific exemptions exist for medically necessary equipment, prescription treatments, and infant care supplies. Always declare exempt items to screeners upon arrival at the security belt.`;
 }
 
 export function getCategoryInternational(categoryName: string): string {
-  return `International travel introduces an additional layer of regulatory complexity. When flying outside the United States with ${categoryName} items, you are subject to the aviation security rules of your departure airport, your destination, and any transit hubs in between. Agencies such as the European Union Aviation Safety Agency (EASA) or the UK Civil Aviation Authority (CAA) may have divergent restrictions compared to the TSA. Furthermore, local customs authorities may impose import restrictions or duties on specific items within this category, regardless of their flight safety status.`;
+  const key = categoryName.toLowerCase().trim().replace(/\s+/g, '-');
+  const profile = CATEGORY_PROFILES[key];
+  if (profile) return profile.international;
+
+  return `When traveling internationally with ${categoryName} items, passengers must observe the security guidelines of their departure airport, destination country, and any transit hubs. Foreign bodies like EASA and the UK CAA may enforce distinct regulations.`;
 }
 
 export function getCategoryCommonMistakes(categoryName: string): string {
-  return `One of the most frequent mistakes passengers make with ${categoryName} items is failing to pack them accessibly. If an item is restricted or dense enough to obscure the X-ray operator's view, you will be required to remove it from your bag. Packing these items at the bottom of a tightly stuffed suitcase inevitably leads to a bag search, slowing down the line for everyone. Another common error is assuming that an expensive or sentimental item will be granted a pass by security officers—rules are enforced regardless of an item's monetary value.`;
+  const key = categoryName.toLowerCase().trim().replace(/\s+/g, '-');
+  const profile = CATEGORY_PROFILES[key];
+  if (profile) return profile.commonMistakes;
+
+  return `A frequent mistake when packing ${categoryName} items is stowing screening-sensitive belongings deep inside a tightly packed bag. Grouping items accessibly prevents bag searches and keeps the checkpoint moving efficiently.`;
 }
 
 export function getCategoryPackingRecommendations(categoryName: string): string {
-  return `To optimize your airport experience, we strongly recommend packing ${categoryName} items in clear, dedicated organizational pouches or packing cubes near the top of your carry-on bag. This not only protects the items during transit but also allows you to quickly extract them if the TSA officer requests a separate screening bin. For items that must be checked, ensure they are thoroughly padded and surrounded by soft clothing to prevent damage from the rigorous mechanical baggage handling systems used at modern airports.`;
+  const key = categoryName.toLowerCase().trim().replace(/\s+/g, '-');
+  const profile = CATEGORY_PROFILES[key];
+  if (profile) return profile.recommendations;
+
+  return `We recommend packing ${categoryName} items in organized, clear travel pouches near the top of your carry-on luggage. For items traveling in checked hold baggage, ensure ample soft padding protects against rough baggage handling systems.`;
 }
 
 export function getCategoryFAQs(categoryName: string): any[] {
-  const faqs = [];
-  
-  faqs.push({
-    question: `Are all ${categoryName} items allowed on airplanes?`,
-    answer: `No. While many ${categoryName} items are permitted, they are subject to specific carry-on and checked baggage rules depending on their size, battery type, and potential security risk as assessed by the TSA.`
-  });
-  
-  faqs.push({
-    question: `Do I need to remove ${categoryName} items from my bag at security?`,
-    answer: `It depends on the specific item and the type of screening equipment used at the checkpoint. Generally, large electronics, dense organic materials, and restricted liquids must be removed and placed in a separate bin. Listen to the instructions provided by the TSA officers on duty.`
-  });
+  const key = categoryName.toLowerCase().trim().replace(/\s+/g, '-');
+  const profile = CATEGORY_PROFILES[key];
+  if (profile && profile.faqs) return profile.faqs;
 
-  faqs.push({
-    question: `Can I pack ${categoryName} items in my checked luggage?`,
-    answer: `Most ${categoryName} items can be packed in checked luggage, provided they do not contain uninstalled lithium-ion batteries, flammable liquids, or other hazardous materials banned by the FAA in the cargo hold.`
-  });
-  
-  faqs.push({
-    question: `What happens if the TSA confiscates my ${categoryName} item?`,
-    answer: `If a Transportation Security Officer determines an item is prohibited, you generally have a few options: surrender the item voluntarily, return to the ticketing counter to check it in a hold bag, hand it off to a non-traveling companion, or mail it to yourself if the airport provides postal services. TSA does not return surrendered items.`
-  });
-  
-  faqs.push({
-    question: `Do international airlines have different rules for ${categoryName}?`,
-    answer: `Yes. Always consult your specific airline's conditions of carriage and the aviation authority of your destination country, as international rules regarding ${categoryName} items may be more stringent than U.S. TSA regulations.`
-  });
-
-  return faqs;
+  return [
+    {
+      question: `Are all ${categoryName} items allowed on airplanes?`,
+      answer: `Most standard items in ${categoryName} are permitted, but they remain subject to carry-on and checked baggage distinctions based on size, battery composition, and security risk.`
+    },
+    {
+      question: `Do I need to remove ${categoryName} items from my bag at security?`,
+      answer: `Large electronics, dense organic materials, and 3-1-1 liquids bags typically require separate screening. Follow the directions provided by the security officers at your checkpoint lane.`
+    },
+    {
+      question: `Can I pack ${categoryName} items in my checked luggage?`,
+      answer: `Yes, provided the items contain no hazardous materials, uninstalled spare lithium-ion batteries, or prohibited flammable compounds banned in cargo holds.`
+    },
+    {
+      question: `Do international airlines have different rules for ${categoryName}?`,
+      answer: `Yes. Always consult your airline's conditions of carriage and destination customs laws, as international standards for ${categoryName} can vary from domestic TSA rules.`
+    }
+  ];
 }

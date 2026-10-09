@@ -2,7 +2,7 @@
   "id": "candles",
   "slug": "candles",
   "name": "Candles",
-  "category": "Tools",
+  "category": "Household",
   "subcategory": "General",
   "aliases": [
     "wax candles",
@@ -74,6 +74,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/candles"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Wax / Solid",
   "customNote": ""
 }

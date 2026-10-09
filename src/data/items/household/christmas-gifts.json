@@ -2,7 +2,7 @@
   "id": "christmas-gifts",
   "slug": "christmas-gifts",
   "name": "Christmas Gifts",
-  "category": "Tools",
+  "category": "Household",
   "subcategory": "General",
   "aliases": [
     "wrapped gifts",
@@ -74,6 +74,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/christmas-gifts"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Gifts / General",
   "customNote": ""
 }

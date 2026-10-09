@@ -2,7 +2,7 @@
   "id": "matches",
   "slug": "matches",
   "name": "Matches",
-  "category": "Tools",
+  "category": "Flammables",
   "subcategory": "General",
   "aliases": [
     "safety matches",
@@ -74,6 +74,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/matches"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Lighters / Matches",
   "customNote": ""
 }

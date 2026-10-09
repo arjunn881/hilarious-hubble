@@ -1554,6 +1554,174 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "cigarettes",
+    "slug": "cigarettes",
+    "name": "Cigarettes",
+    "category": "Flammables",
+    "aliases": [
+      "tobacco cigarettes",
+      "smokes",
+      "lufthansa cigarettes allowance",
+      "emirates cigarette electronique",
+      "emirates cigarettes",
+      "emirates cigarettes allowance",
+      "bring cigarettes to sg",
+      "can i bring cigarettes to singapore",
+      "can you bring cigarettes to singapore",
+      "can you bring cigarettes on a plane singapore",
+      "can you bring cigarettes to singapore airport",
+      "can i bring a pack of cigarettes in my carry on to singapore",
+      "can bring cigarettes on plane",
+      "can i bring cigarette on plane",
+      "can cigarettes be carried on a plane",
+      "can you bring raw cones on a plane",
+      "raw cones",
+      "tobacco"
+    ],
+    "keywords": [
+      "cigarettes",
+      "tobacco",
+      "smoke",
+      "nicotine"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "cigars",
+    "slug": "cigars",
+    "name": "Cigars",
+    "category": "Flammables",
+    "aliases": [
+      "cigarillos",
+      "cuban cigars"
+    ],
+    "keywords": [
+      "cigars",
+      "tobacco",
+      "smoke"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "hookah",
+    "slug": "hookah",
+    "name": "Hookah",
+    "category": "Flammables",
+    "aliases": [
+      "shisha pipe",
+      "water pipe",
+      "can i take hookah in flight",
+      "hookah carry on",
+      "shisha pipe on plane"
+    ],
+    "keywords": [
+      "hookah",
+      "shisha",
+      "pipe",
+      "smoke"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "lighter",
+    "slug": "lighter",
+    "name": "Lighter",
+    "category": "Flammables",
+    "aliases": [
+      "bic lighter",
+      "zippo lighter",
+      "ryanair lighter",
+      "can i bring a lighter on a plane",
+      "can you bring a lighter in a checked bag",
+      "can you take a lighter on a plane",
+      "can you bring a lighter on a plane ryanair",
+      "are bic lighters allowed on planes",
+      "can you bring a torch lighter on a plane",
+      "is bic lighter allowed on plane",
+      "can i bring a lighter on a plane ryanair",
+      "disposable lighter",
+      "torch lighter"
+    ],
+    "keywords": [
+      "lighter",
+      "fire",
+      "smoke",
+      "flame"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "NOT_ALLOWED",
+    "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "matchbox",
+    "slug": "matchbox",
+    "name": "Matchbox",
+    "category": "Flammables",
+    "aliases": [
+      "box of matches",
+      "strike on box matches",
+      "safety matchbox"
+    ],
+    "keywords": [
+      "matchbox",
+      "matches",
+      "fire",
+      "strike",
+      "box",
+      "safety"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "NOT_ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
+    "id": "matches",
+    "slug": "matches",
+    "name": "Matches",
+    "category": "Flammables",
+    "aliases": [
+      "safety matches",
+      "matchbook"
+    ],
+    "keywords": [
+      "matches",
+      "fire",
+      "match",
+      "safety"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "NOT_ALLOWED",
+    "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "torch-lighter",
+    "slug": "torch-lighter",
+    "name": "Torch Lighter",
+    "category": "Flammables",
+    "aliases": [
+      "jet lighter",
+      "butane torch",
+      "blue flame lighter",
+      "wind-proof lighter"
+    ],
+    "keywords": [
+      "torch lighter",
+      "jet lighter",
+      "butane",
+      "flame",
+      "cigar lighter"
+    ],
+    "carryOn": "NOT_ALLOWED",
+    "checked": "NOT_ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
     "id": "apples",
     "slug": "apples",
     "name": "Apples",
@@ -2417,6 +2585,93 @@
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-08-01"
+  },
+  {
+    "id": "candles",
+    "slug": "candles",
+    "name": "Candles",
+    "category": "Household",
+    "aliases": [
+      "wax candles",
+      "scented candles"
+    ],
+    "keywords": [
+      "candles",
+      "wax",
+      "gift",
+      "scent"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "christmas-gifts",
+    "slug": "christmas-gifts",
+    "name": "Christmas Gifts",
+    "category": "Household",
+    "aliases": [
+      "wrapped gifts",
+      "holiday presents"
+    ],
+    "keywords": [
+      "gifts",
+      "christmas",
+      "wrapped",
+      "presents"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "mug",
+    "slug": "mug",
+    "name": "Mug",
+    "category": "Household",
+    "aliases": [
+      "coffee mug",
+      "ceramic cup",
+      "can i bring a mug in my carry on",
+      "can you take mugs in carry on luggage",
+      "are mugs allowed in carry on",
+      "can i bring a mug on a plane",
+      "can you bring a mug in your carry on",
+      "ceramic mug",
+      "yeti tumbler",
+      "travel mug"
+    ],
+    "keywords": [
+      "mug",
+      "cup",
+      "ceramic",
+      "coffee"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-06-30"
+  },
+  {
+    "id": "picture-frame",
+    "slug": "picture-frame",
+    "name": "Picture Frame",
+    "category": "Household",
+    "aliases": [
+      "photo frame",
+      "framed photo",
+      "can i take wooden photo frames to australia",
+      "wooden photo frames",
+      "picture frame"
+    ],
+    "keywords": [
+      "frame",
+      "picture",
+      "glass",
+      "photo"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-06-30"
   },
   {
     "id": "costume-jewelry",
@@ -3660,6 +3915,25 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "leash",
+    "slug": "leash",
+    "name": "Dog Leash",
+    "category": "Personal Care",
+    "aliases": [
+      "dog lead",
+      "pet leash"
+    ],
+    "keywords": [
+      "leash",
+      "lead",
+      "dog",
+      "pet"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-06-30"
+  },
+  {
     "id": "lotion",
     "slug": "lotion",
     "name": "Lotion",
@@ -4054,6 +4328,37 @@
     "lastReviewed": "2026-06-30"
   },
   {
+    "id": "umbrella",
+    "slug": "umbrella",
+    "name": "Umbrella",
+    "category": "Personal Care",
+    "aliases": [
+      "compact umbrella",
+      "folding umbrella",
+      "travel umbrella",
+      "rain umbrella",
+      "tsa umbrella policy",
+      "british airways umbrella",
+      "ryanair umbrella",
+      "can i take an umbrella on a plane ryanair",
+      "emirates umbrella",
+      "can you bring an umbrella on a plane ryanair",
+      "can you take an umbrella on a plane ryanair",
+      "can i bring an umbrella on a plane",
+      "golf umbrella"
+    ],
+    "keywords": [
+      "umbrella",
+      "compact umbrella",
+      "folding umbrella",
+      "rain",
+      "travel"
+    ],
+    "carryOn": "ALLOWED",
+    "checked": "ALLOWED",
+    "lastReviewed": "2026-07-01"
+  },
+  {
     "id": "watch",
     "slug": "watch",
     "name": "Watch",
@@ -4384,97 +4689,6 @@
     "lastReviewed": "2026-07-01"
   },
   {
-    "id": "candles",
-    "slug": "candles",
-    "name": "Candles",
-    "category": "Tools",
-    "aliases": [
-      "wax candles",
-      "scented candles"
-    ],
-    "keywords": [
-      "candles",
-      "wax",
-      "gift",
-      "scent"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "ALLOWED",
-    "lastReviewed": "2026-06-30"
-  },
-  {
-    "id": "christmas-gifts",
-    "slug": "christmas-gifts",
-    "name": "Christmas Gifts",
-    "category": "Tools",
-    "aliases": [
-      "wrapped gifts",
-      "holiday presents"
-    ],
-    "keywords": [
-      "gifts",
-      "christmas",
-      "wrapped",
-      "presents"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "ALLOWED",
-    "lastReviewed": "2026-06-30"
-  },
-  {
-    "id": "cigarettes",
-    "slug": "cigarettes",
-    "name": "Cigarettes",
-    "category": "Tools",
-    "aliases": [
-      "tobacco cigarettes",
-      "smokes",
-      "lufthansa cigarettes allowance",
-      "emirates cigarette electronique",
-      "emirates cigarettes",
-      "emirates cigarettes allowance",
-      "bring cigarettes to sg",
-      "can i bring cigarettes to singapore",
-      "can you bring cigarettes to singapore",
-      "can you bring cigarettes on a plane singapore",
-      "can you bring cigarettes to singapore airport",
-      "can i bring a pack of cigarettes in my carry on to singapore",
-      "can bring cigarettes on plane",
-      "can i bring cigarette on plane",
-      "can cigarettes be carried on a plane",
-      "can you bring raw cones on a plane",
-      "raw cones",
-      "tobacco"
-    ],
-    "keywords": [
-      "cigarettes",
-      "tobacco",
-      "smoke",
-      "nicotine"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "ALLOWED",
-    "lastReviewed": "2026-06-30"
-  },
-  {
-    "id": "cigars",
-    "slug": "cigars",
-    "name": "Cigars",
-    "category": "Tools",
-    "aliases": [
-      "cigarillos",
-      "cuban cigars"
-    ],
-    "keywords": [
-      "cigars",
-      "tobacco",
-      "smoke"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "ALLOWED",
-    "lastReviewed": "2026-06-30"
-  },
-  {
     "id": "corkscrew",
     "slug": "corkscrew",
     "name": "Corkscrew",
@@ -4513,28 +4727,6 @@
     "lastReviewed": "2026-06-30"
   },
   {
-    "id": "hookah",
-    "slug": "hookah",
-    "name": "Hookah",
-    "category": "Tools",
-    "aliases": [
-      "shisha pipe",
-      "water pipe",
-      "can i take hookah in flight",
-      "hookah carry on",
-      "shisha pipe on plane"
-    ],
-    "keywords": [
-      "hookah",
-      "shisha",
-      "pipe",
-      "smoke"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "ALLOWED",
-    "lastReviewed": "2026-06-30"
-  },
-  {
     "id": "knife",
     "slug": "knife",
     "name": "Knife",
@@ -4568,55 +4760,6 @@
     "lastReviewed": "2026-08-01"
   },
   {
-    "id": "leash",
-    "slug": "leash",
-    "name": "Dog Leash",
-    "category": "Tools",
-    "aliases": [
-      "dog lead",
-      "pet leash"
-    ],
-    "keywords": [
-      "leash",
-      "lead",
-      "dog",
-      "pet"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "ALLOWED",
-    "lastReviewed": "2026-06-30"
-  },
-  {
-    "id": "lighter",
-    "slug": "lighter",
-    "name": "Lighter",
-    "category": "Tools",
-    "aliases": [
-      "bic lighter",
-      "zippo lighter",
-      "ryanair lighter",
-      "can i bring a lighter on a plane",
-      "can you bring a lighter in a checked bag",
-      "can you take a lighter on a plane",
-      "can you bring a lighter on a plane ryanair",
-      "are bic lighters allowed on planes",
-      "can you bring a torch lighter on a plane",
-      "is bic lighter allowed on plane",
-      "can i bring a lighter on a plane ryanair",
-      "disposable lighter",
-      "torch lighter"
-    ],
-    "keywords": [
-      "lighter",
-      "fire",
-      "smoke",
-      "flame"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "NOT_ALLOWED",
-    "lastReviewed": "2026-06-30"
-  },
-  {
     "id": "lock",
     "slug": "lock",
     "name": "Lock",
@@ -4639,74 +4782,6 @@
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-07-01"
-  },
-  {
-    "id": "matchbox",
-    "slug": "matchbox",
-    "name": "Matchbox",
-    "category": "Tools",
-    "aliases": [
-      "box of matches",
-      "strike on box matches",
-      "safety matchbox"
-    ],
-    "keywords": [
-      "matchbox",
-      "matches",
-      "fire",
-      "strike",
-      "box",
-      "safety"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "NOT_ALLOWED",
-    "lastReviewed": "2026-07-01"
-  },
-  {
-    "id": "matches",
-    "slug": "matches",
-    "name": "Matches",
-    "category": "Tools",
-    "aliases": [
-      "safety matches",
-      "matchbook"
-    ],
-    "keywords": [
-      "matches",
-      "fire",
-      "match",
-      "safety"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "NOT_ALLOWED",
-    "lastReviewed": "2026-06-30"
-  },
-  {
-    "id": "mug",
-    "slug": "mug",
-    "name": "Mug",
-    "category": "Tools",
-    "aliases": [
-      "coffee mug",
-      "ceramic cup",
-      "can i bring a mug in my carry on",
-      "can you take mugs in carry on luggage",
-      "are mugs allowed in carry on",
-      "can i bring a mug on a plane",
-      "can you bring a mug in your carry on",
-      "ceramic mug",
-      "yeti tumbler",
-      "travel mug"
-    ],
-    "keywords": [
-      "mug",
-      "cup",
-      "ceramic",
-      "coffee"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "ALLOWED",
-    "lastReviewed": "2026-06-30"
   },
   {
     "id": "multi-tool",
@@ -4756,28 +4831,6 @@
     "carryOn": "NOT_ALLOWED",
     "checked": "RESTRICTED",
     "lastReviewed": "2026-08-01"
-  },
-  {
-    "id": "picture-frame",
-    "slug": "picture-frame",
-    "name": "Picture Frame",
-    "category": "Tools",
-    "aliases": [
-      "photo frame",
-      "framed photo",
-      "can i take wooden photo frames to australia",
-      "wooden photo frames",
-      "picture frame"
-    ],
-    "keywords": [
-      "frame",
-      "picture",
-      "glass",
-      "photo"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "ALLOWED",
-    "lastReviewed": "2026-06-30"
   },
   {
     "id": "pocket-knife",
@@ -4893,59 +4946,6 @@
     "carryOn": "NOT_ALLOWED",
     "checked": "ALLOWED",
     "lastReviewed": "2026-06-30"
-  },
-  {
-    "id": "torch-lighter",
-    "slug": "torch-lighter",
-    "name": "Torch Lighter",
-    "category": "Tools",
-    "aliases": [
-      "jet lighter",
-      "butane torch",
-      "blue flame lighter",
-      "wind-proof lighter"
-    ],
-    "keywords": [
-      "torch lighter",
-      "jet lighter",
-      "butane",
-      "flame",
-      "cigar lighter"
-    ],
-    "carryOn": "NOT_ALLOWED",
-    "checked": "NOT_ALLOWED",
-    "lastReviewed": "2026-07-01"
-  },
-  {
-    "id": "umbrella",
-    "slug": "umbrella",
-    "name": "Umbrella",
-    "category": "Tools",
-    "aliases": [
-      "compact umbrella",
-      "folding umbrella",
-      "travel umbrella",
-      "rain umbrella",
-      "tsa umbrella policy",
-      "british airways umbrella",
-      "ryanair umbrella",
-      "can i take an umbrella on a plane ryanair",
-      "emirates umbrella",
-      "can you bring an umbrella on a plane ryanair",
-      "can you take an umbrella on a plane ryanair",
-      "can i bring an umbrella on a plane",
-      "golf umbrella"
-    ],
-    "keywords": [
-      "umbrella",
-      "compact umbrella",
-      "folding umbrella",
-      "rain",
-      "travel"
-    ],
-    "carryOn": "ALLOWED",
-    "checked": "ALLOWED",
-    "lastReviewed": "2026-07-01"
   },
   {
     "id": "utility-knife",

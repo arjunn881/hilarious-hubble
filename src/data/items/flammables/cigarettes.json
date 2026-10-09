@@ -2,7 +2,7 @@
   "id": "cigarettes",
   "slug": "cigarettes",
   "name": "Cigarettes",
-  "category": "Tools",
+  "category": "Flammables",
   "subcategory": "General",
   "aliases": [
     "tobacco cigarettes",
@@ -107,6 +107,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/cigarettes"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Tobacco / Smoking",
   "customNote": ""
 }

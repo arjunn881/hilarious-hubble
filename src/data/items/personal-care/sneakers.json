@@ -79,7 +79,11 @@
     "Slip-on sneakers make passing through standard TSA security lines much faster.",
     "Stuff socks and small chargers inside packed sneakers to maintain their shape and maximize suitcase space."
   ],
-  "relatedItems": ["shoes", "boots", "high-heels"],
+  "relatedItems": [
+    "shoes",
+    "boots",
+    "high-heels"
+  ],
   "faq": [
     {
       "question": "Do I have to take my sneakers off at airport security?",
@@ -108,6 +112,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shoes"
     }
   ],
-  "restrictionType": "Footwear",
+  "restrictionType": "Apparel / Footwear",
   "customNote": ""
 }

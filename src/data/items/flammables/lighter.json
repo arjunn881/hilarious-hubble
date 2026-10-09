@@ -2,7 +2,7 @@
   "id": "lighter",
   "slug": "lighter",
   "name": "Lighter",
-  "category": "Tools",
+  "category": "Flammables",
   "subcategory": "General",
   "aliases": [
     "bic lighter",
@@ -93,6 +93,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/lighter"
     }
   ],
-  "restrictionType": "Sharp Object",
+  "restrictionType": "Lighters / Matches",
   "customNote": ""
 }

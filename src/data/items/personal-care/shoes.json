@@ -71,25 +71,38 @@
   "airlines": [],
   "international": {},
   "travelTips": [
-    "Shoes, sneakers, and sandals are fully allowed in carry-on and checked baggage."
+    "Shoes, sneakers, and sandals are fully allowed in both carry-on and checked baggage without quantity restrictions.",
+    "Pack bulky footwear at the bottom of your suitcase near the wheels to distribute luggage weight evenly.",
+    "Stuff shoes with rolled socks or chargers to save space and protect shoes from being crushed in transit.",
+    "Use dedicated shoe dust bags or plastic pouches to keep dirt on soles from contacting clean clothes.",
+    "At standard TSA airport checkpoints, travelers must remove shoes and place them in screening bins (passengers with TSA PreCheck may keep shoes on)."
   ],
-  "relatedItems": [],
+  "relatedItems": [
+    "sneakers",
+    "boots",
+    "high-heels",
+    "belt"
+  ],
   "faq": [
     {
-      "question": "Is shoes allowed in carry-on bags?",
-      "answer": "Shoes is allowed in carry-on luggage. Shoes, sneakers, and sandals are fully allowed in carry-on and checked baggage."
+      "question": "Are shoes allowed in carry-on bags?",
+      "answer": "Yes. Shoes, sneakers, boots, and sandals are 100% permitted in carry-on bags and personal items. They are not subject to any volume or liquid restrictions."
+    },
+    {
+      "question": "Do I have to take off my shoes at airport security?",
+      "answer": "In standard TSA screening lanes at U.S. airports, all passengers ages 12 to 74 must remove their shoes and send them through the X-ray scanner. Travelers enrolled in TSA PreCheck are permitted to keep their shoes on."
     },
     {
       "question": "Can you pack shoes in checked baggage?",
-      "answer": "Yes, Shoes is allowed in checked bags. Shoes are allowed in checked baggage."
+      "answer": "Yes. Shoes are fully allowed in checked luggage. Place heavier footwear near the bottom of your suitcase and cushion delicate pairs with soft clothing."
     },
     {
-      "question": "How many pairs of shoes can you take on a plane?",
-      "answer": "There is no limit on how many pairs of shoes you can bring, as long as your bags fit within your airline size and weight limits. You can pack shoes in carry-on, personal bags, or checked luggage."
+      "question": "How many pairs of shoes can you bring on a plane?",
+      "answer": "There is no regulatory limit on how many pairs of shoes you can bring, as long as your bags comply with your airline's size and weight limits. Wearing your heaviest pair on the flight saves suitcase weight."
     },
     {
-      "question": "Can I put shoes in my personal item bag or carry-on?",
-      "answer": "Yes! Shoes are completely permitted in carry-on bags and personal item backpacks."
+      "question": "Can I put shoes in my personal item backpack?",
+      "answer": "Yes. Shoes are completely permitted in backpacks, duffels, and under-seat personal items as long as the bag fits within your airline's personal item dimensions."
     }
   ],
   "metadata": {
@@ -106,6 +119,6 @@
       "source": "https://www.tsa.gov/travel/security-screening/whatcanibring/items/shoes"
     }
   ],
-  "restrictionType": "Liquid/Solid",
+  "restrictionType": "Apparel / Footwear",
   "customNote": ""
 }
