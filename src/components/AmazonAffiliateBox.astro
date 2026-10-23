@@ -14,6 +14,7 @@
  */
 
 import { getItemAffiliateLinks, type AffiliateContext } from '../lib/affiliateEngine';
+import { AMAZON_TAG, AMAZON_DOMAIN } from './monetization/AffiliateConfig';
 
 export interface AffiliateLink {
   /** Short product title shown on the card */
@@ -24,7 +25,7 @@ export interface AffiliateLink {
   url?: string;
   /** Direct product ASIN if linking to a specific item */
   asin?: string;
-  /** Amazon store domain — default is "amazon.in" (or "amazon.com") */
+  /** Amazon store domain — default is "amazon.com" (or "amazon.in") */
   domain?: string;
   /** Amazon Associates tracking tag — default is the site's tag */
   tag?: string;
@@ -42,8 +43,8 @@ interface Props {
   category?: string;
 }
 
-const DEFAULT_TAG = "arjunanayak-21";
-const DEFAULT_DOMAIN = "amazon.in";
+const DEFAULT_TAG = AMAZON_TAG;
+const DEFAULT_DOMAIN = AMAZON_DOMAIN;
 
 const { links, heading = "What You'll Need for This Trip", item, title, category } = Astro.props;
 

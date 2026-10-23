@@ -1,0 +1,78 @@
+---
+/**
+ * AmazonGeoRouter.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Client-side regional Amazon affiliate router.
+ *
+ * Defaults:
+ *   • USA & International: amazon.com with tag bringonplane-20
+ *   • India: amazon.in with tag arjunanayak-21
+ *
+ * Characteristics:
+ *   • Pure client-side via browser timezone (Asia/Kolkata) + locale (IN).
+ *   • Zero external network requests, zero latency, no tracking/cookies.
+ *   • Listens to 'astro:after-swap' for seamless ClientRouter transitions.
+ *   • Server-rendered HTML always defaults to amazon.com (safe for global crawlers).
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+import {
+  AMAZON_TAG_US,
+  AMAZON_DOMAIN_US,
+  AMAZON_TAG_IN,
+  AMAZON_DOMAIN_IN,
+} from "./AffiliateConfig";
+---
+
+<script
+  is:inline
+  define:vars={{
+    usDomain: AMAZON_DOMAIN_US,
+    usTag: AMAZON_TAG_US,
+    inDomain: AMAZON_DOMAIN_IN,
+    inTag: AMAZON_TAG_IN,
+  }}
+>
+  (function () {
+    function routeAffiliateLinks() {
+      try {
+        var tz = "";
+        try {
+          tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+        } catch (e) {}
+
+        var isIndia = tz === "Asia/Kolkata" || tz === "Asia/Calcutta";
+        if (!isIndia) {
+          var langs = navigator.languages || [navigator.language || ""];
+          for (var i = 0; i < langs.length; i++) {
+            if (/[-_]IN\b/i.test(langs[i])) {
+              isIndia = true;
+              break;
+            }
+          }
+        }
+
+        var targetDomain = isIndia ? inDomain : usDomain;
+        var targetTag = isIndia ? inTag : usTag;
+
+        var links = document.querySelectorAll('a[href*="amazon."]');
+        links.forEach(function (link) {
+          try {
+            var url = new URL(link.href);
+            if (url.hostname.indexOf("amazon.") !== -1) {
+              url.hostname = "www." + targetDomain;
+              url.searchParams.set("tag", targetTag);
+              link.href = url.toString();
+            }
+          } catch (err) {}
+        });
+      } catch (err) {}
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", routeAffiliateLinks);
+    } else {
+      routeAffiliateLinks();
+    }
+    document.addEventListener("astro:after-swap", routeAffiliateLinks);
+  })();
+</script>

@@ -15,11 +15,17 @@
 
 // ─── § 1. Tracking IDs ───────────────────────────────────────────────────────
 
-/** Amazon Associates tag (used on amazon.in by default). */
-export const AMAZON_TAG = "arjunanayak-21";
+/** Amazon Associates tag for USA & international visitors (amazon.com) */
+export const AMAZON_TAG_US = "bringonplane-20";
+export const AMAZON_DOMAIN_US = "amazon.com";
 
-/** Amazon store domain.  */
-export const AMAZON_DOMAIN = "amazon.in";
+/** Amazon Associates tag for Indian visitors (amazon.in) */
+export const AMAZON_TAG_IN = "arjunanayak-21";
+export const AMAZON_DOMAIN_IN = "amazon.in";
+
+/** Default Amazon store domain and tag (USA & international visitors). */
+export const AMAZON_TAG = AMAZON_TAG_US;
+export const AMAZON_DOMAIN = AMAZON_DOMAIN_US;
 
 /**
  * ShareASale / Impact publisher IDs — kept here for future use.
