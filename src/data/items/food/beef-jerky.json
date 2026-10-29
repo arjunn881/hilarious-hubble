@@ -14,7 +14,8 @@
     "pork jerky",
     "slim jim",
     "meat sticks",
-    "jack links"
+    "jack links",
+    "육포 비행기"
   ],
   "keywords": [
     "beef jerky",
@@ -23,7 +24,8 @@
     "biltong",
     "dried meat",
     "food",
-    "carry on"
+    "carry on",
+    "육포 비행기"
   ],
   "description": "TSA rules for flying with beef jerky and dried meat snacks on domestic and international flights.",
   "carryOn": {
@@ -87,7 +89,11 @@
     "Beef jerky is great for domestic US flights, but eat it before landing if traveling internationally to avoid heavy customs fines.",
     "Always declare any meat products on customs declaration forms when arriving in countries with strict biosecurity like Australia or the UK."
   ],
-  "relatedItems": ["protein-bar", "nuts", "candy"],
+  "relatedItems": [
+    "protein-bar",
+    "nuts",
+    "candy"
+  ],
   "faq": [
     {
       "question": "Can I take beef jerky through TSA airport security?",

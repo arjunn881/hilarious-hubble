@@ -17,7 +17,8 @@
     "tsa lock",
     "combination lock",
     "luggage lock",
-    "security"
+    "security",
+    "puedo llevar un candado en el equipaje de mano"
   ],
   "description": "TSA rules for padlocks and luggage locks on planes.",
   "carryOn": {

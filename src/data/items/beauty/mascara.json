@@ -14,7 +14,10 @@
     "eyelash glue",
     "liquid eyeliner",
     "gel eyeliner",
-    "eye makeup"
+    "eye makeup",
+    "マスカラ 液体 飛行機",
+    "マスカラ 飛行機",
+    "飛行機 マスカラ"
   ],
   "keywords": [
     "mascara",
@@ -23,7 +26,10 @@
     "3-1-1 liquids rule",
     "cosmetics",
     "beauty",
-    "carry on"
+    "carry on",
+    "マスカラ 液体 飛行機",
+    "マスカラ 飛行機",
+    "飛行機 マスカラ"
   ],
   "description": "TSA rules for flying with mascara, liquid eyeliner, and cosmetic products in carry-on and checked luggage.",
   "carryOn": {
@@ -80,7 +86,11 @@
     "Switching to waterproof pencil eyeliners and powder eye products frees up valuable space in your quart-sized liquids bag.",
     "Pack a travel makeup bag in your carry-on for quick touch-ups after long-haul flights."
   ],
-  "relatedItems": ["lipstick", "makeup-brushes", "perfume"],
+  "relatedItems": [
+    "lipstick",
+    "makeup-brushes",
+    "perfume"
+  ],
   "faq": [
     {
       "question": "Is mascara considered a liquid by TSA?",

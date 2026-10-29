@@ -232,7 +232,9 @@ const checkedVerdict = item.checkedBag.status === 'ALLOWED' ? t("verdict.yes")
   : item.checkedBag.status === 'NOT_ALLOWED' ? t("verdict.no")
   : t("verdict.restricted");
 
-const seoTitle = t("item.title", { item: itemName, verdict: carryOnVerdict, year: currentYear });
+// Per-item seoTitle override (English only) — falls back to the shared template.
+const _generatedTitle = t("item.title", { item: itemName, verdict: carryOnVerdict, year: currentYear });
+const seoTitle = (lang === 'en' && source.seoTitle) ? source.seoTitle : _generatedTitle;
 
 // ── SEO: High-Converting Meta Description (<155 chars) ─────────────────────────
 const carryOnShort = item.carryOn.status === 'ALLOWED' ? t("short.carryAllowed")
@@ -243,7 +245,9 @@ const checkedShort = item.checkedBag.status === 'ALLOWED' ? t("short.checkedAllo
   : t("short.checkedRestricted");
 
 const rawDesc = t("item.description", { carryOn: carryOnShort, checked: checkedShort, item: itemName });
-const seoDescription = rawDesc.length > 155 ? rawDesc.slice(0, 152) + '...' : rawDesc;
+const _generatedDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152) + '...' : rawDesc;
+// Per-item seoDescription override (English only) — falls back to the generated version.
+const seoDescription = (lang === 'en' && source.seoDescription) ? source.seoDescription : _generatedDesc;
 
 
 

@@ -14,7 +14,15 @@
     "fitness powder",
     "bcaa powder",
     "glutamine",
-    "gym supplements"
+    "gym supplements",
+    "해외여행 크레아틴",
+    "크레아틴 기내반입",
+    "can you bring creatine to japan",
+    "크레아틴 공항",
+    "크레아틴 비행기 반입",
+    "비행기 크레아틴",
+    "is creatine legal in japan",
+    "can i bring creatine to japan"
   ],
   "keywords": [
     "creatine",
@@ -23,7 +31,16 @@
     "powder rule",
     "supplements",
     "gym",
-    "carry on"
+    "carry on",
+    "해외여행 크레아틴",
+    "크레아틴 기내반입",
+    "can you bring creatine to japan",
+    "크레아틴 공항",
+    "크레아틴 비행기 반입",
+    "비행기 크레아틴",
+    "is creatine legal in japan",
+    "can i bring creatine to japan",
+    "si puo portare la creatina in aereo"
   ],
   "description": "TSA powder rules for flying with creatine, protein powder, and workout supplements in carry-on and checked luggage.",
   "carryOn": {
@@ -83,7 +100,11 @@
     "If traveling with a large tub (over 12 oz), pack it in your checked luggage to speed through security checkpoints.",
     "Pre-portion daily servings in labeled ziplock bags or a pill organizer for short weekend trips."
   ],
-  "relatedItems": ["protein-powder", "protein-bar", "vitamins"],
+  "relatedItems": [
+    "protein-powder",
+    "protein-bar",
+    "vitamins"
+  ],
   "faq": [
     {
       "question": "Can I bring creatine powder through TSA airport security?",

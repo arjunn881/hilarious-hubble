@@ -14,13 +14,30 @@
     "can you bring a mug in your carry on",
     "ceramic mug",
     "yeti tumbler",
-    "travel mug"
+    "travel mug",
+    "머그컵 기내반입",
+    "マグカップ 機内持ち込み",
+    "pode levar caneca de porcelana na bagagem de mão voo internacional",
+    "pode levar caneca na mala de mao",
+    "can you take a mug in hand luggage",
+    "tasse im handgepäck",
+    "飛行機 マグカップ 持ち込み",
+    "マグカップ 機内持ち込み 国際線"
   ],
   "keywords": [
     "mug",
     "cup",
     "ceramic",
-    "coffee"
+    "coffee",
+    "머그컵 기내반입",
+    "マグカップ 機内持ち込み",
+    "pode levar caneca de porcelana na bagagem de mão voo internacional",
+    "pode levar caneca na mala de mao",
+    "can you take a mug in hand luggage",
+    "tasse im handgepäck",
+    "can i bring a mug in my carry on",
+    "飛行機 マグカップ 持ち込み",
+    "マグカップ 機内持ち込み 国際線"
   ],
   "description": "Guidelines for traveling with mug in your luggage.",
   "carryOn": {

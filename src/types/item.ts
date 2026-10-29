@@ -43,6 +43,15 @@ export interface TSAItem {
   keywords: string[];
   description: string;
 
+  /**
+   * Optional per-item SEO overrides (English only).
+   * When present, these replace the globally generated title / description
+   * templates. Use for pages with high impression counts but low CTR that
+   * target specific, high-intent queries.
+   */
+  seoTitle?: string;
+  seoDescription?: string;
+
   carryOn: BaggageRule;
   checkedBag: BaggageRule;
 

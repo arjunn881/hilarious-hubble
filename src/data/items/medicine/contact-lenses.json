@@ -14,7 +14,8 @@
     "toric lenses",
     "colored contacts",
     "eye contacts",
-    "contact blisters"
+    "contact blisters",
+    "콘택트렌즈 기내반입"
   ],
   "keywords": [
     "contact lenses",
@@ -23,7 +24,8 @@
     "eye care",
     "medical exemption",
     "carry on",
-    "tsa liquids rule"
+    "tsa liquids rule",
+    "콘택트렌즈 기내반입"
   ],
   "description": "TSA rules for flying with contact lenses, blister packs, lens cases, and contact solution in carry-on and checked luggage.",
   "carryOn": {
@@ -78,7 +80,11 @@
     "Airplane cabin air is notoriously dry — bring travel-size rewetting drops (under 3.4 oz) or switch to glasses during long-haul flights.",
     "Declare any large bottles of contact lens solution to the TSA agent before bag screening starts."
   ],
-  "relatedItems": ["contact-lens-solution", "eye-drops", "prescription-medicine"],
+  "relatedItems": [
+    "contact-lens-solution",
+    "eye-drops",
+    "prescription-medicine"
+  ],
   "faq": [
     {
       "question": "Do contact lens blister packs count as liquids under TSA 3-1-1?",

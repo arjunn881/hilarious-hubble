@@ -18,7 +18,11 @@
     "tick repellent",
     "picaridin spray",
     "flying with bug spray",
-    "bug spray airplane"
+    "bug spray airplane",
+    "aerosol insect repellent on plane",
+    "can i bring insecticide on a plane",
+    "can you bring bug spray on a plane",
+    "flying with aerosol bug spray"
   ],
   "keywords": [
     "bug spray",
@@ -27,7 +31,15 @@
     "deet",
     "aerosol",
     "carry on",
-    "tsa liquids rule"
+    "tsa liquids rule",
+    "puedo llevar repelente de mosquitos en el avion",
+    "aerosol insect repellent on plane",
+    "can i bring insecticide on a plane",
+    "can you take insect repellent on a plane",
+    "can you bring insect repellent on a plane",
+    "can i bring insect repellent spray on a plane",
+    "can you bring bug spray on a plane",
+    "flying with aerosol bug spray"
   ],
   "description": "TSA rules for flying with bug spray, insect repellent, and mosquito spray in carry-on and checked luggage.",
   "carryOn": {
@@ -91,7 +103,10 @@
     "Solid bug spray sticks and wrist bands are TSA-friendly and exempt from the liquids rule.",
     "For tropical destinations, buy bug spray at your destination to avoid carry-on restrictions."
   ],
-  "relatedItems": ["sunscreen", "aerosol-insect-repellent"],
+  "relatedItems": [
+    "sunscreen",
+    "aerosol-insect-repellent"
+  ],
   "faq": [
     {
       "question": "Can I bring bug spray on a plane in my carry-on?",

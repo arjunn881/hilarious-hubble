@@ -33,7 +33,15 @@
     "snack",
     "food",
     "carry on",
-    "tsa food rules"
+    "tsa food rules",
+    "darf man proteinriegel mit ins flugzeug nehmen",
+    "can you bring protein bars through tsa",
+    "can i bring protein bars on a plane",
+    "can you take protein bars on a plane",
+    "can i bring protein bars through tsa",
+    "can i take protein bars through tsa",
+    "can you bring protein bars on a plane",
+    "can i bring protein bars in my carry on"
   ],
   "description": "TSA rules for bringing protein bars, granola bars, and energy bars on a plane in carry-on and checked bags.",
   "carryOn": {
@@ -90,7 +98,11 @@
     "Pack several bars in your carry-on to avoid paying airport food prices.",
     "When entering Australia, declare all food items including protein bars at biosecurity — most commercially packaged bars are cleared."
   ],
-  "relatedItems": ["beef-jerky", "nuts", "candy"],
+  "relatedItems": [
+    "beef-jerky",
+    "nuts",
+    "candy"
+  ],
   "faq": [
     {
       "question": "Can I bring protein bars in my carry-on bag?",

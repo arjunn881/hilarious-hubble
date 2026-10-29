@@ -17,7 +17,24 @@
     "apple earbuds",
     "airpods 4",
     "airpods 3",
-    "airpods 2"
+    "airpods 2",
+    "are airpods allowed in checked luggage",
+    "can airpods go in checked luggage",
+    "airpods checked bag",
+    "can you bring airpods on a plane",
+    "에어팟 위탁수하물",
+    "airpods in checked luggage",
+    "airpods 機内持ち込み",
+    "airpods 飛行機 預け荷物",
+    "airpods 飛行機 預けて しまっ た",
+    "비행기 무선이어폰",
+    "airpods 飛行機 持ち込み",
+    "airpods 預け荷物",
+    "are airpods allowed on planes",
+    "에어팟 기내반입",
+    "can i bring airpods on a plane",
+    "에어팟 수하물",
+    "airpods 預け荷物 国際線"
   ],
   "keywords": [
     "airpods",
@@ -27,7 +44,29 @@
     "earphones",
     "headphones",
     "audio",
-    "carry on"
+    "carry on",
+    "can you bring airpods on a plane",
+    "are airpods allowed in checked luggage",
+    "can i put airpods in checked luggage",
+    "can airpods go in checked luggage",
+    "airpods allowed in check in baggage",
+    "can i carry airpods in checked luggage",
+    "is airpods allowed in checked luggage",
+    "airpods in checked luggage",
+    "are airpods allowed on planes",
+    "can i bring airpods on a plane",
+    "airpods allowed in checked luggage",
+    "에어팟 위탁수하물",
+    "airpods 機内持ち込み",
+    "airpods 飛行機 預け荷物",
+    "airpods 飛行機 預けて しまっ た",
+    "비행기 무선이어폰",
+    "airpods 飛行機 持ち込み",
+    "airpods 預け荷物",
+    "에어팟 기내반입",
+    "darf man airpods mit ins flugzeug nehmen",
+    "에어팟 수하물",
+    "airpods 預け荷物 国際線"
   ],
   "description": "Apple AirPods and wireless earbuds TSA carry-on and checked bag rules.",
   "carryOn": {
@@ -99,7 +138,11 @@
     "AirPods Pro and AirPods Max are allowed on all major airlines in carry-on bags.",
     "Remove AirPods from security bin and place in carry-on before X-ray screening."
   ],
-  "relatedItems": ["earbuds", "headphones", "bluetooth-speaker"],
+  "relatedItems": [
+    "earbuds",
+    "headphones",
+    "bluetooth-speaker"
+  ],
   "faq": [
     {
       "question": "Can I bring AirPods on a plane in my carry-on?",

@@ -7,13 +7,19 @@
   "aliases": [
     "spare battery",
     "lithium battery",
-    "rechargeable battery"
+    "rechargeable battery",
+    "카메라 배터리 기내 반입",
+    "카메라 배터리 비행기",
+    "기내 카메라 배터리"
   ],
   "keywords": [
     "battery",
     "camera",
     "lithium",
-    "spare"
+    "spare",
+    "카메라 배터리 기내 반입",
+    "카메라 배터리 비행기",
+    "기내 카메라 배터리"
   ],
   "description": "Guidelines for traveling with camera battery in your luggage.",
   "carryOn": {

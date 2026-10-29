@@ -47,11 +47,11 @@ export interface LocaleMeta {
 export const localeMeta: Record<Lang, LocaleMeta> = {
   en: { hreflang: 'en', ogLocale: 'en_US', dir: 'ltr', metaLanguage: 'English', dateLocale: 'en-US' },
   es: { hreflang: 'es', ogLocale: 'es_ES', dir: 'ltr', metaLanguage: 'Spanish', dateLocale: 'es-ES' },
-  ja: { hreflang: 'ja', ogLocale: 'ja_JP', dir: 'ltr', metaLanguage: 'Japanese', dateLocale: 'ja-JP' },
+  ja: { hreflang: 'ja-JP', ogLocale: 'ja_JP', dir: 'ltr', metaLanguage: 'Japanese', dateLocale: 'ja-JP' },
   fr: { hreflang: 'fr', ogLocale: 'fr_FR', dir: 'ltr', metaLanguage: 'French', dateLocale: 'fr-FR' },
   de: { hreflang: 'de', ogLocale: 'de_DE', dir: 'ltr', metaLanguage: 'German', dateLocale: 'de-DE' },
   pt: { hreflang: 'pt', ogLocale: 'pt_BR', dir: 'ltr', metaLanguage: 'Portuguese', dateLocale: 'pt-BR' },
-  ko: { hreflang: 'ko', ogLocale: 'ko_KR', dir: 'ltr', metaLanguage: 'Korean', dateLocale: 'ko-KR' },
+  ko: { hreflang: 'ko-KR', ogLocale: 'ko_KR', dir: 'ltr', metaLanguage: 'Korean', dateLocale: 'ko-KR' },
   it: { hreflang: 'it', ogLocale: 'it_IT', dir: 'ltr', metaLanguage: 'Italian', dateLocale: 'it-IT' },
 };
 

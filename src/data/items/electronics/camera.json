@@ -29,7 +29,12 @@
     "카메라 기내반입",
     "카메라 배터리 비행기",
     "カメラ 飛行機",
-    "カメラ 機内持ち込み"
+    "カメラ 機内持ち込み",
+    "비행기 카메라 반입",
+    "카메라 배터리 기내 반입",
+    "기내 카메라 배터리",
+    "アクションカメラ 機内持ち込み",
+    "american airlines camera policy"
   ],
   "keywords": [
     "camera",
@@ -46,7 +51,16 @@
     "tripod",
     "korean-air",
     "asiana",
-    "jal"
+    "jal",
+    "비행기 카메라",
+    "카메라 기내반입",
+    "비행기 카메라 반입",
+    "카메라 비행기",
+    "카메라 배터리 기내 반입",
+    "카메라 배터리 비행기",
+    "기내 카메라 배터리",
+    "アクションカメラ 機内持ち込み",
+    "american airlines camera policy"
   ],
   "description": "Guidelines for traveling with cameras, lenses, and batteries in your luggage.",
   "carryOn": {
