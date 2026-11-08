@@ -147,3 +147,4 @@ main().catch((err) => {
   console.error('\n✗ IndexNow ping failed:', err);
   process.exit(1);
 });
+
