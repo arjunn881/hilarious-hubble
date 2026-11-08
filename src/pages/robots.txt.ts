@@ -45,11 +45,12 @@ Allow: /
 # ─────────────────────────────────────────────────────────────────────────────
 User-agent: bingbot
 Allow: /
+Allow: /sitemap-index.xml
+Allow: /sitemap-0.xml
 Disallow: /404
 Disallow: /500
 Disallow: /api/
-Disallow: /*.json$
-Crawl-delay: 2
+Crawl-delay: 1
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 4. SLURP — Yahoo! crawler

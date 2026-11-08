@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "node scripts/build-search-index.js && astro dev --port 3000",
-    "build": "node scripts/build-search-index.js && node scripts/validate.js && astro build",
+    "build": "node scripts/build-search-index.js && node scripts/validate.js && astro build && node scripts/ping-indexnow.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "validate": "node scripts/validate.js",
@@ -25,7 +25,7 @@
     "i18n:paths": "node scripts/i18n/pathcheck.mjs",
     "i18n:overlay": "node scripts/i18n/prosecheck.mjs",
     "i18n:compile": "node scripts/i18n/astrocheck.mjs",
-    "deploy": "npm run build && npx wrangler pages deploy dist --project-name bringonplane"
+    "ping-bing": "node scripts/ping-indexnow.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
