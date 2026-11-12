@@ -187,7 +187,7 @@ Your continued use of BringOnPlane after any changes constitutes your acceptance
       {sections.map(s => (
         <section id={s.id} class="scroll-mt-24 border-b border-hairline pb-10 last:border-0">
           <h2 class="text-base font-semibold text-ink mb-4">{s.title}</h2>
-          <div class="text-sm text-body leading-[1.9] space-y-3" set:html={s.content.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('')} />
+          <div class="text-sm text-body leading-[1.9] space-y-3" set:html={'<!--email_off-->' + s.content.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('') + '<!--/email_off-->'} />
         </section>
       ))}
 

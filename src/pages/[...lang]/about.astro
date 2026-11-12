@@ -143,7 +143,11 @@ const editorialPolicies = [
                 <p class="text-xs text-body leading-relaxed">
                   {p.desc}
                   {i === editorialPolicies.length - 1 && (
-                    <a href="mailto:errors@bringonplane.com" class="text-link hover:underline">errors@bringonplane.com</a>
+                    <>
+                      <Fragment set:html="<!--email_off-->" />
+                      <a href="mailto:errors@bringonplane.com" class="text-link hover:underline">errors@bringonplane.com</a>
+                      <Fragment set:html="<!--/email_off-->" />
+                    </>
                   )}
                 </p>
               </div>

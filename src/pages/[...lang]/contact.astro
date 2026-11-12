@@ -80,6 +80,7 @@ const formStrings = {
           <div>
             <h2 class="text-lg font-semibold tracking-[-0.5px] text-ink mb-5">{t("contact.h2Info")}</h2>
             <div class="space-y-4">
+              <Fragment set:html="<!--email_off-->" />
               <a href="mailto:hello@bringonplane.com" class="flex items-start gap-4 p-4 border border-hairline rounded-md hover:border-link hover:shadow-sm transition-all group bg-canvas">
                 <div class="w-9 h-9 rounded-md bg-link-bg-soft text-link border border-link/15 flex items-center justify-center flex-shrink-0">
                   <Mail class="w-4.5 h-4.5" />
@@ -119,6 +120,7 @@ const formStrings = {
                   <p class="text-sm font-medium text-ink group-hover:text-link transition-colors">partners@bringonplane.com</p>
                 </div>
               </a>
+              <Fragment set:html="<!--/email_off-->" />
             </div>
           </div>
 

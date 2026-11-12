@@ -252,6 +252,7 @@ const canonicalPath = translatePath("/compare/");
       const checkA = statusConfig[itemA.checkedBag.status] || statusConfig.UNKNOWN;
       const carryB = statusConfig[itemB.carryOn.status] || statusConfig.UNKNOWN;
       const checkB = statusConfig[itemB.checkedBag.status] || statusConfig.UNKNOWN;
+      const itemHref = (slug) => i18n.itemBase + slug + "/";
 
       viewport.innerHTML = `
         <!-- Item A Card -->
@@ -261,7 +262,7 @@ const canonicalPath = translatePath("/compare/");
               ${categoryOf(itemA)}
             </span>
             <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink">
-              <a href="${i18n.itemBase}${itemA.slug}/" class="hover:text-link transition-colors focus-visible:underline">${nameOf(itemA)}</a>
+              <a href="${itemHref(itemA.slug)}" class="hover:text-link transition-colors focus-visible:underline">${nameOf(itemA)}</a>
             </h2>
           </header>
 
@@ -310,7 +311,7 @@ const canonicalPath = translatePath("/compare/");
               ${categoryOf(itemB)}
             </span>
             <h2 class="text-xl font-semibold tracking-[-0.6px] text-ink">
-              <a href="${i18n.itemBase}${itemB.slug}/" class="hover:text-link transition-colors focus-visible:underline">${nameOf(itemB)}</a>
+              <a href="${itemHref(itemB.slug)}" class="hover:text-link transition-colors focus-visible:underline">${nameOf(itemB)}</a>
             </h2>
           </header>
 

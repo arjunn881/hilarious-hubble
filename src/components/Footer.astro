@@ -126,9 +126,11 @@ const topGuides = GUIDES.slice(0, 5);
           <li><a href={translatePath("/privacy-policy/")} class="hover:text-blue-600 dark:hover:text-white transition-colors focus-visible:underline">{t("footer.privacy")}</a></li>
           <li><a href={translatePath("/terms/")} class="hover:text-blue-600 dark:hover:text-white transition-colors focus-visible:underline">{t("footer.terms")}</a></li>
           <li>
+            <Fragment set:html="<!--email_off-->" />
             <a href="mailto:legal@bringonplane.com" class="hover:text-blue-600 dark:hover:text-white transition-colors focus-visible:underline notranslate">
               legal@bringonplane.com
             </a>
+            <Fragment set:html="<!--/email_off-->" />
           </li>
         </ul>
       </div>

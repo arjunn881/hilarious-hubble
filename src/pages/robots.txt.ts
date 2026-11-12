@@ -18,6 +18,7 @@ Allow: /
 Disallow: /404
 Disallow: /500
 Disallow: /api/
+Disallow: /cdn-cgi/
 Crawl-delay: 1
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -50,6 +51,7 @@ Allow: /sitemap-0.xml
 Disallow: /404
 Disallow: /500
 Disallow: /api/
+Disallow: /cdn-cgi/
 Crawl-delay: 1
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -194,6 +196,7 @@ Allow: /
 Disallow: /404
 Disallow: /500
 Disallow: /api/
+Disallow: /cdn-cgi/
 Disallow: /*.json$
 Crawl-delay: 5
 

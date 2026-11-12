@@ -2344,7 +2344,7 @@ const homeKeywords = [...new Set(_rawHomeKeywords.map(k => k.trim().toLowerCase(
       }
 
       listContainer.innerHTML = favorites.map(item => `
-        <a href="${dash.itemBase}${item.slug}/" class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-3.5 transition-all">
+        <a href="${dash.itemBase + item.slug + '/'}" class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-3.5 transition-all">
           <div class="flex items-center justify-between gap-3">
             <div>
               <span class="text-sm font-medium text-ink">${item.name}</span>
@@ -2374,7 +2374,7 @@ const homeKeywords = [...new Set(_rawHomeKeywords.map(k => k.trim().toLowerCase(
       }
 
       listContainer.innerHTML = recents.map(item => `
-        <a href="${dash.itemBase}${item.slug}/" class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-3.5 transition-all">
+        <a href="${dash.itemBase + item.slug + '/'}" class="block bg-canvas border border-hairline hover:border-link hover:shadow-level-2 rounded-md p-3.5 transition-all">
           <div class="flex items-center justify-between gap-3">
             <div>
               <span class="text-sm font-medium text-ink">${item.name}</span>
@@ -2722,7 +2722,8 @@ const homeKeywords = [...new Set(_rawHomeKeywords.map(k => k.trim().toLowerCase(
     }
 
     if (fullLink) {
-      fullLink.href = `${S.itemBase || '/items/'}${item.slug}/`;
+      const itemBase = S.itemBase || ["", "items", ""].join("/");
+      fullLink.href = itemBase + item.slug + "/";
       // textContent, not innerHTML: several locales render an ampersand here.
       fullLink.textContent = `${S.readFullRules || 'Read Full TSA Rules & Guide'} →`;
     }
