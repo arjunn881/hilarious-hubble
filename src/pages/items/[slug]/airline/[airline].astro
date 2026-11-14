@@ -213,11 +213,41 @@ const faqSchema = {
     }
   }))
 };
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": seoTitle,
+  "description": seoDescription,
+  "url": currentUrl,
+  "inLanguage": "en",
+  "datePublished": item.metadata?.lastReviewed || "2026-11-14",
+  "dateModified": item.metadata?.lastReviewed || "2026-11-14",
+  "author": {
+    "@type": "Organization",
+    "name": "BringOnPlane Editorial Team",
+    "url": "https://bringonplane.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "BringOnPlane",
+    "url": "https://bringonplane.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bringonplane.com/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": currentUrl
+  }
+};
 ---
 
 <Layout title={seoTitle} description={seoDescription} canonicalURL={currentUrl}>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)} />
 
   <Header slot="header" />
 
