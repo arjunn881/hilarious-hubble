@@ -419,6 +419,9 @@
 /it/category/tobacco-and-smoking/ /it/items/page/1/ 301
 
 # ── DYNAMIC RULES (MUST STAY AT BOTTOM — max 100 allowed) ───────────────────
+http://bringonplane.com/*      https://bringonplane.com/:splat 301!
+http://www.bringonplane.com/*  https://bringonplane.com/:splat 301!
+https://www.bringonplane.com/* https://bringonplane.com/:splat 301!
 /items/:slug/country/united-kingdom  /items/:slug/country/uk/ 301
 /items/:slug/country/united-kingdom/ /items/:slug/country/uk/ 301
 /items/:slug/country/united-states   /items/:slug/country/usa/ 301

@@ -19,6 +19,8 @@ Disallow: /404
 Disallow: /500
 Disallow: /api/
 Disallow: /cdn-cgi/
+Disallow: /*?*
+Disallow: /*{search_term_string}*
 Crawl-delay: 1
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -52,6 +54,8 @@ Disallow: /404
 Disallow: /500
 Disallow: /api/
 Disallow: /cdn-cgi/
+Disallow: /*?*
+Disallow: /*{search_term_string}*
 Crawl-delay: 1
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -197,6 +201,8 @@ Disallow: /404
 Disallow: /500
 Disallow: /api/
 Disallow: /cdn-cgi/
+Disallow: /*?*
+Disallow: /*{search_term_string}*
 Disallow: /*.json$
 Crawl-delay: 5
 
