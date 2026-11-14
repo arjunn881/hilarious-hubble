@@ -2,7 +2,7 @@
 title: "Can You Bring Protein Powder on a Plane? TSA Rules (2026)"
 description: "Protein powder is allowed on planes — here's how much you can bring, whether it needs to go in a checked bag, and what happens at TSA security with supplements."
 category: "Food & Snacks"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

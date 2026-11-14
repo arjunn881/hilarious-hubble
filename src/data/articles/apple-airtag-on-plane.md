@@ -2,7 +2,7 @@
 title: "Can You Put an Apple AirTag in Checked Luggage? FAA & Airline Rules Explained"
 description: "Are Apple AirTags allowed in checked baggage? Learn official FAA, EASA, TSA, Air France, Lufthansa, and Emirates rules for Bluetooth luggage trackers."
 category: "Electronics"
-lastUpdated: "2026-08-26"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

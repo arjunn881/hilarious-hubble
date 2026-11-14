@@ -2,7 +2,7 @@
 title: "TSA 3-1-1 Liquids Rule: The Ultimate Packing Guide"
 description: "Learn how to pack liquids, gels, and aerosols for your flight under the official TSA 3-1-1 guidelines."
 category: "Liquids"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: true
 ---

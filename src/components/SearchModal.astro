@@ -174,7 +174,8 @@ const searchConfig = {
   }
 
   function itemUrl(slug: string): string {
-    return `${config.itemBase}/${slug}/`;
+    const base = config.itemBase.endsWith('/') ? config.itemBase.slice(0, -1) : config.itemBase;
+    return `${base}/${slug}/`;
   }
 
   /** Localised label for a raw `carryOn` / `checked` status value. */

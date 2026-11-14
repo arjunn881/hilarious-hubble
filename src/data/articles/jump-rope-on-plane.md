@@ -2,7 +2,7 @@
 title: "Can You Bring a Jump Rope on a Plane? Carry-On vs. Checked Bag Rules"
 description: "Can you bring a jump rope in your carry-on luggage? Learn TSA rules for skipping ropes, weighted speed ropes, and airport workout gear packing tips."
 category: "Sports & Outdoors"
-lastUpdated: "2026-08-26"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 affiliateLinks:

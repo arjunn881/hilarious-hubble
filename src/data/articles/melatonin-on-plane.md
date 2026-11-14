@@ -2,7 +2,7 @@
 title: "Can You Bring Melatonin on a Plane? TSA, UK, France & Singapore Customs Rules"
 description: "Comprehensive guide to flying with melatonin tablets and gummies. TSA rules, UK CAA prescription status, France regulations, and Singapore HSA customs rules."
 category: "Medicine & Health"
-lastUpdated: "2026-08-26"
+lastUpdated: "2026-11-14"
 isMedical: true
 isLegal: false
 affiliateLinks:

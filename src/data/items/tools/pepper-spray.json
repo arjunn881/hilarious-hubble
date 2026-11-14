@@ -91,7 +91,11 @@
     "Make sure your checked pepper spray has a physical twist lock to avoid accidental discharge inside your suitcase.",
     "Do NOT travel internationally with pepper spray under any circumstances."
   ],
-  "relatedItems": ["pocket-knife", "swiss-army-knife", "utility-knife"],
+  "relatedItems": [
+    "pocket-knife",
+    "swiss-army-knife",
+    "utility-knife"
+  ],
   "faq": [
     {
       "question": "Can I bring pepper spray in my carry-on bag?",
@@ -107,8 +111,8 @@
     }
   ],
   "metadata": {
-    "lastReviewed": "2026-08-01",
-    "nextReviewDue": "2027-08-01",
+    "lastReviewed": "2026-11-14",
+    "nextReviewDue": "2027-11-14",
     "reviewIntervalMonths": 12,
     "editor": "BringOnPlane Editorial Team",
     "version": "1.0.0"

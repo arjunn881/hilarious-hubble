@@ -2,7 +2,7 @@
 title: "Can You Bring an Extension Cord on a Plane? TSA Rules"
 description: "Can you bring an extension cord on a plane? TSA rules for power strips, surge protectors, and extension cords in carry-on and checked baggage explained."
 category: "Electronics"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

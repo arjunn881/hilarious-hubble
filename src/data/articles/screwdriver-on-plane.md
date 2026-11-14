@@ -2,7 +2,7 @@
 title: "Can You Bring a Screwdriver on a Plane? TSA Rules for Tools"
 description: "Can you bring a screwdriver on a plane? TSA rules for screwdrivers, multi-tools, and hand tools in carry-on and checked baggage — full guide."
 category: "Tools & Sharp Objects"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

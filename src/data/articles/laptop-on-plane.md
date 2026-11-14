@@ -2,7 +2,7 @@
 title: "Can You Bring a Laptop on a Plane? TSA Rules for Electronics"
 description: "Can you bring a laptop on a plane? TSA rules for laptops in carry-on and checked bags, how to pack at security, and international rules for electronics."
 category: "Electronics"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

@@ -2,7 +2,7 @@
 title: "7 Secret TSA Checkpoint Exemptions Most Passengers Don't Know About (2026 Rules)"
 description: "From medically necessary liquids over 3.4 oz to frozen breast milk and contact solution: learn the 7 official TSA checkpoint exemptions you can legally use."
 category: "Travel Security"
-lastUpdated: "2026-10-08"
+lastUpdated: "2026-11-14"
 isMedical: true
 isLegal: true
 image: "/images/discover/secret-tsa-exemptions-travelers-dont-know.jpg"

@@ -2,7 +2,7 @@
 title: "Can You Bring Tweezers on a Plane? TSA Rules for Grooming Tools"
 description: "Can you bring tweezers on a plane? TSA rules for tweezers in carry-on and checked baggage, plus what other grooming tools are and aren't allowed."
 category: "Tools & Sharp Objects"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

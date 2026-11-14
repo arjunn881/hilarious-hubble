@@ -2,7 +2,7 @@
 title: "Why TSA Considers Peanut Butter a Liquid: The Science & Airport Security Rule Behind the Controversy"
 description: "Why does TSA confiscate peanut butter at airport security? Discover the official 49 CFR § 1540.111 liquid rule, the sandwich loophole, and traveler workarounds."
 category: "Food"
-lastUpdated: "2026-10-08"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: true
 image: "/images/discover/why-peanut-butter-is-liquid-tsa.jpg"

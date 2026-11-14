@@ -2,7 +2,7 @@
 title: "ORD TSA Wait Times: Chicago O'Hare Security Lines & Terminal Guide (2026)"
 description: "Live Chicago O'Hare (ORD) TSA wait times by terminal. Breakdown of Terminals 1, 2, 3 & 5 checkpoints, peak hours, PreCheck & CLEAR lines, and tips to skip lines."
 category: "Security"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

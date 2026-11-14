@@ -2,7 +2,7 @@
 title: "5 Viral Airport Security 'Hacks' Put to the Test: What Actually Passes TSA (and What Gets You Stopped)"
 description: "Can you freeze water bottles to bypass 3-1-1 liquids rules? Does the pillowcase luggage hack work on airlines? We tested 5 viral airport travel hacks."
 category: "Travel Security"
-lastUpdated: "2026-10-08"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: true
 image: "/images/discover/viral-tsa-travel-hacks-tested.jpg"

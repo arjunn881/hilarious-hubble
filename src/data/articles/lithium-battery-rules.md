@@ -2,7 +2,7 @@
 title: "Lithium Battery Safety Rules on Planes: TSA & FAA Guidelines (2026)"
 description: "Complete guide to TSA and FAA lithium battery regulations: Watt-hour (Wh) capacity limits for power banks, laptops, vape batteries, and checked bag prohibitions."
 category: "Electronics"
-lastUpdated: "2026-08-20"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: true
 ---

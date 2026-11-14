@@ -2,7 +2,7 @@
 title: "MIA TSA Wait Times: Miami Airport Security Lines & Concourse Guide (2026)"
 description: "Live Miami International Airport (MIA) TSA wait times. Concourse D, E, F, G, H & J checkpoint breakdown, international peak hours, PreCheck lines, and tips."
 category: "Security"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

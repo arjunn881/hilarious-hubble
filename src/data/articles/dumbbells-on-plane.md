@@ -2,7 +2,7 @@
 title: "Can You Bring Dumbbells on a Plane? TSA Rules for Gym Equipment"
 description: "Can you bring dumbbells on a plane? TSA rules for weights, dumbbells, and gym equipment in carry-on and checked baggage explained for fitness travelers."
 category: "Sports & Outdoors"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

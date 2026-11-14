@@ -80,7 +80,11 @@
     "Pack common travel essentials: blister bandages, ibuprofen, antidiarrheal tablets, and rehydration salts in your carry-on for easy access in-flight.",
     "Medical shears under 4 inches from the fulcrum pass TSA, but pack them visibly near the top of your bag."
   ],
-  "relatedItems": ["scissors", "ibuprofen", "thermometer"],
+  "relatedItems": [
+    "scissors",
+    "ibuprofen",
+    "thermometer"
+  ],
   "faq": [
     {
       "question": "Can I bring a first aid kit in my carry-on bag?",
@@ -96,8 +100,8 @@
     }
   ],
   "metadata": {
-    "lastReviewed": "2026-08-01",
-    "nextReviewDue": "2027-08-01",
+    "lastReviewed": "2026-11-14",
+    "nextReviewDue": "2027-11-14",
     "reviewIntervalMonths": 12,
     "editor": "BringOnPlane Editorial Team",
     "version": "1.0.0"

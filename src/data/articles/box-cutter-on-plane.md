@@ -2,7 +2,7 @@
 title: "Can You Bring a Box Cutter on a Plane? TSA Rules Explained"
 description: "Can you bring a box cutter on a plane? Learn TSA rules for box cutters and utility knives in carry-on vs. checked baggage, and what happens at security."
 category: "Tools & Sharp Objects"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

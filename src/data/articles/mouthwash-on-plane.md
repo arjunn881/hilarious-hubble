@@ -2,7 +2,7 @@
 title: "Can You Bring Mouthwash on a Plane? TSA Liquid Rules Explained"
 description: "Can you bring mouthwash on a plane? Learn the TSA liquid limits for mouthwash in carry-on bags and how to pack it in checked luggage for your trip."
 category: "Liquids"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

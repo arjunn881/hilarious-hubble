@@ -2,7 +2,7 @@
 title: "Can You Bring Batteries on a Plane? TSA Rules for AA, AAA & Lithium"
 description: "Can you bring batteries on a plane? Full TSA rules for AA, AAA, lithium, and rechargeable batteries in carry-on and checked bags — with airline limits."
 category: "Electronics"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

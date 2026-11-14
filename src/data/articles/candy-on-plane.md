@@ -2,7 +2,7 @@
 title: "Can You Bring Candy on a Plane? TSA Rules for Sweets & Chocolate"
 description: "Can you bring candy on a plane? TSA rules for candy, chocolate, gummies, and sweets in carry-on bags and checked luggage on domestic and international flights."
 category: "Food & Snacks"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

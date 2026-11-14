@@ -2,7 +2,7 @@
 title: "Can You Bring Protein Bars on a Plane? TSA Rules for Snacks"
 description: "Can you bring protein bars on a plane? TSA rules for protein bars, energy bars, and snacks in carry-on and checked baggage on domestic and international flights."
 category: "Food & Snacks"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

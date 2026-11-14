@@ -2,7 +2,7 @@
 title: "TSA PreCheck: Cost, Application, Renewal & Is It Worth It? (2026)"
 description: "Everything about TSA PreCheck — how much it costs, how to apply, how long it lasts, how to renew, and whether it's worth it. Includes global entry comparison."
 category: "Security"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

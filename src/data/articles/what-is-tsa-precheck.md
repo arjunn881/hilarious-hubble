@@ -2,7 +2,7 @@
 title: "What Is TSA PreCheck? How It Works, Benefits, and Setup (2026)"
 description: "Everything you need to know about TSA PreCheck: what it is, how it works at airport security checkpoints, eligibility, benefits, and how to use your KTN."
 category: "Security"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

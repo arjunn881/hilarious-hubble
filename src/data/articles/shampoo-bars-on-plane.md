@@ -2,7 +2,7 @@
 title: "Can You Bring Shampoo Bars on a Plane? TSA Rules Explained (2026)"
 description: "Shampoo bars are solid — they are NOT subject to TSA liquid rules. Any size is allowed in carry-on with no restrictions. Here's the full guide to flying with solid shampoo."
 category: "Liquids"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

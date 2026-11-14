@@ -2,7 +2,7 @@
 title: "TSA Wait Times: How to Check Security Lines at IAH, LAX, JFK, DFW & More"
 description: "How to check TSA wait times at any airport. Live wait time tools for IAH, LAX, JFK, DFW and all major US airports. Tips to avoid the longest security lines."
 category: "Security"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

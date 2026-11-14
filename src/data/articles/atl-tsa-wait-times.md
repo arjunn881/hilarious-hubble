@@ -2,7 +2,7 @@
 title: "ATL TSA Wait Times: Atlanta Airport Security Lines & Checkpoints (2026)"
 description: "Live Atlanta Hartsfield-Jackson (ATL) TSA wait times. Main, North, South, and International checkpoint breakdown, peak travel hours, PreCheck lines, and tips."
 category: "Security"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

@@ -2,7 +2,7 @@
 title: "Can You Bring a Carry-On AND a Personal Item on a Plane? Full Rules (2026)"
 description: "Yes — most airlines allow one carry-on bag plus one personal item. Here's what counts as a personal item, size limits, and how every major airline enforces the rule."
 category: "Carry-On Rules"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

@@ -2,7 +2,7 @@
 title: "Can You Bring Shampoo and Conditioner on a Plane? TSA Rules"
 description: "Can you bring shampoo and conditioner on a plane? TSA carry-on liquid limits, travel-size rules, and how to pack full-size bottles in checked bags."
 category: "Liquids"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

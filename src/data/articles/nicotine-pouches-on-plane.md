@@ -2,7 +2,7 @@
 title: "Can You Bring Nicotine Pouches (ZYN) on a Plane? Airport Rules & Singapore Ban"
 description: "Direct guide to flying with nicotine pouches (ZYN, snus, tobacco-free pouches). Carry-on vs checked rules, TSA guidelines, and Singapore Changi Airport prohibition."
 category: "Personal Care"
-lastUpdated: "2026-08-26"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: true
 ---

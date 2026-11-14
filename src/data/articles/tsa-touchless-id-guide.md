@@ -2,7 +2,7 @@
 title: "TSA Confirm ID & Touchless ID: How TSA PreCheck Identity Verification Works"
 description: "What is TSA Confirm ID and TSA Touchless ID? Learn how identity verification works at airport security, how IDEMIA TSA PreCheck fits in, and what to expect."
 category: "Security"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

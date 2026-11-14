@@ -2,7 +2,7 @@
 title: "Can You Bring Tent Stakes on a Plane? TSA Rules for Camping Gear"
 description: "Planning a camping trip and flying? Find out if tent stakes, tent pegs, and poles are allowed in carry-on or checked baggage under TSA rules."
 category: "Sports & Outdoors"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

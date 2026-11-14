@@ -2,7 +2,7 @@
 title: "Can You Bring Hot Sauce on a Plane? TSA Liquid Rules for Condiments"
 description: "Can you bring hot sauce on a plane? TSA carry-on limits for hot sauce bottles, and how to pack full-size hot sauce in checked baggage without issues."
 category: "Food & Snacks"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

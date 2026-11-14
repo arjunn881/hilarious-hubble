@@ -2,7 +2,7 @@
 title: "Can You Bring an Electric Toothbrush on a Plane? TSA Rules (2026)"
 description: "Electric toothbrushes are allowed in carry-on and checked bags. Here are the exact TSA rules, battery rules for different models, and how to pack one safely."
 category: "Electronics"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

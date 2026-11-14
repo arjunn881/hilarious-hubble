@@ -2,7 +2,7 @@
 title: "Traveling with Baby Formula & Breast Milk: TSA Rules (2026)"
 description: "Complete guide to TSA rules for flying with baby formula, pumped breast milk, juice, baby food purees, cooling gel packs, and checkpoint screening procedures."
 category: "Baby"
-lastUpdated: "2026-08-20"
+lastUpdated: "2026-11-14"
 isMedical: true
 isLegal: false
 ---

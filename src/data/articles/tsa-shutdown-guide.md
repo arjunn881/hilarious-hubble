@@ -2,7 +2,7 @@
 title: "What Is TSA? TSA Shutdowns, Agent Pay & Everything You Need to Know"
 description: "What does TSA stand for? What happens during a TSA shutdown? How much do TSA agents make? Complete guide to the Transportation Security Administration."
 category: "Security"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

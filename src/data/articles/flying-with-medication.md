@@ -2,7 +2,7 @@
 title: "Flying with Medication: TSA Checkpoint & Airline Rules (2026)"
 description: "Official guide to traveling with medication: TSA exemptions for liquid medicine, pill organizers, injectable insulin, refrigeration ice packs, and international customs rules."
 category: "Medicine"
-lastUpdated: "2026-08-20"
+lastUpdated: "2026-11-14"
 isMedical: true
 isLegal: false
 ---

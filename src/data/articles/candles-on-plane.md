@@ -2,7 +2,7 @@
 title: "Can You Bring Candles on a Plane? TSA Rules for Wax & Scented Candles"
 description: "Can you bring candles on a plane? TSA rules for wax candles, scented candles, and gel candles in carry-on and checked baggage fully explained."
 category: "Household Items"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

@@ -2,7 +2,7 @@
 title: "Can You Bring Honey on a Plane? TSA Rules & Canada Customs"
 description: "Can you bring honey on a plane? Learn TSA carry-on limits, international rules, and how to bring honey to Canada, Australia, and other countries."
 category: "Food & Snacks"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 affiliateLinks:

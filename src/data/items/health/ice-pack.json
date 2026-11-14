@@ -83,7 +83,11 @@
     "If keeping medication or breast milk cold, declare the ice pack to the TSA officer before screening begins.",
     "Pack a backup ziplock bag — if your ice pack is confiscated, you can ask for ice at an airport restaurant after passing security."
   ],
-  "relatedItems": ["insulin", "breast-milk", "heating-pad"],
+  "relatedItems": [
+    "insulin",
+    "breast-milk",
+    "heating-pad"
+  ],
   "faq": [
     {
       "question": "Can I take an ice pack through TSA security?",
@@ -99,8 +103,8 @@
     }
   ],
   "metadata": {
-    "lastReviewed": "2026-08-01",
-    "nextReviewDue": "2027-08-01",
+    "lastReviewed": "2026-11-14",
+    "nextReviewDue": "2027-11-14",
     "reviewIntervalMonths": 12,
     "editor": "BringOnPlane Editorial Team",
     "version": "1.0.0"

@@ -2,7 +2,7 @@
 title: "Can You Bring a Beard Trimmer on a Plane? TSA Rules Explained"
 description: "Can you bring a beard trimmer or electric shaver on a plane? Full TSA carry-on and checked baggage rules for trimmers, electric razors, and shavers."
 category: "Electronics"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

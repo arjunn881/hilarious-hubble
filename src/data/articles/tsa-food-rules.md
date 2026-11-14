@@ -2,7 +2,7 @@
 title: "TSA Food Rules Guide: What Snacks & Meals Can You Fly With? (2026)"
 description: "Comprehensive guide to TSA food rules: solid snacks, sandwiches, fresh fruits, canned foods, baked goods, powders, and international customs restrictions."
 category: "Food"
-lastUpdated: "2026-08-20"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: true
 ---

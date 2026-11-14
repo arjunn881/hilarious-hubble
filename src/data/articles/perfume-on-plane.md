@@ -2,7 +2,7 @@
 title: "Can You Bring Perfume on a Plane? TSA Liquid Rules for Fragrances"
 description: "Can you bring perfume on a plane? TSA carry-on limits for perfume, cologne, and body spray. How to pack fragrances safely in carry-on and checked luggage."
 category: "Liquids"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

@@ -2,7 +2,7 @@
 title: "Why Smart Luggage Is Getting Banned at Boarding Gates: The Strict 2026 Battery Rule"
 description: "Built-in USB power banks, GPS trackers, and motorized suitcases are causing frantic repackings at boarding gates. Learn the strict FAA and IATA smart luggage rules."
 category: "Electronics"
-lastUpdated: "2026-10-08"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: true
 image: "/images/discover/smart-luggage-lithium-airline-rules.jpg"

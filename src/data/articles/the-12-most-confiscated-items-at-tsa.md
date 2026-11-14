@@ -2,7 +2,7 @@
 title: "12 Everyday Items TSA Confiscates Every Day (That Travelers Swear Are Allowed)"
 description: "From snow globes and peanut butter to cast iron pans and cordless curling irons: discover the 12 most commonly seized items at airport security checkpoints."
 category: "Travel Security"
-lastUpdated: "2026-10-08"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: true
 image: "/images/discover/the-12-most-confiscated-items-at-tsa.jpg"

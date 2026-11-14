@@ -2,7 +2,7 @@
 title: "TSA 3-1-1 Liquids Rule Explained: Complete Carry-On Limits (2026)"
 description: "Everything you need to know about the TSA 3-1-1 liquids rule: container size limits, quart-sized bags, medical exemptions, and checkpoint screening procedures."
 category: "Liquids"
-lastUpdated: "2026-08-20"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: true
 ---

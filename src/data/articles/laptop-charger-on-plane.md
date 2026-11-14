@@ -2,7 +2,7 @@
 title: "Can You Put a Laptop Charger in Checked Luggage? TSA & Airline Power Brick Rules"
 description: "Can you check a laptop charger or must it go in carry-on? Direct explanation of power brick vs power bank rules, lithium battery confusion, and airline safety."
 category: "Electronics"
-lastUpdated: "2026-08-26"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---

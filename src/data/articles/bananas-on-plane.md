@@ -2,7 +2,7 @@
 title: "Can You Bring Bananas on a Plane? TSA & Customs Rules"
 description: "Can you bring bananas through TSA or on a plane? Find out the carry-on rules, international customs restrictions, and what happens at airport security."
 category: "Food & Snacks"
-lastUpdated: "2026-08-10"
+lastUpdated: "2026-11-14"
 isMedical: false
 isLegal: false
 ---
