@@ -30,7 +30,6 @@ import {
   getStepByStepPackingGuide,
   getExpandedItemFAQs
 } from "../../../../lib/contentGenerator";
-import { getCountryFAQs, getSpeakableSummary } from "../../../../lib/combinationEngine";
 import EEATBanner from "../../../../components/seo/EEATBanner.astro";
 import Breadcrumbs from "../../../../components/seo/Breadcrumbs.astro";
 import RelatedLinksWidget from "../../../../components/seo/RelatedLinksWidget.astro";
@@ -130,10 +129,49 @@ const carryOnVerdict = item.carryOn.status === 'ALLOWED' ? 'YES' : item.carryOn.
 const seoTitle = `Can You Bring ${item.name} to ${country.name}? [${carryOnVerdict} Carry-On] (${currentYear} Customs Rules)`;
 const seoDescription = `Can you bring ${item.name.toLowerCase()} to ${country.name}? Learn ${country.name} (${country.agency}) customs rules, declaration requirements, carry-on status & checked baggage limits.`;
 
-const featuredSnippetAnswer = getSpeakableSummary(item, { type: 'country', name: country.name });
+const featuredSnippetAnswer = item.carryOn.status === 'ALLOWED'
+  ? `Yes — ${item.name} is allowed when traveling to ${country.name}. ${country.declarationLimit} ${item.carryOn.reason || ''}`
+  : item.carryOn.status === 'NOT_ALLOWED'
+  ? `No — ${item.name} is prohibited in carry-on luggage when flying to ${country.name}. ${item.carryOn.reason || ''}`
+  : `${item.name} is restricted when bringing it to ${country.name}. ${country.declarationLimit} ${item.carryOn.reason || ''}`;
 
-// Category-intelligent, country-customs specific FAQs targeting real search queries
-const faqs = getCountryFAQs(item, country);
+// 8 Unique Detailed FAQs
+const faqs = [
+  {
+    q: `Can I bring ${item.name.toLowerCase()} to ${country.name}?`,
+    a: `Yes, you can carry it, subject to local customs regulations. At airport security checks in ${country.name} (${country.agency}), carry-on status is ${item.carryOn.status.replace("_", " ")} and checked baggage status is ${item.checkedBag.status.replace("_", " ")}.`
+  },
+  {
+    q: `Do I need to declare ${item.name.toLowerCase()} at ${country.name} customs?`,
+    a: `For most consumer goods, routine declaration isn't required. However, ${country.declarationLimit}`
+  },
+  {
+    q: `Is ${item.name.toLowerCase()} prohibited in checked bags when flying to ${country.name}?`,
+    a: item.checkedBag.status === 'ALLOWED' 
+      ? `No, ${country.name} permits packing it in your checked holds.`
+      : `Aviation and customs rules restrict or prohibit packing ${item.name.toLowerCase()} in checked holds.`
+  },
+  {
+    q: `What happens if I fail to declare restricted ${item.name.toLowerCase()} in ${country.name}?`,
+    a: `Customs agents will confiscate the item, and you could face significant delays, fines, or loss of duty-free entry privileges.`
+  },
+  {
+    q: `Can I travel with medical ${item.name.toLowerCase()} to ${country.name}?`,
+    a: `Yes, but ensure you carry a doctor's prescription or original packaging to clear security checks smoothly.`
+  },
+  {
+    q: `Does ${country.name} allow carrying lithium batteries like ${item.name.toLowerCase()}?`,
+    a: `Yes, but batteries must be under 100Wh (or 160Wh with airline approval) and carried in the cabin only.`
+  },
+  {
+    q: `How does ${country.name} airport security screen my ${item.name.toLowerCase()}?`,
+    a: `Security checkpoints utilize X-ray screening and manual baggage checks. Be prepared to remove it from your bag if requested.`
+  },
+  {
+    q: `Are liquid rules for ${item.name.toLowerCase()} different in ${country.name}?`,
+    a: `No. Most airports globally enforce the standard 3-1-1 limit (under 100ml / 3.4 oz per container in carry-on bags).`
+  }
+];
 
 // Schema JSON-LD blocks
 const breadcrumbSchema = {
