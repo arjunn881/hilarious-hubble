@@ -22,7 +22,13 @@
     "can you take a mug in hand luggage",
     "tasse im handgepäck",
     "飛行機 マグカップ 持ち込み",
-    "マグカップ 機内持ち込み 国際線"
+    "マグカップ 機内持ち込み 国際線",
+    "can i take mugs in hand luggage",
+    "can you bring ceramic mugs on carry on international",
+    "can i take a mug in my carry on",
+    "can i take a ceramic mug in my carry on",
+    "can you take a mug on a plane",
+    "can you bring a mug on a plane"
   ],
   "keywords": [
     "mug",
@@ -37,7 +43,13 @@
     "tasse im handgepäck",
     "can i bring a mug in my carry on",
     "飛行機 マグカップ 持ち込み",
-    "マグカップ 機内持ち込み 国際線"
+    "マグカップ 機内持ち込み 国際線",
+    "can i take mugs in hand luggage",
+    "can you bring ceramic mugs on carry on international",
+    "can i take a mug in my carry on",
+    "can i take a ceramic mug in my carry on",
+    "can you take a mug on a plane",
+    "can you bring a mug on a plane"
   ],
   "description": "Guidelines for traveling with mug in your luggage.",
   "carryOn": {

@@ -143,6 +143,18 @@ Liquid melatonin drops, sublingual sprays, and tinctures require more careful ha
 
 ## Frequently Asked Questions
 
+### Can you bring melatonin on a plane in a Ziploc bag?
+Yes! TSA allows you to pack melatonin pills, tablets, and gummies in a clear Ziploc bag, travel pill organizer, or weekly dispenser. The TSA does not require vitamins or over-the-counter supplements to be in original manufacturer packaging for domestic flights. For international flights, keeping the original container or label is recommended to ensure quick customs clearance.
+
+### Can you buy melatonin in Singapore airport (Changi)?
+No. You cannot buy melatonin over the counter at Singapore Changi Airport transit pharmacies (such as Guardian or Watsons) because melatonin is classified as a prescription-only pharmaceutical in Singapore. However, you are 100% legally permitted to bring your own personal supply of melatonin (up to 3 months) with you when flying into Singapore.
+
+### Can you take melatonin into Singapore?
+Yes. Arriving international travelers can bring up to a 3-month personal supply of melatonin into Singapore without needing an import license from the Health Sciences Authority (HSA).
+
+### Can you bring melatonin into the UK?
+Yes. Under UK MHRA regulations, melatonin is prescription-only for domestic retail sales, but incoming international passengers can legally bring up to a 3-month personal supply of melatonin into the United Kingdom without a UK doctor's prescription.
+
 ### [Can you bring melatonin gummies on a plane](/items/melatonin/)?
 Yes! [Melatonin gummies](/items/melatonin/) are classified as solid food/supplements. They are allowed in unlimited reasonable quantities in both carry-on bags and checked suitcases with zero liquid restrictions.
 

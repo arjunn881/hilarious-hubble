@@ -42,7 +42,16 @@
     "can i put heels in my carry on",
     "can i have shoes in my carry on",
     "can you take heels in hand luggage",
-    "schuhe ins handgepäck"
+    "schuhe ins handgepäck",
+    "how many shoes allowed in checked baggage",
+    "can i bring high heels in my carry on",
+    "can i take heels in my carry on luggage",
+    "are shoes allowed in carry on luggage",
+    "can i carry shoes in my hand on a plane",
+    "can you bring shoes in your carry-on",
+    "can we carry shoes in hand luggage international",
+    "can you put shoes in your carry on bag",
+    "how many shoes can you bring on a plane"
   ],
   "keywords": [
     "shoes",
@@ -82,7 +91,8 @@
     "can you put shoes in carry on bag",
     "can i carry a pair of shoes on a plane",
     "how many pairs of shoes can you take on a plane",
-    "can i bring shoes in my personal bag"
+    "can i bring shoes in my personal bag",
+    "how many shoes can you bring on a plane"
   ],
   "description": "Guidelines for traveling with shoes in your luggage.",
   "carryOn": {

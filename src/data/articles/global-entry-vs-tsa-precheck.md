@@ -7,7 +7,7 @@ isMedical: false
 isLegal: false
 ---
 
-If you're trying to decide between **Global Entry and TSA PreCheck**, the quick answer is: Global Entry includes PreCheck, costs \ more, and is worth it if you ever fly internationally. PreCheck alone is the better pick if you only fly domestic. Here's the full comparison.
+If you're trying to decide between **Global Entry and TSA PreCheck**, the quick answer is: Global Entry includes PreCheck, costs only $42 more ($120 vs $78 for 5 years), and is worth it if you ever fly internationally. PreCheck alone is the better pick if you only fly domestic. Here's the full comparison.
 
 ---
 

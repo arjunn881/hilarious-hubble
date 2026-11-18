@@ -109,6 +109,15 @@ Travelers consistently lose valuable items due to these frequent misunderstandin
 
 ## Frequently Asked Questions
 
+**Q: How many fluid ounces can you take on a plane?**
+A: In carry-on cabin luggage, each individual liquid container must be **3.4 fluid ounces (100 milliliters)** or less, and all containers must fit inside a single 1-quart transparent resealable bag. In checked baggage, there is no fluid ounce limit for standard toiletries and non-hazardous liquids, subject only to airline suitcase weight allowances.
+
+**Q: Can I bring dry shampoo on a plane?**
+A: Yes. Powder dry shampoo is classified as a solid powder (containers over 12 oz / 350 ml in carry-on require separate X-ray bin inspection). Aerosol dry shampoo is classified as an aerosol liquid and must be in containers of 3.4 oz (100 ml) or less for carry-on luggage. Full-sized aerosol cans must go into checked hold luggage.
+
+**Q: Can you bring honey or hot sauce on a plane?**
+A: Both honey and hot sauce are classified as liquids/gels by the TSA. For carry-on baggage, containers must be 3.4 oz (100 ml) or smaller and fit in your 1-quart liquids bag. Jars or bottles larger than 3.4 oz must be packed in checked baggage.
+
 **Q: What is the TSA liquid limit?**
 A: The TSA liquid limit is 3.4 oz (100ml) per container in carry-on bags. All liquid containers must fit inside one quart-sized (approximately 1-liter) clear, resealable zip-top bag. One bag is allowed per passenger.
 

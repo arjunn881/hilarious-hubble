@@ -288,7 +288,8 @@
       "electric beard trimmer plane",
       "haarschneidemaschine handgepäck",
       "can i take beard trimmer on plane",
-      "electric beard trimmer on plane"
+      "electric beard trimmer on plane",
+      "can you take a beard trimmer on a plane"
     ],
     "keywords": [
       "trimmer",
@@ -353,13 +354,15 @@
       "air canada electric toothbrush",
       "can you take electric toothbrush in hand luggage emirates",
       "razor in carry on",
-      "can you bring a shaving razor on a plane"
+      "can you bring a shaving razor on a plane",
+      "can i bring an electric razor in my carry on"
     ],
     "keywords": [
       "razor",
       "electric",
       "shaver",
-      "shaving"
+      "shaving",
+      "can i bring an electric razor in my carry on"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -376,7 +379,13 @@
       "ryanair hair straightener",
       "can you take hair straighteners in hand luggage ryanair",
       "ryanair hair straighteners",
-      "hair straighteners"
+      "hair straighteners",
+      "can you bring a hair straightener on a plane carry-on",
+      "can i bring a hair straightener in my carry on delta",
+      "can bring hair straightener on plane",
+      "can i take hair straightener on plane",
+      "can u bring hair straightener on plane",
+      "where to pack hair straighteners when flying"
     ],
     "keywords": [
       "straightener",
@@ -387,7 +396,9 @@
       "can you bring a hair straightener on a plane carry-on",
       "can i bring a hair straightener in my carry on delta",
       "can bring hair straightener on plane",
-      "can u bring hair straightener on plane"
+      "can u bring hair straightener on plane",
+      "can i take hair straightener on plane",
+      "where to pack hair straighteners when flying"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -450,7 +461,8 @@
       "eye makeup",
       "マスカラ 液体 飛行機",
       "マスカラ 飛行機",
-      "飛行機 マスカラ"
+      "飛行機 マスカラ",
+      "is mascara considered a liquid when flying canada"
     ],
     "keywords": [
       "mascara",
@@ -462,7 +474,8 @@
       "carry on",
       "マスカラ 液体 飛行機",
       "マスカラ 飛行機",
-      "飛行機 マスカラ"
+      "飛行機 マスカラ",
+      "is mascara considered a liquid when flying canada"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -537,7 +550,11 @@
       "can you bring flint and steel on a plane",
       "are fire starters allowed on planes",
       "着火剤 飛行機",
-      "royal oak tumbleweeds"
+      "royal oak tumbleweeds",
+      "can i pack emergency flint in checked bag?",
+      "can i bring flint and steel on plane",
+      "can you take flint and steel on plane",
+      "is flint and steel allowed on planes"
     ],
     "keywords": [
       "fire starter",
@@ -727,13 +744,15 @@
       "money",
       "bills",
       "coins",
-      "travelers checks"
+      "travelers checks",
+      "can you bring cashews on a plane"
     ],
     "keywords": [
       "money",
       "currency",
       "cash",
-      "dollars"
+      "dollars",
+      "can you bring cashews on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -924,7 +943,13 @@
       "에어팟 기내반입",
       "can i bring airpods on a plane",
       "에어팟 수하물",
-      "airpods 預け荷物 国際線"
+      "airpods 預け荷物 国際線",
+      "can i put airpods in checked luggage",
+      "can i carry airpods in checked luggage",
+      "is airpods allowed in checked luggage",
+      "can i bring airpods on plane",
+      "can you take airpods on a plane",
+      "what about airpods"
     ],
     "keywords": [
       "airpods",
@@ -956,7 +981,10 @@
       "에어팟 기내반입",
       "darf man airpods mit ins flugzeug nehmen",
       "에어팟 수하물",
-      "airpods 預け荷物 国際線"
+      "airpods 預け荷物 国際線",
+      "can i bring airpods on plane",
+      "can you take airpods on a plane",
+      "what about airpods"
     ],
     "carryOn": "ALLOWED",
     "checked": "RESTRICTED",
@@ -1013,7 +1041,19 @@
       "エアタグ 飛行機 預け荷物",
       "are airtags allowed on planes",
       "飛行機 エアタグ",
-      "american airlines airtags"
+      "american airlines airtags",
+      "can you take air tag on plane",
+      "are airtags allowed in checked luggage international",
+      "can i put an airtag in my checked luggage",
+      "can i put airtag in checked luggage",
+      "is airtag allowed in check in luggage",
+      "is airtag allowed in checked luggage",
+      "can i put airtag in my checked luggage",
+      "can you put airtag in checked luggage",
+      "are air tags allowed in checked luggage",
+      "can airtag be put in checked luggage",
+      "can you take airtags on a plane",
+      "is air tag allowed in check in luggage"
     ],
     "keywords": [
       "airtag",
@@ -1071,7 +1111,11 @@
       "airtag 飛行機 機内持ち込み",
       "can you put airtag in checked luggage",
       "エアタグ 飛行機 預け荷物",
-      "飛行機 エアタグ"
+      "飛行機 エアタグ",
+      "can you take air tag on plane",
+      "can airtag be put in checked luggage",
+      "can you take airtags on a plane",
+      "is air tag allowed in check in luggage"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -1510,7 +1554,8 @@
       "oral-b",
       "전동칫솔 위탁수하물",
       "電動歯ブラシ 機内持ち込み",
-      "elektrische zahnbürste flugzeug"
+      "elektrische zahnbürste flugzeug",
+      "can you take electric toothbrush in hand luggage emirates"
     ],
     "keywords": [
       "hygiene",
@@ -1524,7 +1569,8 @@
       "difference between travel insurance and electric toothbrush",
       "electric toothbrush in hand luggage",
       "電動歯ブラシ 機内持ち込み",
-      "elektrische zahnbürste flugzeug"
+      "elektrische zahnbürste flugzeug",
+      "can you take electric toothbrush in hand luggage emirates"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -1557,7 +1603,18 @@
       "extension lead hand luggage",
       "延長コード 飛行機",
       "멀티탭 비행기",
-      "pode levar extensao na mala de mao"
+      "pode levar extensao na mala de mao",
+      "can i bring extension cord on plane international",
+      "can i take a surge protector on a plane",
+      "can you bring an extension cord on a plane",
+      "can i take an extension lead in hand luggage",
+      "can you take an extension lead in hand luggage",
+      "can i bring an extension cord on a plane",
+      "can you take extension cords on a plane",
+      "can i take an extension cord on a plane",
+      "can you bring extension cords on a plane",
+      "can you take an extension lead on a plane",
+      "can extension leads go in hand luggage"
     ],
     "keywords": [
       "cord",
@@ -1580,7 +1637,9 @@
       "can i bring extension cord on plane international",
       "延長コード 飛行機",
       "멀티탭 비행기",
-      "pode levar extensao na mala de mao"
+      "pode levar extensao na mala de mao",
+      "can i take a surge protector on a plane",
+      "are extension cords allowed on planes"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -1601,7 +1660,10 @@
       "playstation on plane",
       "ps5 carry on",
       "xbox on plane",
-      "닌텐도 위탁수하물"
+      "닌텐도 위탁수하물",
+      "can you take a ps5 on a plane australia",
+      "can you bring a ps5 on a plane",
+      "can i bring my ps5 on a plane"
     ],
     "keywords": [
       "gaming",
@@ -1609,7 +1671,10 @@
       "nintendo",
       "playstation",
       "can you take a ps5 on a plane australia",
-      "닌텐도 위탁수하물"
+      "닌텐도 위탁수하물",
+      "can you bring a ps5 on a plane",
+      "can you take a playstation on a plane",
+      "can i bring my ps5 on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -1670,7 +1735,8 @@
       "headphones singapore airlines",
       "are headphones considered electronics tsa",
       "can you put headphones in checked luggage",
-      "over ear headphones"
+      "over ear headphones",
+      "what kind of headphones do you need for delta flight"
     ],
     "keywords": [
       "headphones",
@@ -1679,7 +1745,9 @@
       "wireless",
       "audio",
       "music",
-      "headset"
+      "headset",
+      "are headphones considered electronics",
+      "what kind of headphones do you need for delta flight"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -1708,7 +1776,8 @@
       "can i check in ipad in luggage",
       "아이패드 비행기",
       "비행기 아이패드",
-      "ipad in koffer oder handgepäck"
+      "ipad in koffer oder handgepäck",
+      "can i bring my ipad on a plane"
     ],
     "keywords": [
       "ipad",
@@ -1726,7 +1795,10 @@
       "can i check in ipad in luggage",
       "아이패드 비행기",
       "비행기 아이패드",
-      "ipad in koffer oder handgepäck"
+      "ipad in koffer oder handgepäck",
+      "can i check in my ipad",
+      "can i bring my ipad on a plane",
+      "can i bring ipad on plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -1751,7 +1823,11 @@
       "can kindle go in checked luggage",
       "can kindles go in hold luggage",
       "can kindles go in checked luggage",
-      "can you put kindle in hold luggage"
+      "can you put kindle in hold luggage",
+      "can i use my kindle on a plane",
+      "can i put my kindle in checked baggage",
+      "can i put kindle in checked luggage",
+      "can you put a kindle in a checked bag"
     ],
     "keywords": [
       "kindle",
@@ -1768,7 +1844,10 @@
       "can i put kindle in checked luggage",
       "can kindles go in hold luggage",
       "can kindles go in checked luggage",
-      "can you put kindle in hold luggage"
+      "can you put kindle in hold luggage",
+      "can i use my kindle on a plane",
+      "can i put my kindle in checked baggage",
+      "can you put a kindle in a checked bag"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -1809,7 +1888,25 @@
       "can i check in laptop charger",
       "노트북 충전기 기내반입",
       "노트북 충전기 비행기",
-      "노트북 충전기 수하물"
+      "노트북 충전기 수하물",
+      "are laptop chargers allowed in check-in baggage",
+      "can i bring laptop charger on plane",
+      "can i put my laptop charger in checked luggage",
+      "can laptop charger go in checked luggage",
+      "is a laptop charger a lithium battery",
+      "can you bring laptop charger on plane",
+      "can laptop chargers go in checked luggage",
+      "is a computer charger a lithium battery",
+      "does a laptop charger have a lithium battery",
+      "do computer chargers have lithium batteries",
+      "are laptop chargers allowed in check in baggage",
+      "can a laptop charger go in checked luggage",
+      "does laptop charger have lithium battery",
+      "where to put laptop charger when flying",
+      "where should i put my laptop charger when flying",
+      "where do i put my laptop charger when flying",
+      "where to pack laptop charger when flying",
+      "where to keep laptop charger in flight"
     ],
     "keywords": [
       "charger",
@@ -1839,7 +1936,21 @@
       "노트북 충전기 수하물",
       "can laptop charger go in checked luggage",
       "can you check in laptop charger",
-      "laptop charger in checked luggage"
+      "laptop charger in checked luggage",
+      "is a laptop charger a lithium battery",
+      "can i check in my laptop charger",
+      "can laptop chargers go in checked luggage",
+      "is a computer charger a lithium battery",
+      "does a laptop charger have a lithium battery",
+      "are laptop chargers allowed in check in baggage",
+      "can i put laptop charger in checked luggage",
+      "can a laptop charger go in checked luggage",
+      "does laptop charger have lithium battery",
+      "where to put laptop charger when flying",
+      "where should i put my laptop charger when flying",
+      "where do i put my laptop charger when flying",
+      "where to pack laptop charger when flying",
+      "where to keep laptop charger in flight"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -1875,7 +1986,30 @@
       "can you bring a laptop on a plane",
       "노트북 충전기 수하물",
       "can you check in laptop charger",
-      "laptop charger in checked luggage"
+      "laptop charger in checked luggage",
+      "are laptop chargers allowed in check-in baggage",
+      "do laptop chargers have lithium batteries",
+      "can i bring laptop charger on plane",
+      "can i keep laptop in checked baggage of lufthansa flight",
+      "can i put my laptop charger in checked luggage",
+      "can laptop charger go in checked luggage",
+      "is a laptop charger a lithium battery",
+      "can i check in my laptop charger",
+      "is laptop charger allowed in check in baggage",
+      "can you bring laptop charger on plane",
+      "can laptop chargers go in checked luggage",
+      "does a laptop charger have a lithium battery",
+      "are laptop chargers allowed in check in baggage",
+      "can i put laptop charger in checked luggage",
+      "can a laptop charger go in checked luggage",
+      "does laptop charger have lithium battery",
+      "where to put laptop charger when flying",
+      "where should i put my laptop charger when flying",
+      "where do i put my laptop charger when flying",
+      "what is laptop tsa precheck",
+      "where to pack laptop charger when flying",
+      "what is laptop tsa precheck 2026",
+      "where to keep laptop charger in flight"
     ],
     "keywords": [
       "electronics",
@@ -1913,7 +2047,22 @@
       "노트북 충전기 수하물",
       "can laptop charger go in checked luggage",
       "can you check in laptop charger",
-      "laptop charger in checked luggage"
+      "laptop charger in checked luggage",
+      "is a laptop charger a lithium battery",
+      "can i check in my laptop charger",
+      "can laptop chargers go in checked luggage",
+      "does a laptop charger have a lithium battery",
+      "are laptop chargers allowed in check in baggage",
+      "can i put laptop charger in checked luggage",
+      "can a laptop charger go in checked luggage",
+      "does laptop charger have lithium battery",
+      "where to put laptop charger when flying",
+      "where should i put my laptop charger when flying",
+      "where do i put my laptop charger when flying",
+      "what is laptop tsa precheck",
+      "where to pack laptop charger when flying",
+      "what is laptop tsa precheck 2026",
+      "where to keep laptop charger in flight"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -1945,7 +2094,20 @@
       "ba lithium battery rules",
       "united lithium battery policy",
       "power bank limit on plane",
-      "united airlines power bank rules"
+      "united airlines power bank rules",
+      "can i travel with a lithium battery",
+      "do laptop chargers have lithium batteries",
+      "can you bring aa batteries on a plane",
+      "can i bring batteries on a plane",
+      "can you take aa batteries on a plane uk",
+      "is a laptop charger a lithium battery",
+      "is a computer charger a lithium battery",
+      "does a laptop charger have a lithium battery",
+      "do computer chargers have lithium batteries",
+      "are cr2032 batteries allowed in checked baggage",
+      "can you take aa batteries on a plane",
+      "are triple a batteries allowed in carry on bags?",
+      "does laptop charger have lithium battery"
     ],
     "keywords": [
       "lithium",
@@ -1972,7 +2134,19 @@
       "united lithium battery policy",
       "power bank limit on plane",
       "can i carry a power bank on the plane",
-      "united airlines power bank rules"
+      "united airlines power bank rules",
+      "do laptop chargers have lithium batteries",
+      "can you bring aa batteries on a plane",
+      "can i bring batteries on a plane",
+      "can you take aa batteries on a plane uk",
+      "is a laptop charger a lithium battery",
+      "is a computer charger a lithium battery",
+      "does a laptop charger have a lithium battery",
+      "do computer chargers have lithium batteries",
+      "are cr2032 batteries allowed in checked baggage",
+      "can you take aa batteries on a plane",
+      "are triple a batteries allowed in carry on bags?",
+      "does laptop charger have lithium battery"
     ],
     "carryOn": "ALLOWED",
     "checked": "NOT_ALLOWED",
@@ -2026,7 +2200,8 @@
       "ba lithium battery rules",
       "united lithium battery policy",
       "power bank limit on plane",
-      "united airlines power bank rules"
+      "united airlines power bank rules",
+      "can i bring a portable charger on a plane delta"
     ],
     "keywords": [
       "charger",
@@ -2053,7 +2228,8 @@
       "united lithium battery policy",
       "power bank limit on plane",
       "can i carry a power bank on the plane",
-      "united airlines power bank rules"
+      "united airlines power bank rules",
+      "can i bring a portable charger on a plane delta"
     ],
     "carryOn": "ALLOWED",
     "checked": "NOT_ALLOWED",
@@ -2207,7 +2383,8 @@
       "비행기 아이패드",
       "비행기 태블릿 반입",
       "ipad in koffer oder handgepäck",
-      "can you bring tablets on a plane"
+      "can you bring tablets on a plane",
+      "can i bring a tablet on an airplane"
     ],
     "keywords": [
       "tablet",
@@ -2256,7 +2433,9 @@
       "singapore airlines vape policy",
       "singapore airlines vapes",
       "british airways vape policy",
-      "튀니지 세관에서 궐련형 전자담배를 압수할 수 있어"
+      "튀니지 세관에서 궐련형 전자담배를 압수할 수 있어",
+      "will the japanese goverment check my bag with a vape in it",
+      "how many vapes can you take on a plane ryanair"
     ],
     "keywords": [
       "vape",
@@ -2267,7 +2446,9 @@
       "singapore airlines vapes",
       "british airways vape policy",
       "will the japanese goverment check my bag with a vape in it",
-      "튀니지 세관에서 궐련형 전자담배를 압수할 수 있어"
+      "튀니지 세관에서 궐련형 전자담배를 압수할 수 있어",
+      "can i take my vape to france",
+      "how many vapes can you take on a plane ryanair"
     ],
     "carryOn": "ALLOWED",
     "checked": "NOT_ALLOWED",
@@ -2304,7 +2485,28 @@
       "posso portare sigarette in aereo",
       "tabakerhitzer handgepäck flugzeug",
       "si può portare una stecca di sigarette in aereo",
-      "can i take cigarettes on a plane"
+      "can i take cigarettes on a plane",
+      "can you bring cigarettes on a plane",
+      "how many cigarettes can i bring to singapore 2026",
+      "can you bring cigarettes on a plane international",
+      "how many cigarettes can you take on a plane",
+      "can i bring cigarettes on a plane",
+      "can you take cigars on a plane uk",
+      "can you bring a carton of cigarettes on an airplane",
+      "can i bring cigarettes in my carry on",
+      "how many packs of cigarettes can you take on a plane",
+      "how many packs of cigarettes can i take on a plane",
+      "how many pack of cigarettes can you take on a plane",
+      "how many cigarette packs can i bring on a plane",
+      "how many cigarettes can i bring to singapore",
+      "how many cigarettes can i take on a plane",
+      "how many packs of cigarettes can you bring on a plane",
+      "how many cigarettes can i bring on a plane",
+      "how many reams of cigarettes allowed in international flights",
+      "how many cigarette packs can you take on a plane",
+      "how many packs of cigarettes can i fly with",
+      "how many packs of cigarettes can i bring to singapore",
+      "how manu cigarates we can carey to singapore"
     ],
     "keywords": [
       "cigarettes",
@@ -2327,7 +2529,27 @@
       "posso portare sigarette in aereo",
       "tabakerhitzer handgepäck flugzeug",
       "si può portare una stecca di sigarette in aereo",
-      "can i take cigarettes on a plane"
+      "can i take cigarettes on a plane",
+      "can i bring a pack of cigarettes in my carry on to singapore",
+      "how many cigarettes can i bring to singapore 2026",
+      "how many cigarettes can you take on a plane",
+      "can i bring cigarettes on a plane",
+      "can you take cigars on a plane uk",
+      "can you bring a carton of cigarettes on an airplane",
+      "can i bring cigarettes in my carry on",
+      "how many packs of cigarettes can you take on a plane",
+      "how many packs of cigarettes can i take on a plane",
+      "how many pack of cigarettes can you take on a plane",
+      "how many cigarette packs can i bring on a plane",
+      "how many cigarettes can i bring to singapore",
+      "how many cigarettes can i take on a plane",
+      "how many packs of cigarettes can you bring on a plane",
+      "how many cigarettes can i bring on a plane",
+      "how many reams of cigarettes allowed in international flights",
+      "how many cigarette packs can you take on a plane",
+      "how many packs of cigarettes can i fly with",
+      "how many packs of cigarettes can i bring to singapore",
+      "how manu cigarates we can carey to singapore"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -2340,12 +2562,60 @@
     "category": "Flammables",
     "aliases": [
       "cigarillos",
-      "cuban cigars"
+      "cuban cigars",
+      "can i bring a pack of cigarettes in my carry on to singapore",
+      "can you bring cigarettes on a plane",
+      "how many cigarettes can i bring to singapore 2026",
+      "can you take cigarettes on a plane",
+      "can you bring cigarettes on a plane international",
+      "how many cigarettes can you take on a plane",
+      "can i bring cigarettes on a plane",
+      "can you take cigars on a plane uk",
+      "can you bring a carton of cigarettes on an airplane",
+      "can i bring cigarettes in my carry on",
+      "can i take cigarettes on a plane",
+      "how many packs of cigarettes can you take on a plane",
+      "how many packs of cigarettes can i take on a plane",
+      "how many pack of cigarettes can you take on a plane",
+      "how many cigarette packs can i bring on a plane",
+      "how many cigarettes can i bring to singapore",
+      "how many cigarettes can i take on a plane",
+      "how many packs of cigarettes can you bring on a plane",
+      "how many cigarettes can i bring on a plane",
+      "how many reams of cigarettes allowed in international flights",
+      "how many cigarette packs can you take on a plane",
+      "how many packs of cigarettes can i fly with",
+      "how many packs of cigarettes can i bring to singapore",
+      "how manu cigarates we can carey to singapore"
     ],
     "keywords": [
       "cigars",
       "tobacco",
-      "smoke"
+      "smoke",
+      "can i bring a pack of cigarettes in my carry on to singapore",
+      "can you bring cigarettes on a plane",
+      "how many cigarettes can i bring to singapore 2026",
+      "can you take cigarettes on a plane",
+      "can you bring cigarettes on a plane international",
+      "how many cigarettes can you take on a plane",
+      "can i bring cigarettes on a plane",
+      "can you take cigars on a plane uk",
+      "can you bring a carton of cigarettes on an airplane",
+      "can i bring cigarettes in my carry on",
+      "can i take cigarettes on a plane",
+      "how many packs of cigarettes can you take on a plane",
+      "how many packs of cigarettes can i take on a plane",
+      "how many pack of cigarettes can you take on a plane",
+      "how many cigarette packs can i bring on a plane",
+      "how many cigarettes can i bring to singapore",
+      "how many cigarettes can i take on a plane",
+      "how many packs of cigarettes can you bring on a plane",
+      "how many cigarettes can i bring on a plane",
+      "how many reams of cigarettes allowed in international flights",
+      "how many cigarette packs can you take on a plane",
+      "how many packs of cigarettes can i fly with",
+      "how many packs of cigarettes can i bring to singapore",
+      "how manu cigarates we can carey to singapore"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -2362,7 +2632,8 @@
       "can i take hookah in flight",
       "hookah carry on",
       "shisha pipe on plane",
-      "une chicha passe t'il en avion"
+      "une chicha passe t'il en avion",
+      "can you take shisha on a domestic flight australia"
     ],
     "keywords": [
       "hookah",
@@ -2370,7 +2641,8 @@
       "pipe",
       "smoke",
       "une chicha passe t'il en avion",
-      "is it allowed to carry hookah in international flight"
+      "is it allowed to carry hookah in international flight",
+      "can you take shisha on a domestic flight australia"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -2399,7 +2671,8 @@
       "feuerzeug flugzeug",
       "accendino in aereo",
       "can i bring lighters on a plane",
-      "can you bring lighters on a plane"
+      "can you bring lighters on a plane",
+      "how many lighters can you take on a plane"
     ],
     "keywords": [
       "lighter",
@@ -2414,7 +2687,8 @@
       "accendino in aereo",
       "can i bring lighters on a plane",
       "can you bring lighters on a plane",
-      "can you take a lighter on a plane"
+      "can you take a lighter on a plane",
+      "how many lighters can you take on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "NOT_ALLOWED",
@@ -2465,7 +2739,8 @@
       "can you take a matchbox on a plane",
       "can i take matches in my carry on",
       "can i fly with matches",
-      "matches in carry on"
+      "matches in carry on",
+      "is matchbox allowed in check in baggage"
     ],
     "keywords": [
       "matchbox",
@@ -2580,7 +2855,48 @@
       "matches in carry on luggage",
       "can you take a matchbox on a plane",
       "can i take matches in my carry on",
-      "can i fly with matches"
+      "can i fly with matches",
+      "can i travel with matches on a plane",
+      "can you bring matches on a carry on",
+      "can you have matches in your carry on",
+      "can u bring matches on a plane",
+      "can you bring matches in a carry on",
+      "can you put matches in a checked bag",
+      "can you fly with matches in carry on",
+      "can you take matches on an airplane",
+      "are matches allowed in checked luggage",
+      "can you pack matches in checked luggage",
+      "can i fly with matches in my carry on",
+      "can you take matches on a carry on",
+      "can you travel with matches",
+      "can you put matches in checked luggage",
+      "can you take a book of matches on an airplane",
+      "can you have matches in checked luggage",
+      "are you allowed to bring matches on a plane",
+      "can matches go in a carry on",
+      "can you bring matches on an airplane",
+      "can you check matches in luggage",
+      "can i put matches in my checked bag",
+      "can you travel with matches in your carry on",
+      "can you take matches in checked luggage",
+      "can i carry matches on an airplane",
+      "can you travel with matches on a plane",
+      "can you bring matches on a flight",
+      "can you take a box of matches on a plane",
+      "can you take matches in carry on",
+      "can you take matches on a plane international",
+      "can i bring a box of matches on a plane",
+      "can you bring matches in your carry on",
+      "are matches allowed on a plane",
+      "can you bring matches on plane",
+      "can you carry on matches on a plane",
+      "can you bring a book of matches on a plane",
+      "are safety matches allowed on planes",
+      "can i check matches in my luggage",
+      "where to pack matches when flying",
+      "how to fly with matches",
+      "what about matches",
+      "where to put matches when flying"
     ],
     "keywords": [
       "matches",
@@ -2643,7 +2959,37 @@
       "matches on plane",
       "can you take a box of matches on a plane",
       "can i take matches in my carry on",
-      "can you take matches on a plane international"
+      "can you take matches on a plane international",
+      "can you bring matches on a carry on",
+      "can u bring matches on a plane",
+      "can you take matches on an airplane",
+      "can i fly with matches in my carry on",
+      "can you take matches on a carry on",
+      "can you travel with matches",
+      "can you put matches in checked luggage",
+      "can you have matches in checked luggage",
+      "are you allowed to bring matches on a plane",
+      "can matches go in a carry on",
+      "can you bring matches on an airplane",
+      "can you check matches in luggage",
+      "can i put matches in my checked bag",
+      "can you travel with matches in your carry on",
+      "can you take matches in checked luggage",
+      "can i carry matches on an airplane",
+      "can you travel with matches on a plane",
+      "can you bring matches on a flight",
+      "can you take matches in carry on",
+      "can you bring matches in your carry on",
+      "are matches allowed on a plane",
+      "can you bring matches on plane",
+      "can you carry on matches on a plane",
+      "can you bring a book of matches on a plane",
+      "are safety matches allowed on planes",
+      "can i check matches in my luggage",
+      "where to pack matches when flying",
+      "how to fly with matches",
+      "what about matches",
+      "where to put matches when flying"
     ],
     "carryOn": "ALLOWED",
     "checked": "NOT_ALLOWED",
@@ -2759,7 +3105,14 @@
       "can you take a banana on a plane",
       "customs+banana",
       "is banana allowed in flight",
-      "can i take a banana through tsa?"
+      "can i take a banana through tsa?",
+      "can i take banana through airport security",
+      "can i take a banana through airport security",
+      "can i take bananas through airport security",
+      "can you take a banana through airport security",
+      "can i bring a banana through airport security",
+      "can you take bananas through airport security",
+      "can you take banana through airport security"
     ],
     "keywords": [
       "bananas",
@@ -2827,7 +3180,10 @@
       "slim jim",
       "meat sticks",
       "jack links",
-      "육포 비행기"
+      "육포 비행기",
+      "is beef jerky allowed through us customs",
+      "can i bring beef jerky to japan",
+      "can you bring beef jerky on a plane"
     ],
     "keywords": [
       "beef jerky",
@@ -2837,7 +3193,10 @@
       "dried meat",
       "food",
       "carry on",
-      "육포 비행기"
+      "육포 비행기",
+      "is beef jerky allowed through us customs",
+      "can i bring beef jerky to japan",
+      "can you bring beef jerky on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -2869,7 +3228,9 @@
       "jolly ranchers",
       "can i bring candy to australia",
       "기내 사탕 반입",
-      "사탕 기내반입"
+      "사탕 기내반입",
+      "can i bring candy on a plane",
+      "how much candy can you bring on a plane"
     ],
     "keywords": [
       "candy",
@@ -2881,7 +3242,10 @@
       "can you bring candy on a plane international flight",
       "can you bring candy on a plane",
       "사탕 기내반입",
-      "can you bring lollies into australia"
+      "can you bring lollies into australia",
+      "can i bring candy on a plane",
+      "how much candy can you bring on a plane",
+      "how much candy can i bring on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -2905,7 +3269,8 @@
       "비행기 통조림",
       "機内持ち込み 缶詰",
       "缶詰 機内持ち込み",
-      "缶詰 飛行機"
+      "缶詰 飛行機",
+      "can i bring canned cat food on a plane"
     ],
     "keywords": [
       "tuna",
@@ -2917,7 +3282,8 @@
       "機内持ち込み 缶詰",
       "canned goods allowed in checked luggage",
       "缶詰 機内持ち込み",
-      "缶詰 飛行機"
+      "缶詰 飛行機",
+      "can i bring canned cat food on a plane"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -2941,7 +3307,8 @@
       "can i bring cat food on a plane",
       "katzenfutter im koffer",
       "can i take cat food on a plane",
-      "can you take cat food on a plane"
+      "can you take cat food on a plane",
+      "can i bring canned cat food on a plane"
     ],
     "keywords": [
       "cat",
@@ -2977,7 +3344,9 @@
       "ポテチ 機内持ち込み",
       "ポテチ飛行機持ち込み",
       "ポテトチップス 飛行機",
-      "ポテチ 飛行機"
+      "ポテチ 飛行機",
+      "can i bring chips on a plane international flight",
+      "can i bring chips through tsa"
     ],
     "keywords": [
       "chips",
@@ -2990,7 +3359,8 @@
       "ポテチ 機内持ち込み",
       "ポテチ飛行機持ち込み",
       "ポテトチップス 飛行機",
-      "ポテチ 飛行機"
+      "ポテチ 飛行機",
+      "can i bring chips through tsa"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3010,7 +3380,8 @@
       "초콜릿 기내반입",
       "can i bring chocolate to canada",
       "posso levar chocolate na bagagem de mão",
-      "기내 초콜릿 반입"
+      "기내 초콜릿 반입",
+      "is a snickers allowed in hand luggage internationally?"
     ],
     "keywords": [
       "candy",
@@ -3027,7 +3398,8 @@
       "posso levar chocolate na mala de mao",
       "기내 초콜릿 반입",
       "se puede llevar chocolate en el equipaje de mano",
-      "can i bring chocolate in my carry on"
+      "can i bring chocolate in my carry on",
+      "is a snickers allowed in hand luggage internationally?"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3142,7 +3514,8 @@
       "can i bring dog food on a plane",
       "can i take dog treats on a plane",
       "can i bring dog treats through tsa",
-      "can i take dog food on a plane"
+      "can i take dog food on a plane",
+      "can you bring dog treats on a plane international"
     ],
     "keywords": [
       "dog",
@@ -3160,7 +3533,8 @@
       "can i take dog treats on a plane",
       "can i bring dog treats through tsa",
       "can i take dog food on a plane",
-      "can i bring dog treats in my carry on"
+      "can i bring dog treats in my carry on",
+      "how to travel with dog food"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3181,7 +3555,18 @@
       "can i bring energy drinks on a plane",
       "can i take monster energy on a plane",
       "monster energy drink",
-      "can i take monster on a plane"
+      "can i take monster on a plane",
+      "can you bring energy drinks on a plane",
+      "can you bring a redbull through tsa",
+      "can you take 5 hour energy on a plane",
+      "can you take energy drinks on a plane",
+      "can i bring a monster energy drink on a plane",
+      "can i take redbull on a plane",
+      "can i take energy drinks on a plane",
+      "can i bring redbull on a plane",
+      "can i bring an energy drink on a plane",
+      "can i bring a redbull through tsa",
+      "can you take monster energy drinks on a plane"
     ],
     "keywords": [
       "energy drink",
@@ -3193,7 +3578,19 @@
       "liquid",
       "can i take monster on a plane",
       "can i bring monster energy on a plane",
-      "can you take 5 hour energy on a plane"
+      "can you take 5 hour energy on a plane",
+      "can you bring energy drinks on a plane",
+      "can you bring a redbull through tsa",
+      "can you take energy drinks on a plane",
+      "can i bring energy drinks on a plane",
+      "can i bring a monster energy drink on a plane",
+      "can i take redbull on a plane",
+      "can i take energy drinks on a plane",
+      "can i bring redbull on a plane",
+      "can i bring an energy drink on a plane",
+      "can i bring a redbull through tsa",
+      "can i take monster energy on a plane",
+      "can you take monster energy drinks on a plane"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -3248,7 +3645,9 @@
       "りんご 飛行機 持ち込み",
       "りんご 飛行機",
       "apple airtag",
-      "darf man äpfel mit ins flugzeug nehmen"
+      "darf man äpfel mit ins flugzeug nehmen",
+      "can i bring fruits into singapore",
+      "can i hand carry fruits on plane to singapore"
     ],
     "keywords": [
       "fruit",
@@ -3260,7 +3659,9 @@
       "りんご 飛行機 持ち込み",
       "りんご 飛行機",
       "apple airtag",
-      "darf man äpfel mit ins flugzeug nehmen"
+      "darf man äpfel mit ins flugzeug nehmen",
+      "can i bring fruits into singapore",
+      "can i hand carry fruits on plane to singapore"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3290,7 +3691,14 @@
       "se puede llevar miel en el avion",
       "puedo llevar miel en el avion",
       "can i take honey on a plane",
-      "can you bring honey into canada"
+      "can you bring honey into canada",
+      "can you take honey on a plane international",
+      "is honey a liquid tsa",
+      "can you take honey on a plane",
+      "is honey considered a liquid when flying",
+      "how much honey can i bring on a plane",
+      "does honey count as a liquid when flying",
+      "how much honey can i take on a plane"
     ],
     "keywords": [
       "honey",
@@ -3311,7 +3719,12 @@
       "se puede llevar miel en el avion",
       "puedo llevar miel en el avion",
       "can i take honey on a plane",
-      "can you bring honey into canada"
+      "can you bring honey into canada",
+      "is honey a liquid tsa",
+      "can you take honey on a plane",
+      "how much honey can i bring on a plane",
+      "does honey count as a liquid when flying",
+      "how much honey can i take on a plane"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -3333,7 +3746,10 @@
       "hot sauce carry on",
       "can you take hot sauce on a plane",
       "salsa",
-      "can i take hot sauce on a plane"
+      "can i take hot sauce on a plane",
+      "can you bring hot sauce on a plane checked baggage international flights",
+      "can you bring hot sauce through tsa",
+      "how many drops of hot sauce are in a standard 2 oz (60 ml) bottle of tabasco?"
     ],
     "keywords": [
       "sauce",
@@ -3347,7 +3763,8 @@
       "can you bring hot sauce through tsa",
       "can you bring hot sauce on a plane checked baggage international flights",
       "can i bring a bottle of hot sauce on a plane",
-      "salsa"
+      "salsa",
+      "how many drops of hot sauce are in a standard 2 oz (60 ml) bottle of tabasco?"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -3388,7 +3805,14 @@
       "can you bring ramen through tsa",
       "국제선 컵라면 기내 반입",
       "비행기 컵라면 반입",
-      "비행기 라면 반입"
+      "비행기 라면 반입",
+      "can you bring cup noodles on a plane",
+      "can bring instant noodles to australia",
+      "can i bring instant noodles to australia",
+      "can i bring instant noodles on a plane",
+      "can i carry instant noodles in hand luggage",
+      "can you take cup noodles on a plane",
+      "can i bring cup noodles on a plane"
     ],
     "keywords": [
       "instant noodles",
@@ -3421,7 +3845,9 @@
       "국제선 컵라면 기내 반입",
       "비행기 컵라면 반입",
       "비행기 라면 반입",
-      "can i bring instant noodles on a plane"
+      "can i bring instant noodles on a plane",
+      "can you take cup noodles on a plane",
+      "can i bring cup noodles on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3460,7 +3886,10 @@
       "can you bring nuts into france",
       "機内持ち込み ナッツ",
       "are peanuts allowed",
-      "darf man nüsse mit ins flugzeug nehmen"
+      "darf man nüsse mit ins flugzeug nehmen",
+      "can i take almonds in my carry on",
+      "can i take pistachios on a plane",
+      "can i bring nuts to japan"
     ],
     "keywords": [
       "nuts",
@@ -3480,7 +3909,13 @@
       "darf man nüsse mit ins flugzeug nehmen",
       "can i bring pistachios on a plane",
       "can you take pistachios on a plane",
-      "can you bring nuts on a plane"
+      "can you bring nuts on a plane",
+      "can i take almonds in my carry on",
+      "can i bring mixed nuts on a plane",
+      "can you bring cashews on a plane",
+      "can you bring almonds on a plane",
+      "can i take pistachios on a plane",
+      "can i bring nuts to japan"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3493,13 +3928,17 @@
     "category": "Food",
     "aliases": [
       "nut butter",
-      "almond butter"
+      "almond butter",
+      "can you bring peanut butter on a plane checked baggage",
+      "does peanut butter count as a liquid when flying"
     ],
     "keywords": [
       "peanut",
       "butter",
       "spread",
-      "liquid"
+      "liquid",
+      "can you bring peanut butter on a plane checked baggage",
+      "does peanut butter count as a liquid when flying"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -3551,7 +3990,17 @@
       "cereal bar",
       "muesli bar",
       "sports bar",
-      "meal replacement bar"
+      "meal replacement bar",
+      "can i bring protein bars on a plane",
+      "can i bring a protein bar on a plane",
+      "can you bring protein bars through tsa",
+      "can you take protein bars on a plane",
+      "can i take protein bars on a plane",
+      "can you bring protein bars on a plane",
+      "can i bring protein bars through tsa",
+      "can i bring protein bars in my carry on",
+      "can i take protein bars through tsa",
+      "what protein bars are practical for travel?"
     ],
     "keywords": [
       "protein bar",
@@ -3569,7 +4018,10 @@
       "can i bring protein bars through tsa",
       "can i take protein bars through tsa",
       "can you bring protein bars on a plane",
-      "can i bring protein bars in my carry on"
+      "can i bring protein bars in my carry on",
+      "can i bring a protein bar on a plane",
+      "can i take protein bars on a plane",
+      "what protein bars are practical for travel?"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3592,7 +4044,11 @@
       "can you pack protein bars in carry on",
       "are protein bars allowed in carry on luggage",
       "can you take protein bars in your carry on",
-      "protein bars"
+      "protein bars",
+      "can you bring protein bars through tsa",
+      "can i bring protein bars through tsa",
+      "can i take protein bars through tsa",
+      "what protein bars are practical for travel?"
     ],
     "keywords": [
       "bars",
@@ -3606,7 +4062,10 @@
       "can i bring protein bars through tsa",
       "can i take protein bars through tsa",
       "can you bring protein bars on a plane",
-      "can i bring protein bars in my carry on"
+      "can i bring protein bars in my carry on",
+      "can i bring a protein bar on a plane",
+      "can i take protein bars on a plane",
+      "what protein bars are practical for travel?"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3620,7 +4079,10 @@
     "aliases": [
       "whey protein",
       "supplement powder",
-      "travel insurance vs protein powder"
+      "travel insurance vs protein powder",
+      "can i bring whey protein powder on a plane",
+      "can you bring protein powder on a plane",
+      "how to travel with protein powder"
     ],
     "keywords": [
       "protein",
@@ -3631,7 +4093,8 @@
       "can i bring whey protein powder on a plane",
       "difference between travel insurance and protein powder",
       "travel insurance vs protein powder",
-      "can you bring protein powder on a plane"
+      "can you bring protein powder on a plane",
+      "how to travel with protein powder"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3702,7 +4165,16 @@
       "can i put spices in my carry on",
       "can i take seasoning through tsa",
       "spices in carry on luggage",
-      "can i carry spices on a plane"
+      "can i carry spices on a plane",
+      "can you bring seasonings in a carry on",
+      "can you take herbs and spices on a plane",
+      "can you take spices on international flights",
+      "can you bring spices on a plane carry-on",
+      "can i bring seasoning in my carry on",
+      "are spices allowed in carry on luggage",
+      "can you bring seasoning through tsa",
+      "can you fly with spices",
+      "what about spices"
     ],
     "keywords": [
       "spices",
@@ -3755,7 +4227,9 @@
       "how to pack spices",
       "aromat",
       "can you take seasoning on a plane",
-      "can i take spices in my carry on"
+      "can i take spices in my carry on",
+      "can you fly with spices",
+      "what about spices"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3773,7 +4247,8 @@
       "tee im flugzeug mitnehmen",
       "darf man tee im handgepäck mitnehmen",
       "tee im handgepäck flugzeug",
-      "can i take tea bags to australia"
+      "can i take tea bags to australia",
+      "can you bring tea bags on a plane"
     ],
     "keywords": [
       "tea",
@@ -3785,7 +4260,8 @@
       "tee im flugzeug mitnehmen",
       "darf man tee im handgepäck mitnehmen",
       "tee im handgepäck flugzeug",
-      "can i take tea bags to australia"
+      "can i take tea bags to australia",
+      "can you bring tea bags on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -3860,7 +4336,12 @@
       "크레아틴 비행기 반입",
       "비행기 크레아틴",
       "is creatine legal in japan",
-      "can i bring creatine to japan"
+      "can i bring creatine to japan",
+      "can i take creatine to japan",
+      "how to bring creatine on a plane",
+      "how to take creatine on a plane",
+      "how to fly with creatine",
+      "how to travel with creatine"
     ],
     "keywords": [
       "creatine",
@@ -3878,7 +4359,12 @@
       "비행기 크레아틴",
       "is creatine legal in japan",
       "can i bring creatine to japan",
-      "si puo portare la creatina in aereo"
+      "si puo portare la creatina in aereo",
+      "can i take creatine to japan",
+      "how to bring creatine on a plane",
+      "how to take creatine on a plane",
+      "how to fly with creatine",
+      "how to travel with creatine"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -3924,7 +4410,13 @@
       "can you bring heating pad on plane",
       "electric heating pad",
       "heat pad for back",
-      "can i bring heat pack on plane"
+      "can i bring heat pack on plane",
+      "can heat pack be brought on plane",
+      "can you bring a heating pad on a plane international",
+      "can i bring heating pad on plane",
+      "can you bring heat packs on a plane",
+      "can i take a heating pad on a plane",
+      "can i bring heat pad on plane"
     ],
     "keywords": [
       "heating",
@@ -3934,7 +4426,13 @@
       "health",
       "injury",
       "heat pad for back",
-      "can i bring heat pack on plane"
+      "can i bring heat pack on plane",
+      "can heat pack be brought on plane",
+      "can you bring a heating pad on a plane international",
+      "can i bring heating pad on plane",
+      "can you bring heat packs on a plane",
+      "can i take a heating pad on a plane",
+      "can i bring heat pad on plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -4048,7 +4546,13 @@
       "can you take a mug in hand luggage",
       "tasse im handgepäck",
       "飛行機 マグカップ 持ち込み",
-      "マグカップ 機内持ち込み 国際線"
+      "マグカップ 機内持ち込み 国際線",
+      "can i take mugs in hand luggage",
+      "can you bring ceramic mugs on carry on international",
+      "can i take a mug in my carry on",
+      "can i take a ceramic mug in my carry on",
+      "can you take a mug on a plane",
+      "can you bring a mug on a plane"
     ],
     "keywords": [
       "mug",
@@ -4063,7 +4567,13 @@
       "tasse im handgepäck",
       "can i bring a mug in my carry on",
       "飛行機 マグカップ 持ち込み",
-      "マグカップ 機内持ち込み 国際線"
+      "マグカップ 機内持ち込み 国際線",
+      "can i take mugs in hand luggage",
+      "can you bring ceramic mugs on carry on international",
+      "can i take a mug in my carry on",
+      "can i take a ceramic mug in my carry on",
+      "can you take a mug on a plane",
+      "can you bring a mug on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -4146,7 +4656,318 @@
       "diamond engagement ring",
       "pode levar bijuterias no avião",
       "schmuck handgepäck oder koffer",
-      "飛行機 指輪"
+      "飛行機 指輪",
+      "can i bring melatonin on a plane uk",
+      "can you bring creatine to japan",
+      "can you bring melatonin into the uk",
+      "can i bring dry shampoo on a plane",
+      "can i bring bananas on a plane",
+      "can you bring a jump rope on a plane",
+      "can you bring tennis racket on plane singapore airlines",
+      "can i bring melatonin on a plane international flight",
+      "can i bring ibuprofen to singapore",
+      "can you bring a watch on a plane",
+      "can i bring a pack of cigarettes in my carry on to singapore",
+      "can i bring matches on a plane",
+      "can you bring rope on a plane",
+      "can you bring bananas on a plane",
+      "can you bring cigarettes on a plane",
+      "can i bring hot sauce on a plane",
+      "can i bring toothpaste on a plane",
+      "can you bring melatonin on a plane in a ziploc bag",
+      "can i bring monster energy on a plane",
+      "can i bring protein bars on a plane",
+      "can i bring cat food on a plane",
+      "can you bring cup noodles on a plane",
+      "can i bring mouthwash on a plane",
+      "can you bring candy on a plane",
+      "can you bring an umbrella on a plane ryanair",
+      "are you allowed to bring melatonin on a plane",
+      "can you bring dry shampoo on plane",
+      "can you bring hot sauce on a plane checked baggage international flights",
+      "can you bring dog treats on a plane international",
+      "can you bring energy drinks on a plane",
+      "can i bring melatonin to australia",
+      "can i bring cat food on a plane international",
+      "can i bring melatonin into singapore",
+      "can i bring dog food in my checked luggage international",
+      "can you bring melatonin on a plane uk",
+      "can i bring extension cord on plane international",
+      "can i bring banana on a plane",
+      "how many cigarettes can i bring to singapore 2026",
+      "can i bring a beard trimmer on a plane",
+      "can you bring seasonings in a carry on",
+      "can i bring shaving cream on a plane",
+      "can i bring high heels in my carry on",
+      "can you bring mouthwash on a plane checked baggage",
+      "can i bring melatonin to uk",
+      "can you bring a redbull through tsa",
+      "can i bring zyns to singapore",
+      "can i bring mixed nuts on a plane",
+      "can you bring melatonin into australia",
+      "can i bring a protein bar on a plane",
+      "can i bring facial cleanser on a plane",
+      "can i bring chips on a plane international flight",
+      "can bring cooking oil from malaysia to singapore",
+      "can you bring melatonin to the uk",
+      "can i bring face wash in my carry on",
+      "can you bring a hair straightener on a plane carry-on",
+      "can you bring cooking oil on a plane",
+      "do i have to declare my wedding ring at customs japan",
+      "can i bring a banana on the plane",
+      "can i bring tweezer on plane",
+      "can i bring weights in my carry on",
+      "can bring instant noodles to australia",
+      "can i bring can soda on a plane",
+      "can i bring cup noodles to usa",
+      "can you bring nicotine pouches into singapore",
+      "can you bring peanut butter on a plane checked baggage",
+      "can i bring a hair straightener in my carry on delta",
+      "can i bring candy to australia",
+      "can you bring nuts into france",
+      "can i bring this to japan",
+      "can i bring insecticide on a plane",
+      "can bring hair straightener on plane",
+      "can you bring weights through tsa",
+      "can i bring whey protein powder on a plane",
+      "can i bring beef jerky to japan",
+      "can u bring hair straightener on plane",
+      "can i bring chips through tsa",
+      "can i bring melatonin into the uk from usa",
+      "can you bring dry shampoo on carry on",
+      "can you bring matches on a plane",
+      "can you bring melatonin on a plane",
+      "can i bring melatonin on a plane",
+      "can i bring melatonin gummies on a plane",
+      "can i bring a banana through tsa",
+      "can you bring spices on a plane",
+      "can you bring seasoning on a plane",
+      "can you bring a banana through tsa",
+      "can you bring melatonin gummies on a plane",
+      "can i bring spices on a plane",
+      "what can and cannot bring on a plane",
+      "can i bring seasoning on a plane",
+      "can you bring bananas through tsa",
+      "can you bring a matchbook on a plane",
+      "can you bring airpods on a plane",
+      "can i bring bananas through tsa",
+      "can i bring a tablet on an airplane",
+      "can i bring spices in my carry on",
+      "can you bring spices on a plane carry-on",
+      "can you bring a beard trimmer on a plane",
+      "when travellimg with a gold engagement ring, from.australia to.japan do.i need to decalre it?",
+      "can i bring matches in my carry on",
+      "can i bring extension cord on plane",
+      "can i bring a matchbook on a plane",
+      "can i bring shoes in my carry on",
+      "can you bring an extension cord on a plane",
+      "can you bring cat food on a plane",
+      "can you bring cigarettes on a plane international",
+      "can i bring a banana on a plane",
+      "can you bring protein bars through tsa",
+      "can you bring face wash on a plane",
+      "can you bring a banana on a plane",
+      "can you bring hot sauce on a plane",
+      "can you bring mouthwash on a plane",
+      "can i bring seasoning in my carry on",
+      "can you bring shampoo on a plane",
+      "can i bring rope on a plane",
+      "can i bring melatonin to singapore",
+      "can i bring a banana through airport security",
+      "can you bring matches on a carry on",
+      "can i bring laptop charger on plane",
+      "can i bring an extension cord on a plane",
+      "can you bring seasonings on a plane",
+      "can you bring flint and steel on a plane",
+      "can i bring dog treats on a plane",
+      "can i bring creatine to japan",
+      "can i bring face wash on a plane",
+      "can u bring matches on a plane",
+      "can you bring tweezers on a plane",
+      "can you bring instant noodles on a plane carry-on international",
+      "can you bring matches in a carry on",
+      "can you bring dog treats on a plane",
+      "can i bring a mug in my carry on",
+      "can i bring a lighter on a plane",
+      "can you bring dry shampoo on a plane",
+      "can you bring instant noodles on a plane",
+      "can i bring cup noodles into australia",
+      "can i bring airpods on a plane",
+      "can you bring aa batteries on a plane",
+      "can you bring a ps5 on a plane",
+      "can you bring spices in a carry on",
+      "can you bring candy on a plane international flight",
+      "can you bring honey into canada",
+      "can u bring melatonin gummies on a plane",
+      "can i bring batteries on a plane",
+      "can you bring matchbooks on a plane",
+      "can you bring melatonin to singapore",
+      "can i bring a bottle of melatonin on a plane",
+      "can you bring clippers on a plane",
+      "can i bring airtag on plane",
+      "can i bring umbrella on plane",
+      "can you bring tea bags on a plane",
+      "can i bring banana through tsa",
+      "can you bring banana through tsa",
+      "can i bring seasonings on a plane",
+      "can i bring zyn to singapore",
+      "can you bring extension cord on plane",
+      "can you bring an electric shaver on a plane",
+      "can i bring flint and steel on plane",
+      "can i bring heat pack on plane",
+      "can i bring instant noodles to australia",
+      "can you bring shoes in your carry-on",
+      "can i bring a box cutter in my checked bag",
+      "can i bring dog food on a plane",
+      "can i bring my shampoo and conditioner on a plane",
+      "can you bring weights on a plane",
+      "can you bring lighters on a plane",
+      "can i bring heels in my carry on",
+      "can you bring spices through tsa",
+      "can i bring chocolate to canada",
+      "can i bring beard oil on a plane",
+      "am i allowed to bring melatonin on a plane",
+      "are you allowed to bring matches on a plane",
+      "can you bring seasoning through tsa",
+      "can you bring watches on a plane",
+      "can you bring ceramic mugs on carry on international",
+      "can you bring a heating pad on a plane international",
+      "can i bring heating pad on plane",
+      "can you bring hot sauce through tsa",
+      "can you bring laptop charger on plane",
+      "can i bring cigarettes on a plane",
+      "can i bring honey on a plane",
+      "can you bring carbonated drinks on a plane",
+      "can you bring matches on an airplane",
+      "can you bring bug spray on a plane",
+      "can i bring a jump rope on a plane",
+      "can i bring hand sanitizer on a plane",
+      "can you bring nuts on a plane",
+      "can i bring dog treats through tsa",
+      "can i bring a portable charger on a plane delta",
+      "can i bring seasoning through tsa",
+      "can you bring a box cutter on a plane",
+      "can i bring canned cat food on a plane",
+      "can i bring weights on a plane",
+      "can you bring protein bars on a plane",
+      "can i bring my ipad on a plane",
+      "can you bring tent stakes on a plane",
+      "can you bring honey on a plane",
+      "can you bring zyns to japan",
+      "can you bring zyn on a plane",
+      "can you bring protein powder on a plane",
+      "can i bring fruits into singapore",
+      "can i bring ipad on plane",
+      "can i bring protein bars through tsa",
+      "can i bring zyn to japan",
+      "can you bring melatonin into singapore",
+      "can you bring an airtag on a plane",
+      "can i bring lighters on a plane",
+      "can i bring energy drinks on a plane",
+      "can i bring epinephrine injectors through airport security?",
+      "can i bring candy on a plane",
+      "can i bring an electric razor in my carry on",
+      "can i bring a monster energy drink on a plane",
+      "can i bring protein bars in my carry on",
+      "can i bring airpods on plane",
+      "can you bring heat packs on a plane",
+      "can you bring cashews on a plane",
+      "can i bring instant noodles on a plane",
+      "can you bring face masks on a plane",
+      "can you bring a carton of cigarettes on an airplane",
+      "can you bring a hair dryer on a plane",
+      "can you bring deodorant on a plane",
+      "can you bring extension cords on a plane",
+      "can you bring olive oil into australia",
+      "can i bring pistachios on a plane",
+      "can you bring matchsticks on a plane",
+      "can i bring deodorant on a plane",
+      "can i bring redbull on a plane",
+      "can i bring honey to canada",
+      "can you bring matches on a flight",
+      "can i bring nail polish on a plane",
+      "can you bring an umbrella on a plane",
+      "can i bring an energy drink on a plane",
+      "can you bring almonds on a plane",
+      "can u bring melatonin on a plane",
+      "can you bring insect repellent on a plane",
+      "can i bring shaver on plane",
+      "can i bring nuts to japan",
+      "can i bring cough syrup on a plane",
+      "can you bring zyn to japan",
+      "can i bring honey into canada",
+      "can i bring heat pad on plane",
+      "can i bring a redbull through tsa",
+      "can i bring a suit bag on ryanair",
+      "can you bring nicotine pouches to japan",
+      "can you bring airtags on a plane",
+      "can i bring melatonin through tsa",
+      "can i bring a box of matches on a plane",
+      "can you bring matches in your carry on",
+      "can you bring rope in a carry on",
+      "can i bring chocolate in my carry on",
+      "can you bring beef jerky on a plane",
+      "can i bring wet cat food on a plane",
+      "can i bring nicotine pouches to japan",
+      "can you bring matches on plane",
+      "can you bring a box cutter in checked luggage",
+      "can you bring melatonin on a plane international",
+      "can you bring nicotine pouches on a plane",
+      "can you bring toothpaste on a plane",
+      "can you bring a laptop on a plane",
+      "can i bring a watch on a plane",
+      "can i bring insect repellent spray on a plane?",
+      "can i bring cup noodles on a plane",
+      "can you bring a mug on a plane",
+      "can you bring a book of matches on a plane",
+      "can you bring zyn to singapore",
+      "can you bring ramen through tsa",
+      "can i bring shampoo and conditioner on a plane",
+      "can i bring my ps5 on a plane",
+      "can i bring cigarettes in my carry on",
+      "can you bring a hairdryer on a plane",
+      "how much melatonin can i bring back to uk",
+      "how much jewelry can i bring on the airplane",
+      "how to bring creatine on a plane",
+      "what size mouthwash can i bring on a plane",
+      "what pet food can i bring across the canadian border?",
+      "how much mouthwash can you bring on a plane",
+      "how much liquid can you bring on a plane",
+      "how much liquid can i bring on a plane",
+      "how much candy can you bring on a plane",
+      "how much shaving cream can i bring on a plane",
+      "how many cigarette packs can i bring on a plane",
+      "how many cigarettes can i bring to singapore",
+      "how much honey can i bring on a plane",
+      "how many oz can you bring on a plane",
+      "how many shoes can you bring on a plane",
+      "what sre redtrictions for bringing propane bottle into the usa",
+      "how much olive oil can i bring into the uk",
+      "how many fluid ounces can i bring on a plane",
+      "how much face wash can i bring on a plane",
+      "how many packs of cigarettes can you bring on a plane",
+      "how many cigarettes can i bring on a plane",
+      "how much candy can i bring on a plane",
+      "what size scissors can you bring on a plane",
+      "how much liquid you can bring on a plane",
+      "how much coffee can you bring into the us",
+      "how much tobacco can you bring on a plane",
+      "how much shampoo can i bring on a plane",
+      "how many packs of cigarettes can i bring to singapore",
+      "how to bring vitamins on a plane",
+      "how much melatonin can you bring into the uk",
+      "how much shaving cream can you bring on a plane",
+      "how many cell phones can i bring on a plane",
+      "how much snuff can you bring abroad",
+      "what food can you bring through tsa",
+      "how many fluid ounces can you bring in a carry on",
+      "how many ounces can you bring in a plane",
+      "how many ounces can you bring in carry on",
+      "how many ounces can i bring on a carry on",
+      "what size liquids can i bring on a plane",
+      "how many oz can i bring on a carry on",
+      "how many ounces can i bring on an airplane",
+      "what can you bring on a plane"
     ],
     "keywords": [
       "gold",
@@ -4158,7 +4979,316 @@
       "schmuck handgepäck oder koffer",
       "飛行機 指輪",
       "engagement ring airport security uk",
-      "how much jewelry can i bring on the airplane"
+      "how much jewelry can i bring on the airplane",
+      "can i bring melatonin on a plane uk",
+      "can you bring creatine to japan",
+      "can you bring melatonin into the uk",
+      "can i bring dry shampoo on a plane",
+      "can i bring bananas on a plane",
+      "can you bring a jump rope on a plane",
+      "can you bring tennis racket on plane singapore airlines",
+      "can i bring melatonin on a plane international flight",
+      "can i bring ibuprofen to singapore",
+      "can you bring a watch on a plane",
+      "can i bring a pack of cigarettes in my carry on to singapore",
+      "can i bring matches on a plane",
+      "can you bring rope on a plane",
+      "can you bring bananas on a plane",
+      "can you bring cigarettes on a plane",
+      "can i bring hot sauce on a plane",
+      "can i bring toothpaste on a plane",
+      "can you bring melatonin on a plane in a ziploc bag",
+      "can i bring monster energy on a plane",
+      "can i bring protein bars on a plane",
+      "can i bring cat food on a plane",
+      "can you bring cup noodles on a plane",
+      "can i bring mouthwash on a plane",
+      "can you bring candy on a plane",
+      "can you bring an umbrella on a plane ryanair",
+      "are you allowed to bring melatonin on a plane",
+      "can you bring dry shampoo on plane",
+      "can you bring hot sauce on a plane checked baggage international flights",
+      "can you bring dog treats on a plane international",
+      "can you bring energy drinks on a plane",
+      "can i bring melatonin to australia",
+      "can i bring cat food on a plane international",
+      "can i bring melatonin into singapore",
+      "can i bring dog food in my checked luggage international",
+      "can you bring melatonin on a plane uk",
+      "can i bring extension cord on plane international",
+      "can i bring banana on a plane",
+      "how many cigarettes can i bring to singapore 2026",
+      "can i bring a beard trimmer on a plane",
+      "can you bring seasonings in a carry on",
+      "can i bring shaving cream on a plane",
+      "can i bring high heels in my carry on",
+      "can you bring mouthwash on a plane checked baggage",
+      "can i bring melatonin to uk",
+      "can you bring a redbull through tsa",
+      "can i bring zyns to singapore",
+      "can i bring mixed nuts on a plane",
+      "can you bring melatonin into australia",
+      "can i bring a protein bar on a plane",
+      "can i bring facial cleanser on a plane",
+      "can i bring chips on a plane international flight",
+      "can bring cooking oil from malaysia to singapore",
+      "can you bring melatonin to the uk",
+      "can i bring face wash in my carry on",
+      "can you bring a hair straightener on a plane carry-on",
+      "can you bring cooking oil on a plane",
+      "can i bring a banana on the plane",
+      "can i bring tweezer on plane",
+      "can i bring weights in my carry on",
+      "can bring instant noodles to australia",
+      "can i bring can soda on a plane",
+      "can i bring cup noodles to usa",
+      "can you bring nicotine pouches into singapore",
+      "can you bring peanut butter on a plane checked baggage",
+      "can i bring a hair straightener in my carry on delta",
+      "can i bring candy to australia",
+      "can you bring nuts into france",
+      "can i bring this to japan",
+      "can i bring insecticide on a plane",
+      "can bring hair straightener on plane",
+      "can you bring weights through tsa",
+      "can i bring whey protein powder on a plane",
+      "can i bring beef jerky to japan",
+      "can u bring hair straightener on plane",
+      "can i bring chips through tsa",
+      "can i bring melatonin into the uk from usa",
+      "can you bring dry shampoo on carry on",
+      "can you bring matches on a plane",
+      "can you bring melatonin on a plane",
+      "can i bring melatonin on a plane",
+      "can i bring melatonin gummies on a plane",
+      "can i bring a banana through tsa",
+      "can you bring spices on a plane",
+      "can you bring seasoning on a plane",
+      "can you bring a banana through tsa",
+      "can you bring melatonin gummies on a plane",
+      "can i bring spices on a plane",
+      "what can and cannot bring on a plane",
+      "can i bring seasoning on a plane",
+      "can you bring bananas through tsa",
+      "can you bring a matchbook on a plane",
+      "can you bring airpods on a plane",
+      "can i bring bananas through tsa",
+      "can i bring a tablet on an airplane",
+      "can i bring spices in my carry on",
+      "can you bring spices on a plane carry-on",
+      "can you bring a beard trimmer on a plane",
+      "when travellimg with a gold engagement ring, from.australia to.japan do.i need to decalre it?",
+      "can i bring matches in my carry on",
+      "can i bring extension cord on plane",
+      "can i bring a matchbook on a plane",
+      "can i bring shoes in my carry on",
+      "can you bring an extension cord on a plane",
+      "can you bring cat food on a plane",
+      "can you bring cigarettes on a plane international",
+      "can i bring a banana on a plane",
+      "can you bring protein bars through tsa",
+      "can you bring face wash on a plane",
+      "can you bring a banana on a plane",
+      "can you bring hot sauce on a plane",
+      "can you bring mouthwash on a plane",
+      "can i bring seasoning in my carry on",
+      "can you bring shampoo on a plane",
+      "can i bring rope on a plane",
+      "can i bring melatonin to singapore",
+      "can i bring a banana through airport security",
+      "can you bring matches on a carry on",
+      "can i bring laptop charger on plane",
+      "can i bring an extension cord on a plane",
+      "can you bring seasonings on a plane",
+      "can you bring flint and steel on a plane",
+      "can i bring dog treats on a plane",
+      "can i bring creatine to japan",
+      "can i bring face wash on a plane",
+      "can u bring matches on a plane",
+      "can you bring tweezers on a plane",
+      "can you bring instant noodles on a plane carry-on international",
+      "can you bring matches in a carry on",
+      "can you bring dog treats on a plane",
+      "can i bring a mug in my carry on",
+      "can i bring a lighter on a plane",
+      "can you bring dry shampoo on a plane",
+      "can you bring instant noodles on a plane",
+      "can i bring cup noodles into australia",
+      "can i bring airpods on a plane",
+      "can you bring aa batteries on a plane",
+      "can you bring a ps5 on a plane",
+      "can you bring spices in a carry on",
+      "can you bring candy on a plane international flight",
+      "can you bring honey into canada",
+      "can u bring melatonin gummies on a plane",
+      "can i bring batteries on a plane",
+      "can you bring matchbooks on a plane",
+      "can you bring melatonin to singapore",
+      "can i bring a bottle of melatonin on a plane",
+      "can you bring clippers on a plane",
+      "can i bring airtag on plane",
+      "can i bring umbrella on plane",
+      "can you bring tea bags on a plane",
+      "can i bring banana through tsa",
+      "can you bring banana through tsa",
+      "can i bring seasonings on a plane",
+      "can i bring zyn to singapore",
+      "can you bring extension cord on plane",
+      "can you bring an electric shaver on a plane",
+      "can i bring flint and steel on plane",
+      "can i bring heat pack on plane",
+      "can i bring instant noodles to australia",
+      "can you bring shoes in your carry-on",
+      "can i bring a box cutter in my checked bag",
+      "can i bring dog food on a plane",
+      "can i bring my shampoo and conditioner on a plane",
+      "can you bring weights on a plane",
+      "can you bring lighters on a plane",
+      "can i bring heels in my carry on",
+      "can you bring spices through tsa",
+      "can i bring chocolate to canada",
+      "can i bring beard oil on a plane",
+      "am i allowed to bring melatonin on a plane",
+      "are you allowed to bring matches on a plane",
+      "can you bring seasoning through tsa",
+      "can you bring watches on a plane",
+      "can you bring ceramic mugs on carry on international",
+      "can you bring a heating pad on a plane international",
+      "can i bring heating pad on plane",
+      "can you bring hot sauce through tsa",
+      "can you bring laptop charger on plane",
+      "can i bring cigarettes on a plane",
+      "can i bring honey on a plane",
+      "can you bring carbonated drinks on a plane",
+      "can you bring matches on an airplane",
+      "can you bring bug spray on a plane",
+      "can i bring a jump rope on a plane",
+      "can i bring hand sanitizer on a plane",
+      "can you bring nuts on a plane",
+      "can i bring dog treats through tsa",
+      "can i bring a portable charger on a plane delta",
+      "can i bring seasoning through tsa",
+      "can you bring a box cutter on a plane",
+      "can i bring canned cat food on a plane",
+      "can i bring weights on a plane",
+      "can you bring protein bars on a plane",
+      "can i bring my ipad on a plane",
+      "can you bring tent stakes on a plane",
+      "can you bring honey on a plane",
+      "can you bring zyns to japan",
+      "can you bring zyn on a plane",
+      "can you bring protein powder on a plane",
+      "can i bring fruits into singapore",
+      "can i bring ipad on plane",
+      "can i bring protein bars through tsa",
+      "can i bring zyn to japan",
+      "can you bring melatonin into singapore",
+      "can you bring an airtag on a plane",
+      "can i bring lighters on a plane",
+      "can i bring energy drinks on a plane",
+      "can i bring epinephrine injectors through airport security?",
+      "can i bring candy on a plane",
+      "can i bring an electric razor in my carry on",
+      "can i bring a monster energy drink on a plane",
+      "can i bring protein bars in my carry on",
+      "can i bring airpods on plane",
+      "can you bring heat packs on a plane",
+      "can you bring cashews on a plane",
+      "can i bring instant noodles on a plane",
+      "can you bring face masks on a plane",
+      "can you bring a carton of cigarettes on an airplane",
+      "can you bring a hair dryer on a plane",
+      "can you bring deodorant on a plane",
+      "can you bring extension cords on a plane",
+      "can you bring olive oil into australia",
+      "can i bring pistachios on a plane",
+      "can you bring matchsticks on a plane",
+      "can i bring deodorant on a plane",
+      "can i bring redbull on a plane",
+      "can i bring honey to canada",
+      "can you bring matches on a flight",
+      "can i bring nail polish on a plane",
+      "can you bring an umbrella on a plane",
+      "can i bring an energy drink on a plane",
+      "can you bring almonds on a plane",
+      "can u bring melatonin on a plane",
+      "can you bring insect repellent on a plane",
+      "can i bring shaver on plane",
+      "can i bring nuts to japan",
+      "can i bring cough syrup on a plane",
+      "can you bring zyn to japan",
+      "can i bring honey into canada",
+      "can i bring heat pad on plane",
+      "can i bring a redbull through tsa",
+      "can i bring a suit bag on ryanair",
+      "can you bring nicotine pouches to japan",
+      "can you bring airtags on a plane",
+      "can i bring melatonin through tsa",
+      "can i bring a box of matches on a plane",
+      "can you bring matches in your carry on",
+      "can you bring rope in a carry on",
+      "can i bring chocolate in my carry on",
+      "can you bring beef jerky on a plane",
+      "can i bring wet cat food on a plane",
+      "can i bring nicotine pouches to japan",
+      "can you bring matches on plane",
+      "can you bring a box cutter in checked luggage",
+      "can you bring melatonin on a plane international",
+      "can you bring nicotine pouches on a plane",
+      "can you bring toothpaste on a plane",
+      "can you bring a laptop on a plane",
+      "can i bring a watch on a plane",
+      "can i bring insect repellent spray on a plane?",
+      "can i bring cup noodles on a plane",
+      "can you bring a mug on a plane",
+      "can you bring a book of matches on a plane",
+      "can you bring zyn to singapore",
+      "can you bring ramen through tsa",
+      "can i bring shampoo and conditioner on a plane",
+      "can i bring my ps5 on a plane",
+      "can i bring cigarettes in my carry on",
+      "can you bring a hairdryer on a plane",
+      "how much melatonin can i bring back to uk",
+      "how to bring creatine on a plane",
+      "what size mouthwash can i bring on a plane",
+      "what pet food can i bring across the canadian border?",
+      "how much mouthwash can you bring on a plane",
+      "how much liquid can you bring on a plane",
+      "how much liquid can i bring on a plane",
+      "how much candy can you bring on a plane",
+      "how much shaving cream can i bring on a plane",
+      "how many cigarette packs can i bring on a plane",
+      "how many cigarettes can i bring to singapore",
+      "how much honey can i bring on a plane",
+      "how many oz can you bring on a plane",
+      "how many shoes can you bring on a plane",
+      "what sre redtrictions for bringing propane bottle into the usa",
+      "how much olive oil can i bring into the uk",
+      "how many fluid ounces can i bring on a plane",
+      "how much face wash can i bring on a plane",
+      "how many packs of cigarettes can you bring on a plane",
+      "how many cigarettes can i bring on a plane",
+      "how much candy can i bring on a plane",
+      "what size scissors can you bring on a plane",
+      "how much liquid you can bring on a plane",
+      "how much coffee can you bring into the us",
+      "how much tobacco can you bring on a plane",
+      "how much shampoo can i bring on a plane",
+      "how many packs of cigarettes can i bring to singapore",
+      "how to bring vitamins on a plane",
+      "how much melatonin can you bring into the uk",
+      "how much shaving cream can you bring on a plane",
+      "how many cell phones can i bring on a plane",
+      "how much snuff can you bring abroad",
+      "what food can you bring through tsa",
+      "how many fluid ounces can you bring in a carry on",
+      "how many ounces can you bring in a plane",
+      "how many ounces can you bring in carry on",
+      "how many ounces can i bring on a carry on",
+      "what size liquids can i bring on a plane",
+      "how many oz can i bring on a carry on",
+      "how many ounces can i bring on an airplane",
+      "what can you bring on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -4195,7 +5325,8 @@
       "garmin",
       "スマートウォッチ 飛行機 持ち込み",
       "애플워치 위탁수하물",
-      "スマートウォッチ 飛行機"
+      "スマートウォッチ 飛行機",
+      "can i put smart watch in checked luggage international"
     ],
     "keywords": [
       "smart",
@@ -4205,7 +5336,8 @@
       "スマートウォッチ 飛行機 持ち込み",
       "애플워치 위탁수하물",
       "スマートウォッチ 飛行機",
-      "can you wear a smartwatch on a plane"
+      "can you wear a smartwatch on a plane",
+      "can i put smart watch in checked luggage international"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -4276,7 +5408,8 @@
     "aliases": [
       "ale",
       "lager",
-      "canned beer"
+      "canned beer",
+      "is beer can allowed in checked baggage donestic canada flight"
     ],
     "keywords": [
       "beer",
@@ -4304,7 +5437,9 @@
       "palm oil",
       "olive oil cooking",
       "posso levar azeite na bagagem de mão",
-      "se puede llevar aceite de oliva en el avión"
+      "se puede llevar aceite de oliva en el avión",
+      "can bring cooking oil from malaysia to singapore",
+      "can you bring cooking oil on a plane"
     ],
     "keywords": [
       "cooking oil",
@@ -4352,7 +5487,8 @@
       "purell",
       "sanitizer gel",
       "disinfectant",
-      "hand sanitizer carry on"
+      "hand sanitizer carry on",
+      "can i bring hand sanitizer on a plane"
     ],
     "keywords": [
       "liquid",
@@ -4375,13 +5511,51 @@
     "aliases": [
       "ice cubes",
       "frozen water",
-      "ice pack"
+      "ice pack",
+      "can you take spices on a plane",
+      "can you take herbs and spices on a plane",
+      "how to pack spices",
+      "can you bring spices on a plane",
+      "can i bring spices on a plane",
+      "can i take spices on a plane",
+      "can you take spices on international flights",
+      "can i bring spices in my carry on",
+      "can you bring spices on a plane carry-on",
+      "can.inshipped sealed.glass.kuice.in checked luggag",
+      "can i take spices in my carry on",
+      "can you bring spices in a carry on",
+      "are spices allowed in carry on luggage",
+      "can you bring spices through tsa",
+      "can i put spices in my carry on",
+      "can you take spices through tsa",
+      "can you fly with spices",
+      "can you carry spices on a plane",
+      "what about spices"
     ],
     "keywords": [
       "ice",
       "frozen",
       "water",
-      "cold"
+      "cold",
+      "can you take spices on a plane",
+      "can you take herbs and spices on a plane",
+      "how to pack spices",
+      "can you bring spices on a plane",
+      "can i bring spices on a plane",
+      "can i take spices on a plane",
+      "can you take spices on international flights",
+      "can i bring spices in my carry on",
+      "can you bring spices on a plane carry-on",
+      "can.inshipped sealed.glass.kuice.in checked luggag",
+      "can i take spices in my carry on",
+      "can you bring spices in a carry on",
+      "are spices allowed in carry on luggage",
+      "can you bring spices through tsa",
+      "can i put spices in my carry on",
+      "can you take spices through tsa",
+      "can you fly with spices",
+      "can you carry spices on a plane",
+      "what about spices"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -4419,7 +5593,9 @@
       "cooking oil",
       "vegetable oil",
       "posso levar azeite na bagagem de mão",
-      "se puede llevar aceite de oliva en el avión"
+      "se puede llevar aceite de oliva en el avión",
+      "can you bring olive oil into australia",
+      "how much olive oil can i bring into the uk"
     ],
     "keywords": [
       "oil",
@@ -4429,7 +5605,9 @@
       "can you bring cooking oil on a plane",
       "can bring cooking oil from malaysia to singapore",
       "posso levar azeite na bagagem de mão",
-      "se puede llevar aceite de oliva en el avión"
+      "se puede llevar aceite de oliva en el avión",
+      "can you bring olive oil into australia",
+      "how much olive oil can i bring into the uk"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -4452,7 +5630,18 @@
       "can you bring shampoo on a plane",
       "shampoo on plane",
       "trockenshampoo flugzeug",
-      "darf trockenshampoo ins handgepäck"
+      "darf trockenshampoo ins handgepäck",
+      "can you bring dry shampoo on plane",
+      "can you bring dry shampoo on carry on",
+      "can you bring dry shampoo on a plane",
+      "can i bring my shampoo and conditioner on a plane",
+      "can you take dry shampoo on a plane",
+      "is shampoo and conditioner considered a liquid when flying",
+      "can i bring shampoo and conditioner on a plane",
+      "does dry shampoo count as a liquid when flying",
+      "is dry shampoo considered a liquid when flying",
+      "how much shampoo can i bring on a plane",
+      "what is the limit for shampoo on a plane"
     ],
     "keywords": [
       "shower",
@@ -4476,7 +5665,12 @@
       "is shampoo and conditioner considered a liquid when flying",
       "can you take dry shampoo on a plane",
       "can i bring shampoo and conditioner in my carry on",
-      "darf trockenshampoo ins handgepäck"
+      "darf trockenshampoo ins handgepäck",
+      "can you bring dry shampoo on plane",
+      "does dry shampoo count as a liquid when flying",
+      "is dry shampoo considered a liquid when flying",
+      "how much shampoo can i bring on a plane",
+      "what is the limit for shampoo on a plane"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -4681,7 +5875,8 @@
       "cbd products",
       "hemp extract",
       "cannabis oil",
-      "can i bring cbd on a plane"
+      "can i bring cbd on a plane",
+      "can you take cbd oil to germany from usa"
     ],
     "keywords": [
       "cbd oil",
@@ -4691,7 +5886,8 @@
       "carry on",
       "tsa cbd rules",
       "hemp",
-      "cannabis"
+      "cannabis",
+      "can you take cbd oil to germany from usa"
     ],
     "carryOn": "RESTRICTED",
     "checked": "RESTRICTED",
@@ -4879,7 +6075,8 @@
       "can i bring ibuprofen to singapore",
       "is ibuprofen allowed in singapore",
       "can i take ibuprofen to singapore",
-      "is ibuprofen allowed in japan"
+      "is ibuprofen allowed in japan",
+      "how much ibuprofen can i take on a plane"
     ],
     "keywords": [
       "ibuprofen",
@@ -4889,7 +6086,8 @@
       "can i bring ibuprofen to singapore",
       "is ibuprofen allowed in singapore",
       "can i take ibuprofen to singapore",
-      "is ibuprofen allowed in japan"
+      "is ibuprofen allowed in japan",
+      "how much ibuprofen can i take on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -4902,13 +6100,15 @@
     "category": "Medicine",
     "aliases": [
       "asthma inhaler",
-      "puffer"
+      "puffer",
+      "can inhalers go in checked luggage"
     ],
     "keywords": [
       "inhaler",
       "asthma",
       "medicine",
-      "lungs"
+      "lungs",
+      "can inhalers go in checked luggage"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -5051,7 +6251,29 @@
       "can u bring melatonin on a plane",
       "melatonin",
       "멜라토닌 기내 반입",
-      "can you bring melatonin to europe"
+      "can you bring melatonin to europe",
+      "can i bring melatonin on a plane uk",
+      "can you buy melatonin in singapore airport",
+      "can i bring melatonin on a plane international flight",
+      "can you take melatonin to singapore",
+      "can you take melatonin into singapore",
+      "can i bring melatonin into singapore",
+      "can you bring melatonin on a plane uk",
+      "is melatonin legal in singapore",
+      "can i take melatonin into singapore",
+      "can you bring melatonin into australia",
+      "can i bring melatonin into the uk from usa",
+      "can i fly from.us to london eith melatonin.",
+      "can you bring melatonin to singapore",
+      "can i bring a bottle of melatonin on a plane",
+      "can i take a bottle of melatonin on a plane",
+      "am i allowed to bring melatonin on a plane",
+      "can i take melatonin through airport security",
+      "can you take melatonin in hand luggage",
+      "can i travel with melatonin gummies",
+      "how much melatonin can i bring back to uk",
+      "what about melatonin",
+      "how much melatonin can you bring into the uk"
     ],
     "keywords": [
       "melatonin",
@@ -5140,7 +6362,14 @@
       "can i take a bottle of melatonin on a plane",
       "can i bring melatonin through tsa",
       "can you bring melatonin into singapore",
-      "멜라토닌 기내 반입"
+      "멜라토닌 기내 반입",
+      "is melatonin legal in singapore",
+      "can you bring melatonin into australia",
+      "can i bring melatonin into the uk from usa",
+      "can i carry melatonin on a plane",
+      "how much melatonin can i bring back to uk",
+      "what about melatonin",
+      "how much melatonin can you bring into the uk"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -5193,13 +6422,15 @@
     "aliases": [
       "pills",
       "prescription drugs",
-      "medication tablets"
+      "medication tablets",
+      "how to fly with prescription pills"
     ],
     "keywords": [
       "pills",
       "health",
       "pharmacy",
-      "medical"
+      "medical",
+      "how to fly with prescription pills"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -5255,7 +6486,8 @@
       "gummy vitamins",
       "are vitamins allowed in japan",
       "can i bring vitamins to japan",
-      "can i bring supplements on a plane"
+      "can i bring supplements on a plane",
+      "how to bring vitamins on a plane"
     ],
     "keywords": [
       "vitamins",
@@ -5264,7 +6496,8 @@
       "supplements",
       "are vitamins allowed in japan",
       "can i bring vitamins to japan",
-      "can i bring supplements on a plane"
+      "can i bring supplements on a plane",
+      "how to bring vitamins on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -5278,7 +6511,9 @@
     "aliases": [
       "facial oil",
       "beard balm",
-      "beard serum"
+      "beard serum",
+      "can i bring beard oil on a plane",
+      "can i take beard oil on a plane"
     ],
     "keywords": [
       "beard oil",
@@ -5286,7 +6521,9 @@
       "facial oil",
       "grooming",
       "liquid",
-      "men"
+      "men",
+      "can i bring beard oil on a plane",
+      "can i take beard oil on a plane"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -5386,7 +6623,10 @@
       "can you bring shampoo on a plane",
       "shampoo on plane",
       "trockenshampoo flugzeug",
-      "darf trockenshampoo ins handgepäck"
+      "darf trockenshampoo ins handgepäck",
+      "can i bring my shampoo and conditioner on a plane",
+      "is shampoo and conditioner considered a liquid when flying",
+      "can i bring shampoo and conditioner on a plane"
     ],
     "keywords": [
       "conditioner",
@@ -5430,7 +6670,9 @@
       "is deodorant a liquid tsa",
       "solid deodorant",
       "deodorant stick on plane",
-      "can i bring deodorant on a plane"
+      "can i bring deodorant on a plane",
+      "can you bring deodorant on a plane",
+      "is deodorant considered a liquid when flying canada"
     ],
     "keywords": [
       "deodorant",
@@ -5438,7 +6680,9 @@
       "solid",
       "spray",
       "deodorant stick on plane",
-      "can i bring deodorant on a plane"
+      "can i bring deodorant on a plane",
+      "can you bring deodorant on a plane",
+      "is deodorant considered a liquid when flying canada"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -5481,7 +6725,13 @@
       "shampoo secco in aereo",
       "trockenshampoo flugzeug",
       "드라이샴푸 비행기",
-      "darf trockenshampoo ins handgepäck"
+      "darf trockenshampoo ins handgepäck",
+      "can you bring dry shampoo on plane",
+      "can you bring dry shampoo on carry on",
+      "can you bring dry shampoo on a plane",
+      "can you take dry shampoo on a plane",
+      "does dry shampoo count as a liquid when flying",
+      "is dry shampoo considered a liquid when flying"
     ],
     "keywords": [
       "shampoo",
@@ -5499,7 +6749,10 @@
       "pode levar shampoo a seco no aviao",
       "shampoo secco in aereo",
       "can you bring dry shampoo on carry on",
-      "드라이샴푸 비행기"
+      "드라이샴푸 비행기",
+      "can you bring dry shampoo on plane",
+      "does dry shampoo count as a liquid when flying",
+      "is dry shampoo considered a liquid when flying"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -5516,7 +6769,11 @@
       "face cleanser",
       "비행기 폼클렌징 반입",
       "can you bring face wash on a plane",
-      "can i bring face wash on a plane"
+      "can i bring face wash on a plane",
+      "can i bring face wash in my carry on",
+      "is face wash considered a liquid when flying",
+      "what size face wash can you take on a plane",
+      "how much face wash can i bring on a plane"
     ],
     "keywords": [
       "wash",
@@ -5527,7 +6784,9 @@
       "비행기 폼클렌징 반입",
       "can you bring face wash on a plane",
       "can i bring face wash on a plane",
-      "is face wash considered a liquid when flying"
+      "is face wash considered a liquid when flying",
+      "what size face wash can you take on a plane",
+      "how much face wash can i bring on a plane"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -5541,13 +6800,15 @@
     "aliases": [
       "blow dryer",
       "hair curler",
-      "straightener"
+      "straightener",
+      "can you bring a hair dryer on a plane"
     ],
     "keywords": [
       "hair",
       "beauty",
       "dryer",
-      "appliances"
+      "appliances",
+      "can you bring a hair dryer on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -5614,7 +6875,8 @@
       "heels in carry on",
       "can you wear heels on a plane",
       "are heels allowed in cabin baggage",
-      "can you take heels in hand luggage"
+      "can you take heels in hand luggage",
+      "can i bring high heels in my carry on"
     ],
     "keywords": [
       "heels",
@@ -5645,7 +6907,8 @@
       "costume jewelry",
       "pode levar bijuterias no avião",
       "schmuck handgepäck oder koffer",
-      "飛行機 指輪"
+      "飛行機 指輪",
+      "how much jewelry can i bring on the airplane"
     ],
     "keywords": [
       "jewelry",
@@ -5715,13 +6978,19 @@
       "cosmetics",
       "mascara",
       "foundation",
-      "lipstick"
+      "lipstick",
+      "what makeup can you take on a plane uk",
+      "what makeup counts as liquid on a plane uk",
+      "what makeup counts as liquid"
     ],
     "keywords": [
       "makeup",
       "cosmetics",
       "powder",
-      "beauty"
+      "beauty",
+      "what makeup can you take on a plane uk",
+      "what makeup counts as liquid on a plane uk",
+      "what makeup counts as liquid"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -5745,7 +7014,9 @@
       "can i bring mouthwash on a plane",
       "mouthwash tsa",
       "mouthwash carry on size",
-      "can i take listerine on a plane"
+      "can i take listerine on a plane",
+      "what size mouthwash can i bring on a plane",
+      "how much mouthwash can you bring on a plane"
     ],
     "keywords": [
       "mouthwash",
@@ -5759,7 +7030,9 @@
       "can you take mouthwash on a plane",
       "what size mouthwash can you take on a plane",
       "can you take mouthwash through tsa",
-      "can i take listerine on a plane"
+      "can i take listerine on a plane",
+      "what size mouthwash can i bring on a plane",
+      "how much mouthwash can you bring on a plane"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -5825,7 +7098,19 @@
       "can you take snus on a plane",
       "ニコチンパウチは機内持ち込み可ですか",
       "zyn singapore",
-      "is zyn banned in singapore"
+      "is zyn banned in singapore",
+      "can i bring zyns to singapore",
+      "can you bring nicotine pouches into singapore",
+      "are zyns legal in japan",
+      "can you take nicotine pouches on a plane",
+      "can you bring zyns to japan",
+      "can you bring zyn on a plane",
+      "can i bring zyn to japan",
+      "is zyn legal in japan",
+      "can you bring zyn to japan",
+      "can you bring nicotine pouches to japan",
+      "can i bring nicotine pouches to japan",
+      "can you bring nicotine pouches on a plane"
     ],
     "keywords": [
       "zyn",
@@ -5862,7 +7147,17 @@
       "ニコチンパウチは機内持ち込み可ですか",
       "can i bring nicotine pouches to singapore",
       "zyn singapore",
-      "is zyn banned in singapore"
+      "is zyn banned in singapore",
+      "can i bring zyns to singapore",
+      "are zyns legal in japan",
+      "can you bring zyns to japan",
+      "can you bring zyn on a plane",
+      "can i bring zyn to japan",
+      "is zyn legal in japan",
+      "can you bring zyn to japan",
+      "can you bring nicotine pouches to japan",
+      "can i bring nicotine pouches to japan",
+      "can you bring nicotine pouches on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -6018,7 +7313,10 @@
       "barbasol",
       "shave gel",
       "schiuma da barba in aereo",
-      "rasierschaum aufgabegepäck"
+      "rasierschaum aufgabegepäck",
+      "can you take shaving foam on a plane",
+      "what size shaving cream can i take on a plane",
+      "how much shaving cream can you bring on a plane"
     ],
     "keywords": [
       "shaving cream",
@@ -6036,7 +7334,13 @@
       "tsa shaving cream",
       "is shaving foam allowed on airplanes",
       "tsa shaving cream size",
-      "can i bring shaving cream on a plane"
+      "can i bring shaving cream on a plane",
+      "can you take shaving foam on a plane",
+      "can i take shaving foam on a plane",
+      "what size shaving cream can i take on a plane",
+      "what size shaving cream can you take on a plane",
+      "how much shaving cream can i bring on a plane",
+      "how much shaving cream can you bring on a plane"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -6085,7 +7389,16 @@
       "can i put heels in my carry on",
       "can i have shoes in my carry on",
       "can you take heels in hand luggage",
-      "schuhe ins handgepäck"
+      "schuhe ins handgepäck",
+      "how many shoes allowed in checked baggage",
+      "can i bring high heels in my carry on",
+      "can i take heels in my carry on luggage",
+      "are shoes allowed in carry on luggage",
+      "can i carry shoes in my hand on a plane",
+      "can you bring shoes in your carry-on",
+      "can we carry shoes in hand luggage international",
+      "can you put shoes in your carry on bag",
+      "how many shoes can you bring on a plane"
     ],
     "keywords": [
       "shoes",
@@ -6125,7 +7438,8 @@
       "can you put shoes in carry on bag",
       "can i carry a pair of shoes on a plane",
       "how many pairs of shoes can you take on a plane",
-      "can i bring shoes in my personal bag"
+      "can i bring shoes in my personal bag",
+      "how many shoes can you bring on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -6172,7 +7486,8 @@
       "tuxedo",
       "blazer",
       "can you take a suit bag on ryanair",
-      "can i take a suit bag on ryanair"
+      "can i take a suit bag on ryanair",
+      "can i bring a suit bag on ryanair"
     ],
     "keywords": [
       "suit",
@@ -6180,7 +7495,8 @@
       "blazer",
       "formal",
       "can you take a suit bag on ryanair",
-      "can i take a suit bag on ryanair"
+      "can i take a suit bag on ryanair",
+      "can i bring a suit bag on ryanair"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -6198,7 +7514,12 @@
       "비행기 치약",
       "can i bring toothpaste on a plane",
       "dentifricio in aereo",
-      "치약 비행기"
+      "치약 비행기",
+      "can toothpaste be brought on a plane",
+      "can you bring toothpaste on a plane",
+      "is toothpaste considered a liquid when flying",
+      "what size toothpaste can i take on an airplane",
+      "what size toothpaste can you take on an airplane"
     ],
     "keywords": [
       "teeth",
@@ -6209,7 +7530,11 @@
       "can toothpaste be brought on a plane",
       "can i bring toothpaste on a plane",
       "dentifricio in aereo",
-      "치약 비행기"
+      "치약 비행기",
+      "can you bring toothpaste on a plane",
+      "is toothpaste considered a liquid when flying",
+      "what size toothpaste can i take on an airplane",
+      "what size toothpaste can you take on an airplane"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -6235,7 +7560,9 @@
       "毛抜き 機内持ち込み",
       "毛抜き 飛行機 持ち込み",
       "飛行機 毛抜き 持ち込み",
-      "機内持ち込み 毛抜き"
+      "機内持ち込み 毛抜き",
+      "can i bring tweezer on plane",
+      "can you take tweezers on airplane"
     ],
     "keywords": [
       "tweezers",
@@ -6249,7 +7576,11 @@
       "毛抜き 飛行機 持ち込み",
       "飛行機 毛抜き 持ち込み",
       "can i bring tweezers on a plane",
-      "機内持ち込み 毛抜き"
+      "機内持ち込み 毛抜き",
+      "can i bring tweezer on plane",
+      "are tweezers allowed on planes",
+      "can you take tweezers on a plane",
+      "can you take tweezers on airplane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -6277,7 +7608,9 @@
       "ryanair umbrella policy",
       "darf regenschirm ins handgepäck",
       "ryanair umbrella hand luggage",
-      "regenschirm im flugzeug"
+      "regenschirm im flugzeug",
+      "can i bring umbrella on plane",
+      "can you bring an umbrella on a plane"
     ],
     "keywords": [
       "umbrella",
@@ -6292,7 +7625,9 @@
       "darf man einen kleinen regenschirm mit ins flugzeug nehmen",
       "can you bring an umbrella on a plane ryanair",
       "can you take an umbrella on a plane ryanair",
-      "regenschirm im flugzeug"
+      "regenschirm im flugzeug",
+      "can i bring umbrella on plane",
+      "can you bring an umbrella on a plane"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -6310,7 +7645,15 @@
       "スマートウォッチ 飛行機 持ち込み",
       "애플워치 위탁수하물",
       "スマートウォッチ 飛行機",
-      "can i bring a watch on a plane"
+      "can i bring a watch on a plane",
+      "can i carry analog watch in checked luggage",
+      "is watch allowed in check in baggage",
+      "can i put smart watch in checked luggage international",
+      "are watches allowed in check in baggage",
+      "can you bring watches on a plane",
+      "can i put watch in checked luggage international",
+      "can i put watch in carry on luggage",
+      "are watches allowed in carry on luggage"
     ],
     "keywords": [
       "watch",
@@ -6326,7 +7669,11 @@
       "can you wear a smartwatch on a plane",
       "can i put watch in carry on luggage",
       "can i bring a watch on a plane",
-      "can i put watch in checked luggage international"
+      "can i put watch in checked luggage international",
+      "is watch allowed in check in baggage",
+      "are watches allowed in check in baggage",
+      "can you bring watches on a plane",
+      "are watches allowed in carry on luggage"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -6562,7 +7909,8 @@
       "exercise rope",
       "fitness rope",
       "rope on airplane",
-      "is rope allowed in carry on"
+      "is rope allowed in carry on",
+      "can you take a skipping rope in hand luggage"
     ],
     "keywords": [
       "jump rope",
@@ -6624,7 +7972,8 @@
       "badminton racket",
       "tennisschläger im handgepäck",
       "テニスラケット 機内持ち込み",
-      "tennis racket in checked luggage"
+      "tennis racket in checked luggage",
+      "can you bring tennis racket on plane singapore airlines"
     ],
     "keywords": [
       "racket",
@@ -6694,7 +8043,8 @@
       "bottle opener",
       "korkenzieher handgepäck",
       "ワインオープナー 飛行機持ち込み",
-      "ワインオープナー 機内持ち込み可能"
+      "ワインオープナー 機内持ち込み可能",
+      "can you take a corkscrew on a plane uk"
     ],
     "keywords": [
       "corkscrew",
@@ -6704,7 +8054,8 @@
       "korkenzieher handgepäck",
       "se puede llevar un sacacorchos en el avion",
       "ワインオープナー 飛行機持ち込み",
-      "ワインオープナー 機内持ち込み可能"
+      "ワインオープナー 機内持ち込み可能",
+      "can you take a corkscrew on a plane uk"
     ],
     "carryOn": "NOT_ALLOWED",
     "checked": "ALLOWED",
@@ -6746,7 +8097,12 @@
       "paring knife",
       "steak knife",
       "fixed blade knife",
-      "dagger"
+      "dagger",
+      "are box cutters allowed on planes",
+      "can i bring a box cutter in my checked bag",
+      "can you bring a box cutter on a plane",
+      "can you take a box cutter on a plane",
+      "can you bring a box cutter in checked luggage"
     ],
     "keywords": [
       "knife",
@@ -6756,7 +8112,12 @@
       "blade",
       "checked bag knife",
       "prohibited weapons",
-      "carry on knife"
+      "carry on knife",
+      "are box cutters allowed on planes",
+      "can i bring a box cutter in my checked bag",
+      "can you bring a box cutter on a plane",
+      "can you take a box cutter on a plane",
+      "can you bring a box cutter in checked luggage"
     ],
     "carryOn": "NOT_ALLOWED",
     "checked": "ALLOWED",
@@ -6772,7 +8133,8 @@
       "tsa lock",
       "combination lock",
       "luggage lock",
-      "key lock"
+      "key lock",
+      "can you lock your luggage when flying"
     ],
     "keywords": [
       "lock",
@@ -6781,7 +8143,8 @@
       "combination lock",
       "luggage lock",
       "security",
-      "puedo llevar un candado en el equipaje de mano"
+      "puedo llevar un candado en el equipaje de mano",
+      "can you lock your luggage when flying"
     ],
     "carryOn": "ALLOWED",
     "checked": "ALLOWED",
@@ -6795,14 +8158,16 @@
     "aliases": [
       "leatherman",
       "swiss army knife",
-      "pocket tool"
+      "pocket tool",
+      "is multitool allowed on plane"
     ],
     "keywords": [
       "blade",
       "knife",
       "pliers",
       "swiss",
-      "darf man ein multitool mit ins flugzeug nehmen"
+      "darf man ein multitool mit ins flugzeug nehmen",
+      "is multitool allowed on plane"
     ],
     "carryOn": "NOT_ALLOWED",
     "checked": "ALLOWED",
@@ -6822,7 +8187,8 @@
       "sabre pepper spray",
       "bear spray",
       "dog spray",
-      "pepper gel"
+      "pepper gel",
+      "which sabre products can i take on a plane?"
     ],
     "keywords": [
       "pepper spray",
@@ -6831,7 +8197,8 @@
       "checked bag",
       "prohibited",
       "tsa weapons rules",
-      "carry on"
+      "carry on",
+      "which sabre products can i take on a plane?"
     ],
     "carryOn": "NOT_ALLOWED",
     "checked": "RESTRICTED",
@@ -6863,13 +8230,15 @@
     "category": "Tools",
     "aliases": [
       "shaving razor",
-      "shaver"
+      "shaver",
+      "can i bring an electric razor in my carry on"
     ],
     "keywords": [
       "razor",
       "shave",
       "blade",
-      "shaver"
+      "shaver",
+      "can i bring an electric razor in my carry on"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",
@@ -6882,13 +8251,17 @@
     "category": "Tools",
     "aliases": [
       "shears",
-      "safety scissors"
+      "safety scissors",
+      "can you take nail scissors in hand luggage ryanair",
+      "what size scissors can you bring on a plane"
     ],
     "keywords": [
       "cut",
       "blades",
       "shears",
-      "scissors"
+      "scissors",
+      "can you take nail scissors in hand luggage ryanair",
+      "what size scissors can you bring on a plane"
     ],
     "carryOn": "RESTRICTED",
     "checked": "ALLOWED",

@@ -16,7 +16,13 @@
     "shampoo secco in aereo",
     "trockenshampoo flugzeug",
     "드라이샴푸 비행기",
-    "darf trockenshampoo ins handgepäck"
+    "darf trockenshampoo ins handgepäck",
+    "can you bring dry shampoo on plane",
+    "can you bring dry shampoo on carry on",
+    "can you bring dry shampoo on a plane",
+    "can you take dry shampoo on a plane",
+    "does dry shampoo count as a liquid when flying",
+    "is dry shampoo considered a liquid when flying"
   ],
   "keywords": [
     "shampoo",
@@ -34,7 +40,10 @@
     "pode levar shampoo a seco no aviao",
     "shampoo secco in aereo",
     "can you bring dry shampoo on carry on",
-    "드라이샴푸 비행기"
+    "드라이샴푸 비행기",
+    "can you bring dry shampoo on plane",
+    "does dry shampoo count as a liquid when flying",
+    "is dry shampoo considered a liquid when flying"
   ],
   "description": "Guidelines for traveling with dry shampoo in your luggage.",
   "carryOn": {

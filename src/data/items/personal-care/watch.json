@@ -11,7 +11,15 @@
     "スマートウォッチ 飛行機 持ち込み",
     "애플워치 위탁수하물",
     "スマートウォッチ 飛行機",
-    "can i bring a watch on a plane"
+    "can i bring a watch on a plane",
+    "can i carry analog watch in checked luggage",
+    "is watch allowed in check in baggage",
+    "can i put smart watch in checked luggage international",
+    "are watches allowed in check in baggage",
+    "can you bring watches on a plane",
+    "can i put watch in checked luggage international",
+    "can i put watch in carry on luggage",
+    "are watches allowed in carry on luggage"
   ],
   "keywords": [
     "watch",
@@ -27,7 +35,11 @@
     "can you wear a smartwatch on a plane",
     "can i put watch in carry on luggage",
     "can i bring a watch on a plane",
-    "can i put watch in checked luggage international"
+    "can i put watch in checked luggage international",
+    "is watch allowed in check in baggage",
+    "are watches allowed in check in baggage",
+    "can you bring watches on a plane",
+    "are watches allowed in carry on luggage"
   ],
   "description": "Guidelines for traveling with watch in your luggage.",
   "carryOn": {

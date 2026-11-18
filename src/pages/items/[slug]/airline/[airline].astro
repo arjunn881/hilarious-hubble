@@ -30,6 +30,7 @@ import {
   getStepByStepPackingGuide,
   getExpandedItemFAQs
 } from "../../../../lib/contentGenerator";
+import { getAirlineFAQs, getSpeakableSummary } from "../../../../lib/combinationEngine";
 import EEATBanner from "../../../../components/seo/EEATBanner.astro";
 import Breadcrumbs from "../../../../components/seo/Breadcrumbs.astro";
 import RelatedLinksWidget from "../../../../components/seo/RelatedLinksWidget.astro";
@@ -139,55 +140,10 @@ const carryOnVerdict = item.carryOn.status === 'ALLOWED' ? 'YES' : item.carryOn.
 const seoTitle = `Can You Bring ${item.name} on ${airline.name}? [${carryOnVerdict} Carry-On] (${currentYear} Rules)`;
 const seoDescription = `Can you bring ${item.name.toLowerCase()} on ${airline.name}? Carry-on status: ${item.carryOn.status.replace("_", " ")}, Checked hold: ${item.checkedBag.status.replace("_", " ")}. Full ${airline.name} baggage rules, size limits & packing advice.`;
 
-const featuredSnippetAnswer = item.carryOn.status === 'ALLOWED'
-  ? `Yes — ${item.name} is allowed in carry-on bags on ${airline.name} flights. ${item.carryOn.reason || ''}`
-  : item.carryOn.status === 'NOT_ALLOWED'
-  ? `No — ${item.name} is NOT allowed in carry-on bags on ${airline.name}. ${item.carryOn.reason || ''} Pack it in your checked hold baggage instead.`
-  : `${item.name} is restricted in carry-on bags on ${airline.name}. ${item.carryOn.reason || ''}`;
+const featuredSnippetAnswer = getSpeakableSummary(item, { type: 'airline', name: airline.name });
 
-// 8 Unique Detailed FAQs
-const faqs = [
-  {
-    q: `Can I bring ${item.name.toLowerCase()} on ${airline.name} flights?`,
-    a: `Yes, carriage depends on baggage type. Under TSA and ${airline.name} guidelines, ${item.name.toLowerCase()} has carry-on status: ${item.carryOn.status.replace("_", " ")} and checked hold status: ${item.checkedBag.status.replace("_", " ")}.`
-  },
-  {
-    q: `Can I pack ${item.name.toLowerCase()} in checked baggage on ${airline.name}?`,
-    a: item.checkedBag.status === 'ALLOWED' 
-      ? `Yes, ${airline.name} permits packing ${item.name.toLowerCase()} in checked hold luggage, up to their checked weight limit of ${airline.checkedLimit}.`
-      : item.checkedBag.status === 'RESTRICTED' 
-      ? `Checked baggage carriage on ${airline.name} is restricted: ${item.checkedBag.reason}`
-      : `No, ${airline.name} prohibits packing ${item.name.toLowerCase()} in checked holds due to flight safety regulations.`
-  },
-  {
-    q: `Can I carry ${item.name.toLowerCase()} in my cabin bag on ${airline.name}?`,
-    a: item.carryOn.status === 'ALLOWED' 
-      ? `Yes, you can carry it in your overhead or personal item cabin bag. Ensure your bag weight does not exceed ${airline.name}'s cabin allowance of ${airline.cabinLimit}.`
-      : item.carryOn.status === 'RESTRICTED' 
-      ? `Cabin bag carriage on ${airline.name} is restricted: ${item.carryOn.reason}`
-      : `No, TSA and ${airline.name} prohibit carrying ${item.name.toLowerCase()} in cabin luggage.`
-  },
-  {
-    q: `What is the ${airline.name} weight and size limit for baggage containing ${item.name.toLowerCase()}?`,
-    a: `For overhead carry-on bags, ${airline.name} enforces a cabin weight limit of ${airline.cabinLimit}. For checked luggage, the standard allowance is ${airline.checkedLimit} per piece.`
-  },
-  {
-    q: `Will TSA or airport security officers inspect my ${item.name.toLowerCase()} when flying ${airline.name}?`,
-    a: `Yes. Security officers screen all cabin and hold baggage via X-ray scans. If ${item.name.toLowerCase()} requires additional inspection, officers will inspect it manually.`
-  },
-  {
-    q: `Does ${airline.name} enforce stricter rules than TSA for ${item.name.toLowerCase()}?`,
-    a: `Airlines reserve the right under IATA guidelines to enforce stricter cabin size, weight, or battery wattage limits than baseline airport security rules.`
-  },
-  {
-    q: `What happens if I pack a restricted ${item.name.toLowerCase()} in my checked luggage?`,
-    a: `If flagged, security screeners will confiscate the item from your luggage, which may cause baggage delays or security fines.`
-  },
-  {
-    q: `How should I package ${item.name.toLowerCase()} for my ${airline.name} flight?`,
-    a: `Keep ${item.name.toLowerCase()} in protective cases or leak-proof pouches near the top of your bag for quick screening.`
-  }
-];
+// Category-intelligent, airline-specific FAQs targeting real search queries
+const faqs = getAirlineFAQs(item, airline);
 
 // Schema JSON-LD blocks
 const breadcrumbSchema = {
@@ -223,6 +179,10 @@ const articleSchema = {
   "inLanguage": "en",
   "datePublished": item.metadata?.lastReviewed || "2026-11-14",
   "dateModified": item.metadata?.lastReviewed || "2026-11-14",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".speakable-summary", "h1"]
+  },
   "author": {
     "@type": "Organization",
     "name": "BringOnPlane Editorial Team",
@@ -318,7 +278,7 @@ const articleSchema = {
       </h1>
 
       <!-- Featured Snippet Quick Answer Box matching reference image -->
-      <div class="mt-5 mb-2 p-4 rounded-md bg-canvas-soft border-l-4 border-link">
+      <div class="speakable-summary mt-5 mb-2 p-4 rounded-md bg-canvas-soft border-l-4 border-link" itemprop="description">
         <p class="text-xs font-mono text-link uppercase tracking-wider mb-1.5 font-semibold">Quick Answer</p>
         <p class="text-sm text-body leading-[1.7] text-pretty">
           {featuredSnippetAnswer}

@@ -34,7 +34,14 @@
     "can you bring ramen through tsa",
     "국제선 컵라면 기내 반입",
     "비행기 컵라면 반입",
-    "비행기 라면 반입"
+    "비행기 라면 반입",
+    "can you bring cup noodles on a plane",
+    "can bring instant noodles to australia",
+    "can i bring instant noodles to australia",
+    "can i bring instant noodles on a plane",
+    "can i carry instant noodles in hand luggage",
+    "can you take cup noodles on a plane",
+    "can i bring cup noodles on a plane"
   ],
   "keywords": [
     "instant noodles",
@@ -67,7 +74,9 @@
     "국제선 컵라면 기내 반입",
     "비행기 컵라면 반입",
     "비행기 라면 반입",
-    "can i bring instant noodles on a plane"
+    "can i bring instant noodles on a plane",
+    "can you take cup noodles on a plane",
+    "can i bring cup noodles on a plane"
   ],
   "description": "TSA rules for instant noodles and packaged ramen on planes.",
   "carryOn": {

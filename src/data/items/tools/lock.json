@@ -9,7 +9,8 @@
     "tsa lock",
     "combination lock",
     "luggage lock",
-    "key lock"
+    "key lock",
+    "can you lock your luggage when flying"
   ],
   "keywords": [
     "lock",
@@ -18,7 +19,8 @@
     "combination lock",
     "luggage lock",
     "security",
-    "puedo llevar un candado en el equipaje de mano"
+    "puedo llevar un candado en el equipaje de mano",
+    "can you lock your luggage when flying"
   ],
   "description": "TSA rules for padlocks and luggage locks on planes.",
   "carryOn": {

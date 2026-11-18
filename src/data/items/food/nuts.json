@@ -32,7 +32,10 @@
     "can you bring nuts into france",
     "機内持ち込み ナッツ",
     "are peanuts allowed",
-    "darf man nüsse mit ins flugzeug nehmen"
+    "darf man nüsse mit ins flugzeug nehmen",
+    "can i take almonds in my carry on",
+    "can i take pistachios on a plane",
+    "can i bring nuts to japan"
   ],
   "keywords": [
     "nuts",
@@ -52,7 +55,13 @@
     "darf man nüsse mit ins flugzeug nehmen",
     "can i bring pistachios on a plane",
     "can you take pistachios on a plane",
-    "can you bring nuts on a plane"
+    "can you bring nuts on a plane",
+    "can i take almonds in my carry on",
+    "can i bring mixed nuts on a plane",
+    "can you bring cashews on a plane",
+    "can you bring almonds on a plane",
+    "can i take pistachios on a plane",
+    "can i bring nuts to japan"
   ],
   "description": "TSA rules for nuts and trail mix on planes.",
   "carryOn": {

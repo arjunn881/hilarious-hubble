@@ -446,30 +446,152 @@ export function getStepByStepPackingGuide(item: any): string[] {
 
 export function getExpandedItemFAQs(item: any): Array<{ question: string; answer: string }> {
   const name = item.name.toLowerCase();
-  const cat = item.category.toLowerCase();
-  
-  return [
-    {
-      question: `Is ${name} allowed on a plane in 2026?`,
-      answer: `Yes, ${name} is ${item.carryOn.status.toLowerCase().replace('_', ' ')} in carry-on cabin baggage and ${item.checkedBag.status.toLowerCase().replace('_', ' ')} in checked hold luggage according to official TSA regulations. ${item.carryOn.reason}`
-    },
-    {
-      question: `Can I put ${name} in my carry-on bag?`,
-      answer: `${item.carryOn.status === 'ALLOWED' ? `Yes, ${name} is fully permitted in your carry-on bag.` : item.carryOn.status === 'RESTRICTED' ? `Yes, but ${name} is subject to specific restrictions in carry-on luggage.` : `No, ${name} is prohibited in carry-on bags.`} ${item.carryOn.conditions && item.carryOn.conditions.length > 0 ? item.carryOn.conditions.join(' ') : 'Ensure it is packed safely and complies with security guidelines.'}`
-    },
-    {
-      question: `Can I pack ${name} in checked luggage?`,
-      answer: `${item.checkedBag.status === 'ALLOWED' ? `Yes, ${name} can be safely packed in your checked hold bag without quantity restrictions.` : item.checkedBag.status === 'RESTRICTED' ? `Yes, ${name} is permitted in checked bags under strict conditions.` : `No, ${name} cannot be checked in cargo baggage.`} ${item.checkedBag.reason}`
-    },
-    {
-      question: `What happens if security officers flag ${name} at the airport?`,
-      answer: `If a TSA officer flags ${name} during X-ray inspection, your bag will be pulled aside for manual inspection. The officer will inspect the item, potentially test it for explosive residue, and verify compliance. The final decision always rests with the TSA officer on duty.`
-    },
-    {
-      question: `Do international baggage rules for ${name} differ from TSA rules?`,
-      answer: `While U.S. TSA rules cover all domestic flights, foreign aviation agencies (such as EASA in Europe or CAA in the UK) may enforce slight variations for ${cat} items. Always verify the rules of your destination country and transit airports before embarking on international flights.`
+  const slug = (item.slug || '').toLowerCase();
+  const cat = (item.category || '').toLowerCase();
+  const subcat = (item.subcategory || '').toLowerCase();
+
+  const faqs: Array<{ question: string; answer: string }> = [];
+
+  // 1. Merge existing JSON item FAQs if present
+  if (Array.isArray(item.faq) && item.faq.length > 0) {
+    for (const f of item.faq) {
+      if (f.question && f.answer) {
+        faqs.push({ question: f.question, answer: f.answer });
+      }
     }
-  ];
+  }
+
+  // 2. High-Intent Query Specific FAQs
+  if (slug === 'melatonin' || name.includes('melatonin')) {
+    faqs.push({
+      question: `Can you bring melatonin on a plane in a Ziploc bag or daily pill organizer?`,
+      answer: `Yes. TSA does not require over-the-counter vitamins or sleep supplements like melatonin to be kept in original manufacturer bottles for domestic US flights. You can pack melatonin gummies, tablets, or capsules in a clear Ziploc bag, pill organizer, or travel dispenser. For international travel, keeping the original label is recommended to avoid customs inquiries.`
+    });
+    faqs.push({
+      question: `Can I bring melatonin on international flights to the UK, France, or Singapore?`,
+      answer: `Yes, arriving passengers are permitted to bring a personal supply of melatonin (typically up to a 3-month supply) into the UK, France, and Singapore. Even though melatonin is classified as a prescription-only medicine locally in the UK and Singapore, border customs authorities allow travelers to enter with personal traveler quantities.`
+    });
+  } else if (slug === 'airtag' || name.includes('airtag')) {
+    faqs.push({
+      question: `Can you put Apple AirTags in checked luggage?`,
+      answer: `Yes. The FAA, TSA, and international aviation authorities (ICAO) officially permit Apple AirTags and smart luggage trackers inside checked baggage. AirTags operate on miniature CR2032 lithium coin-cell batteries containing less than 0.1 grams of lithium metal, which is well below aviation safety thresholds.`
+    });
+  } else if (slug === 'bananas' || name.includes('banana')) {
+    faqs.push({
+      question: `Can I bring bananas on a plane in my carry-on bag?`,
+      answer: `Yes! TSA allows whole, fresh bananas in both carry-on and checked bags on domestic flights. Because bananas are solid fruit, they are completely exempt from the 3-1-1 liquids rule. However, on international flights, fresh fruit must be eaten on board or discarded prior to clearing agricultural customs upon arrival.`
+    });
+  } else if (slug === 'spices' || name.includes('spice') || name.includes('seasoning')) {
+    faqs.push({
+      question: `Can you take spices and seasonings on a plane?`,
+      answer: `Yes, dried culinary spices, seasoning blends, and powders are fully permitted in carry-on and checked luggage. Note the TSA powder rule: powder containers exceeding 12 oz (350 ml) in carry-on bags require separate screening in dedicated checkpoint bins and may be subject to manual inspection.`
+    });
+  } else if (slug === 'jump-rope' || name.includes('jump rope') || name.includes('skipping rope')) {
+    faqs.push({
+      question: `Can you bring a jump rope or skipping rope on a plane?`,
+      answer: `Yes. Jump ropes, speed ropes, and weighted skipping ropes are permitted in carry-on and checked baggage by the TSA and international aviation screeners. We recommend coiling the rope neatly so it does not tangle with electronics in your bag on the X-ray screen.`
+    });
+  } else if (slug === 'dumbbells' || name.includes('dumbbell') || name.includes('weight')) {
+    faqs.push({
+      question: `Can you bring dumbbells or exercise weights on a plane in carry-on?`,
+      answer: `No in carry-on; yes in checked luggage. TSA and international airport security strictly prohibit dumbbells, kettlebells, and heavy exercise weights in the aircraft cabin because they are classified as potential blunt striking weapons. You must pack gym weights in your checked hold baggage.`
+    });
+  } else if (slug === 'nicotine-pouches' || name.includes('zyn') || name.includes('nicotine pouch')) {
+    faqs.push({
+      question: `Can you bring nicotine pouches (ZYN) on a plane? Is ZYN legal in Singapore?`,
+      answer: `TSA permits nicotine pouches like ZYN in carry-on and checked baggage on domestic flights. However, ZYN and all smokeless tobacco/nicotine pouches are strictly ILLEGAL in Singapore under the Tobacco Act, with fines up to $10,000 SGD. Never take nicotine pouches into Singapore, Thailand, or countries with strict bans.`
+    });
+  } else if (slug === 'matches' || name.includes('match')) {
+    faqs.push({
+      question: `Can I bring matches on a plane? Are strike-anywhere matches allowed?`,
+      answer: `TSA permits one single box or book of safety matches on your person or in your carry-on bag. Strike-anywhere matches are strictly prohibited everywhere on the aircraft (in both carry-on and checked baggage) due to spontaneous combustion fire hazards.`
+    });
+  } else if (slug === 'creatine' || name.includes('creatine')) {
+    faqs.push({
+      question: `Can I bring creatine powder on a plane? Can you take creatine to Japan?`,
+      answer: `Yes, creatine powder is allowed in carry-on and checked bags. For carry-on bags, powder containers exceeding 12 oz (350 ml) must be placed in a separate bin for X-ray inspection. Japan Customs permits travelers to bring personal health supplements like creatine up to a 2-month supply without an import certificate.`
+    });
+  } else if (slug === 'energy-drink' || name.includes('energy drink') || name.includes('monster')) {
+    faqs.push({
+      question: `Can I take Monster or Red Bull energy drinks on a plane?`,
+      answer: `Full energy drink cans exceed the 3.4 oz (100 ml) liquid limit and will be confiscated at airport security checkpoints. However, you can freely buy Monster, Red Bull, or coffee past the TSA checkpoint in the terminal and bring it aboard the aircraft.`
+    });
+  } else if (slug === 'hot-sauce' || name.includes('hot sauce')) {
+    faqs.push({
+      question: `Can I bring hot sauce on a plane in my carry-on?`,
+      answer: `TSA classifies hot sauce as a liquid or gel. You can carry hot sauce in your cabin bag only if the bottle is 3.4 oz (100 ml) or smaller and fits inside your clear 1-quart resealable liquids bag. Larger bottles must be placed in checked luggage.`
+    });
+  } else if (slug === 'instant-noodles' || name.includes('noodle') || name.includes('ramen')) {
+    faqs.push({
+      question: `Can you bring cup noodles or instant ramen on a plane?`,
+      answer: `Yes, dry instant noodles (such as Cup Noodles, Ramen, and Maggi) are solid food items and fully permitted through TSA security. You can ask flight attendants for hot water on board to prepare them. For international flights, avoid noodles containing real dried meat bits to clear customs cleanly.`
+    });
+  } else if (slug === 'shoes' || name.includes('shoe') || name.includes('sneaker')) {
+    faqs.push({
+      question: `Can I pack shoes in my carry-on bag? Do I have to remove them at security?`,
+      answer: `Yes, you can pack as many shoes in your carry-on as will fit within airline size allowances. At TSA checkpoints in standard screening lanes, passengers must remove the shoes they are wearing and place them in bins, unless they have TSA PreCheck or are under 12 or 75+ years old.`
+    });
+  } else if (slug === 'watch' || slug === 'smartwatch' || name.includes('watch')) {
+    faqs.push({
+      question: `Can you bring a luxury watch or smartwatch on a plane?`,
+      answer: `Yes. Always carry high-value watches and smartwatches on your person or in your carry-on luggage—never in checked baggage where theft or damage risks are higher. In security screening, you can usually keep your wristwatch on unless asked by an officer to place it in your carry-on bag.`
+    });
+  } else if (slug === 'cigarettes' || name.includes('cigarette')) {
+    faqs.push({
+      question: `Can you bring cigarettes on a plane? How many can you fly with?`,
+      answer: `Yes, cigarettes are permitted in carry-on and checked luggage. TSA imposes no quantity limits for domestic flights within the US. For international travel, destination countries enforce duty-free allowances (commonly 200 cigarettes or 1 carton); exceeding limits requires customs declaration and tax payment.`
+    });
+  } else if (slug === 'beef-jerky' || name.includes('jerky')) {
+    faqs.push({
+      question: `Can you bring beef jerky through TSA security and on international flights?`,
+      answer: `Commercially sealed beef jerky and meat snacks are fully allowed in carry-on and checked bags on domestic flights. However, destination customs in Canada, the UK, the EU, Australia, and Japan strictly ban foreign meat products. Consume all beef jerky before landing to avoid steep fines.`
+    });
+  }
+
+  // 3. Baseline Core FAQs (if not already answered)
+  const existingQuestions = new Set(faqs.map(f => f.question.toLowerCase()));
+
+  const baselineQ1 = `Is ${name} allowed on a plane in 2026?`;
+  if (!existingQuestions.has(baselineQ1.toLowerCase())) {
+    faqs.push({
+      question: baselineQ1,
+      answer: `Yes, ${name} is ${item.carryOn.status.toLowerCase().replace('_', ' ')} in carry-on cabin baggage and ${item.checkedBag.status.toLowerCase().replace('_', ' ')} in checked hold luggage according to official TSA regulations. ${item.carryOn.reason || ''}`
+    });
+  }
+
+  const baselineQ2 = `Can I put ${name} in my carry-on bag?`;
+  if (!existingQuestions.has(baselineQ2.toLowerCase())) {
+    faqs.push({
+      question: baselineQ2,
+      answer: `${item.carryOn.status === 'ALLOWED' ? `Yes, ${name} is fully permitted in your carry-on bag.` : item.carryOn.status === 'RESTRICTED' ? `Yes, but ${name} is subject to specific restrictions in carry-on luggage.` : `No, ${name} is prohibited in carry-on bags.`} ${item.carryOn.conditions && item.carryOn.conditions.length > 0 ? item.carryOn.conditions.join(' ') : 'Ensure it is packed safely and complies with security guidelines.'}`
+    });
+  }
+
+  const baselineQ3 = `Can I pack ${name} in checked luggage?`;
+  if (!existingQuestions.has(baselineQ3.toLowerCase())) {
+    faqs.push({
+      question: baselineQ3,
+      answer: `${item.checkedBag.status === 'ALLOWED' ? `Yes, ${name} can be safely packed in your checked hold bag without quantity restrictions.` : item.checkedBag.status === 'RESTRICTED' ? `Yes, ${name} is permitted in checked bags under strict conditions.` : `No, ${name} cannot be checked in cargo baggage.`} ${item.checkedBag.reason || ''}`
+    });
+  }
+
+  const baselineQ4 = `What happens if security officers flag ${name} at the airport?`;
+  if (!existingQuestions.has(baselineQ4.toLowerCase())) {
+    faqs.push({
+      question: baselineQ4,
+      answer: `If a TSA officer flags ${name} during X-ray inspection, your bag will be pulled aside for manual inspection. The officer will inspect the item, potentially test it for explosive residue, and verify compliance. The final decision always rests with the TSA officer on duty.`
+    });
+  }
+
+  const baselineQ5 = `Do international baggage rules for ${name} differ from TSA rules?`;
+  if (!existingQuestions.has(baselineQ5.toLowerCase())) {
+    faqs.push({
+      question: baselineQ5,
+      answer: `While U.S. TSA rules cover all domestic flights, foreign aviation agencies (such as EASA in Europe or CAA in the UK) may enforce slight variations for ${cat} items. Always verify the rules of your destination country and transit airports before embarking on international flights.`
+    });
+  }
+
+  return faqs;
 }
 
 // ==========================================
