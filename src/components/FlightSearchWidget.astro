@@ -36,7 +36,7 @@ const locale = supportedLocales.includes(lang) ? lang : "en";
 
 const subId = encodeURIComponent(`WIDGET_${slug}`.slice(0, 64));
 
-let widgetSrc = `https://tpwdg.com/content?currency=${currency}&trs=574616&shmarker=778331.BringonPlane&locale=${locale}&stops=any&show_hotels=true&powered_by=true&border_radius=7&plain=true&color_button=%230041a9&color_button_text=%23ffffff&promo_id=3414&campaign_id=111&sub_id=${subId}`;
+let widgetSrc = `https://tpwdg.com/content?currency=${currency}&trs=574616&shmarker=778331.BringonPlane&powered_by=true&locale=${locale}&stops=-1&show_header=true&limit=3&primary_color=1431c2&results_background_color=FFFFFF&form_background_color=FFFFFF&campaign_id=111&promo_id=4478&sub_id=${subId}`;
 
 if (defaultDestination) {
   widgetSrc += `&destination=${encodeURIComponent(defaultDestination)}`;
@@ -125,7 +125,8 @@ if (defaultDestination) {
 </aside>
 
 <style is:global>
-  tp-cascoon {
+  tp-cascoon,
+  #tp-widget-container iframe {
     display: block !important;
     width: 100% !important;
     min-height: 80px !important;
@@ -138,10 +139,11 @@ if (defaultDestination) {
     var tpContainer = document.getElementById("tp-widget-container");
     var tpScript = document.getElementById("tpwdg-script");
 
-    // Hide native form ONLY if tp-cascoon successfully rendered inside DOM
+    // Hide native form ONLY if Travelpayouts widget successfully rendered inside DOM
     function checkTpLoaded() {
       var cascoon = document.querySelector("tp-cascoon");
-      if (cascoon && cascoon.shadowRoot && cascoon.shadowRoot.children.length > 0) {
+      var iframe = tpContainer ? tpContainer.querySelector("iframe") : null;
+      if ((cascoon && cascoon.shadowRoot && cascoon.shadowRoot.children.length > 0) || (cascoon && cascoon.children.length > 0) || iframe) {
         if (nativeForm) nativeForm.style.display = "none";
       }
     }
