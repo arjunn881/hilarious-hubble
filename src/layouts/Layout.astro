@@ -3,6 +3,7 @@ import "../styles/global.css";
 import SearchModal from "../components/SearchModal.astro";
 import TSAUpdatesBanner from "../components/TSAUpdatesBanner.astro";
 import AmazonGeoRouter from "../components/monetization/AmazonGeoRouter.astro";
+import MonetagAds from "../components/monetization/MonetagAds.astro";
 import { ClientRouter } from "astro:transitions";
 import {
   getAlternateLinks,
@@ -147,7 +148,9 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
             s.indexOf("emrldtp") !== -1 ||
             s.indexOf("ntc0nje2") !== -1 ||
             s.indexOf("doubleclick") !== -1 ||
-            s.indexOf("googlesyndication") !== -1
+            s.indexOf("googlesyndication") !== -1 ||
+            s.indexOf("nap5k") !== -1 ||
+            s.indexOf("5gvci") !== -1
           );
         }
 
@@ -272,13 +275,17 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
                 e.reason.message.indexOf("securepubads") !== -1 ||
                 e.reason.message.indexOf("chunk.BkBAu") !== -1 ||
                 e.reason.message.indexOf("emrldtp") !== -1 ||
-                e.reason.message.indexOf("lima_error") !== -1
+                e.reason.message.indexOf("lima_error") !== -1 ||
+                e.reason.message.indexOf("nap5k") !== -1 ||
+                e.reason.message.indexOf("5gvci") !== -1
               )) ||
               (e.reason.stack && (
                 e.reason.stack.indexOf("chunk.BkBAu") !== -1 ||
                 e.reason.stack.indexOf("NTc0NjE2") !== -1 ||
                 e.reason.stack.indexOf("emrldtp") !== -1 ||
-                e.reason.stack.indexOf("outstream") !== -1
+                e.reason.stack.indexOf("outstream") !== -1 ||
+                e.reason.stack.indexOf("nap5k") !== -1 ||
+                e.reason.stack.indexOf("5gvci") !== -1
               ))
             )
           ) {
@@ -335,6 +342,8 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422" crossorigin="anonymous"></script>
+    <!-- Monetag Ads (Isolated component: can be removed or disabled instantly in src/components/monetization/MonetagAds.astro) -->
+    <MonetagAds />
 
     {prevURL && <link rel="prev" href={prevURL} />}
     {nextURL && <link rel="next" href={nextURL} />}

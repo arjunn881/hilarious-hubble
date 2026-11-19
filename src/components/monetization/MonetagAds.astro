@@ -1,0 +1,53 @@
+---
+/**
+ * MonetagAds.astro
+ * =============================================================================
+ * Standalone, isolated Monetag (PropellerAds) ad integration.
+ *
+ * Included tags:
+ * 1. Monetag Tag 1 (Zone 11738017): https://nap5k.com/tag.min.js
+ * 2. Monetag Tag 2 (Zone 12298359): https://5gvci.com/act/files/tag.min.js?z=12298359
+ *
+ * HOW TO REMOVE OR DISABLE SITE-WIDE INSTANTLY:
+ * ─────────────────────────────────────────────────────────────────────────────
+ * • OPTION 1 (Instant Toggle):
+ *   Change `ENABLED = true` to `ENABLED = false` below. All ad scripts will immediately stop rendering.
+ *
+ * • OPTION 2 (Remove from Layout):
+ *   Comment out or remove `<MonetagAds />` in `src/layouts/Layout.astro`.
+ *
+ * • OPTION 3 (Full Delete):
+ *   Delete this file (`src/components/monetization/MonetagAds.astro`) and remove its
+ *   import in `src/layouts/Layout.astro`.
+ *
+ * SAFETY & SEO GUARANTEE:
+ * ─────────────────────────────────────────────────────────────────────────────
+ * This component is completely isolated from all SEO meta tags, canonical URLs,
+ * hreflang links, OpenGraph, JSON-LD schemas (Organization, SoftwareApplication,
+ * BreadcrumbList, WebPage, Speakable), and Core Web Vitals critical paths.
+ * Removing or toggling it will never affect your SEO, indexing, or ranking.
+ * =============================================================================
+ */
+
+interface Props {
+  /** Optional prop to toggle ads per page or condition (defaults to true) */
+  enabled?: boolean;
+}
+
+const { enabled = true } = Astro.props;
+
+// Master switch: change to false to immediately turn off Monetag ads sitewide
+const ENABLED = enabled && true;
+---
+
+{ENABLED && (
+  <>
+    <!-- Monetag Ad Tag 1: Zone 11738017 -->
+    <script is:inline>
+      (function(s){s.dataset.zone='11738017',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+    </script>
+
+    <!-- Monetag Ad Tag 2: Zone 12298359 -->
+    <script is:inline src="https://5gvci.com/act/files/tag.min.js?z=12298359" data-cfasync="false" async></script>
+  </>
+)}
