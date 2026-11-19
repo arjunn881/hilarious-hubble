@@ -632,5 +632,13 @@ https://www.bringonplane.com/* https://bringonplane.com/:splat 301!
 /items/:slug/country/united-kingdom/ /items/:slug/country/uk/ 301
 /items/:slug/country/united-states   /items/:slug/country/usa/ 301
 /items/:slug/country/united-states/  /items/:slug/country/usa/ 301
+/items/:slug/airline/delta-air-lines  /items/:slug/airline/delta/ 301
+/items/:slug/airline/delta-air-lines/ /items/:slug/airline/delta/ 301
+/items/:slug/airline/delta-airlines  /items/:slug/airline/delta/ 301
+/items/:slug/airline/delta-airlines/ /items/:slug/airline/delta/ 301
+/items/:slug/airline/american-airlines  /items/:slug/airline/american/ 301
+/items/:slug/airline/american-airlines/ /items/:slug/airline/american/ 301
+/items/:slug/airline/united-airlines  /items/:slug/airline/united/ 301
+/items/:slug/airline/united-airlines/ /items/:slug/airline/united/ 301
 /items/$*  /items/page/1/ 301
 /guides/:slug /guides/ 301
