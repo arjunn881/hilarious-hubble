@@ -2,12 +2,15 @@
 /**
  * FlightSearchWidget.astro
  * ─────────────────────────────────────────────────────────────────────────────
- * Hybrid Intent-Driven Flight Search Utility:
- * 1. Loads Travelpayouts official interactive widget (marker: 778331.BringonPlane, color: #0041a9).
- * 2. Includes native fallback form so visitors with adblockers (which block tpwdg.com)
- *    never see an empty box and can seamlessly search flights via localized Kiwi / Trip links.
+ * Intent-Driven Flight Search Utility:
+ * 1. Embeds Travelpayouts official interactive widget (promo_id=3414, marker 778331.BringonPlane, border_radius=7).
+ *    Features live autocomplete recommendations for cities and airports (e.g. Mumbai BOM, New York JFK).
+ * 2. Includes native fallback form equipped with built-in airport/city autocomplete recommendations,
+ *    which activates only if client-side adblockers block tpwdg.com.
  * ─────────────────────────────────────────────────────────────────────────────
  */
+
+import { POPULAR_AIRPORTS } from "../data/popularAirports";
 
 interface Props {
   defaultDestination?: string;
@@ -34,9 +37,8 @@ const currency = currencyMap[lang] || "usd";
 const supportedLocales = ["en", "es", "fr", "de", "it", "pt"];
 const locale = supportedLocales.includes(lang) ? lang : "en";
 
-const subId = encodeURIComponent(`WIDGET_${slug}`.slice(0, 64));
-
-let widgetSrc = `https://tpwdg.com/content?currency=${currency}&trs=574616&shmarker=778331.BringonPlane&powered_by=true&locale=${locale}&stops=-1&show_header=true&limit=3&primary_color=1431c2&results_background_color=FFFFFF&form_background_color=FFFFFF&campaign_id=111&promo_id=4478&sub_id=${subId}`;
+// User's exact configured widget: promo_id=3414, border_radius=7, color_button=#0041a9
+let widgetSrc = `https://tpwdg.com/content?currency=${currency}&trs=574616&shmarker=778331.BringonPlane&locale=${locale}&stops=any&show_hotels=true&powered_by=true&border_radius=7&plain=true&color_button=%230041a9&color_button_text=%23ffffff&promo_id=3414&campaign_id=111`;
 
 if (defaultDestination) {
   widgetSrc += `&destination=${encodeURIComponent(defaultDestination)}`;
@@ -57,8 +59,8 @@ if (defaultDestination) {
     </h2>
   </div>
 
-  {/* ── Travelpayouts Widget Container ── */}
-  <div id="tp-widget-container" class="w-full overflow-hidden">
+  {/* ── Travelpayouts Widget Container (overflow-visible so autocomplete dropdown renders properly) ── */}
+  <div id="tp-widget-container" class="w-full relative min-h-[90px] overflow-visible">
     <script
       is:inline
       async
@@ -68,26 +70,28 @@ if (defaultDestination) {
     ></script>
   </div>
 
-  {/* ── Native Search Form (Active fallback if tpwdg.com is blocked by client adblockers) ── */}
-  <form id="native-flight-search-form" class="mt-1" novalidate>
+  {/* ── Native Search Form (Hidden by default, reveals only if client adblockers block tpwdg.com) ── */}
+  <form id="native-flight-search-form" class="hidden mt-1" novalidate>
     <div class="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
       <div>
-        <label for="flight-origin" class="block text-[11px] font-medium text-mute mb-1">Departure</label>
+        <label for="flight-origin" class="block text-[11px] font-medium text-mute mb-1">Departure City or Airport</label>
         <input
           id="flight-origin"
+          list="popular-airports-datalist"
           type="text"
-          placeholder="Origin city or airport code"
+          placeholder="e.g. Mumbai (BOM) or New York"
           autocomplete="off"
           class="w-full rounded-md border border-hairline bg-canvas px-3 py-2 text-sm text-ink placeholder:text-mute focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
         />
       </div>
 
       <div>
-        <label for="flight-dest" class="block text-[11px] font-medium text-mute mb-1">Destination</label>
+        <label for="flight-dest" class="block text-[11px] font-medium text-mute mb-1">Destination City or Airport</label>
         <input
           id="flight-dest"
+          list="popular-airports-datalist"
           type="text"
-          placeholder="Destination city or airport"
+          placeholder="e.g. London (LHR) or Bhubaneswar"
           autocomplete="off"
           value={defaultDestination}
           class="w-full rounded-md border border-hairline bg-canvas px-3 py-2 text-sm text-ink placeholder:text-mute focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
@@ -103,6 +107,15 @@ if (defaultDestination) {
         />
       </div>
     </div>
+
+    {/* Shared Datalist for instant autocomplete recommendations */}
+    <datalist id="popular-airports-datalist">
+      {POPULAR_AIRPORTS.map((apt) => (
+        <option value={`${apt.city} (${apt.code})`}>
+          {apt.city}, {apt.country} — {apt.name} ({apt.code})
+        </option>
+      ))}
+    </datalist>
 
     <div class="mt-3.5 flex flex-wrap items-center justify-between gap-3">
       <button
@@ -139,26 +152,50 @@ if (defaultDestination) {
     var tpContainer = document.getElementById("tp-widget-container");
     var tpScript = document.getElementById("tpwdg-script");
 
-    // Hide native form ONLY if Travelpayouts widget successfully rendered inside DOM
-    function checkTpLoaded() {
-      var cascoon = document.querySelector("tp-cascoon");
-      var iframe = tpContainer ? tpContainer.querySelector("iframe") : null;
-      if ((cascoon && cascoon.shadowRoot && cascoon.shadowRoot.children.length > 0) || (cascoon && cascoon.children.length > 0) || iframe) {
-        if (nativeForm) nativeForm.style.display = "none";
+    var widgetLoaded = false;
+
+    function markWidgetLoaded() {
+      widgetLoaded = true;
+      if (nativeForm) {
+        nativeForm.classList.add("hidden");
+        nativeForm.style.display = "none";
       }
     }
 
-    // Check on script load and mutation
+    function checkTpLoaded() {
+      var cascoon = document.querySelector("tp-cascoon");
+      var iframe = tpContainer ? tpContainer.querySelector("iframe") : null;
+      if (
+        (cascoon && cascoon.shadowRoot && cascoon.shadowRoot.children.length > 0) ||
+        (cascoon && cascoon.children.length > 0) ||
+        iframe
+      ) {
+        markWidgetLoaded();
+      }
+    }
+
+    // If script throws error (e.g. blocked by uBlock Origin, Brave Shield, AdGuard)
     if (tpScript) {
-      tpScript.addEventListener("load", function () {
-        setTimeout(checkTpLoaded, 400);
-        setTimeout(checkTpLoaded, 1200);
-      });
       tpScript.addEventListener("error", function () {
-        // tpwdg blocked by adblocker: keep native form visible
-        if (nativeForm) nativeForm.style.display = "block";
+        if (!widgetLoaded && nativeForm) {
+          nativeForm.classList.remove("hidden");
+          nativeForm.style.display = "block";
+        }
+      });
+      tpScript.addEventListener("load", function () {
+        setTimeout(checkTpLoaded, 300);
+        setTimeout(checkTpLoaded, 1000);
       });
     }
+
+    // Fallback timer: if after 2.5s widget hasn't loaded (e.g. silent client block or network timeout)
+    setTimeout(function () {
+      checkTpLoaded();
+      if (!widgetLoaded && nativeForm) {
+        nativeForm.classList.remove("hidden");
+        nativeForm.style.display = "block";
+      }
+    }, 2500);
 
     var observer = new MutationObserver(function () {
       checkTpLoaded();

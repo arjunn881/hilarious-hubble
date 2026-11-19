@@ -11,6 +11,7 @@
  */
 
 import { useTranslations, useTranslatedPath, type Lang } from "../i18n/utils";
+import { POPULAR_AIRPORTS } from "../data/popularAirports";
 
 interface Props {
   lang?: Lang;
@@ -51,6 +52,7 @@ const isFlightsPage = currentPath.endsWith("/flights") || currentPath.endsWith("
         {/* Origin */}
         <input
           id="top-flight-origin"
+          list="popular-airports-datalist-top"
           type="text"
           placeholder="From"
           aria-label="Departure airport or city"
@@ -61,6 +63,7 @@ const isFlightsPage = currentPath.endsWith("/flights") || currentPath.endsWith("
         {/* Destination */}
         <input
           id="top-flight-dest"
+          list="popular-airports-datalist-top"
           type="text"
           placeholder="To"
           aria-label="Destination airport or city"
@@ -75,6 +78,15 @@ const isFlightsPage = currentPath.endsWith("/flights") || currentPath.endsWith("
           aria-label="Departure date"
           class="hidden md:block w-32 h-8 rounded-md bg-slate-800/90 border border-slate-700/80 px-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
         />
+
+        {/* Datalist for airport & city autocomplete suggestions */}
+        <datalist id="popular-airports-datalist-top">
+          {POPULAR_AIRPORTS.map((apt) => (
+            <option value={`${apt.city} (${apt.code})`}>
+              {apt.city}, {apt.country} — {apt.name} ({apt.code})
+            </option>
+          ))}
+        </datalist>
 
         {/* Search Submit Button */}
         <button
