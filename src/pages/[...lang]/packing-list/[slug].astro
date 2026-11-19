@@ -7,6 +7,7 @@ import EEATBanner from "../../../components/seo/EEATBanner.astro";
 import RelatedLinksWidget from "../../../components/seo/RelatedLinksWidget.astro";
 import ChecklistAddon from "../../../components/monetization/ChecklistAddon.astro";
 import TravelServicesBar from "../../../components/monetization/TravelServicesBar.astro";
+import FlightSearchWidget from "../../../components/FlightSearchWidget.astro";
 import { 
   ArrowLeft, Sparkles, ClipboardCheck, AlertTriangle, ShieldCheck, 
   CheckCircle2, XCircle, AlertCircle, FileText, ChevronDown, Calendar, 
@@ -310,6 +311,7 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 const { template, allTemplates } = Astro.props;
+const slug = template.slug;
 /** Locale-aware absolute URL for the structured-data graph. */
 const currentUrl = getCanonicalUrl(`/packing-list/${template.slug}/`, lang);
 const currentYear = new Date().getFullYear();
@@ -461,7 +463,7 @@ const seoKeywords = lang === 'en'
       </div>
 
       <!-- Above-the-fold sponsored travel services bar -->
-      <TravelServicesBar />
+      <TravelServicesBar slug={slug} />
 
       <!-- CTA to Launch Interactive Assistant -->
       <div class="flex flex-wrap items-center gap-4 mt-6">
@@ -622,8 +624,11 @@ const seoKeywords = lang === 'en'
     <!-- E-E-A-T Editorial Banner -->
     <EEATBanner lastUpdated={String(currentYear)} lang={lang} />
 
+    <!-- Contextual Flight Search -->
+    <FlightSearchWidget slug={slug} />
+
     <!-- Monetization Layer: eSIM + Insurance (Module C) -->
-    <ChecklistAddon />
+    <ChecklistAddon context="CHECKLIST" slug={slug} />
 
     <!-- Related Packing Lists Widget -->
     <RelatedLinksWidget groups={relatedWidgetGroups} />

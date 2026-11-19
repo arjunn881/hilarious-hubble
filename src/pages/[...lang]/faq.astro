@@ -821,7 +821,7 @@ const faqSchema = {
     <div class="max-w-[860px] mx-auto px-4 md:px-6 py-14 space-y-16">
 
       <!-- Above-the-fold sponsored travel services bar -->
-      <TravelServicesBar />
+      <TravelServicesBar slug="faq" />
 
       {categories.map((cat, catIdx) => (
         <section id={`cat-${cat.id}`} class="scroll-mt-20">
@@ -867,7 +867,7 @@ const faqSchema = {
       ))}
 
       <!-- Monetization Layer: eSIM + Insurance (Module C) -->
-      <ChecklistAddon />
+      <ChecklistAddon context="CHECKLIST" slug="faq" />
 
       <!-- Bottom CTA -->
       <div class="border border-hairline rounded-md p-8 text-center bg-canvas-soft">

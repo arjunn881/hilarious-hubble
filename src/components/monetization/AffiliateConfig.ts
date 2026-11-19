@@ -13,6 +13,114 @@
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
+// ─── § 0. New typed affiliate matrix ─────────────────────────────────────────
+
+export type RegionCode = "ASIA" | "NA" | "EU" | "GLOBAL";
+export type PageContext = "ITEM_ALLOWED" | "ITEM_RESTRICTED" | "GUIDE_DEST" | "AIRLINE" | "CHECKLIST";
+
+export interface AffiliateOffer {
+  id: string;
+  name: string;
+  category: "FLIGHTS" | "ESIM" | "INSURANCE" | "STORAGE" | "TRANSFERS" | "ACTIVITIES" | "COMPENSATION";
+  baseUrl: string;
+  ctaLabel: string;
+  pitch: string;
+  regions: RegionCode[];
+  contexts: PageContext[];
+  priority: number;
+}
+
+export const AFFILIATE_MATRIX: AffiliateOffer[] = [
+  {
+    id: "trip_flights",
+    name: "Trip.com",
+    category: "FLIGHTS",
+    baseUrl: "https://tp.media/r?marker=PLACEHOLDER_ID&trs=PLACEHOLDER_ID&p=5543&u=https%3A%2F%2Fwww.trip.com%2F",
+    ctaLabel: "Search flights on Trip.com →",
+    pitch: "Compare cheap flights across 800+ airlines with live prices.",
+    regions: ["ASIA"],
+    contexts: ["ITEM_ALLOWED", "GUIDE_DEST", "AIRLINE", "CHECKLIST"],
+    priority: 1,
+  },
+  {
+    id: "kiwi_flights",
+    name: "Kiwi.com",
+    category: "FLIGHTS",
+    baseUrl: "https://kiwi.tp.st/PLACEHOLDER_ID",
+    ctaLabel: "Find cheapest flights →",
+    pitch: "Kiwi's unique combination search finds the cheapest fares across airlines.",
+    regions: ["EU", "NA", "GLOBAL"],
+    contexts: ["ITEM_ALLOWED", "GUIDE_DEST", "AIRLINE", "CHECKLIST"],
+    priority: 1,
+  },
+  {
+    id: "yesim",
+    name: "Yesim",
+    category: "ESIM",
+    baseUrl: "https://yesim.tpk.lu/nSZQQkYX",
+    ctaLabel: "Get a travel eSIM →",
+    pitch: "Instant eSIM mobile data in 160+ countries — activate before you fly.",
+    regions: ["ASIA", "NA", "EU", "GLOBAL"],
+    contexts: ["ITEM_ALLOWED", "GUIDE_DEST", "CHECKLIST"],
+    priority: 2,
+  },
+  {
+    id: "klook",
+    name: "Klook",
+    category: "ACTIVITIES",
+    baseUrl: "https://klook.tpk.lu/sp5LYIRr",
+    ctaLabel: "Book airport trains & passes →",
+    pitch: "Discounted airport express train passes, tickets, and travel experiences worldwide.",
+    regions: ["ASIA", "EU", "NA", "GLOBAL"],
+    contexts: ["GUIDE_DEST", "CHECKLIST"],
+    priority: 2,
+  },
+  {
+    id: "radical_storage",
+    name: "Radical Storage",
+    category: "STORAGE",
+    baseUrl: "https://radicalstorage.tpk.lu/7bh3hKRs",
+    ctaLabel: "Store luggage near the airport →",
+    pitch: "Secure luggage storage near airports and train stations in 500+ cities.",
+    regions: ["EU", "NA", "ASIA", "GLOBAL"],
+    contexts: ["ITEM_RESTRICTED", "AIRLINE"],
+    priority: 1,
+  },
+  {
+    id: "airhelp",
+    name: "AirHelp",
+    category: "COMPENSATION",
+    baseUrl: "https://airhelp.tpk.lu/MotuJQgD",
+    ctaLabel: "Check flight compensation →",
+    pitch: "Check if the airline owes you up to $650 / €600 for delayed or cancelled flights.",
+    regions: ["EU", "NA", "GLOBAL"],
+    contexts: ["AIRLINE"],
+    priority: 1,
+  },
+  {
+    id: "ekta",
+    name: "EKTA Insurance",
+    category: "INSURANCE",
+    baseUrl: "https://ektatraveling.tpk.lu/iBSTDrvr",
+    ctaLabel: "Get travel insurance →",
+    pitch: "Fast worldwide medical & trip protection — accepted for visas, instant policy.",
+    regions: ["EU", "ASIA", "NA", "GLOBAL"],
+    contexts: ["GUIDE_DEST", "CHECKLIST"],
+    priority: 3,
+  },
+  {
+    id: "kiwitaxi",
+    name: "Kiwitaxi",
+    category: "TRANSFERS",
+    baseUrl: "https://kiwitaxi.tpk.lu/lTXByX4t",
+    ctaLabel: "Pre-book airport transfer →",
+    pitch: "Pre-book a private airport taxi or shuttle with meet-and-greet in 100+ countries.",
+    regions: ["EU", "ASIA", "NA", "GLOBAL"],
+    contexts: ["CHECKLIST", "GUIDE_DEST"],
+    priority: 3,
+  },
+];
+
 // ─── § 1. Tracking IDs ───────────────────────────────────────────────────────
 
 /** Amazon Associates tag for USA & international visitors (amazon.com) */
@@ -254,4 +362,3 @@ export const AIRPORT_PARTNERS = {
     pitch: "Discounted airport express train passes, tickets, and travel experiences worldwide.",
   },
 } as const;
-

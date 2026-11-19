@@ -1,0 +1,129 @@
+---
+/**
+ * VerdictActionCallout.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Slim single-line contextual utility callout placed below the carry-on /
+ * checked verdict on item pages.
+ *
+ * Renders two variants:
+ *   ALLOWED      → flight comparison + eSIM links (blue tint)
+ *   NOT_ALLOWED / RESTRICTED → luggage storage + flight links (amber tint)
+ *   UNKNOWN      → nothing rendered
+ *
+ * All URLs are built server-side with region="GLOBAL" (safe static default).
+ * FTC disclosure: "Sponsored" label right-aligned.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+import { buildAffiliateUrl } from "../utils/getContextualAffiliates";
+import { AFFILIATE_MATRIX } from "./monetization/AffiliateConfig";
+
+interface Props {
+  carryOnStatus: "ALLOWED" | "NOT_ALLOWED" | "RESTRICTED" | "UNKNOWN";
+  slug: string;
+  lang?: string;
+}
+
+const { carryOnStatus, slug, lang: _lang = "en" } = Astro.props;
+
+// ── Bail early for UNKNOWN ────────────────────────────────────────────────────
+const shouldRender = carryOnStatus !== "UNKNOWN";
+
+// ── Resolve affiliate offers ──────────────────────────────────────────────────
+const kiwiOffer       = AFFILIATE_MATRIX.find((o) => o.id === "kiwi_flights");
+const yesimOffer      = AFFILIATE_MATRIX.find((o) => o.id === "yesim");
+const storageOffer    = AFFILIATE_MATRIX.find((o) => o.id === "radical_storage");
+
+const kiwiUrl    = kiwiOffer
+  ? buildAffiliateUrl(kiwiOffer.baseUrl,    { slug, slot: "inline_verdict", region: "GLOBAL" })
+  : "#";
+const yesimUrl   = yesimOffer
+  ? buildAffiliateUrl(yesimOffer.baseUrl,   { slug, slot: "inline_verdict", region: "GLOBAL" })
+  : "#";
+const storageUrl = storageOffer
+  ? buildAffiliateUrl(storageOffer.baseUrl, { slug, slot: "inline_verdict", region: "GLOBAL" })
+  : "#";
+
+// ── Variant flags ─────────────────────────────────────────────────────────────
+const isAllowed     = carryOnStatus === "ALLOWED";
+const isRestricted  = carryOnStatus === "NOT_ALLOWED" || carryOnStatus === "RESTRICTED";
+---
+
+{shouldRender && (
+  <div
+    class:list={[
+      "no-print my-3 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border px-4 py-2.5 text-sm",
+      isAllowed   && "border-link/20 bg-link-bg-soft/40",
+      isRestricted && "border-warning/20 bg-warning-soft/40",
+    ]}
+  >
+    {isAllowed && (
+      <>
+        {/* Status label */}
+        <span class="font-medium text-link-deep">
+          ✅ Allowed in carry-on.
+        </span>
+
+        {/* Copy */}
+        <span class="text-body">
+          Compare live flight fares or grab a travel eSIM before takeoff →
+        </span>
+
+        {/* CTA links */}
+        <a
+          href={kiwiUrl}
+          target="_blank"
+          rel="noopener noreferrer nofollow sponsored"
+          class="text-xs font-semibold text-link-deep underline hover:text-link"
+        >
+          Compare flights
+        </a>
+
+        <a
+          href={yesimUrl}
+          target="_blank"
+          rel="noopener noreferrer nofollow sponsored"
+          class="text-xs font-semibold text-link-deep underline hover:text-link"
+        >
+          Travel eSIM
+        </a>
+      </>
+    )}
+
+    {isRestricted && (
+      <>
+        {/* Status label */}
+        <span class="font-medium text-warning-deep">
+          ⚠ Restricted in cabin.
+        </span>
+
+        {/* Copy */}
+        <span class="text-body">
+          Store extra bags safely near the airport or check baggage rules →
+        </span>
+
+        {/* CTA links */}
+        <a
+          href={storageUrl}
+          target="_blank"
+          rel="noopener noreferrer nofollow sponsored"
+          class="text-xs font-semibold text-amber-700 underline hover:opacity-80 dark:text-amber-400"
+        >
+          Store luggage
+        </a>
+
+        <a
+          href={kiwiUrl}
+          target="_blank"
+          rel="noopener noreferrer nofollow sponsored"
+          class="text-xs font-semibold text-amber-700 underline hover:opacity-80 dark:text-amber-400"
+        >
+          Compare flights
+        </a>
+      </>
+    )}
+
+    {/* FTC disclosure — right-aligned via ml-auto */}
+    <span class="ml-auto font-mono text-[10px] text-mute">Sponsored</span>
+  </div>
+)}

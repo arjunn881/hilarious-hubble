@@ -2,237 +2,178 @@
 /**
  * ChecklistAddon.astro
  * ─────────────────────────────────────────────────────────────────────────────
- * Module C — Travel Services Monetization (AdSense-compliant)
+ * Intent-driven contextual travel services recommendation block.
  *
- * Layout strategy for CTR and policy compliance:
- *   1. AirHelp  — Full-width hero (highest conversion: free + $650 claim)
- *   2. Yesim + EKTA — Side-by-side (high-intent, high-commission)
- *   3. Radical Storage + Kiwitaxi + Klook — Compact utility row
+ * Dynamically renders up to `limit` (default 3) relevant affiliate offers
+ * matching the active PageContext (ITEM_ALLOWED, ITEM_RESTRICTED, GUIDE_DEST,
+ * AIRLINE, CHECKLIST).
  *
- * INVARIANT:
- *   • Zero client JavaScript — 100% static server-rendered HTML.
- *   • All URLs sourced from AffiliateConfig.ts only.
- *   • All commercial links carry rel="noopener noreferrer nofollow sponsored".
- *   • Two clearly-labelled SPONSORED sections (AdSense policy compliance).
- *   • No emojis — SVG icons only.
+ * All links use sub_id tracking and are marked rel="noopener noreferrer nofollow sponsored".
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
-import {
-  ESIM_PARTNERS,
-  INSURANCE_PARTNERS,
-  AIRPORT_PARTNERS,
-} from "./AffiliateConfig";
+import type { PageContext } from "./AffiliateConfig";
+import { getOffersForContext, buildAffiliateUrl } from "../../utils/getContextualAffiliates";
+
+interface Props {
+  context?: PageContext;
+  slug?: string;
+  limit?: number;
+}
+
+const { context = "CHECKLIST", slug = "checklist", limit = 3 } = Astro.props;
+
+// Contextual offers (max `limit` items)
+const allOffers = getOffersForContext(context, "GLOBAL", limit);
+
+const airhelpOffer = allOffers.find((o) => o.id === "airhelp");
+const cardOffers = allOffers.filter((o) => o.id !== "airhelp");
+
+const airhelpUrl = airhelpOffer
+  ? buildAffiliateUrl(airhelpOffer.baseUrl, { slug, slot: "footer_card", region: "GLOBAL" })
+  : "";
 ---
 
 <section
-  class="monetization-checklist-addon no-print mb-12"
-  aria-label="Sponsored travel recommendations"
+  class="monetization-checklist-addon no-print mb-10"
+  aria-label="Contextual travel tools and services"
 >
-
-  {/* ── 1. AirHelp Hero — highest-converting CTA ─────────────────────────── */}
-  <div class="mb-6">
-    <a
-      href={AIRPORT_PARTNERS.airhelp.url}
-      target="_blank"
-      rel="noopener noreferrer nofollow sponsored"
-      class="group flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-lg border border-emerald-500/20 bg-emerald-500/[0.04] hover:bg-emerald-500/[0.08] hover:border-emerald-500/40 hover:shadow-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
-      aria-label="Check flight delay compensation with AirHelp — free eligibility check"
-    >
-      {/* Icon */}
-      <div class="flex-shrink-0 w-11 h-11 rounded-md bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600 dark:text-emerald-400" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M12 8v4l3 3"/>
-        </svg>
-      </div>
-
-      {/* Copy */}
-      <div class="flex-1 min-w-0">
-        <p class="text-sm font-semibold text-ink mb-0.5 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-          Flight delayed or cancelled? You may be owed up to $650 / €600.
-        </p>
-        <p class="text-xs text-body leading-snug">
-          AirHelp checks your eligibility in 2 minutes — completely free. Millions of passengers miss out on airline compensation every year.
-        </p>
-      </div>
-
-      {/* CTA badge */}
-      <div class="flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-md bg-emerald-500 group-hover:bg-emerald-600 transition-colors text-white text-xs font-semibold whitespace-nowrap">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
-        Check for free
-      </div>
-    </a>
+  {/* Section Header */}
+  <div class="mb-4 flex items-center justify-between">
+    <h3 class="text-xs font-semibold uppercase tracking-wider text-mute">
+      Travel Essentials &amp; Services
+    </h3>
+    <span class="text-[10px] font-mono text-mute">Sponsored</span>
   </div>
 
-  {/* ── 2. Yesim + EKTA — High-commission pair ───────────────────────────── */}
-  <div class="mb-6">
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-
-      {/* Yesim eSIM */}
+  {/* AirHelp Hero (shown when AIRLINE or when AirHelp is one of the top offers) */}
+  {airhelpOffer && (
+    <div class="mb-4">
       <a
-        href={ESIM_PARTNERS.yesim.url}
+        href={airhelpUrl}
         target="_blank"
         rel="noopener noreferrer nofollow sponsored"
-        class="group flex items-start gap-3 p-4 rounded-lg border border-hairline bg-canvas hover:border-link/40 hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
-        aria-label="Travel eSIM data plans from Yesim — international mobile data"
+        class="group flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 sm:p-5 rounded-lg border border-emerald-500/20 bg-emerald-500/[0.04] hover:bg-emerald-500/[0.08] hover:border-emerald-500/40 hover:shadow-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+        aria-label="Check flight delay compensation with AirHelp — free eligibility check"
       >
-        <div class="flex-shrink-0 w-9 h-9 rounded-md bg-link-bg-soft border border-link/20 flex items-center justify-center group-hover:bg-link/10 transition-colors mt-0.5">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" class="text-link" aria-hidden="true">
-            <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
-            <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
-            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
-            <circle cx="12" cy="20" r="1" fill="currentColor"/>
+        <div class="flex-shrink-0 w-10 h-10 rounded-md bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600 dark:text-emerald-400" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4l3 3"/>
           </svg>
         </div>
         <div class="flex-1 min-w-0">
-          <p class="text-xs font-semibold text-ink mb-0.5 group-hover:text-link transition-colors">
-            Travel eSIM — Mobile Data in 160+ Countries
+          <p class="text-sm font-semibold text-ink mb-0.5 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+            Flight delayed or cancelled? You may be owed up to $650 / €600.
           </p>
-          <p class="text-[11px] text-body leading-snug mb-2">
-            Activate a local data plan before you fly with Yesim. No physical SIM, no roaming charges.
+          <p class="text-xs text-body leading-snug">
+            AirHelp checks your eligibility in 2 minutes — completely free. Never let airlines pocket compensation you are legally entitled to.
           </p>
-          <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-link group-hover:underline">
-            Get Yesim eSIM plans
-            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </span>
         </div>
-      </a>
-
-      {/* EKTA Insurance */}
-      <a
-        href={INSURANCE_PARTNERS.ekta.url}
-        target="_blank"
-        rel="noopener noreferrer nofollow sponsored"
-        class="group flex items-start gap-3 p-4 rounded-lg border border-hairline bg-canvas hover:border-warning/40 hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-warning focus-visible:ring-offset-2"
-        aria-label="Travel insurance from EKTA — instant worldwide medical coverage"
-      >
-        <div class="flex-shrink-0 w-9 h-9 rounded-md bg-warning-soft border border-warning/20 flex items-center justify-center group-hover:bg-warning/10 transition-colors mt-0.5">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-warning-deep" aria-hidden="true">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <polyline points="9 12 11 14 15 10"/>
+        <div class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-emerald-500 group-hover:bg-emerald-600 transition-colors text-white text-xs font-semibold whitespace-nowrap">
+          Check for free
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
           </svg>
         </div>
-        <div class="flex-1 min-w-0">
-          <p class="text-xs font-semibold text-ink mb-0.5 group-hover:text-warning-deep transition-colors">
-            Travel Insurance — Policy Issued in 2 Minutes
-          </p>
-          <p class="text-[11px] text-body leading-snug mb-2">
-            EKTA worldwide medical cover is accepted for all visas. Cancel any time, instant digital policy.
-          </p>
-          <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-warning-deep group-hover:underline">
-            Get an instant EKTA quote
-            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </span>
-        </div>
       </a>
-
     </div>
-  </div>
+  )}
 
-  {/* ── 3. Utility row — Radical Storage + Kiwitaxi + Klook ──────────────── */}
-  <div>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+  {/* Contextual Offer Cards (capped at remaining slots) */}
+  {cardOffers.length > 0 && (
+    <div class:list={[
+      "grid gap-3",
+      cardOffers.length === 1 && "grid-cols-1",
+      cardOffers.length === 2 && "grid-cols-1 sm:grid-cols-2",
+      cardOffers.length >= 3 && "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+    ]}>
+      {cardOffers.map((offer) => {
+        const offerUrl = buildAffiliateUrl(offer.baseUrl, { slug, slot: "footer_card", region: "GLOBAL" });
+        return (
+          <a
+            href={offerUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="group flex items-start gap-3 p-3.5 rounded-lg border border-hairline bg-canvas hover:border-link/40 hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2"
+            aria-label={`${offer.name} — ${offer.pitch}`}
+          >
+            {/* Offer Icon by Category */}
+            <div class="flex-shrink-0 w-8 h-8 rounded-md bg-canvas-soft border border-hairline flex items-center justify-center text-ink group-hover:border-link/30 transition-colors mt-0.5">
+              {offer.category === "FLIGHTS" && (
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-link" aria-hidden="true">
+                  <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+                </svg>
+              )}
+              {offer.category === "ESIM" && (
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" class="text-link" aria-hidden="true">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                  <circle cx="12" cy="20" r="1" fill="currentColor"/>
+                </svg>
+              )}
+              {offer.category === "INSURANCE" && (
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-warning-deep" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+              )}
+              {offer.category === "STORAGE" && (
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 dark:text-amber-400" aria-hidden="true">
+                  <rect x="3" y="7" width="18" height="14" rx="2"/>
+                  <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                </svg>
+              )}
+              {offer.category === "TRANSFERS" && (
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600 dark:text-purple-400" aria-hidden="true">
+                  <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v9a2 2 0 0 1-2 2h-2"/>
+                  <circle cx="8" cy="17" r="2"/>
+                  <circle cx="16" cy="17" r="2"/>
+                </svg>
+              )}
+              {offer.category === "ACTIVITIES" && (
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-sky-600 dark:text-sky-400" aria-hidden="true">
+                  <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+                  <line x1="12" y1="5" x2="12" y2="19" stroke-dasharray="2 2"/>
+                </svg>
+              )}
+              {offer.category === "COMPENSATION" && (
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600 dark:text-emerald-400" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 8v4l3 3"/>
+                </svg>
+              )}
+            </div>
 
-      {/* Radical Storage */}
-      <a
-        href={AIRPORT_PARTNERS.radicalStorage.url}
-        target="_blank"
-        rel="noopener noreferrer nofollow sponsored"
-        class="group flex items-start gap-3 p-3.5 rounded-lg border border-hairline bg-canvas hover:border-amber-500/40 hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
-        aria-label="Luggage storage near airports and stations — Radical Storage"
-      >
-        <div class="flex-shrink-0 w-8 h-8 rounded-md bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/15 transition-colors mt-0.5">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600 dark:text-amber-400" aria-hidden="true">
-            <rect x="3" y="7" width="18" height="14" rx="2"/>
-            <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-            <line x1="12" y1="11" x2="12" y2="17"/>
-            <line x1="9" y1="14" x2="15" y2="14"/>
-          </svg>
-        </div>
-        <div class="flex-1 min-w-0">
-          <p class="text-[11px] font-semibold text-ink mb-0.5 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-            Luggage Storage
-          </p>
-          <p class="text-[10.5px] text-body leading-snug mb-1.5">
-            Secure bag storage near airports in 500+ cities.
-          </p>
-          <span class="inline-flex items-center gap-1 text-[10.5px] font-semibold text-amber-600 dark:text-amber-400 group-hover:underline">
-            Book storage
-            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </span>
-        </div>
-      </a>
-
-      {/* Kiwitaxi */}
-      <a
-        href={AIRPORT_PARTNERS.kiwitaxi.url}
-        target="_blank"
-        rel="noopener noreferrer nofollow sponsored"
-        class="group flex items-start gap-3 p-3.5 rounded-lg border border-hairline bg-canvas hover:border-purple-500/40 hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2"
-        aria-label="Pre-book airport taxi or transfer — Kiwitaxi"
-      >
-        <div class="flex-shrink-0 w-8 h-8 rounded-md bg-purple-500/10 border border-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/15 transition-colors mt-0.5">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600 dark:text-purple-400" aria-hidden="true">
-            <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v9a2 2 0 0 1-2 2h-2"/>
-            <circle cx="8" cy="17" r="2"/>
-            <circle cx="16" cy="17" r="2"/>
-          </svg>
-        </div>
-        <div class="flex-1 min-w-0">
-          <p class="text-[11px] font-semibold text-ink mb-0.5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-            Airport Transfers
-          </p>
-          <p class="text-[10.5px] text-body leading-snug mb-1.5">
-            Private taxi with meet-and-greet in 100+ countries.
-          </p>
-          <span class="inline-flex items-center gap-1 text-[10.5px] font-semibold text-purple-600 dark:text-purple-400 group-hover:underline">
-            Book a transfer
-            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </span>
-        </div>
-      </a>
-
-      {/* Klook */}
-      <a
-        href={AIRPORT_PARTNERS.klook.url}
-        target="_blank"
-        rel="noopener noreferrer nofollow sponsored"
-        class="group flex items-start gap-3 p-3.5 rounded-lg border border-hairline bg-canvas hover:border-sky-500/40 hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
-        aria-label="Discounted airport train passes and attraction tickets — Klook"
-      >
-        <div class="flex-shrink-0 w-8 h-8 rounded-md bg-sky-500/10 border border-sky-500/20 flex items-center justify-center group-hover:bg-sky-500/15 transition-colors mt-0.5">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="text-sky-600 dark:text-sky-400" aria-hidden="true">
-            <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
-            <line x1="12" y1="5" x2="12" y2="19" stroke-dasharray="2 2"/>
-          </svg>
-        </div>
-        <div class="flex-1 min-w-0">
-          <p class="text-[11px] font-semibold text-ink mb-0.5 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
-            Airport Trains &amp; City Passes
-          </p>
-          <p class="text-[10.5px] text-body leading-snug mb-1.5">
-            Discounted express train tickets and rail passes worldwide.
-          </p>
-          <span class="inline-flex items-center gap-1 text-[10.5px] font-semibold text-sky-600 dark:text-sky-400 group-hover:underline">
-            Explore passes
-            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </span>
-        </div>
-      </a>
-
+            {/* Offer Details */}
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-semibold text-ink mb-0.5 group-hover:text-link transition-colors">
+                {offer.name}
+              </p>
+              <p class="text-[11px] text-body leading-snug mb-1.5 line-clamp-2">
+                {offer.pitch}
+              </p>
+              <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-link group-hover:underline">
+                {offer.ctaLabel}
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        );
+      })}
     </div>
-  </div>
+  )}
 
   {/* FTC / AdSense disclosure */}
-  <p class="mt-4 text-[10px] text-mute font-mono leading-relaxed">
+  <p class="mt-3 text-[10px] text-mute font-mono leading-relaxed">
     <svg class="inline w-3 h-3 mr-0.5 -mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
       <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
     </svg>
     The links above are sponsored affiliate referrals. BringOnPlane may earn a commission at no extra cost to you.
   </p>
-
 </section>
