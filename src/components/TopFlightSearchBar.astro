@@ -1,0 +1,177 @@
+---
+/**
+ * TopFlightSearchBar.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Compact, responsive sitewide flight search utility bar.
+ * Sits at the top of pages taking minimal vertical space (~42px).
+ *
+ * Automatically localizes flight destination queries to verified Kiwi.com /
+ * Trip.com affiliate portals with page-level sub_id tracking.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+import { useTranslations, useTranslatedPath, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+// Do not render duplicate top bar on the dedicated flight booking hub itself
+const currentPath = Astro.url.pathname;
+const isFlightsPage = currentPath.endsWith("/flights") || currentPath.endsWith("/flights/");
+---
+
+{!isFlightsPage && (
+  <section
+    class="no-print w-full bg-slate-900 text-white border-b border-slate-800 text-xs py-2 px-3 sm:px-6 relative z-40 select-none shadow-xs"
+    aria-label="Quick Flight Search"
+  >
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between gap-2 sm:gap-3">
+      
+      {/* ── Label / Brand Hook ── */}
+      <a
+        href={translatePath("/flights/")}
+        class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0 hover:opacity-90 transition-opacity"
+        title="Browse All Flight Deals"
+      >
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-blue-600 text-white shadow-xs flex-shrink-0">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+          </svg>
+        </span>
+        <span class="font-bold text-slate-100 hidden sm:inline whitespace-nowrap">{t("nav.flights")}</span>
+      </a>
+
+      {/* ── Compact Flight Search Form ── */}
+      <form id="top-flight-bar-form" class="flex flex-1 items-center gap-1.5 sm:gap-2 min-w-0" novalidate>
+        {/* Origin */}
+        <input
+          id="top-flight-origin"
+          type="text"
+          placeholder="From"
+          aria-label="Departure airport or city"
+          autocomplete="off"
+          class="flex-1 min-w-0 h-8 rounded-md bg-slate-800/90 border border-slate-700/80 px-2 sm:px-2.5 text-xs text-white placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+        />
+
+        {/* Destination */}
+        <input
+          id="top-flight-dest"
+          type="text"
+          placeholder="To"
+          aria-label="Destination airport or city"
+          autocomplete="off"
+          class="flex-1 min-w-0 h-8 rounded-md bg-slate-800/90 border border-slate-700/80 px-2 sm:px-2.5 text-xs text-white placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+        />
+
+        {/* Departure Date */}
+        <input
+          id="top-flight-date"
+          type="date"
+          aria-label="Departure date"
+          class="hidden md:block w-32 h-8 rounded-md bg-slate-800/90 border border-slate-700/80 px-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+        />
+
+        {/* Search Submit Button */}
+        <button
+          type="submit"
+          aria-label="Search flights"
+          class="h-8 px-2.5 sm:px-3.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 font-semibold text-white text-xs flex items-center gap-1 transition-colors cursor-pointer flex-shrink-0 shadow-xs"
+        >
+          <span>Search</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </form>
+
+      {/* ── Shortcut Link to Full Flight Hub ── */}
+      <a
+        href={translatePath("/flights/")}
+        class="hidden lg:inline-flex items-center gap-1 text-[11px] font-medium text-slate-300 hover:text-white transition-colors flex-shrink-0 whitespace-nowrap"
+      >
+        <span>All Deals</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </a>
+
+    </div>
+  </section>
+)}
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById("top-flight-bar-form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var originInput = document.getElementById("top-flight-origin");
+      var originVal = originInput ? originInput.value.trim() : "";
+      var destInput = document.getElementById("top-flight-dest");
+      var destVal = destInput ? destInput.value.trim() : "";
+
+      var kiwiGeoMap = {
+        "us": "https://kiwi.tpk.lu/PRoNbR8A",
+        "gb": "https://kiwi.tpk.lu/zdAwHpk4",
+        "uk": "https://kiwi.tpk.lu/zdAwHpk4",
+        "in": "https://kiwi.tpk.lu/suZfzffW",
+        "cz": "https://kiwi.tpk.lu/4JJAeyYQ",
+        "fi": "https://kiwi.tpk.lu/j9t7bFL8",
+        "it": "https://kiwi.tpk.lu/3cbh2gXF",
+        "dk": "https://kiwi.tpk.lu/k5RXUFYd",
+        "da": "https://kiwi.tpk.lu/k5RXUFYd",
+        "de": "https://kiwi.tpk.lu/FNBUJmy6",
+        "nl": "https://kiwi.tpk.lu/U42dntOs",
+        "pl": "https://kiwi.tpk.lu/bIz4CwgC",
+        "br": "https://kiwi.tpk.lu/xF6eey3B",
+        "es": "https://kiwi.tpk.lu/tBWe6mTP",
+        "fr": "https://kiwi.tpk.lu/47KJwXAa"
+      };
+
+      var rawLang = (navigator.language || "en").toLowerCase();
+      var parts = rawLang.split("-");
+      var lang = parts[0];
+      var country = parts[1] || "";
+
+      var asiaLangs = ["ko", "ja", "zh", "th", "vi", "ms", "id", "tl"];
+      var isEastAsia = asiaLangs.indexOf(lang) !== -1 && country !== "in";
+
+      var region = (country === "us" || country === "ca")
+        ? "NA"
+        : (country === "in" || isEastAsia)
+        ? "ASIA"
+        : "EU";
+
+      var subId = region + "_top_bar_search";
+      var url;
+
+      if (isEastAsia) {
+        url = "https://tp.media/r?marker=778331.BringonPlane&trs=574616&p=5543" +
+              "&u=https%3A%2F%2Fwww.trip.com%2Fflight%2F" +
+              "&sub_id=" + encodeURIComponent(subId);
+      } else {
+        var kiwiBase = kiwiGeoMap[country] || kiwiGeoMap[lang];
+        if (!kiwiBase) {
+          kiwiBase = (destVal || originVal) ? "https://kiwi.tpk.lu/7m9bs2Ap" : "https://kiwi.tpk.lu/PRoNbR8A";
+        }
+        url = kiwiBase + "?sub_id=" + encodeURIComponent(subId);
+        if (originVal && destVal) {
+          url += "&search=" + encodeURIComponent(originVal + " to " + destVal);
+        } else if (destVal) {
+          url += "&search=" + encodeURIComponent(destVal);
+        } else if (originVal) {
+          url += "&search=" + encodeURIComponent(originVal);
+        }
+      }
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  })();
+</script>

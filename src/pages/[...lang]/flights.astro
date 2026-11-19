@@ -1,0 +1,412 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import FlightSearchWidget from "../../components/FlightSearchWidget.astro";
+import { langParams, resolveLang } from "../../i18n/config";
+import { useTranslations, useTranslatedPath, getCanonicalUrl, type Lang } from "../../i18n/utils";
+import { getKiwiAffiliateUrl, buildAffiliateUrl } from "../../utils/getContextualAffiliates";
+import { KIWI_AFFILIATE_LINKS, AFFILIATE_MATRIX } from "../../components/monetization/AffiliateConfig";
+import { Plane, Compass, Shield, Wifi, Luggage, Car, Clock, Sparkles, AlertCircle, CheckCircle2 } from "@lucide/astro";
+
+export function getStaticPaths() {
+  return langParams.map((params) => ({ params }));
+}
+
+const lang: Lang = resolveLang(Astro.params.lang);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const currentYear = new Date().getFullYear();
+const currentUrl = getCanonicalUrl("/flights/", lang);
+
+const pageTitle = t("flights.title") || "Search & Compare Cheap Flight Tickets | BringOnPlane";
+const pageDescription = t("flights.description") || "Compare cheap flights across 800+ airlines with live fares, baggage rules, and travel utilities.";
+
+// Sourced affiliate URLs with tracking
+const kiwiFlightUrl = buildAffiliateUrl(getKiwiAffiliateUrl(lang), { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
+const kiwiLastMinuteUrl = buildAffiliateUrl(KIWI_AFFILIATE_LINKS.lastMinute, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
+const kiwiCountryUrl = buildAffiliateUrl(KIWI_AFFILIATE_LINKS.countryToCountry, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
+const tripFlightOffer = AFFILIATE_MATRIX.find(o => o.id === "trip_flights")!;
+const tripFlightUrl = buildAffiliateUrl(tripFlightOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "ASIA" });
+const yesimOffer = AFFILIATE_MATRIX.find(o => o.id === "yesim")!;
+const yesimUrl = buildAffiliateUrl(yesimOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
+const klookOffer = AFFILIATE_MATRIX.find(o => o.id === "klook")!;
+const klookUrl = buildAffiliateUrl(klookOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
+const storageOffer = AFFILIATE_MATRIX.find(o => o.id === "radical_storage")!;
+const storageUrl = buildAffiliateUrl(storageOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
+const airhelpOffer = AFFILIATE_MATRIX.find(o => o.id === "airhelp")!;
+const airhelpUrl = buildAffiliateUrl(airhelpOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
+const ektaOffer = AFFILIATE_MATRIX.find(o => o.id === "ekta")!;
+const ektaUrl = buildAffiliateUrl(ektaOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
+const kiwitaxiOffer = AFFILIATE_MATRIX.find(o => o.id === "kiwitaxi")!;
+const kiwitaxiUrl = buildAffiliateUrl(kiwitaxiOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
+
+// Structured Data Breadcrumbs
+const breadcrumbs = [
+  { label: t("nav.home") || "Home", href: translatePath("/") },
+  { label: t("nav.flights") || "Book Flights", href: currentUrl },
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalURL={currentUrl}
+  type="website"
+  lang={lang}
+  breadcrumbItems={breadcrumbs}
+>
+  <Header slot="header" lang={lang} />
+
+  <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 py-8">
+    
+    {/* ── Breadcrumb Navigation ── */}
+    <nav class="flex items-center gap-2 text-xs text-mute mb-6" aria-label="Breadcrumb">
+      <a href={translatePath("/")} class="hover:text-ink transition-colors">{t("nav.home") || "Home"}</a>
+      <span>/</span>
+      <span class="text-ink font-medium" aria-current="page">{t("nav.flights") || "Book Flights"}</span>
+    </nav>
+
+    {/* ── Page Hero Header ── */}
+    <header class="mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-3">
+        <Sparkles class="w-3.5 h-3.5" />
+        <span>Flight Booking &amp; Baggage Safety Hub</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight mb-3">
+        Search, Compare &amp; Book Cheap Flights
+      </h1>
+      <p class="text-base text-body max-w-3xl leading-relaxed">
+        Find the lowest fares across 800+ international carriers, view real-time airline baggage policies, and arrange travel essentials before heading to the airport.
+      </p>
+    </header>
+
+    {/* ── Primary Interactive Flight Search Widget ── */}
+    <div class="mb-12">
+      <FlightSearchWidget slug="flights_hub" lang={lang} />
+    </div>
+
+    {/* ── SECTION 1: FLIGHT SEARCH & ROUTE PARTNERS ── */}
+    <section class="mb-12" aria-labelledby="heading-flight-options">
+      <div class="mb-5 flex items-center justify-between border-b border-hairline pb-3">
+        <div>
+          <h2 id="heading-flight-options" class="text-xl font-bold text-ink tracking-tight flex items-center gap-2">
+            <Plane class="w-5 h-5 text-link" />
+            Airline Ticket Comparison &amp; Exclusive Deals
+          </h2>
+          <p class="text-xs text-mute mt-1">Multi-carrier combinations, last-minute bargains, and regional routes.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Kiwi Flights */}
+        <div class="flex flex-col justify-between p-5 rounded-xl border border-hairline bg-canvas hover:border-link/40 hover:shadow-sm transition-all group">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-sm mb-3">
+              ✈️
+            </div>
+            <h3 class="text-base font-bold text-ink mb-1 group-hover:text-link transition-colors">Kiwi.com</h3>
+            <p class="text-xs text-body leading-relaxed mb-4">
+              Unique virtual interlining finds hidden connecting fares across airlines that do not typically cooperate.
+            </p>
+          </div>
+          <a
+            href={kiwiFlightUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-link hover:bg-link-deep text-white text-xs font-semibold transition-colors"
+          >
+            <span>Search on Kiwi.com</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        {/* Kiwi Last-Minute Deals */}
+        <div class="flex flex-col justify-between p-5 rounded-xl border border-hairline bg-canvas hover:border-link/40 hover:shadow-sm transition-all group">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-sm mb-3">
+              ⚡
+            </div>
+            <h3 class="text-base font-bold text-ink mb-1 group-hover:text-link transition-colors">Last-Minute Flights</h3>
+            <p class="text-xs text-body leading-relaxed mb-4">
+              Need to depart in the next 72 hours? Find unsold carrier inventory and spontaneous discounted seats.
+            </p>
+          </div>
+          <a
+            href={kiwiLastMinuteUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold transition-colors"
+          >
+            <span>Check 72h Deals</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        {/* Country to Country */}
+        <div class="flex flex-col justify-between p-5 rounded-xl border border-hairline bg-canvas hover:border-link/40 hover:shadow-sm transition-all group">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold text-sm mb-3">
+              🌐
+            </div>
+            <h3 class="text-base font-bold text-ink mb-1 group-hover:text-link transition-colors">Country to Country</h3>
+            <p class="text-xs text-body leading-relaxed mb-4">
+              Explore open routes between any two countries with flexible airport pairings and international transfers.
+            </p>
+          </div>
+          <a
+            href={kiwiCountryUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg border border-hairline hover:bg-canvas-soft text-ink text-xs font-semibold transition-colors"
+          >
+            <span>Explore Routes</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        {/* Trip.com Flights */}
+        <div class="flex flex-col justify-between p-5 rounded-xl border border-hairline bg-canvas hover:border-link/40 hover:shadow-sm transition-all group">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm mb-3">
+              🌏
+            </div>
+            <h3 class="text-base font-bold text-ink mb-1 group-hover:text-link transition-colors">Trip.com</h3>
+            <p class="text-xs text-body leading-relaxed mb-4">
+              Live airline pricing across Asia, Europe, and international flag carriers with instant electronic ticketing.
+            </p>
+          </div>
+          <a
+            href={tripFlightUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg border border-hairline hover:bg-canvas-soft text-ink text-xs font-semibold transition-colors"
+          >
+            <span>Search on Trip.com</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* ── SECTION 2: AIRPORT & LUGGAGE SERVICES ── */}
+    <section class="mb-12" aria-labelledby="heading-airport-services">
+      <div class="mb-5 flex items-center justify-between border-b border-hairline pb-3">
+        <div>
+          <h2 id="heading-airport-services" class="text-xl font-bold text-ink tracking-tight flex items-center gap-2">
+            <Luggage class="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            Airport &amp; Baggage Utilities
+          </h2>
+          <p class="text-xs text-mute mt-1">Store bags before check-in, pre-book private taxis, and grab train passes.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {/* Radical Storage */}
+        <div class="p-6 rounded-xl border border-hairline bg-canvas hover:shadow-sm transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="p-2.5 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                <Luggage class="w-5 h-5" />
+              </span>
+              <span class="text-xs font-mono text-mute">500+ Cities</span>
+            </div>
+            <h3 class="text-base font-bold text-ink mb-1.5">Radical Storage</h3>
+            <p class="text-xs text-body leading-relaxed mb-4">
+              Store oversized items or luggage safely near airports and transit hubs if your flight departs late or your item cannot fly in the cabin.
+            </p>
+          </div>
+          <a
+            href={storageUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold transition-colors"
+          >
+            <span>Book Luggage Storage</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        {/* Kiwitaxi */}
+        <div class="p-6 rounded-xl border border-hairline bg-canvas hover:shadow-sm transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="p-2.5 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400">
+                <Car class="w-5 h-5" />
+              </span>
+              <span class="text-xs font-mono text-mute">100+ Countries</span>
+            </div>
+            <h3 class="text-base font-bold text-ink mb-1.5">Kiwitaxi Airport Transfers</h3>
+            <p class="text-xs text-body leading-relaxed mb-4">
+              Pre-booked private airport taxi with a driver holding your name tag at arrivals. Fixed upfront rates with no surge pricing.
+            </p>
+          </div>
+          <a
+            href={kiwitaxiUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold transition-colors"
+          >
+            <span>Pre-Book Airport Taxi</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        {/* Klook Trains & Passes */}
+        <div class="p-6 rounded-xl border border-hairline bg-canvas hover:shadow-sm transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="p-2.5 rounded-lg bg-sky-500/10 text-sky-600 dark:text-sky-400">
+                <Compass class="w-5 h-5" />
+              </span>
+              <span class="text-xs font-mono text-mute">Trains &amp; Metro</span>
+            </div>
+            <h3 class="text-base font-bold text-ink mb-1.5">Klook Rail Passes</h3>
+            <p class="text-xs text-body leading-relaxed mb-4">
+              Skip airport ticket queues. Book discounted airport express rail tickets, regional train passes, and travel experiences in advance.
+            </p>
+          </div>
+          <a
+            href={klookUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-xs font-semibold transition-colors"
+          >
+            <span>Get Airport Train Passes</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* ── SECTION 3: TRAVELER PROTECTION & CONNECTIVITY ── */}
+    <section class="mb-14" aria-labelledby="heading-protection-services">
+      <div class="mb-5 flex items-center justify-between border-b border-hairline pb-3">
+        <div>
+          <h2 id="heading-protection-services" class="text-xl font-bold text-ink tracking-tight flex items-center gap-2">
+            <Shield class="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+            Travel Protection &amp; Mobile Connectivity
+          </h2>
+          <p class="text-xs text-mute mt-1">Data connection on landing, medical insurance, and delayed flight claims.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {/* Yesim eSIM */}
+        <div class="p-6 rounded-xl border border-hairline bg-canvas hover:shadow-sm transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="p-2.5 rounded-lg bg-link/10 text-link">
+                <Wifi class="w-5 h-5" />
+              </span>
+              <span class="text-xs font-mono text-mute">160+ Countries</span>
+            </div>
+            <h3 class="text-base font-bold text-ink mb-1.5">Yesim Travel eSIM</h3>
+            <p class="text-xs text-body leading-relaxed mb-4">
+              Activate high-speed cellular data directly on your smartphone before boarding. Zero roaming fees and instant connection upon landing.
+            </p>
+          </div>
+          <a
+            href={yesimUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-link hover:bg-link-deep text-white text-xs font-semibold transition-colors"
+          >
+            <span>Activate Travel eSIM</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        {/* EKTA Insurance */}
+        <div class="p-6 rounded-xl border border-hairline bg-canvas hover:shadow-sm transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                <Shield class="w-5 h-5" />
+              </span>
+              <span class="text-xs font-mono text-mute">Instant Policy</span>
+            </div>
+            <h3 class="text-base font-bold text-ink mb-1.5">EKTA Travel Insurance</h3>
+            <p class="text-xs text-body leading-relaxed mb-4">
+              Comprehensive emergency medical protection, lost baggage insurance, and trip cancellation policies accepted worldwide for visas.
+            </p>
+          </div>
+          <a
+            href={ektaUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition-colors"
+          >
+            <span>Get Travel Insurance</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+        {/* AirHelp */}
+        <div class="p-6 rounded-xl border border-hairline bg-canvas hover:shadow-sm transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                <Clock class="w-5 h-5" />
+              </span>
+              <span class="text-xs font-mono text-mute">Up to $650 / €600</span>
+            </div>
+            <h3 class="text-base font-bold text-ink mb-1.5">AirHelp Flight Compensation</h3>
+            <p class="text-xs text-body leading-relaxed mb-4">
+              Flight delayed over 3 hours or cancelled? AirHelp verifies passenger compensation rights under EU 261 / US regulations in 2 minutes for free.
+            </p>
+          </div>
+          <a
+            href={airhelpUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            class="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition-colors"
+          >
+            <span>Check Delay Claim</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* ── SECTION 4: SMART BAGGAGE & FLIGHT BOOKING GUIDE (EEAT CONTENT) ── */}
+    <section class="bg-canvas border border-hairline rounded-xl p-6 sm:p-8 shadow-xs mb-10">
+      <h2 class="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-4 flex items-center gap-2">
+        <CheckCircle2 class="w-6 h-6 text-link flex-shrink-0" />
+        Important Baggage Checks Before You Book Tickets
+      </h2>
+
+      <div class="space-y-4 text-sm text-body leading-relaxed">
+        <div class="p-4 rounded-lg bg-canvas-soft border border-hairline">
+          <h3 class="font-bold text-ink mb-1 flex items-center gap-2">
+            <span>1. Basic Economy vs Main Cabin Baggage Rights</span>
+          </h3>
+          <p>
+            Many ultra-low-cost carriers (Spirit, Frontier, Ryanair, Wizz Air) and transatlantic Basic Economy fares only include a small <strong>personal item</strong> that fits under the seat. Overhead carry-on roller bags require an additional fee when booking or at the gate.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-lg bg-canvas-soft border border-hairline">
+          <h3 class="font-bold text-ink mb-1 flex items-center gap-2">
+            <span>2. Lithium Batteries, Power Banks &amp; Vape Devices</span>
+          </h3>
+          <p>
+            Under FAA and ICAO regulations, standalone lithium-ion batteries and power banks are <strong>strictly prohibited in checked baggage</strong>. They must travel inside your carry-on luggage (up to 100Wh freely, or 100–160Wh with airline approval).
+          </p>
+        </div>
+
+        <div class="p-4 rounded-lg bg-canvas-soft border border-hairline">
+          <h3 class="font-bold text-ink mb-1 flex items-center gap-2">
+            <span>3. Virtual Interlining &amp; Baggage Transfers</span>
+          </h3>
+          <p>
+            When booking split-ticket connections on Kiwi.com across non-partner airlines, checked bags are typically not transferred automatically between flights. You may need to collect your bags at the layover airport and re-check them through security.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <Footer slot="footer" lang={lang} />
+</Layout>

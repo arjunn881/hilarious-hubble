@@ -55,7 +55,6 @@ if (defaultDestination) {
       </svg>
       Search Flights{airlineName ? ` on ${airlineName}` : ""}
     </h2>
-    <span class="font-mono text-[11px] text-mute">Sponsored</span>
   </div>
 
   {/* ── Travelpayouts Widget Container ── */}
@@ -171,6 +170,8 @@ if (defaultDestination) {
       nativeForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        var originInput = document.getElementById("flight-origin");
+        var originVal = originInput ? originInput.value.trim() : "";
         var destInput = document.getElementById("flight-dest");
         var destVal = destInput ? destInput.value.trim() : (defaultDestination || "");
 
@@ -216,11 +217,15 @@ if (defaultDestination) {
         } else {
           var kiwiBase = kiwiGeoMap[country] || kiwiGeoMap[lang];
           if (!kiwiBase) {
-            kiwiBase = destVal ? "https://kiwi.tpk.lu/7m9bs2Ap" : "https://kiwi.tpk.lu/PRoNbR8A";
+            kiwiBase = (destVal || originVal) ? "https://kiwi.tpk.lu/7m9bs2Ap" : "https://kiwi.tpk.lu/PRoNbR8A";
           }
           url = kiwiBase + "?sub_id=" + encodeURIComponent(subId);
-          if (destVal) {
+          if (originVal && destVal) {
+            url += "&search=" + encodeURIComponent(originVal + " to " + destVal);
+          } else if (destVal) {
             url += "&search=" + encodeURIComponent(destVal);
+          } else if (originVal) {
+            url += "&search=" + encodeURIComponent(originVal);
           }
         }
 

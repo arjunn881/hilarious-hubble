@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import SearchModal from "../components/SearchModal.astro";
 import TSAUpdatesBanner from "../components/TSAUpdatesBanner.astro";
+import TopFlightSearchBar from "../components/TopFlightSearchBar.astro";
 import AmazonGeoRouter from "../components/monetization/AmazonGeoRouter.astro";
 import MonetagAds from "../components/monetization/MonetagAds.astro";
 import { ClientRouter } from "astro:transitions";
@@ -685,6 +686,9 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
 
     <!-- Sitewide TSA 2026 Regulation Updates Strip -->
     <TSAUpdatesBanner />
+
+    <!-- Compact Top Flight Search Bar (Responsive & Space-Saving) -->
+    <TopFlightSearchBar lang={lang} />
 
 
     <main id="main-content" class="flex-1 flex flex-col w-full">

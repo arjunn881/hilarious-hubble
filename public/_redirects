@@ -41,6 +41,14 @@
 /about /about/ 301
 /contact /contact/ 301
 /guides /guides/ 301
+/flights /flights/ 301
+/es/flights /es/flights/ 301
+/ja/flights /ja/flights/ 301
+/fr/flights /fr/flights/ 301
+/de/flights /de/flights/ 301
+/pt/flights /pt/flights/ 301
+/ko/flights /ko/flights/ 301
+/it/flights /it/flights/ 301
 
 # ── Non-existent items & literal template-slug 404 cleanup ────────────────────
 # ── Item singular/plural & high-intent alias redirects ─────────────────────────
