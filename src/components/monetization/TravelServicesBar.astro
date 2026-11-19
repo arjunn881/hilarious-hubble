@@ -4,7 +4,7 @@
  * ─────────────────────────────────────────────────────────────────────────────
  * Intent-driven above-the-fold affiliate strip.
  * Capped at 4 high-intent utility pills:
- *   1. ✈️ Compare flights (geo-routed)
+ *   1. ✈️ Compare flights (geo-routed with exact localized Kiwi.com & Trip.com links)
  *   2. 📱 Travel eSIM
  *   3. 🚆 Airport trains & passes
  *   4. 🧳 Luggage storage
@@ -46,7 +46,7 @@ const storageUrl = buildAffiliateUrl(storageOffer.baseUrl, { slug, slot: "pill",
         href={flightsUrl}
         target="_blank"
         rel="noopener noreferrer nofollow sponsored"
-        class="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-link hover:bg-link-deep transition-colors text-white text-[11px] font-semibold shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2 whitespace-nowrap"
+        class="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-link hover:bg-link-deep transition-colors text-white text-[11px] font-semibold shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-link focus-visible:ring-offset-2 whitespace-nowrap cursor-pointer"
         aria-label="Compare live flight deals"
       >
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -113,11 +113,45 @@ const storageUrl = buildAffiliateUrl(storageOffer.baseUrl, { slug, slot: "pill",
     try {
       var pill = document.getElementById("flights-pill");
       if (!pill) return;
-      var lang = (navigator.language || "en").split("-")[0].toLowerCase();
+
+      var kiwiGeoMap = {
+        "us": "https://kiwi.tpk.lu/PRoNbR8A",
+        "gb": "https://kiwi.tpk.lu/zdAwHpk4",
+        "uk": "https://kiwi.tpk.lu/zdAwHpk4",
+        "in": "https://kiwi.tpk.lu/suZfzffW",
+        "cz": "https://kiwi.tpk.lu/4JJAeyYQ",
+        "fi": "https://kiwi.tpk.lu/j9t7bFL8",
+        "it": "https://kiwi.tpk.lu/3cbh2gXF",
+        "dk": "https://kiwi.tpk.lu/k5RXUFYd",
+        "da": "https://kiwi.tpk.lu/k5RXUFYd",
+        "de": "https://kiwi.tpk.lu/FNBUJmy6",
+        "nl": "https://kiwi.tpk.lu/U42dntOs",
+        "pl": "https://kiwi.tpk.lu/bIz4CwgC",
+        "br": "https://kiwi.tpk.lu/xF6eey3B",
+        "es": "https://kiwi.tpk.lu/tBWe6mTP",
+        "fr": "https://kiwi.tpk.lu/47KJwXAa"
+      };
+
+      var rawLang = (navigator.language || "en").toLowerCase();
+      var parts = rawLang.split("-");
+      var lang = parts[0];
+      var country = parts[1] || "";
+
       var asiaLangs = ["ko", "ja", "zh", "th", "vi", "ms", "id", "tl"];
-      if (asiaLangs.indexOf(lang) !== -1) {
+
+      // If East/SE Asia (excluding India which has Kiwi INR portal) -> Trip.com
+      if (asiaLangs.indexOf(lang) !== -1 && country !== "in") {
         var subId = "ASIA_" + slug + "_pill";
         pill.href = "https://tp.media/r?marker=PLACEHOLDER_ID&trs=PLACEHOLDER_ID&p=5543&u=https%3A%2F%2Fwww.trip.com%2F&sub_id=" + encodeURIComponent(subId);
+        return;
+      }
+
+      // Geo-route to localized Kiwi link
+      var kiwiBase = kiwiGeoMap[country] || kiwiGeoMap[lang];
+      if (kiwiBase) {
+        var region = (country === "us" || country === "ca") ? "NA" : (country === "in" ? "ASIA" : "EU");
+        var subId = region + "_" + slug + "_pill";
+        pill.href = kiwiBase + "?sub_id=" + encodeURIComponent(subId);
       }
     } catch (_) {}
   })();

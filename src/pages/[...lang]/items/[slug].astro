@@ -679,7 +679,7 @@ const i18n = {
     <AmazonAffiliateBox links={item.affiliateLinks} item={item} />
 
     <!-- Monetization Layer: eSIM + Insurance (Module C) -->
-    <ChecklistAddon context={item.carryOn.status === "ALLOWED" ? "ITEM_ALLOWED" : "ITEM_RESTRICTED"} slug={item.slug} />
+    <ChecklistAddon context={item.carryOn.status === "ALLOWED" ? "ITEM_ALLOWED" : "ITEM_RESTRICTED"} slug={item.slug} lang={lang} />
 
     <!-- Official TSA Guidance -->
     <section class="bg-canvas border border-hairline rounded-md p-8 shadow-level-3 mb-10">

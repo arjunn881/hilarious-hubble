@@ -19,12 +19,13 @@ interface Props {
   context?: PageContext;
   slug?: string;
   limit?: number;
+  lang?: string;
 }
 
-const { context = "CHECKLIST", slug = "checklist", limit = 3 } = Astro.props;
+const { context = "CHECKLIST", slug = "checklist", limit = 3, lang = "en" } = Astro.props;
 
 // Contextual offers (max `limit` items)
-const allOffers = getOffersForContext(context, "GLOBAL", limit);
+const allOffers = getOffersForContext(context, "GLOBAL", limit, lang);
 
 const airhelpOffer = allOffers.find((o) => o.id === "airhelp");
 const cardOffers = allOffers.filter((o) => o.id !== "airhelp");

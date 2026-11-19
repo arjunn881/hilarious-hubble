@@ -1,5 +1,5 @@
 import type { RegionCode, PageContext, AffiliateOffer } from "../components/monetization/AffiliateConfig";
-import { AFFILIATE_MATRIX } from "../components/monetization/AffiliateConfig";
+import { AFFILIATE_MATRIX, KIWI_AFFILIATE_LINKS } from "../components/monetization/AffiliateConfig";
 
 // Country code → RegionCode mapping
 const ASIA_CODES = new Set(["KR","JP","SG","HK","MY","TW","TH","VN","PH","ID"]);
@@ -23,6 +23,39 @@ export function detectRegion(countryCode?: string, locale?: string): RegionCode 
   return "GLOBAL";
 }
 
+export function getKiwiAffiliateUrl(
+  countryOrLocale?: string,
+  variant?: "default" | "countryToCountry" | "lastMinute"
+): string {
+  if (variant === "countryToCountry") return KIWI_AFFILIATE_LINKS.countryToCountry;
+  if (variant === "lastMinute") return KIWI_AFFILIATE_LINKS.lastMinute;
+  if (!countryOrLocale) return KIWI_AFFILIATE_LINKS.default;
+
+  const upper = countryOrLocale.toUpperCase();
+  if (upper in KIWI_AFFILIATE_LINKS) {
+    return KIWI_AFFILIATE_LINKS[upper as keyof typeof KIWI_AFFILIATE_LINKS];
+  }
+
+  const lang = countryOrLocale.toLowerCase().slice(0, 2);
+  const langToKey: Record<string, keyof typeof KIWI_AFFILIATE_LINKS> = {
+    en: "US",
+    hi: "IN",
+    cs: "CZ",
+    fi: "FI",
+    it: "IT",
+    da: "DK",
+    de: "DE",
+    nl: "NL",
+    pl: "PL",
+    pt: "BR",
+    es: "ES",
+    fr: "FR",
+  };
+
+  const key = langToKey[lang];
+  return key ? KIWI_AFFILIATE_LINKS[key] : KIWI_AFFILIATE_LINKS.default;
+}
+
 export function buildAffiliateUrl(
   baseUrl: string,
   meta: { slug: string; slot: "pill" | "inline_verdict" | "search_widget" | "footer_card"; region: RegionCode }
@@ -33,9 +66,24 @@ export function buildAffiliateUrl(
   return `${baseUrl}${sep}sub_id=${encodeURIComponent(subId)}`;
 }
 
-export function getOffersForContext(context: PageContext, region: RegionCode, limit = 3): AffiliateOffer[] {
+export function getOffersForContext(
+  context: PageContext,
+  region: RegionCode,
+  limit = 3,
+  countryOrLocale?: string
+): AffiliateOffer[] {
   return AFFILIATE_MATRIX
     .filter(o => o.contexts.includes(context) && (o.regions.includes(region) || o.regions.includes("GLOBAL")))
     .sort((a, b) => a.priority - b.priority)
-    .slice(0, limit);
+    .slice(0, limit)
+    .map(offer => {
+      if (offer.id === "kiwi_flights") {
+        const variant = context === "GUIDE_DEST" ? "countryToCountry" : "default";
+        return {
+          ...offer,
+          baseUrl: getKiwiAffiliateUrl(countryOrLocale, variant),
+        };
+      }
+      return offer;
+    });
 }

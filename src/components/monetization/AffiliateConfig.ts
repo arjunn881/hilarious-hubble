@@ -30,6 +30,30 @@ export interface AffiliateOffer {
   priority: number;
 }
 
+export const KIWI_AFFILIATE_LINKS = {
+  // Country / Market Specific
+  US: "https://kiwi.tpk.lu/PRoNbR8A",
+  GB: "https://kiwi.tpk.lu/zdAwHpk4",
+  UK: "https://kiwi.tpk.lu/zdAwHpk4",
+  IN: "https://kiwi.tpk.lu/suZfzffW",
+  CZ: "https://kiwi.tpk.lu/4JJAeyYQ",
+  FI: "https://kiwi.tpk.lu/j9t7bFL8",
+  IT: "https://kiwi.tpk.lu/3cbh2gXF",
+  DK: "https://kiwi.tpk.lu/k5RXUFYd",
+  DA: "https://kiwi.tpk.lu/k5RXUFYd",
+  DE: "https://kiwi.tpk.lu/FNBUJmy6",
+  NL: "https://kiwi.tpk.lu/U42dntOs",
+  PL: "https://kiwi.tpk.lu/bIz4CwgC",
+  BR: "https://kiwi.tpk.lu/xF6eey3B",
+  ES: "https://kiwi.tpk.lu/tBWe6mTP",
+  FR: "https://kiwi.tpk.lu/47KJwXAa",
+  // Route & Intent Specific
+  countryToCountry: "https://kiwi.tpk.lu/7m9bs2Ap",
+  lastMinute: "https://kiwi.tpk.lu/JFMOmSVL",
+  // Default Global Fallback (US EN)
+  default: "https://kiwi.tpk.lu/PRoNbR8A",
+} as const;
+
 export const AFFILIATE_MATRIX: AffiliateOffer[] = [
   {
     id: "trip_flights",
@@ -46,7 +70,7 @@ export const AFFILIATE_MATRIX: AffiliateOffer[] = [
     id: "kiwi_flights",
     name: "Kiwi.com",
     category: "FLIGHTS",
-    baseUrl: "https://kiwi.tp.st/PLACEHOLDER_ID",
+    baseUrl: KIWI_AFFILIATE_LINKS.default,
     ctaLabel: "Find cheapest flights →",
     pitch: "Kiwi's unique combination search finds the cheapest fares across airlines.",
     regions: ["EU", "NA", "GLOBAL"],

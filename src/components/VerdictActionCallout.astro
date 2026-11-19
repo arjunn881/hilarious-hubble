@@ -15,7 +15,7 @@
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
-import { buildAffiliateUrl } from "../utils/getContextualAffiliates";
+import { buildAffiliateUrl, getKiwiAffiliateUrl } from "../utils/getContextualAffiliates";
 import { AFFILIATE_MATRIX } from "./monetization/AffiliateConfig";
 
 interface Props {
@@ -24,19 +24,17 @@ interface Props {
   lang?: string;
 }
 
-const { carryOnStatus, slug, lang: _lang = "en" } = Astro.props;
+const { carryOnStatus, slug, lang = "en" } = Astro.props;
 
 // ── Bail early for UNKNOWN ────────────────────────────────────────────────────
 const shouldRender = carryOnStatus !== "UNKNOWN";
 
 // ── Resolve affiliate offers ──────────────────────────────────────────────────
-const kiwiOffer       = AFFILIATE_MATRIX.find((o) => o.id === "kiwi_flights");
+const kiwiBaseUrl     = getKiwiAffiliateUrl(lang);
 const yesimOffer      = AFFILIATE_MATRIX.find((o) => o.id === "yesim");
 const storageOffer    = AFFILIATE_MATRIX.find((o) => o.id === "radical_storage");
 
-const kiwiUrl    = kiwiOffer
-  ? buildAffiliateUrl(kiwiOffer.baseUrl,    { slug, slot: "inline_verdict", region: "GLOBAL" })
-  : "#";
+const kiwiUrl    = buildAffiliateUrl(kiwiBaseUrl, { slug, slot: "inline_verdict", region: "GLOBAL" });
 const yesimUrl   = yesimOffer
   ? buildAffiliateUrl(yesimOffer.baseUrl,   { slug, slot: "inline_verdict", region: "GLOBAL" })
   : "#";
