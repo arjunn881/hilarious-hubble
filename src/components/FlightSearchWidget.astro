@@ -2,18 +2,17 @@
 /**
  * FlightSearchWidget.astro
  * ─────────────────────────────────────────────────────────────────────────────
- * Travelpayouts interactive Flights Search Form widget.
- * Powered by Travelpayouts (shmarker: 778331, trs: 574616, promo_id: 3414).
- *
- * Automatically localizes currency, locale, sub_id, and destination.
- * Includes graceful noscript fallback and contextual last-minute deals link.
+ * Hybrid Intent-Driven Flight Search Utility:
+ * 1. Loads Travelpayouts official interactive widget (marker: 778331.BringonPlane, color: #0041a9).
+ * 2. Includes native fallback form so visitors with adblockers (which block tpwdg.com)
+ *    never see an empty box and can seamlessly search flights via localized Kiwi / Trip links.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
 interface Props {
   defaultDestination?: string;
   airlineName?: string;
-  slug?: string; // page slug for sub_id tracking
+  slug?: string;
   lang?: string;
 }
 
@@ -59,39 +58,174 @@ if (defaultDestination) {
     <span class="font-mono text-[11px] text-mute">Sponsored</span>
   </div>
 
-  {/* ── Travelpayouts Interactive Search Form Widget ── */}
-  <div class="tp-flight-search-container w-full min-h-[90px] overflow-hidden">
+  {/* ── Travelpayouts Widget Container ── */}
+  <div id="tp-widget-container" class="w-full overflow-hidden">
     <script
       is:inline
       async
       src={widgetSrc}
       charset="utf-8"
+      id="tpwdg-script"
     ></script>
   </div>
 
-  <noscript>
-    <div class="p-3 bg-canvas-soft rounded border border-hairline text-center text-sm">
+  {/* ── Native Search Form (Active fallback if tpwdg.com is blocked by client adblockers) ── */}
+  <form id="native-flight-search-form" class="mt-1" novalidate>
+    <div class="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+      <div>
+        <label for="flight-origin" class="block text-[11px] font-medium text-mute mb-1">Departure</label>
+        <input
+          id="flight-origin"
+          type="text"
+          placeholder="Origin city or airport code"
+          autocomplete="off"
+          class="w-full rounded-md border border-hairline bg-canvas px-3 py-2 text-sm text-ink placeholder:text-mute focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
+        />
+      </div>
+
+      <div>
+        <label for="flight-dest" class="block text-[11px] font-medium text-mute mb-1">Destination</label>
+        <input
+          id="flight-dest"
+          type="text"
+          placeholder="Destination city or airport"
+          autocomplete="off"
+          value={defaultDestination}
+          class="w-full rounded-md border border-hairline bg-canvas px-3 py-2 text-sm text-ink placeholder:text-mute focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
+        />
+      </div>
+
+      <div>
+        <label for="flight-date" class="block text-[11px] font-medium text-mute mb-1">Departure Date</label>
+        <input
+          id="flight-date"
+          type="date"
+          class="w-full rounded-md border border-hairline bg-canvas px-3 py-2 text-sm text-ink focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
+        />
+      </div>
+    </div>
+
+    <div class="mt-3.5 flex flex-wrap items-center justify-between gap-3">
+      <button
+        type="submit"
+        class="rounded-md bg-link px-4 py-2 text-sm font-semibold text-white hover:bg-link-deep focus:outline-none focus:ring-2 focus:ring-link focus:ring-offset-2 active:opacity-90 transition-colors cursor-pointer"
+      >
+        Search Flights &rarr;
+      </button>
+
       <a
-        href={`https://kiwi.tpk.lu/PRoNbR8A?sub_id=GLOBAL_${slug}_noscript`}
+        href={`https://kiwi.tpk.lu/JFMOmSVL?sub_id=GLOBAL_${slug}_last_minute`}
         target="_blank"
         rel="noopener noreferrer nofollow sponsored"
-        class="text-link font-semibold hover:underline"
+        class="text-xs text-link hover:underline font-medium inline-flex items-center gap-1"
       >
-        Search and compare cheap flights &rarr;
+        <span>⚡ Need flights in 72h? Kiwi Last-Minute Deals &rarr;</span>
       </a>
     </div>
-  </noscript>
-
-  {/* ── Contextual Deals Footer ── */}
-  <div class="mt-3 pt-2.5 border-t border-hairline/60 flex flex-wrap items-center justify-between gap-2 text-xs text-mute">
-    <a
-      href={`https://kiwi.tpk.lu/JFMOmSVL?sub_id=GLOBAL_${slug}_last_minute`}
-      target="_blank"
-      rel="noopener noreferrer nofollow sponsored"
-      class="text-link hover:underline font-medium inline-flex items-center gap-1"
-    >
-      <span>⚡ Flying within 72 hours? Check Kiwi Last-Minute Deals &rarr;</span>
-    </a>
-    <span class="text-[11px] text-mute">Compare live fares across 800+ airlines</span>
-  </div>
+  </form>
 </aside>
+
+<style is:global>
+  tp-cascoon {
+    display: block !important;
+    width: 100% !important;
+    min-height: 80px !important;
+  }
+</style>
+
+<script is:inline define:vars={{ slug, defaultDestination }}>
+  (function () {
+    var nativeForm = document.getElementById("native-flight-search-form");
+    var tpContainer = document.getElementById("tp-widget-container");
+    var tpScript = document.getElementById("tpwdg-script");
+
+    // Hide native form ONLY if tp-cascoon successfully rendered inside DOM
+    function checkTpLoaded() {
+      var cascoon = document.querySelector("tp-cascoon");
+      if (cascoon && cascoon.shadowRoot && cascoon.shadowRoot.children.length > 0) {
+        if (nativeForm) nativeForm.style.display = "none";
+      }
+    }
+
+    // Check on script load and mutation
+    if (tpScript) {
+      tpScript.addEventListener("load", function () {
+        setTimeout(checkTpLoaded, 400);
+        setTimeout(checkTpLoaded, 1200);
+      });
+      tpScript.addEventListener("error", function () {
+        // tpwdg blocked by adblocker: keep native form visible
+        if (nativeForm) nativeForm.style.display = "block";
+      });
+    }
+
+    var observer = new MutationObserver(function () {
+      checkTpLoaded();
+    });
+    if (tpContainer) {
+      observer.observe(tpContainer, { childList: true, subtree: true });
+    }
+
+    // Native form submission (routes to localized Kiwi or Trip.com)
+    if (nativeForm) {
+      nativeForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var destInput = document.getElementById("flight-dest");
+        var destVal = destInput ? destInput.value.trim() : (defaultDestination || "");
+
+        var kiwiGeoMap = {
+          "us": "https://kiwi.tpk.lu/PRoNbR8A",
+          "gb": "https://kiwi.tpk.lu/zdAwHpk4",
+          "uk": "https://kiwi.tpk.lu/zdAwHpk4",
+          "in": "https://kiwi.tpk.lu/suZfzffW",
+          "cz": "https://kiwi.tpk.lu/4JJAeyYQ",
+          "fi": "https://kiwi.tpk.lu/j9t7bFL8",
+          "it": "https://kiwi.tpk.lu/3cbh2gXF",
+          "dk": "https://kiwi.tpk.lu/k5RXUFYd",
+          "da": "https://kiwi.tpk.lu/k5RXUFYd",
+          "de": "https://kiwi.tpk.lu/FNBUJmy6",
+          "nl": "https://kiwi.tpk.lu/U42dntOs",
+          "pl": "https://kiwi.tpk.lu/bIz4CwgC",
+          "br": "https://kiwi.tpk.lu/xF6eey3B",
+          "es": "https://kiwi.tpk.lu/tBWe6mTP",
+          "fr": "https://kiwi.tpk.lu/47KJwXAa"
+        };
+
+        var rawLang = (navigator.language || "en").toLowerCase();
+        var parts = rawLang.split("-");
+        var lang = parts[0];
+        var country = parts[1] || "";
+
+        var asiaLangs = ["ko", "ja", "zh", "th", "vi", "ms", "id", "tl"];
+        var isEastAsia = asiaLangs.indexOf(lang) !== -1 && country !== "in";
+
+        var region = (country === "us" || country === "ca")
+          ? "NA"
+          : (country === "in" || isEastAsia)
+          ? "ASIA"
+          : "EU";
+
+        var subId = region + "_" + slug + "_search_widget";
+        var url;
+
+        if (isEastAsia) {
+          url = "https://tp.media/r?marker=778331.BringonPlane&trs=574616&p=5543" +
+                "&u=https%3A%2F%2Fwww.trip.com%2Fflight%2F" +
+                "&sub_id=" + encodeURIComponent(subId);
+        } else {
+          var kiwiBase = kiwiGeoMap[country] || kiwiGeoMap[lang];
+          if (!kiwiBase) {
+            kiwiBase = destVal ? "https://kiwi.tpk.lu/7m9bs2Ap" : "https://kiwi.tpk.lu/PRoNbR8A";
+          }
+          url = kiwiBase + "?sub_id=" + encodeURIComponent(subId);
+          if (destVal) {
+            url += "&search=" + encodeURIComponent(destVal);
+          }
+        }
+
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+    }
+  })();
+</script>
