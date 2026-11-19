@@ -32,6 +32,7 @@ interface Props {
   speakableSummary?: string;
   /** JSON-LD breadcrumb items for BreadcrumbList schema in <head> */
   breadcrumbItems?: Array<{ label: string; href?: string }>;
+  hideTopFlightSearch?: boolean;
 }
 
 const {
@@ -48,6 +49,7 @@ const {
   lang: langProp,
   speakableSummary,
   breadcrumbItems,
+  hideTopFlightSearch = false,
 } = Astro.props;
 
 /**
@@ -58,6 +60,10 @@ const {
 const lang: Lang = langProp ?? getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const meta = localeMeta[lang];
+
+/** Check if current page is the homepage (default or any localized variant) */
+const isHome = Astro.url.pathname === "/" || /^\/(es|ja|fr|de|pt|ko|it)\/?$/.test(Astro.url.pathname);
+const showTopFlightSearch = !hideTopFlightSearch && !isHome;
 
 const title = titleProp ?? t("meta.home.title");
 const description = descriptionProp ?? t("meta.home.description");
@@ -687,8 +693,8 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <!-- Sitewide TSA 2026 Regulation Updates Strip -->
     <TSAUpdatesBanner />
 
-    <!-- Compact Top Flight Search Bar (Responsive & Space-Saving) -->
-    <TopFlightSearchBar lang={lang} />
+    <!-- Compact Top Flight Search Bar (Responsive & Space-Saving, hidden on homepage) -->
+    {showTopFlightSearch && <TopFlightSearchBar lang={lang} />}
 
 
     <main id="main-content" class="flex-1 flex flex-col w-full">

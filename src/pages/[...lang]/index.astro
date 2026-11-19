@@ -882,6 +882,7 @@ const homeKeywords = [...new Set(_rawHomeKeywords.map(k => k.trim().toLowerCase(
   lang={lang}
   speakableSummary="BringOnPlane is a free TSA carry-on checker. Search any travel item to instantly see if it is allowed in carry-on or checked luggage."
   keywords={lang === 'en' ? homeKeywords : `${t("meta.home.keywords")}, ${t("meta.home.title")}`}
+  hideTopFlightSearch={true}
 >
 
 
