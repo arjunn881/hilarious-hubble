@@ -2,10 +2,11 @@
 /**
  * FlightSearchWidget.astro
  * ─────────────────────────────────────────────────────────────────────────────
- * Lightweight zero-dependency flight-search form card.
- * Affiliate links are built client-side (geo and country-aware) via an inline script.
- * Supports exact localized Kiwi.com links across 14 markets + last-minute flights.
- * No external script dependencies — 100% fast, static, and compliant.
+ * Travelpayouts interactive Flights Search Form widget.
+ * Powered by Travelpayouts (shmarker: 778331, trs: 574616, promo_id: 3414).
+ *
+ * Automatically localizes currency, locale, sub_id, and destination.
+ * Includes graceful noscript fallback and contextual last-minute deals link.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
@@ -13,14 +14,39 @@ interface Props {
   defaultDestination?: string;
   airlineName?: string;
   slug?: string; // page slug for sub_id tracking
+  lang?: string;
 }
 
-const { defaultDestination = "", airlineName = "", slug = "page" } = Astro.props;
+const { defaultDestination = "", airlineName = "", slug = "page", lang = "en" } = Astro.props;
+
+// Localized currency mapping
+const currencyMap: Record<string, string> = {
+  en: "usd",
+  es: "eur",
+  fr: "eur",
+  de: "eur",
+  it: "eur",
+  pt: "brl",
+  ja: "jpy",
+  ko: "krw",
+};
+
+const currency = currencyMap[lang] || "usd";
+const supportedLocales = ["en", "es", "fr", "de", "it", "pt"];
+const locale = supportedLocales.includes(lang) ? lang : "en";
+
+const subId = encodeURIComponent(`WIDGET_${slug}`.slice(0, 64));
+
+let widgetSrc = `https://tpwdg.com/content?currency=${currency}&trs=574616&shmarker=778331.BringonPlane&locale=${locale}&stops=any&show_hotels=true&powered_by=true&border_radius=0&plain=true&color_button=%230041a9&color_button_text=%23ffffff&promo_id=3414&campaign_id=111&sub_id=${subId}`;
+
+if (defaultDestination) {
+  widgetSrc += `&destination=${encodeURIComponent(defaultDestination)}`;
+}
 ---
 
 <aside
-  class="no-print my-5 rounded-lg border border-hairline bg-canvas p-4 shadow-sm"
-  aria-label="Flight search"
+  class="no-print my-6 rounded-lg border border-hairline bg-canvas p-4 shadow-sm"
+  aria-label="Search flights"
 >
   {/* ── Header row ── */}
   <div class="mb-3 flex items-center justify-between gap-2">
@@ -33,170 +59,39 @@ const { defaultDestination = "", airlineName = "", slug = "page" } = Astro.props
     <span class="font-mono text-[11px] text-mute">Sponsored</span>
   </div>
 
-  {/* ── Form ── */}
-  <form id="flight-search-form" novalidate>
-    <div class="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
-      {/* Origin */}
-      <div>
-        <label for="flight-origin" class="block text-[11px] font-medium text-mute mb-1">Departure</label>
-        <input
-          id="flight-origin"
-          type="text"
-          placeholder="Origin city or airport code"
-          autocomplete="off"
-          class="w-full rounded-md border border-hairline bg-canvas px-3 py-2 text-sm text-ink placeholder:text-mute focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
-        />
-      </div>
+  {/* ── Travelpayouts Interactive Search Form Widget ── */}
+  <div class="tp-flight-search-container w-full min-h-[90px] overflow-hidden">
+    <script
+      is:inline
+      async
+      src={widgetSrc}
+      charset="utf-8"
+    ></script>
+  </div>
 
-      {/* Destination */}
-      <div>
-        <label for="flight-dest" class="block text-[11px] font-medium text-mute mb-1">Destination</label>
-        <input
-          id="flight-dest"
-          type="text"
-          placeholder="Destination city or airport"
-          autocomplete="off"
-          value={defaultDestination}
-          class="w-full rounded-md border border-hairline bg-canvas px-3 py-2 text-sm text-ink placeholder:text-mute focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
-        />
-      </div>
-
-      {/* Depart date */}
-      <div>
-        <label for="flight-date" class="block text-[11px] font-medium text-mute mb-1">Departure Date</label>
-        <input
-          id="flight-date"
-          type="date"
-          class="w-full rounded-md border border-hairline bg-canvas px-3 py-2 text-sm text-ink focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
-        />
-      </div>
-    </div>
-
-    <div class="mt-3.5 flex flex-wrap items-center justify-between gap-3">
-      <button
-        type="submit"
-        class="rounded-md bg-link px-4 py-2 text-sm font-semibold text-white hover:bg-link-deep focus:outline-none focus:ring-2 focus:ring-link focus:ring-offset-2 active:opacity-90 transition-colors cursor-pointer"
-      >
-        Search Flights &rarr;
-      </button>
-
-      {/* Last minute flight deals shortcut */}
+  <noscript>
+    <div class="p-3 bg-canvas-soft rounded border border-hairline text-center text-sm">
       <a
-        id="last-minute-link"
-        href="https://kiwi.tpk.lu/JFMOmSVL"
+        href={`https://kiwi.tpk.lu/PRoNbR8A?sub_id=GLOBAL_${slug}_noscript`}
         target="_blank"
         rel="noopener noreferrer nofollow sponsored"
-        class="text-xs text-link hover:underline font-medium inline-flex items-center gap-1"
+        class="text-link font-semibold hover:underline"
       >
-        <span>⚡ Need flights in 72h? Kiwi Last-Minute Deals &rarr;</span>
+        Search and compare cheap flights &rarr;
       </a>
     </div>
-  </form>
+  </noscript>
+
+  {/* ── Contextual Deals Footer ── */}
+  <div class="mt-3 pt-2.5 border-t border-hairline/60 flex flex-wrap items-center justify-between gap-2 text-xs text-mute">
+    <a
+      href={`https://kiwi.tpk.lu/JFMOmSVL?sub_id=GLOBAL_${slug}_last_minute`}
+      target="_blank"
+      rel="noopener noreferrer nofollow sponsored"
+      class="text-link hover:underline font-medium inline-flex items-center gap-1"
+    >
+      <span>⚡ Flying within 72 hours? Check Kiwi Last-Minute Deals &rarr;</span>
+    </a>
+    <span class="text-[11px] text-mute">Compare live fares across 800+ airlines</span>
+  </div>
 </aside>
-
-<script define:vars={{ slug }}>
-  (function () {
-    var form = document.getElementById("flight-search-form");
-    var lastMinuteLink = document.getElementById("last-minute-link");
-
-    // Exact Kiwi Geo Links
-    var kiwiGeoMap = {
-      "us": "https://kiwi.tpk.lu/PRoNbR8A",
-      "gb": "https://kiwi.tpk.lu/zdAwHpk4",
-      "uk": "https://kiwi.tpk.lu/zdAwHpk4",
-      "in": "https://kiwi.tpk.lu/suZfzffW",
-      "cz": "https://kiwi.tpk.lu/4JJAeyYQ",
-      "fi": "https://kiwi.tpk.lu/j9t7bFL8",
-      "it": "https://kiwi.tpk.lu/3cbh2gXF",
-      "dk": "https://kiwi.tpk.lu/k5RXUFYd",
-      "da": "https://kiwi.tpk.lu/k5RXUFYd",
-      "de": "https://kiwi.tpk.lu/FNBUJmy6",
-      "nl": "https://kiwi.tpk.lu/U42dntOs",
-      "pl": "https://kiwi.tpk.lu/bIz4CwgC",
-      "br": "https://kiwi.tpk.lu/xF6eey3B",
-      "es": "https://kiwi.tpk.lu/tBWe6mTP",
-      "fr": "https://kiwi.tpk.lu/47KJwXAa"
-    };
-
-    var rawLang = (navigator.language || "en").toLowerCase();
-    var parts = rawLang.split("-");
-    var lang = parts[0];
-    var country = parts[1] || "";
-
-    // Region code
-    var asiaLangs = ["ko", "ja", "zh", "th", "vi", "ms", "id", "tl"];
-    var euLangs   = ["de", "fr", "it", "es", "nl", "pt", "pl", "sv", "fi", "da", "no", "cs"];
-    var region = (country === "us" || country === "ca")
-      ? "NA"
-      : (country === "in" || asiaLangs.indexOf(lang) !== -1)
-      ? "ASIA"
-      : (euLangs.indexOf(lang) !== -1 || country === "gb" || country === "uk")
-      ? "EU"
-      : "GLOBAL";
-
-    // Set last minute link sub_id
-    if (lastMinuteLink) {
-      lastMinuteLink.href = "https://kiwi.tpk.lu/JFMOmSVL?sub_id=" + encodeURIComponent(region + "_" + slug + "_last_minute");
-    }
-
-    if (!form) return;
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      var destInput = /** @type {HTMLInputElement|null} */ (document.getElementById("flight-dest"));
-      var destVal = destInput ? destInput.value.trim() : "";
-      var dateInput = /** @type {HTMLInputElement|null} */ (document.getElementById("flight-date"));
-      var dateVal = dateInput ? dateInput.value.trim() : "";
-
-      // Check if date is last-minute (< 4 days away)
-      var isLastMinute = false;
-      if (dateVal) {
-        var selectedTime = new Date(dateVal).getTime();
-        var now = new Date().getTime();
-        var diffDays = (selectedTime - now) / (1000 * 3600 * 24);
-        if (diffDays >= 0 && diffDays <= 3) {
-          isLastMinute = true;
-        }
-      }
-
-      var subId = region + "_" + slug + "_search_widget";
-      var url;
-
-      // Asia routing (except India which has high-converting dedicated Kiwi INR portal)
-      if (region === "ASIA" && country !== "in" && lang !== "hi") {
-        url = "https://tp.media/r?marker=PLACEHOLDER_ID&trs=PLACEHOLDER_ID&p=5543" +
-              "&u=https%3A%2F%2Fwww.trip.com%2Fflight%2F" +
-              "&sub_id=" + encodeURIComponent(subId);
-      } else if (isLastMinute && (country === "us" || country === "gb" || country === "uk" || lang === "en")) {
-        url = "https://kiwi.tpk.lu/JFMOmSVL?sub_id=" + encodeURIComponent(subId);
-      } else {
-        // Localized Kiwi link
-        var kiwiBase = kiwiGeoMap[country] || kiwiGeoMap[lang];
-        if (!kiwiBase) {
-          // If destination provided on country guide, use country-to-country flight portal
-          kiwiBase = destVal ? "https://kiwi.tpk.lu/7m9bs2Ap" : "https://kiwi.tpk.lu/PRoNbR8A";
-        }
-        url = kiwiBase + "?sub_id=" + encodeURIComponent(subId);
-        if (destVal) {
-          url += "&search=" + encodeURIComponent(destVal);
-        }
-      }
-
-      // GA4 event
-      try {
-        if (typeof window !== "undefined" && window.gtag) {
-          window.gtag("event", "flight_search_submit", {
-            region: region,
-            destination: destVal,
-            page_slug: slug,
-            is_last_minute: isLastMinute,
-          });
-        }
-      } catch (_) {}
-
-      // Open affiliate flight search in new tab
-      window.open(url, "_blank", "noopener,noreferrer");
-    });
-  })();
-</script>

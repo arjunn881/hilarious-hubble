@@ -54,12 +54,20 @@ export const KIWI_AFFILIATE_LINKS = {
   default: "https://kiwi.tpk.lu/PRoNbR8A",
 } as const;
 
+export const TRAVELPAYOUTS_CONFIG = {
+  marker: "778331.BringonPlane",
+  trs: "574616",
+  campaignId: "111",
+  promoId: "3414",
+  scriptBase: "https://tpwdg.com/content",
+} as const;
+
 export const AFFILIATE_MATRIX: AffiliateOffer[] = [
   {
     id: "trip_flights",
     name: "Trip.com",
     category: "FLIGHTS",
-    baseUrl: "https://tp.media/r?marker=PLACEHOLDER_ID&trs=PLACEHOLDER_ID&p=5543&u=https%3A%2F%2Fwww.trip.com%2F",
+    baseUrl: "https://tp.media/r?marker=778331.BringonPlane&trs=574616&p=5543&u=https%3A%2F%2Fwww.trip.com%2F",
     ctaLabel: "Search flights on Trip.com →",
     pitch: "Compare cheap flights across 800+ airlines with live prices.",
     regions: ["ASIA"],
