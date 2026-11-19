@@ -2,11 +2,13 @@
 /**
  * TopFlightSearchBar.astro
  * ─────────────────────────────────────────────────────────────────────────────
- * Compact, responsive sitewide flight search utility bar.
- * Sits at the top of pages taking minimal vertical space (~42px).
+ * Sitewide Kiwi.com Flight Search Widget (Mounted on every page via Layout.astro).
  *
- * Automatically localizes flight destination queries to verified Kiwi.com /
- * Trip.com affiliate portals with page-level sub_id tracking.
+ * 1. Embeds the official Travelpayouts Kiwi Flights Search Form widget:
+ *    (promo_id=3414, marker: 778331.BringonPlane, border_radius: 7, button: #0041a9).
+ *    Supports interactive live city & airport recommendations (e.g. Mumbai BOM, New York JFK).
+ * 2. Includes a responsive fallback search form equipped with built-in airport/city
+ *    autocomplete datalist, which activates gracefully if client adblockers block tpwdg.com.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
@@ -21,169 +23,268 @@ const { lang = "en" } = Astro.props;
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
-// Do not render duplicate top bar on the dedicated flight booking hub itself
-const currentPath = Astro.url.pathname;
-const isFlightsPage = currentPath.endsWith("/flights") || currentPath.endsWith("/flights/");
+// Localized currency & locale mapping
+const currencyMap: Record<string, string> = {
+  en: "usd",
+  es: "eur",
+  fr: "eur",
+  de: "eur",
+  it: "eur",
+  pt: "brl",
+  ja: "jpy",
+  ko: "krw",
+};
+
+const currency = currencyMap[lang] || "usd";
+const supportedLocales = ["en", "es", "fr", "de", "it", "pt"];
+const locale = supportedLocales.includes(lang) ? lang : "en";
+
+// Official Travelpayouts Kiwi Flights Search Form URL
+const widgetSrc = `https://tpwdg.com/content?currency=${currency}&trs=574616&shmarker=778331.BringonPlane&locale=${locale}&stops=any&show_hotels=true&powered_by=true&border_radius=7&plain=true&color_button=%230041a9&color_button_text=%23ffffff&promo_id=3414&campaign_id=111`;
 ---
 
-{!isFlightsPage && (
-  <section
-    class="no-print w-full bg-slate-900 text-white border-b border-slate-800 text-xs py-2 px-3 sm:px-6 relative z-40 select-none shadow-xs"
-    aria-label="Quick Flight Search"
-  >
-    <div class="max-w-[1200px] mx-auto flex items-center justify-between gap-2 sm:gap-3">
-      
-      {/* ── Label / Brand Hook ── */}
-      <a
-        href={translatePath("/flights/")}
-        class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0 hover:opacity-90 transition-opacity"
-        title="Browse All Flight Deals"
-      >
-        <span class="inline-flex items-center justify-center w-6 h-6 rounded-md bg-blue-600 text-white shadow-xs flex-shrink-0">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<section
+  class="no-print w-full bg-canvas-soft border-b border-hairline py-3 px-3 sm:px-6 relative z-30 select-none shadow-2xs"
+  aria-label="Flight Search"
+>
+  <div class="max-w-[1200px] mx-auto">
+    {/* ── Section Title & Hub Link ── */}
+    <div class="flex items-center justify-between gap-2 mb-2">
+      <div class="flex items-center gap-1.5">
+        <span class="inline-flex items-center justify-center w-5 h-5 rounded-md bg-blue-600 text-white shadow-xs">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
           </svg>
         </span>
-        <span class="font-bold text-slate-100 hidden sm:inline whitespace-nowrap">{t("nav.flights")}</span>
-      </a>
+        <span class="font-bold text-xs text-ink tracking-tight flex items-center gap-1">
+          <span>Search Flights</span>
+          <span class="text-[10px] font-mono text-mute hidden sm:inline">(Kiwi.com)</span>
+        </span>
+      </div>
 
-      {/* ── Compact Flight Search Form ── */}
-      <form id="top-flight-bar-form" class="flex flex-1 items-center gap-1.5 sm:gap-2 min-w-0" novalidate>
-        {/* Origin */}
-        <input
-          id="top-flight-origin"
-          list="popular-airports-datalist-top"
-          type="text"
-          placeholder="From"
-          aria-label="Departure airport or city"
-          autocomplete="off"
-          class="flex-1 min-w-0 h-8 rounded-md bg-slate-800/90 border border-slate-700/80 px-2 sm:px-2.5 text-xs text-white placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-        />
-
-        {/* Destination */}
-        <input
-          id="top-flight-dest"
-          list="popular-airports-datalist-top"
-          type="text"
-          placeholder="To"
-          aria-label="Destination airport or city"
-          autocomplete="off"
-          class="flex-1 min-w-0 h-8 rounded-md bg-slate-800/90 border border-slate-700/80 px-2 sm:px-2.5 text-xs text-white placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-        />
-
-        {/* Departure Date */}
-        <input
-          id="top-flight-date"
-          type="date"
-          aria-label="Departure date"
-          class="hidden md:block w-32 h-8 rounded-md bg-slate-800/90 border border-slate-700/80 px-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-        />
-
-        {/* Datalist for airport & city autocomplete suggestions */}
-        <datalist id="popular-airports-datalist-top">
-          {POPULAR_AIRPORTS.map((apt) => (
-            <option value={`${apt.city} (${apt.code})`}>
-              {apt.city}, {apt.country} — {apt.name} ({apt.code})
-            </option>
-          ))}
-        </datalist>
-
-        {/* Search Submit Button */}
-        <button
-          type="submit"
-          aria-label="Search flights"
-          class="h-8 px-2.5 sm:px-3.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 font-semibold text-white text-xs flex items-center gap-1 transition-colors cursor-pointer flex-shrink-0 shadow-xs"
-        >
-          <span>Search</span>
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
-        </button>
-      </form>
-
-      {/* ── Shortcut Link to Full Flight Hub ── */}
       <a
         href={translatePath("/flights/")}
-        class="hidden lg:inline-flex items-center gap-1 text-[11px] font-medium text-slate-300 hover:text-white transition-colors flex-shrink-0 whitespace-nowrap"
+        class="inline-flex items-center gap-1 text-[11px] font-semibold text-link hover:underline transition-colors flex-shrink-0"
       >
-        <span>All Deals</span>
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <span>All Deals &amp; Baggage Rules</span>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
           <polyline points="9 18 15 12 9 6"/>
         </svg>
       </a>
-
     </div>
-  </section>
-)}
+
+    {/* ── Official Travelpayouts Kiwi Widget ── */}
+    <div id="sitewide-tp-widget" class="w-full relative min-h-[80px] overflow-visible">
+      <script
+        is:inline
+        async
+        src={widgetSrc}
+        charset="utf-8"
+        id="sitewide-tpwdg-script"
+      ></script>
+    </div>
+
+    {/* ── Native Fallback Form (Hidden by default, activates if adblockers block tpwdg.com) ── */}
+    <form id="sitewide-native-flight-form" class="hidden mt-1" novalidate>
+      <div class="grid grid-cols-1 gap-2 sm:grid-cols-3">
+        <div>
+          <label for="sitewide-origin" class="block text-[10px] font-medium text-mute mb-1">Departure City or Airport</label>
+          <input
+            id="sitewide-origin"
+            list="sitewide-airports-list"
+            type="text"
+            placeholder="From (e.g. Mumbai, New York, Delhi)"
+            autocomplete="off"
+            class="w-full h-9 rounded-md border border-hairline bg-canvas px-3 text-xs text-ink placeholder:text-mute focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
+          />
+        </div>
+
+        <div>
+          <label for="sitewide-dest" class="block text-[10px] font-medium text-mute mb-1">Destination City or Airport</label>
+          <input
+            id="sitewide-dest"
+            list="sitewide-airports-list"
+            type="text"
+            placeholder="To (e.g. London, Bhubaneswar, Dubai)"
+            autocomplete="off"
+            class="w-full h-9 rounded-md border border-hairline bg-canvas px-3 text-xs text-ink placeholder:text-mute focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
+          />
+        </div>
+
+        <div class="flex items-end gap-2">
+          <div class="flex-1 min-w-0">
+            <label for="sitewide-date" class="block text-[10px] font-medium text-mute mb-1">Departure Date</label>
+            <input
+              id="sitewide-date"
+              type="date"
+              class="w-full h-9 rounded-md border border-hairline bg-canvas px-2.5 text-xs text-ink focus:border-link focus:outline-none focus:ring-1 focus:ring-link"
+            />
+          </div>
+          <button
+            type="submit"
+            class="h-9 px-4 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 font-semibold text-white text-xs flex items-center justify-center gap-1 transition-colors cursor-pointer flex-shrink-0 shadow-xs"
+          >
+            <span>Search</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-2 flex items-center justify-between text-[11px]">
+        <a
+          href="https://kiwi.tpk.lu/JFMOmSVL?sub_id=GLOBAL_top_bar_last_minute"
+          target="_blank"
+          rel="noopener noreferrer nofollow sponsored"
+          class="text-link hover:underline font-medium inline-flex items-center gap-1"
+        >
+          <span>⚡ Flying in 72 hours? Kiwi Last-Minute Deals &rarr;</span>
+        </a>
+      </div>
+    </form>
+
+    {/* Shared Datalist for airport & city autocomplete suggestions */}
+    <datalist id="sitewide-airports-list">
+      {POPULAR_AIRPORTS.map((apt) => (
+        <option value={`${apt.city} (${apt.code})`}>
+          {apt.city}, {apt.country} — {apt.name} ({apt.code})
+        </option>
+      ))}
+    </datalist>
+  </div>
+</section>
+
+<style is:global>
+  tp-cascoon {
+    display: block !important;
+    width: 100% !important;
+    min-height: 76px !important;
+  }
+</style>
 
 <script is:inline>
   (function () {
-    var form = document.getElementById("top-flight-bar-form");
-    if (!form) return;
+    var nativeForm = document.getElementById("sitewide-native-flight-form");
+    var tpContainer = document.getElementById("sitewide-tp-widget");
+    var tpScript = document.getElementById("sitewide-tpwdg-script");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+    var widgetLoaded = false;
 
-      var originInput = document.getElementById("top-flight-origin");
-      var originVal = originInput ? originInput.value.trim() : "";
-      var destInput = document.getElementById("top-flight-dest");
-      var destVal = destInput ? destInput.value.trim() : "";
-
-      var kiwiGeoMap = {
-        "us": "https://kiwi.tpk.lu/PRoNbR8A",
-        "gb": "https://kiwi.tpk.lu/zdAwHpk4",
-        "uk": "https://kiwi.tpk.lu/zdAwHpk4",
-        "in": "https://kiwi.tpk.lu/suZfzffW",
-        "cz": "https://kiwi.tpk.lu/4JJAeyYQ",
-        "fi": "https://kiwi.tpk.lu/j9t7bFL8",
-        "it": "https://kiwi.tpk.lu/3cbh2gXF",
-        "dk": "https://kiwi.tpk.lu/k5RXUFYd",
-        "da": "https://kiwi.tpk.lu/k5RXUFYd",
-        "de": "https://kiwi.tpk.lu/FNBUJmy6",
-        "nl": "https://kiwi.tpk.lu/U42dntOs",
-        "pl": "https://kiwi.tpk.lu/bIz4CwgC",
-        "br": "https://kiwi.tpk.lu/xF6eey3B",
-        "es": "https://kiwi.tpk.lu/tBWe6mTP",
-        "fr": "https://kiwi.tpk.lu/47KJwXAa"
-      };
-
-      var rawLang = (navigator.language || "en").toLowerCase();
-      var parts = rawLang.split("-");
-      var lang = parts[0];
-      var country = parts[1] || "";
-
-      var asiaLangs = ["ko", "ja", "zh", "th", "vi", "ms", "id", "tl"];
-      var isEastAsia = asiaLangs.indexOf(lang) !== -1 && country !== "in";
-
-      var region = (country === "us" || country === "ca")
-        ? "NA"
-        : (country === "in" || isEastAsia)
-        ? "ASIA"
-        : "EU";
-
-      var subId = region + "_top_bar_search";
-      var url;
-
-      if (isEastAsia) {
-        url = "https://tp.media/r?marker=778331.BringonPlane&trs=574616&p=5543" +
-              "&u=https%3A%2F%2Fwww.trip.com%2Fflight%2F" +
-              "&sub_id=" + encodeURIComponent(subId);
-      } else {
-        var kiwiBase = kiwiGeoMap[country] || kiwiGeoMap[lang];
-        if (!kiwiBase) {
-          kiwiBase = (destVal || originVal) ? "https://kiwi.tpk.lu/7m9bs2Ap" : "https://kiwi.tpk.lu/PRoNbR8A";
-        }
-        url = kiwiBase + "?sub_id=" + encodeURIComponent(subId);
-        if (originVal && destVal) {
-          url += "&search=" + encodeURIComponent(originVal + " to " + destVal);
-        } else if (destVal) {
-          url += "&search=" + encodeURIComponent(destVal);
-        } else if (originVal) {
-          url += "&search=" + encodeURIComponent(originVal);
-        }
+    function markWidgetLoaded() {
+      widgetLoaded = true;
+      if (nativeForm) {
+        nativeForm.classList.add("hidden");
+        nativeForm.style.display = "none";
       }
+    }
 
-      window.open(url, "_blank", "noopener,noreferrer");
+    function checkTpLoaded() {
+      var cascoon = document.querySelector("tp-cascoon");
+      var iframe = tpContainer ? tpContainer.querySelector("iframe") : null;
+      if (
+        (cascoon && cascoon.shadowRoot && cascoon.shadowRoot.children.length > 0) ||
+        (cascoon && cascoon.children.length > 0) ||
+        iframe
+      ) {
+        markWidgetLoaded();
+      }
+    }
+
+    if (tpScript) {
+      tpScript.addEventListener("error", function () {
+        if (!widgetLoaded && nativeForm) {
+          nativeForm.classList.remove("hidden");
+          nativeForm.style.display = "block";
+        }
+      });
+      tpScript.addEventListener("load", function () {
+        setTimeout(checkTpLoaded, 300);
+        setTimeout(checkTpLoaded, 1000);
+      });
+    }
+
+    setTimeout(function () {
+      checkTpLoaded();
+      if (!widgetLoaded && nativeForm) {
+        nativeForm.classList.remove("hidden");
+        nativeForm.style.display = "block";
+      }
+    }, 2500);
+
+    var observer = new MutationObserver(function () {
+      checkTpLoaded();
     });
+    if (tpContainer) {
+      observer.observe(tpContainer, { childList: true, subtree: true });
+    }
+
+    // Native form fallback submission (routes to localized Kiwi or Trip.com)
+    if (nativeForm) {
+      nativeForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var originInput = document.getElementById("sitewide-origin");
+        var originVal = originInput ? originInput.value.trim() : "";
+        var destInput = document.getElementById("sitewide-dest");
+        var destVal = destInput ? destInput.value.trim() : "";
+
+        var kiwiGeoMap = {
+          "us": "https://kiwi.tpk.lu/PRoNbR8A",
+          "gb": "https://kiwi.tpk.lu/zdAwHpk4",
+          "uk": "https://kiwi.tpk.lu/zdAwHpk4",
+          "in": "https://kiwi.tpk.lu/suZfzffW",
+          "cz": "https://kiwi.tpk.lu/4JJAeyYQ",
+          "fi": "https://kiwi.tpk.lu/j9t7bFL8",
+          "it": "https://kiwi.tpk.lu/3cbh2gXF",
+          "dk": "https://kiwi.tpk.lu/k5RXUFYd",
+          "da": "https://kiwi.tpk.lu/k5RXUFYd",
+          "de": "https://kiwi.tpk.lu/FNBUJmy6",
+          "nl": "https://kiwi.tpk.lu/U42dntOs",
+          "pl": "https://kiwi.tpk.lu/bIz4CwgC",
+          "br": "https://kiwi.tpk.lu/xF6eey3B",
+          "es": "https://kiwi.tpk.lu/tBWe6mTP",
+          "fr": "https://kiwi.tpk.lu/47KJwXAa"
+        };
+
+        var rawLang = (navigator.language || "en").toLowerCase();
+        var parts = rawLang.split("-");
+        var lang = parts[0];
+        var country = parts[1] || "";
+
+        var asiaLangs = ["ko", "ja", "zh", "th", "vi", "ms", "id", "tl"];
+        var isEastAsia = asiaLangs.indexOf(lang) !== -1 && country !== "in";
+
+        var region = (country === "us" || country === "ca")
+          ? "NA"
+          : (country === "in" || isEastAsia)
+          ? "ASIA"
+          : "EU";
+
+        var subId = region + "_sitewide_bar";
+        var url;
+
+        if (isEastAsia) {
+          url = "https://tp.media/r?marker=778331.BringonPlane&trs=574616&p=5543" +
+                "&u=https%3A%2F%2Fwww.trip.com%2Fflight%2F" +
+                "&sub_id=" + encodeURIComponent(subId);
+        } else {
+          var kiwiBase = kiwiGeoMap[country] || kiwiGeoMap[lang];
+          if (!kiwiBase) {
+            kiwiBase = (destVal || originVal) ? "https://kiwi.tpk.lu/7m9bs2Ap" : "https://kiwi.tpk.lu/PRoNbR8A";
+          }
+          url = kiwiBase + "?sub_id=" + encodeURIComponent(subId);
+          if (originVal && destVal) {
+            url += "&search=" + encodeURIComponent(originVal + " to " + destVal);
+          } else if (destVal) {
+            url += "&search=" + encodeURIComponent(destVal);
+          } else if (originVal) {
+            url += "&search=" + encodeURIComponent(originVal);
+          }
+        }
+
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+    }
   })();
 </script>

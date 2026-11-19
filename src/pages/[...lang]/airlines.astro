@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import FlightSearchWidget from "../../components/FlightSearchWidget.astro";
 import ChecklistAddon from "../../components/monetization/ChecklistAddon.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
@@ -269,10 +268,7 @@ const airlineFaqs = [
       </p>
     </header>
 
-    <!-- Contextual Airline Flight Search -->
-    <FlightSearchWidget slug="airlines" lang={lang} />
-
-    <!-- Quick Item Shortcut Links -->
+        <!-- Quick Item Shortcut Links -->
     <div class="mb-10 p-5 bg-canvas border border-hairline rounded-md shadow-xs">
       <h2 class="text-xs font-mono uppercase tracking-wider font-semibold text-mute mb-3">
         {t("airlines.checkItems")}

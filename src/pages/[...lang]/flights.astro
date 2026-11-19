@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import FlightSearchWidget from "../../components/FlightSearchWidget.astro";
 import { langParams, resolveLang } from "../../i18n/config";
 import { useTranslations, useTranslatedPath, getCanonicalUrl, type Lang } from "../../i18n/utils";
 import { getKiwiAffiliateUrl, buildAffiliateUrl } from "../../utils/getContextualAffiliates";
@@ -80,11 +79,6 @@ const breadcrumbs = [
         Find the lowest fares across 800+ international carriers, view real-time airline baggage policies, and arrange travel essentials before heading to the airport.
       </p>
     </header>
-
-    {/* ── Primary Interactive Flight Search Widget ── */}
-    <div class="mb-12">
-      <FlightSearchWidget slug="flights_hub" lang={lang} />
-    </div>
 
     {/* ── SECTION 1: FLIGHT SEARCH & ROUTE PARTNERS ── */}
     <section class="mb-12" aria-labelledby="heading-flight-options">

@@ -7,7 +7,6 @@ import EEATBanner from "../../components/seo/EEATBanner.astro";
 import RelatedLinksWidget from "../../components/seo/RelatedLinksWidget.astro";
 import ChecklistAddon from "../../components/monetization/ChecklistAddon.astro";
 import TravelServicesBar from "../../components/monetization/TravelServicesBar.astro";
-import FlightSearchWidget from "../../components/FlightSearchWidget.astro";
 import { 
   ArrowLeft, Trash2, Plus, Printer, Download, Share2, 
   Calendar, ClipboardList, AlertTriangle, ShieldCheck, 
@@ -562,10 +561,7 @@ const i18n = {
       <!-- Static Google-Indexable Below-Fold SEO Content Section -->
       <section class="mt-16 border-t border-hairline pt-12 no-print">
 
-        <!-- Contextual Flight Search -->
-        <FlightSearchWidget slug="checklist" lang={lang} />
-
-        <!-- Monetization Layer: eSIM + Insurance recommendations (Module C) -->
+                <!-- Monetization Layer: eSIM + Insurance recommendations (Module C) -->
         <ChecklistAddon context="CHECKLIST" slug="checklist" lang={lang} />
 
         <!-- Intro Header -->
