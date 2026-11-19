@@ -46,25 +46,33 @@ import {
 export async function getStaticPaths() {
   const items = getAllItems();
   
-  const airlines = [
-    { slug: "delta", name: "Delta Air Lines", cabinLimit: "10 kg (22 lbs)", checkedLimit: "23 kg (50 lbs)" },
-    { slug: "united", name: "United Airlines", cabinLimit: "8 kg (17 lbs)", checkedLimit: "23 kg (50 lbs)" },
-    { slug: "american", name: "American Airlines", cabinLimit: "10 kg (22 lbs)", checkedLimit: "23 kg (50 lbs)" },
-    { slug: "lufthansa", name: "Lufthansa", cabinLimit: "8 kg (17 lbs)", checkedLimit: "23 kg (50 lbs)" },
-    { slug: "air-france", name: "Air France", cabinLimit: "12 kg (26 lbs)", checkedLimit: "23 kg (50 lbs)" },
-    { slug: "british-airways", name: "British Airways", cabinLimit: "23 kg (50 lbs)", checkedLimit: "23 kg (50 lbs)" },
-    { slug: "ryanair", name: "Ryanair", cabinLimit: "10 kg (22 lbs)", checkedLimit: "20 kg (44 lbs)" },
-    { slug: "emirates", name: "Emirates", cabinLimit: "7 kg (15 lbs)", checkedLimit: "30 kg (66 lbs)" },
-    { slug: "singapore-airlines", name: "Singapore Airlines", cabinLimit: "7 kg (15 lbs)", checkedLimit: "30 kg (66 lbs)" }
+  const airlineDefs = [
+    { slug: "delta", primarySlug: "delta", aliases: ["delta-air-lines", "delta-airlines"], name: "Delta Air Lines", cabinLimit: "10 kg (22 lbs)", checkedLimit: "23 kg (50 lbs)" },
+    { slug: "united", primarySlug: "united", aliases: ["united-airlines"], name: "United Airlines", cabinLimit: "8 kg (17 lbs)", checkedLimit: "23 kg (50 lbs)" },
+    { slug: "american", primarySlug: "american", aliases: ["american-airlines"], name: "American Airlines", cabinLimit: "10 kg (22 lbs)", checkedLimit: "23 kg (50 lbs)" },
+    { slug: "lufthansa", primarySlug: "lufthansa", aliases: [], name: "Lufthansa", cabinLimit: "8 kg (17 lbs)", checkedLimit: "23 kg (50 lbs)" },
+    { slug: "air-france", primarySlug: "air-france", aliases: [], name: "Air France", cabinLimit: "12 kg (26 lbs)", checkedLimit: "23 kg (50 lbs)" },
+    { slug: "british-airways", primarySlug: "british-airways", aliases: ["ba"], name: "British Airways", cabinLimit: "23 kg (50 lbs)", checkedLimit: "23 kg (50 lbs)" },
+    { slug: "ryanair", primarySlug: "ryanair", aliases: [], name: "Ryanair", cabinLimit: "10 kg (22 lbs)", checkedLimit: "20 kg (44 lbs)" },
+    { slug: "emirates", primarySlug: "emirates", aliases: [], name: "Emirates", cabinLimit: "7 kg (15 lbs)", checkedLimit: "30 kg (66 lbs)" },
+    { slug: "singapore-airlines", primarySlug: "singapore-airlines", aliases: ["singapore"], name: "Singapore Airlines", cabinLimit: "7 kg (15 lbs)", checkedLimit: "30 kg (66 lbs)" }
   ];
 
   const paths = [];
   for (const item of items) {
-    for (const airline of airlines) {
+    for (const def of airlineDefs) {
+      // Primary route
       paths.push({
-        params: { slug: item.slug, airline: airline.slug },
-        props: { itemSummary: item, airline }
+        params: { slug: item.slug, airline: def.slug },
+        props: { itemSummary: item, airline: def }
       });
+      // Alias routes (prevents 404s on common airline slug variations like delta-air-lines)
+      for (const alias of def.aliases) {
+        paths.push({
+          params: { slug: item.slug, airline: alias },
+          props: { itemSummary: item, airline: { ...def, slug: alias } }
+        });
+      }
     }
   }
   return paths;
@@ -82,6 +90,7 @@ const regulatoryDetails = getRegulatoryDetails(item);
 const airlineDifferences = getAirlineDifferences(item);
 const stepByStepPacking = getStepByStepPackingGuide(item);
 
+const canonicalUrl = `https://bringonplane.com/items/${item.slug}/airline/${airline.primarySlug || airline.slug}/`;
 const currentUrl = new URL(Astro.url.pathname, "https://bringonplane.com").toString();
 const currentYear = new Date().getFullYear();
 
@@ -221,7 +230,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": seoTitle,
   "description": seoDescription,
-  "url": currentUrl,
+  "url": canonicalUrl,
   "inLanguage": "en",
   "datePublished": item.metadata?.lastReviewed || "2026-11-14",
   "dateModified": item.metadata?.lastReviewed || "2026-11-14",
@@ -245,12 +254,12 @@ const articleSchema = {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": currentUrl
+    "@id": canonicalUrl
   }
 };
 ---
 
-<Layout title={seoTitle} description={seoDescription} canonicalURL={currentUrl}>
+<Layout title={seoTitle} description={seoDescription} canonicalURL={canonicalUrl}>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
   <script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)} />

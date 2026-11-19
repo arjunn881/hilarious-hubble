@@ -8,6 +8,7 @@ export interface AirportEntry {
 export const POPULAR_AIRPORTS: AirportEntry[] = [
   // India
   { code: "BOM", city: "Mumbai", country: "India", name: "Chhatrapati Shivaji Maharaj" },
+  { code: "NMI", city: "Mumbai", country: "India", name: "Navi Mumbai International Airport" },
   { code: "DEL", city: "New Delhi", country: "India", name: "Indira Gandhi International" },
   { code: "BBI", city: "Bhubaneswar", country: "India", name: "Biju Patnaik International" },
   { code: "BLR", city: "Bengaluru", country: "India", name: "Kempegowda International" },
