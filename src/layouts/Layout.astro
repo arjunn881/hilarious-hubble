@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import SearchModal from "../components/SearchModal.astro";
 import TSAUpdatesBanner from "../components/TSAUpdatesBanner.astro";
-import TopFlightSearchBar from "../components/TopFlightSearchBar.astro";
 import AmazonGeoRouter from "../components/monetization/AmazonGeoRouter.astro";
 import MonetagAds from "../components/monetization/MonetagAds.astro";
 import { ClientRouter } from "astro:transitions";
@@ -60,10 +59,6 @@ const {
 const lang: Lang = langProp ?? getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const meta = localeMeta[lang];
-
-/** Check if current page is the homepage (default or any localized variant) */
-const isHome = Astro.url.pathname === "/" || /^\/(es|ja|fr|de|pt|ko|it)\/?$/.test(Astro.url.pathname);
-const showTopFlightSearch = !hideTopFlightSearch && !isHome;
 
 const title = titleProp ?? t("meta.home.title");
 const description = descriptionProp ?? t("meta.home.description");
@@ -150,6 +145,10 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
             m.indexOf("buffered flag") !== -1 ||
             m.indexOf("chunk.bkbau") !== -1 ||
             m.indexOf("vignette") !== -1 ||
+            m.indexOf("serviceworker") !== -1 ||
+            m.indexOf("service worker") !== -1 ||
+            m.indexOf("bad http response") !== -1 ||
+            m.indexOf("tpwdg") !== -1 ||
             s.indexOf("outstream") !== -1 ||
             s.indexOf("chunk.bkbau") !== -1 ||
             s.indexOf("emrldtp") !== -1 ||
@@ -157,7 +156,9 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
             s.indexOf("doubleclick") !== -1 ||
             s.indexOf("googlesyndication") !== -1 ||
             s.indexOf("nap5k") !== -1 ||
-            s.indexOf("5gvci") !== -1
+            s.indexOf("5gvci") !== -1 ||
+            s.indexOf("tpwdg") !== -1 ||
+            s.indexOf("sw.js") !== -1
           );
         }
 
@@ -236,10 +237,20 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
           }
         } catch (e) {}
 
-        // 3. Delete third-party vendor console.log spam (e.g. Travelpayouts [tp] telemetry)
+        // 3. Delete third-party vendor console.log spam (e.g. Travelpayouts [tp] telemetry, Monetag locked)
         var _log = console.log;
         console.log = function () {
-          if (arguments[0] && typeof arguments[0] === "string" && arguments[0].indexOf("[tp]") !== -1) {
+          if (
+            arguments[0] &&
+            (
+              (typeof arguments[0] === "string" && (
+                arguments[0].indexOf("[tp]") !== -1 ||
+                arguments[0].indexOf("locked") !== -1 ||
+                arguments[0].indexOf("BasicSubscriptions") !== -1
+              )) ||
+              arguments[0] === "locked"
+            )
+          ) {
             return;
           }
           _log.apply(console, arguments);
@@ -284,7 +295,9 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
                 e.reason.message.indexOf("emrldtp") !== -1 ||
                 e.reason.message.indexOf("lima_error") !== -1 ||
                 e.reason.message.indexOf("nap5k") !== -1 ||
-                e.reason.message.indexOf("5gvci") !== -1
+                e.reason.message.indexOf("5gvci") !== -1 ||
+                e.reason.message.indexOf("ServiceWorker") !== -1 ||
+                e.reason.message.indexOf("bad HTTP response code") !== -1
               )) ||
               (e.reason.stack && (
                 e.reason.stack.indexOf("chunk.BkBAu") !== -1 ||
@@ -300,6 +313,39 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
             return true;
           }
         });
+
+        // 7. Guard Notification.requestPermission against Chrome repeated prompt violation notice
+        try {
+          if (typeof window !== "undefined" && "Notification" in window) {
+            var _origPerm = window.Notification.requestPermission;
+            window.Notification.requestPermission = function () {
+              if (window.Notification.permission === "denied") {
+                return Promise.resolve("denied");
+              }
+              try {
+                var p = _origPerm.apply(window.Notification, arguments);
+                if (p && typeof p.catch === "function") {
+                  return p.catch(function () { return "denied"; });
+                }
+                return p;
+              } catch (e) {
+                return Promise.resolve("denied");
+              }
+            };
+          }
+        } catch (e) {}
+
+        // 8. Catch and swallow serviceWorker registration errors from ad networks
+        try {
+          if (typeof navigator !== "undefined" && "serviceWorker" in navigator) {
+            var _origSwReg = navigator.serviceWorker.register;
+            navigator.serviceWorker.register = function () {
+              return _origSwReg.apply(navigator.serviceWorker, arguments).catch(function () {
+                return null;
+              });
+            };
+          }
+        } catch (e) {}
       })();
     </script>
     <ClientRouter />
@@ -349,7 +395,7 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8894580285912422" crossorigin="anonymous"></script>
-    <!-- Monetag Ads (Isolated component: can be removed or disabled instantly in src/components/monetization/MonetagAds.astro) -->
+    <!-- Monetag Ads (Zone 12298359 active; push notification Zone 11738017 removed) -->
     <MonetagAds />
 
     {prevURL && <link rel="prev" href={prevURL} />}
@@ -387,19 +433,6 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
       title="BringOnPlane — Aviation & Baggage Safety News"
       href="/rss.xml"
     />
-
-    <!-- Google News / Subscribe with Google (SwG Basic) CMS Sync -->
-    <script async type="application/javascript" src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
-    <script is:inline>
-      (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
-        basicSubscriptions.init({
-          type: "NewsArticle",
-          isPartOfType: ["Product"],
-          isPartOfProductId: "CAow1IHIDA:openaccess",
-          clientOptions: { theme: "light", lang: "en" },
-        });
-      });
-    </script>
 
     <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
@@ -518,8 +551,8 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
         logo: {
           "@type": "ImageObject",
           url: "https://bringonplane.com/logo.png",
-          width: 200,
-          height: 60,
+          width: 512,
+          height: 512,
         },
         sameAs: ["https://www.instagram.com/bringonplane/"],
         foundingDate: "2024",
@@ -588,6 +621,7 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: "BringOnPlane",
+        alternateName: ["Bring On Plane", "BringOnPlane.com", "bringonplane"],
         url: "https://bringonplane.com/",
       })}
     />
@@ -693,10 +727,6 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <!-- Sitewide TSA 2026 Regulation Updates Strip -->
     <TSAUpdatesBanner />
 
-    <!-- Compact Top Flight Search Bar (Responsive & Space-Saving, hidden on homepage) -->
-    {showTopFlightSearch && <TopFlightSearchBar lang={lang} />}
-
-
     <main id="main-content" class="flex-1 flex flex-col w-full">
       <slot />
     </main>
@@ -704,5 +734,50 @@ const localeHomeUrl = getCanonicalUrl("/", lang);
     <slot name="footer" />
     <SearchModal lang={lang} />
     <AmazonGeoRouter />
+
+    <!-- India-only Amazon geo-filter: reveals [data-india-only] blocks only for IN visitors; hides [data-global-amazon] for IN visitors -->
+    <script is:inline>
+      (function () {
+        function applyIndiaGeo() {
+          // Show India-specific amazon.in blocks (arjunanayak-21)
+          var indiaEls = document.querySelectorAll('[data-india-only="true"]');
+          for (var i = 0; i < indiaEls.length; i++) {
+            indiaEls[i].style.display = '';
+          }
+          // Hide global amazon.com blocks (bringonplane-20) for India visitors
+          var globalEls = document.querySelectorAll('[data-global-amazon="true"]');
+          for (var j = 0; j < globalEls.length; j++) {
+            globalEls[j].style.display = 'none';
+          }
+        }
+
+        function isIndia() {
+          try {
+            var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+            if (tz === 'Asia/Calcutta' || tz === 'Asia/Kolkata') return true;
+          } catch (e) {}
+          try {
+            var langs = navigator.languages || [navigator.language || ''];
+            for (var i = 0; i < langs.length; i++) {
+              if (/[-_]IN\b/i.test(langs[i])) return true;
+            }
+          } catch (e) {}
+          return false;
+        }
+
+        function checkAndApply() {
+          if (isIndia()) {
+            applyIndiaGeo();
+          }
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', checkAndApply);
+        } else {
+          checkAndApply();
+        }
+        document.addEventListener('astro:after-swap', checkAndApply);
+      })();
+    </script>
   </body>
 </html>

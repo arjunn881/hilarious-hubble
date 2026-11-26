@@ -130,12 +130,12 @@ export const AFFILIATE_MATRIX: AffiliateOffer[] = [
     priority: 1,
   },
   {
-    id: "ekta",
-    name: "EKTA Insurance",
+    id: "klook_insurance",
+    name: "Klook Travel Insurance",
     category: "INSURANCE",
-    baseUrl: "https://ektatraveling.tpk.lu/iBSTDrvr",
+    baseUrl: "https://klook.tpk.lu/sp5LYIRr",
     ctaLabel: "Get travel insurance →",
-    pitch: "Fast worldwide medical & trip protection — accepted for visas, instant policy.",
+    pitch: "Comprehensive travel medical & trip protection — instant policy for international travellers.",
     regions: ["EU", "ASIA", "NA", "GLOBAL"],
     contexts: ["GUIDE_DEST", "CHECKLIST"],
     priority: 3,
@@ -355,10 +355,15 @@ export const ESIM_PARTNERS = {
 } as const;
 
 export const INSURANCE_PARTNERS = {
+  klookInsurance: {
+    name: "Klook Travel Insurance",
+    url: "https://klook.tpk.lu/sp5LYIRr",
+    pitch: "Comprehensive travel medical & trip protection — instant policy for international travellers.",
+  },
   ekta: {
-    name: "EKTA Travel Insurance",
-    url: "https://ektatraveling.tpk.lu/iBSTDrvr",
-    pitch: "Fast worldwide medical & trip protection — accepted for visas, instant policy.",
+    name: "Klook Travel Insurance",
+    url: "https://klook.tpk.lu/sp5LYIRr",
+    pitch: "Comprehensive travel medical & trip protection — instant policy for international travellers.",
   },
   worldNomads: {
     name: "World Nomads",

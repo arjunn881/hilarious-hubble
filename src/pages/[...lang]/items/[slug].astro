@@ -667,19 +667,13 @@ const i18n = {
     <!-- Contextual Verdict Action Utility Callout -->
     <VerdictActionCallout carryOnStatus={item.carryOn.status} slug={item.slug} lang={lang} />
 
-    <!-- Monetization Layer: Contextual gear CTAs (Module A) -->
+    <!-- Monetization Layer: Contextual gear micro-CTAs (Module A) -->
     <TsaGearSuggester
       category={item.category}
       itemName={itemName}
       carryOnStatus={item.carryOn.status}
       keywords={item.keywords}
     />
-
-    <!-- Amazon Affiliate Product Recommendations (Manual or Auto-Generated) -->
-    <AmazonAffiliateBox links={item.affiliateLinks} item={item} />
-
-    <!-- Monetization Layer: eSIM + Insurance (Module C) -->
-    <ChecklistAddon context={item.carryOn.status === "ALLOWED" ? "ITEM_ALLOWED" : "ITEM_RESTRICTED"} slug={item.slug} lang={lang} />
 
     <!-- Official TSA Guidance -->
     <section class="bg-canvas border border-hairline rounded-md p-8 shadow-level-3 mb-10">
@@ -701,6 +695,9 @@ const i18n = {
         </a>
       )}
     </section>
+
+    <!-- Amazon Affiliate Product Recommendations (Manual or Auto-Generated) -->
+    <AmazonAffiliateBox links={item.affiliateLinks} item={item} />
 
     <!-- Practical Traveler Packing Tip Card -->
     <section class="bg-canvas border border-link/15 rounded-md p-6 shadow-level-2 mb-10 select-none no-print">
@@ -765,6 +762,9 @@ const i18n = {
         ))}
       </ol>
     </section>
+
+    <!-- Monetization Layer: Travel Services (Flights, eSIM, Transit Passes) -->
+    <ChecklistAddon context={item.carryOn.status === "ALLOWED" ? "ITEM_ALLOWED" : "ITEM_RESTRICTED"} slug={item.slug} lang={lang} />
 
     {/* ── YMYL Medicine Compliance Block ──────────────────────────────────── */}
     {isMedicine && (

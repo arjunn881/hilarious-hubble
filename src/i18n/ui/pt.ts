@@ -14,7 +14,7 @@ export const pt = {
   'meta.subject': 'Regras da TSA para bagagem de mão e despachada por item de viagem',
   'meta.classification': 'Viagem, Segurança da aviação, Ferramentas',
   'meta.category': 'Viagem, Ferramentas',
-  'meta.home.title': 'O que pode levar no avião? Verificador de bagagem de mão da TSA',
+  'meta.home.title': 'BringOnPlane — O que pode levar no avião? Verificador de bagagem de mão da TSA',
   'meta.home.description':
     'Digite qualquer item e veja na hora se ele vai na bagagem de mão ou despachada. Ferramenta TSA gratuita: lâminas, líquidos, power banks, comida e mais.',
   'meta.home.keywords':

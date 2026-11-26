@@ -1,4 +1,4 @@
-﻿---
+---
 title: "MIA TSA Wait Times: Miami Airport Security Lines & Concourse Guide (2026)"
 description: "Live Miami International Airport (MIA) TSA wait times. Concourse D, E, F, G, H & J checkpoint breakdown, international peak hours, PreCheck lines, and tips."
 category: "Security"
@@ -127,16 +127,3 @@ Yes. CLEAR Plus lanes are available at Concourse D (Checkpoint 2) and Concourse 
 
 ### How do MIA security wait times compare to Chicago ORD or Atlanta ATL?
 MIA security wait times are similar to [ORD](/guide/ord-tsa-wait-times/) and [ATL](/guide/atl-tsa-wait-times/), but with higher baggage counts and unique weekend cruise passenger peaks. See comparisons in our [TSA Wait Times Master Guide](/guide/tsa-wait-times-guide/).
-
----
-
-## Related Travel & Security Guides
-
-- [TSA Wait Times at Major US Airports: Master Guide](/guide/tsa-wait-times-guide/)
-- [ORD TSA Wait Times: Chicago O'Hare Guide](/guide/ord-tsa-wait-times/)
-- [ATL TSA Wait Times: Atlanta Airport Guide](/guide/atl-tsa-wait-times/)
-- [What Is TSA PreCheck? Full Overview](/guide/what-is-tsa-precheck/)
-- [TSA PreCheck Cost, Application & Renewal](/guide/tsa-precheck-guide/)
-- [Global Entry vs TSA PreCheck: Complete Comparison](/guide/global-entry-vs-tsa-precheck/)
-- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item/)
-- [Miami International Airport Official Website](https://www.miami-airport.com)

@@ -9,7 +9,6 @@ import EEATBanner from "../../../components/seo/EEATBanner.astro";
 import AmazonAffiliateBox from "../../../components/AmazonAffiliateBox.astro";
 import ChecklistAddon from "../../../components/monetization/ChecklistAddon.astro";
 import TravelServicesBar from "../../../components/monetization/TravelServicesBar.astro";
-import FlightSearchWidget from "../../../components/FlightSearchWidget.astro";
 import { getRelatedCategories, POPULAR_AIRLINES } from "../../../lib/relatedEngine";
 import { langParams, localeMeta, resolveLang } from "../../../i18n/config";
 import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "../../../i18n/utils";
@@ -272,11 +271,10 @@ const localizedKeywords = t('guide.keywords', {
       <Content />
     </article>
 
-    <!-- Contextual Destination Flight Search -->
-    <FlightSearchWidget defaultDestination={destination} slug={slug} lang={lang} />
-
     <!-- Amazon Affiliate Product Recommendations (Manual or Auto-Generated) -->
-    <AmazonAffiliateBox links={affiliateLinks} heading="What You'll Need for This Trip" title={title} category={category} />
+    <div id="guide-amazon-affiliate-box" class="my-8">
+      <AmazonAffiliateBox links={affiliateLinks} heading="What You'll Need for This Trip" title={title} category={category} />
+    </div>
 
     <!-- Monetization Layer: eSIM + Insurance (Module C) -->
     <ChecklistAddon context="GUIDE_DEST" slug={slug} lang={lang} />
@@ -358,6 +356,24 @@ const localizedKeywords = t('guide.keywords', {
         localStorage.setItem("bookmarked_guides", JSON.stringify(list));
         updateFavUI();
       });
+    }
+
+    // ── Mid-Article Amazon Recommendations Placement ──
+    // Positions the curated gear box mid-content where readers actively engage,
+    // avoiding the "buried at footer" issue while keeping zero above-the-fold clutter.
+    const article = document.querySelector(".article-content");
+    const amazonBox = document.getElementById("guide-amazon-affiliate-box");
+    if (article && amazonBox) {
+      const headings = article.querySelectorAll("h2");
+      if (headings.length >= 2) {
+        // Insert right before the 2nd h2 heading (perfect natural break after intro/first section)
+        headings[1].parentNode.insertBefore(amazonBox, headings[1]);
+      } else if (headings.length === 1) {
+        const paragraphs = article.querySelectorAll("p");
+        if (paragraphs.length >= 3) {
+          paragraphs[2].parentNode.insertBefore(amazonBox, paragraphs[2].nextSibling);
+        }
+      }
     }
   }
 

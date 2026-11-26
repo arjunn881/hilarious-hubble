@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ORD TSA Wait Times: Chicago O'Hare Security Lines & Terminal Guide (2026)"
 description: "Live Chicago O'Hare (ORD) TSA wait times by terminal. Breakdown of Terminals 1, 2, 3 & 5 checkpoints, peak hours, PreCheck & CLEAR lines, and tips to skip lines."
 category: "Security"
@@ -133,16 +133,3 @@ Yes. Terminals 1, 2, and 3 are connected via indoor secure pedestrian walkways b
 
 ### How does ORD wait time compare to other major airports?
 ORD wait times are comparable to other giant hub airports like [ATL](/guide/atl-tsa-wait-times/), [MIA](/guide/mia-tsa-wait-times/), LAX, and JFK. Compare nationwide airport patterns in our master [TSA Wait Times Guide](/guide/tsa-wait-times-guide/).
-
----
-
-## Related Travel & Security Guides
-
-- [TSA Wait Times at Major US Airports: Master Guide](/guide/tsa-wait-times-guide/)
-- [ATL TSA Wait Times: Atlanta Airport Guide](/guide/atl-tsa-wait-times/)
-- [MIA TSA Wait Times: Miami Airport Guide](/guide/mia-tsa-wait-times/)
-- [What Is TSA PreCheck? Full Overview](/guide/what-is-tsa-precheck/)
-- [TSA PreCheck Cost, Application & Renewal](/guide/tsa-precheck-guide/)
-- [Global Entry vs TSA PreCheck: Which Is Better?](/guide/global-entry-vs-tsa-precheck/)
-- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item/)
-- [FlyChicago Official O'Hare Website](https://www.flychicago.com/ohare)

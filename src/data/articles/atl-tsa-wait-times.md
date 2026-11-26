@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ATL TSA Wait Times: Atlanta Airport Security Lines & Checkpoints (2026)"
 description: "Live Atlanta Hartsfield-Jackson (ATL) TSA wait times. Main, North, South, and International checkpoint breakdown, peak travel hours, PreCheck lines, and tips."
 category: "Security"
@@ -135,16 +135,3 @@ Yes—provided you do not need to check luggage with a domestic carrier at the d
 
 ### How does ATL compare with Chicago ORD and Miami MIA wait times?
 ATL handles higher peak passenger volumes than Chicago ([ORD](/guide/ord-tsa-wait-times/)) or Miami ([MIA](/guide/mia-tsa-wait-times/)), but its dedicated South PreCheck checkpoint operates with remarkable efficiency. See full comparative data in our [TSA Wait Times Master Guide](/guide/tsa-wait-times-guide/).
-
----
-
-## Related Travel & Security Guides
-
-- [TSA Wait Times at Major US Airports: Master Guide](/guide/tsa-wait-times-guide/)
-- [ORD TSA Wait Times: Chicago O'Hare Guide](/guide/ord-tsa-wait-times/)
-- [MIA TSA Wait Times: Miami Airport Guide](/guide/mia-tsa-wait-times/)
-- [What Is TSA PreCheck? Full Overview](/guide/what-is-tsa-precheck/)
-- [TSA PreCheck Cost, Application & Renewal](/guide/tsa-precheck-guide/)
-- [Global Entry vs TSA PreCheck: Complete Comparison](/guide/global-entry-vs-tsa-precheck/)
-- [Can You Bring a Carry-On and a Personal Item?](/guide/carry-on-and-personal-item/)
-- [Official Hartsfield-Jackson Atlanta Website](https://www.atl.com)

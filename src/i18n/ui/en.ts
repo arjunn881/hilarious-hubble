@@ -15,7 +15,7 @@ export const en = {
   'meta.subject': 'TSA carry-on and checked baggage rules for travel items',
   'meta.classification': 'Travel, Aviation Security, Tools',
   'meta.category': 'Travel, Tools',
-  'meta.home.title': 'TSA Carry-On Checker: Is It Allowed on a Plane?',
+  'meta.home.title': 'BringOnPlane — TSA Travel Packing Rules & Carry-On Checker',
   'meta.home.description':
     'Type any item to instantly see if it goes in your carry-on or checked bag. Free TSA tool — razors, liquids, power banks, food & more. Try it now.',
   'meta.home.keywords':

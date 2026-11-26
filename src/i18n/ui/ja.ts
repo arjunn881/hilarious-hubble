@@ -13,7 +13,7 @@ export const ja = {
   'meta.subject': '旅行用品の機内持ち込みおよび預け入れに関するTSAルール',
   'meta.classification': '旅行、航空保安、ツール',
   'meta.category': '旅行、ツール',
-  'meta.home.title': '飛行機に持ち込める？TSA機内持ち込みチェッカー',
+  'meta.home.title': 'BringOnPlane — 飛行機に持ち込める？TSA機内持ち込みチェッカー',
   'meta.home.description':
     '品名を入力するだけで、機内持ち込みか預け荷物かをその場で判定。カミソリ、液体、モバイルバッテリー、食品まで対応した無料TSAツールです。',
   'meta.home.keywords':

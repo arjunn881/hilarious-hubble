@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import TravelServicesBar from "../../components/monetization/TravelServicesBar.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { ArrowLeft, BookOpen, Calendar } from "@lucide/astro";
@@ -66,6 +67,9 @@ const sortedPosts = Object.entries(posts)
         </p>
       </div>
     </header>
+
+    <!-- Travel Services Affiliate Strip -->
+    <TravelServicesBar slug="guides" />
 
     <!-- Articles Grid -->
     <div class="space-y-6">

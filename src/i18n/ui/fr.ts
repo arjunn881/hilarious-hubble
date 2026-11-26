@@ -14,7 +14,7 @@ export const fr = {
   'meta.subject': 'Règles TSA pour les bagages cabine et en soute selon l’objet emporté',
   'meta.classification': 'Voyage, Sûreté aérienne, Outils',
   'meta.category': 'Voyage, Outils',
-  'meta.home.title': 'Que peut-on emporter en avion ? Vérificateur bagage cabine TSA',
+  'meta.home.title': 'BringOnPlane — Que peut-on emporter en avion ? Vérificateur bagage cabine TSA',
   'meta.home.description':
     'Saisissez un objet et voyez aussitôt s’il part en cabine ou en soute. Outil TSA gratuit : rasoirs, liquides, batteries externes, nourriture et plus.',
   'meta.home.keywords':

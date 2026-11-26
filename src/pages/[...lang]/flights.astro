@@ -6,6 +6,8 @@ import { langParams, resolveLang } from "../../i18n/config";
 import { useTranslations, useTranslatedPath, getCanonicalUrl, type Lang } from "../../i18n/utils";
 import { getKiwiAffiliateUrl, buildAffiliateUrl } from "../../utils/getContextualAffiliates";
 import { KIWI_AFFILIATE_LINKS, AFFILIATE_MATRIX } from "../../components/monetization/AffiliateConfig";
+import TopFlightSearchBar from "../../components/TopFlightSearchBar.astro";
+import TravelServicesBar from "../../components/monetization/TravelServicesBar.astro";
 import { Plane, Compass, Shield, Wifi, Luggage, Car, Clock, Sparkles, AlertCircle, CheckCircle2 } from "@lucide/astro";
 
 export function getStaticPaths() {
@@ -35,8 +37,8 @@ const storageOffer = AFFILIATE_MATRIX.find(o => o.id === "radical_storage")!;
 const storageUrl = buildAffiliateUrl(storageOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
 const airhelpOffer = AFFILIATE_MATRIX.find(o => o.id === "airhelp")!;
 const airhelpUrl = buildAffiliateUrl(airhelpOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
-const ektaOffer = AFFILIATE_MATRIX.find(o => o.id === "ekta")!;
-const ektaUrl = buildAffiliateUrl(ektaOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
+const insuranceOffer = AFFILIATE_MATRIX.find(o => o.category === "INSURANCE" || o.id === "klook_insurance" || o.id === "ekta")!;
+const insuranceUrl = buildAffiliateUrl(insuranceOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
 const kiwitaxiOffer = AFFILIATE_MATRIX.find(o => o.id === "kiwitaxi")!;
 const kiwitaxiUrl = buildAffiliateUrl(kiwitaxiOffer.baseUrl, { slug: "flights_hub", slot: "footer_card", region: "GLOBAL" });
 
@@ -54,6 +56,7 @@ const breadcrumbs = [
   type="website"
   lang={lang}
   breadcrumbItems={breadcrumbs}
+  hideTopFlightSearch={true}
 >
   <Header slot="header" lang={lang} />
 
@@ -67,7 +70,7 @@ const breadcrumbs = [
     </nav>
 
     {/* ── Page Hero Header ── */}
-    <header class="mb-8">
+    <header class="mb-6">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-3">
         <Sparkles class="w-3.5 h-3.5" />
         <span>Flight Booking &amp; Baggage Safety Hub</span>
@@ -79,6 +82,16 @@ const breadcrumbs = [
         Find the lowest fares across 800+ international carriers, view real-time airline baggage policies, and arrange travel essentials before heading to the airport.
       </p>
     </header>
+
+    {/* ── Kiwi / Travelpayouts Flight Search Widget (Immediately below Page Heading) ── */}
+    <div class="mb-6 w-full">
+      <TopFlightSearchBar lang={lang} embedded={true} />
+    </div>
+
+    <!-- Travel Services Affiliate Strip -->
+    <div class="mb-10 w-full">
+      <TravelServicesBar slug="flights" />
+    </div>
 
     {/* ── SECTION 1: FLIGHT SEARCH & ROUTE PARTNERS ── */}
     <section class="mb-12" aria-labelledby="heading-flight-options">
@@ -311,7 +324,7 @@ const breadcrumbs = [
           </a>
         </div>
 
-        {/* EKTA Insurance */}
+        {/* Klook Travel Insurance */}
         <div class="p-6 rounded-xl border border-hairline bg-canvas hover:shadow-sm transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
@@ -320,13 +333,13 @@ const breadcrumbs = [
               </span>
               <span class="text-xs font-mono text-mute">Instant Policy</span>
             </div>
-            <h3 class="text-base font-bold text-ink mb-1.5">EKTA Travel Insurance</h3>
+            <h3 class="text-base font-bold text-ink mb-1.5">Klook Travel Insurance</h3>
             <p class="text-xs text-body leading-relaxed mb-4">
-              Comprehensive emergency medical protection, lost baggage insurance, and trip cancellation policies accepted worldwide for visas.
+              Comprehensive emergency medical protection, lost baggage insurance, and trip cancellation policies for seamless international travel.
             </p>
           </div>
           <a
-            href={ektaUrl}
+            href={insuranceUrl}
             target="_blank"
             rel="noopener noreferrer nofollow sponsored"
             class="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition-colors"

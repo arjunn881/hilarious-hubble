@@ -14,7 +14,7 @@ export const de = {
   'meta.subject': 'TSA-Regeln für Handgepäck und aufgegebenes Gepäck nach Gegenstand',
   'meta.classification': 'Reisen, Luftsicherheit, Werkzeuge',
   'meta.category': 'Reisen, Tools',
-  'meta.home.title': 'Was darf ins Handgepäck? TSA-Handgepäck-Checker',
+  'meta.home.title': 'BringOnPlane — Was darf ins Handgepäck? TSA-Handgepäck-Checker',
   'meta.home.description':
     'Gegenstand eingeben und sofort sehen, ob er ins Handgepäck oder in den Koffer gehört. Kostenloses TSA-Tool: Rasierer, Flüssigkeiten, Powerbanks, Lebensmittel und mehr.',
   'meta.home.keywords':

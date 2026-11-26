@@ -14,6 +14,7 @@ import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "
 import { getItemName } from "../../../i18n/items";
 import { categorySlug, getCategoryName } from "../../../i18n/categories";
 import { indexArticleOverlay, pickArticle } from "../../../i18n/prose/articles";
+import TravelServicesBar from "../../../components/monetization/TravelServicesBar.astro";
 
 export async function getStaticPaths() {
   const items = getAllItems();
@@ -201,6 +202,9 @@ const categoryFaqs = cp?.faqs ?? getCategoryFAQs(categoryName);
         {t("category.intro", { category: categoryLabel })}
       </p>
     </header>
+
+    <!-- Travel Services Affiliate Strip -->
+    <TravelServicesBar slug={canonicalSlug} />
 
     <!-- Statistics Grid -->
     <div class="grid grid-cols-3 gap-4 mb-10 select-none">

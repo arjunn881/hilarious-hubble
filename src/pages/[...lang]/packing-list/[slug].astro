@@ -7,7 +7,6 @@ import EEATBanner from "../../../components/seo/EEATBanner.astro";
 import RelatedLinksWidget from "../../../components/seo/RelatedLinksWidget.astro";
 import ChecklistAddon from "../../../components/monetization/ChecklistAddon.astro";
 import TravelServicesBar from "../../../components/monetization/TravelServicesBar.astro";
-import FlightSearchWidget from "../../../components/FlightSearchWidget.astro";
 import { 
   ArrowLeft, Sparkles, ClipboardCheck, AlertTriangle, ShieldCheck, 
   CheckCircle2, XCircle, AlertCircle, FileText, ChevronDown, Calendar, 
@@ -623,9 +622,6 @@ const seoKeywords = lang === 'en'
 
     <!-- E-E-A-T Editorial Banner -->
     <EEATBanner lastUpdated={String(currentYear)} lang={lang} />
-
-    <!-- Contextual Flight Search -->
-    <FlightSearchWidget slug={slug} lang={lang} />
 
     <!-- Monetization Layer: eSIM + Insurance (Module C) -->
     <ChecklistAddon context="CHECKLIST" slug={slug} lang={lang} />

@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import ChecklistAddon from "../../components/monetization/ChecklistAddon.astro";
+import TravelServicesBar from "../../components/monetization/TravelServicesBar.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { ArrowLeft, Plane, ShieldCheck, Info, Scale, Box, BatteryCharging } from "@lucide/astro";
@@ -267,6 +268,9 @@ const airlineFaqs = [
         {t("airlines.intro")}
       </p>
     </header>
+
+    <!-- Travel Services Affiliate Strip -->
+    <TravelServicesBar slug="airlines" />
 
         <!-- Quick Item Shortcut Links -->
     <div class="mb-10 p-5 bg-canvas border border-hairline rounded-md shadow-xs">

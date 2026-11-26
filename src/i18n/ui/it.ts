@@ -14,7 +14,7 @@ export const it = {
   'meta.subject': 'Regole TSA per bagaglio a mano e da stiva per ogni oggetto da viaggio',
   'meta.classification': 'Viaggi, Sicurezza aerea, Strumenti',
   'meta.category': 'Viaggi, Strumenti',
-  'meta.home.title': 'Cosa si può portare in aereo? Verifica bagaglio a mano TSA',
+  'meta.home.title': 'BringOnPlane — Cosa si può portare in aereo? Verifica bagaglio a mano TSA',
   'meta.home.description':
     'Digita un oggetto e scopri subito se va nel bagaglio a mano o in stiva. Strumento TSA gratuito: rasoi, liquidi, power bank, cibo e molto altro.',
   'meta.home.keywords':

@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import TravelServicesBar from "../../components/monetization/TravelServicesBar.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { ArrowLeft, Globe, ShieldCheck, AlertCircle, FileText, Landmark } from "@lucide/astro";
@@ -201,6 +202,9 @@ const countryFaqs = [
         {t("countries.intro")}
       </p>
     </header>
+
+    <!-- Travel Services Affiliate Strip -->
+    <TravelServicesBar slug="countries" />
 
     <!-- Country Cards -->
     <div class="space-y-6 mb-12">

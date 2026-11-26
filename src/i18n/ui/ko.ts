@@ -14,7 +14,7 @@ export const ko = {
   'meta.subject': '여행 물품별 TSA 기내 수하물 및 위탁 수하물 규정',
   'meta.classification': '여행, 항공 보안, 도구',
   'meta.category': '여행, 도구',
-  'meta.home.title': '비행기에 가져갈 수 있나요? TSA 기내 수하물 확인',
+  'meta.home.title': 'BringOnPlane — 비행기에 가져갈 수 있나요? TSA 기내 수하물 확인',
   'meta.home.description':
     '물품 이름만 입력하면 기내 수하물인지 위탁 수하물인지 바로 확인할 수 있습니다. 면도기, 액체, 보조배터리, 음식까지 지원하는 무료 TSA 도구입니다.',
   'meta.home.keywords':

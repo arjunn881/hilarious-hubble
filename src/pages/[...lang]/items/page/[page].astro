@@ -8,6 +8,7 @@ import { langParams, localeMeta, resolveLang } from "../../../../i18n/config";
 import { getCanonicalUrl, useTranslations, useTranslatedPath, type Lang } from "../../../../i18n/utils";
 import { getItemName } from "../../../../i18n/items";
 import { getCategoryName } from "../../../../i18n/categories";
+import TravelServicesBar from "../../../../components/monetization/TravelServicesBar.astro";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   /**
@@ -104,6 +105,9 @@ function statusLabel(status: 'ALLOWED' | 'NOT_ALLOWED' | 'RESTRICTED' | 'UNKNOWN
         {t("items.intro")}
       </p>
     </header>
+
+    <!-- Travel Services Affiliate Strip -->
+    <TravelServicesBar slug={`catalogue-p${page.currentPage}`} />
 
     <!-- Paginated Items Listing Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">

@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import TravelServicesBar from "../../components/monetization/TravelServicesBar.astro";
 import InstagramIcon from "../../components/InstagramIcon.astro";
 import { Mail, MapPin, Clock, MessageSquare, Send, HelpCircle, ExternalLink, CheckCircle2, XCircle } from "@lucide/astro";
 import { langParams, resolveLang } from "../../i18n/config";
@@ -57,6 +58,9 @@ const formStrings = {
   <Header slot="header" lang={lang} />
 
   <main class="flex-1">
+    <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 mt-4">
+      <TravelServicesBar slug="contact" />
+    </div>
 
     <!-- Hero -->
     <section class="py-16 md:py-20 border-b border-hairline bg-canvas-soft">

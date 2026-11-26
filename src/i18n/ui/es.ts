@@ -14,7 +14,7 @@ export const es = {
   'meta.subject': 'Normas TSA de equipaje de mano y facturado para artículos de viaje',
   'meta.classification': 'Viajes, Seguridad aérea, Herramientas',
   'meta.category': 'Viajes, Herramientas',
-  'meta.home.title': '¿Qué puedo llevar en el avión? Verificador TSA de equipaje de mano',
+  'meta.home.title': 'BringOnPlane — ¿Qué puedo llevar en el avión? Verificador TSA de equipaje de mano',
   'meta.home.description':
     'Escribe cualquier artículo y comprueba al instante si va en el equipaje de mano o facturado. Herramienta TSA gratuita: cuchillas, líquidos, baterías externas, comida y más.',
   'meta.home.keywords':

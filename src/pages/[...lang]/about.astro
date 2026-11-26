@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import TravelServicesBar from "../../components/monetization/TravelServicesBar.astro";
 import { Plane, Users, ShieldCheck, Zap, Globe, Star, ArrowRight, Mail, HelpCircle } from "@lucide/astro";
 import { langParams, resolveLang } from "../../i18n/config";
 import { useTranslations, useTranslatedPath, type Lang } from "../../i18n/utils";
@@ -56,6 +57,9 @@ const editorialPolicies = [
 
 
   <main class="flex-1">
+    <div class="max-w-[1200px] w-full mx-auto px-4 md:px-6 lg:px-8 mt-4">
+      <TravelServicesBar slug="about" />
+    </div>
 
     <!-- Hero -->
     <section class="py-20 md:py-28 border-b border-hairline bg-canvas-soft">

@@ -31,6 +31,7 @@ import {
   getExpandedItemFAQs
 } from "../../../../lib/contentGenerator";
 import EEATBanner from "../../../../components/seo/EEATBanner.astro";
+import TravelServicesBar from "../../../../components/monetization/TravelServicesBar.astro";
 import Breadcrumbs from "../../../../components/seo/Breadcrumbs.astro";
 import RelatedLinksWidget from "../../../../components/seo/RelatedLinksWidget.astro";
 import AirlineCountrySelector from "../../../../components/AirlineCountrySelector.astro";
@@ -318,6 +319,9 @@ const articleSchema = {
           <span class="text-mute">Also known as:</span> {item.aliases.join(", ")}
         </p>
       )}
+
+      <!-- Travel Services Affiliate Strip -->
+      <TravelServicesBar slug={`${item.slug}-${country.slug}`} />
 
       <!-- Action buttons -->
       <div class="flex flex-wrap items-center gap-3 mt-6 select-none">
